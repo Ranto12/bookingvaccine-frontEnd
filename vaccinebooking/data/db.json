@@ -1,0 +1,68 @@
+{
+ "user":[
+     {
+        "id":1,
+        "name":"ranto",
+        "username": "admin",
+        "password": "admin"
+     },
+     {
+        "id":2,
+        "name":"dia",
+        "username": "saya",
+        "password": "saya"
+     },
+     {
+        "id":3,
+        "name":"mereka",
+        "username": "mereka",
+        "password": "mereka"
+     }
+ ],
+ "konten":[
+    {
+       "id": 1,
+       "title": "covid 19 mereja lela",
+       "img": "link.jpg",
+       "description": "lorem10"
+    },
+    {
+       "id": 2,
+       "title": "covid 18 mereja lela",
+       "img": "link.jpg",
+       "description": "lorem10"
+    },
+    {
+       "id": 3,
+       "title": "covid 17 mereja lela",
+       "img": "link.jpg",
+       "description": "lorem10"
+    },
+    {
+       "id": 4,
+       "title": "covid 16 mereja lela",
+       "img": "link.jpg",
+       "description": "lorem10"
+    },
+    {
+       "id": 5,
+       "title": "covid 15 mereja lela",
+       "img": "link.jpg",
+       "description": "lorem10"
+    }
+ ],
+ "auth":[
+    {
+       "id":1,
+       "username":"ranto",
+       "email":"rantokoplak@gmail.com",
+       "password":"ranto"
+    },
+    {
+       "id":2,
+       "username":"defa",
+       "email":"rantokoplak@gmail.com",
+       "password":"defa"
+    }
+ ]   
+}
