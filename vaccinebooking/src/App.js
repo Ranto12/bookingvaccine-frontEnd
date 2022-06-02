@@ -1,12 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
-import Login from './pages/Login/Login';
+import { Route, Routes } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import ViewUser from './domain/veiwUser/ViewUser';
+import Login from './pages/Login';
+// import Login from './pages/Login/Login';
 
 function App() {
   return (
-    <div className="App">
-      <Login/>
-    </div>
+    <Routes>
+      <Route path='/' element={<Login/>}/>
+      <Route path='/login' element={<ViewUser/>}/>
+    </Routes>
   );
 }
 
