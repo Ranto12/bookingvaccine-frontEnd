@@ -15,24 +15,6 @@ const Form = ({handlePassword, handleUsername}) => {
             onChange={handlePassword}
             />
         </label>
-        
-
-        
-       {/* {inputs && inputs.map((input, inputIdx)=>(
-              <div key={inputIdx}>
-                <label >
-                  {input.label}
-                </label>
-                <input
-                type={input.type}
-                placeholder={input.placeholder}
-                name={input.name}
-                value={input.value}
-                onChange={(e)=> handleInput(e.target.value, inputIdx)}
-                required
-                />
-              </div>
-                ))} */}
     </div>
   )
 }

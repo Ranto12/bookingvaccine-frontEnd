@@ -87,18 +87,15 @@ const Login = ({item, key}) => {
     }
 
   return (
-    <div>
+    <div >
       <div>
-        <div>
           VACCINE
-        </div>
-        <form>
-           <Form handleUsername={handleUsername}  handlePassword={handlePassword} />
-           <button onClick = {handleSubmitForm}>gasin</button>
-        </form>
       </div>
       <div>
-        
+      <form>
+           <Form handleUsername={handleUsername}  handlePassword={handlePassword}/>
+           <button onClick = {handleSubmitForm}>gasin</button>
+      </form>
       </div>
     </div>
   )
