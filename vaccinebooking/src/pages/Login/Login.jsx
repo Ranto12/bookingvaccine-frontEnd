@@ -31,15 +31,21 @@ const Login = ({item, key}) => {
       fetchPosts();
       
   },[])
+  console.log(user)
 
   useEffect(()=>{
-    if(user.length === 1){
+    if(user.length !== 0){
       console.log("datanya ada")
       navigate("/")
     } else{
       console.log("dta null")
     }
-  })
+  }, [])
+
+
+  // useEffect(()=>{
+    
+  // })
     //funtion 
     // const handleInput = (value, index)=>{
     //   const newInputs = inputs.map((input, inputIdx)=>{
@@ -73,7 +79,7 @@ const Login = ({item, key}) => {
     }
 
     const handleSubmid = () => {
-
+        
     }
 
     const handleSubmitForm = (e) => {
@@ -87,8 +93,8 @@ const Login = ({item, key}) => {
     }
 
   return (
-    <div >
-      <div>
+    <div className='container m-1000'>
+      <div className='container'>
           VACCINE
       </div>
       <div>

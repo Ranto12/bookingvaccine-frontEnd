@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 
 //styles
-import './index.css';
+// import './index.css';
 
 // redux
 
