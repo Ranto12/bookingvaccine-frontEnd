@@ -4,9 +4,11 @@ import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 
 //styles
-// import './index.css';
+import './index.css';
 
 // redux
+// import store from './redux/store';
+// import { Provider } from 'react-redux';
 
 //api
 
@@ -15,9 +17,11 @@ import App from './App';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   // <React.StrictMode>
-  <BrowserRouter>
-    <App />
+  // <Provider store={store}>
+    <BrowserRouter>
+      <App />
     </BrowserRouter>
+  // </Provider>
   // </React.StrictMode>
 );
 

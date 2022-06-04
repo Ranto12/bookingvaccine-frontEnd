@@ -26,27 +26,6 @@ const Login = () => {
     }
   return (
     <>
-            {/* <Container className='mt-10' >
-                    <Row className="mt-5" >
-                    <Col lg={5} md={6} sm={12} className="p-5 m-auto shadow-sm rounded-lg">
-                        <Form onSubmit={Auth}>
-                            <Form.Group controlId="formBasicEmail">
-                                <Form.Label>Username</Form.Label>
-                                <Form.Control type="email" placeholder="Enter email"  value={username} onChange={(e)=> setUsername(e.target.value)}/>
-                            </Form.Group>
-
-                            <Form.Group controlId="formBasicPassword">
-                                <Form.Label>Password</Form.Label>
-                                <Form.Control type="password" placeholder="Password" value={password} onChange={(e)=> setPassword(e.target.value)}/>
-                            </Form.Group>
-
-                            <Button variant="success btn-block" type="submit">
-                                Login
-                            </Button>
-                        </Form>
-                    </Col>
-                </Row>
-            </Container> */}
             <div className="container">
     <div className="row">
       <div className="col-md-6 offset-md-3">
