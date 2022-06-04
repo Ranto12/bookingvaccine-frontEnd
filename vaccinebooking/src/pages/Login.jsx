@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import {Button, Col, Container, Form, Row} from 'react-bootstrap'
+import Sidebar from '../component/SIdebar/Sidebar';
 
 
 const Login = () => {
@@ -27,7 +28,7 @@ const Login = () => {
   return (
     <>
             <Container >
-                
+                <Sidebar/>
                     <Row className="mt-5" >
                     <Col lg={5} md={6} sm={12} className="p-5 m-auto shadow-sm rounded-lg">
                         <Form onSubmit={Auth}>

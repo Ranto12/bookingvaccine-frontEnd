@@ -33,6 +33,7 @@ const ViewUser = () => {
       {user.map((item)=>{
           return(
               <>
+              
               <div key={item.id}>
                   <div>{item.name}</div>
                   <div>{item.password}</div>
