@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import {Button, Col, Container, Form, Row} from 'react-bootstrap'
+// import {Button, Col, Container, Form, Row} from 'react-bootstrap'
 
 
 const Login = () => {
@@ -26,28 +26,37 @@ const Login = () => {
     }
   return (
     <>
-            <Container >
-                
-                    <Row className="mt-5" >
-                    <Col lg={5} md={6} sm={12} className="p-5 m-auto shadow-sm rounded-lg">
-                        <Form onSubmit={Auth}>
-                            <Form.Group controlId="formBasicEmail">
-                                <Form.Label>Username</Form.Label>
-                                <Form.Control type="email" placeholder="Enter email"  value={username} onChange={(e)=> setUsername(e.target.value)}/>
-                            </Form.Group>
+            <div className="container">
+    <div className="row">
+      <div className="col-md-6 offset-md-3">
+        <h2 className="text-center text-dark mt-5">Login Form</h2>
+        <div className="text-center mb-5 text-dark">Made with bootstrap</div>
+        <div className="card my-5">
 
-                            <Form.Group controlId="formBasicPassword">
-                                <Form.Label>Password</Form.Label>
-                                <Form.Control type="password" placeholder="Password" value={password} onChange={(e)=> setPassword(e.target.value)}/>
-                            </Form.Group>
+          <form className="card-body cardbody-color p-lg-5" onSubmit={Auth}>
 
-                            <Button variant="success btn-block" type="submit">
-                                Login
-                            </Button>
-                        </Form>
-                    </Col>
-                </Row>
-            </Container>
+            <div className="text-center">
+              <img src="https://cdn.pixabay.com/photo/2016/03/31/19/56/avatar-1295397__340.png" className="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
+                width="200px" alt="profile"/>
+            </div>
+
+            <div className="mb-3">
+              <input type="text" className="form-control" id="Username" aria-describedby="emailHelp" placeholder="User Name" value={username} onChange={(e)=> setUsername(e.target.value)}/>
+            </div>
+            <div className="mb-3">
+              <input type="password" className="form-control" id="password" placeholder="password" value={password} onChange={(e)=> setPassword(e.target.value)}/>
+            </div>
+            <div className="text-center"><button type="submit" className="btn btn-color px-5 mb-5 w-100">Login</button></div>
+            <div id="emailHelp" className="form-text text-center mb-5 text-dark">Not
+              Registered? <a href="#" className="text-dark fw-bold"> Create an
+                Account</a>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
         </>
   )
 }
