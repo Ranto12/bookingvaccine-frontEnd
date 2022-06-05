@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import {AiOutlineSearch} from 'react-icons/ai'
 import {IoMdNotifications} from 'react-icons/io'
 import {RiAdminFill} from 'react-icons/ri'
-import Sidebar from '../../component/SIdebar/Sidebarr'
+import Sidebar from '../../component/SIdebar/Sidebar'
 import './../../assets/Style/style.css'
 
 const Dashboard = () => {
