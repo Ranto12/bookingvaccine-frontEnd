@@ -92,7 +92,7 @@ const KelolaBerita = () => {
                 <div className='align-items-center'>
                   <BsFilterLeft/>
                 </div>
-                <div >
+                <div>
                   <select name="sortir" id="Sortir" placeholder='Sortir bersarkan' style={{border:"none", height:"24px"}}>
                       <option value="">Sortir bersarkan</option> 
                       <option value="jumlah">Jumlah</option> 
