@@ -45,11 +45,11 @@ const Dashboard = () => {
                         </h1>
                     </div>
                 </div>
-                <div className='col-7'>
+                {/* <div className='col-7'>
                     <div className='justify-content-center d-flex align-items-center mb-6'>
                         <div className='d-flex '>
                             <div className='border border-dark d-flex w-100' >
-                                <div className='ms-3 me-3' style={{cursor:"pointer"}} onClick={handleSearch}>
+                                <div className='' style={{cursor:"pointer"}} onClick={handleSearch}>
                                     <AiOutlineSearch/>
                                 </div>
                                 <div>
@@ -61,7 +61,7 @@ const Dashboard = () => {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
             </div>
 
             {/* total admin */}
@@ -75,7 +75,8 @@ const Dashboard = () => {
                             marginTop:"30px", 
                             paddingLeft:"36.54px",
                             paddingTop:"30px",
-                            background: "#D9D9D9"
+                            background: "#D9D9D9",
+                            position: "absolute"
                             }}>
                             <div className='d-flex align-items-center'>
                                 <div className='me-4 '><RiAdminFill /></div>
