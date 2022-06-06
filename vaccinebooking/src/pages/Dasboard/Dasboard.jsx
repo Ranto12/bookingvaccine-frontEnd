@@ -25,7 +25,7 @@ const Dashboard = () => {
     },[])
   return (
     <div >
-      <div className='row Fontcolor-Dasboard'>
+      <div className='row Fontcolor-Dasboard me-5'>
         
         {/* sidebar */}
         <div className='col-3'>
@@ -133,7 +133,7 @@ const Dashboard = () => {
                         background: "#D9D9D9"
                         }}>
                         <div className='d-flex align-items-center'>
-                            <div className='me-4'>
+                            <div className='me-3'>
                                 <RiAdminFill />
                             </div>
                             <div style={{fontSize:"24px"}}>
@@ -174,7 +174,7 @@ const Dashboard = () => {
                             background: "#D9D9D9"
                             }}>
                                 <div className='d-flex align-items-center'>
-                                    <div className='me-4 '>
+                                    <div className='me-3'>
                                         <RiAdminFill />
                                     </div>
                                     <div style={{fontSize:"24px"}}>
