@@ -4,14 +4,15 @@ import { IconButton } from "@mui/material";
 import { RiPencilFill } from "react-icons/ri";
 import { MdDelete } from "react-icons/md";
 
-const TabelKelolaBerita = () => {
+const TablePengguna = () => {
   return (
-    <div className="d-flex TabelkelolaBerita justify-content-center">
+    <div className="d-flex TabelkelolaBerita justify-content-center TableColor-child">
       <div className="col-1">1</div>
-      <div className="col-4">lorem Ipsum</div>
-      <div className="col-2">Author</div>
-      <div className="col-4">Author</div>
-      <div className="col-1 d-flex justify-content-center">
+      <div className="col-3">mr. Joko</div>
+      <div className="col-3">PRJ</div>
+      <div className="col-2">08123123786234</div>
+      <div className="col-2">joko@gmail.com</div>
+      <div className="col-1 d-flex justify-content-center ">
         <IconButton aria-label="Check">
           <RiPencilFill />
         </IconButton>
@@ -23,6 +24,6 @@ const TabelKelolaBerita = () => {
   );
 };
 
-export default TabelKelolaBerita;
+export default TablePengguna;
 
 // ok
