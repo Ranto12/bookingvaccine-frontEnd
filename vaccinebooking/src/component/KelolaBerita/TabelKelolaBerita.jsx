@@ -31,3 +31,5 @@ const TabelKelolaBerita = () => {
 }
 
 export default TabelKelolaBerita
+
+// ok
