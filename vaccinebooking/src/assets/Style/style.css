@@ -93,3 +93,8 @@
 .TableColor-child:nth-child(even) {
   background-color: #D6EEEE;
 }
+/* keloal Jadwal Vaksin */
+.margin-rigth {
+  margin-right: 33px !important;
+  margin-left: 33px !important;
+}

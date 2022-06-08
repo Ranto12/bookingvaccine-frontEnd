@@ -1,108 +1,110 @@
 {
-  "user": [
+  "Admin" : [
     {
-      "id": 1,
-      "name": "ranto",
-      "username": "admin",
-      "password": "admin"
+      "id" : 1,
+      "nama" :"tujiko",
+      "role" : "Admin",
+      "email" : "tujiko@gmail.com",
+      "noHp" : "0822837374634",
+      "Alamat" : "PRJ"
     },
     {
-      "id": 2,
-      "name": "dia",
-      "username": "saya",
-      "password": "saya"
+      "id" : 2,
+      "nama" :"tujiko",
+      "role" : "Admin",
+      "email" : "tujiko@gmail.com",
+      "noHp" : "0822837374634",
+      "Alamat" : "PRJ"
     },
     {
-      "id": 3,
-      "name": "mereka",
-      "username": "mereka",
-      "password": "mereka"
+      "id" : 3,
+      "nama" :"tujiko",
+      "role" : "Admin",
+      "email" : "tujiko@gmail.com",
+      "noHp" : "0822837374634",
+      "Alamat" : "PRJ"
+    },
+    {
+      "id" : 4,
+      "nama" :"tujiko",
+      "role" : "Admin",
+      "email" : "tujiko@gmail.com",
+      "noHp" : "0822837374634",
+      "Alamat" : "PRJ"
+    },
+    {
+      "id" : 5,
+      "nama" :"tujiko",
+      "role" : "Admin",
+      "email" : "tujiko@gmail.com",
+      "noHp" : "0822837374634",
+      "Alamat" : "PRJ"
     }
   ],
-  "konten": [
+  "pengguna" :[
     {
-      "id": 1,
-      "title": "covid 19 mereja lela",
-      "img": "link.jpg",
-      "description": "lorem10"
+      "id":1,
+      "nama" : "tujiko",
+      "noHp" : "0822837374634",
+      "nik" : "1230982763561782",
+      "alamat": "cirasa",
+      "dosis" : "1"
     },
     {
-      "id": 2,
-      "title": "covid 18 mereja lela",
-      "img": "link.jpg",
-      "description": "lorem10"
+      "id":2,
+      "nama" : "tujiko",
+      "noHp" : "0822837374634",
+      "nik" : "1230982763561782",
+      "alamat": "cirasa",
+      "dosis" : "1"
     },
     {
-      "id": 3,
-      "title": "covid 17 mereja lela",
-      "img": "link.jpg",
-      "description": "lorem10"
+      "id":3,
+      "nama" : "tujiko",
+      "noHp" : "0822837374634",
+      "nik" : "1230982763561782",
+      "alamat": "cirasa",
+      "dosis" : "1"
     },
     {
-      "id": 4,
-      "title": "covid 16 mereja lela",
-      "img": "link.jpg",
-      "description": "lorem10"
+      "id":4,
+      "nama" : "tujiko",
+      "noHp" : "0822837374634",
+      "nik" : "1230982763561782",
+      "alamat": "cirasa",
+      "dosis" : "1"
     },
     {
-      "id": 5,
-      "title": "covid 15 mereja lela",
-      "img": "link.jpg",
-      "description": "lorem10"
-    }
-  ],
-  "auth": [
-    {
-      "id": 1,
-      "username": "ranto",
-      "email": "rantokoplak@gmail.com",
-      "password": "ranto"
+      "id":5,
+      "nama" : "tujiko",
+      "noHp" : "0822837374634",
+      "nik" : "1230982763561782",
+      "alamat": "cirasa",
+      "dosis" : "1"
     },
     {
-      "id": 2,
-      "username": "defa",
-      "email": "rantokoplak@gmail.com",
-      "password": "defa"
+      "id":6,
+      "nama" : "tujiko",
+      "noHp" : "0822837374634",
+      "nik" : "1230982763561782",
+      "alamat": "cirasa",
+      "dosis" : "1"
     },
     {
-      "user": "ranto",
-      "pwd": "ranto",
-      "id": 3
+      "id":7,
+      "nama" : "tujiko",
+      "noHp" : "0822837374634",
+      "nik" : "1230982763561782",
+      "alamat": "cirasa",
+      "dosis" : "1"
     },
     {
-      "user": "adsasd",
-      "pwd": "sdasd",
-      "id": 4
-    },
-    {
-      "user": "ranto",
-      "pwd": "ranto",
-      "id": 5
-    },
-    {
-      "user": "ranto",
-      "pwd": "ranto",
-      "id": 6
-    },
-    {
-      "user": "defa",
-      "pwd": "defa",
-      "id": 7
-    },
-    {
-      "user": "admin",
-      "pwd": "admin",
-      "id": 8
-    },
-    {
-      "user": "admin",
-      "pwd": "admin",
-      "id": 9
-    },
-    {
-      "user": "admin",
-      "pwd": "admin",
-      "id": 10
+      "id":8,
+      "nama" : "tujiko",
+      "noHp" : "0822837374634",
+      "nik" : "1230982763561782",
+      "alamat": "cirasa",
+      "dosis" : "1"
     }
   ]
 }
