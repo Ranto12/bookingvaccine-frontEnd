@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import Login from './pages/Login';
 import Dashboard from './pages/Dasboard/Dasboard';
 import KelolaBerita from './pages/KelolaBerita/KelolaBerita';
+import KelolaJadwal from './pages/KelolaJadwal/KelolaJadwal';
 
 function App() {
   return (
@@ -10,6 +11,8 @@ function App() {
       <Route path='/login' element={<Login/>}/>
       <Route path='/' element={<Dashboard/>}/>
       <Route path='/KelolaBerita' element={<KelolaBerita/>}/>
+      <Route path='/KelolaJadwal' element={<KelolaJadwal/>}/>
+
       {/* <Route path='/login' element={<ViewUser/>}/> */}
     </Routes>
   );
