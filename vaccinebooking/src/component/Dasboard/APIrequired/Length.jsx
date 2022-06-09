@@ -6,11 +6,18 @@ import api from './../../../API/data/post'
 
 const LengthPenguna = () => {
     const [pengguna, setPengguna]= useState([]);
+
     const Length = pengguna.length;
     console.log(`pengguna`, Length)
 
+    // const myApi = useCallback(() => {
+    //     axios.get(url)
+    //     .then((res) => setPengguna(res.data))
+    // },[pengguna])
+
     // useEffect
     useEffect(()=>{
+        // myApi()
         const PenggunaLengthPost = async()=>{
             try{
                 const response = await api.get("/pengguna")
@@ -28,7 +35,7 @@ const LengthPenguna = () => {
             }
         }
         PenggunaLengthPost();
-    },[pengguna])
+    },[])
   return (
     <div>
         {Length}

@@ -131,3 +131,72 @@
   align-items: center;
 
 }
+.TabelkelolaBerita{
+    background-color: #D9D9D9;
+    justify-content: center;
+    align-items: center;
+}
+
+/* kelolaJadwal */
+.bg-card-kelola{
+    background-color: #C2C2C2 !important;
+    padding: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+}
+
+.bg-form-jadwal{
+    background-color: #D9D9D9;
+    padding-left: 36px !important;
+    padding-right: 36px !important;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+}
+
+.btn-kelola-jadwal{
+    background-color: #C2C2C2;
+    border: 0px;
+    padding: 7px 34px;
+
+}
+.btn-kelola-jadwal1{
+    background-color: #D9D9D9;
+    border: 0px;
+    
+}
+
+.img-input{
+    border-style: dashed;
+    padding: 10%;
+    cursor: pointer;
+    background:none;
+}
+
+.img-input>label>input{
+    display: none;
+   
+}
+
+.img-card{
+    background-color: white;
+    padding: 20px ;
+    margin: 0px 30px;
+}
+
+.card-text{
+    font-size: 13px;
+    
+    
+}
+
+.input-kelola,.input-kel,.input-kel-area{
+    background-color: #AAA9A9;
+}
+
+.input-kel{
+    background-color: #AAA9A9;
+    width: 10% !important;
+}
+
