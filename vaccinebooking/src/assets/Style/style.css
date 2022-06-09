@@ -1,0 +1,96 @@
+/* sidebar */
+.sidebar {
+  background-color: #d9d9d9;
+  border-radius: 30px !important;
+}
+
+.menu-sidebar:hover {
+  background-color: #c2c2c2;
+  border-radius: 10px !important;
+}
+
+.menu-sidebar.active {
+  background-color: #c2c2c2;
+}
+
+/* dasboard  */
+.Fontcolor-Dasboard {
+  color: #aaa9a9;
+}
+
+.background-color-card-rsud {
+  background-color: #c2c2c2;
+  border-radius: 10px;
+}
+
+/* kelola berita */
+.fz-Head {
+  font-size: 24px;
+}
+
+.fz-Title {
+  font-size: 36px;
+}
+
+.Margin-top-Serch {
+  margin-top: 25px;
+}
+
+.Fz-16 {
+  font-size: 16px;
+}
+
+.LinkText:hover {
+  color: #aaa9a9;
+  font-size: 14;
+}
+
+.background-color-Table {
+  background-color: #c2c2c2;
+  border-radius: 10px 10px 0px 0px;
+  height: 60px;
+  font-size: 14px;
+  align-items: center;
+  color: #8e8b8b;
+  font-weight: 600;
+  justify-content: center;
+}
+
+.TabelkelolaBerita {
+  background-color: #d9d9d9;
+  justify-content: center;
+  align-items: center;
+}
+
+.TabelDataBooking {
+  background-color: #d9d9d9;
+  justify-content: center;
+  align-items: center;
+}
+
+/* TabelJadwalVaksinasi */
+
+.TabelJadwalVaksinasi {
+  background-color: #d9d9d9;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+.md svg {
+  margin-right: 7px;
+  margin-bottom: 5px;
+}
+
+.border:focus {
+  outline: none;
+}
+
+/* TebelAdmin */
+.TabelAdmin {
+  background-color: #d9d9d9;
+  justify-content: center;
+  align-items: center;
+
+}
