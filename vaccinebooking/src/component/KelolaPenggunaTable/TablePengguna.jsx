@@ -4,15 +4,27 @@ import { IconButton } from "@mui/material";
 import { RiPencilFill } from "react-icons/ri";
 import { MdDelete } from "react-icons/md";
 
-const TablePengguna = () => {
+const TablePengguna = ({key, nama, nohp, NIK, Number}) => {
+
+  // function
+  const handleDelete=()=>{
+    <p>mantul</p>
+  }
   return (
-    <div className="d-flex TabelkelolaBerita justify-content-center TableColor-child">
-      <div className="col-1">1</div>
-      <div className="col-3">mr. Joko</div>
-      <div className="col-3">PRJ</div>
-      <div className="col-2">08123123786234</div>
-      <div className="col-2">joko@gmail.com</div>
-      <div className="col-1 d-flex justify-content-center ">
+    <div className="d-flex TabelkelolaBerita  TableColor-child">
+      <div className='col-1' >
+              {Number}
+            </div>
+            <div className='col-4'>
+              {nama}
+            </div>
+            <div className='col-3'>
+              {nohp}
+            </div>
+            <div className='col-3'>
+              {NIK}
+            </div>
+      <div className="col-1 d-flex  ">
         <IconButton aria-label="Check">
           <RiPencilFill />
         </IconButton>

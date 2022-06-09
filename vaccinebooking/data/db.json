@@ -44,7 +44,7 @@
   "pengguna" :[
     {
       "id":1,
-      "nama" : "tujiko",
+      "nama" : "sarimun",
       "noHp" : "0822837374634",
       "nik" : "1230982763561782",
       "alamat": "cirasa",
@@ -105,6 +105,84 @@
       "nik" : "1230982763561782",
       "alamat": "cirasa",
       "dosis" : "1"
+    },
+    {
+      "id":9,
+      "nama" : "tujiko",
+      "noHp" : "0822837374634",
+      "nik" : "1230982763561782",
+      "alamat": "cirasa",
+      "dosis" : "1"
+    }
+  ],
+  "Faskes" : [
+    {
+      "id":1,
+      "nama" : "RSUD pasuruhan Magetan Jawa timur",
+      "alamat": "jawa timur",
+      "kecamatan": "balikpapan",
+      "kapasitas": 200,
+      "jenis" : "RSUD"
+    }
+  ],
+  "Artikel": [
+    {
+      "id":1,
+      "title" : "Jangan Sombong",
+      "author": "Paijo",
+      "tanggal" : "17 agustus 1945",
+      "body" : "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis, consequatur sed sint expedita facere iste corporis repellat doloremque ab harum reprehenderit ut iure saepe perferendis similique culpa! Soluta labore reprehenderit inventore earum excepturi nam temporibus nihil iusto modi laboriosam beatae culpa, quo repellat sapiente suscipit veniam perferendis! Nihil sit odio, obcaecati accusamus voluptatum cumque? Asperiores minus aliquam dolor maxime eum quasi voluptates expedita molestiae impedit id animi provident cupiditate inventore vero optio modi magni qui, quibusdam doloremque necessitatibus. Molestias veniam qui necessitatibus saepe, dolorum repellat maxime, optio et iusto autem quod rerum magnam dicta obcaecati nesciunt repudiandae cumque quos voluptatum!"
+    },
+    {
+      "id":2,
+      "title" : "Jangan Sombong",
+      "author": "Paijo",
+      "tanggal" : "17 agustus 1945",
+      "body" : "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis, consequatur sed sint expedita facere iste corporis repellat doloremque ab harum reprehenderit ut iure saepe perferendis similique culpa! Soluta labore reprehenderit inventore earum excepturi nam temporibus nihil iusto modi laboriosam beatae culpa, quo repellat sapiente suscipit veniam perferendis! Nihil sit odio, obcaecati accusamus voluptatum cumque? Asperiores minus aliquam dolor maxime eum quasi voluptates expedita molestiae impedit id animi provident cupiditate inventore vero optio modi magni qui, quibusdam doloremque necessitatibus. Molestias veniam qui necessitatibus saepe, dolorum repellat maxime, optio et iusto autem quod rerum magnam dicta obcaecati nesciunt repudiandae cumque quos voluptatum!"
+    },
+    {
+      "id":3,
+      "title" : "Jangan Sombong",
+      "author": "Paijo",
+      "tanggal" : "17 agustus 1945",
+      "body" : "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis, consequatur sed sint expedita facere iste corporis repellat doloremque ab harum reprehenderit ut iure saepe perferendis similique culpa! Soluta labore reprehenderit inventore earum excepturi nam temporibus nihil iusto modi laboriosam beatae culpa, quo repellat sapiente suscipit veniam perferendis! Nihil sit odio, obcaecati accusamus voluptatum cumque? Asperiores minus aliquam dolor maxime eum quasi voluptates expedita molestiae impedit id animi provident cupiditate inventore vero optio modi magni qui, quibusdam doloremque necessitatibus. Molestias veniam qui necessitatibus saepe, dolorum repellat maxime, optio et iusto autem quod rerum magnam dicta obcaecati nesciunt repudiandae cumque quos voluptatum!"
+    },
+    {
+      "id":4,
+      "title" : "Jangan Sombong",
+      "author": "Paijo",
+      "tanggal" : "17 agustus 1945",
+      "body" : "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis, consequatur sed sint expedita facere iste corporis repellat doloremque ab harum reprehenderit ut iure saepe perferendis similique culpa! Soluta labore reprehenderit inventore earum excepturi nam temporibus nihil iusto modi laboriosam beatae culpa, quo repellat sapiente suscipit veniam perferendis! Nihil sit odio, obcaecati accusamus voluptatum cumque? Asperiores minus aliquam dolor maxime eum quasi voluptates expedita molestiae impedit id animi provident cupiditate inventore vero optio modi magni qui, quibusdam doloremque necessitatibus. Molestias veniam qui necessitatibus saepe, dolorum repellat maxime, optio et iusto autem quod rerum magnam dicta obcaecati nesciunt repudiandae cumque quos voluptatum!"
+    },
+    {
+      "id":5,
+      "title" : "Jangan Sombong",
+      "author": "Paijo",
+      "tanggal" : "17 agustus 1945",
+      "body" : "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis, consequatur sed sint expedita facere iste corporis repellat doloremque ab harum reprehenderit ut iure saepe perferendis similique culpa! Soluta labore reprehenderit inventore earum excepturi nam temporibus nihil iusto modi laboriosam beatae culpa, quo repellat sapiente suscipit veniam perferendis! Nihil sit odio, obcaecati accusamus voluptatum cumque? Asperiores minus aliquam dolor maxime eum quasi voluptates expedita molestiae impedit id animi provident cupiditate inventore vero optio modi magni qui, quibusdam doloremque necessitatibus. Molestias veniam qui necessitatibus saepe, dolorum repellat maxime, optio et iusto autem quod rerum magnam dicta obcaecati nesciunt repudiandae cumque quos voluptatum!"
+    },
+    {
+      "id":6,
+      "title" : "Jangan Sombong",
+      "author": "Paijo",
+      "tanggal" : "17 agustus 1945",
+      "body" : "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis, consequatur sed sint expedita facere iste corporis repellat doloremque ab harum reprehenderit ut iure saepe perferendis similique culpa! Soluta labore reprehenderit inventore earum excepturi nam temporibus nihil iusto modi laboriosam beatae culpa, quo repellat sapiente suscipit veniam perferendis! Nihil sit odio, obcaecati accusamus voluptatum cumque? Asperiores minus aliquam dolor maxime eum quasi voluptates expedita molestiae impedit id animi provident cupiditate inventore vero optio modi magni qui, quibusdam doloremque necessitatibus. Molestias veniam qui necessitatibus saepe, dolorum repellat maxime, optio et iusto autem quod rerum magnam dicta obcaecati nesciunt repudiandae cumque quos voluptatum!"
+    },
+    {
+      "id":7,
+      "title" : "Jangan Sombong",
+      "author": "Paijo",
+      "tanggal" : "17 agustus 1945",
+      "body" : "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis, consequatur sed sint expedita facere iste corporis repellat doloremque ab harum reprehenderit ut iure saepe perferendis similique culpa! Soluta labore reprehenderit inventore earum excepturi nam temporibus nihil iusto modi laboriosam beatae culpa, quo repellat sapiente suscipit veniam perferendis! Nihil sit odio, obcaecati accusamus voluptatum cumque? Asperiores minus aliquam dolor maxime eum quasi voluptates expedita molestiae impedit id animi provident cupiditate inventore vero optio modi magni qui, quibusdam doloremque necessitatibus. Molestias veniam qui necessitatibus saepe, dolorum repellat maxime, optio et iusto autem quod rerum magnam dicta obcaecati nesciunt repudiandae cumque quos voluptatum!"
+    }
+  ],
+  "password" : [
+    {
+      "pw": "npx json-server -p 3500 -w data/db.json"
     }
   ]
 }
+
+
+
+

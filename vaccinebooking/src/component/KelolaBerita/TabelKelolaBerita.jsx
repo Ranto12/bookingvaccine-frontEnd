@@ -4,13 +4,14 @@ import { IconButton } from "@mui/material";
 import { RiPencilFill } from "react-icons/ri";
 import { MdDelete } from "react-icons/md";
 
-const TabelKelolaBerita = () => {
+const TabelKelolaBerita = ({ Number, title, tanggal, author}) => {
+  console.log(title)
   return (
     <div className="d-flex TabelkelolaBerita justify-content-center">
-      <div className="col-1">1</div>
-      <div className="col-4">lorem Ipsum</div>
-      <div className="col-2">Author</div>
-      <div className="col-4">Author</div>
+      <div className="col-1">{Number}</div>
+      <div className="col-4">{title}</div>
+      <div className="col-2">{author}</div>
+      <div className="col-4">{tanggal}</div>
       <div className="col-1 d-flex justify-content-center">
         <IconButton aria-label="Check">
           <RiPencilFill />

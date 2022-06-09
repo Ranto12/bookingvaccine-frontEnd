@@ -21,7 +21,7 @@ function App() {
       <Route path="/DataBooking" element={<DataBooking />} />
       <Route path="/KelolaPengguna" element={<KelolaPengguna />} />
       <Route path="/KelolaJadwal" element={<Jadwal />} />
-      {/* <Route path='/login' element={<ViewUser/>}/> */}
+      <Route path='/login' element={<Login/>}/>
     </Routes>
   );
 }

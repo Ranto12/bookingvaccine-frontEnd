@@ -11,12 +11,16 @@ import { Link } from 'react-router-dom';
 import TabelKelolaBerita from '../../component/KelolaBerita/TabelKelolaBerita';
 import TablePengguna from '../../component/KelolaPenggunaTable/TablePengguna';
 
+// Api
+import api from './../../API/data/post'
+
 
 
 
 const KelolaPengguna = () => {
   const [input, setInput] = useState();
-  const [count, setCount] = useState(1);
+  const [count, setCount] = useState(0);
+  const [dataPengguna, setDataPengguna] = useState([]);
 
 
   // funtion
@@ -27,13 +31,36 @@ const KelolaPengguna = () => {
   
   const handleSearch=() =>{
     setCount(1+input)
-    
   }
+
+ 
+
+  // const handleNumber=() => {
+  //   is
+  // }
   
   useEffect(()=>{
-    handleSearch();
-  },[])
-  
+    const fetchPosts = async()=>{
+        try{
+            const response = await api.get("/pengguna")
+            setDataPengguna(response.data);
+        } catch(err){
+            if(err.response){
+                //not in the 200 response range
+                console.log(err.response.data)
+                console.log(err.response.status)
+                console.log(err.response.headers)
+            }else{
+                console.log(`Error ${err.message}`);
+            }
+        }
+    }
+    fetchPosts();
+},[])
+// // console.log(`length, ${dataPengguna.length}`)
+// console.log(dataPengguna)
+
+
   return (
     <>
     <div className='Fontcolor-Dasboard'>
@@ -112,21 +139,18 @@ const KelolaPengguna = () => {
           </div>
 
           {/* table  */}
-          <div className='row mt-4 background-color-Table  justify-content-center'>
+          <div className='row mt-4 background-color-Table '>
             <div className='col-1'>
               No
             </div>
-            <div className='col-3'>
-              Nama Admin
+            <div className='col-4'>
+              Nama Pengguna
             </div>
             <div className='col-3'>
-              Alamat
+              No. Hp
             </div>
-            <div className='col-2'>
-              No. Telp
-            </div>
-            <div className='col-2'>
-              Email
+            <div className='col-3'>
+              Nik
             </div>
             <div className='col-1'>
               Action
@@ -134,7 +158,11 @@ const KelolaPengguna = () => {
           </div>
           {/* isi table */}
           <div className='TabelkelolaBerita row'>
-            <TablePengguna/>
+            {dataPengguna.map((data, index)=>{
+              return(
+                <TablePengguna Number={index + 1} key={data.id} nama={data.nama} nohp = {data.noHp}  NIK={data.nik}  />
+              )
+            })}
           </div>
         </div>
 
