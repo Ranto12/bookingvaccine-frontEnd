@@ -52,12 +52,12 @@ const Sidebar = () => {
             <div className="  text-center pb-4 ps-4 hover-bg-secondary ">
               <Link
                 className="text-decoration-none d-flex menu-sidebar  me-4 py-2"
-                to="/KelolaJadwal"
+                to="/kelolaJadwal"
               >
                 <div className="text-muted pt-1 ps-4 ">
                   <BsPersonFill />
                 </div>
-                <div className=" ps-4 text-muted  fs-5">Kelola Jadwal</div>
+                <div className=" ps-4 text-muted  fs-5">Kelola jadwal</div>
               </Link>
             </div>
 
@@ -88,7 +88,7 @@ const Sidebar = () => {
             <div className="  text-center pb-4 ps-4 hover-bg-secondary ">
               <Link
                 className="text-decoration-none d-flex menu-sidebar  me-4 py-2"
-                to="/"
+                to="/KelolaAdmin"
               >
                 <div className="text-muted pt-1 ps-4 ">
                   <BsShieldFillCheck />

@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useCallback } from 'react'
+import axios from "axios"
 
 // Api
 import api from './../../../API/data/post'
@@ -8,14 +9,13 @@ const LengthPenguna = () => {
     const Length = pengguna.length;
     console.log(`pengguna`, Length)
 
-
-
     // useEffect
     useEffect(()=>{
         const PenggunaLengthPost = async()=>{
             try{
                 const response = await api.get("/pengguna")
-                setPengguna(response.data);
+                setPengguna(response.data)
+                ;
             } catch(err){
                 if(err.response){
                     //not in the 200 response range
@@ -28,7 +28,7 @@ const LengthPenguna = () => {
             }
         }
         PenggunaLengthPost();
-    },[])
+    },[pengguna])
   return (
     <div>
         {Length}

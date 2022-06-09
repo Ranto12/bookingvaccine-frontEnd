@@ -5,7 +5,7 @@ import { RiPencilFill } from "react-icons/ri";
 import { MdDelete } from "react-icons/md";
 
 const TabelKelolaBerita = ({ Number, title, tanggal, author}) => {
-  console.log(title)
+  
   return (
     <div className="d-flex TabelkelolaBerita justify-content-center">
       <div className="col-1">{Number}</div>

@@ -113,6 +113,70 @@
       "nik" : "1230982763561782",
       "alamat": "cirasa",
       "dosis" : "1"
+    },
+    {
+      "id":10,
+      "nama" : "tujiko",
+      "noHp" : "0822837374634",
+      "nik" : "1230982763561782",
+      "alamat": "cirasa",
+      "dosis" : "1"
+    },
+    {
+      "id":11,
+      "nama" : "tujiko",
+      "noHp" : "0822837374634",
+      "nik" : "1230982763561782",
+      "alamat": "cirasa",
+      "dosis" : "1"
+    },
+    {
+      "id":12,
+      "nama" : "tujiko",
+      "noHp" : "0822837374634",
+      "nik" : "1230982763561782",
+      "alamat": "cirasa",
+      "dosis" : "1"
+    },
+    {
+      "id":13,
+      "nama" : "tujiko",
+      "noHp" : "0822837374634",
+      "nik" : "1230982763561782",
+      "alamat": "cirasa",
+      "dosis" : "1"
+    },
+    {
+      "id":14,
+      "nama" : "tujiko",
+      "noHp" : "0822837374634",
+      "nik" : "1230982763561782",
+      "alamat": "cirasa",
+      "dosis" : "1"
+    },
+    {
+      "id":15,
+      "nama" : "tujiko",
+      "noHp" : "0822837374634",
+      "nik" : "1230982763561782",
+      "alamat": "cirasa",
+      "dosis" : "1"
+    },
+    {
+      "id":16,
+      "nama" : "tujiko",
+      "noHp" : "0822837374634",
+      "nik" : "1230982763561782",
+      "alamat": "cirasa",
+      "dosis" : "1"
+    },
+    {
+      "id":17,
+      "nama" : "tujiko",
+      "noHp" : "0822837374634",
+      "nik" : "1230982763561782",
+      "alamat": "cirasa",
+      "dosis" : "1"
     }
   ],
   "Faskes" : [
@@ -176,13 +240,59 @@
       "body" : "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis, consequatur sed sint expedita facere iste corporis repellat doloremque ab harum reprehenderit ut iure saepe perferendis similique culpa! Soluta labore reprehenderit inventore earum excepturi nam temporibus nihil iusto modi laboriosam beatae culpa, quo repellat sapiente suscipit veniam perferendis! Nihil sit odio, obcaecati accusamus voluptatum cumque? Asperiores minus aliquam dolor maxime eum quasi voluptates expedita molestiae impedit id animi provident cupiditate inventore vero optio modi magni qui, quibusdam doloremque necessitatibus. Molestias veniam qui necessitatibus saepe, dolorum repellat maxime, optio et iusto autem quod rerum magnam dicta obcaecati nesciunt repudiandae cumque quos voluptatum!"
     }
   ],
+  "jawal": [
+    {
+      "id" :1,
+      "namaFaskes" : "RSUD Kematian",
+      "stock" : 100,
+      "jenis" : "sinovac",
+      "waktu" : "00:07",
+      "alamat" :"jawa timur"
+    },
+    {
+      "id" :2,
+      "namaFaskes" : "RSUD kehidupan",
+      "stock" : 100,
+      "jenis" : "boster",
+      "waktu" : "00:07",
+      "alamat" :"jawa timur"
+    },
+    {
+      "id" :3,
+      "namaFaskes" : "RSUD perasaan",
+      "stock" : 100,
+      "jenis" : "moderna",
+      "waktu" : "00:07",
+      "alamat" :"jawa timur"
+    },
+    {
+      "id" :4,
+      "namaFaskes" : "RSUD Kematian",
+      "stock" : 100,
+      "jenis" : "AztraSeneca",
+      "waktu" : "00:07",
+      "alamat" :"jawa timur"
+    },
+    {
+      "id" :5,
+      "namaFaskes" : "RSUD a",
+      "stock" : 100,
+      "jenis" : "sinovac",
+      "waktu" : "00:07",
+      "alamat" :"jawa timur"
+    },
+    {
+      "id" :6,
+      "namaFaskes" : "RSUD s",
+      "stock" : 100,
+      "jenis" : "sinovac",
+      "waktu" : "00:07",
+      "alamat" :"jawa timur"
+    }
+  ],
   "password" : [
     {
       "pw": "npx json-server -p 3500 -w data/db.json"
     }
   ]
 }
-
-
-
-

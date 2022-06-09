@@ -5,14 +5,12 @@ import Dashboard from "./pages/Dasboard/Dasboard";
 import KelolaBerita from "./pages/KelolaBerita/KelolaBerita";
 import DataBooking from "./pages/DataBooking/DataBooking";
 import KelolaPengguna from "./pages/KelolaPengguna/KelolaPengguna";
-import Jadwal from './pages/KelolaJadwal/jadwalVaksinasi';
-
-
+import KelolaJadwal from "./pages/KelolaJadwal/KelolaJadwal";
+import KelolaAdmin from "./pages/KelolaAdmin/KelolaAdmin";
 // import ViewUser from './domain/veiwUser/ViewUser';
 // import Login from './pages/Login/Login';
 
 function App() {
-
   return (
     <Routes>
       <Route path="/login" element={<Login />} />
@@ -20,8 +18,11 @@ function App() {
       <Route path="/KelolaBerita" element={<KelolaBerita />} />
       <Route path="/DataBooking" element={<DataBooking />} />
       <Route path="/KelolaPengguna" element={<KelolaPengguna />} />
-      <Route path="/KelolaJadwal" element={<Jadwal />} />
+      {/* <Route path="/KelolaJadwal" element={<Jadwal />} /> */}
       <Route path='/login' element={<Login/>}/>
+      <Route path="/KelolaJadwal" element={<KelolaJadwal />} />
+      <Route path="/KelolaAdmin" element={<KelolaAdmin />} />
+      {/* <Route path='/login' element={<ViewUser/>}/> */}
     </Routes>
   );
 }

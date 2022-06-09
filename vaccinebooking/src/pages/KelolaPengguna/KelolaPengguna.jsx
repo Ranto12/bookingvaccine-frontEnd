@@ -8,14 +8,10 @@ import Sidebar from '../../component/Sidebar/Sidebar';
 import {FaUserPlus} from 'react-icons/fa'
 import {AiOutlineSearch } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
-import TabelKelolaBerita from '../../component/KelolaBerita/TabelKelolaBerita';
 import TablePengguna from '../../component/KelolaPenggunaTable/TablePengguna';
 
 // Api
 import api from './../../API/data/post'
-
-
-
 
 const KelolaPengguna = () => {
   const [input, setInput] = useState();

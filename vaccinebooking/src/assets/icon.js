@@ -12,12 +12,12 @@ import {
     FiPlus,
     FiSearch,
 } from "react-icons/fi";
-import {RiDeleteBin6Line} from "react-icons/ri";
-import {CgLogOut} from "react-icons/cg";
-import {BiArrowBack} from "react-icons/bi";
+import { RiDeleteBin6Line } from "react-icons/ri";
+import { CgLogOut } from "react-icons/cg";
+import { BiArrowBack } from "react-icons/bi";
 
 export const icon = {
-    fiHome: <FiHome/>,
+    fiHome: <FiHome />,
     fiuser: <FiUser />,
     fiusers: <FiUsers />,
     fitruck: <FiTruck />,
