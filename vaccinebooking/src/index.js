@@ -6,22 +6,10 @@ import App from './App';
 //styles
 import './index.css';
 
-// redux
-// import store from './redux/store';
-// import { Provider } from 'react-redux';
-
-//api
-
-
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  // <React.StrictMode>
-  // <Provider store={store}>
     <BrowserRouter>
       <App />
     </BrowserRouter>
-  // </Provider>
-  // </React.StrictMode>
 );
 

@@ -10,6 +10,7 @@ import KelolaAdmin from "./pages/KelolaAdmin/KelolaAdmin";
 import JadwalVaksinasi from "./pages/KelolaJadwal/JadwalVaksinasi";
 // import ViewUser from './domain/veiwUser/ViewUser';
 // import Login from './pages/Login/Login';
+import ArtikelTerbaru from "./pages/ArtikelTerbaru/ArtikelTerbaru";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
       <Route path='/login' element={<Login/>}/>
       <Route path="/KelolaJadwal" element={<KelolaJadwal />} />
       <Route path="/KelolaAdmin" element={<KelolaAdmin />} />
+      <Route path="/ArtikelTerbaru" element={<ArtikelTerbaru />} />
       {/* <Route path='/login' element={<ViewUser/>}/> */}
     </Routes>
   );
