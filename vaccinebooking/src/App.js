@@ -10,8 +10,8 @@ import KelolaAdmin from "./pages/KelolaAdmin/KelolaAdmin";
 function App() {
   return (
     <Routes>
-      <Route path="/login" element={<Login />} />
-      <Route path="/" element={<Dashboard />} />
+      <Route path="/login" element={<Dashboard />} />
+      <Route path="/" element={<Login />} />
       <Route path="/KelolaBerita" element={<KelolaBerita />} />
       <Route path="/DataBooking" element={<DataBooking />} />
       <Route path="/KelolaJadwal" element={<KelolaJadwal />} />
