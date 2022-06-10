@@ -8,6 +8,7 @@ import KelolaPengguna from "./pages/KelolaPengguna/KelolaPengguna";
 import KelolaJadwal from "./pages/KelolaJadwal/KelolaJadwal";
 import KelolaAdmin from "./pages/KelolaAdmin/KelolaAdmin";
 import JadwalVaksinasi from "./pages/KelolaJadwal/JadwalVaksinasi";
+import AddAdmin from "./pages/KelolaAdmin/AddAdmin";
 // import ViewUser from './domain/veiwUser/ViewUser';
 // import Login from './pages/Login/Login';
 
@@ -23,6 +24,8 @@ function App() {
       <Route path='/login' element={<Login/>}/>
       <Route path="/KelolaJadwal" element={<KelolaJadwal />} />
       <Route path="/KelolaAdmin" element={<KelolaAdmin />} />
+      <Route path="/AddAdmin" element={<AddAdmin />} />
+
       {/* <Route path='/login' element={<ViewUser/>}/> */}
     </Routes>
   );
