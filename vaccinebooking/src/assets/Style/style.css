@@ -97,41 +97,46 @@
 
 /* login */
 .card {
-  width: 743.61px;
-  height: 519px;
+  width: 484px;
+  height: 423px;
   align-items: center;
-
+  border: 2px solid #45C2D6;
+  box-shadow: 0px 9px 26px rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  margin-top: 13.29px;
 }
 
 .head {
-  margin-top: 215px !important;
-  margin-bottom: 215px !important;
+  margin-top: 165px !important;
+  margin-bottom: 165px !important;
+  background: #FFFFFF;
 }
-
 
 .t-h2 h2 {
   margin: 0;
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 400;
-  font-size: 14px;
-  line-height: 21px;
-  color: #8E8B8B;
+  font-size: 12px;
+  line-height: 18px;
   text-align: center;
+  color: #4E7EA7;
 }
 
 .t-h2 {
-  margin-top: 60px;
-  margin-bottom: 32px;
+  margin-top: 46.5px;
+  margin-bottom: 38px;
 }
 
 
 
 .input-user input {
-  width: 425px;
-  height: 51px;
+  width: 354px;
+  height: 42px;
   border-radius: 10px;
-  border: 1px solid #C2C2C2
+  border: 1px solid #C2C2C2;
+  border-radius: 10px;
+  transform: matrix(-1, 0, 0, 1, 0, 0);
 }
 
 
@@ -144,13 +149,13 @@
 }
 
 .input-password {
-  margin-bottom: 40px;
+  margin-bottom: 18px;
+  color: #4E7EA7
 }
 
 .input-password input {
-  width: 400px;
-  height: 48px;
-  border: 1px solid #C2C2C2;
+  width: 330px;
+  height: 38px;
   border-radius: 10px;
   border: none;
 
@@ -162,7 +167,7 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  color: #8E8B8B;
+  color: #4E7EA7;
   margin-bottom: 9px;
 
 }
@@ -173,55 +178,59 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  color: #8E8B8B;
-  margin-top: 40px;
+  margin-top: 19px;
   margin-bottom: 9px !important;
 }
 
 
 
 .btn {
-  margin-bottom: 72px;
+  margin-bottom: 46.5px;
   padding: 0;
-  color: #FFFFFF
+
 }
 
 .btn button {
-  width: 426px;
-  height: 47px;
-  background: #AAA9A9;
+  width: 354px;
+  height: 46px;
   border-radius: 10px;
   border: none;
   padding: 0;
+  background: #7BD9E8;
   color: #FFFFFF;
+
 }
 
 .brd {
   display: inline-flex;
-  width: 425px;
-  height: 51px;
+  width: 354px;
+  height: 42px;
   border: 1px solid #C2C2C2;
   border-radius: 10px;
+
 }
 
 .brd svg {
   width: 30x;
   height: 30px;
-  margin-top: 10px;
+  margin-top: 7px;
   cursor: pointer;
 }
 
 .lupa-pass {
-  margin-left: 350px;
+
   margin-top: 8px
 }
 
 .lupa-pass p {
+  width: 81px;
+  height: 15px;
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 400;
   font-size: 10px;
-  line-height: 24px;
-  cursor: pointer;
-  margin: 0px !important
+  line-height: 15px;
+  margin: 0px !important;
+  justify-content: end;
+  display: flex;
 }

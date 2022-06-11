@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { Button, Col, Container, Form, Row } from 'react-bootstrap'
 import { AiFillEye } from 'react-icons/ai';
+import Logo from "../assets/img/logo.png"
 // import {Button, Col, Container, Form, Row} from 'react-bootstrap'
 
 
@@ -47,9 +48,13 @@ const Login = () => {
       <div className="container">
         <div className="row  ">
           <div className="col-md-12 offset-md-3 m-0 d-flex row justify-content-center head ">
-            <h2 className=" text-center  text-dark  ">LOGO</h2>
+            <div className='d-flex justify-content-center'>
+              <img src={Logo} alt="" />
 
-            <div className="card my-5 ">
+            </div>
+
+
+            <div className="card  ">
 
               <div className="t-h2  ">
                 <h2>Mohon isi dengan detail di bawah </h2>
@@ -70,7 +75,7 @@ const Login = () => {
                     <AiFillEye />
                   </div>
                 </div>
-                <div className="lupa-pass ">
+                <div className="lupa-pass d-flex justify-content-end ">
                   <p className="m-0">Lupa password ?</p>
                 </div>
               </div>
