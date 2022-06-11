@@ -46,8 +46,8 @@ const Login = () => {
       </div> */}
       <div className="container">
         <div className="row  ">
-          <div className="col-md-12 offset-md-3 m-0 d-flex row justify-content-center body ">
-            <h2 className=" text-center head text-dark  ">LOGO</h2>
+          <div className="col-md-12 offset-md-3 m-0 d-flex row justify-content-center head ">
+            <h2 className=" text-center  text-dark  ">LOGO</h2>
 
             <div className="card my-5 ">
 
