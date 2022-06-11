@@ -16,8 +16,8 @@ import ArtikelTerbaru from "./pages/ArtikelTerbaru/ArtikelTerbaru";
 function App() {
   return (
     <Routes>
-      <Route path="/login" element={<Login />} />
       <Route path="/" element={<Dashboard />} />
+      <Route path="/login" element={<Login />} />
       <Route path="/KelolaBerita" element={<KelolaBerita />} />
       <Route path="/DataBooking" element={<DataBooking />} />
       <Route path="/KelolaPengguna" element={<KelolaPengguna />} />
