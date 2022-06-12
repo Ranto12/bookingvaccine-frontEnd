@@ -25,10 +25,10 @@ const TablePengguna = ({key, nama, nohp, NIK, Number}) => {
               {NIK}
             </div>
       <div className="col-1 d-flex  ">
-        <IconButton aria-label="Check">
+        <IconButton aria-label="Check" data-bs-toggle="tooltip" data-bs-placement="top" title="edit">
           <RiPencilFill />
         </IconButton>
-        <IconButton aria-label="Cancel">
+        <IconButton aria-label="Cancel" data-bs-toggle="tooltip" data-bs-placement="top" title="remove">
           <MdDelete />
         </IconButton>
       </div>

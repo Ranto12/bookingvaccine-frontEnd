@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react'
 
+// import component
+import Select from '../../component/PageComponent/Select';
+
 //style 
 import '../../assets/Style/style.css'
 import Sidebar from '../../component/Sidebar/Sidebar';
@@ -75,7 +78,7 @@ console.log(dataPengguna)
                 Kelola Data
               </h1>
               <h1 className='fz-Title'>
-                Pengguna
+                Pengguna 
               </h1>
             </div>
             
@@ -87,23 +90,7 @@ console.log(dataPengguna)
                 <p className='Fz-16'>Total</p>
               </div>
               <div className='ms-2 Select15'>
-                <select name="JumlahPengguna" id="JumlahPengguna">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-                <option value="11">11</option>
-                <option value="12">12</option>
-                <option value="13">13</option>
-                <option value="14">14</option>
-                <option value="15">15</option>
-                </select>
+                <Select onChangeInput={onChangeInput}/> 
               </div>
               <div className='d-flex'>
                 <div>

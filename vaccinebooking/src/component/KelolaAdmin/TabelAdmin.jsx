@@ -14,10 +14,10 @@ const TabelAdmin = ({Number, nama, hp, alamat, email}) => {
             <div className="col-3 ps-2">{email}</div>
             <div className="col-1 d-flex justify-content-center">
                 <IconButton className="me-2">
-                    <RiPencilFill data-bs-toggle="tooltip" data-bs-placement="" title="edit" />
+                    <RiPencilFill data-bs-toggle="tooltip" data-bs-placement="top" title="edit" />
                 </IconButton>
                 <IconButton className="me-2">
-                    <RiFileSearchFill data-bs-toggle="tooltip" data-bs-placement="" title="view" />
+                    <RiFileSearchFill data-bs-toggle="tooltip" data-bs-placement="top" title="view" />
                 </IconButton>
             </div>
         </div>

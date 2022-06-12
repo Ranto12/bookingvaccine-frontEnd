@@ -11,6 +11,10 @@ import './../../assets/Style/style.css'
 // component
 import Sidebar from '../../component/Sidebar/Sidebar';
 import LengthPenguna from '../../component/Dasboard/APIrequired/Length'
+import LengthAdmin from '../../component/Dasboard/APIrequired/LengtAdmin'
+import LengthKelurahan from '../../component/Dasboard/APIrequired/LengthKelurahan'
+import LengthPuskesmas from '../../component/Dasboard/APIrequired/LengthPuskesmas'
+import LengthRSUD from '../../component/Dasboard/APIrequired/LengthRSUD'
 
 const Dashboard = () => {
     // initial state and valiables
@@ -89,7 +93,7 @@ const Dashboard = () => {
                                 <div style={{fontSize:"24px"}}>Total Admin</div>
                             </div>
                         <div style={{fontSize:"64px" , marginTop:"54px", marginBottom:"24px"}}>
-                            100
+                            <LengthAdmin/>
                         </div>
                         <div style={{fontSize:"35px"}}>
                             Pengelola
@@ -150,7 +154,7 @@ const Dashboard = () => {
                         <div className='d-flex mt-5'>
                             <div className='card background-color-card-rsud' style={{width:"194.89px", height:"192px", marginRight:"32.5px", alignItems:"center" , justifyContent:"center"}}>
                                 <div style={{fontSize:"64px"}}>
-                                    10
+                                    <LengthRSUD/>
                                 </div>
                                 <div style={{fontSize:"24px"}}>
                                     RSUD
@@ -158,7 +162,7 @@ const Dashboard = () => {
                             </div>
                             <div className='card background-color-card-rsud' style={{width:"194.89px", height:"192px", marginRight:"32.5px", alignItems:"center" , justifyContent:"center"}}>
                                 <div style={{fontSize:"64px"}}>
-                                    10
+                                    <LengthPuskesmas/>
                                 </div>
                                 <div style={{fontSize:"24px"}}>
                                     PUSKESMAS
@@ -189,7 +193,7 @@ const Dashboard = () => {
                                     </div>
                                 </div>
                                 <div style={{fontSize:"64px" , marginTop:"54px", marginBottom:"24px"}}>
-                                    100
+                                    <LengthKelurahan/>
                                 </div>
                                 <div style={{fontSize:"35px"}}>
                                     Kelurahan

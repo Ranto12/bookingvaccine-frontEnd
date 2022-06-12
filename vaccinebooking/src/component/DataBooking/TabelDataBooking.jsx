@@ -15,11 +15,11 @@ const TablePengguna = ({key, nama, nik, jenisVaccine, Number}) => {
       <div className="col-2">{nik}</div>
       <div className="col-4">{jenisVaccine}</div>
       <div className="col-1 d-flex justify-content-center">
-        <IconButton aria-label="Check">
+        <IconButton data-bs-toggle="tooltip" data-bs-placement="top" title="acc" >
           <CheckCircleIcon />
-        </IconButton>
-        <IconButton aria-label="Cancel">
-          <CancelIcon />
+        </IconButton> 
+        <IconButton data-bs-toggle="tooltip" data-bs-placement="top" title="remove" >
+          <CancelIcon  />
         </IconButton>
       </div>
     </div>

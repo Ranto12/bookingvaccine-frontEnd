@@ -322,6 +322,2737 @@
       "jenisVaccine": "sinovac"
     }
   ],
+  "kelurahan": [
+    {
+      "id": 3214010006,
+      "id_kecamatan": "3214010",
+      "nama": "Jatimekar"
+    },
+    {
+      "id": 3214010007,
+      "id_kecamatan": "3214010",
+      "nama": "Cikaobandung"
+    },
+    {
+      "id": 3214010008,
+      "id_kecamatan": "3214010",
+      "nama": "Jatiluhur"
+    },
+    {
+      "id": 3214010009,
+      "id_kecamatan": "3214010",
+      "nama": "Cilegong"
+    },
+    {
+      "id": 3214010010,
+      "id_kecamatan": "3214010",
+      "nama": "Kembangkuning"
+    },
+    {
+      "id": 3214010011,
+      "id_kecamatan": "3214010",
+      "nama": "Cibinong"
+    },
+    {
+      "id": 3214010015,
+      "id_kecamatan": "3214010",
+      "nama": "Parakanlima"
+    },
+    {
+      "id": 3214010016,
+      "id_kecamatan": "3214010",
+      "nama": "Cisalada"
+    },
+    {
+      "id": 3214010017,
+      "id_kecamatan": "3214010",
+      "nama": "Mekargalih"
+    }
+  ],
+  "puskesmas": [
+    {
+    "wilayah": "Jakarta Pusat",
+    "nama_puskesmas": "Kec. Tanah Abang",
+    "alamat_puskesmas": "Jl. Danau Toba Blok A No.1 RT 020/04"
+    },
+    {
+    "wilayah": "Jakarta Pusat",
+    "nama_puskesmas": "Kel. Kampung Bali",
+    "alamat_puskesmas": "Jl. Kamp. Bali Gg. 23 RT 007/08"
+    },
+    {
+    "wilayah": "Jakarta Pusat",
+    "nama_puskesmas": "Kel. Petamburan",
+    "alamat_puskesmas": "Jl. Petamburan IV RT012/04"
+    },
+    {
+    "wilayah": "Jakarta Pusat",
+    "nama_puskesmas": "Kel. Karet Tengsin",
+    "alamat_puskesmas": "Jl. Karet Pasar Baru Barat VII/19 RT 009/03"
+    },
+    {
+    "wilayah": "Jakarta Pusat",
+    "nama_puskesmas": "Kel. Gelora",
+    "alamat_puskesmas": "Jl. Gelora No.2, RT.1/RW.3"
+    },
+    {
+    "wilayah": "Jakarta Pusat",
+    "nama_puskesmas": "Kel. Kebon Melati",
+    "alamat_puskesmas": "Jl. H Sabeni Raya Rt 01/012"
+    },
+    {
+    "wilayah": "Jakarta Pusat",
+    "nama_puskesmas": "Kec. Menteng",
+    "alamat_puskesmas": "Jl. Pegangsaan Barat No. 14 RT 16/05"
+    },
+    {
+    "wilayah": "Jakarta Pusat",
+    "nama_puskesmas": "Kel. Kebon Sirih",
+    "alamat_puskesmas": "Jl H Agus Salim No 19 A"
+    },
+    {
+    "wilayah": "Jakarta Pusat",
+    "nama_puskesmas": "Kel. Pegangsaan",
+    "alamat_puskesmas": "Jl. Tambak No. 28"
+    },
+    {
+    "wilayah": "Jakarta Pusat",
+    "nama_puskesmas": "Kec. Senen",
+    "alamat_puskesmas": "Jl Kramat VII / 31"
+    },
+    {
+    "wilayah": "Jakarta Pusat",
+    "nama_puskesmas": "Kel. Kramat",
+    "alamat_puskesmas": "Jl. Kramat Sentiong Ujung I / 33"
+    },
+    {
+    "wilayah": "Jakarta Pusat",
+    "nama_puskesmas": "Kel. Kenari",
+    "alamat_puskesmas": "Jl. Jamrut No 22 RT 07/02"
+    },
+    {
+    "wilayah": "Jakarta Pusat",
+    "nama_puskesmas": "Kel. Paseban",
+    "alamat_puskesmas": "Jl. Kramar Sawah VII"
+    },
+    {
+    "wilayah": "Jakarta Pusat",
+    "nama_puskesmas": "Kel. Kwitang",
+    "alamat_puskesmas": "Jl. Kwitang Raya I C"
+    },
+    {
+    "wilayah": "Jakarta Pusat",
+    "nama_puskesmas": "Kel. Bungur",
+    "alamat_puskesmas": "Jl. Bungur Besar IX No.2"
+    },
+    {
+    "wilayah": "Jakarta Pusat",
+    "nama_puskesmas": "Kec. Johar Baru",
+    "alamat_puskesmas": "Jl. Mardani Raya No. 36 RT 02/05"
+    },
+    {
+    "wilayah": "Jakarta Pusat",
+    "nama_puskesmas": "Kel. Johar Baru II",
+    "alamat_puskesmas": "Jl. Percetakan Negara II No 1 RT 011/06"
+    },
+    {
+    "wilayah": "Jakarta Pusat",
+    "nama_puskesmas": "Kel.Johar Baru III",
+    "alamat_puskesmas": "Jl. Kramat Jaya Baru Blok E No. 6 RT 13 RW 01"
+    },
+    {
+    "wilayah": "Jakarta Pusat",
+    "nama_puskesmas": "Kel. Tanah Tinggi",
+    "alamat_puskesmas": "Jl. Tanah Tinggi VII RT 006/06"
+    },
+    {
+    "wilayah": "Jakarta Pusat",
+    "nama_puskesmas": "Kel. Galur",
+    "alamat_puskesmas": "Jl. Rw. Tengah IX, RT.10/RW.6"
+    },
+    {
+    "wilayah": "Jakarta Pusat",
+    "nama_puskesmas": "Kel. Kampung Rawa",
+    "alamat_puskesmas": "Jalan Kampung Rawa Selatan No. 5"
+    },
+    {
+    "wilayah": "Jakarta Pusat",
+    "nama_puskesmas": "Kec. Cempaka Putih",
+    "alamat_puskesmas": "Jl. Pramuka Sari I Rt 014 Rw 08"
+    },
+    {
+    "wilayah": "Jakarta Pusat",
+    "nama_puskesmas": "Kel. Rawasari",
+    "alamat_puskesmas": "Jl. Pramuka Sari I No.1, RT.10/RW.8"
+    },
+    {
+    "wilayah": "Jakarta Pusat",
+    "nama_puskesmas": "Kel. Cempaka Putih Timur",
+    "alamat_puskesmas": "Jl. Cempaka Putih Tengah XVII Rt 08/05"
+    },
+    {
+    "wilayah": "Jakarta Pusat",
+    "nama_puskesmas": "Kel. Cempaka Putih Barat II",
+    "alamat_puskesmas": "Jl. Cempaka Putih Barat 11 Blok D No. 10 A"
+    },
+    {
+    "wilayah": "Jakarta Pusat",
+    "nama_puskesmas": "Kec. Kemayoran",
+    "alamat_puskesmas": "Jl. Harapan Mulya RT 004/06"
+    },
+    {
+    "wilayah": "Jakarta Pusat",
+    "nama_puskesmas": "Kel. Serdang",
+    "alamat_puskesmas": "Jl. Eka V RT 09/03"
+    },
+    {
+    "wilayah": "Jakarta Pusat",
+    "nama_puskesmas": "Kel. Kebon Kosong I",
+    "alamat_puskesmas": "Jl. pelita III RT 008/08"
+    },
+    {
+    "wilayah": "Jakarta Pusat",
+    "nama_puskesmas": "Kel. Kebon Kosong II",
+    "alamat_puskesmas": "Jl. Kemayoran Gempol No. 28 RT 006/06"
+    },
+    {
+    "wilayah": "Jakarta Pusat",
+    "nama_puskesmas": "Kel. Utan Panjang",
+    "alamat_puskesmas": "Jl. Bendungan Jago RT 009/01"
+    },
+    {
+    "wilayah": "Jakarta Pusat",
+    "nama_puskesmas": "Kel. Cempaka Baru",
+    "alamat_puskesmas": "Jl. Cempaka Baru Tengah I RT 005/06"
+    },
+    {
+    "wilayah": "Jakarta Pusat",
+    "nama_puskesmas": "Kel. Sumur Batu",
+    "alamat_puskesmas": "Jl. Sumur Batu Raya RT 007/01"
+    },
+    {
+    "wilayah": "Jakarta Pusat",
+    "nama_puskesmas": "Kec. Sawah Besar",
+    "alamat_puskesmas": "Jl. Mangga Dua Dalam K No.13 RT 001/010"
+    },
+    {
+    "wilayah": "Jakarta Pusat",
+    "nama_puskesmas": "Kel. Pasar Baru",
+    "alamat_puskesmas": "Jl. Krekot Bunder Raya No 10"
+    },
+    {
+    "wilayah": "Jakarta Pusat",
+    "nama_puskesmas": "Kel. Kartini",
+    "alamat_puskesmas": "Jl. Kartini VIII Kelurahan Kartini Kec Sawah Besar"
+    },
+    {
+    "wilayah": "Jakarta Pusat",
+    "nama_puskesmas": "Kel. Gunung Sahari Utara",
+    "alamat_puskesmas": "Jl. Gunung Sahari VII A no 8 Kel Gunung Sahari Utara Kec Sawah Besar"
+    },
+    {
+    "wilayah": "Jakarta Pusat",
+    "nama_puskesmas": "Kec. Gambir",
+    "alamat_puskesmas": "Jl. Tanah Abang I / 10"
+    },
+    {
+    "wilayah": "Jakarta Pusat",
+    "nama_puskesmas": "Kel. Petojo Selatan",
+    "alamat_puskesmas": "Jl. Taman Tanah Abang III RT 002/04"
+    },
+    {
+    "wilayah": "Jakarta Pusat",
+    "nama_puskesmas": "Kel. Duri Pulo",
+    "alamat_puskesmas": "Jl. KH Zainul Arifin no 71 kel Duri Pulo "
+    },
+    {
+    "wilayah": "Jakarta Pusat",
+    "nama_puskesmas": "Kel. Petojo Utara",
+    "alamat_puskesmas": "Jl. Petojo Selatan II No 2 Kel Petojo Utara"
+    },
+    {
+    "wilayah": "Jakarta Pusat",
+    "nama_puskesmas": "Kel. Kebon Kelapa",
+    "alamat_puskesmas": "Jl. Batu Tulis No 13 Kel Kebon Kelapa "
+    },
+    {
+    "wilayah": "Jakarta Pusat",
+    "nama_puskesmas": "Kel. Cideng",
+    "alamat_puskesmas": "Jl. Kyai Caringin Blok A no 6 Kel Cideng "
+    },
+    {
+    "wilayah": "Jakarta Utara",
+    "nama_puskesmas": "KEC. Penjaringan",
+    "alamat_puskesmas": "Jl. Teluk Gong Raya No. 2, Rt.08/010, Penjagalan, Penjaringan"
+    },
+    {
+    "wilayah": "Jakarta Utara",
+    "nama_puskesmas": "KEL. Pejagalan",
+    "alamat_puskesmas": "Jl.Kura No 2 kel Pejagalan"
+    },
+    {
+    "wilayah": "Jakarta Utara",
+    "nama_puskesmas": "KEL. penjaringan I",
+    "alamat_puskesmas": "Jl. Pluit Raya Selatan No. 2 RT 07/07"
+    },
+    {
+    "wilayah": "Jakarta Utara",
+    "nama_puskesmas": "KEL. Penjaringan II",
+    "alamat_puskesmas": "Jl.Pasar Royal Rt.0016/016"
+    },
+    {
+    "wilayah": "Jakarta Utara",
+    "nama_puskesmas": "KEL. Pluit",
+    "alamat_puskesmas": "Jl. Muara Angke No. 1 RT 008/01 Kel. Pluit"
+    },
+    {
+    "wilayah": "Jakarta Utara",
+    "nama_puskesmas": "KEL. Kapuk Muara",
+    "alamat_puskesmas": "JL.SMP 122 No.2 Rt.001/03 Kapuk Muara"
+    },
+    {
+    "wilayah": "Jakarta Utara",
+    "nama_puskesmas": "KEL. Kamal Muara",
+    "alamat_puskesmas": "Jl. Kamal Muara Rt 007/01 Kel. Kamal Muara"
+    },
+    {
+    "wilayah": "Jakarta Utara",
+    "nama_puskesmas": "KEC. Pademangan",
+    "alamat_puskesmas": "Jl. Pademangan 2 gang 22 No.2, RT 02/02"
+    },
+    {
+    "wilayah": "Jakarta Utara",
+    "nama_puskesmas": "KEL. Pademangan Barat I",
+    "alamat_puskesmas": "Jl. Ampera Besar Raya RT 002/06 No 11"
+    },
+    {
+    "wilayah": "Jakarta Utara",
+    "nama_puskesmas": "KEL. Pademangan Barat II",
+    "alamat_puskesmas": "Jl. Waspada Raya B II RT 001/015"
+    },
+    {
+    "wilayah": "Jakarta Utara",
+    "nama_puskesmas": "KEL. Ancol",
+    "alamat_puskesmas": "Jl. Ancol Barat VI RT 006/01"
+    },
+    {
+    "wilayah": "Jakarta Utara",
+    "nama_puskesmas": "KEC. Tanjung Priok",
+    "alamat_puskesmas": "Jl. Papanggo II / B No.69"
+    },
+    {
+    "wilayah": "Jakarta Utara",
+    "nama_puskesmas": "KEL. Papanggo II",
+    "alamat_puskesmas": "Jl. Bisma Timur II (Koml Kel Papanggo)"
+    },
+    {
+    "wilayah": "Jakarta Utara",
+    "nama_puskesmas": "KEL. Kebon Bawang I",
+    "alamat_puskesmas": "Jl. Swasembada Barat VII No. 2"
+    },
+    {
+    "wilayah": "Jakarta Utara",
+    "nama_puskesmas": "KEL. Kebon Bawang II",
+    "alamat_puskesmas": "Jl.Swasembada Timur VI/1 Rt.007/010 No.19"
+    },
+    {
+    "wilayah": "Jakarta Utara",
+    "nama_puskesmas": "Kel. Kebon Bawang III",
+    "alamat_puskesmas": "Jl. Swasembada Barat II NO. 83 RT 002/09"
+    },
+    {
+    "wilayah": "Jakarta Utara",
+    "nama_puskesmas": "KEL. Warakas",
+    "alamat_puskesmas": "Jl. Warakas IX gang 13 /22 RT 007/011"
+    },
+    {
+    "wilayah": "Jakarta Utara",
+    "nama_puskesmas": "KEL. Sungai Bambu",
+    "alamat_puskesmas": "Jl. Sungai Bambu IV/24 RT.005/08"
+    },
+    {
+    "wilayah": "Jakarta Utara",
+    "nama_puskesmas": "KEL. Tanjung Priok",
+    "alamat_puskesmas": "Jl. Bahari II / 65 RT 001/01"
+    },
+    {
+    "wilayah": "Jakarta Utara",
+    "nama_puskesmas": "KEL. Sunter Agung I",
+    "alamat_puskesmas": "Jl. Bambu Kuning No. 6"
+    },
+    {
+    "wilayah": "Jakarta Utara",
+    "nama_puskesmas": "KEL. Sunter Agung II",
+    "alamat_puskesmas": "Jl. Agung Barat XXV /1 Blok B 22"
+    },
+    {
+    "wilayah": "Jakarta Utara",
+    "nama_puskesmas": "KEL. Sunter Agung III",
+    "alamat_puskesmas": "Jl. Taman NYiur Komp.BI RT.003/015"
+    },
+    {
+    "wilayah": "Jakarta Utara",
+    "nama_puskesmas": "KEL. Sunter Jaya I",
+    "alamat_puskesmas": "Jl. H Amsir "
+    },
+    {
+    "wilayah": "Jakarta Utara",
+    "nama_puskesmas": "KEL. Sunter Jaya II",
+    "alamat_puskesmas": "Jl.Kebon Sereh Rt.0017/07"
+    },
+    {
+    "wilayah": "Jakarta Utara",
+    "nama_puskesmas": "KEC. Koja",
+    "alamat_puskesmas": "Jl. Mahoni Selatan No.1"
+    },
+    {
+    "wilayah": "Jakarta Utara",
+    "nama_puskesmas": "KEL. Tugu Utara III",
+    "alamat_puskesmas": "Jl Kramat Jaya Blok R gg VII rt 001/018"
+    },
+    {
+    "wilayah": "Jakarta Utara",
+    "nama_puskesmas": "KEL. Koja",
+    "alamat_puskesmas": "Jl. Deli Lorong 28 No. 2"
+    },
+    {
+    "wilayah": "Jakarta Utara",
+    "nama_puskesmas": "KEL. Rawa Badak Utara I",
+    "alamat_puskesmas": "Jl.Rawa Badak Utara Gg 11 No.37"
+    },
+    {
+    "wilayah": "Jakarta Utara",
+    "nama_puskesmas": "KEL. Rawa Badak Utara II",
+    "alamat_puskesmas": "Jl. Rawa Binangun I RT 08/ RW 08"
+    },
+    {
+    "wilayah": "Jakarta Utara",
+    "nama_puskesmas": "KEL. Tugu Selatan",
+    "alamat_puskesmas": "Jl. H. Romli Rt 1 /05"
+    },
+    {
+    "wilayah": "Jakarta Utara",
+    "nama_puskesmas": "KEL. Lagoa",
+    "alamat_puskesmas": "Jl. Magga No.1 RT 001/09"
+    },
+    {
+    "wilayah": "Jakarta Utara",
+    "nama_puskesmas": "KEL. Rawa Badak Selatan",
+    "alamat_puskesmas": "Jalan Alur Laut NO 1A rt 008 Rw 05"
+    },
+    {
+    "wilayah": "Jakarta Utara",
+    "nama_puskesmas": "KEC. Kelapa Gading",
+    "alamat_puskesmas": "Jl Pelepah Elok Blok HF no 7"
+    },
+    {
+    "wilayah": "Jakarta Utara",
+    "nama_puskesmas": "KEL. Kelapa Gading Barat",
+    "alamat_puskesmas": null
+    },
+    {
+    "wilayah": "Jakarta Utara",
+    "nama_puskesmas": "KEL. Kelapa Gading Timur I",
+    "alamat_puskesmas": "JL. Kemenkes Komp Perdagangan"
+    },
+    {
+    "wilayah": "Jakarta Utara",
+    "nama_puskesmas": "KEL. Kelapa Gading Timur II",
+    "alamat_puskesmas": "Jl. Merah Jambu Blok EJ/22 RT 009/ RW 09"
+    },
+    {
+    "wilayah": "Jakarta Utara",
+    "nama_puskesmas": "KEL. Pegangsaan Dua A",
+    "alamat_puskesmas": "Jl. Pegangsaan / H.Oyar RT 005/ Rw 01"
+    },
+    {
+    "wilayah": "Jakarta Utara",
+    "nama_puskesmas": "KEL. Pegangsaan Dua B",
+    "alamat_puskesmas": "Jl. Gandang Rt 002/07"
+    },
+    {
+    "wilayah": "Jakarta Utara",
+    "nama_puskesmas": "KEC. Cilincing",
+    "alamat_puskesmas": "Jl. Sungai Landak No.26, RT 11/ RW 08, Kel. Cilincing"
+    },
+    {
+    "wilayah": "Jakarta Utara",
+    "nama_puskesmas": "KEL. Cilincing I",
+    "alamat_puskesmas": "Jl. Pasar Pagi No. 11A"
+    },
+    {
+    "wilayah": "Jakarta Utara",
+    "nama_puskesmas": "KEL. Semper Timur",
+    "alamat_puskesmas": "jl. Alur laut GG K2 rt 09/05"
+    },
+    {
+    "wilayah": "Jakarta Utara",
+    "nama_puskesmas": "KEL. Kalibaru",
+    "alamat_puskesmas": "Jl.Kosambi I No. 60"
+    },
+    {
+    "wilayah": "Jakarta Utara",
+    "nama_puskesmas": "KEL. Semper Barat I",
+    "alamat_puskesmas": "Jl. Durian 49"
+    },
+    {
+    "wilayah": "Jakarta Utara",
+    "nama_puskesmas": "KEL. Semper Barat II",
+    "alamat_puskesmas": "Jl. Tipar No. 18 RT 01"
+    },
+    {
+    "wilayah": "Jakarta Utara",
+    "nama_puskesmas": "KEL. Semper Barat III",
+    "alamat_puskesmas": " Jl. Pepaya V Blok S RT 06/016"
+    },
+    {
+    "wilayah": "Jakarta Utara",
+    "nama_puskesmas": "KEL. Marunda",
+    "alamat_puskesmas": "Jl. Marunda Baru No. 5 RT 009/02"
+    },
+    {
+    "wilayah": "Jakarta Utara",
+    "nama_puskesmas": "KEL. Sukapura",
+    "alamat_puskesmas": "Jl. Tipar Cakung"
+    },
+    {
+    "wilayah": "Jakarta Utara",
+    "nama_puskesmas": "KEL. Rorotan",
+    "alamat_puskesmas": "Jl. Manunggal Juang 19 No. 4"
+    },
+    {
+    "wilayah": "Jakarta Utara",
+    "nama_puskesmas": "Poskes Rusun Marunda",
+    "alamat_puskesmas": "JL. MARUNDA CLUSTER B BLOK 8"
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEC. Kembangan",
+    "alamat_puskesmas": "Jl.Raya Kembangan Rt.008/02 No.52"
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEL. Meruya Utara",
+    "alamat_puskesmas": "Jl.Meruya Utara Rt.004/02"
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEL. Meruya Selatan I",
+    "alamat_puskesmas": "JL.Meruya Selatan "
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEL. Meruya Selatan II",
+    "alamat_puskesmas": "Jl.Meruya Selatan Rt.001/01"
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEL. Joglo I",
+    "alamat_puskesmas": "Jl.Meruya Selatan Rt.02/02"
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEL. Joglo II",
+    "alamat_puskesmas": "Jl. Komp. Pemadam Kebakaran"
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEL. Srengseng",
+    "alamat_puskesmas": "Jl. Raya Srengseng RT 01/02"
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEL. Kembangan Selatan",
+    "alamat_puskesmas": "JL.Kp.Manggis"
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEC. Kebon Jeruk",
+    "alamat_puskesmas": "Jl. Raya Kebon Jeruk NO. 2 RT 09/01"
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEL. Kebon Jeruk",
+    "alamat_puskesmas": "Jl.Kampung Rawa Rt.001/02"
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEL. Kedoya Selatan",
+    "alamat_puskesmas": "Jl. Kedoya Raya No 47 RT 03/03"
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEL. Duri Kepa",
+    "alamat_puskesmas": "Jl. Angsana Raya No.1"
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEL. Sukabumi Selatan",
+    "alamat_puskesmas": "Jl. Pos Pengumben RT 08/03"
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEL. Sukabumi Utara",
+    "alamat_puskesmas": "Jl. Harum Raya RT 08/07"
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEL. Kelapa Dua",
+    "alamat_puskesmas": "Jl. Sasak III RT 01/02"
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEL. Kedoya Utara",
+    "alamat_puskesmas": "Jl. Daan Mogot Pesing Koneng RT 03/02 No. 12"
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEC. Palmerah ",
+    "alamat_puskesmas": "Jl. Palmerah Barat 120"
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEL. Palmerah I ",
+    "alamat_puskesmas": "Jl. Kembangan Pulo No. 20 RT 12 /03"
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEL. Palmerah II",
+    "alamat_puskesmas": "Jl.Kemanggisan Raya"
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEL. Jati Pulo I",
+    "alamat_puskesmas": "Jl. Waru No. 1 A"
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEL. Jati Pulo II",
+    "alamat_puskesmas": "Jl. Semangka II RT 06/07"
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEL. Kota Bambu Selatan",
+    "alamat_puskesmas": "Jl. KS. Tubun I/27"
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEL. Kota Bambu Utara",
+    "alamat_puskesmas": "Jl. Pondok Bandung RT 05/05"
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEL. Slipi I",
+    "alamat_puskesmas": "Jl. Petamburan III RT 013/01"
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEL. Slipi II",
+    "alamat_puskesmas": "Jl. K.S. Tubun IV No 140"
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEL. Kemanggisan",
+    "alamat_puskesmas": "Jl. Anggrek Garuda D / 4"
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "Kec. Grogol Petamburan",
+    "alamat_puskesmas": "Jl.TB Angke komp duta Mas"
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEL. Grogol I",
+    "alamat_puskesmas": "Jl. Nurdin Raya I No. 35"
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEL. Grogol II",
+    "alamat_puskesmas": "Jl. Rawa Bahagia I No 32 RT 07/02"
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEL. Grogol III",
+    "alamat_puskesmas": "Jl.Nurdin"
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEL. Jelambar I",
+    "alamat_puskesmas": "Jl. Satria II RT 04/04"
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEL. Jelambar II",
+    "alamat_puskesmas": "Jl.Prof DR Latumenten IV/11"
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEL. Jelambar Baru",
+    "alamat_puskesmas": "Jl. Jelambar IIir"
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEL. Tanjung Duren Selatan",
+    "alamat_puskesmas": "Jl. Tanjung Duren Timur Dalam IV No 15A RT 01/03"
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEL. Tanjung Duren Utara",
+    "alamat_puskesmas": "Jl. Tanjung Duren Utara VII B / 13"
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEL. Tomang",
+    "alamat_puskesmas": "Jl. Tomang Pulo Macan V /40"
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEC. Tambora",
+    "alamat_puskesmas": "Jl. Krendang Utara No. 4"
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEL. Pekojan I",
+    "alamat_puskesmas": "Jl. Bandengan Utara 1 No. 47 RT 05/12"
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEL. Pekojan II",
+    "alamat_puskesmas": "Jl.Pekojan II/50"
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEL. Roa Malaka",
+    "alamat_puskesmas": "Jl. Tiang Bendera III No 62 H"
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEL. Tambora",
+    "alamat_puskesmas": "Jl. Tambora I / 6 RT 03/03"
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEL. Angke",
+    "alamat_puskesmas": "Jl. Angke Indah I Gg. VII No 10 RT 14/02"
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEL. Jembatan Besi",
+    "alamat_puskesmas": "Jl. Duri baru I RT 04/04"
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEL. Duri Utara",
+    "alamat_puskesmas": "Jl.H.Syarif No.23"
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEL. Kali Anyar",
+    "alamat_puskesmas": "Jl. Kali Anyar IV No. 10"
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "Poskes Tanah Sereal",
+    "alamat_puskesmas": null
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEC. Tamansari ",
+    "alamat_puskesmas": "Jl.Blustru No.1 , Mangga Besar dan Jl.Ubi (manajemen)"
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEL. Keagungan",
+    "alamat_puskesmas": "Jl. Kebon Sayur I No. 6"
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEL. Krukut II ",
+    "alamat_puskesmas": "Jl. Keutamaan RT 02/03 "
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEL. Maphar",
+    "alamat_puskesmas": "Jl. Kebon Jeruk X No. 28 RT 07/05"
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEL. Tamansari ",
+    "alamat_puskesmas": "Jl. Mangga Besar IV P RT 09/05"
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "Kel. Pinangsia ",
+    "alamat_puskesmas": null
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEC. Cengkareng",
+    "alamat_puskesmas": "Jl. Raya Kamal RT 09/07"
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEL. Cengkareng Barat I",
+    "alamat_puskesmas": "Jl. Flamboyan no 75 RT 12/10"
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEL. Cengkareng Barat II",
+    "alamat_puskesmas": "Jl. Nuri V RT 08/06"
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEL. Rawa Buaya ",
+    "alamat_puskesmas": "Jl. Bojong Raya RT 02/04"
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEL. Cengkareng Timur",
+    "alamat_puskesmas": "Jl. Raya Nurul Kamal"
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEL. Kapuk I",
+    "alamat_puskesmas": "Jl. Kapuk Raya RT 03/011"
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEL. Kapuk II",
+    "alamat_puskesmas": "Jl. Raya Kapuk RT No 28 09/02"
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEL. Kedaung Kali Angke",
+    "alamat_puskesmas": "Jl. Kali Mati No.9A, Komp. Dep Agama RT 01/03"
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEL. Duri Kosambi I",
+    "alamat_puskesmas": "Jl. Raya Duri Kosambi no 33 RT O11/02"
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEL. Duri Kosambi II",
+    "alamat_puskesmas": "Jl. Puskesmas RT 01/07 "
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEC. Kalideres",
+    "alamat_puskesmas": "Jl. Tanjung Pura No.14 RT 06 RW 05 "
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEL. Pegadungan I",
+    "alamat_puskesmas": "Jl. Peta Utara RT 002/06"
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEL. Pegadungan II",
+    "alamat_puskesmas": "Perumahan Citra III Blok E3 Rt 5 RW 13 kel Pegadungan "
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEL. Pegadungan IV",
+    "alamat_puskesmas": "Jl. Komplek Perum Citra Garden II Blok M3 No.2"
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEL. Kalideres I ",
+    "alamat_puskesmas": "Jl. Benda Raya RT 07/01 "
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEL. Pegadungan III ",
+    "alamat_puskesmas": "Jl. Raya kumbang No 45 RT 03 / 07"
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEL. Semanan I",
+    "alamat_puskesmas": "Jl. Semanan Raya No. 37 RT 06/07"
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEL. Semanan II",
+    "alamat_puskesmas": "Jl. Semanan Raya RT 05 / 03"
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEL. Kamal",
+    "alamat_puskesmas": "Jl. Kebon 200 RT 07 / 01"
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEL. Kamal II ",
+    "alamat_puskesmas": "Jl. Kp Belakang"
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEL. Tegal Alur I",
+    "alamat_puskesmas": "Jl. Sukatani Raya RT. 06/01"
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEL. Tegal Alur II",
+    "alamat_puskesmas": "Jl. Komplek Kebersihan RT 03/05 "
+    },
+    {
+    "wilayah": "Jakarta Barat",
+    "nama_puskesmas": "KEL. Tegal Alur III",
+    "alamat_puskesmas": "Jl. Kayu Besar Dalam RT 05/05"
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "KEC. Tebet",
+    "alamat_puskesmas": "Jl.Tebet Timur II Rt.006/05"
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "Kel. Tebet Barat",
+    "alamat_puskesmas": "Jl. Tebet Barat IX / 64 RT 04/08 Jak - Sel"
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "Kel. Menteng Dalam I",
+    "alamat_puskesmas": " Jl. Rasamala I Gg Masjid RT 03/02 Menteng Dalam Tebet"
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "Kel. Kebon Baru",
+    "alamat_puskesmas": "Jl. Asem Baris Raya Gg IX RT 005/05"
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "Kel. Bukit Duri",
+    "alamat_puskesmas": "Jl. Bukit Duri Tanjakan I No 15"
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "Kel. Manggarai Selatan",
+    "alamat_puskesmas": "Jl. DR Saharjo Gg. Rambutan No. 46 RT 04/07Manggarai Selatan"
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "Kel. Manggarai",
+    "alamat_puskesmas": "Jl. DR Saharjo Gg. Swadaya No I RT 15/09 Manggarai"
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "KEC. Setiabudi",
+    "alamat_puskesmas": "Jl. Halimun No. 13 rt 08 rw 02"
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "Kel. Setiabudi",
+    "alamat_puskesmas": "Jl Setiabudi Barat VII RT 4 / 4"
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "Kel. Karet",
+    "alamat_puskesmas": "Jl. Komando Ujung RT 10/02 "
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "Kel. Pasar Manggis",
+    "alamat_puskesmas": "Jl. Menteng Granit No. 3 RT15/07"
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "Kel. Menteng Atas",
+    "alamat_puskesmas": "Jl Makmur rt 01 / 08 "
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "Kel. Karet Kuningan",
+    "alamat_puskesmas": "Jl Anggrek 1 no 7 rt 11 /01"
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "Kel. Kuningan Timur",
+    "alamat_puskesmas": "Jl guru Mughni 7 rt 01/05"
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "KEC. Mampang Prapatan",
+    "alamat_puskesmas": "Jl. Liliana Blok C 24-25, Rt.02 Rw 08, Pela Mampang "
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "Kel. Pela Mampang I",
+    "alamat_puskesmas": "Jl. Pondok Jaya III"
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "Kel. Mampang Prapatan",
+    "alamat_puskesmas": "Jl. Tegal Parang I RT 011/04"
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "Kel. Kuningan Barat",
+    "alamat_puskesmas": "Jl. Poncol Jaya No. 40 RT 011/05"
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "Kel. Tegal Parang",
+    "alamat_puskesmas": "Jl. Mampang Prapatan XI No.28 RT 07/04"
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "Kel. Bangka",
+    "alamat_puskesmas": "Jl. Kemang Dalam III RT 04/03"
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "KEC. Pasar Minggu",
+    "alamat_puskesmas": "Jl. Raya Kebagusan"
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "Kel. Kebagusan",
+    "alamat_puskesmas": "Jl.Jati Padang / Puskesmas RT 05/01"
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "Kel. Pejaten Timur",
+    "alamat_puskesmas": "Jl. Swadaya I No 28RT 006/10"
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "Kel. Pejaten Barat I",
+    "alamat_puskesmas": "Jl. Raya Pejaten No. 2 RT 01/07"
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "Kel. Pejaten Barat II",
+    "alamat_puskesmas": "Jl. Ayub GG.F RT 012/01"
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "Kel. Pejaten Barat III",
+    "alamat_puskesmas": "Jl. Siaga Raya RT 001/06 "
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "Kel. Pasar Minggu I",
+    "alamat_puskesmas": "Jl.B II Komp. AL RT 004/08"
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "Kel. Ragunan",
+    "alamat_puskesmas": "Jl. Harsono RM RT 007/04"
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "Kel. Cilandak Timur",
+    "alamat_puskesmas": "Jl. Madarasah No. 11 RT 010/004"
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "Kel. Jati Padang",
+    "alamat_puskesmas": "Jl. Mangga Besar Jati Padang"
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "KEC. Kebayoran Baru",
+    "alamat_puskesmas": "Jl. Iskandarsyah Raya No. 105"
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "Kel. Rawa Barat",
+    "alamat_puskesmas": "Jl. Gunawarman No. 73 Rt. 003/07 Kel. Rawa Brt"
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "Kel. Selong",
+    "alamat_puskesmas": "Jl. Rajasa III No. I Blok R RT 09/03 Selong Kec. Kebayoran Baru"
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "Kel. Gunung",
+    "alamat_puskesmas": "Jl. Bumi No. 42 RT 01/03"
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "Kel. Kramat Pela",
+    "alamat_puskesmas": "Jl. Gandaria Tengah V/2 Kel. Kramat Pela"
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "Kel. Petogogan",
+    "alamat_puskesmas": "Jl. Pulo Raya VIII/3 RT 02/01 Petogogan "
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "Kel. Pulo",
+    "alamat_puskesmas": "Jl. Bayem I No. 11 009/09 Blok. A Kel. Pulo"
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "Kel. Gandaria Utara I",
+    "alamat_puskesmas": "Jl. Deltasari F1 No 9 RT 004/013"
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "Kel. Gandaria Utara II",
+    "alamat_puskesmas": "Jl. Masjid Blok A Rt. 005/06"
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "Kel. Cipete Utara",
+    "alamat_puskesmas": "Jl. H Saba 05/11, Cipete Utara"
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "KEC. Kebayoran Lama",
+    "alamat_puskesmas": "Jl. Ciputat Raya No. 11 (05/01)"
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "Kel. Pondok Pinang",
+    "alamat_puskesmas": "Jl. Ciputat Raya RT 01/08"
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "Kel. Grogol Utara I",
+    "alamat_puskesmas": "Jl. Tanah Baru V RT 02/ 01"
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "Kel. Grogol Utara II",
+    "alamat_puskesmas": "Jl. Kemandoran I RT 04/05"
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "Kel. Grogol Selatan",
+    "alamat_puskesmas": "Jl. Kuburan Islam RT 10/10"
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "Kel. Cipulir I",
+    "alamat_puskesmas": "Jl. Ciledug Raya Gg. Indra No. 33 "
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "Kel. Cipulir II",
+    "alamat_puskesmas": "Jl. Kebun Mangga III No 29 RT 03/02)"
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "Kel. Kebayoran Lama Utara",
+    "alamat_puskesmas": "Jl. Delman Utama I No 35 Rt 005/011"
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "KEC. Cilandak",
+    "alamat_puskesmas": "Jl. Komp. BNI 1946 RT 04/05 No. 37"
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "Kel. Cilandak Barat",
+    "alamat_puskesmas": "Jl. Sakura No. 127 Komp.MPR RT 04/07"
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "Kel. Gandaria Selatan",
+    "alamat_puskesmas": "Jl. Poncol Raya No. 24 RT 08/01 "
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "Kel. Cipete Selatan",
+    "alamat_puskesmas": "Jl. Anggur II Komp. BRI RT 08/06"
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "Kel. Lebak Bulus",
+    "alamat_puskesmas": "Jl. Karang Tengah RT 01/03 No. 19"
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "Kel. Pondok Labu I",
+    "alamat_puskesmas": "Jl. Kelurahan Lama No. 2 RT 03/07"
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "KEC. Jagakarsa",
+    "alamat_puskesmas": "Jalan Sirsak No.2, Rt 02/02 "
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "Kel. Jagakarsa I",
+    "alamat_puskesmas": "Jl. Raya Jagakarsa I RT 003/07"
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "Kel. Jagakarsa II",
+    "alamat_puskesmas": "Jl. Jati Padang Ujung RT 012"
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "Kel. Lenteng Agung I",
+    "alamat_puskesmas": "Jl.Lenteng Agung (Lontar) RT 08/03"
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "Kel. Lenteng Agung II",
+    "alamat_puskesmas": "Jl. Gg. Camat Gabun "
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "Kel. Srengseng Sawah",
+    "alamat_puskesmas": "Jl. Batu RT 13/09"
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "Kel. Ciganjur",
+    "alamat_puskesmas": "Jl Pasir Ciganjur"
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "Kel. Tanjung Barat",
+    "alamat_puskesmas": null
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "KEC. Pancoran",
+    "alamat_puskesmas": "Jl. Potlot II / 6 Duren Tiga Jak-Sel"
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "Kel. Duren Tiga",
+    "alamat_puskesmas": "Jl. H. Mahmud Raya No.16 RT 03/04"
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "Kel. Kalibata I",
+    "alamat_puskesmas": "Jl. Empang Tiga "
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "Kel. Kalibata II",
+    "alamat_puskesmas": "Jl. Warung Jati VII RT 08/04"
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "Kel. Cikoko",
+    "alamat_puskesmas": "Jl. Cikoko Timur Raya Rt 002/01"
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "Kel. Pengadegan",
+    "alamat_puskesmas": "Jl. Pengadegan Timur Raya No 1 RT 01/01"
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "Kel. Rawajati I",
+    "alamat_puskesmas": "Jl. Comp. Zeni AD RT 02/03"
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "Kel. Rawajati II",
+    "alamat_puskesmas": "Jl. Bina Marga No 11 RT 05/07"
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "Kel. Pancoran",
+    "alamat_puskesmas": "Jl. Pancoran Barat IV "
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "KEC. Pesanggrahan",
+    "alamat_puskesmas": "Jl Palem VII rt 001 rw 009"
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "Kel. Petukangan Utara",
+    "alamat_puskesmas": "Jl. Masjid Darul Fallah RT 004/03 PetukanganUtara"
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "Kel. Pesanggrahan",
+    "alamat_puskesmas": "Jl. Wijaya Kesuma No.1 RT 09/01"
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "Kel. Petukangan Selatan",
+    "alamat_puskesmas": "Jl. Kemajuan RT 007/04 Petukangan Selatan"
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "Kel. Ulujami",
+    "alamat_puskesmas": "Jl. Kelurahan Ulujami No. 17 RT 001/04 Kec. Pasanggrahan"
+    },
+    {
+    "wilayah": "Jakarta Selatan",
+    "nama_puskesmas": "Kel. Bintaro",
+    "alamat_puskesmas": "Jl. Veteran RT 001/03 Bintaro "
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "KEC. Pasar Rebo ",
+    "alamat_puskesmas": "Jl. Raya Kali Sari RT 010/01"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel. Pekayon ",
+    "alamat_puskesmas": "Jl. Bulak Sari RT 009/06"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel. Baru ",
+    "alamat_puskesmas": "Jl. Puskesmas Kel. Baru RT 003/03"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel. Gedong ",
+    "alamat_puskesmas": "Jl. Raya Condet RT 01/03"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel. Cijantung ",
+    "alamat_puskesmas": "Jl. Pertengahan Kel. Cijantung 05/07"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel. Kalisari ",
+    "alamat_puskesmas": "Jl. Puskesmas Kel. Kalisari Rt 003/03"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "KEC. Ciracas ",
+    "alamat_puskesmas": "Jl. H. Baping RT 009/06"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel. Cibubur ",
+    "alamat_puskesmas": "Jl. Mesjid Fathul Gofur RT 010/04"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel. Rambutan ",
+    "alamat_puskesmas": "Jl. H. Jenih RT 012/01"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel. Ciracas ",
+    "alamat_puskesmas": "Jl. Raya Cantex RT 012/02 "
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel. Kelapa Dua Wetan ",
+    "alamat_puskesmas": "Jl. Raya Kelapa Dua Wetan RT 001/06"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "KEC. Cipayung ",
+    "alamat_puskesmas": "Jl Bambu Hitam Rt 10 rw 4 kel cipayung "
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel. Cipayung ",
+    "alamat_puskesmas": "Jl. Prapatan Kencur"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel. Lubang Buaya ",
+    "alamat_puskesmas": "Jl. SPG 7 RT 005/09"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel. Bambu Apus I ",
+    "alamat_puskesmas": "Jl. Mini III RT 002/03"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel. Bambu Apus II ",
+    "alamat_puskesmas": "Jl. Shinta Raya No 9"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel. Munjul ",
+    "alamat_puskesmas": "Jl. Dalang RT 012/02"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel. Ceger ",
+    "alamat_puskesmas": "Jl. Puskesmas RT 001/03 "
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel. Setu ",
+    "alamat_puskesmas": "Jl. Pukesmas No 16 RT 004/03"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel. Cilangkap ",
+    "alamat_puskesmas": "Jl. Sepakat V"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel. Pondok Ranggon I ",
+    "alamat_puskesmas": "Jl. Kramat Gancang Rt 001/04"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "KEC. Makasar ",
+    "alamat_puskesmas": "Jl. Pusdiklat DEPNAKER No 37"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel. Makasar ",
+    "alamat_puskesmas": "Jl. Masjid Al-Munir"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel. Cipinang Melayu ",
+    "alamat_puskesmas": "Jl. Budi Harapan II"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel. Kebon Pala ",
+    "alamat_puskesmas": "Jl. Kamboja "
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel. Halim P.Kusuma I ",
+    "alamat_puskesmas": "Jl. Permadi Dirgantara I"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel. Halim P.Kusuma II",
+    "alamat_puskesmas": "Jl. Golf Halim Dirgantara"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel. Pinang Ranti ",
+    "alamat_puskesmas": "Jl. Pondok Gede"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "KEC. Kramat Jati ",
+    "alamat_puskesmas": "Jl. Kerja Bakti No.26 RT 02/10"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel. Kramat Jati I ",
+    "alamat_puskesmas": "Jl.RS Soekanto"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel.Kampung Tengah",
+    "alamat_puskesmas": "Jl. Murai Rt 002/02"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel. Cawang ",
+    "alamat_puskesmas": "Jl. Mesjid Bendungan Cawang II RT 009/010"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel. Cililitan ",
+    "alamat_puskesmas": "Jl. Ciliwung Buluh Rt 005/16"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel. Batu Ampar ",
+    "alamat_puskesmas": "Jl. Batu Ampar II Wadas Rt 008/03"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel. Bale Kambang ",
+    "alamat_puskesmas": "Jl. Gardu Rt 001/02"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel. Dukuh ",
+    "alamat_puskesmas": "Jl. Puskesmas"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "KEC. Jatinegara ",
+    "alamat_puskesmas": "Jl. Matraman Raya 220"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel. Bali Mester ",
+    "alamat_puskesmas": "Jl. Wedana Dalam 006/02"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel. Kampung Melayu",
+    "alamat_puskesmas": "Jl. Kebon Pala I / 32"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel. Bidara Cina I ",
+    "alamat_puskesmas": "Jl. Otista 82"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel.Bidara Cina II ",
+    "alamat_puskesmas": "Jl. Nilam Kp. Dahlia RT 0013/011"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel. Bidara Cina III ",
+    "alamat_puskesmas": "Jl. Tanjung Lengkong RT 0017/07"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel. Cipinang Cipedak ",
+    "alamat_puskesmas": "Jl. Cipinang Cempedak IV"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel. Rawa Bunga ",
+    "alamat_puskesmas": "Jl. Jatinegara Timur IV RT 02/07"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel.Cipinang Muara",
+    "alamat_puskesmas": "Jl. BB I RT 06/15 Cipinang Muara"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel. Cipinang Besar Utara ",
+    "alamat_puskesmas": "Jl. Cipinang Pulo Maja Rt 0015/11"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel. Cipinang Besar Selatan I ",
+    "alamat_puskesmas": "Jl. Cipinang Jaya Gg RT 001/07"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel. Cipinang Besar Selatan II",
+    "alamat_puskesmas": "Jl. Pancawarga IV /4"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "KEC. Duren Sawit ",
+    "alamat_puskesmas": "Jl. H. Dogol No. 15 A (samping SMUN 71)"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel. Duret Sawit ",
+    "alamat_puskesmas": "Jl. Kelurahan Raya RT 005/02"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel.Pondok Bambu I",
+    "alamat_puskesmas": "Jl. Kesehatan 5 RT 002/05"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel. Pondok Bambu II ",
+    "alamat_puskesmas": "Jl. Cipinang Muara II RT 005/02"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel. Klender I ",
+    "alamat_puskesmas": "Jl. Pertanian Timur RT 03/02"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel. Klender II ",
+    "alamat_puskesmas": "Jl. Bulak Timur I No 8 RT 004/16"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel. Klender III ",
+    "alamat_puskesmas": "Jl. Taman Buaran Indah II"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel. Malaka Jaya ",
+    "alamat_puskesmas": "Jl. Raya Teratai Putih No 1"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel. Malaka Sari ",
+    "alamat_puskesmas": "Jl. Raya Malaka III RT 001/06"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel. Pondok Kopi I ",
+    "alamat_puskesmas": "Jl. Rawa Wadas RT 003/06 "
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel.Pondok Kopi II",
+    "alamat_puskesmas": "Jl. Robusta Raya Blok Q VIII No. 2"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel. Pondok Kelapa ",
+    "alamat_puskesmas": "Jl. H. Dogon"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "KEC. Cakung ",
+    "alamat_puskesmas": "Jl. Raya Bekasi KM 18"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel. Jatinegara ",
+    "alamat_puskesmas": "Jl. Raya Bekasi KM 17 Rt 005/03"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel. Rawa Teratai ",
+    "alamat_puskesmas": "Jl. Raya Bekasi KM 21"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel.Penggilingan I",
+    "alamat_puskesmas": "Jl. Comp. Angke Elok "
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel. Penggilingan II",
+    "alamat_puskesmas": "Jl. Komp. PIK Blok D"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel. Cakung Timur ",
+    "alamat_puskesmas": "Jl. Balai Rakyat I Rt 0013/01"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel. Cakung Barat ",
+    "alamat_puskesmas": "Jl. Raya Tipar Rt 001/07"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel. Ujung Menteng ",
+    "alamat_puskesmas": "Jl. Raya Bekasi Km 26"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel. Pulo Gebang ",
+    "alamat_puskesmas": "Jl. Stasiun KM 4 Rt 006/03"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "KEC. Pulogadung ",
+    "alamat_puskesmas": "Jl. Kayu Putih Selatan III / 2 B"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel. Kayu Putih ",
+    "alamat_puskesmas": "Jl. Plafon I RT 002/01 Kampung Ambon"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel. Jati I ",
+    "alamat_puskesmas": "Jl. Pulo Asem IV RT 001/02"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel. Jati II ",
+    "alamat_puskesmas": "Jl. Kaplongan I / 267"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel. Rawamangun ",
+    "alamat_puskesmas": "Jl. Taman Jelita Utara Ra/5 "
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel. Pisangan Timur I ",
+    "alamat_puskesmas": "Jl. Gading Raya I RT 0012/04"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel. Pisangan Timur II",
+    "alamat_puskesmas": "Jl. H. Mugeni III RT 0012/04"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel. Cipinang ",
+    "alamat_puskesmas": "Jl. El Cipinang / Masjid Baitussalam No. 19"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel. Jatinegara Kaum ",
+    "alamat_puskesmas": "Jl. TB. Badarudin RT 001/05"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "KEC. Matraman ",
+    "alamat_puskesmas": "Jl Pisangan Baru Timur no 2A, 04/09/ Kebon Kelapa Raya"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel. Utan Kayu Selatan I ",
+    "alamat_puskesmas": "Jl. Skip Ujung RT 010/07"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel. Utan Kayu Sel II ",
+    "alamat_puskesmas": "Jl. Galursari Raya RT 0013/01"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel. Kayu Manis ",
+    "alamat_puskesmas": "Jl. Kayu Manis II"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel. Utan Kayu Utara ",
+    "alamat_puskesmas": "Jl. Pegayoman Komp.Kehakiman"
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel. Pal Meriem ",
+    "alamat_puskesmas": "Jl. Palmeriem "
+    },
+    {
+    "wilayah": "Jakarta Timur",
+    "nama_puskesmas": "Kel. Kebon Manggis",
+    "alamat_puskesmas": "Jl TM Slamet Riyadi II no 1 Rt 5/ rw 4"
+    },
+    {
+    "wilayah": "Kepulauan Seribu",
+    "nama_puskesmas": "Kec. Kepulauan Seribu Utara",
+    "alamat_puskesmas": "Pulau Kelapa"
+    },
+    {
+    "wilayah": "Kepulauan Seribu",
+    "nama_puskesmas": "Kel. Pulau Panggang",
+    "alamat_puskesmas": "Kelurahan Pulau Panggang, Kec Kepulauan Seribu Utara"
+    },
+    {
+    "wilayah": "Kepulauan Seribu",
+    "nama_puskesmas": "Kel. Pulau Harapan",
+    "alamat_puskesmas": "Kelurahan Pulau Harapan, Kec Kepulauan Seribu Utara"
+    },
+    {
+    "wilayah": "Kepulauan Seribu",
+    "nama_puskesmas": "Kec. Kepulauan Seribu Selatan",
+    "alamat_puskesmas": "Dermaga Pulau Tidung, Kec Kepulauan Seribu Selatan"
+    },
+    {
+    "wilayah": "Kepulauan Seribu",
+    "nama_puskesmas": "Kel. Pulau Untung Jawa",
+    "alamat_puskesmas": "Pulau Untung Jawa "
+    },
+    {
+    "wilayah": "Kepulauan Seribu",
+    "nama_puskesmas": "Kel. Pulau Pari ",
+    "alamat_puskesmas": "Pulau Lancang, Kep Seribu Selatan"
+    },
+    {
+    "wilayah": "Kepulauan Seribu",
+    "nama_puskesmas": "Poskes Pulau Pari",
+    "alamat_puskesmas": "Pulau Pari, Kep Seribu Selatan"
+    },
+    {
+    "wilayah": "Kepulauan Seribu",
+    "nama_puskesmas": "Poskes Pulau Payung",
+    "alamat_puskesmas": "Pulau Payung, Kep Seribu Selatan"
+    }
+    ],
+    "rsud": [
+      {
+        "id": 1,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3201,
+        "nama_kabupaten_kota": "KABUPATEN BOGOR",
+        "jumlah_rumah_sakit": 9,
+        "satuan": "UNIT",
+        "tahun": 2018
+      },
+      {
+        "id": 2,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3202,
+        "nama_kabupaten_kota": "KABUPATEN SUKABUMI",
+        "jumlah_rumah_sakit": 7,
+        "satuan": "UNIT",
+        "tahun": 2018
+      },
+      {
+        "id": 3,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3203,
+        "nama_kabupaten_kota": "KABUPATEN CIANJUR",
+        "jumlah_rumah_sakit": 8,
+        "satuan": "UNIT",
+        "tahun": 2018
+      },
+      {
+        "id": 4,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3204,
+        "nama_kabupaten_kota": "KABUPATEN BANDUNG",
+        "jumlah_rumah_sakit": 9,
+        "satuan": "UNIT",
+        "tahun": 2018
+      },
+      {
+        "id": 5,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3205,
+        "nama_kabupaten_kota": "KABUPATEN GARUT",
+        "jumlah_rumah_sakit": 2,
+        "satuan": "UNIT",
+        "tahun": 2018
+      },
+      {
+        "id": 6,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3206,
+        "nama_kabupaten_kota": "KABUPATEN TASIKMALAYA",
+        "jumlah_rumah_sakit": 6,
+        "satuan": "UNIT",
+        "tahun": 2018
+      },
+      {
+        "id": 7,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3207,
+        "nama_kabupaten_kota": "KABUPATEN CIAMIS",
+        "jumlah_rumah_sakit": 7,
+        "satuan": "UNIT",
+        "tahun": 2018
+      },
+      {
+        "id": 8,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3208,
+        "nama_kabupaten_kota": "KABUPATEN KUNINGAN",
+        "jumlah_rumah_sakit": 3,
+        "satuan": "UNIT",
+        "tahun": 2018
+      },
+      {
+        "id": 9,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3209,
+        "nama_kabupaten_kota": "KABUPATEN CIREBON",
+        "jumlah_rumah_sakit": 8,
+        "satuan": "UNIT",
+        "tahun": 2018
+      },
+      {
+        "id": 10,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3210,
+        "nama_kabupaten_kota": "KABUPATEN MAJALENGKA",
+        "jumlah_rumah_sakit": 21,
+        "satuan": "UNIT",
+        "tahun": 2018
+      },
+      {
+        "id": 11,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3211,
+        "nama_kabupaten_kota": "KABUPATEN SUMEDANG",
+        "jumlah_rumah_sakit": 4,
+        "satuan": "UNIT",
+        "tahun": 2018
+      },
+      {
+        "id": 12,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3212,
+        "nama_kabupaten_kota": "KABUPATEN INDRAMAYU",
+        "jumlah_rumah_sakit": 1,
+        "satuan": "UNIT",
+        "tahun": 2018
+      },
+      {
+        "id": 13,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3213,
+        "nama_kabupaten_kota": "KABUPATEN SUBANG",
+        "jumlah_rumah_sakit": 6,
+        "satuan": "UNIT",
+        "tahun": 2018
+      },
+      {
+        "id": 14,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3214,
+        "nama_kabupaten_kota": "KABUPATEN PURWAKARTA",
+        "jumlah_rumah_sakit": 6,
+        "satuan": "UNIT",
+        "tahun": 2018
+      },
+      {
+        "id": 15,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3215,
+        "nama_kabupaten_kota": "KABUPATEN KARAWANG",
+        "jumlah_rumah_sakit": 3,
+        "satuan": "UNIT",
+        "tahun": 2018
+      },
+      {
+        "id": 16,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3216,
+        "nama_kabupaten_kota": "KABUPATEN BEKASI",
+        "jumlah_rumah_sakit": 21,
+        "satuan": "UNIT",
+        "tahun": 2018
+      },
+      {
+        "id": 17,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3217,
+        "nama_kabupaten_kota": "KABUPATEN BANDUNG BARAT",
+        "jumlah_rumah_sakit": 17,
+        "satuan": "UNIT",
+        "tahun": 2018
+      },
+      {
+        "id": 18,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3218,
+        "nama_kabupaten_kota": "KABUPATEN PANGANDARAN",
+        "jumlah_rumah_sakit": 7,
+        "satuan": "UNIT",
+        "tahun": 2018
+      },
+      {
+        "id": 19,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3271,
+        "nama_kabupaten_kota": "KOTA BOGOR",
+        "jumlah_rumah_sakit": 6,
+        "satuan": "UNIT",
+        "tahun": 2018
+      },
+      {
+        "id": 20,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3272,
+        "nama_kabupaten_kota": "KOTA SUKABUMI",
+        "jumlah_rumah_sakit": 4,
+        "satuan": "UNIT",
+        "tahun": 2018
+      },
+      {
+        "id": 21,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3273,
+        "nama_kabupaten_kota": "KOTA BANDUNG",
+        "jumlah_rumah_sakit": 18,
+        "satuan": "UNIT",
+        "tahun": 2018
+      },
+      {
+        "id": 22,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3274,
+        "nama_kabupaten_kota": "KOTA CIREBON",
+        "jumlah_rumah_sakit": 8,
+        "satuan": "UNIT",
+        "tahun": 2018
+      },
+      {
+        "id": 23,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3275,
+        "nama_kabupaten_kota": "KOTA BEKASI",
+        "jumlah_rumah_sakit": 18,
+        "satuan": "UNIT",
+        "tahun": 2018
+      },
+      {
+        "id": 24,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3276,
+        "nama_kabupaten_kota": "KOTA DEPOK",
+        "jumlah_rumah_sakit": 36,
+        "satuan": "UNIT",
+        "tahun": 2018
+      },
+      {
+        "id": 25,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3277,
+        "nama_kabupaten_kota": "KOTA CIMAHI",
+        "jumlah_rumah_sakit": 39,
+        "satuan": "UNIT",
+        "tahun": 2018
+      },
+      {
+        "id": 26,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3278,
+        "nama_kabupaten_kota": "KOTA TASIKMALAYA",
+        "jumlah_rumah_sakit": 9,
+        "satuan": "UNIT",
+        "tahun": 2018
+      },
+      {
+        "id": 27,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3279,
+        "nama_kabupaten_kota": "KOTA BANJAR",
+        "jumlah_rumah_sakit": 0,
+        "satuan": "UNIT",
+        "tahun": 2018
+      },
+      {
+        "id": 28,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3201,
+        "nama_kabupaten_kota": "KABUPATEN BOGOR",
+        "jumlah_rumah_sakit": 23,
+        "satuan": "UNIT",
+        "tahun": 2019
+      },
+      {
+        "id": 29,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3202,
+        "nama_kabupaten_kota": "KABUPATEN SUKABUMI",
+        "jumlah_rumah_sakit": 7,
+        "satuan": "UNIT",
+        "tahun": 2019
+      },
+      {
+        "id": 30,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3203,
+        "nama_kabupaten_kota": "KABUPATEN CIANJUR",
+        "jumlah_rumah_sakit": 4,
+        "satuan": "UNIT",
+        "tahun": 2019
+      },
+      {
+        "id": 31,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3204,
+        "nama_kabupaten_kota": "KABUPATEN BANDUNG",
+        "jumlah_rumah_sakit": 8,
+        "satuan": "UNIT",
+        "tahun": 2019
+      },
+      {
+        "id": 32,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3205,
+        "nama_kabupaten_kota": "KABUPATEN GARUT",
+        "jumlah_rumah_sakit": 6,
+        "satuan": "UNIT",
+        "tahun": 2019
+      },
+      {
+        "id": 33,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3206,
+        "nama_kabupaten_kota": "KABUPATEN TASIKMALAYA",
+        "jumlah_rumah_sakit": 1,
+        "satuan": "UNIT",
+        "tahun": 2019
+      },
+      {
+        "id": 34,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3207,
+        "nama_kabupaten_kota": "KABUPATEN CIAMIS",
+        "jumlah_rumah_sakit": 4,
+        "satuan": "UNIT",
+        "tahun": 2019
+      },
+      {
+        "id": 35,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3208,
+        "nama_kabupaten_kota": "KABUPATEN KUNINGAN",
+        "jumlah_rumah_sakit": 10,
+        "satuan": "UNIT",
+        "tahun": 2019
+      },
+      {
+        "id": 36,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3209,
+        "nama_kabupaten_kota": "KABUPATEN CIREBON",
+        "jumlah_rumah_sakit": 8,
+        "satuan": "UNIT",
+        "tahun": 2019
+      },
+      {
+        "id": 37,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3210,
+        "nama_kabupaten_kota": "KABUPATEN MAJALENGKA",
+        "jumlah_rumah_sakit": 2,
+        "satuan": "UNIT",
+        "tahun": 2019
+      },
+      {
+        "id": 38,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3211,
+        "nama_kabupaten_kota": "KABUPATEN SUMEDANG",
+        "jumlah_rumah_sakit": 3,
+        "satuan": "UNIT",
+        "tahun": 2019
+      },
+      {
+        "id": 39,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3212,
+        "nama_kabupaten_kota": "KABUPATEN INDRAMAYU",
+        "jumlah_rumah_sakit": 11,
+        "satuan": "UNIT",
+        "tahun": 2019
+      },
+      {
+        "id": 40,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3213,
+        "nama_kabupaten_kota": "KABUPATEN SUBANG",
+        "jumlah_rumah_sakit": 7,
+        "satuan": "UNIT",
+        "tahun": 2019
+      },
+      {
+        "id": 41,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3214,
+        "nama_kabupaten_kota": "KABUPATEN PURWAKARTA",
+        "jumlah_rumah_sakit": 8,
+        "satuan": "UNIT",
+        "tahun": 2019
+      },
+      {
+        "id": 42,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3215,
+        "nama_kabupaten_kota": "KABUPATEN KARAWANG",
+        "jumlah_rumah_sakit": 18,
+        "satuan": "UNIT",
+        "tahun": 2019
+      },
+      {
+        "id": 43,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3216,
+        "nama_kabupaten_kota": "KABUPATEN BEKASI",
+        "jumlah_rumah_sakit": 44,
+        "satuan": "UNIT",
+        "tahun": 2019
+      },
+      {
+        "id": 44,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3217,
+        "nama_kabupaten_kota": "KABUPATEN BANDUNG BARAT",
+        "jumlah_rumah_sakit": 6,
+        "satuan": "UNIT",
+        "tahun": 2019
+      },
+      {
+        "id": 45,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3218,
+        "nama_kabupaten_kota": "KABUPATEN PANGANDARAN",
+        "jumlah_rumah_sakit": 0,
+        "satuan": "UNIT",
+        "tahun": 2019
+      },
+      {
+        "id": 46,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3271,
+        "nama_kabupaten_kota": "KOTA BOGOR",
+        "jumlah_rumah_sakit": 16,
+        "satuan": "UNIT",
+        "tahun": 2019
+      },
+      {
+        "id": 47,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3272,
+        "nama_kabupaten_kota": "KOTA SUKABUMI",
+        "jumlah_rumah_sakit": 6,
+        "satuan": "UNIT",
+        "tahun": 2019
+      },
+      {
+        "id": 48,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3273,
+        "nama_kabupaten_kota": "KOTA BANDUNG",
+        "jumlah_rumah_sakit": 20,
+        "satuan": "UNIT",
+        "tahun": 2019
+      },
+      {
+        "id": 49,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3274,
+        "nama_kabupaten_kota": "KOTA CIREBON",
+        "jumlah_rumah_sakit": 9,
+        "satuan": "UNIT",
+        "tahun": 2019
+      },
+      {
+        "id": 50,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3275,
+        "nama_kabupaten_kota": "KOTA BEKASI",
+        "jumlah_rumah_sakit": 42,
+        "satuan": "UNIT",
+        "tahun": 2019
+      },
+      {
+        "id": 51,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3276,
+        "nama_kabupaten_kota": "KOTA DEPOK",
+        "jumlah_rumah_sakit": 18,
+        "satuan": "UNIT",
+        "tahun": 2019
+      },
+      {
+        "id": 52,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3277,
+        "nama_kabupaten_kota": "KOTA CIMAHI",
+        "jumlah_rumah_sakit": 6,
+        "satuan": "UNIT",
+        "tahun": 2019
+      },
+      {
+        "id": 53,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3278,
+        "nama_kabupaten_kota": "KOTA TASIKMALAYA",
+        "jumlah_rumah_sakit": 7,
+        "satuan": "UNIT",
+        "tahun": 2019
+      },
+      {
+        "id": 54,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3279,
+        "nama_kabupaten_kota": "KOTA BANJAR",
+        "jumlah_rumah_sakit": 3,
+        "satuan": "UNIT",
+        "tahun": 2019
+      },
+      {
+        "id": 55,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3201,
+        "nama_kabupaten_kota": "KABUPATEN BOGOR",
+        "jumlah_rumah_sakit": 24,
+        "satuan": "UNIT",
+        "tahun": 2020
+      },
+      {
+        "id": 56,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3202,
+        "nama_kabupaten_kota": "KABUPATEN SUKABUMI",
+        "jumlah_rumah_sakit": 8,
+        "satuan": "UNIT",
+        "tahun": 2020
+      },
+      {
+        "id": 57,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3203,
+        "nama_kabupaten_kota": "KABUPATEN CIANJUR",
+        "jumlah_rumah_sakit": 4,
+        "satuan": "UNIT",
+        "tahun": 2020
+      },
+      {
+        "id": 58,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3204,
+        "nama_kabupaten_kota": "KABUPATEN BANDUNG",
+        "jumlah_rumah_sakit": 10,
+        "satuan": "UNIT",
+        "tahun": 2020
+      },
+      {
+        "id": 59,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3205,
+        "nama_kabupaten_kota": "KABUPATEN GARUT",
+        "jumlah_rumah_sakit": 6,
+        "satuan": "UNIT",
+        "tahun": 2020
+      },
+      {
+        "id": 60,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3206,
+        "nama_kabupaten_kota": "KABUPATEN TASIKMALAYA",
+        "jumlah_rumah_sakit": 1,
+        "satuan": "UNIT",
+        "tahun": 2020
+      },
+      {
+        "id": 61,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3207,
+        "nama_kabupaten_kota": "KABUPATEN CIAMIS",
+        "jumlah_rumah_sakit": 4,
+        "satuan": "UNIT",
+        "tahun": 2020
+      },
+      {
+        "id": 62,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3208,
+        "nama_kabupaten_kota": "KABUPATEN KUNINGAN",
+        "jumlah_rumah_sakit": 11,
+        "satuan": "UNIT",
+        "tahun": 2020
+      },
+      {
+        "id": 63,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3209,
+        "nama_kabupaten_kota": "KABUPATEN CIREBON",
+        "jumlah_rumah_sakit": 9,
+        "satuan": "UNIT",
+        "tahun": 2020
+      },
+      {
+        "id": 64,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3210,
+        "nama_kabupaten_kota": "KABUPATEN MAJALENGKA",
+        "jumlah_rumah_sakit": 2,
+        "satuan": "UNIT",
+        "tahun": 2020
+      },
+      {
+        "id": 65,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3211,
+        "nama_kabupaten_kota": "KABUPATEN SUMEDANG",
+        "jumlah_rumah_sakit": 3,
+        "satuan": "UNIT",
+        "tahun": 2020
+      },
+      {
+        "id": 66,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3212,
+        "nama_kabupaten_kota": "KABUPATEN INDRAMAYU",
+        "jumlah_rumah_sakit": 10,
+        "satuan": "UNIT",
+        "tahun": 2020
+      },
+      {
+        "id": 67,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3213,
+        "nama_kabupaten_kota": "KABUPATEN SUBANG",
+        "jumlah_rumah_sakit": 7,
+        "satuan": "UNIT",
+        "tahun": 2020
+      },
+      {
+        "id": 68,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3214,
+        "nama_kabupaten_kota": "KABUPATEN PURWAKARTA",
+        "jumlah_rumah_sakit": 9,
+        "satuan": "UNIT",
+        "tahun": 2020
+      },
+      {
+        "id": 69,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3215,
+        "nama_kabupaten_kota": "KABUPATEN KARAWANG",
+        "jumlah_rumah_sakit": 21,
+        "satuan": "UNIT",
+        "tahun": 2020
+      },
+      {
+        "id": 70,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3216,
+        "nama_kabupaten_kota": "KABUPATEN BEKASI",
+        "jumlah_rumah_sakit": 44,
+        "satuan": "UNIT",
+        "tahun": 2020
+      },
+      {
+        "id": 71,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3217,
+        "nama_kabupaten_kota": "KABUPATEN BANDUNG BARAT",
+        "jumlah_rumah_sakit": 6,
+        "satuan": "UNIT",
+        "tahun": 2020
+      },
+      {
+        "id": 72,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3218,
+        "nama_kabupaten_kota": "KABUPATEN PANGANDARAN",
+        "jumlah_rumah_sakit": 1,
+        "satuan": "UNIT",
+        "tahun": 2020
+      },
+      {
+        "id": 73,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3271,
+        "nama_kabupaten_kota": "KOTA BOGOR",
+        "jumlah_rumah_sakit": 16,
+        "satuan": "UNIT",
+        "tahun": 2020
+      },
+      {
+        "id": 74,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3272,
+        "nama_kabupaten_kota": "KOTA SUKABUMI",
+        "jumlah_rumah_sakit": 6,
+        "satuan": "UNIT",
+        "tahun": 2020
+      },
+      {
+        "id": 75,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3273,
+        "nama_kabupaten_kota": "KOTA BANDUNG",
+        "jumlah_rumah_sakit": 21,
+        "satuan": "UNIT",
+        "tahun": 2020
+      },
+      {
+        "id": 76,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3274,
+        "nama_kabupaten_kota": "KOTA CIREBON",
+        "jumlah_rumah_sakit": 9,
+        "satuan": "UNIT",
+        "tahun": 2020
+      },
+      {
+        "id": 77,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3275,
+        "nama_kabupaten_kota": "KOTA BEKASI",
+        "jumlah_rumah_sakit": 43,
+        "satuan": "UNIT",
+        "tahun": 2020
+      },
+      {
+        "id": 78,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3276,
+        "nama_kabupaten_kota": "KOTA DEPOK",
+        "jumlah_rumah_sakit": 19,
+        "satuan": "UNIT",
+        "tahun": 2020
+      },
+      {
+        "id": 79,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3277,
+        "nama_kabupaten_kota": "KOTA CIMAHI",
+        "jumlah_rumah_sakit": 6,
+        "satuan": "UNIT",
+        "tahun": 2020
+      },
+      {
+        "id": 80,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3278,
+        "nama_kabupaten_kota": "KOTA TASIKMALAYA",
+        "jumlah_rumah_sakit": 7,
+        "satuan": "UNIT",
+        "tahun": 2020
+      },
+      {
+        "id": 81,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3279,
+        "nama_kabupaten_kota": "KOTA BANJAR",
+        "jumlah_rumah_sakit": 3,
+        "satuan": "UNIT",
+        "tahun": 2020
+      },
+      {
+        "id": 82,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3201,
+        "nama_kabupaten_kota": "KABUPATEN BOGOR",
+        "jumlah_rumah_sakit": 24,
+        "satuan": "UNIT",
+        "tahun": 2021
+      },
+      {
+        "id": 83,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3202,
+        "nama_kabupaten_kota": "KABUPATEN SUKABUMI",
+        "jumlah_rumah_sakit": 9,
+        "satuan": "UNIT",
+        "tahun": 2021
+      },
+      {
+        "id": 84,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3203,
+        "nama_kabupaten_kota": "KABUPATEN CIANJUR",
+        "jumlah_rumah_sakit": 5,
+        "satuan": "UNIT",
+        "tahun": 2021
+      },
+      {
+        "id": 85,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3204,
+        "nama_kabupaten_kota": "KABUPATEN BANDUNG",
+        "jumlah_rumah_sakit": 10,
+        "satuan": "UNIT",
+        "tahun": 2021
+      },
+      {
+        "id": 86,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3205,
+        "nama_kabupaten_kota": "KABUPATEN GARUT",
+        "jumlah_rumah_sakit": 7,
+        "satuan": "UNIT",
+        "tahun": 2021
+      },
+      {
+        "id": 87,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3206,
+        "nama_kabupaten_kota": "KABUPATEN TASIKMALAYA",
+        "jumlah_rumah_sakit": 1,
+        "satuan": "UNIT",
+        "tahun": 2021
+      },
+      {
+        "id": 88,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3207,
+        "nama_kabupaten_kota": "KABUPATEN CIAMIS",
+        "jumlah_rumah_sakit": 5,
+        "satuan": "UNIT",
+        "tahun": 2021
+      },
+      {
+        "id": 89,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3208,
+        "nama_kabupaten_kota": "KABUPATEN KUNINGAN",
+        "jumlah_rumah_sakit": 11,
+        "satuan": "UNIT",
+        "tahun": 2021
+      },
+      {
+        "id": 90,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3209,
+        "nama_kabupaten_kota": "KABUPATEN CIREBON",
+        "jumlah_rumah_sakit": 9,
+        "satuan": "UNIT",
+        "tahun": 2021
+      },
+      {
+        "id": 91,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3210,
+        "nama_kabupaten_kota": "KABUPATEN MAJALENGKA",
+        "jumlah_rumah_sakit": 3,
+        "satuan": "UNIT",
+        "tahun": 2021
+      },
+      {
+        "id": 92,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3211,
+        "nama_kabupaten_kota": "KABUPATEN SUMEDANG",
+        "jumlah_rumah_sakit": 3,
+        "satuan": "UNIT",
+        "tahun": 2021
+      },
+      {
+        "id": 93,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3212,
+        "nama_kabupaten_kota": "KABUPATEN INDRAMAYU",
+        "jumlah_rumah_sakit": 10,
+        "satuan": "UNIT",
+        "tahun": 2021
+      },
+      {
+        "id": 94,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3213,
+        "nama_kabupaten_kota": "KABUPATEN SUBANG",
+        "jumlah_rumah_sakit": 8,
+        "satuan": "UNIT",
+        "tahun": 2021
+      },
+      {
+        "id": 95,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3214,
+        "nama_kabupaten_kota": "KABUPATEN PURWAKARTA",
+        "jumlah_rumah_sakit": 11,
+        "satuan": "UNIT",
+        "tahun": 2021
+      },
+      {
+        "id": 96,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3215,
+        "nama_kabupaten_kota": "KABUPATEN KARAWANG",
+        "jumlah_rumah_sakit": 22,
+        "satuan": "UNIT",
+        "tahun": 2021
+      },
+      {
+        "id": 97,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3216,
+        "nama_kabupaten_kota": "KABUPATEN BEKASI",
+        "jumlah_rumah_sakit": 49,
+        "satuan": "UNIT",
+        "tahun": 2021
+      },
+      {
+        "id": 98,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3217,
+        "nama_kabupaten_kota": "KABUPATEN BANDUNG BARAT",
+        "jumlah_rumah_sakit": 6,
+        "satuan": "UNIT",
+        "tahun": 2021
+      },
+      {
+        "id": 99,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3218,
+        "nama_kabupaten_kota": "KABUPATEN PANGANDARAN",
+        "jumlah_rumah_sakit": 1,
+        "satuan": "UNIT",
+        "tahun": 2021
+      },
+      {
+        "id": 100,
+        "kode_provinsi": 32,
+        "nama_provinsi": "JAWA BARAT",
+        "kode_kabupaten_kota": 3271,
+        "nama_kabupaten_kota": "KOTA BOGOR",
+        "jumlah_rumah_sakit": 17,
+        "satuan": "UNIT",
+        "tahun": 2021
+      }
+    ],
   "password" : [
     {
       "pw": "npx json-server -p 3500 -w data/db.json"

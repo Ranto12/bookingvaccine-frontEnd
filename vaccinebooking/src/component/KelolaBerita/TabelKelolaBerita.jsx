@@ -13,10 +13,10 @@ const TabelKelolaBerita = ({ Number, title, tanggal, author}) => {
       <div className="col-2">{author}</div>
       <div className="col-4">{tanggal}</div>
       <div className="col-1 d-flex justify-content-center">
-        <IconButton aria-label="Check">
-          <RiPencilFill />
+        <IconButton aria-label="Check" data-bs-toggle="tooltip" data-bs-placement="top" title="edit">
+          <RiPencilFill  />
         </IconButton>
-        <IconButton aria-label="Cancel">
+        <IconButton aria-label="Cancel" data-bs-toggle="tooltip" data-bs-placement="top" title="remove">
           <MdDelete />
         </IconButton>
       </div>

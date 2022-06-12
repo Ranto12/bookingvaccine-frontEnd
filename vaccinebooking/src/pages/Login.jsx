@@ -56,9 +56,10 @@ const Login = () => {
           <div className="col-md-12 offset-md-3 m-0 d-flex row justify-content-center head ">
             <div className='d-flex justify-content-center'>
               <img src={Logo} alt="" />
-
             </div>
-            <div className="card  ">
+
+
+            <div className="card tabel  ">
 
               <div className="t-h2  ">
                 <h2>Mohon isi dengan detail di bawah </h2>

@@ -9,6 +9,7 @@ import KelolaJadwal from "./pages/KelolaJadwal/KelolaJadwal";
 import KelolaAdmin from "./pages/KelolaAdmin/KelolaAdmin";
 import JadwalVaksinasi from "./pages/KelolaJadwal/JadwalVaksinasi";
 import AddAdmin from "./pages/KelolaAdmin/AddAdmin";
+// import JadwalVaksinasi from "./pages/KelolaJadwal/JadwalVaksinasi";
 // import ViewUser from './domain/veiwUser/ViewUser';
 // import Login from './pages/Login/Login';
 import ArtikelTerbaru from "./pages/ArtikelTerbaru/ArtikelTerbaru";
@@ -22,7 +23,7 @@ function App() {
       <Route path="/DataBooking" element={<DataBooking />} />
       <Route path="/KelolaPengguna" element={<KelolaPengguna />} />
       <Route path="/jadwalvaksinasi" element={<JadwalVaksinasi />} />
-      <Route path='/login' element={<Login/>}/>
+      <Route path='/login' element={<Login />} />
       <Route path="/KelolaJadwal" element={<KelolaJadwal />} />
       <Route path="/KelolaAdmin" element={<KelolaAdmin />} />
       <Route path="/ArtikelTerbaru" element={<ArtikelTerbaru />} />
