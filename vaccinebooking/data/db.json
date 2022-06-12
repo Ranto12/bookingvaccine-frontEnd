@@ -1,108 +1,298 @@
 {
-  "user": [
+  "Admin" : [
     {
-      "id": 1,
-      "name": "ranto",
-      "username": "admin",
-      "password": "admin"
+      "id" : 1,
+      "nama" :"tujiko",
+      "role" : "Admin",
+      "email" : "tujiko@gmail.com",
+      "noHp" : "0822837374634",
+      "Alamat" : "PRJ"
     },
     {
-      "id": 2,
-      "name": "dia",
-      "username": "saya",
-      "password": "saya"
+      "id" : 2,
+      "nama" :"tujiko",
+      "role" : "Admin",
+      "email" : "tujiko@gmail.com",
+      "noHp" : "0822837374634",
+      "Alamat" : "PRJ"
     },
     {
-      "id": 3,
-      "name": "mereka",
-      "username": "mereka",
-      "password": "mereka"
+      "id" : 3,
+      "nama" :"tujiko",
+      "role" : "Admin",
+      "email" : "tujiko@gmail.com",
+      "noHp" : "0822837374634",
+      "Alamat" : "PRJ"
+    },
+    {
+      "id" : 4,
+      "nama" :"tujiko",
+      "role" : "Admin",
+      "email" : "tujiko@gmail.com",
+      "noHp" : "0822837374634",
+      "Alamat" : "PRJ"
+    },
+    {
+      "id" : 5,
+      "nama" :"tujiko",
+      "role" : "Admin",
+      "email" : "tujiko@gmail.com",
+      "noHp" : "0822837374634",
+      "Alamat" : "PRJ"
     }
   ],
-  "konten": [
+  "pengguna" :[
     {
-      "id": 1,
-      "title": "covid 19 mereja lela",
-      "img": "link.jpg",
-      "description": "lorem10"
+      "id":1,
+      "nama" : "sarimun",
+      "noHp" : "0822837374634",
+      "nik" : "1230982763561782",
+      "alamat": "cirasa",
+      "dosis" : "1"
     },
     {
-      "id": 2,
-      "title": "covid 18 mereja lela",
-      "img": "link.jpg",
-      "description": "lorem10"
+      "id":2,
+      "nama" : "tujiko",
+      "noHp" : "0822837374634",
+      "nik" : "1230982763561782",
+      "alamat": "cirasa",
+      "dosis" : "1"
     },
     {
-      "id": 3,
-      "title": "covid 17 mereja lela",
-      "img": "link.jpg",
-      "description": "lorem10"
+      "id":3,
+      "nama" : "tujiko",
+      "noHp" : "0822837374634",
+      "nik" : "1230982763561782",
+      "alamat": "cirasa",
+      "dosis" : "1"
     },
     {
-      "id": 4,
-      "title": "covid 16 mereja lela",
-      "img": "link.jpg",
-      "description": "lorem10"
+      "id":4,
+      "nama" : "tujiko",
+      "noHp" : "0822837374634",
+      "nik" : "1230982763561782",
+      "alamat": "cirasa",
+      "dosis" : "1"
     },
     {
-      "id": 5,
-      "title": "covid 15 mereja lela",
-      "img": "link.jpg",
-      "description": "lorem10"
+      "id":5,
+      "nama" : "tujiko",
+      "noHp" : "0822837374634",
+      "nik" : "1230982763561782",
+      "alamat": "cirasa",
+      "dosis" : "1"
+    },
+    {
+      "id":6,
+      "nama" : "tujiko",
+      "noHp" : "0822837374634",
+      "nik" : "1230982763561782",
+      "alamat": "cirasa",
+      "dosis" : "1"
+    },
+    {
+      "id":7,
+      "nama" : "tujiko",
+      "noHp" : "0822837374634",
+      "nik" : "1230982763561782",
+      "alamat": "cirasa",
+      "dosis" : "1"
+    },
+    {
+      "id":8,
+      "nama" : "tujiko",
+      "noHp" : "0822837374634",
+      "nik" : "1230982763561782",
+      "alamat": "cirasa",
+      "dosis" : "1"
+    },
+    {
+      "id":9,
+      "nama" : "tujiko",
+      "noHp" : "0822837374634",
+      "nik" : "1230982763561782",
+      "alamat": "cirasa",
+      "dosis" : "1"
+    },
+    {
+      "id":10,
+      "nama" : "tujiko",
+      "noHp" : "0822837374634",
+      "nik" : "1230982763561782",
+      "alamat": "cirasa",
+      "dosis" : "1"
+    },
+    {
+      "id":11,
+      "nama" : "tujiko",
+      "noHp" : "0822837374634",
+      "nik" : "1230982763561782",
+      "alamat": "cirasa",
+      "dosis" : "1"
+    },
+    {
+      "id":12,
+      "nama" : "tujiko",
+      "noHp" : "0822837374634",
+      "nik" : "1230982763561782",
+      "alamat": "cirasa",
+      "dosis" : "1"
+    },
+    {
+      "id":13,
+      "nama" : "tujiko",
+      "noHp" : "0822837374634",
+      "nik" : "1230982763561782",
+      "alamat": "cirasa",
+      "dosis" : "1"
+    },
+    {
+      "id":14,
+      "nama" : "tujiko",
+      "noHp" : "0822837374634",
+      "nik" : "1230982763561782",
+      "alamat": "cirasa",
+      "dosis" : "1"
+    },
+    {
+      "id":15,
+      "nama" : "tujiko",
+      "noHp" : "0822837374634",
+      "nik" : "1230982763561782",
+      "alamat": "cirasa",
+      "dosis" : "1"
+    },
+    {
+      "id":16,
+      "nama" : "tujiko",
+      "noHp" : "0822837374634",
+      "nik" : "1230982763561782",
+      "alamat": "cirasa",
+      "dosis" : "1"
+    },
+    {
+      "id":17,
+      "nama" : "tujiko",
+      "noHp" : "0822837374634",
+      "nik" : "1230982763561782",
+      "alamat": "cirasa",
+      "dosis" : "1"
     }
   ],
-  "auth": [
+  "Faskes" : [
     {
-      "id": 1,
-      "username": "ranto",
-      "email": "rantokoplak@gmail.com",
-      "password": "ranto"
+      "id":1,
+      "nama" : "RSUD pasuruhan Magetan Jawa timur",
+      "alamat": "jawa timur",
+      "kecamatan": "balikpapan",
+      "kapasitas": 200,
+      "jenis" : "RSUD"
+    }
+  ],
+  "Artikel": [
+    {
+      "id":1,
+      "title" : "Jangan Sombong",
+      "author": "Paijo",
+      "tanggal" : "17 agustus 1945",
+      "body" : "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis, consequatur sed sint expedita facere iste corporis repellat doloremque ab harum reprehenderit ut iure saepe perferendis similique culpa! Soluta labore reprehenderit inventore earum excepturi nam temporibus nihil iusto modi laboriosam beatae culpa, quo repellat sapiente suscipit veniam perferendis! Nihil sit odio, obcaecati accusamus voluptatum cumque? Asperiores minus aliquam dolor maxime eum quasi voluptates expedita molestiae impedit id animi provident cupiditate inventore vero optio modi magni qui, quibusdam doloremque necessitatibus. Molestias veniam qui necessitatibus saepe, dolorum repellat maxime, optio et iusto autem quod rerum magnam dicta obcaecati nesciunt repudiandae cumque quos voluptatum!"
     },
     {
-      "id": 2,
-      "username": "defa",
-      "email": "rantokoplak@gmail.com",
-      "password": "defa"
+      "id":2,
+      "title" : "Jangan Sombong",
+      "author": "Paijo",
+      "tanggal" : "17 agustus 1945",
+      "body" : "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis, consequatur sed sint expedita facere iste corporis repellat doloremque ab harum reprehenderit ut iure saepe perferendis similique culpa! Soluta labore reprehenderit inventore earum excepturi nam temporibus nihil iusto modi laboriosam beatae culpa, quo repellat sapiente suscipit veniam perferendis! Nihil sit odio, obcaecati accusamus voluptatum cumque? Asperiores minus aliquam dolor maxime eum quasi voluptates expedita molestiae impedit id animi provident cupiditate inventore vero optio modi magni qui, quibusdam doloremque necessitatibus. Molestias veniam qui necessitatibus saepe, dolorum repellat maxime, optio et iusto autem quod rerum magnam dicta obcaecati nesciunt repudiandae cumque quos voluptatum!"
     },
     {
-      "user": "ranto",
-      "pwd": "ranto",
-      "id": 3
+      "id":3,
+      "title" : "Jangan Sombong",
+      "author": "Paijo",
+      "tanggal" : "17 agustus 1945",
+      "body" : "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis, consequatur sed sint expedita facere iste corporis repellat doloremque ab harum reprehenderit ut iure saepe perferendis similique culpa! Soluta labore reprehenderit inventore earum excepturi nam temporibus nihil iusto modi laboriosam beatae culpa, quo repellat sapiente suscipit veniam perferendis! Nihil sit odio, obcaecati accusamus voluptatum cumque? Asperiores minus aliquam dolor maxime eum quasi voluptates expedita molestiae impedit id animi provident cupiditate inventore vero optio modi magni qui, quibusdam doloremque necessitatibus. Molestias veniam qui necessitatibus saepe, dolorum repellat maxime, optio et iusto autem quod rerum magnam dicta obcaecati nesciunt repudiandae cumque quos voluptatum!"
     },
     {
-      "user": "adsasd",
-      "pwd": "sdasd",
-      "id": 4
+      "id":4,
+      "title" : "Jangan Sombong",
+      "author": "Paijo",
+      "tanggal" : "17 agustus 1945",
+      "body" : "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis, consequatur sed sint expedita facere iste corporis repellat doloremque ab harum reprehenderit ut iure saepe perferendis similique culpa! Soluta labore reprehenderit inventore earum excepturi nam temporibus nihil iusto modi laboriosam beatae culpa, quo repellat sapiente suscipit veniam perferendis! Nihil sit odio, obcaecati accusamus voluptatum cumque? Asperiores minus aliquam dolor maxime eum quasi voluptates expedita molestiae impedit id animi provident cupiditate inventore vero optio modi magni qui, quibusdam doloremque necessitatibus. Molestias veniam qui necessitatibus saepe, dolorum repellat maxime, optio et iusto autem quod rerum magnam dicta obcaecati nesciunt repudiandae cumque quos voluptatum!"
     },
     {
-      "user": "ranto",
-      "pwd": "ranto",
-      "id": 5
+      "id":5,
+      "title" : "Jangan Sombong",
+      "author": "Paijo",
+      "tanggal" : "17 agustus 1945",
+      "body" : "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis, consequatur sed sint expedita facere iste corporis repellat doloremque ab harum reprehenderit ut iure saepe perferendis similique culpa! Soluta labore reprehenderit inventore earum excepturi nam temporibus nihil iusto modi laboriosam beatae culpa, quo repellat sapiente suscipit veniam perferendis! Nihil sit odio, obcaecati accusamus voluptatum cumque? Asperiores minus aliquam dolor maxime eum quasi voluptates expedita molestiae impedit id animi provident cupiditate inventore vero optio modi magni qui, quibusdam doloremque necessitatibus. Molestias veniam qui necessitatibus saepe, dolorum repellat maxime, optio et iusto autem quod rerum magnam dicta obcaecati nesciunt repudiandae cumque quos voluptatum!"
     },
     {
-      "user": "ranto",
-      "pwd": "ranto",
-      "id": 6
+      "id":6,
+      "title" : "Jangan Sombong",
+      "author": "Paijo",
+      "tanggal" : "17 agustus 1945",
+      "body" : "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis, consequatur sed sint expedita facere iste corporis repellat doloremque ab harum reprehenderit ut iure saepe perferendis similique culpa! Soluta labore reprehenderit inventore earum excepturi nam temporibus nihil iusto modi laboriosam beatae culpa, quo repellat sapiente suscipit veniam perferendis! Nihil sit odio, obcaecati accusamus voluptatum cumque? Asperiores minus aliquam dolor maxime eum quasi voluptates expedita molestiae impedit id animi provident cupiditate inventore vero optio modi magni qui, quibusdam doloremque necessitatibus. Molestias veniam qui necessitatibus saepe, dolorum repellat maxime, optio et iusto autem quod rerum magnam dicta obcaecati nesciunt repudiandae cumque quos voluptatum!"
     },
     {
-      "user": "defa",
-      "pwd": "defa",
-      "id": 7
+      "id":7,
+      "title" : "Jangan Sombong",
+      "author": "Paijo",
+      "tanggal" : "17 agustus 1945",
+      "body" : "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis, consequatur sed sint expedita facere iste corporis repellat doloremque ab harum reprehenderit ut iure saepe perferendis similique culpa! Soluta labore reprehenderit inventore earum excepturi nam temporibus nihil iusto modi laboriosam beatae culpa, quo repellat sapiente suscipit veniam perferendis! Nihil sit odio, obcaecati accusamus voluptatum cumque? Asperiores minus aliquam dolor maxime eum quasi voluptates expedita molestiae impedit id animi provident cupiditate inventore vero optio modi magni qui, quibusdam doloremque necessitatibus. Molestias veniam qui necessitatibus saepe, dolorum repellat maxime, optio et iusto autem quod rerum magnam dicta obcaecati nesciunt repudiandae cumque quos voluptatum!"
+    }
+  ],
+  "jawal": [
+    {
+      "id" :1,
+      "namaFaskes" : "RSUD Kematian",
+      "stock" : 100,
+      "jenis" : "sinovac",
+      "waktu" : "00:07",
+      "alamat" :"jawa timur"
     },
     {
-      "user": "admin",
-      "pwd": "admin",
-      "id": 8
+      "id" :2,
+      "namaFaskes" : "RSUD kehidupan",
+      "stock" : 100,
+      "jenis" : "boster",
+      "waktu" : "00:07",
+      "alamat" :"jawa timur"
     },
     {
-      "user": "admin",
-      "pwd": "admin",
-      "id": 9
+      "id" :3,
+      "namaFaskes" : "RSUD perasaan",
+      "stock" : 100,
+      "jenis" : "moderna",
+      "waktu" : "00:07",
+      "alamat" :"jawa timur"
     },
     {
-      "user": "admin",
-      "pwd": "admin",
-      "id": 10
+      "id" :4,
+      "namaFaskes" : "RSUD Kematian",
+      "stock" : 100,
+      "jenis" : "AztraSeneca",
+      "waktu" : "00:07",
+      "alamat" :"jawa timur"
+    },
+    {
+      "id" :5,
+      "namaFaskes" : "RSUD a",
+      "stock" : 100,
+      "jenis" : "sinovac",
+      "waktu" : "00:07",
+      "alamat" :"jawa timur"
+    },
+    {
+      "id" :6,
+      "namaFaskes" : "RSUD s",
+      "stock" : 100,
+      "jenis" : "sinovac",
+      "waktu" : "00:07",
+      "alamat" :"jawa timur"
+    }
+  ],
+  "password" : [
+    {
+      "pw": "npx json-server -p 3500 -w data/db.json"
     }
   ]
 }
