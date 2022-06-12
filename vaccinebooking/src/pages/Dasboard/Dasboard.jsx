@@ -1,9 +1,16 @@
 import React, { useEffect, useState } from 'react'
+
+// icons
 import {AiOutlineSearch} from 'react-icons/ai'
 import {IoMdNotifications} from 'react-icons/io'
 import {RiAdminFill} from 'react-icons/ri'
+
+// style
 import './../../assets/Style/style.css'
-import Sidebar from '../../component/Sidebar/Sidebar'
+
+// component
+import Sidebar from '../../component/Sidebar/Sidebar';
+import LengthPenguna from '../../component/Dasboard/APIrequired/Length'
 
 const Dashboard = () => {
     // initial state and valiables
@@ -17,7 +24,6 @@ const Dashboard = () => {
 
     const handleSearch=() =>{
         setCount(1+input)
-        
     }
 
     useEffect(()=>{
@@ -112,7 +118,7 @@ const Dashboard = () => {
                         </div>
                     </div>
                     <div style={{fontSize:"64px" , marginTop:"54px", marginBottom:"24px"}}>
-                        100
+                        <LengthPenguna/>
                         </div>
                     <div style={{fontSize:"35px"}}>
                         Pengguna
