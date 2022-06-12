@@ -90,7 +90,7 @@ const KelolaAdmin = () => {
                     </div>
                     <div className='col-6 d-flex justify-content-end'>
                         <div className='d-flex ms-2 '  style={{border:"1px solid", height:"26px", borderRadius:"10px", paddingLeft:"28.08px", paddingRight:"26px", background:"#D9D9D9"}}>
-                            <Link className='text-decoration-none Fontcolor-Dasboard LinkText d-flex' to='/buatBerita' >
+                            <Link className='text-decoration-none Fontcolor-Dasboard LinkText d-flex' to='/AddAdmin' >
                                 <div className='me-1' >
                                     <RiFileSearchFill/>
                                 </div>

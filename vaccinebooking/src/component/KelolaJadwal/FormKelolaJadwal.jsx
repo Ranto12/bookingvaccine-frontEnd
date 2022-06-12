@@ -8,7 +8,7 @@ export default function FormKelolaJadwal() {
         <div>
           <label className="mt-4 fw-bold ">Nama Fasilitas Kesehatan</label>
         </div>
-        <input type="text" className="w-100 input-kelola mt-2 p-1 rounded-2" />
+        <input type="text" className="w-100 bg-light input-kelola mt-2 p-1 rounded-2" />
       </div>
 
       <div className="mt-3">

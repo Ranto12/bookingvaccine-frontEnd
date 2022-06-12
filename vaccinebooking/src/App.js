@@ -25,6 +25,8 @@ function App() {
       <Route path="/KelolaJadwal" element={<KelolaJadwal />} />
       <Route path="/KelolaAdmin" element={<KelolaAdmin />} />
       <Route path="/AddAdmin" element={<AddAdmin />} />
+   
+
 
       {/* <Route path='/login' element={<ViewUser/>}/> */}
     </Routes>
