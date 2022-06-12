@@ -9,10 +9,14 @@ import "./../../assets/Style/style.css";
 import { AiOutlineSearch } from "react-icons/ai";
 import TabelDataBooking from "../../component/DataBooking/TabelDataBooking";
 
+// API
+import api from '../../API/data/post'
+
 const DataBooking = () => {
   // initial state and valiables
   const [input, setInput] = useState("");
   const [count, setCount] = useState(1);
+  const [booking, setBooking] = useState([]);
 
   const onChangeInput = (e) => {
     const input = e.target.value;
@@ -26,6 +30,25 @@ const DataBooking = () => {
   useEffect(() => {
     handleSearch();
   }, []);
+
+  useEffect(()=>{
+    const fetchPosts = async()=>{
+        try{
+            const response = await api.get("/bookingVaccine")
+            setBooking(response.data);
+        } catch(err){
+            if(err.response){
+                //not in the 200 response range
+                console.log(err.response.data)
+                console.log(err.response.status)
+                console.log(err.response.headers)
+            }else{
+                console.log(`Error ${err.message}`);
+            }
+        }
+    }
+    fetchPosts();
+},[])
 
   return (
     <div className="Fontcolor-Dasboard">
@@ -111,7 +134,11 @@ const DataBooking = () => {
 
           {/* isi tabel */}
           <div className="TabelDataBooking row ">
-            <TabelDataBooking />
+            {booking.map((data, index)=>{
+              return(
+                <TabelDataBooking key={data.id} Number={index +1 } nama={data.nama} nik={data.nik}  jenisVaccine={data.jenisVaccine}/>
+              )
+            })}
           </div>
         </div>
       </div>

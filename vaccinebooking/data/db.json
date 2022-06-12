@@ -2,43 +2,43 @@
   "Admin" : [
     {
       "id" : 1,
-      "nama" :"tujiko",
+      "nama" :"ranto",
       "role" : "Admin",
-      "email" : "tujiko@gmail.com",
+      "email" : "rantoirwanda08@gmail.com",
       "noHp" : "0822837374634",
-      "Alamat" : "PRJ"
+      "Alamat" : "lampung"
     },
     {
       "id" : 2,
-      "nama" :"tujiko",
+      "nama" :"wandy",
       "role" : "Admin",
-      "email" : "tujiko@gmail.com",
-      "noHp" : "0822837374634",
-      "Alamat" : "PRJ"
+      "email" : "wandy123@gmail.com",
+      "noHp" : "0824324767234",
+      "Alamat" : "palu"
     },
     {
       "id" : 3,
-      "nama" :"tujiko",
+      "nama" :"agung",
       "role" : "Admin",
-      "email" : "tujiko@gmail.com",
-      "noHp" : "0822837374634",
-      "Alamat" : "PRJ"
+      "email" : "wagung4321@gmail.com",
+      "noHp" : "090823478234",
+      "Alamat" : "bali"
     },
     {
       "id" : 4,
-      "nama" :"tujiko",
+      "nama" :"jamaludin",
       "role" : "Admin",
-      "email" : "tujiko@gmail.com",
+      "email" : "jamaludin@gmail.com",
       "noHp" : "0822837374634",
-      "Alamat" : "PRJ"
+      "Alamat" : "kalimatan"
     },
     {
       "id" : 5,
-      "nama" :"tujiko",
+      "nama" :"riko",
       "role" : "Admin",
-      "email" : "tujiko@gmail.com",
-      "noHp" : "0822837374634",
-      "Alamat" : "PRJ"
+      "email" : "riko@gmail.com",
+      "noHp" : "12423244234",
+      "Alamat" : "jawa"
     }
   ],
   "pengguna" :[
@@ -288,6 +288,38 @@
       "jenis" : "sinovac",
       "waktu" : "00:07",
       "alamat" :"jawa timur"
+    }
+  ],
+  "bookingVaccine": [
+    {
+      "id": 1,
+      "nama": "Sarimun",
+      "nik": "123612736178263",
+      "jenisVaccine": "sinovac"
+    },
+    {
+      "id": 2,
+      "nama": "Miswan",
+      "nik": "9652250352365599",
+      "jenisVaccine": "boster"
+    },
+    {
+      "id": 3,
+      "nama": "Sarimun",
+      "nik": "5719393980530645",
+      "jenisVaccine": "sinovac"
+    },
+    {
+      "id": 4,
+      "nama": "sujadi",
+      "nik": "46629562448870465",
+      "jenisVaccine": "Antena"
+    },
+    {
+      "id": 1,
+      "nama": "Riko",
+      "nik": "3125081118523523",
+      "jenisVaccine": "sinovac"
     }
   ],
   "password" : [

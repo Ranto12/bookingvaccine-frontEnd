@@ -38,7 +38,7 @@ const KelolaPengguna = () => {
   useEffect(()=>{
     const fetchPosts = async()=>{
         try{
-            const response = await api.get("/session")
+            const response = await api.get("/pengguna")
             setDataPengguna(response.data);
         } catch(err){
             if(err.response){

@@ -58,8 +58,6 @@ const Login = () => {
               <img src={Logo} alt="" />
 
             </div>
-
-
             <div className="card  ">
 
               <div className="t-h2  ">

@@ -4,20 +4,20 @@ import { IconButton } from "@mui/material";
 import { RiPencilFill } from "react-icons/ri";
 import { RiFileSearchFill } from "react-icons/ri";
 
-const TabelAdmin = () => {
+const TabelAdmin = ({Number, nama, hp, alamat, email}) => {
     return (
         <div className="d-flex TabelAdmin justify-content-center p-0">
-            <div className="col-1 ps-3">1</div>
-            <div className="col-3 ps-2">jhon doe</div>
-            <div className="col-2 ps-2">jln Beringin</div>
-            <div className="col-2 ps-2">086678909187</div>
-            <div className="col-3 ps-2">Loremipsum@gmail.com</div>
+            <div className="col-1 ps-3">{Number}</div>
+            <div className="col-3 ps-2">{nama}</div>
+            <div className="col-2 ps-2">{alamat}</div>
+            <div className="col-2 ps-2">{hp}</div>
+            <div className="col-3 ps-2">{email}</div>
             <div className="col-1 d-flex justify-content-center">
                 <IconButton className="me-2">
-                    <RiPencilFill />
+                    <RiPencilFill data-bs-toggle="tooltip" data-bs-placement="" title="edit" />
                 </IconButton>
                 <IconButton className="me-2">
-                    <RiFileSearchFill />
+                    <RiFileSearchFill data-bs-toggle="tooltip" data-bs-placement="" title="view" />
                 </IconButton>
             </div>
         </div>

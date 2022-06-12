@@ -11,11 +11,13 @@ import { BsFilterLeft } from 'react-icons/bs';
 import { RiFileSearchFill } from 'react-icons/ri';
 
 import TabelAdmin from '../../component/KelolaAdmin/TabelAdmin';
+import api from '../../API/data/post'
 
 const KelolaAdmin = () => {
     // initial state and valiables
     const [input, setInput] = useState("");
     const [count, setCount] = useState(1);
+    const [admin, setAdmin] = useState([]);
 
     const onChangeInput = (e) => {
         const input = e.target.value;
@@ -30,6 +32,27 @@ const KelolaAdmin = () => {
     useEffect(() => {
         handleSearch();
     }, [])
+
+    // API
+    
+  useEffect(()=>{
+    const fetchPosts = async()=>{
+        try{
+            const response = await api.get("/admin")
+            setAdmin(response.data);
+        } catch(err){
+            if(err.response){
+                //not in the 200 response range
+                console.log(err.response.data)
+                console.log(err.response.status)
+                console.log(err.response.headers)
+            }else{
+                console.log(`Error ${err.message}`);
+            }
+        }
+    }
+    fetchPosts();
+},[])
 
     return (
         <div className='Fontcolor-Dasboard'>
@@ -125,7 +148,11 @@ const KelolaAdmin = () => {
 
                     {/* isi tabel */}
                     <div className='TabelAdmin row '>
-                        <TabelAdmin />
+                        {admin.map((data, index)=>{
+                            return(
+                                <TabelAdmin key={data.id} Number={index +1} nama={data.nama} alamat={data.alamat} hp={data.noHp} email={data.email}/>
+                            )
+                        })}
                     </div>
                 </div>
             </div>
