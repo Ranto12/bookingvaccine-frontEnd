@@ -7,15 +7,18 @@ import './../../assets/Style/style.css';
 
 // icon
 import { AiOutlineSearch } from 'react-icons/ai';
-import { BsFilterLeft } from 'react-icons/bs';
-import { MdPostAdd } from 'react-icons/md';
-import TabelKelolaBerita from '../../component/KelolaBerita/TabelKelolaBerita';
+import {FaUserPlus} from 'react-icons/fa'
+
 import TabelVaksinasi from '../../component/JadwalVaksinasi/TabelVaksinasi';
+
+// Api
+import api from './../../API/data/post'
 
 const KelolaJadwal = () => {
     // initial state and valiables
     const [input, setInput] = useState("");
     const [count, setCount] = useState(1);
+    const [jadwal, setJadwal] = useState([]);
 
     const onChangeInput = (e) => {
         const input = e.target.value;
@@ -31,32 +34,57 @@ const KelolaJadwal = () => {
         handleSearch();
     }, [])
 
-    return (
-        <div className='Fontcolor-Dasboard'>
-            <div className='row me-5'>
-                <div className='col-3'>
-                    <Sidebar />
-                </div>
-                <div className='col-9 mt-5'>
-                    <div className='row'>
-                        <div>
-                            <h1 className='fz-Head'>
-                                Kelola Data
-                            </h1>
-                            <h1 className='fz-title'>
-                                Jadwal Vaksinasi - Vasilitas Kesehatan
-                            </h1>
-                        </div>
-                    </div>
+    // api
+    useEffect(()=>{
+        const fetchPosts = async()=>{
+            try{
+                const response = await api.get("/jawal")
+                setJadwal(response.data);
+            } catch(err){
+                if(err.response){
+                    //not in the 200 response range
+                    console.log(err.response.data)
+                    console.log(err.response.status)
+                    console.log(err.response.headers)
+                }else{
+                    console.log(`Error ${err.message}`);
+                }
+            }
+        }
+        fetchPosts();
+    },[])
 
-                    {/* filtering */}
-                    <div className='row d-flex Margin-top-Serch align-items-end'>
-                        <div className='col-6 d-flex ' style={{ height: "26px", color: "#C2C2C2" }}>
-                            <div>
-                                <p className='Fz-16' >Tampilkan</p>
+    return (
+        <>
+            <div className='Fontcolor-Dasboard'>
+                <div className='row me-5'>
+                    <div className='col-3'>
+                        <Sidebar/>
+                    </div>
+                    
+                    {/* content */}
+                    <div className='col-9 mt-5'>
+                        <div className='row'>
+                            {/* Title */}
+                            <div className='col-10'>
+                                <h1 className='fz-Head'>
+                                    Kelola Data
+                                </h1>
+                                <h1 className='fz-Title'>
+                                Jadwal Vaksinasi - Fasilitas Kesehatan
+                                </h1>
                             </div>
-                            <div className='ms-2'>
-                                <select name="jumlahArtiker " id="jumlahArtikel" style={{ fontSize: "14px", borderRadius: "2px" }}>
+                            
+                            {/* handle */}
+                        </div>
+
+                        <div className='row Margin-top-Serch align-items-end d-flex'>
+                            <div className='col-6 d-flex TotalPengguna'>
+                                <div >
+                                    <p className='Fz-16'>Total</p>
+                                </div>
+                                <div className='ms-2 Select15'>
+                                    <select name="JumlahPengguna" id="JumlahPengguna">
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -72,67 +100,70 @@ const KelolaJadwal = () => {
                                     <option value="13">13</option>
                                     <option value="14">14</option>
                                     <option value="15">15</option>
-                                </select>
-                            </div>
-                            <div className='d-flex'>
-                                <div>
-                                    <p className='ms-2 Fz-16 me-2'>entri</p>
+                                    </select>
                                 </div>
-                                <div className='border border-dark d-flex w-100' style={{ cursor: "pointer" }} >
-                                    <div className='ms-3 me-3' style={{ cursor: "pointer", border: "none" }} onClick={handleSearch}>
-                                        <AiOutlineSearch />
+                                <div className='d-flex'>
+                                    <div>
+                                        <p className='ms-2 Fz-16 me-2'>entri</p>
                                     </div>
-                                    <div className='d-flex'>
-                                        <input type="text" className='border' style={{ width: "251px", height: "24px", border: "none", borderRadius: "2px" }} placeholder="Cari" onChange={onChangeInput} />
-                                    </div>
+                                    <div className='border border-dark d-flex w-100 BorderRadiusInline' >
+                                        <div className='ms-3 me-3 PointerClikCss' onClick={handleSearch}>
+                                            <AiOutlineSearch/>
+                                        </div>
+                                        <div className='d-flex '>
+                                            <input type="text" style={{width:"251px", height:"24px", border:"none", borderRadius:"2px"}} placeholder="Cari" onChange={onChangeInput}/>
+                                        </div>
+                                    </div>                                
                                 </div>
                             </div>
-                        </div>
-                        <div className='col-6 d-flex justify-content-end'>
 
-                            <div className='d-flex ms-2 ' style={{ border: "1px solid", height: "26px", borderRadius: "10px", paddingLeft: "28.08px", paddingRight: "26px", background: "#D9D9D9" }}>
-                                <Link className='text-decoration-none Fontcolor-Dasboard LinkText d-flex' to='/buatBerita' >
-                                    <div className='md' >
-                                        <MdPostAdd />
-                                    </div>
-                                    <p style={{ fontSize: "14px", marginLeft: "12,08px" }}>
-                                        Buat Jadwal
-                                    </p>
-                                </Link>
+                            <div className='col-6 d-flex justify-content-end'>
+                                <div className='d-flex ms-2 '  style={{border:"1px solid", height:"26px", borderRadius:"10px", paddingLeft:"8px", paddingRight:"8px", background:"#D9D9D9"}}>
+                                    <Link className='text-decoration-none Fontcolor-Dasboard LinkText d-flex' to='/jadwalvaksinasi' >
+                                        <div className='me-1' >
+                                            <FaUserPlus/>
+                                        </div>
+                                        <p style={{fontSize:"14px", marginLeft:"1px"}}>
+                                            Add
+                                        </p>
+                                    </Link>
+                                </div>
                             </div>
-                        </div>
-                    </div>
 
-                    {/* tabel */}
-                    <div className='row mt-4 background-color-Table  justify-content-center'>
-                        <div className='col-1'>
-                            No
+                            {/* table */}
+                            <div className='row mt-4 background-color-Table '>
+                                <div className='col-1'>
+                                No
+                                </div>
+                                <div className='col-4'>
+                                Nama Faskes
+                                </div>
+                                <div className='col-1'>
+                                Stock
+                                </div>
+                                <div className='col-4'>
+                                Jenis Vaksin
+                                </div>
+                                <div className='col-1'>
+                                Waktu
+                                </div>
+                                <div className='col-1'>
+                                Action
+                                </div>
+                            </div>
+                            {/* isi table */}
+                            <div className='TabelkelolaBerita row'>
+                                    {jadwal.map((data, index)=>{
+                                    return(
+                                        <TabelVaksinasi Number={index + 1} key={data.id} nama ={data.namaFaskes} stock={data.stock} jenis={data.jenis} waktu = {data.waktu} />
+                                    )
+                                    })}
+                                </div>
                         </div>
-                        <div className='col-3'>
-                            Nama Fakses
-                        </div>
-                        <div className='col-2'>
-                            Stock
-                        </div>
-                        <div className='col-3'>
-                            Jenis Vaksin
-                        </div>
-                        <div className='col-2'>
-                            Waktu
-                        </div>
-                        <div className='col-1'>
-                            Action
-                        </div>
-                    </div>
-
-                    {/* isi tabel */}
-                    <div className='TabelJadwalVaksinasi row '>
-                        <TabelVaksinasi />
                     </div>
                 </div>
             </div>
-        </div>
+        </>
     )
 }
-
 export default KelolaJadwal

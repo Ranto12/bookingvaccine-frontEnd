@@ -11,10 +11,15 @@ import {BsFilterLeft} from 'react-icons/bs';
 import {MdPostAdd} from 'react-icons/md';
 import TabelKelolaBerita from '../../component/KelolaBerita/TabelKelolaBerita';
 
+// api
+import api from './../../API/data/post'
+
 const KelolaBerita = () => {
      // initial state and valiables
      const [input, setInput] = useState("");
      const [count, setCount] = useState(1);
+     const [Artikels, setArtikels] = useState([]);
+
  
      const onChangeInput = (e) =>{
          const input = e.target.value;
@@ -26,10 +31,32 @@ const KelolaBerita = () => {
          
      }
  
+    //  useEffect
      useEffect(()=>{
          handleSearch();
      },[])
- 
+
+    //  API
+    useEffect(()=>{
+      const fetchPosts = async()=>{
+          try{
+              const response = await api.get("/Artikel")
+              setArtikels(response.data);
+          } catch(err){
+              if(err.response){
+                  //not in the 200 response range
+                  console.log(err.response.data)
+                  console.log(err.response.status)
+                  console.log(err.response.headers)
+              }else{
+                  console.log(`Error ${err.message}`);
+              }
+          }
+      }
+      fetchPosts();
+  },[])
+
+
   return (
     <div className='Fontcolor-Dasboard'>
       <div className='row me-5'>
@@ -42,7 +69,7 @@ const KelolaBerita = () => {
               <h1 className='fz-Head'>
                 Kelola Data
               </h1>
-              <h1 className='fz-title'>
+              <h1 className='fz-Title'>
                 Artikel/Berita Terbaru
               </h1>
             </div>
@@ -50,12 +77,12 @@ const KelolaBerita = () => {
 
           {/* filtering */}
           <div className='row d-flex Margin-top-Serch align-items-end'>
-            <div className='col-6 d-flex ' style={{height:"26px"}}>
+            <div className='col-6 d-flex TotalPengguna ' >
               <div>
-              <p className='Fz-16' >Tampilkan</p>
+              <p className='Fz-16'>Total</p>
               </div>
               <div className='ms-2'>
-              <select name="jumlahArtiker " id="jumlahArtikel" style={{fontSize:"14px" , borderRadius:"2px"}}>
+              <select name="jumlahArtiker " id="jumlahArtikel Select15" >
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -92,7 +119,7 @@ const KelolaBerita = () => {
                 <div className='align-items-center'>
                   <BsFilterLeft/>
                 </div>
-                <div >
+                <div>
                   <select name="sortir" id="Sortir" placeholder='Sortir bersarkan' style={{border:"none", height:"24px"}}>
                       <option value="">Sortir bersarkan</option> 
                       <option value="jumlah">Jumlah</option> 
@@ -134,7 +161,11 @@ const KelolaBerita = () => {
 
           {/* isi tabel */}
           <div className='TabelkelolaBerita row '>
-            <TabelKelolaBerita/>
+            {Artikels.map((artikel, index)=>{
+              return(
+                <TabelKelolaBerita key={artikel.ArtikelsId} Number={index + 1}  title={artikel.title} tanggal={artikel.tanggal} author={artikel.author} />
+              )
+            })}
           </div>
         </div>
       </div>

@@ -4,7 +4,7 @@ import { IconButton } from "@mui/material";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import CancelIcon from "@mui/icons-material/Cancel";
 
-const TabelDataBooking = () => {
+const TablePengguna = () => {
   return (
     <div
       className="d-flex TabelDataBooking justify-content-center"
@@ -26,4 +26,4 @@ const TabelDataBooking = () => {
   );
 };
 
-export default TabelDataBooking;
+export default TablePengguna;

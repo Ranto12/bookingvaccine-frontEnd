@@ -1,0 +1,34 @@
+{
+    "guru" : [
+        {
+            "id":1,
+            "nama": "suharto",
+            "alamat": "ciamis"
+        },
+        {
+            "id":2,
+            "nama": "suharto",
+            "alamat": "ciamis"
+        },
+        {
+            "id":3,
+            "nama": "suharto",
+            "alamat": "ciamis"
+        },
+        {
+            "id":4,
+            "nama": "suharto",
+            "alamat": "ciamis"
+        },
+        {
+            "id":5,
+            "nama": "suharto",
+            "alamat": "ciamis"
+        },
+        {
+            "id":6,
+            "nama": "suharto",
+            "alamat": "ciamis"
+        }
+    ]
+}
