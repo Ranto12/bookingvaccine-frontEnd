@@ -207,7 +207,10 @@
 
 .FormArtikel {
   background-color: #aaa9a9;
-  width: 100vw;
+  width: 100vw; }
+.head {
+  margin-top: 215px !important;
+  margin-bottom: 215px !important;
 }
 
 .input-kel {

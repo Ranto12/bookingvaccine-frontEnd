@@ -3,7 +3,6 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { Button, Col, Container, Form, Row } from 'react-bootstrap'
 import { AiFillEye } from 'react-icons/ai';
-// import {Button, Col, Container, Form, Row} from 'react-bootstrap'
 import '../assets/Style/Login.css'
 
 const Login = () => {
@@ -11,6 +10,28 @@ const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [msg, setMsg] = useState("");
+
+
+  // regex
+  const RegexUsername = /^[a-zA-Z0-9]+([._]?[a-zA-Z0-9]+)*$/;
+  const RegexPassword = /(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"/;
+
+  // funtion
+  // -onchange
+  const onChangeUsername =(e)=>{
+    const value = e.target.value;
+    setUsername(value);
+  }
+  const onChangePassword =(e)=>{
+    const value = e.target.value;
+    setPassword(value);
+  }
+  // -onsubmit
+  // const onSubmit =(e)=>{
+  //   if(!RegexUsername.test(username)==false) {
+  //     alert('Invalid format username');
+  //   }
+  // }
 
   const Auth = async (e) => {
     e.preventDefault();
@@ -28,26 +49,10 @@ const Login = () => {
   }
   return (
     <>
-      {/* 
-      <div className='center'>
-        <div>
-          <p>Logo</p>
-        </div>
-        <div className='border'>
-          <div>
-            <p>Mohon isi dengan detail di bawah menggunakan akun admin anda</p>
-          </div>
-        </div>
-        <div >
-          <div>
-
-          </div>
-        </div>
-      </div> */}
       <div className="container">
         <div className="row  ">
-          <div className="col-md-12 offset-md-3 m-0 d-flex row justify-content-center body ">
-            <h2 className=" text-center head text-dark  ">LOGO</h2>
+          <div className="col-md-12 offset-md-3 m-0 d-flex row justify-content-center head ">
+            <h2 className=" text-center  text-dark  ">LOGO</h2>
 
             <div className="card my-5 ">
 
@@ -58,13 +63,13 @@ const Login = () => {
 
               <div className="input-user  ">
                 <p>Username</p>
-                <input type="text" id="Username" aria-describedby="emailHelp" value={username} onChange={(e) => setUsername(e.target.value)} />
+                <input type="text" id="Username" aria-describedby="emailHelp" value={username} onChange={onChangeUsername} />
               </div>
               <div className="input-password  ">
                 <p>Password</p>
                 <div className='brd '>
                   <div>
-                    <input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                    <input type="password" id="password" value={password} onChange={onChangePassword} />
                   </div>
                   <div>
                     <AiFillEye />

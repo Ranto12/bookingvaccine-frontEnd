@@ -13,23 +13,25 @@ import TabelKelolaBerita from "../../component/KelolaBerita/TabelKelolaBerita";
 
 // api
 import api from './../../API/data/post'
+import Select from "../../component/PageComponent/Select";
 
 const KelolaBerita = () => {
      // initial state and valiables
      const [input, setInput] = useState("");
      const [count, setCount] = useState(1);
      const [Artikels, setArtikels] = useState([]);
+     const [Values, setValues] = useState(15);
 
  
+     //funtion
      const onChangeInput = (e) =>{
          const input = e.target.value;
          setInput(input)
      }
- 
      const handleSearch=() =>{
          setCount(1+input)
-         
      }
+     
  
     //  useEffect
      useEffect(()=>{
@@ -80,25 +82,10 @@ const KelolaBerita = () => {
             <div className='col-6 d-flex TotalPengguna ' >
               <div>
               <p className='Fz-16'>Total</p>
+              {input}
               </div>
               <div className='ms-2'>
-              <select name="jumlahArtiker " id="jumlahArtikel Select15" >
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-                <option value="11">11</option>
-                <option value="12">12</option>
-                <option value="13">13</option>
-                <option value="14">14</option>
-                <option value="15">15</option>
-              </select>
+              <Select setValues={setValues} />
               </div>
               <div className="d-flex">
                 <div>
@@ -149,6 +136,7 @@ const KelolaBerita = () => {
                   </div>
                   <p style={{ fontSize: "14px", marginLeft: "12,08px" }}>
                     Buat Berita
+                    
                   </p>
                 </Link>
               </div>
