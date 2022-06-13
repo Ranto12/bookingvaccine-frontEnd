@@ -6,7 +6,10 @@ import CancelIcon from "@mui/icons-material/Cancel";
 
 const TablePengguna = ({ key, nama, nik, jenisVaccine, Number }) => {
   return (
-    <div className="d-flex TabelDataBooking justify-content-center">
+    <div
+      className="d-flex TabelDataBooking justify-content-center"
+      style={{ backgroundColor: Number % 2 === 1 ? "#FFFFFF" : "#F7F7F7" }}
+    >
       <div className="col-1">{Number}</div>
       <div className="col-4">{nama}</div>
       <div className="col-2">{nik}</div>

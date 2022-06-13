@@ -1,12 +1,15 @@
 import React, { useState, useEffect, useRef } from "react";
 import Sidebar from "../../component/Sidebar/Sidebar";
 import { Link } from "react-router-dom";
-import Stack from "@mui/material/Stack";
-import { createTheme } from "@mui/material/styles";
-
+import Button from "@mui/material/Button";
+import FormatBoldIcon from "@mui/icons-material/FormatBold";
+import FormatItalicIcon from "@mui/icons-material/FormatItalic";
+import FormatUnderlinedIcon from "@mui/icons-material/FormatUnderlined";
+import PanoramaIcon from "@mui/icons-material/Panorama";
+import FormatListBulletedIcon from "@mui/icons-material/FormatListBulleted";
 // style
 import "./../../assets/Style/style.css";
-import { Grid } from "@mui/material";
+import { Grid, IconButton } from "@mui/material";
 
 import ImagePlaceholder from "../../assets/image/ImagePlaceholder.jpg";
 
@@ -119,15 +122,66 @@ const ArtikelTerbaru = () => {
                   onChange={onChangeImage}
                 />
                 <Grid container columnSpacing={{ xs: 2 }}>
-                  <Grid item xs={7}>
-                    <h6
-                      style={{
-                        marginTop: "1rem",
-                        color: "#4E7EA7",
-                      }}
-                    >
-                      Isi Berita
-                    </h6>
+                  <Grid item xs={9}>
+                    <Grid container>
+                      <Grid container item xs>
+                        <h6
+                          style={{
+                            marginTop: "1rem",
+                            color: "#4E7EA7",
+                          }}
+                        >
+                          Isi Berita
+                        </h6>
+                      </Grid>
+                      <Grid item>
+                        <Button
+                          variant="outlined"
+                          sx={{
+                            minHeight: 0,
+                            minWidth: 0,
+                            padding: 0,
+                            backgroundColor: "#D9D9D9",
+                          }}
+                        >
+                          <FormatBoldIcon
+                            style={{ color: "#AAA9A9" }}
+                          ></FormatBoldIcon>
+                        </Button>
+                        <Button
+                          variant="outlined"
+                          sx={{ minHeight: 0, minWidth: 0, padding: 0 }}
+                        >
+                          <FormatItalicIcon
+                            style={{ color: "#AAA9A9" }}
+                          ></FormatItalicIcon>
+                        </Button>
+                        <Button
+                          variant="outlined"
+                          sx={{ minHeight: 0, minWidth: 0, padding: 0 }}
+                        >
+                          <FormatUnderlinedIcon
+                            style={{ color: "#AAA9A9" }}
+                          ></FormatUnderlinedIcon>
+                        </Button>
+                        <Button
+                          variant="outlined"
+                          sx={{ minHeight: 0, minWidth: 0, padding: 0 }}
+                        >
+                          <PanoramaIcon
+                            style={{ color: "#AAA9A9" }}
+                          ></PanoramaIcon>
+                        </Button>
+                        <Button
+                          variant="outlined"
+                          sx={{ minHeight: 0, minWidth: 0, padding: 0 }}
+                        >
+                          <FormatListBulletedIcon
+                            style={{ color: "#AAA9A9" }}
+                          ></FormatListBulletedIcon>
+                        </Button>
+                      </Grid>
+                    </Grid>
                     <textarea
                       type="text"
                       className="w-100 FormArtikel p-1 rounded-2"
@@ -138,7 +192,7 @@ const ArtikelTerbaru = () => {
                       }}
                     />
                   </Grid>
-                  <Grid item xs={5}>
+                  <Grid item xs={3}>
                     <div>
                       <h6
                         style={{
@@ -152,7 +206,7 @@ const ArtikelTerbaru = () => {
                         <div>
                           <div
                             style={{
-                              width: "75%",
+                              width: "100%",
                               height: "20rem",
                               border: "dashed 2px #4E7EA7",
                               display: "flex",
@@ -207,7 +261,7 @@ const ArtikelTerbaru = () => {
                           justifyContent: "end",
                         }}
                       >
-                        <div className="text-end mt-3 mb-5">
+                        <div className="text-end mt-3">
                           <button className="btn-kelola-jadwal1 me-3  rounded-3 mb-5">
                             Batal
                           </button>

@@ -92,7 +92,7 @@
 }
 
 .TabelDataBooking {
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
   justify-content: center;
   align-items: center;
 }
@@ -206,6 +206,17 @@
   padding: 10%;
   cursor: pointer;
   background: none;
+}
+
+.img-border {
+  width: 281px;
+  height: 181px;
+  align-items: center;
+  border: 2px solid #45c2d6;
+  box-shadow: 0px 9px 26px rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  margin-top: 13.29px;
+  border-style: dashed;
 }
 
 .img-input > label > input {
@@ -411,4 +422,8 @@
 
 .table-data {
   color: #ffffff;
+}
+
+.table-styling {
+  border: 2px solid #45c2d6;
 }

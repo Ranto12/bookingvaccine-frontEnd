@@ -135,7 +135,7 @@ const DataBooking = () => {
           </div>
 
           {/* isi tabel */}
-          <div className="TabelDataBooking row ">
+          <div className="TabelDataBooking  table-styling row ">
             {booking.map((data, index) => {
               return (
                 <TabelDataBooking
