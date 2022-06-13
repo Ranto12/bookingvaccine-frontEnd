@@ -407,3 +407,16 @@
 .Border-Color-Box{
   border: 5px solid #45C2D6;
 }
+
+/* button admin */
+.Button-add-admin{
+  background-color: #7BD9E8;
+  border: none;
+  border-radius: 10px;
+  width: 124px;
+  height: 44px;
+  left: 1283px;
+  top: 176px;
+  color: #FFFFFF;
+  font-size: 12px;
+}
