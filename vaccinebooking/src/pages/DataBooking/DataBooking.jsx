@@ -10,7 +10,7 @@ import { AiOutlineSearch } from "react-icons/ai";
 import TabelDataBooking from "../../component/DataBooking/TabelDataBooking";
 
 // API
-import api from '../../API/data/post'
+import api from "../../API/data/post";
 
 const DataBooking = () => {
   // initial state and valiables
@@ -31,24 +31,24 @@ const DataBooking = () => {
     handleSearch();
   }, []);
 
-  useEffect(()=>{
-    const fetchPosts = async()=>{
-        try{
-            const response = await api.get("/bookingVaccine")
-            setBooking(response.data);
-        } catch(err){
-            if(err.response){
-                //not in the 200 response range
-                console.log(err.response.data)
-                console.log(err.response.status)
-                console.log(err.response.headers)
-            }else{
-                console.log(`Error ${err.message}`);
-            }
+  useEffect(() => {
+    const fetchPosts = async () => {
+      try {
+        const response = await api.get("/bookingVaccine");
+        setBooking(response.data);
+      } catch (err) {
+        if (err.response) {
+          //not in the 200 response range
+          console.log(err.response.data);
+          console.log(err.response.status);
+          console.log(err.response.headers);
+        } else {
+          console.log(`Error ${err.message}`);
         }
-    }
+      }
+    };
     fetchPosts();
-},[])
+  }, []);
 
   return (
     <div className="Fontcolor-Dasboard">
@@ -68,11 +68,11 @@ const DataBooking = () => {
           <div className="row d-flex Margin-top-Serch align-items-end">
             <div className="col-6 d-flex " style={{ height: "26px" }}>
               <div>
-                <p className="Fz-16">Tampilkan</p>
+                <p className="filter">Total</p>
               </div>
               <div className="ms-2">
                 <select
-                  name="jumlahArtiker "
+                  name="jumlahArtikel "
                   id="jumlahArtikel"
                   style={{ fontSize: "14px", borderRadius: "2px" }}
                 >
@@ -95,7 +95,7 @@ const DataBooking = () => {
               </div>
               <div className="d-flex">
                 <div>
-                  <p className="ms-2 Fz-16 me-2">entri</p>
+                  <p className="ms-2 filter me-2">entri</p>
                 </div>
                 <div className="border border-dark d-flex w-100">
                   <div
@@ -124,20 +124,28 @@ const DataBooking = () => {
           </div>
 
           {/* tabel */}
-          <div className="row mt-4 background-color-Table  justify-content-center">
-            <div className="col-1">No</div>
-            <div className="col-4">Nama</div>
-            <div className="col-2">NIK</div>
-            <div className="col-4">Jenis Vaksin</div>
-            <div className="col-1">Action</div>
+          <div className="row mt-4 table-header background-color-Table  justify-content-center">
+            <div className="row mt-2 table-data justify-content-center">
+              <div className="col-1">No</div>
+              <div className="col-4">Nama</div>
+              <div className="col-2">NIK</div>
+              <div className="col-4">Jenis Vaksin</div>
+              <div className="col-1">Aksi</div>
+            </div>
           </div>
 
           {/* isi tabel */}
-          <div className="TabelDataBooking row Border-Color-Box">
-            {booking.map((data, index)=>{
-              return(
-                <TabelDataBooking key={data.id} Number={index +1 } nama={data.nama} nik={data.nik}  jenisVaccine={data.jenisVaccine}/>
-              )
+          <div className="TabelDataBooking row ">
+            {booking.map((data, index) => {
+              return (
+                <TabelDataBooking
+                  key={data.id}
+                  Number={index + 1}
+                  nama={data.nama}
+                  nik={data.nik}
+                  jenisVaccine={data.jenisVaccine}
+                />
+              );
             })}
           </div>
         </div>
