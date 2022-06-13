@@ -6,7 +6,7 @@ import { RiFileSearchFill } from "react-icons/ri";
 
 const TabelAdmin = ({Number, nama, hp, alamat, email}) => {
     return (
-        <div className="d-flex TabelAdmin justify-content-center p-0">
+        <div className="d-flex TabelkelolaBerita justify-content-center TableColor-child">
             <div className="col-1 ps-3">{Number}</div>
             <div className="col-3 ps-2">{nama}</div>
             <div className="col-2 ps-2">{alamat}</div>

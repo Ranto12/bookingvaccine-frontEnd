@@ -129,9 +129,9 @@ const KelolaJadwal = () => {
                                     </Link>
                                 </div>
                             </div>
-
-                            {/* table */}
-                            <div className='row mt-4 background-color-Table '>
+                        </div>
+                         {/* table */}
+                         <div className='row mt-4 background-color-Table '>
                                 <div className='col-1'>
                                     No
                                 </div>
@@ -152,14 +152,13 @@ const KelolaJadwal = () => {
                                 </div>
                             </div>
                             {/* isi table */}
-                            <div className='TabelkelolaBerita row'>
+                            <div className='TabelkelolaBerita row Border-Color-Box'>
                                 {jadwal.map((data, index) => {
                                     return (
                                         <TabelVaksinasi Number={index + 1} key={data.id} nama={data.namaFaskes} stock={data.stock} jenis={data.jenis} waktu={data.waktu} />
                                     )
                                 })}
                             </div>
-                        </div>
                     </div>
                 </div>
             </div>

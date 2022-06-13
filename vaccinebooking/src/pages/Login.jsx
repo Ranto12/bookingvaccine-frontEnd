@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Button, Col, Container, Form, Row } from 'react-bootstrap'
 import { AiFillEye } from 'react-icons/ai';
 import Logo from "../assets/img/logo.png"
@@ -85,7 +85,9 @@ const Login = () => {
                 </div>
               </div>
               <div className='btn'>
-                <button onClick={Auth}>Masuk</button>
+                <Link to='/dashboard'>
+                <button>Masuk</button>
+                </Link>
               </div>
 
             </div>

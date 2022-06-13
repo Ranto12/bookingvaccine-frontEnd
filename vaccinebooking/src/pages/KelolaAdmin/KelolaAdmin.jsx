@@ -117,7 +117,7 @@ const KelolaAdmin = () => {
                                 <div className='me-1' >
                                     <RiFileSearchFill/>
                                 </div>
-                                <p style={{fontSize:"14px", marginLeft:"12,08px"}}>
+                                <p style={{fontSize:"14px", marginLeft:"1px"}}>
                                     Add
                                 </p>
                             </Link>
@@ -147,7 +147,7 @@ const KelolaAdmin = () => {
                     </div>
 
                     {/* isi tabel */}
-                    <div className='TabelAdmin row '>
+                    <div className='TabelAdmin row Border-Color-Box'>
                         {admin.map((data, index)=>{
                             return(
                                 <TabelAdmin key={data.id} Number={index +1} nama={data.nama} alamat={data.alamat} hp={data.noHp} email={data.email}/>
