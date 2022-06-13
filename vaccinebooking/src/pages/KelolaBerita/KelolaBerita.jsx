@@ -136,7 +136,6 @@ const KelolaBerita = () => {
                   </div>
                   <p style={{ fontSize: "14px", marginLeft: "12,08px" }}>
                     Buat Berita
-                    
                   </p>
                 </Link>
               </div>
@@ -144,7 +143,7 @@ const KelolaBerita = () => {
           </div>
 
           {/* tabel */}
-          <div className="row mt-4 background-color-Table  justify-content-center">
+          <div className="row mt-4 background-color-Table  justify-content-center ">
             <div className="col-1">No</div>
             <div className="col-4">judul Berita</div>
             <div className="col-2">Author</div>
@@ -153,7 +152,7 @@ const KelolaBerita = () => {
           </div>
 
           {/* isi tabel */}
-          <div className='TabelkelolaBerita row '>
+          <div className='TabelkelolaBerita row Border-Color-Box '>
             {Artikels.map((artikel, index)=>{
               return(
                 <TabelKelolaBerita key={artikel.ArtikelsId} Number={index + 1}  title={artikel.title} tanggal={artikel.tanggal} author={artikel.author} />

@@ -133,7 +133,7 @@ const DataBooking = () => {
           </div>
 
           {/* isi tabel */}
-          <div className="TabelDataBooking row ">
+          <div className="TabelkelolaBerita row Border-Color-Box">
             {booking.map((data, index)=>{
               return(
                 <TabelDataBooking key={data.id} Number={index +1 } nama={data.nama} nik={data.nik}  jenisVaccine={data.jenisVaccine}/>

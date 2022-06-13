@@ -1,14 +1,12 @@
 /* sidebar */
 .sidebar {
-  background-color: #7BD9E8;
-  ;
+  background-color: #7BD9E8;;
   border-radius: 30px !important;
 }
 
-.icon-dasboard {
+.icon-dasboard{
   font-size: 200%;
 }
-
 .menu-sidebar:hover {
   background-color: #45C2D6;
   border-radius: 10px !important;
@@ -28,30 +26,27 @@
   border-radius: 10px;
 }
 
-.title-das {
+.title-das{
   color: #4E7EA7;
   /* margin-top: 6%; */
 }
 
-.Card-TotalAdmin {
+.Card-TotalAdmin{
   padding-bottom: 10%;
-  border-radius: 20px;
+  border-radius: 20px; 
   border: solid;
-  padding-left: 36.54px;
-  padding-top: 30px;
+  padding-left:36.54px;
+  padding-top:30px;
   background: white;
 }
 
-.card-faskes,
-.card-faskes1 {
+.card-faskes,.card-faskes1{
   background-color: #45C2D6;
   border-radius: 10px;
 }
-
-.card-faskes {
+.card-faskes{
   padding: 5% 15%;
 }
-
 .card-faskes1 {
   padding: 5% 7%;
 }
@@ -60,16 +55,12 @@
 
 
 /* kelola berita */
-
-
 .fz-Head {
   font-size: 24px;
-  color: #4E7EA7;
 }
 
 .fz-Title {
   font-size: 36px;
-  color: #4E7EA7
 }
 
 .Margin-top-Serch {
@@ -78,7 +69,6 @@
 
 .Fz-16 {
   font-size: 16px;
-  color: #4E7EA7
 }
 
 .LinkText:hover {
@@ -112,57 +102,41 @@
 
 /* Kelola pengguna */
 
-.Addusers-button {
+.Addusers-button{
   height: 34px;
   width: 74px;
 }
-
-.TotalPengguna {
+.TotalPengguna{
   height: 26px;
 }
-
-.Select15 select {
+.Select15{
   font-size: 14px;
   border-radius: 2px;
-  border: 1px solid #829CCC;
-  color: #829CCC;
-
-
+  border: 1px #C2C2C2;
+  border-color: #C2C2C2;
 }
-
-.PointerClikCss {
+.PointerClikCss{
   cursor: pointer;
   border: "none";
 }
-
-.InputCssKelolaPengguna {
+.InputCssKelolaPengguna{
   width: "251px";
   height: 24px;
   border: none;
   border-radius: 2px;
 }
-
-.BorderRadiusInline {
+.BorderRadiusInline{
   border-radius: 2px;
-  border: 1px solid #829CCC !important;
-  color: #829CCC;
+  border: 2px black;
 }
-
-
-.BorderRadiusInline input:focus {
-  outline: none;
-}
-
 .TableColor-child:nth-child(even) {
-  background-color: #D6EEEE;
+  background-color: #F7F7F7;
 }
-
 /* keloal Jadwal Vaksin */
 .margin-rigth {
   margin-right: 33px !important;
   margin-left: 33px !important;
 }
-
 /* TabelJadwalVaksinasi */
 
 .TabelJadwalVaksinasi {
@@ -172,37 +146,10 @@
 
 }
 
-.md {
-  width: 160px;
-  height: 35px;
-
-
-}
-
-.md p {
-  color: #FFFFFF;
-  margin-bottom: 0;
-  margin-top: 5px;
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  text-align: center;
-  width: 88px;
-  text-decoration: none !important;
-
-}
 
 .md svg {
+  margin-right: 7px;
   margin-bottom: 5px;
-  color: #FFFFFF;
-  margin-top: 7px;
-  margin-left: 3px;
-}
-
-.md svg path {
-  width: 16px !important;
-  height: 17px !important;
 }
 
 .border:focus {
@@ -211,34 +158,33 @@
 
 /* TebelAdmin */
 .TabelAdmin {
-  background-color: #d9d9d9;
+  background-color: #FFFFFF;
   justify-content: center;
   align-items: center;
 
 }
-
-.TabelkelolaBerita {
-  background-color: #D9D9D9;
-  justify-content: center;
-  align-items: center;
+.TabelkelolaBerita{
+    background-color: #FFFFFF;
+    justify-content: center;
+    align-items: center;
 }
 
 /* kelolaJadwalVaksin */
 
 
-.bg-card-kelola {
-  background-color: #7BD9E8 !important;
-  padding: 10px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+.bg-card-kelola{
+    background-color: #7BD9E8 !important;
+    padding: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
-.bg-form-jadwal {
-  background-color: #F7F7F7;
-  padding-left: 36px !important;
-  padding-right: 36px !important;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+.bg-form-jadwal{
+    background-color: #F7F7F7;
+    padding-left: 36px !important;
+    padding-right: 36px !important;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 /* login */
@@ -252,60 +198,56 @@
   margin-top: 13.29px;
 }
 
-.btn-kelola-jadwal {
-  background-color: #7BD9E8;
-  border: 0px;
-  padding: 7px 34px;
+.btn-kelola-jadwal{
+    background-color: #7BD9E8;
+    border: 0px;
+    padding: 7px 34px;
 
 }
-
-.btn-kelola-jadwal1 {
+.btn-kelola-jadwal1{
   background-color: #F7F7F7;
-  border: 0px;
-
+    border: 0px;
+    
 }
 
-.img-input {
-  border-style: dashed;
-  padding: 10%;
-  cursor: pointer;
-  background: none;
+.img-input{
+    border-style: dashed;
+    padding: 10%;
+    cursor: pointer;
+    background:none;
 }
 
-.img-input>label>input {
-  display: none;
-
+.img-input>label>input{
+    display: none;
+   
 }
 
-.img-card {
-  background-color: white;
-  padding: 20px;
-  margin: 0px 30px;
+.img-card{
+    background-color: white;
+    padding: 20px ;
+    margin: 0px 30px;
 }
 
-.card-text {
-  font-size: 13px;
-
-
+.card-text{
+    font-size: 13px;
+    
+    
 }
 
-.input-kelola,
-.input-kel,
-.input-kel-area {
+.input-kelola,.input-kel,.input-kel-area{
   background-color: #ffff;
   border-radius: 0px;
 }
 
-.input-kel {
+.input-kel{
 
-  width: 10% !important;
+    width: 10% !important;
 }
 
 .FormArtikelTerbaru {
   background-color: #d9d9d9;
   justify-content: center;
 }
-
 /* login */
 .tabel {
   width: 484px;
@@ -315,9 +257,7 @@
 
 .FormArtikel {
   background-color: #aaa9a9;
-  width: 100vw;
-}
-
+  width: 100vw; }
 .head {
   margin-top: 165px !important;
   margin-bottom: 165px !important;
@@ -330,12 +270,12 @@
 }
 
 /* Kelola data Admin  */
-.input-are-area {
+.input-are-area{
   padding-bottom: 40% !important;
   background-color: #ffff;
 }
 
-.email-area {
+.email-area{
   padding-bottom: 22%;
   background-color: #ffff;
 }
@@ -461,4 +401,22 @@
   margin: 0px !important;
   justify-content: end;
   display: flex;
+}
+
+/* tabel  */
+.Border-Color-Box{
+  border: 5px solid #45C2D6;
+}
+
+/* button admin */
+.Button-add-admin{
+  background-color: #7BD9E8;
+  border: none;
+  border-radius: 10px;
+  width: 124px;
+  height: 44px;
+  left: 1283px;
+  top: 176px;
+  color: #FFFFFF;
+  font-size: 12px;
 }

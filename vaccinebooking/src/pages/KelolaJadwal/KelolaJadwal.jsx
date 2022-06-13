@@ -7,8 +7,7 @@ import './../../assets/Style/style.css';
 
 // icon
 import { AiOutlineSearch } from 'react-icons/ai';
-import { FaUserPlus } from 'react-icons/fa';
-import { MdEditCalendar } from "react-icons/md";
+import { FaUserPlus } from 'react-icons/fa'
 
 import TabelVaksinasi from '../../component/JadwalVaksinasi/TabelVaksinasi';
 
@@ -119,53 +118,47 @@ const KelolaJadwal = () => {
                             </div>
 
                             <div className='col-6 d-flex justify-content-end'>
-                                <Link className='text-decoration-none Fontcolor-Dasboard LinkText d-flex' to='/jadwalvaksinasi' >
-                                    <div className='d-flex ms-2 md justify-content-center ' style={{ border: "1px solid", borderRadius: "10px", paddingLeft: "8px", paddingRight: "8px", background: "#45C2D6" }}>
-
+                                <div className='d-flex ms-2 ' style={{ border: "1px solid", height: "26px", borderRadius: "10px", paddingLeft: "8px", paddingRight: "8px", background: "#D9D9D9" }}>
+                                    <Link className='text-decoration-none Fontcolor-Dasboard LinkText d-flex' to='/jadwalvaksinasi' >
                                         <div className='me-1' >
-                                            <MdEditCalendar />
+                                            <FaUserPlus />
                                         </div>
-                                        <div>
-                                            <p>
-                                                Buat Jadwal
-                                            </p>
-                                        </div>
-
-
-                                    </div>
-                                </Link>
+                                        <p style={{ fontSize: "14px", marginLeft: "1px" }}>
+                                            Add
+                                        </p>
+                                    </Link>
+                                </div>
                             </div>
                         </div>
-                        {/* table */}
-                        <div className='row mt-4 background-color-Table p-0 '>
-                            <div className='col-1'>
-                                No
+                         {/* table */}
+                         <div className='row mt-4 background-color-Table '>
+                                <div className='col-1'>
+                                    No
+                                </div>
+                                <div className='col-3'>
+                                    Nama Faskes
+                                </div>
+                                <div className='col-2'>
+                                    Stock
+                                </div>
+                                <div className='col-3'>
+                                    Jenis Vaksin
+                                </div>
+                                <div className='col-2'>
+                                    Waktu
+                                </div>
+                                <div className='col-1'>
+                                    Action
+                                </div>
                             </div>
-                            <div className='col-3'>
-                                Nama Faskes
+                            {/* isi table */}
+                            <div className='TabelkelolaBerita row Border-Color-Box'>
+                                {jadwal.map((data, index) => {
+                                    return (
+                                        <TabelVaksinasi Number={index + 1} key={data.id} nama={data.namaFaskes} stock={data.stock} jenis={data.jenis} waktu={data.waktu} />
+                                    )
+                                })}
                             </div>
-                            <div className='col-2'>
-                                Stock
-                            </div>
-                            <div className='col-3'>
-                                Jenis Vaksin
-                            </div>
-                            <div className='col-2'>
-                                Waktu
-                            </div>
-                            <div className='col-1'>
-                                Action
-                            </div>
-                        </div>
-                        {/* isi table */}
-                        <div className='TabelkelolaBerita row'>
-                            {jadwal.map((data, index) => {
-                                return (
-                                    <TabelVaksinasi Number={index + 1} key={data.id} nama={data.namaFaskes} stock={data.stock} jenis={data.jenis} waktu={data.waktu} />
-                                )
-                            })}
-                        </div>
-
                     </div>
                 </div>
             </div>

@@ -108,16 +108,6 @@ console.log(dataPengguna)
             </div>
 
             <div className='col-6 d-flex justify-content-end'>
-            <div className='d-flex ms-2 '  style={{border:"1px solid", height:"26px", borderRadius:"10px", paddingLeft:"8px", paddingRight:"8px", background:"#D9D9D9"}}>
-                  <Link className='text-decoration-none Fontcolor-Dasboard LinkText d-flex' to='/buatBerita' >
-                    <div className='me-1' >
-                      <FaUserPlus/>
-                    </div>
-                      <p style={{fontSize:"14px", marginLeft:"1px"}}>
-                        Add
-                       </p>
-                  </Link>
-                </div>
             </div>
           </div>
 
@@ -140,7 +130,7 @@ console.log(dataPengguna)
             </div>
           </div>
           {/* isi table */}
-          <div className='TabelkelolaBerita row'>
+          <div className='TabelkelolaBerita row Border-Color-Box mb-2'>
             {dataPengguna.map((data, index)=>{
               return(
                 <TablePengguna Number={index + 1} key={data.id} nama={data.nama} nohp = {data.noHp}  NIK={data.nik}  />

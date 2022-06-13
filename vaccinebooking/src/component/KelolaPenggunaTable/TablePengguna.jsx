@@ -1,8 +1,8 @@
 import React from "react";
 import "../../assets/Style/style.css";
 import { IconButton } from "@mui/material";
-import { RiPencilFill } from "react-icons/ri";
-import { MdDelete } from "react-icons/md";
+import { RiFileSearchFill } from "react-icons/ri";
+
 
 const TablePengguna = ({key, nama, nohp, NIK, Number}) => {
 
@@ -11,7 +11,7 @@ const TablePengguna = ({key, nama, nohp, NIK, Number}) => {
     <p>mantul</p>
   }
   return (
-    <div className="d-flex TabelkelolaBerita  TableColor-child">
+    <div className="d-flex TabelkelolaBerita  TableColor-child ">
       <div className='col-1' >
               {Number}
             </div>
@@ -24,12 +24,9 @@ const TablePengguna = ({key, nama, nohp, NIK, Number}) => {
             <div className='col-3'>
               {NIK}
             </div>
-      <div className="col-1 d-flex  ">
-        <IconButton aria-label="Check" data-bs-toggle="tooltip" data-bs-placement="top" title="edit">
-          <RiPencilFill />
-        </IconButton>
-        <IconButton aria-label="Cancel" data-bs-toggle="tooltip" data-bs-placement="top" title="remove">
-          <MdDelete />
+      <div className="col-1 justify-content-center  ">
+        <IconButton aria-label="Cancel" data-bs-toggle="tooltip" data-bs-placement="top" title="view" >
+          <RiFileSearchFill />
         </IconButton>
       </div>
     </div>
