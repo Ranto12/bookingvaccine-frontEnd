@@ -119,7 +119,7 @@ const KelolaJadwal = () => {
 
                             <div className='col-6 d-flex justify-content-end'>
                                 <div >
-                                <Link to='/AddAdmin' >
+                                <Link to='/jadwalvaksinasi' >
                                 <button className='Button-add-admin'>
                                 <BsFillCalendarCheckFill className='me-3'/>
                                     Buat Jadwal</button>
