@@ -141,7 +141,6 @@ const ArtikelTerbaru = () => {
                             minHeight: 0,
                             minWidth: 0,
                             padding: 0,
-                            backgroundColor: "#D9D9D9",
                           }}
                         >
                           <FormatBoldIcon
