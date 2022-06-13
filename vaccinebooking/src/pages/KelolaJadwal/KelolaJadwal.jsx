@@ -7,7 +7,7 @@ import './../../assets/Style/style.css';
 
 // icon
 import { AiOutlineSearch } from 'react-icons/ai';
-import { FaUserPlus } from 'react-icons/fa'
+import { BsFillCalendarCheckFill } from 'react-icons/bs'
 
 import TabelVaksinasi from '../../component/JadwalVaksinasi/TabelVaksinasi';
 
@@ -118,15 +118,12 @@ const KelolaJadwal = () => {
                             </div>
 
                             <div className='col-6 d-flex justify-content-end'>
-                                <div className='d-flex ms-2 ' style={{ border: "1px solid", height: "26px", borderRadius: "10px", paddingLeft: "8px", paddingRight: "8px", background: "#D9D9D9" }}>
-                                    <Link className='text-decoration-none Fontcolor-Dasboard LinkText d-flex' to='/jadwalvaksinasi' >
-                                        <div className='me-1' >
-                                            <FaUserPlus />
-                                        </div>
-                                        <p style={{ fontSize: "14px", marginLeft: "1px" }}>
-                                            Add
-                                        </p>
-                                    </Link>
+                                <div >
+                                <Link to='/AddAdmin' >
+                                <button className='Button-add-admin'>
+                                <BsFillCalendarCheckFill className='me-3'/>
+                                    Buat Jadwal</button>
+                            </Link>
                                 </div>
                             </div>
                         </div>

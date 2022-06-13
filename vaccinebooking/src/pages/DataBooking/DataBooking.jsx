@@ -60,7 +60,7 @@ const DataBooking = () => {
           <div className="row">
             <div className="col-6">
               <h1 className="fz-Head">Kelola Data</h1>
-              <h1 className="fz-title">Booking vaksinasi</h1>
+              <h1 className="fz-Title">Booking vaksinasi</h1>
             </div>
           </div>
 
@@ -133,7 +133,7 @@ const DataBooking = () => {
           </div>
 
           {/* isi tabel */}
-          <div className="TabelkelolaBerita row Border-Color-Box">
+          <div className="TabelDataBooking row Border-Color-Box">
             {booking.map((data, index)=>{
               return(
                 <TabelDataBooking key={data.id} Number={index +1 } nama={data.nama} nik={data.nik}  jenisVaccine={data.jenisVaccine}/>
