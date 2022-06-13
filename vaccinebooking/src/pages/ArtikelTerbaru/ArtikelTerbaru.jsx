@@ -3,12 +3,10 @@ import Sidebar from "../../component/Sidebar/Sidebar";
 import { Link } from "react-router-dom";
 import Stack from "@mui/material/Stack";
 import { createTheme } from "@mui/material/styles";
-import boostrap from "bootstrap";
 
 // style
 import "./../../assets/Style/style.css";
-import { Button, Grid } from "@mui/material";
-import { ThemeProvider } from "@mui/system";
+import { Grid } from "@mui/material";
 
 import ImagePlaceholder from "../../assets/image/ImagePlaceholder.jpg";
 
@@ -48,15 +46,6 @@ const ArtikelTerbaru = () => {
     handleSearch();
   }, []);
 
-  const theme = createTheme({
-    palette: {
-      primary: {
-        main: "#8e8b8b",
-        darker: "#8b8b8b",
-      },
-    },
-  });
-
   return (
     <div className="Fontcolor-Dasboard">
       <div className="row me-5">
@@ -66,23 +55,25 @@ const ArtikelTerbaru = () => {
         <div className="col-9 mt-5">
           <div className="row">
             <div className="col-6">
-              <h1 className="fz-Head">Kelola Data</h1>
-              <h1 className="fz-title">Artikel/berita Terbaru</h1>
+              <h1 className="header">Tambahkan</h1>
+              <h1 className="title">Berita terbaru</h1>
             </div>
           </div>
 
-          <div className="row mt-4 background-color-Table  justify-content-center">
-            <h6>
+          <div className=" table-header row mt-4 background-color-Table  justify-content-center">
+            <h6
+              style={{
+                marginTop: "1rem",
+                color: "#FFFFFF",
+              }}
+            >
               Silahkan Masukan Data sesuai dengan bagian yang telah di sediakan
             </h6>
           </div>
 
           {/* isi Form */}
           <div className="FormArtikelTerbaru row ">
-            <div
-              className="d-flex FormArtikelTerbaru justify-content-start"
-              style={{ backgroundcolor: "#D9D9D9" }}
-            >
+            <div className="d-flex FormArtikelTerbaru justify-content-start">
               <div
                 style={{
                   width: "100%",
@@ -91,9 +82,10 @@ const ArtikelTerbaru = () => {
                 <h6
                   style={{
                     marginTop: "2rem",
+                    color: "#4E7EA7",
                   }}
                 >
-                  Judul Artikel/Berita
+                  Judul Berita
                 </h6>
                 <input
                   type="text"
@@ -106,6 +98,7 @@ const ArtikelTerbaru = () => {
                 <h6
                   style={{
                     marginTop: "1rem",
+                    color: "#4E7EA7",
                   }}
                 >
                   Author
@@ -127,7 +120,14 @@ const ArtikelTerbaru = () => {
                 />
                 <Grid container columnSpacing={{ xs: 2 }}>
                   <Grid item xs={7}>
-                    <h6>Isi Artikel/Berita</h6>
+                    <h6
+                      style={{
+                        marginTop: "1rem",
+                        color: "#4E7EA7",
+                      }}
+                    >
+                      Isi Berita
+                    </h6>
                     <textarea
                       type="text"
                       className="w-100 FormArtikel p-1 rounded-2"
@@ -140,14 +140,21 @@ const ArtikelTerbaru = () => {
                   </Grid>
                   <Grid item xs={5}>
                     <div>
-                      <h6>Upload Gambar Cover</h6>
+                      <h6
+                        style={{
+                          marginTop: "1rem",
+                          color: "#4E7EA7",
+                        }}
+                      >
+                        Upload Gambar Cover
+                      </h6>
                       {imagePreview === "" ? (
                         <div>
                           <div
                             style={{
-                              width: "100%",
+                              width: "75%",
                               height: "20rem",
-                              border: "dashed 2px #aaa9a9",
+                              border: "dashed 2px #4E7EA7",
                               display: "flex",
                               flexDirection: "column",
                               justifyContent: "center",
@@ -168,6 +175,7 @@ const ArtikelTerbaru = () => {
                                 textAlign: "center",
                                 fontSize: "0.9em",
                                 marginTop: "1rem",
+                                color: "#4E7EA7",
                               }}
                             >
                               <p>
@@ -199,18 +207,14 @@ const ArtikelTerbaru = () => {
                           justifyContent: "end",
                         }}
                       >
-                        <Stack
-                          direction="row"
-                          spacing={2}
-                          className="mb-4 mt-4"
-                        >
-                          <ThemeProvider theme={theme}>
-                            <Button color="primary">Batal</Button>
-                            <Button variant="contained" color="primary">
-                              Simpan
-                            </Button>
-                          </ThemeProvider>
-                        </Stack>
+                        <div className="text-end mt-3 mb-5">
+                          <button className="btn-kelola-jadwal1 me-3  rounded-3 mb-5">
+                            Batal
+                          </button>
+                          <button className="btn-kelola-jadwal ms-3  rounded-3 mb-5">
+                            Simpan
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </Grid>
