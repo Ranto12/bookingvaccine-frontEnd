@@ -13,6 +13,7 @@ import AddAdmin from "./pages/KelolaAdmin/AddAdmin";
 // import ViewUser from './domain/veiwUser/ViewUser';
 // import Login from './pages/Login/Login';
 import ArtikelTerbaru from "./pages/ArtikelTerbaru/ArtikelTerbaru";
+import Overlaybookingvacinne from "./component/Overlay/Overlaybookingvacinne";
 
 function App() {
   return (
@@ -28,7 +29,8 @@ function App() {
       <Route path="/KelolaAdmin" element={<KelolaAdmin />} />
       <Route path="/ArtikelTerbaru" element={<ArtikelTerbaru />} />
       <Route path="/AddAdmin" element={<AddAdmin />} />
-   
+      <Route path="/popupModal" element={<Overlaybookingvacinne />} />
+      
 
 
       {/* <Route path='/login' element={<ViewUser/>}/> */}

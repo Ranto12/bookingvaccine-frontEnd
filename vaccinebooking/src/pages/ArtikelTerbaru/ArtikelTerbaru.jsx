@@ -48,7 +48,7 @@ const ArtikelTerbaru = () => {
 
   return (
     <div className="Fontcolor-Dasboard">
-      <div className="row me-5">
+      <div className="row me-5 borderInput">
         <div className="col-3">
           <Sidebar />
         </div>
@@ -77,6 +77,7 @@ const ArtikelTerbaru = () => {
               <div
                 style={{
                   width: "100%",
+                  color: " #4E7EA7"
                 }}
               >
                 <h6
