@@ -59,7 +59,7 @@ const ArtikelTerbaru = () => {
 
   return (
     <div className="Fontcolor-Dasboard">
-      <div className="row me-5">
+      <div className="row me-5 borderInput">
         <div className="col-3">
           <Sidebar />
         </div>
@@ -67,7 +67,7 @@ const ArtikelTerbaru = () => {
           <div className="row">
             <div className="col-6">
               <h1 className="fz-Head">Kelola Data</h1>
-              <h1 className="fz-title">Artikel/berita Terbaru</h1>
+              <h1 className="fz-Title">Artikel/berita Terbaru</h1>
             </div>
           </div>
 
@@ -86,11 +86,13 @@ const ArtikelTerbaru = () => {
               <div
                 style={{
                   width: "100%",
+                  color: " #4E7EA7"
                 }}
               >
                 <h6
                   style={{
                     marginTop: "2rem",
+
                   }}
                 >
                   Judul Artikel/Berita

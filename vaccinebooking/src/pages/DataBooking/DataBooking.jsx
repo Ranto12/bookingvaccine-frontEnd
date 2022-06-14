@@ -31,24 +31,24 @@ const DataBooking = () => {
     handleSearch();
   }, []);
 
-  useEffect(()=>{
-    const fetchPosts = async()=>{
-        try{
-            const response = await api.get("/bookingVaccine")
-            setBooking(response.data);
-        } catch(err){
-            if(err.response){
-                //not in the 200 response range
-                console.log(err.response.data)
-                console.log(err.response.status)
-                console.log(err.response.headers)
-            }else{
-                console.log(`Error ${err.message}`);
-            }
+  useEffect(() => {
+    const fetchPosts = async () => {
+      try {
+        const response = await api.get("/bookingVaccine")
+        setBooking(response.data);
+      } catch (err) {
+        if (err.response) {
+          //not in the 200 response range
+          console.log(err.response.data)
+          console.log(err.response.status)
+          console.log(err.response.headers)
+        } else {
+          console.log(`Error ${err.message}`);
         }
+      }
     }
     fetchPosts();
-},[])
+  }, [])
 
   return (
     <div className="Fontcolor-Dasboard">
@@ -60,7 +60,7 @@ const DataBooking = () => {
           <div className="row">
             <div className="col-6">
               <h1 className="fz-Head">Kelola Data</h1>
-              <h1 className="fz-title">Booking vaksinasi</h1>
+              <h1 className="fz-Title">Booking vaksinasi</h1>
             </div>
           </div>
 
@@ -70,7 +70,7 @@ const DataBooking = () => {
               <div>
                 <p className="Fz-16">Tampilkan</p>
               </div>
-              <div className="ms-2">
+              <div className="ms-2 Select15">
                 <select
                   name="jumlahArtiker "
                   id="jumlahArtikel"
@@ -97,7 +97,7 @@ const DataBooking = () => {
                 <div>
                   <p className="ms-2 Fz-16 me-2">entri</p>
                 </div>
-                <div className="border border-dark d-flex w-100">
+                <div className="border border-dark d-flex w-100 BorderRadiusInline">
                   <div
                     className="ms-3 me-3"
                     style={{ cursor: "pointer", border: "none" }}
@@ -134,9 +134,9 @@ const DataBooking = () => {
 
           {/* isi tabel */}
           <div className="TabelkelolaBerita row Border-Color-Box">
-            {booking.map((data, index)=>{
-              return(
-                <TabelDataBooking key={data.id} Number={index +1 } nama={data.nama} nik={data.nik}  jenisVaccine={data.jenisVaccine}/>
+            {booking.map((data, index) => {
+              return (
+                <TabelDataBooking key={data.id} Number={index + 1} nama={data.nama} nik={data.nik} jenisVaccine={data.jenisVaccine} />
               )
             })}
           </div>

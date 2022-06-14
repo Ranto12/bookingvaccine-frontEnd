@@ -16,47 +16,47 @@ import api from './../../API/data/post'
 import Select from "../../component/PageComponent/Select";
 
 const KelolaBerita = () => {
-     // initial state and valiables
-     const [input, setInput] = useState("");
-     const [count, setCount] = useState(1);
-     const [Artikels, setArtikels] = useState([]);
-     const [Values, setValues] = useState(15);
+  // initial state and valiables
+  const [input, setInput] = useState("");
+  const [count, setCount] = useState(1);
+  const [Artikels, setArtikels] = useState([]);
+  const [Values, setValues] = useState(15);
 
- 
-     //funtion
-     const onChangeInput = (e) =>{
-         const input = e.target.value;
-         setInput(input)
-     }
-     const handleSearch=() =>{
-         setCount(1+input)
-     }
-     
- 
-    //  useEffect
-     useEffect(()=>{
-         handleSearch();
-     },[])
 
-    //  API
-    useEffect(()=>{
-      const fetchPosts = async()=>{
-          try{
-              const response = await api.get("/Artikel")
-              setArtikels(response.data);
-          } catch(err){
-              if(err.response){
-                  //not in the 200 response range
-                  console.log(err.response.data)
-                  console.log(err.response.status)
-                  console.log(err.response.headers)
-              }else{
-                  console.log(`Error ${err.message}`);
-              }
-          }
+  //funtion
+  const onChangeInput = (e) => {
+    const input = e.target.value;
+    setInput(input)
+  }
+  const handleSearch = () => {
+    setCount(1 + input)
+  }
+
+
+  //  useEffect
+  useEffect(() => {
+    handleSearch();
+  }, [])
+
+  //  API
+  useEffect(() => {
+    const fetchPosts = async () => {
+      try {
+        const response = await api.get("/Artikel")
+        setArtikels(response.data);
+      } catch (err) {
+        if (err.response) {
+          //not in the 200 response range
+          console.log(err.response.data)
+          console.log(err.response.status)
+          console.log(err.response.headers)
+        } else {
+          console.log(`Error ${err.message}`);
+        }
       }
-      fetchPosts();
-  },[])
+    }
+    fetchPosts();
+  }, [])
 
 
   return (
@@ -81,17 +81,17 @@ const KelolaBerita = () => {
           <div className='row d-flex Margin-top-Serch align-items-end'>
             <div className='col-6 d-flex TotalPengguna ' >
               <div>
-              <p className='Fz-16'>Total</p>
-              {input}
+                <p className='Fz-16'>Total</p>
+                {input}
               </div>
-              <div className='ms-2'>
-              <Select setValues={setValues} />
+              <div className='ms-2 Select15'>
+                <Select setValues={setValues} />
               </div>
               <div className="d-flex">
                 <div>
                   <p className="ms-2 Fz-16 me-2">entri</p>
                 </div>
-                <div className="border border-dark d-flex w-100">
+                <div className="border border-dark d-flex w-100 BorderRadiusInline">
                   <div
                     className="ms-3 me-3"
                     style={{ cursor: "pointer", border: "none" }}
@@ -115,30 +115,21 @@ const KelolaBerita = () => {
                 </div>
               </div>
             </div>
+
+
             <div className="col-6 d-flex justify-content-end">
-              <div
-                className="d-flex ms-2 "
-                style={{
-                  border: "1px solid",
-                  height: "26px",
-                  borderRadius: "10px",
-                  paddingLeft: "28.08px",
-                  paddingRight: "26px",
-                  background: "#D9D9D9",
-                }}
-              >
-                <Link
-                  className="text-decoration-none Fontcolor-Dasboard LinkText d-flex"
-                  to="/ArtikelTerbaru"
-                >
-                  <div className="me-1">
+              <Link className='text-decoration-none Fontcolor-Dasboard  d-flex' to="/ArtikelTerbaru" >
+                <div className='d-flex ms-2 justify-content-center LinkText' style={{ border: "1px solid", height: "35px", width: "160px", borderRadius: "10px", paddingLeft: "8px", paddingRight: "8px", background: "#7BD9E8" }}>
+
+                  <div className='me-1' style={{ marginTop: "2px", }}>
                     <MdPostAdd />
                   </div>
-                  <p style={{ fontSize: "14px", marginLeft: "12,08px" }}>
+                  <p style={{ fontSize: "14px", marginLeft: "1px", marginTop: "5px", }}>
                     Buat Berita
                   </p>
-                </Link>
-              </div>
+
+                </div>
+              </Link>
             </div>
           </div>
 
@@ -153,9 +144,9 @@ const KelolaBerita = () => {
 
           {/* isi tabel */}
           <div className='TabelkelolaBerita row Border-Color-Box '>
-            {Artikels.map((artikel, index)=>{
-              return(
-                <TabelKelolaBerita key={artikel.ArtikelsId} Number={index + 1}  title={artikel.title} tanggal={artikel.tanggal} author={artikel.author} />
+            {Artikels.map((artikel, index) => {
+              return (
+                <TabelKelolaBerita key={artikel.ArtikelsId} Number={index + 1} title={artikel.title} tanggal={artikel.tanggal} author={artikel.author} />
               )
             })}
           </div>
