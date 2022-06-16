@@ -7,7 +7,6 @@ import "./../../assets/Style/style.css";
 
 // icon
 import { AiOutlineSearch } from "react-icons/ai";
-import { BsFilterLeft } from "react-icons/bs";
 import { MdPostAdd } from "react-icons/md";
 import TabelKelolaBerita from "../../component/KelolaBerita/TabelKelolaBerita";
 
@@ -18,7 +17,6 @@ import Select from "../../component/PageComponent/Select";
 const KelolaBerita = () => {
   // initial state and valiables
   const [input, setInput] = useState("");
-  const [count, setCount] = useState(1);
   const [Artikels, setArtikels] = useState([]);
   const [Values, setValues] = useState(15);
 
@@ -29,7 +27,7 @@ const KelolaBerita = () => {
     setInput(input)
   }
   const handleSearch = () => {
-    setCount(1 + input)
+    setInput()
   }
 
 

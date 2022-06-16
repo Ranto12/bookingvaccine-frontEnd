@@ -12,23 +12,28 @@ import TabelDataBooking from "../../component/DataBooking/TabelDataBooking";
 // API
 import api from '../../API/data/post'
 
+// component 
+import Select from "../../component/PageComponent/Select";
+
+
 const DataBooking = () => {
   // initial state and valiables
-  const [input, setInput] = useState("");
-  const [count, setCount] = useState(1);
   const [booking, setBooking] = useState([]);
+  const [Values, setValues] = useState(15);
+  const [filteredData, setFilteredData] = useState(booking);
+  
 
   const onChangeInput = (e) => {
-    const input = e.target.value;
-    setInput(input);
-  };
-
-  const handleSearch = () => {
-    setCount(1 + input);
+    const value = e.target.value.toLowerCase();
+    let result = [];
+    result= booking.filter((data)=>{
+      return data.nama.search(value) !== -1;
+    });
+    setFilteredData(result);
   };
 
   useEffect(() => {
-    handleSearch();
+    
   }, []);
 
   useEffect(() => {
@@ -36,6 +41,7 @@ const DataBooking = () => {
       try {
         const response = await api.get("/bookingVaccine")
         setBooking(response.data);
+        setFilteredData(response.data);
       } catch (err) {
         if (err.response) {
           //not in the 200 response range
@@ -71,27 +77,7 @@ const DataBooking = () => {
                 <p className="Fz-16">Tampilkan</p>
               </div>
               <div className="ms-2 Select15">
-                <select
-                  name="jumlahArtiker "
-                  id="jumlahArtikel"
-                  style={{ fontSize: "14px", borderRadius: "2px" }}
-                >
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6">6</option>
-                  <option value="7">7</option>
-                  <option value="8">8</option>
-                  <option value="9">9</option>
-                  <option value="10">10</option>
-                  <option value="11">11</option>
-                  <option value="12">12</option>
-                  <option value="13">13</option>
-                  <option value="14">14</option>
-                  <option value="15">15</option>
-                </select>
+              <Select setValues={setValues} />
               </div>
               <div className="d-flex">
                 <div>
@@ -101,7 +87,7 @@ const DataBooking = () => {
                   <div
                     className="ms-3 me-3"
                     style={{ cursor: "pointer", border: "none" }}
-                    onClick={handleSearch}
+                    
                   >
                     <AiOutlineSearch />
                   </div>
@@ -134,9 +120,9 @@ const DataBooking = () => {
 
           {/* isi tabel */}
           <div className="TabelkelolaBerita row Border-Color-Box">
-            {booking.map((data, index) => {
+            {filteredData.map((value, index) => {
               return (
-                <TabelDataBooking key={data.id} Number={index + 1} nama={data.nama} nik={data.nik} jenisVaccine={data.jenisVaccine} />
+                <TabelDataBooking key={value.id} Number={index + 1} nama={value.nama} nik={value.nik} jenisVaccine={value.jenisVaccine} />
               )
             })}
           </div>
