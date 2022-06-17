@@ -10,45 +10,51 @@ import { AiOutlineSearch } from "react-icons/ai";
 import TabelDataBooking from "../../component/DataBooking/TabelDataBooking";
 
 // API
-import api from '../../API/data/post'
+import api from "../../API/data/post";
+
+// component 
+import Select from "../../component/PageComponent/Select";
+
 
 const DataBooking = () => {
   // initial state and valiables
-  const [input, setInput] = useState("");
-  const [count, setCount] = useState(1);
   const [booking, setBooking] = useState([]);
+  const [Values, setValues] = useState(15);
+  const [filteredData, setFilteredData] = useState(booking);
+  
 
   const onChangeInput = (e) => {
-    const input = e.target.value;
-    setInput(input);
-  };
-
-  const handleSearch = () => {
-    setCount(1 + input);
+    const value = e.target.value.toLowerCase();
+    let result = [];
+    result= booking.filter((data)=>{
+      return data.nama.search(value) !== -1;
+    });
+    setFilteredData(result);
   };
 
   useEffect(() => {
-    handleSearch();
+    
   }, []);
 
-  useEffect(()=>{
-    const fetchPosts = async()=>{
-        try{
-            const response = await api.get("/bookingVaccine")
-            setBooking(response.data);
-        } catch(err){
-            if(err.response){
-                //not in the 200 response range
-                console.log(err.response.data)
-                console.log(err.response.status)
-                console.log(err.response.headers)
-            }else{
-                console.log(`Error ${err.message}`);
-            }
+  useEffect(() => {
+    const fetchPosts = async () => {
+      try {
+        const response = await api.get("/bookingVaccine")
+        setBooking(response.data);
+        setFilteredData(response.data);
+      } catch (err) {
+        if (err.response) {
+          //not in the 200 response range
+          console.log(err.response.data)
+          console.log(err.response.status)
+          console.log(err.response.headers)
+        } else {
+          console.log(`Error ${err.message}`);
         }
+      }
     }
     fetchPosts();
-},[])
+  }, [])
 
   return (
     <div className="Fontcolor-Dasboard">
@@ -68,40 +74,20 @@ const DataBooking = () => {
           <div className="row d-flex Margin-top-Serch align-items-end">
             <div className="col-6 d-flex " style={{ height: "26px" }}>
               <div>
-                <p className="Fz-16">Tampilkan</p>
+                <p className="filter">Total</p>
               </div>
-              <div className="ms-2">
-                <select
-                  name="jumlahArtiker "
-                  id="jumlahArtikel"
-                  style={{ fontSize: "14px", borderRadius: "2px" }}
-                >
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6">6</option>
-                  <option value="7">7</option>
-                  <option value="8">8</option>
-                  <option value="9">9</option>
-                  <option value="10">10</option>
-                  <option value="11">11</option>
-                  <option value="12">12</option>
-                  <option value="13">13</option>
-                  <option value="14">14</option>
-                  <option value="15">15</option>
-                </select>
+              <div className="ms-2 Select15">
+              <Select setValues={setValues} />
               </div>
               <div className="d-flex">
                 <div>
-                  <p className="ms-2 Fz-16 me-2">entri</p>
+                  <p className="ms-2 filter me-2">entri</p>
                 </div>
-                <div className="border border-dark d-flex w-100">
+                <div className="border border-dark d-flex w-100 BorderRadiusInline">
                   <div
                     className="ms-3 me-3"
                     style={{ cursor: "pointer", border: "none" }}
-                    onClick={handleSearch}
+                    
                   >
                     <AiOutlineSearch />
                   </div>
@@ -124,19 +110,21 @@ const DataBooking = () => {
           </div>
 
           {/* tabel */}
-          <div className="row mt-4 background-color-Table  justify-content-center">
-            <div className="col-1">No</div>
-            <div className="col-4">Nama</div>
-            <div className="col-2">NIK</div>
-            <div className="col-4">Jenis Vaksin</div>
-            <div className="col-1">Action</div>
+          <div className="row mt-4 table-header background-color-Table  justify-content-center">
+            <div className="row mt-2 table-data justify-content-center">
+              <div className="col-1">No</div>
+              <div className="col-4">Nama</div>
+              <div className="col-2">NIK</div>
+              <div className="col-4">Jenis Vaksin</div>
+              <div className="col-1">Aksi</div>
+            </div>
           </div>
 
           {/* isi tabel */}
-          <div className="TabelDataBooking row Border-Color-Box">
-            {booking.map((data, index)=>{
-              return(
-                <TabelDataBooking key={data.id} Number={index +1 } nama={data.nama} nik={data.nik}  jenisVaccine={data.jenisVaccine}/>
+          <div className="TabelkelolaBerita row Border-Color-Box">
+            {filteredData.map((value, index) => {
+              return (
+                <TabelDataBooking key={value.id} Number={index + 1} nama={value.nama} nik={value.nik} jenisVaccine={value.jenisVaccine} />
               )
             })}
           </div>

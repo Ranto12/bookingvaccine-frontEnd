@@ -16,7 +16,7 @@ const JadwalVaksinasi = () => {
         <div className="col-3">
           <Sidebar />
         </div>
-        <div className="col-9 mt-5 text-secondary">
+        <div className="col-9 mt-5 text-secondary" style={{ color: " #4E7EA7" }}>
           <div className="title-das ">
             <h4>Tambahkan</h4>
             <h1>Jadwal Vaksinasi - Fasilitas Kesehatan</h1>
@@ -29,12 +29,12 @@ const JadwalVaksinasi = () => {
           </div>
 
           <Form className='bg-form-jadwal'>
-            <FormKelolaJadwal />     
+            <FormKelolaJadwal />
 
             <div className="text-end mt-3 mb-5">
               <button className="btn-kelola-jadwal1 me-3  rounded-3 mb-5">Batal</button>
               <button className="btn-kelola-jadwal ms-3  rounded-3 mb-5">Simpan</button>
-          </div>     
+            </div>
           </Form>
         </div>
       </div>
