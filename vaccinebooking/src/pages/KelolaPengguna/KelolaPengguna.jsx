@@ -15,6 +15,7 @@ import TablePengguna from '../../component/KelolaPenggunaTable/TablePengguna';
 
 // Api
 import api from './../../API/data/post'
+import PopUpPengguna from '../../component/KelolaPenggunaTable/PopUpPengguna';
 
 const KelolaPengguna = () => {
   const [input, setInput] = useState();
@@ -31,13 +32,7 @@ const KelolaPengguna = () => {
   const handleSearch=() =>{
     setCount(1+input)
   }
-
  
-
-  // const handleNumber=() => {
-  //   is
-  // }
-  
   useEffect(()=>{
     const fetchPosts = async()=>{
         try{
@@ -57,7 +52,7 @@ const KelolaPengguna = () => {
     fetchPosts();
 },[])
 // // console.log(`length, ${dataPengguna.length}`)
-console.log(dataPengguna)
+// console.log(dataPengguna)
 
 
   return (
@@ -67,6 +62,7 @@ console.log(dataPengguna)
         <div className='col-3'>
           <Sidebar/>
         </div>
+
 
         {/* content */}
 
@@ -133,8 +129,9 @@ console.log(dataPengguna)
           <div className='TabelkelolaBerita row Border-Color-Box mb-2'>
             {dataPengguna.map((data, index)=>{
               return(
-                <TablePengguna Number={index + 1} key={data.id} nama={data.nama} nohp = {data.noHp}  NIK={data.nik}  />
+                <TablePengguna Number={index + 1} key={data.id} nama={data.nama} nohp = {data.noHp}  NIK={data.nik} alamat = {data.alamat} pengguna = {data}   />
               )
+
             })}
           </div>
         </div>

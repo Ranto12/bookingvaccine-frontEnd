@@ -420,3 +420,33 @@
   color: #FFFFFF;
   font-size: 12px;
 }
+
+/* PopUpPengguna */
+.pop-title{
+  background-color: #7BD9E8;
+}
+
+.data-popup{
+  border-bottom: solid #829CCC;
+  padding-bottom: 10px;
+}
+
+ul>li>h5,.data-popup{
+  color: #829CCC;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+
+div>ul{
+  list-style-type: none;
+}
+
+.modal-content{
+  border-radius: 20px !important;
+  overflow: hidden !important;
+}
+
+.btn-close{
+  background-color: white;
+  
+}
