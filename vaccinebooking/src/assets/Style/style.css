@@ -444,6 +444,7 @@ div>ul{
 .modal-content{
   border-radius: 20px !important;
   overflow: hidden !important;
+  height: 83% !important;
 }
 
 .btn-close{
