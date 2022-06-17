@@ -2,16 +2,14 @@ import React, { useState, useEffect } from 'react'
 
 // import component
 import Select from '../../component/PageComponent/Select';
+import TablePengguna from '../../component/KelolaPenggunaTable/TablePengguna';
 
 //style 
 import '../../assets/Style/style.css'
 import Sidebar from '../../component/Sidebar/Sidebar';
 
 // icon
-import {FaUserPlus} from 'react-icons/fa'
 import {AiOutlineSearch } from 'react-icons/ai';
-import { Link } from 'react-router-dom';
-import TablePengguna from '../../component/KelolaPenggunaTable/TablePengguna';
 
 // Api
 import api from './../../API/data/post'
@@ -108,6 +106,7 @@ console.log(dataPengguna)
             </div>
 
             <div className='col-6 d-flex justify-content-end'>
+              
             </div>
           </div>
 

@@ -4,24 +4,19 @@ import { IconButton } from "@mui/material";
 import { RiFileSearchFill } from "react-icons/ri";
 
 
-const TablePengguna = ({key, nama, nohp, NIK, Number}) => {
-
-  // function
-  const handleDelete=()=>{
-    <p>mantul</p>
-  }
+const TablePengguna = ({ nama, nohp, NIK, Number}) => {
   return (
-    <div className="d-flex TabelkelolaBerita  TableColor-child ">
-      <div className='col-1' >
+    <div className="d-flex TabelkelolaBerita justify-content-center TableColor-child ">
+      <div className='col-1 ps-3' >
               {Number}
             </div>
-            <div className='col-4'>
+            <div className='col-4 ps-2'>
               {nama}
             </div>
-            <div className='col-3'>
+            <div className='col-3 ps-2'>
               {nohp}
             </div>
-            <div className='col-3'>
+            <div className='col-3 ps-3'>
               {NIK}
             </div>
       <div className="col-1 justify-content-center  ">

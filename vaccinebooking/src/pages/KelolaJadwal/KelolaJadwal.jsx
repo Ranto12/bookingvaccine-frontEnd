@@ -9,7 +9,9 @@ import './../../assets/Style/style.css';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { BsFillCalendarCheckFill } from 'react-icons/bs'
 
+// component
 import TabelVaksinasi from '../../component/JadwalVaksinasi/TabelVaksinasi';
+import Select from '../../component/PageComponent/Select';
 
 // Api
 import api from './../../API/data/post'
@@ -84,23 +86,7 @@ const KelolaJadwal = () => {
                                     <p className='Fz-16'>Total</p>
                                 </div>
                                 <div className='ms-2 Select15'>
-                                    <select name="JumlahPengguna" id="JumlahPengguna">
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-                                        <option value="6">6</option>
-                                        <option value="7">7</option>
-                                        <option value="8">8</option>
-                                        <option value="9">9</option>
-                                        <option value="10">10</option>
-                                        <option value="11">11</option>
-                                        <option value="12">12</option>
-                                        <option value="13">13</option>
-                                        <option value="14">14</option>
-                                        <option value="15">15</option>
-                                    </select>
+                                    <Select onChangeInput={onChangeInput}/> 
                                 </div>
                                 <div className='d-flex'>
                                     <div>
@@ -120,42 +106,43 @@ const KelolaJadwal = () => {
                             <div className='col-6 d-flex justify-content-end'>
                                 <div >
                                 <Link to='/jadwalvaksinasi' >
-                                <button className='Button-add-admin'>
-                                <BsFillCalendarCheckFill className='me-3'/>
-                                    Buat Jadwal</button>
-                            </Link>
+                                    <button className='Button-add-admin'>
+                                        <BsFillCalendarCheckFill className='me-3'/>
+                                        Buat Jadwal
+                                    </button>
+                                </Link>
                                 </div>
                             </div>
                         </div>
-                         {/* table */}
-                         <div className='row mt-4 background-color-Table '>
-                                <div className='col-1'>
-                                    No
-                                </div>
-                                <div className='col-3'>
-                                    Nama Faskes
-                                </div>
-                                <div className='col-2'>
-                                    Stock
-                                </div>
-                                <div className='col-3'>
-                                    Jenis Vaksin
-                                </div>
-                                <div className='col-2'>
-                                    Waktu
-                                </div>
-                                <div className='col-1'>
-                                    Action
-                                </div>
+                        {/* table */}
+                        <div className='row mt-4 background-color-Table '>
+                            <div className='col-1'>
+                                No
                             </div>
-                            {/* isi table */}
-                            <div className='TabelkelolaBerita row Border-Color-Box'>
-                                {jadwal.map((data, index) => {
-                                    return (
-                                        <TabelVaksinasi Number={index + 1} key={data.id} nama={data.namaFaskes} stock={data.stock} jenis={data.jenis} waktu={data.waktu} />
-                                    )
-                                })}
+                            <div className='col-3'>
+                                Nama Faskes
                             </div>
+                            <div className='col-2'>
+                                Stock
+                            </div>
+                            <div className='col-3'>
+                                Jenis Vaksin
+                            </div>
+                            <div className='col-2'>
+                                Waktu
+                            </div>
+                            <div className='col-1'>
+                                Action
+                            </div>
+                        </div>
+                        {/* isi table */}
+                        <div className='TabelkelolaBerita row Border-Color-Box'>
+                            {jadwal.map((data, index) => {
+                                return (
+                                    <TabelVaksinasi Number={index + 1} key={data.id} nama={data.namaFaskes} stock={data.stock} jenis={data.jenis} waktu={data.waktu} />
+                                )
+                            })}
+                        </div>
                     </div>
                 </div>
             </div>
