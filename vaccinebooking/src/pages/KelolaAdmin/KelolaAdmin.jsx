@@ -7,8 +7,6 @@ import './../../assets/Style/style.css';
 
 // icon
 import { AiOutlineSearch } from 'react-icons/ai';
-import { BsFilterLeft } from 'react-icons/bs';
-import { RiFileSearchFill } from 'react-icons/ri';
 import { IoPersonAddSharp } from 'react-icons/io5'
 
 import TabelAdmin from '../../component/KelolaAdmin/TabelAdmin';
@@ -54,6 +52,7 @@ const KelolaAdmin = () => {
         }
         fetchPosts();
     }, [])
+    console.log(admin)
 
     return (
         <div className='Fontcolor-Dasboard'>
