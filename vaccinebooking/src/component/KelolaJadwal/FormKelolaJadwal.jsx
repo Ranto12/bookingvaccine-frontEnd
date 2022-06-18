@@ -3,18 +3,15 @@ import { BsFileEarmarkImage } from "react-icons/bs";
 
 export default function FormKelolaJadwal() {
   return (
-    <div className="mb-5">
-      <div>
+    <div className="mb-5 borderInput" style={{ color: " #4E7EA7" }}>
+      <div >
         <div>
           <label className="mt-4 fw-bold ">Nama Fasilitas Kesehatan</label>
         </div>
-        <input
-          type="text"
-          className="w-100 bg-light input-kelola mt-2 p-1 rounded-2"
-        />
+        <input type="text" className="w-100 bg-light input-kelola mt-2 p-1 rounded-2" style={{ border: "1px solid  #D9D9D9" }} />
       </div>
 
-      <div className="mt-3">
+      <div className="mt-3 ">
         <span>
           <input
             type="radio"
@@ -22,10 +19,10 @@ export default function FormKelolaJadwal() {
             name="fav_language"
             value="Puskesmas"
           />
-            <label for="Puskesmas">Puskesmas</label>
+          <label for="Puskesmas">Puskesmas</label>
         </span>
 
-        <span className="px-3">
+        <span className="px-3" >
           <input type="radio" id="RSUD" name="fav_language" value="RSUD" /> {" "}
           <label for="RSUD">RSUD</label>
         </span>
