@@ -7,7 +7,7 @@ import { IconButton } from "@mui/material";
 
 const TabelVaksinasi = ({Number, nama, stock, jenis, waktu}) => {
     return (
-        <div className="d-flex TabelJadwalVaksinasi justify-content-center p-0">
+        <div className="d-flex TabelkelolaBerita justify-content-center TableColor-child">
             <div className="col-1 ps-3">{Number}</div>
             <div className="col-3 ps-2">{nama}</div>
             <div className="col-2 ps-2">{stock}</div>

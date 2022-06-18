@@ -205,7 +205,7 @@ const ArtikelTerbaru = () => {
                         <div>
                           <div
                             style={{
-                              width: "100%",
+                              width: "75%",
                               height: "20rem",
                               border: "dashed 2px #4E7EA7",
                               display: "flex",

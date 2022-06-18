@@ -9,6 +9,7 @@ import './../../assets/Style/style.css';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { BsFilterLeft } from 'react-icons/bs';
 import { RiFileSearchFill } from 'react-icons/ri';
+import {IoPersonAddSharp} from 'react-icons/io5'
 
 import TabelAdmin from '../../component/KelolaAdmin/TabelAdmin';
 import api from '../../API/data/post'
@@ -112,14 +113,11 @@ const KelolaAdmin = () => {
                         </div>
                     </div>
                     <div className='col-6 d-flex justify-content-end'>
-                        <div className='d-flex ms-2 '  style={{border:"1px solid", height:"26px", borderRadius:"10px", paddingLeft:"28.08px", paddingRight:"26px", background:"#D9D9D9"}}>
-                            <Link className='text-decoration-none Fontcolor-Dasboard LinkText d-flex' to='/AddAdmin' >
-                                <div className='me-1' >
-                                    <RiFileSearchFill/>
-                                </div>
-                                <p style={{fontSize:"14px", marginLeft:"12,08px"}}>
-                                    Add
-                                </p>
+                        <div >
+                            <Link to='/AddAdmin' >
+                                <button className='Button-add-admin'>
+                                <IoPersonAddSharp className='me-3'/>
+                                    tambahkan</button>
                             </Link>
                         </div>
                     </div>
@@ -147,7 +145,7 @@ const KelolaAdmin = () => {
                     </div>
 
                     {/* isi tabel */}
-                    <div className='TabelAdmin row '>
+                    <div className='TabelAdmin row Border-Color-Box'>
                         {admin.map((data, index)=>{
                             return(
                                 <TabelAdmin key={data.id} Number={index +1} nama={data.nama} alamat={data.alamat} hp={data.noHp} email={data.email}/>

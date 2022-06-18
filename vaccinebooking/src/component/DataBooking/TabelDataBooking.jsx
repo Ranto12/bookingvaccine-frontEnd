@@ -26,7 +26,7 @@ const TablePengguna = ({ key, nama, nik, jenisVaccine, Number }) => {
         <IconButton
           data-bs-toggle="tooltip"
           data-bs-placement="top"
-          title="remove"
+          title="decline"
           color="error"
         >
           <CancelIcon />

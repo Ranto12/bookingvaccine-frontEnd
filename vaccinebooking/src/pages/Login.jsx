@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Button, Col, Container, Form, Row } from 'react-bootstrap'
 import { AiFillEye } from 'react-icons/ai';
 import Logo from "../assets/img/logo.png"
@@ -59,7 +59,7 @@ const Login = () => {
             </div>
 
 
-            <div className="card tabel  ">
+            <div className="card card-Login tabel  ">
 
               <div className="t-h2  ">
                 <h2>Mohon isi dengan detail di bawah </h2>
@@ -68,13 +68,13 @@ const Login = () => {
 
               <div className="input-user  ">
                 <p>Username</p>
-                <input type="text" id="Username" aria-describedby="emailHelp" value={username} onChange={onChangeUsername} />
+                <input required type="text" id="Username" aria-describedby="emailHelp" value={username} onChange={onChangeUsername} />
               </div>
               <div className="input-password  ">
                 <p>Password</p>
                 <div className='brd '>
                   <div>
-                    <input type="password" id="password" value={password} onChange={onChangePassword} />
+                    <input required type="password" id="password" value={password} onChange={onChangePassword} />
                   </div>
                   <div>
                     <AiFillEye />
@@ -85,7 +85,9 @@ const Login = () => {
                 </div>
               </div>
               <div className='btn'>
-                <button onClick={Auth}>Masuk</button>
+                <Link to='/dashboard'>
+                <button>Masuk</button>
+                </Link>
               </div>
 
             </div>

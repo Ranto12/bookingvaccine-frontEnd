@@ -13,8 +13,8 @@ export default function AddAdmin() {
           </div>
           <div className="col-9 mt-5 text-secondary">
             <div>
-              <h4>Kelola Data</h4>
-              <h1>Jadwal Vaksinasi - Fasilitas Kesehatan</h1>
+              <h4>Tambahkan</h4>
+              <h1>Admin</h1>
             </div>
 
             <div className="bg-card-kelola bg-secondary">
