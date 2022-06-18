@@ -10,21 +10,21 @@
 }
 
 .menu-sidebar:hover {
-  background-color: #45C2D6;
+  background-color: #45c2d6;
   border-radius: 10px !important;
 }
 
 .menu-sidebar.active {
-  background-color: #45C2D6;
+  background-color: #45c2d6;
 }
 
 /* dasboard  */
 .Fontcolor-Dasboard {
-  color: #7BD9E8;
+  color: #7bd9e8;
 }
 
 .background-color-card-rsud {
-  background-color: #7BD9E8;
+  background-color: #7bd9e8;
   border-radius: 10px;
 }
 
@@ -55,9 +55,6 @@
 .card-faskes1 {
   padding: 5% 7%;
 }
-
-
-
 
 /* kelola berita */
 .fz-Head {
@@ -106,11 +103,10 @@
 }
 
 .TabelDataBooking {
-  background-color: #d9d9d9;
+  background-color: #ffffff;
   justify-content: center;
   align-items: center;
 }
-
 
 /* Kelola pengguna */
 
@@ -126,8 +122,8 @@
 .Select15 {
   font-size: 14px;
   border-radius: 2px;
-  border: 1px #C2C2C2;
-  border-color: #C2C2C2;
+  border: 1px #c2c2c2;
+  border-color: #c2c2c2;
 }
 
 .Select15 select {
@@ -141,14 +137,12 @@
   cursor: pointer;
   border: "none";
 }
-
 .InputCssKelolaPengguna {
   width: "251px";
   height: 24px;
   border: none;
   border-radius: 2px;
 }
-
 .BorderRadiusInline {
   border-radius: 2px;
   border: 1px solid #829CCC !important;
@@ -175,9 +169,7 @@
   background-color: #d9d9d9;
   justify-content: center;
   align-items: center;
-
 }
-
 
 .md svg {
   margin-right: 7px;
@@ -193,7 +185,6 @@
   background-color: #FFFFFF;
   justify-content: center;
   align-items: center;
-
 }
 
 .TabelkelolaBerita {
@@ -225,7 +216,7 @@
   width: 484px;
   height: 423px;
   align-items: center;
-  border: 2px solid #45C2D6;
+  border: 2px solid #45c2d6;
   box-shadow: 0px 9px 26px rgba(0, 0, 0, 0.08);
   border-radius: 10px;
   margin-top: 13.29px;
@@ -276,7 +267,6 @@
 }
 
 .input-kel {
-
   width: 10% !important;
 }
 
@@ -296,11 +286,10 @@
   background-color: #aaa9a9;
   width: 100vw;
 }
-
 .head {
   margin-top: 165px !important;
   margin-bottom: 165px !important;
-  background: #FFFFFF;
+  background: #ffffff;
 }
 
 .input-kel {
@@ -321,13 +310,13 @@
 
 .t-h2 h2 {
   margin: 0;
-  font-family: 'Poppins';
+  font-family: "Poppins";
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
   line-height: 18px;
   text-align: center;
-  color: #4E7EA7;
+  color: #4e7ea7;
 }
 
 .t-h2 {
@@ -335,17 +324,13 @@
   margin-bottom: 38px;
 }
 
-
-
 .input-user input {
   width: 354px;
   height: 42px;
   border-radius: 10px;
-  border: 1px solid #C2C2C2;
+  border: 1px solid #c2c2c2;
   border-radius: 10px;
-
 }
-
 
 .input-user input:focus {
   outline: none;
@@ -357,7 +342,7 @@
 
 .input-password {
   margin-bottom: 18px;
-  color: #4E7EA7
+  color: #4e7ea7;
 }
 
 .input-password input {
@@ -365,22 +350,20 @@
   height: 38px;
   border-radius: 10px;
   border: none;
-
 }
 
 .input-user p {
-  font-family: 'Poppins';
+  font-family: "Poppins";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  color: #4E7EA7;
+  color: #4e7ea7;
   margin-bottom: 9px;
-
 }
 
 .input-password p {
-  font-family: 'Poppins';
+  font-family: "Poppins";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -389,12 +372,9 @@
   margin-bottom: 9px !important;
 }
 
-
-
 .btn {
   margin-bottom: 46.5px;
   padding: 0;
-
 }
 
 .btn button {
@@ -403,18 +383,16 @@
   border-radius: 10px;
   border: none;
   padding: 0;
-  background: #7BD9E8;
-  color: #FFFFFF;
-
+  background: #7bd9e8;
+  color: #ffffff;
 }
 
 .brd {
   display: inline-flex;
   width: 354px;
   height: 42px;
-  border: 1px solid #C2C2C2;
+  border: 1px solid #c2c2c2;
   border-radius: 10px;
-
 }
 
 .brd svg {
@@ -425,14 +403,13 @@
 }
 
 .lupa-pass {
-
-  margin-top: 8px
+  margin-top: 8px;
 }
 
 .lupa-pass p {
   width: 81px;
   height: 15px;
-  font-family: 'Poppins';
+  font-family: "Poppins";
   font-style: normal;
   font-weight: 400;
   font-size: 10px;
@@ -482,4 +459,34 @@
 /* Booking vaccine */
 .Pointer-Booking{
   cursor: pointer;
+}
+/* PopUpPengguna */
+.pop-title{
+  background-color: #7BD9E8;
+}
+
+.data-popup{
+  border-bottom: solid #829CCC;
+  padding-bottom: 10px;
+}
+
+ul>li>h5,.data-popup{
+  color: #829CCC;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+
+div>ul{
+  list-style-type: none;
+}
+
+.modal-content{
+  border-radius: 20px !important;
+  overflow: hidden !important;
+  height: 83% !important;
+}
+
+.btn-close{
+  background-color: white;
+  
 }

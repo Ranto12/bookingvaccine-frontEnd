@@ -7,10 +7,11 @@ import DataBooking from "./pages/DataBooking/DataBooking";
 import KelolaPengguna from "./pages/KelolaPengguna/KelolaPengguna";
 import KelolaJadwal from "./pages/KelolaJadwal/KelolaJadwal";
 import KelolaAdmin from "./pages/KelolaAdmin/KelolaAdmin";
-import JadwalVaksinasi from "./pages/KelolaJadwal/jadwalVaksinasi";
+import JadwalVaksinasi from "./pages/KelolaJadwal/JadwalVaksinasi";
 import AddAdmin from "./pages/KelolaAdmin/AddAdmin";
 import ArtikelTerbaru from "./pages/ArtikelTerbaru/ArtikelTerbaru";
 import Overlaybookingvacinne from "./component/Overlay/Overlaybookingvacinne";
+import Contoh from "./component/KelolaPenggunaTable/Contoh";
 
 function App() {
   return (
@@ -27,6 +28,13 @@ function App() {
       <Route path="/ArtikelTerbaru" element={<ArtikelTerbaru />} />
       <Route path="/AddAdmin" element={<AddAdmin />} />
       <Route path="/popupModal" element={<Overlaybookingvacinne />} />
+      
+      <Route path="/contoh" element={<Contoh />} />
+
+   
+
+
+      {/* <Route path='/login' element={<ViewUser/>}/> */}
     </Routes>
   );
 }

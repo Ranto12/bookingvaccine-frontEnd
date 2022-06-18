@@ -40,22 +40,42 @@ export default function FormKelolaJadwal() {
           </label>
 
           <label>
-            <input type="radio" name="fav_language" className="ms-3" value="Moderna" />
+            <input
+              type="radio"
+              name="fav_language"
+              className="ms-3"
+              value="Moderna"
+            />
             <span className="px-3">Moderna</span>
           </label>
 
           <label>
-            <input type="radio" name="fav_language" className="ms-3" value="Pfizer" />
+            <input
+              type="radio"
+              name="fav_language"
+              className="ms-3"
+              value="Pfizer"
+            />
             <span className="px-3">Pfizer</span>
           </label>
 
           <label>
-            <input type="radio" name="fav_language" className="ms-3" value="Astra" />
+            <input
+              type="radio"
+              name="fav_language"
+              className="ms-3"
+              value="Astra"
+            />
             <span className="px-3">Astra</span>
           </label>
 
           <label>
-            <input type="radio" name="fav_language" className="ms-3" value="Sinopharm" />
+            <input
+              type="radio"
+              name="fav_language"
+              className="ms-3"
+              value="Sinopharm"
+            />
             <span className="px-3">Sinopharm</span>
           </label>
         </div>
@@ -83,9 +103,7 @@ export default function FormKelolaJadwal() {
 
         <span className="px-4">
           <input type="radio" value="selesai" />
-          <span className="ms-3">
-            Selesai
-          </span>
+          <span className="ms-3">Selesai</span>
         </span>
       </div>
 

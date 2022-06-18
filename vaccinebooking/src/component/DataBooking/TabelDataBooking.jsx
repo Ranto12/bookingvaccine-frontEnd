@@ -5,7 +5,7 @@ import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import CancelIcon from "@mui/icons-material/Cancel";
 import Overlaybookingvacinne from "../Overlay/Overlaybookingvacinne";
 
-const TablePengguna = ({key, nama, nik, jenisVaccine, Number}) => {
+const TablePengguna = ({ key, nama, nik, jenisVaccine, Number }) => {
   return (
     <div
       className="d-flex TabelkelolaBerita justify-content-center TableColor-child">
@@ -19,11 +19,21 @@ const TablePengguna = ({key, nama, nik, jenisVaccine, Number}) => {
       </div>
       <div className="col-4">{jenisVaccine}</div>
       <div className="col-1 d-flex justify-content-center">
-        <IconButton data-bs-toggle="tooltip" data-bs-placement="top" title="acc" >
+        <IconButton
+          data-bs-toggle="tooltip"
+          data-bs-placement="top"
+          title="acc"
+          color="success"
+        >
           <CheckCircleIcon />
-        </IconButton> 
-        <IconButton data-bs-toggle="tooltip" data-bs-placement="top" title="remove" >
-          <CancelIcon  />
+        </IconButton>
+        <IconButton
+          data-bs-toggle="tooltip"
+          data-bs-placement="top"
+          title="remove"
+          color="error"
+        >
+          <CancelIcon />
         </IconButton>
       </div>
     </div>
