@@ -5,7 +5,7 @@ import DataPopup from "./DataPopup";
 import '../../assets/Style/style.css'
 import { BsXCircle } from "react-icons/bs";
 
-export default function PopUpPengguna({data}) {
+export default function PopUpPengguna({nama}) {
   
   return (
     <div>
@@ -30,7 +30,7 @@ export default function PopUpPengguna({data}) {
             </div>
             <div className="modal-body">
                 <ul>
-                    <DataPopup data={data}  />
+                    <DataPopup  nama={nama}  />
                 </ul>
             </div>
           </div>

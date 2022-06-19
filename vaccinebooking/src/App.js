@@ -31,9 +31,6 @@ function App() {
       
       <Route path="/contoh" element={<Contoh />} />
 
-   
-
-
       {/* <Route path='/login' element={<ViewUser/>}/> */}
     </Routes>
   );

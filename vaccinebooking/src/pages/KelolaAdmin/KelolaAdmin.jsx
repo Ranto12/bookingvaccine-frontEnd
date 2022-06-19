@@ -37,7 +37,7 @@ const KelolaAdmin = () => {
     useEffect(() => {
         const fetchPosts = async () => {
             try {
-                const response = await api.get("/admin")
+                const response = await api.get("/session/1")
                 setAdmin(response.data);
             } catch (err) {
                 if (err.response) {
@@ -52,7 +52,7 @@ const KelolaAdmin = () => {
         }
         fetchPosts();
     }, [])
-    console.log(admin)
+    console.log(admin.data)
 
     return (
         <div className='Fontcolor-Dasboard'>
@@ -151,11 +151,18 @@ const KelolaAdmin = () => {
 
                     {/* isi tabel */}
                     <div className='TabelAdmin row Border-Color-Box'>
-                        {admin.map((data, index) => {
+                        {/* {admin.map((data, index) => {
                             return (
-                                <TabelAdmin key={data.id} Number={index + 1} nama={data.nama} alamat={data.alamat} hp={data.noHp} email={data.email} />
+                                <TabelAdmin  />
+                                // key={data.id} Number={index + 1} nama={data.nama} alamat={data.alamat} hp={data.noHp} email={data.email}
                             )
-                        })}
+                        })} */}
+
+                        {/* {admin.data.map((item)=> {
+                            return(
+                                {item}
+                            )
+                        })} */}
                     </div>
                 </div>
             </div>

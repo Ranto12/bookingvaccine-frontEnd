@@ -40,7 +40,7 @@ const KelolaJadwal = () => {
     useEffect(() => {
         const fetchPosts = async () => {
             try {
-                const response = await api.get("/jawal")
+                const response = await api.get("session/1")
                 setJadwal(response.data);
             } catch (err) {
                 if (err.response) {
@@ -55,6 +55,7 @@ const KelolaJadwal = () => {
         }
         fetchPosts();
     }, [])
+    console.log(jadwal)
 
     return (
         <>
@@ -137,11 +138,11 @@ const KelolaJadwal = () => {
                         </div>
                         {/* isi table */}
                         <div className='TabelkelolaBerita row Border-Color-Box'>
-                            {jadwal.map((data, index) => {
+                            {/* {jadwal.map((data, index) => {
                                 return (
                                     <TabelVaksinasi Number={index + 1} key={data.id} nama={data.namaFaskes} stock={data.stock} jenis={data.jenis} waktu={data.waktu} />
                                 )
-                            })}
+                            })} */}
                         </div>
                     </div>
                 </div>

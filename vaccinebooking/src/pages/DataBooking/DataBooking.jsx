@@ -39,7 +39,7 @@ const DataBooking = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await api.get("/bookingVaccine")
+        const response = await api.get("/booking")
         setBooking(response.data);
         setFilteredData(response.data);
       } catch (err) {
@@ -55,6 +55,7 @@ const DataBooking = () => {
     }
     fetchPosts();
   }, [])
+  console.log(`data booking ${booking}`)
 
   return (
     <div className="Fontcolor-Dasboard">
@@ -122,11 +123,11 @@ const DataBooking = () => {
 
           {/* isi tabel */}
           <div className="TabelkelolaBerita row Border-Color-Box">
-            {filteredData.map((value, index) => {
+            {/* {booking.map((value, index) => {
               return (
                 <TabelDataBooking key={value.id} Number={index + 1} nama={value.nama} nik={value.nik} jenisVaccine={value.jenisVaccine} />
               )
-            })}
+            })} */}
           </div>
         </div>
       </div>
