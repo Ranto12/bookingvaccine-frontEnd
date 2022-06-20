@@ -10,7 +10,7 @@ import { AiOutlineSearch } from "react-icons/ai";
 import TabelDataBooking from "../../component/DataBooking/TabelDataBooking";
 
 // API
-import api from '../../API/data/post'
+import api from "../../API/data/post";
 
 // component 
 import Select from "../../component/PageComponent/Select";
@@ -74,14 +74,14 @@ const DataBooking = () => {
           <div className="row d-flex Margin-top-Serch align-items-end">
             <div className="col-6 d-flex " style={{ height: "26px" }}>
               <div>
-                <p className="Fz-16">Tampilkan</p>
+                <p className="filter">Total</p>
               </div>
               <div className="ms-2 Select15">
               <Select setValues={setValues} />
               </div>
               <div className="d-flex">
                 <div>
-                  <p className="ms-2 Fz-16 me-2">entri</p>
+                  <p className="ms-2 filter me-2">entri</p>
                 </div>
                 <div className="border border-dark d-flex w-100 BorderRadiusInline">
                   <div
@@ -110,12 +110,14 @@ const DataBooking = () => {
           </div>
 
           {/* tabel */}
-          <div className="row mt-4 background-color-Table  justify-content-center">
-            <div className="col-1">No</div>
-            <div className="col-4">Nama</div>
-            <div className="col-2">NIK</div>
-            <div className="col-4">Jenis Vaksin</div>
-            <div className="col-1">Action</div>
+          <div className="row mt-4 table-header background-color-Table  justify-content-center">
+            <div className="row mt-2 table-data justify-content-center">
+              <div className="col-1">No</div>
+              <div className="col-4">Nama</div>
+              <div className="col-2">NIK</div>
+              <div className="col-4">Jenis Vaksin</div>
+              <div className="col-1">Aksi</div>
+            </div>
           </div>
 
           {/* isi tabel */}

@@ -14,15 +14,25 @@ const TablePengguna = ({ key, nama, nik, jenisVaccine, Number }) => {
         {nama}
       </div>
       <div className="col-2  Pointer-Booking">
-        <Overlaybookingvacinne nama={nama} nik={nik} jenisVaccine={jenisVaccine} Number={Number} />
+      <Overlaybookingvacinne  nama={nama} nik={nik} jenisVaccine={jenisVaccine} Number={Number} />
 
       </div>
       <div className="col-4">{jenisVaccine}</div>
       <div className="col-1 d-flex justify-content-center">
-        <IconButton data-bs-toggle="tooltip" data-bs-placement="top" title="acc" >
+        <IconButton
+          data-bs-toggle="tooltip"
+          data-bs-placement="top"
+          title="acc"
+          color="success"
+        >
           <CheckCircleIcon />
         </IconButton>
-        <IconButton data-bs-toggle="tooltip" data-bs-placement="top" title="remove" >
+        <IconButton
+          data-bs-toggle="tooltip"
+          data-bs-placement="top"
+          title="remove"
+          color="error"
+        >
           <CancelIcon />
         </IconButton>
       </div>
