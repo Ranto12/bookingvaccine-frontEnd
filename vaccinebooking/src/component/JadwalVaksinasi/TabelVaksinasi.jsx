@@ -3,9 +3,10 @@ import "../../assets/Style/style.css";
 import { RiPencilFill } from "react-icons/ri";
 import { MdDelete } from "react-icons/md";
 import { IconButton } from "@mui/material";
+import OverlayJadwalVaksinasi from "./OverlayJadwalVaksinasi";
 
 
-const TabelVaksinasi = ({Number, nama, stock, jenis, waktu}) => {
+const TabelVaksinasi = ({ Number, nama, stock, jenis, waktu }) => {
     return (
         <div className="d-flex TabelkelolaBerita justify-content-center TableColor-child">
             <div className="col-1 ps-3">{Number}</div>
@@ -14,9 +15,10 @@ const TabelVaksinasi = ({Number, nama, stock, jenis, waktu}) => {
             <div className="col-3 ps-3">{jenis}</div>
             <div className="col-2 ps-1">{waktu} WIB</div>
             <div className="col-1 d-flex justify-content-center">
-                <IconButton className="me-2" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="edit">
-                    <RiPencilFill />
-                </IconButton>
+
+
+                <OverlayJadwalVaksinasi nama={nama} />
+
                 <IconButton className="me-2" data-bs-toggle="tooltip" data-bs-placement="top" title="remove">
                     <MdDelete />
                 </IconButton>

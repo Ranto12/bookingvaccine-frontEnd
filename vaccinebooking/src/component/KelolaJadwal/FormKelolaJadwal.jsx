@@ -1,14 +1,17 @@
 import React from "react";
 import { BsFileEarmarkImage } from "react-icons/bs";
 
-export default function FormKelolaJadwal() {
+export default function FormKelolaJadwal({address, maps, category, name}) {
+  // const  namaVaskes = vacility.data;
+  // console.log(`namaVaskes`, namaVaskes)
+
   return (
     <div className="mb-5 borderInput" style={{ color: " #4E7EA7" }}>
       <div >
         <div>
           <label className="mt-4 fw-bold ">Nama Fasilitas Kesehatan</label>
         </div>
-        <input type="text" className="w-100 bg-light input-kelola mt-2 p-1 rounded-2" style={{ border: "1px solid  #D9D9D9" }} />
+        <input type="text" className="w-100 bg-light input-kelola mt-2 p-1 rounded-2" style={{ border: "1px solid  #D9D9D9" }} value={name}/>
       </div>
 
       <div className="mt-3 ">
@@ -17,15 +20,17 @@ export default function FormKelolaJadwal() {
             type="radio"
             id="Puskesmas"
             name="fav_language"
-            value="Puskesmas"
+            value={category}
+            // checked="checked"
+            
           />
-          <label for="Puskesmas">Puskesmas</label>
+          <label for="categoty" >{category}</label>
         </span>
 
-        <span className="px-3" >
+        {/* <span className="px-3" >
           <input type="radio" id="RSUD" name="fav_language" value="RSUD" /> {" "}
           <label for="RSUD">RSUD</label>
-        </span>
+        </span> */}
       </div>
 
       <div className="mt-3">
@@ -94,7 +99,7 @@ export default function FormKelolaJadwal() {
           <label className="fw-bold mb-3"> Sesi </label>
         </div>
         <span className="">
-          <input type="text" className="mt-2 p-1 rounded-2 input-kel" />
+          <input type="date" className="mt-2 p-1 rounded-2 input-kel" />
         </span>
         <span className="mx-4">-</span>
         <span>
@@ -126,11 +131,11 @@ export default function FormKelolaJadwal() {
         <div className="col-8">
           <div>
             <h5> Alamat Lengkap </h5>
-            <textarea className="p-3 w-100 rounded-3 input-kel-area"></textarea>
+            <textarea className="p-3 w-100 rounded-3 input-kel-area" disabled value={address}></textarea>
           </div>
           <div>
             <h6> Link Google Maps </h6>
-            <textarea className="p-3 w-100 rounded-3 input-kel-area"></textarea>
+            <textarea className="p-3 w-100 rounded-3 input-kel-area" disabled value={maps}></textarea>
           </div>
         </div>
       </div>

@@ -13,6 +13,8 @@ import {AiOutlineSearch } from 'react-icons/ai';
 
 // Api
 import api from './../../API/data/post'
+
+// Component
 import PopUpPengguna from '../../component/KelolaPenggunaTable/PopUpPengguna';
 
 const KelolaPengguna = () => {
@@ -50,7 +52,7 @@ const KelolaPengguna = () => {
     fetchPosts();
 },[])
 // // console.log(`length, ${dataPengguna.length}`)
-console.log(`dataPengguna`, dataPengguna)
+// console.log(`dataPengguna`, dataPengguna)
 
 
   return (
@@ -128,6 +130,7 @@ console.log(`dataPengguna`, dataPengguna)
           <div className='TabelkelolaBerita row Border-Color-Box mb-2'>
             {dataPengguna.data &&
             dataPengguna.data.map((data, index)=>{
+              console.log(dataPengguna.data, "wow")
               return(
                 <TablePengguna Number={index + 1}  key={data.id} nama={data.first_name + " " + data.last_name} nohp = {data.no_phone}  NIK={data.username}  data={data}  />
               )

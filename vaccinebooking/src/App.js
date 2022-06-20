@@ -28,7 +28,7 @@ function App() {
       <Route path="/ArtikelTerbaru" element={<ArtikelTerbaru />} />
       <Route path="/AddAdmin" element={<AddAdmin />} />
       <Route path="/popupModal" element={<Overlaybookingvacinne />} />
-      
+
       <Route path="/contoh" element={<Contoh />} />
 
       {/* <Route path='/login' element={<ViewUser/>}/> */}

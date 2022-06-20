@@ -8,7 +8,7 @@ export default function DataPopup({nama}) {
     <ul>
       <li>
         <h5>Nama</h5>
-        <h6 className='data-popup'> jancok</h6>
+        <h6 className='data-popup'> baik</h6>
       </li>
       <li>
         <h5>Tanggal Lahir</h5>

@@ -40,7 +40,7 @@ const KelolaBerita = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await api.get("/Artikel")
+        const response = await api.get("news/desc")
         setArtikels(response.data);
       } catch (err) {
         if (err.response) {
@@ -55,6 +55,7 @@ const KelolaBerita = () => {
     }
     fetchPosts();
   }, [])
+  console.log(`news`, Artikels)
 
 
   return (
