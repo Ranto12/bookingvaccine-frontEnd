@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { IconButton } from "@mui/material";
-import { RiFileSearchFill } from "react-icons/ri";
-import DataPopup from "./DataPopup";
-import '../../assets/Style/style.css'
+import { RiPencilFill } from "react-icons/ri";
+import DataPopupAdminEdit from "./DataPopupAdminEdit";
+import '../../../assets/Style/style.css'
 import { BsXCircle } from "react-icons/bs";
 
-export default function PopUpPengguna({data}) {
+export default function PopUpAdminEdit() {
   
   return (
     <div>
@@ -17,10 +17,10 @@ export default function PopUpPengguna({data}) {
         aria-hidden="true"
       >
         <div className="modal-dialog modal-dialog-scrollable modal-lg    ">
-          <div className="modal-content modPengguna">
+          <div className="modal-content modEdit ">
             <div className="modal-header pop-title ">
               <h5 className="modal-title  text-light  " id="exampleModalLabel">
-                Detail Pengguna
+               Edit Detail Admin
               </h5>
               <button type="button"
                class="btn-close rounded-circle me-3" 
@@ -30,15 +30,15 @@ export default function PopUpPengguna({data}) {
             </div>
             <div className="modal-body">
                 <ul>
-                    <DataPopup data={data}  />
+                    <DataPopupAdminEdit  />
                 </ul>
             </div>
           </div>
         </div>
       </div>
 
-      <IconButton aria-label="Cancel" data-bs-toggle="modal" data-bs-placement="top" title="view" data-bs-target = "#exampleModal"  >
-          <RiFileSearchFill />
+      <IconButton aria-label="Cancel" data-bs-toggle="modal" data-bs-placement="top" title="edit" data-bs-target = "#exampleModal"  >
+          <RiPencilFill />
         </IconButton>
     </div>
   );

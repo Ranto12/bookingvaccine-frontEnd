@@ -465,22 +465,22 @@
   background-color: #7BD9E8;
 }
 
-.data-popup{
-  border-bottom: solid #829CCC;
-  padding-bottom: 10px;
+.data-popup,.popRadio,.editpop{
+  border-bottom: solid #829CCC !important;
+  padding-bottom: 10px !important;
 }
 
 ul>li>h5,.data-popup{
-  color: #829CCC;
-  margin-right: 20px;
-  margin-top: 20px;
+  color: #829CCC !important;
+  margin-right: 20px !important; 
+  margin-top: 20px !important;
 }
 
 div>ul{
   list-style-type: none;
 }
 
-.modal-content{
+.modPengguna{
   border-radius: 20px !important;
   overflow: hidden !important;
   height: 83% !important;
@@ -489,4 +489,26 @@ div>ul{
 .btn-close{
   background-color: white;
   
+}
+
+/* popup Admin */
+
+.data-popup-radio{
+  color: #829CCC  ;
+}
+
+.editpop,.popRadio{
+  width: 97%;
+}
+
+.modEdit{
+  border-radius: 20px !important;
+  overflow: hidden !important;
+  height: 65% !important;
+}
+
+.modView{
+  border-radius: 20px !important;
+  overflow: hidden !important;
+  height: 83% !important;
 }
