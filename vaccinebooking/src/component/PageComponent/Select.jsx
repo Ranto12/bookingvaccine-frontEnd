@@ -1,12 +1,12 @@
 import React from 'react'
 import { useState } from 'react'
 
-const Select = ({setValues}) => {
+const Select = ({setSize}) => {
    
     // funtion
     const ChangeValue =(e)=>{
         let Values = e.target.value;
-        setValues(Values);
+        setSize(Values);
     }
   return (
     <div>

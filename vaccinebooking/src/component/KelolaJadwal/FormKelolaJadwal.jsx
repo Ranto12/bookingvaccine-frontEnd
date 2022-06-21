@@ -33,7 +33,7 @@ export default function FormKelolaJadwal({address, maps, category, name, data}) 
     setStock(e.target.value);
   }
  
-  console.log(`ini adalah stok`, dateString )
+  // console.log(`ini adalah stok`, dateString )
 
   // get api jenis vaccine
   // useEffect
@@ -79,6 +79,7 @@ const handleSubmit =()=>{
       console.log("data gagal")
     }
   });
+
 };
 
   return (
