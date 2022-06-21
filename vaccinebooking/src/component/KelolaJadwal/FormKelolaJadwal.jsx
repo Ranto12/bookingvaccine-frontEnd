@@ -1,6 +1,7 @@
 import { RepeatOneSharp } from "@mui/icons-material";
 import axios from "axios";
 import React, { useState, useEffect } from "react";
+import Moment from 'moment';
 import { BsFileEarmarkImage } from "react-icons/bs";
 
 // api
@@ -12,10 +13,11 @@ export default function FormKelolaJadwal({address, maps, category, name, data}) 
   const idArea = data.area_mapped.id_area;
  const idHealt = data.id_health_facilities;
   const [idSesion, setIdSesion] = useState();
-  const [startDate, setStartDate] = useState("");
+  const [startDate, setStartDate] = useState();
   const [startTime, setStartTime] = useState("");
   const [Stock, setStock] = useState();
-
+  const Time = startTime + ":00";
+  const dateString = Moment(startDate).format('YYYY-MM-DD');
  
   const chaangeStartDate =(e)=>{
     setStartDate(e.target.value);
@@ -31,7 +33,7 @@ export default function FormKelolaJadwal({address, maps, category, name, data}) 
     setStock(e.target.value);
   }
  
-  console.log(`ini adalah stok`, idHealt )
+  console.log(`ini adalah stok`, dateString )
 
   // get api jenis vaccine
   // useEffect
@@ -59,9 +61,10 @@ const handleSubmit =()=>{
   const Sesion = {
     id_area : idArea,
     id_health_facilities: idHealt,
+    id_session : 0,
     id_session: idSesion,
-    start_date: startDate,
-    startTime : startTime,
+    start_date: dateString,
+    startTime : Time,
     stock: Stock
   };
   axios

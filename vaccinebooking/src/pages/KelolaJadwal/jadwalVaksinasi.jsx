@@ -20,7 +20,7 @@ const JadwalVaksinasi = () => {
   useEffect(()=>{
     const fetchPosts = async()=>{
         try{
-            const response = await api.get("/facility/user/1")
+            const response = await api.get("/facility/user/7")
             setVacility(response.data);
         } catch(err){
             if(err.response){
