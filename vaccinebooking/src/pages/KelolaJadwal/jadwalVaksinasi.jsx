@@ -13,6 +13,7 @@ import api from './../../API/data/post';
 
 
 const JadwalVaksinasi = () => {
+  // state and variable
   const [vacility, setVacility] = useState([]);
 
   // useEffect
@@ -34,7 +35,7 @@ const JadwalVaksinasi = () => {
     }
     fetchPosts();
 },[])
-// console.log(`vacility `, vacility.data)
+
 
   return (
     <div>
@@ -57,16 +58,14 @@ const JadwalVaksinasi = () => {
           <Form className='bg-form-jadwal'>
            {vacility.data && 
            vacility.data.map((data, index)=>{
-            console.log(`data di map`, data)
+            // console.log(`data di map`, data.area_mapped.id_area)
+
             return(
-              <FormKelolaJadwal key={data.id} address={data.address_health_facilities} maps={data.link_location} category={data.category_mapped.category_facilities_name} name={data.health_facilities_name}/>
+              <FormKelolaJadwal key={data.id} data={data} address={data.address_health_facilities} maps={data.link_location} category={data.category_mapped.category_facilities_name} name={data.health_facilities_name}/>
             )
            })}
 
-            <div className="text-end mt-3 mb-5">
-              <button className="btn-kelola-jadwal1 me-3  rounded-3 mb-5">Batal</button>
-              <button className="btn-kelola-jadwal ms-3  rounded-3 mb-5">Simpan</button>
-            </div>
+            
           </Form>
         </div>
       </div>

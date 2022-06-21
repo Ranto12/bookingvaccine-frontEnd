@@ -130,7 +130,6 @@ const KelolaPengguna = () => {
           <div className='TabelkelolaBerita row Border-Color-Box mb-2'>
             {dataPengguna.data &&
             dataPengguna.data.map((data, index)=>{
-              console.log(dataPengguna.data, "wow")
               return(
                 <TablePengguna Number={index + 1}  key={data.id} nama={data.first_name + " " + data.last_name} nohp = {data.no_phone}  NIK={data.username}  data={data}  />
               )
