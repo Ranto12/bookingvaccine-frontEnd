@@ -13,18 +13,15 @@ import ImagePlaceholder from "../../assets/image/ImagePlaceholder.jpg";
 const ArtikelTerbaru = () => {
   // initial state and valiables
   const [input, setInput] = useState("");
-  const [count, setCount] = useState(1);
   const [imagePreview, setImagePreview] = useState("");
   const inputRef = useRef();
+
 
   const onChangeInput = (e) => {
     const input = e.target.value;
     setInput(input);
   };
 
-  const handleSearch = () => {
-    setCount(1 + input);
-  };
 
   const onInputImage = () => {
     if (!inputRef.current) {
@@ -42,9 +39,6 @@ const ArtikelTerbaru = () => {
     setImagePreview(url);
   };
 
-  useEffect(() => {
-    handleSearch();
-  }, []);
 
   return (
     <div className="Fontcolor-Dasboard">

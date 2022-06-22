@@ -21,7 +21,7 @@ const KelolaJadwal = () => {
     const [input, setInput] = useState("");
     const [count, setCount] = useState(1);
     const [jadwal, setJadwal] = useState([]);
-    const [page, setPage] = useState(1);
+    const [page, setPage] = useState(0);
     const [size, setSize] = useState(15);
 
 
@@ -148,15 +148,15 @@ const KelolaJadwal = () => {
                             {jadwal.data &&
                             jadwal.data.map((data, index) => {
                                 return (
-                                    <TabelVaksinasi Number={index + 1} key={data.id} nama={data.health_facilities_dao_mapped.health_facilities_name} stock={data.stock} jenis={data.vaccine_mapped.vaccine_name} waktu={data.start_time } />
+                                    <TabelVaksinasi Number={index + 1} key={data.id} nama={data.health_facilities_dao_mapped.health_facilities_name} stock={data.stock} jenis={data.vaccine_mapped.vaccine_name} waktu={data.start_date + " " +  data.start_time } />
                                 )
                             })}
-
-                            <div>
+                        </div>
+                        <div>
                                 <input type="number" value={page} onChange={handlePage}/>
                             </div>
-                        </div>
                     </div>
+                    
                 </div>
             </div>
         </>

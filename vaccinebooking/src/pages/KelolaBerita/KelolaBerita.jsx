@@ -19,6 +19,8 @@ const KelolaBerita = () => {
   const [input, setInput] = useState("");
   const [Artikels, setArtikels] = useState([]);
   const [Values, setValues] = useState(15);
+  const [page, setPage] = useState(0);
+  const [size, setSize] = useState(15);
 
 
   //funtion
@@ -40,7 +42,7 @@ const KelolaBerita = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await api.get("news/desc")
+        const response = await api.get(`/news/${page}/${size}`)
         setArtikels(response.data);
       } catch (err) {
         if (err.response) {
@@ -54,7 +56,7 @@ const KelolaBerita = () => {
       }
     }
     fetchPosts();
-  }, [])
+  }, [size])
   console.log(`news`, Artikels)
 
 
@@ -84,7 +86,7 @@ const KelolaBerita = () => {
                 {input}
               </div>
               <div className='ms-2 Select15'>
-                <Select setValues={setValues} />
+                <Select setValues={setSize} />
               </div>
               <div className="d-flex">
                 <div>

@@ -18,7 +18,6 @@ export default function FormKelolaJadwal({address, maps, category, name, data}) 
   const [Stock, setStock] = useState();
   const Time = startTime + ":00";
   const dateString = Moment(startDate).format('YYYY-MM-DD');
- 
   const chaangeStartDate =(e)=>{
     setStartDate(e.target.value);
   }
@@ -34,6 +33,8 @@ export default function FormKelolaJadwal({address, maps, category, name, data}) 
   }
  
   // console.log(`ini adalah stok`, dateString )
+  console.log(idArea, idHealt, idSesion,vaccine, dateString, Time, Stock)
+
 
   // get api jenis vaccine
   // useEffect
@@ -57,30 +58,69 @@ export default function FormKelolaJadwal({address, maps, category, name, data}) 
 },[])
 
 // funtion
-const handleSubmit =()=>{
-  const Sesion = {
-    id_area : idArea,
-    id_health_facilities: idHealt,
-    id_session : 0,
-    id_session: idSesion,
-    start_date: dateString,
-    startTime : Time,
-    stock: Stock
-  };
-  axios
-  .post("http://34.142.219.145:80/api/v1/session", Sesion)
-  .then((response)=>{
-    console.log(response.status);
-    console.log(response.data.token);
+// const handleSubmit =()=>{
+//   const Sesion = {
+//     id_area : idArea,
+//       id_health_facilities: idHealt,
+//       id_session : 0,
+//       id_vaccine : vaccine,
+//       start_date: dateString,
+//       startTime : Time,
+//       stock: Stock
+//   };
+//   axios
+//   .post("http://34.142.219.145:80/api/v1/session" + Sesion)
+//   .then((response)=>{
+//     console.log(response.status);
+//     console.log(response.data.token);
 
-    if(RepeatOneSharp.status == 201){
-      console.log("succes");
-    } else{
-      console.log("data gagal")
-    }
-  });
+//     if(RepeatOneSharp.status == 201){
+//       console.log("succes");
+//     } else{
+//       console.log("data gagal")
+//     }
+//   });
+//   //  axios({
+//   //   method: "POST",
+//   //   url: "http://34.142.219.145:80/api/v1/session",
+//   //   data: {
+//   //     id_area : idArea,
+//   //     id_health_facilities: idHealt,
+//   //     id_session : 0,
+//   //     id_vaccine : vaccine,
+//   //     start_date: dateString,
+//   //     startTime : Time,
+//   //     stock: Stock
+//   //   },
+//   // })
+//   // .then(res => {
+//   //   console.log("Res", res.data.message);
+//   // })
+//   // .catch(err =>{
+//   //   console.log("Error in request", err);
+//   // })
 
-};
+// };
+
+const handleSubmit = (e)=>{
+  // e.preventDefault();
+  //   let data = {
+  //     id_area : idArea,
+  //     id_health_facilities: idHealt,
+  //     id_session : 0,
+  //     id_vaccine : vaccine,
+  //     start_date: dateString,
+  //     startTime : Time,
+  //     stock: Stock
+  //   };
+  //   axios.post('http://34.142.219.145:80/api/v1/session', data)
+  //   .then(response => response.data)
+  // .then(res => console.log(res))
+}
+
+useEffect(()=>{
+handleSubmit();
+},[])
 
   return (
     <div className="mb-5 borderInput" style={{ color: " #4E7EA7" }} handleSubmit={handleSubmit} >
