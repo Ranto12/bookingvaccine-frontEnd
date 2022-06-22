@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Sidebar from '../../component/Sidebar/Sidebar';
 import { Link } from 'react-router-dom';
-
+import axios from 'axios';
 // style
 import './../../assets/Style/style.css';
 
@@ -15,22 +15,35 @@ import Select from '../../component/PageComponent/Select';
 
 // Api
 import api from './../../API/data/post'
+import { responsiveProperty } from '@mui/material/styles/cssUtils';
 
 const KelolaJadwal = () => {
     // initial state and valiables
     const [input, setInput] = useState("");
+    const [error, setError] = useState("");
     const [count, setCount] = useState(1);
     const [jadwal, setJadwal] = useState([]);
+    const [search, setSearch] = useState([]);
+
 
     const onChangeInput = (e) => {
-        const input = e.target.value;
-        setInput(input)
+        const inputt = e.target.value;
+        setInput(inputt)
+        console.log(inputt)
     }
 
-    const handleSearch = () => {
-        setCount(1 + input)
+    // const handleSearch = async (e) => {
+    //     try {
+    //         const response = await axios.get(`http://34.142.219.145:80/api/v1/session/search/${input}`)
+    //         console.log(response, "data search")
+    //         setSearch(response.data.data)
+    //     } catch (error) {
+    //         console.log("eror handle search")
 
-    }
+    //     }
+
+
+    // }
 
     useEffect(() => {
         handleSearch();
@@ -39,20 +52,19 @@ const KelolaJadwal = () => {
     // api
     useEffect(() => {
         const fetchPosts = async () => {
-            try {
-                const response = await api.get("/jawal")
-                setJadwal(response.data);
-            } catch (err) {
-                if (err.response) {
-                    //not in the 200 response range
-                    console.log(err.response.data)
-                    console.log(err.response.status)
-                    console.log(err.response.headers)
-                } else {
-                    console.log(`Error ${err.message}`);
-                }
-            }
+            axios
+                .get("http://34.142.219.145:80/api/v1/session")
+                .then((res) => {
+                    console.log(res.data.data)
+                    setJadwal(res.data.data);
+                })
+                .catch((err) => {
+                    console.log(err);
+                    console.log("Data tidak ketemu");
+                    setError("Data tidak ketemu");
+                });
         }
+
         fetchPosts();
     }, [])
 
@@ -86,7 +98,7 @@ const KelolaJadwal = () => {
                                     <p className='Fz-16'>Total</p>
                                 </div>
                                 <div className='ms-2 Select15'>
-                                    <Select onChangeInput={onChangeInput}/> 
+                                    <Select onChangeInput={onChangeInput} />
                                 </div>
                                 <div className='d-flex'>
                                     <div>
@@ -105,12 +117,12 @@ const KelolaJadwal = () => {
 
                             <div className='col-6 d-flex justify-content-end'>
                                 <div >
-                                <Link to='/jadwalvaksinasi' >
-                                    <button className='Button-add-admin'>
-                                        <BsFillCalendarCheckFill className='me-3'/>
-                                        Buat Jadwal
-                                    </button>
-                                </Link>
+                                    <Link to='/jadwalvaksinasi' >
+                                        <button className='Button-add-admin'>
+                                            <BsFillCalendarCheckFill className='me-3' />
+                                            Buat Jadwal
+                                        </button>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -137,9 +149,17 @@ const KelolaJadwal = () => {
                         </div>
                         {/* isi table */}
                         <div className='TabelkelolaBerita row Border-Color-Box'>
-                            {jadwal.map((data, index) => {
+                            {jadwal?.filter((val) => {
+                                if (input == "") {
+                                    return val
+                                }
+                                else if (val.vaccine_mapped.vaccine_name.toLowerCase().includes(input.toLocaleLowerCase()) || val.health_facilities_dao_mapped.health_facilities_name.toLowerCase().includes(input.toLocaleLowerCase())) {
+                                    return val
+                                }
+
+                            }).map((data, index) => {
                                 return (
-                                    <TabelVaksinasi Number={index + 1} key={data.id} nama={data.namaFaskes} stock={data.stock} jenis={data.jenis} waktu={data.waktu} />
+                                    <TabelVaksinasi Number={index + 1} key={data.id_session} nama={data.health_facilities_dao_mapped.health_facilities_name} stock={data.stock} jenis={data.vaccine_mapped.vaccine_name} waktu={data.start_time} />
                                 )
                             })}
                         </div>

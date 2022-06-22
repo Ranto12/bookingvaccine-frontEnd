@@ -10,7 +10,7 @@ import { IoMdCloseCircle } from 'react-icons/io'
 import { IconButton } from "@mui/material";
 import { RiPencilFill } from "react-icons/ri";
 
-function OverlayJadwalVaksinasi({ nama }) {
+function OverlayJadwalVaksinasi({ data }) {
     const [popUp, setPopUp] = useState(false);
     const handleClikPopUp = () => {
         setPopUp(!popUp)
@@ -20,6 +20,7 @@ function OverlayJadwalVaksinasi({ nama }) {
     } else {
         document.body.classList.remove('popUp-active')
     }
+    console.log("berhasil", data)
     return (
 
 
@@ -45,16 +46,19 @@ function OverlayJadwalVaksinasi({ nama }) {
                         </div>
                         <div className="modal-body">
                             <ul>
-                                <DataOverlay nama={nama} />
+                                <DataOverlay data={data} />
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <IconButton aria-label="Cancel" data-bs-toggle="modal" data-bs-placement="top" title="view" data-bs-target="#exampleModal"  >
+            <div>
+
                 < RiPencilFill />
-            </IconButton>
+
+            </div>
+
         </div>
     )
 }
