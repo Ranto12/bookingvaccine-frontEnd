@@ -1,19 +1,13 @@
 import React, { useState, useEffect } from "react";
 
 // import component
-<<<<<<< HEAD
 import Select from "../../component/PageComponent/Select";
-=======
-import Select from '../../component/PageComponent/Select';
-import TablePengguna from '../../component/KelolaPenggunaTable/TablePengguna';
->>>>>>> ad1752ce9156dc51cc73ab2928c292b8233db8ae
 
 //style
 import "../../assets/Style/style.css";
 import Sidebar from "../../component/Sidebar/Sidebar";
 
 // icon
-<<<<<<< HEAD
 import { FaUserPlus } from "react-icons/fa";
 import { AiOutlineSearch } from "react-icons/ai";
 import { Link } from "react-router-dom";
@@ -21,13 +15,6 @@ import TablePengguna from "../../component/KelolaPenggunaTable/TablePengguna";
 
 // Api
 import api from "./../../API/data/post";
-=======
-import {AiOutlineSearch } from 'react-icons/ai';
-
-// Api
-import api from './../../API/data/post'
-import PopUpPengguna from '../../component/KelolaPenggunaTable/PopUpPengguna';
->>>>>>> ad1752ce9156dc51cc73ab2928c292b8233db8ae
 
 const KelolaPengguna = () => {
   const [input, setInput] = useState();
@@ -37,7 +24,6 @@ const KelolaPengguna = () => {
   // funtion
   const onChangeInput = (e) => {
     const input = e.target.value;
-<<<<<<< HEAD
     setInput(input);
   };
 
@@ -62,34 +48,10 @@ const KelolaPengguna = () => {
           console.log(err.response.headers);
         } else {
           console.log(`Error ${err.message}`);
-=======
-    setInput(input)
-  }
-  
-  const handleSearch=() =>{
-    setCount(1+input)
-  }
- 
-  useEffect(()=>{
-    const fetchPosts = async()=>{
-        try{
-            const response = await api.get("/pengguna")
-            setDataPengguna(response.data);
-        } catch(err){
-            if(err.response){
-                //not in the 200 response range
-                console.log(err.response.data)
-                console.log(err.response.status)
-                console.log(err.response.headers)
-            }else{
-                console.log(`Error ${err.message}`);
-            }
->>>>>>> ad1752ce9156dc51cc73ab2928c292b8233db8ae
         }
       }
     };
     fetchPosts();
-<<<<<<< HEAD
   }, []);
   // // console.log(`length, ${dataPengguna.length}`)
   console.log(dataPengguna);
@@ -100,37 +62,6 @@ const KelolaPengguna = () => {
         <div className="row me-5">
           <div className="col-3">
             <Sidebar />
-=======
-},[])
-// // console.log(`length, ${dataPengguna.length}`)
-// console.log(dataPengguna)
-
-
-  return (
-    <>
-    <div className='Fontcolor-Dasboard'>
-      <div className='row me-5'>
-        <div className='col-3'>
-          <Sidebar/>
-        </div>
-
-
-        {/* content */}
-
-        <div className='col-9 mt-5'>
-          <div className='row'>
-            {/* Title */}
-            <div className='col-6'>
-              <h1 className='fz-Head'>
-                Kelola Data
-              </h1>
-              <h1 className='fz-Title'>
-                Pengguna 
-              </h1>
-            </div>
-            
-            {/* handle */}
->>>>>>> ad1752ce9156dc51cc73ab2928c292b8233db8ae
           </div>
 
           {/* content */}
@@ -181,12 +112,7 @@ const KelolaPengguna = () => {
                 </div>
               </div>
 
-<<<<<<< HEAD
               <div className="col-6 d-flex justify-content-end"></div>
-=======
-            <div className='col-6 d-flex justify-content-end'>
-              
->>>>>>> ad1752ce9156dc51cc73ab2928c292b8233db8ae
             </div>
 
             {/* table  */}
@@ -212,18 +138,6 @@ const KelolaPengguna = () => {
               })}
             </div>
           </div>
-<<<<<<< HEAD
-=======
-          {/* isi table */}
-          <div className='TabelkelolaBerita row Border-Color-Box mb-2'>
-            {dataPengguna.map((data, index)=>{
-              return(
-                <TablePengguna Number={index + 1} key={data.id} nama={data.nama} nohp = {data.noHp}  NIK={data.nik} alamat = {data.alamat} pengguna = {data}   />
-              )
-
-            })}
-          </div>
->>>>>>> ad1752ce9156dc51cc73ab2928c292b8233db8ae
         </div>
       </div>
     </>

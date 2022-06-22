@@ -1,7 +1,6 @@
 /* sidebar */
 .sidebar {
-  background-color: #7BD9E8;
-  ;
+  background-color: #7bd9e8;
   border-radius: 30px !important;
 }
 
@@ -29,7 +28,7 @@
 }
 
 .title-das {
-  color: #4E7EA7;
+  color: #4e7ea7;
   /* margin-top: 6%; */
 }
 
@@ -44,7 +43,7 @@
 
 .card-faskes,
 .card-faskes1 {
-  background-color: #45C2D6;
+  background-color: #45c2d6;
   border-radius: 10px;
 }
 
@@ -59,12 +58,12 @@
 /* kelola berita */
 .fz-Head {
   font-size: 24px;
-  color: #4E7EA7;
+  color: #4e7ea7;
 }
 
 .fz-Title {
   font-size: 36px;
-  color: #4E7EA7;
+  color: #4e7ea7;
 }
 
 .Margin-top-Serch {
@@ -73,16 +72,16 @@
 
 .Fz-16 {
   font-size: 16px;
-  color: #4E7EA7
+  color: #4e7ea7;
 }
 
 .LinkText {
-  color: #FFFFFF;
+  color: #ffffff;
   cursor: pointer;
 }
 
 .LinkText:hover {
-  background-color: #45C2D6 !important;
+  background-color: #45c2d6 !important;
 }
 
 .background-color-Table {
@@ -103,7 +102,7 @@
 }
 
 .TabelDataBooking {
-  /* background-color: #ffffff; */
+  background-color: #ffffff;
   justify-content: center;
   align-items: center;
 }
@@ -129,8 +128,8 @@
 .Select15 select {
   font-size: 14px;
   border-radius: 2px;
-  border: 1px solid #829CCC;
-  color: #829CCC;
+  border: 1px solid #829ccc;
+  color: #829ccc;
 }
 
 .PointerClikCss {
@@ -145,8 +144,8 @@
 }
 .BorderRadiusInline {
   border-radius: 2px;
-  border: 1px solid #829CCC !important;
-  color: #829CCC !important
+  border: 1px solid #829ccc !important;
+  color: #829ccc !important;
 }
 
 .BorderRadiusInline :focus {
@@ -154,11 +153,7 @@
 }
 
 .TableColor-child:nth-child(even) {
-<<<<<<< HEAD
-  background-color: #d6eeee;
-=======
-  background-color: #F7F7F7;
->>>>>>> ad1752ce9156dc51cc73ab2928c292b8233db8ae
+  background-color: #f7f7f7;
 }
 
 /* keloal Jadwal Vaksin */
@@ -190,28 +185,24 @@
   justify-content: center;
   align-items: center;
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> ad1752ce9156dc51cc73ab2928c292b8233db8ae
 .TabelkelolaBerita {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   justify-content: center;
   align-items: center;
 }
 
 /* kelolaJadwalVaksin */
 
-
 .bg-card-kelola {
-  background-color: #7BD9E8 !important;
+  background-color: #7bd9e8 !important;
   padding: 10px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
 
 .bg-form-jadwal {
-  background-color: #F7F7F7;
+  background-color: #f7f7f7;
   padding-left: 36px !important;
   padding-right: 36px !important;
   border-bottom-left-radius: 10px;
@@ -227,19 +218,16 @@
   box-shadow: 0px 9px 26px rgba(0, 0, 0, 0.08);
   border-radius: 10px;
   margin-top: 13.29px;
-} */
-
-.btn-kelola-jadwal {
-  background-color: #7BD9E8;
+}
+*/ .btn-kelola-jadwal {
+  background-color: #7bd9e8;
   border: 0px;
   padding: 7px 34px;
-
 }
 
 .btn-kelola-jadwal1 {
-  background-color: #F7F7F7;
+  background-color: #f7f7f7;
   border: 0px;
-
 }
 
 .img-input {
@@ -249,24 +237,8 @@
   background: none;
 }
 
-<<<<<<< HEAD
-.img-border {
-  width: 281px;
-  height: 181px;
-  align-items: center;
-  border: 2px solid #45c2d6;
-  box-shadow: 0px 9px 26px rgba(0, 0, 0, 0.08);
-  border-radius: 10px;
-  margin-top: 13.29px;
-  border-style: dashed;
-}
-
 .img-input > label > input {
-=======
-.img-input>label>input {
->>>>>>> ad1752ce9156dc51cc73ab2928c292b8233db8ae
   display: none;
-
 }
 
 .img-card {
@@ -277,8 +249,6 @@
 
 .card-text {
   font-size: 13px;
-
-
 }
 
 .input-kelola,
@@ -441,32 +411,28 @@
   display: flex;
 }
 
-<<<<<<< HEAD
-/* Artikel Terbaru */
-=======
 /* tabel  */
 .Border-Color-Box {
-  border: 5px solid #45C2D6;
+  border: 5px solid #45c2d6;
 }
->>>>>>> ad1752ce9156dc51cc73ab2928c292b8233db8ae
 
 /* button admin */
 .Button-add-admin {
-  background-color: #7BD9E8;
+  background-color: #7bd9e8;
   border: none;
   border-radius: 10px;
   width: 124px;
   height: 25px;
   left: 1283px;
   top: 176px;
-  color: #FFFFFF;
+  color: #ffffff;
   font-size: 12px;
 }
 
 /* FormKelolaJadwal */
 
 .borderInput input {
-  border: 1px solid #D9D9D9;
+  border: 1px solid #d9d9d9;
 }
 
 .borderInput input:focus {
@@ -474,51 +440,44 @@
 }
 
 .borderInput textarea {
-  border: 1px solid #D9D9D9;
+  border: 1px solid #d9d9d9;
 }
 
 .borderInput textarea:focus {
   outline: none;
 }
 
-
 /* Booking vaccine */
-.Pointer-Booking{
+.Pointer-Booking {
   cursor: pointer;
 }
 /* PopUpPengguna */
-.pop-title{
-  background-color: #7BD9E8;
+.pop-title {
+  background-color: #7bd9e8;
 }
 
-.data-popup{
-  border-bottom: solid #829CCC;
+.data-popup {
+  border-bottom: solid #829ccc;
   padding-bottom: 10px;
 }
-<<<<<<< HEAD
 
-.table-styling {
-  border: 2px solid #45c2d6;
-=======
-
-ul>li>h5,.data-popup{
-  color: #829CCC;
+ul > li > h5,
+.data-popup {
+  color: #829ccc;
   margin-right: 20px;
   margin-top: 20px;
 }
 
-div>ul{
+div > ul {
   list-style-type: none;
 }
 
-.modal-content{
+.modal-content {
   border-radius: 20px !important;
   overflow: hidden !important;
   height: 83% !important;
 }
 
-.btn-close{
+.btn-close {
   background-color: white;
-  
->>>>>>> ad1752ce9156dc51cc73ab2928c292b8233db8ae
 }

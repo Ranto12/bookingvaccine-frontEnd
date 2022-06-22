@@ -11,7 +11,7 @@ import { MdPostAdd } from "react-icons/md";
 import TabelKelolaBerita from "../../component/KelolaBerita/TabelKelolaBerita";
 
 // api
-import api from './../../API/data/post'
+import api from "./../../API/data/post";
 import Select from "../../component/PageComponent/Select";
 
 const KelolaBerita = () => {
@@ -20,42 +20,39 @@ const KelolaBerita = () => {
   const [Artikels, setArtikels] = useState([]);
   const [Values, setValues] = useState(15);
 
-
   //funtion
   const onChangeInput = (e) => {
     const input = e.target.value;
-    setInput(input)
-  }
+    setInput(input);
+  };
   const handleSearch = () => {
-    setInput()
-  }
-
+    setInput();
+  };
 
   //  useEffect
   useEffect(() => {
     handleSearch();
-  }, [])
+  }, []);
 
   //  API
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await api.get("/Artikel")
+        const response = await api.get("/Artikel");
         setArtikels(response.data);
       } catch (err) {
         if (err.response) {
           //not in the 200 response range
-          console.log(err.response.data)
-          console.log(err.response.status)
-          console.log(err.response.headers)
+          console.log(err.response.data);
+          console.log(err.response.status);
+          console.log(err.response.headers);
         } else {
           console.log(`Error ${err.message}`);
         }
       }
-    }
+    };
     fetchPosts();
-  }, [])
-
+  }, []);
 
   return (
     <div className="Fontcolor-Dasboard">
@@ -63,26 +60,22 @@ const KelolaBerita = () => {
         <div className="col-3">
           <Sidebar />
         </div>
-        <div className='col-9 mt-5'>
-          <div className='row'>
-            <div className='col-6'>
-              <h1 className='fz-Head'>
-                Kelola Data
-              </h1>
-              <h1 className='fz-Title'>
-                Artikel/Berita Terbaru
-              </h1>
+        <div className="col-9 mt-5">
+          <div className="row">
+            <div className="col-6">
+              <h1 className="fz-Head">Kelola Data</h1>
+              <h1 className="fz-Title">Artikel/Berita Terbaru</h1>
             </div>
           </div>
 
           {/* filtering */}
-          <div className='row d-flex Margin-top-Serch align-items-end'>
-            <div className='col-6 d-flex TotalPengguna ' >
+          <div className="row d-flex Margin-top-Serch align-items-end">
+            <div className="col-6 d-flex TotalPengguna ">
               <div>
-                <p className='Fz-16'>Total</p>
+                <p className="Fz-16">Total</p>
                 {input}
               </div>
-              <div className='ms-2 Select15'>
+              <div className="ms-2 Select15">
                 <Select setValues={setValues} />
               </div>
               <div className="d-flex">
@@ -114,13 +107,12 @@ const KelolaBerita = () => {
               </div>
             </div>
 
-
             <div className="col-6 d-flex justify-content-end">
-              <Link to='/jadwalvaksinasi' >
-               <button className='Button-add-admin'>
-                <MdPostAdd className='me-3'/>
-                Buat Berita
-              </button>
+              <Link to="/ArtikelTerbaru">
+                <button className="Button-add-admin">
+                  <MdPostAdd className="me-3" />
+                  Buat Berita
+                </button>
               </Link>
             </div>
           </div>
@@ -135,11 +127,17 @@ const KelolaBerita = () => {
           </div>
 
           {/* isi tabel */}
-          <div className='TabelkelolaBerita row Border-Color-Box '>
+          <div className="TabelkelolaBerita row Border-Color-Box ">
             {Artikels.map((artikel, index) => {
               return (
-                <TabelKelolaBerita key={artikel.ArtikelsId} Number={index + 1} title={artikel.title} tanggal={artikel.tanggal} author={artikel.author} />
-              )
+                <TabelKelolaBerita
+                  key={artikel.ArtikelsId}
+                  Number={index + 1}
+                  title={artikel.title}
+                  tanggal={artikel.tanggal}
+                  author={artikel.author}
+                />
+              );
             })}
           </div>
         </div>
