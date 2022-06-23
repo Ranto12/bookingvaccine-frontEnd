@@ -11,13 +11,29 @@ export default function FormKelolaJadwal({address, maps, category, name, data}) 
   // state and variables
   const [vaccine, setvaccine] = useState([]);
   const idArea = data.area_mapped.id_area;
- const idHealt = data.id_health_facilities;
+  const idHealt = data.id_health_facilities;
+
+
   const [idSesion, setIdSesion] = useState();
   const [startDate, setStartDate] = useState();
   const [startTime, setStartTime] = useState("");
-  const [Stock, setStock] = useState();
-  const Time = startTime + ":00";
+  const [Stock, setStock] = useState(0);
+  const [msg, setMsg] = useState();
+  const Time = startTime ;
   const dateString = Moment(startDate).format('YYYY-MM-DD');
+
+  const Mantul = {
+    id_area : parseInt(idArea) ,
+    id_area : parseInt(idArea) ,
+    id_health_facilities: parseInt(idHealt),
+    // id_session : 1,
+    id_vaccine : parseInt(vaccine),
+    start_date: String(dateString),
+    start_time : String(Time),
+    stock: parseInt(Stock) 
+  };
+  console.log(`awoawokawok`, Mantul);
+
   const chaangeStartDate =(e)=>{
     setStartDate(e.target.value);
   }
@@ -62,14 +78,13 @@ export default function FormKelolaJadwal({address, maps, category, name, data}) 
 //   const Sesion = {
 //     id_area : idArea,
 //       id_health_facilities: idHealt,
-//       id_session : 0,
 //       id_vaccine : vaccine,
 //       start_date: dateString,
 //       startTime : Time,
 //       stock: Stock
 //   };
 //   axios
-//   .post("http://34.142.219.145:80/api/v1/session" + Sesion)
+//   .post("http://34.142.219.145/api/v1/session" + Sesion)
 //   .then((response)=>{
 //     console.log(response.status);
 //     console.log(response.data.token);
@@ -80,10 +95,52 @@ export default function FormKelolaJadwal({address, maps, category, name, data}) 
 //       console.log("data gagal")
 //     }
 //   });
-//   //  axios({
-//   //   method: "POST",
-//   //   url: "http://34.142.219.145:80/api/v1/session",
-//   //   data: {
+// };
+
+
+  // const handleSubmit=()=>{
+  //   const Sesion = {
+  //           id_area : idArea,
+  //           id_health_facilities: idHealt,
+  //           id_session : 0,
+  //           id_vaccine : vaccine,
+  //           start_date: dateString,
+  //           startTime : Time,
+  //           stock: Stock
+  //       };
+  //       // POST request using axios inside useEffect React hook
+  //       axios.post('http://34.142.219.145/api/v1/session', Sesion)
+  //       .then(response => setMsg(response.data.id));
+  // }
+  
+// empty dependency array means this effect will only run once (like componentDidMount in classes)
+
+
+const handleSubmit =(e) =>{
+  axios({
+    method: "POST",
+    url: "http://34.142.219.145/api/v1/session",
+    data: {
+      id_area : parseInt(idArea) ,
+      id_health_facilities: parseInt(idHealt),
+      // id_session : 1,
+      id_vaccine : parseInt(vaccine),
+      start_date: String(dateString),
+      start_time : String(Time),
+      stock: parseInt(Stock) 
+    },
+  })
+  .then(res => {
+    console.log("Res", res.data.message);
+  })
+  .catch(err =>{
+    console.log("Error in request", err);
+  })
+}
+
+// const handleSubmit = (e)=>{
+//   // e.preventDefault();
+//   //   let data = {
 //   //     id_area : idArea,
 //   //     id_health_facilities: idHealt,
 //   //     id_session : 0,
@@ -91,32 +148,11 @@ export default function FormKelolaJadwal({address, maps, category, name, data}) 
 //   //     start_date: dateString,
 //   //     startTime : Time,
 //   //     stock: Stock
-//   //   },
-//   // })
-//   // .then(res => {
-//   //   console.log("Res", res.data.message);
-//   // })
-//   // .catch(err =>{
-//   //   console.log("Error in request", err);
-//   // })
-
-// };
-
-const handleSubmit = (e)=>{
-  // e.preventDefault();
-  //   let data = {
-  //     id_area : idArea,
-  //     id_health_facilities: idHealt,
-  //     id_session : 0,
-  //     id_vaccine : vaccine,
-  //     start_date: dateString,
-  //     startTime : Time,
-  //     stock: Stock
-  //   };
-  //   axios.post('http://34.142.219.145:80/api/v1/session', data)
-  //   .then(response => response.data)
-  // .then(res => console.log(res))
-}
+//   //   };
+//   //   axios.post('http://34.142.219.145:80/api/v1/session', data)
+//   //   .then(response => response.data)
+//   // .then(res => console.log(res))
+// }
 
 useEffect(()=>{
 handleSubmit();
