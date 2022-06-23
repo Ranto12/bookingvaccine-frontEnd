@@ -11,7 +11,7 @@ import { MdPostAdd } from "react-icons/md";
 import TabelKelolaBerita from "../../component/KelolaBerita/TabelKelolaBerita";
 
 // api
-import api from './../../API/data/post'
+import api from "./../../API/data/post";
 import Select from "../../component/PageComponent/Select";
 
 const KelolaBerita = () => {
@@ -22,21 +22,19 @@ const KelolaBerita = () => {
   const [page, setPage] = useState(0);
   const [size, setSize] = useState(15);
 
-
   //funtion
   const onChangeInput = (e) => {
     const input = e.target.value;
-    setInput(input)
-  }
+    setInput(input);
+  };
   const handleSearch = () => {
-    setInput()
-  }
-
+    setInput();
+  };
 
   //  useEffect
   useEffect(() => {
     handleSearch();
-  }, [])
+  }, []);
 
   //  API
   useEffect(() => {
@@ -47,14 +45,14 @@ const KelolaBerita = () => {
       } catch (err) {
         if (err.response) {
           //not in the 200 response range
-          console.log(err.response.data)
-          console.log(err.response.status)
-          console.log(err.response.headers)
+          console.log(err.response.data);
+          console.log(err.response.status);
+          console.log(err.response.headers);
         } else {
           console.log(`Error ${err.message}`);
         }
       }
-    }
+    };
     fetchPosts();
   }, [size])
   // console.log(`news`, Artikels.data.content)
@@ -66,23 +64,19 @@ const KelolaBerita = () => {
         <div className="col-3">
           <Sidebar />
         </div>
-        <div className='col-9 mt-5'>
-          <div className='row'>
-            <div className='col-6'>
-              <h1 className='fz-Head'>
-                Kelola Data
-              </h1>
-              <h1 className='fz-Title'>
-                Artikel/Berita Terbaru
-              </h1>
+        <div className="col-9 mt-5">
+          <div className="row">
+            <div className="col-6">
+              <h1 className="fz-Head">Kelola Data</h1>
+              <h1 className="fz-Title">Artikel/Berita Terbaru</h1>
             </div>
           </div>
 
           {/* filtering */}
-          <div className='row d-flex Margin-top-Serch align-items-end'>
-            <div className='col-6 d-flex TotalPengguna ' >
+          <div className="row d-flex Margin-top-Serch align-items-end">
+            <div className="col-6 d-flex TotalPengguna ">
               <div>
-                <p className='Fz-16'>Total</p>
+                <p className="Fz-16">Total</p>
                 {input}
               </div>
               <div className='ms-2 Select15'>
@@ -116,7 +110,6 @@ const KelolaBerita = () => {
                 </div>
               </div>
             </div>
-
 
             <div className="col-6 d-flex justify-content-end">
               <Link to='/ArtikelTerbaru' >

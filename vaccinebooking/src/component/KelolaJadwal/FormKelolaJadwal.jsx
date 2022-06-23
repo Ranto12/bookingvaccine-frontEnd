@@ -230,7 +230,7 @@ handleSubmit();
       <div className="row mt-4">
         <div className="col-4">
           <h5> Upload Gambar </h5>
-          <div className="card img-input">
+          <div className="img-border img-input">
             <label>
               <div className="text-center img-card  ">
                 <BsFileEarmarkImage className="h-50 w-50 " />
