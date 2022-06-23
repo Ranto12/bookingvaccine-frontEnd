@@ -13,6 +13,8 @@ import {AiOutlineSearch } from 'react-icons/ai';
 
 // Api
 import api from './../../API/data/post'
+
+// Component
 import PopUpPengguna from '../../component/KelolaPenggunaTable/PopUpPengguna';
 
 const KelolaPengguna = () => {
@@ -34,7 +36,7 @@ const KelolaPengguna = () => {
   useEffect(()=>{
     const fetchPosts = async()=>{
         try{
-            const response = await api.get("/pengguna")
+            const response = await api.get("/users")
             setDataPengguna(response.data);
         } catch(err){
             if(err.response){
@@ -50,7 +52,7 @@ const KelolaPengguna = () => {
     fetchPosts();
 },[])
 // // console.log(`length, ${dataPengguna.length}`)
-// console.log(dataPengguna)
+// console.log(`dataPengguna`, dataPengguna)
 
 
   return (
@@ -126,11 +128,11 @@ const KelolaPengguna = () => {
           </div>
           {/* isi table */}
           <div className='TabelkelolaBerita row Border-Color-Box mb-2'>
-            {dataPengguna.map((data, index)=>{
+            {dataPengguna.data &&
+            dataPengguna.data.map((data, index)=>{
               return(
-                <TablePengguna Number={index + 1} key={data.id} nama={data.nama} nohp = {data.noHp}  NIK={data.nik} alamat = {data.alamat} pengguna = {data}   />
+                <TablePengguna Number={index + 1}  key={data.id} nama={data.first_name + " " + data.last_name} nohp = {data.no_phone}  NIK={data.username}  data={data}  />
               )
-
             })}
           </div>
         </div>

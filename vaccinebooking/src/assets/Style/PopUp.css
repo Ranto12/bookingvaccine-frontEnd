@@ -1,12 +1,12 @@
-body.active-popUp {
+/* body.active-popUp {
     overflow-y: hidden;
-};
+}; */
 
 .btn-popUp{
-    pading: 10px 20px;
+    /* padding: 10px 20px;
     display: block;
     margin: 100px auto 0;
-    font-size: 10px;
+    font-size: 10px; */
     cursor: pointer;
 };
 
@@ -22,7 +22,7 @@ body.active-popUp {
 
 
 .popUp-content{
-    position: absolute;
+    /* position: absolute; */
     width: 50%;
     background-color: #ffff;
     /* border: 1px solid; */
@@ -65,5 +65,5 @@ body.active-popUp {
     color: #4E7EA7;
 }
 .Absolute-position{
-    position: absolute;
+    position: fixed;
 }

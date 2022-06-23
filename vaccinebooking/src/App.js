@@ -9,9 +9,6 @@ import KelolaJadwal from "./pages/KelolaJadwal/KelolaJadwal";
 import KelolaAdmin from "./pages/KelolaAdmin/KelolaAdmin";
 import JadwalVaksinasi from "./pages/KelolaJadwal/JadwalVaksinasi";
 import AddAdmin from "./pages/KelolaAdmin/AddAdmin";
-// import JadwalVaksinasi from "./pages/KelolaJadwal/JadwalVaksinasi";
-// import ViewUser from './domain/veiwUser/ViewUser';
-// import Login from './pages/Login/Login';
 import ArtikelTerbaru from "./pages/ArtikelTerbaru/ArtikelTerbaru";
 import Overlaybookingvacinne from "./component/Overlay/Overlaybookingvacinne";
 import Contoh from "./component/KelolaPenggunaTable/Contoh";
@@ -31,11 +28,8 @@ function App() {
       <Route path="/ArtikelTerbaru" element={<ArtikelTerbaru />} />
       <Route path="/AddAdmin" element={<AddAdmin />} />
       <Route path="/popupModal" element={<Overlaybookingvacinne />} />
-      
+
       <Route path="/contoh" element={<Contoh />} />
-
-   
-
 
       {/* <Route path='/login' element={<ViewUser/>}/> */}
     </Routes>

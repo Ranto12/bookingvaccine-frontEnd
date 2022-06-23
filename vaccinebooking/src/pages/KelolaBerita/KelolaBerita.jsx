@@ -19,6 +19,8 @@ const KelolaBerita = () => {
   const [input, setInput] = useState("");
   const [Artikels, setArtikels] = useState([]);
   const [Values, setValues] = useState(15);
+  const [page, setPage] = useState(0);
+  const [size, setSize] = useState(15);
 
 
   //funtion
@@ -40,7 +42,7 @@ const KelolaBerita = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await api.get("/Artikel")
+        const response = await api.get(`/news/${page}/${size}`)
         setArtikels(response.data);
       } catch (err) {
         if (err.response) {
@@ -54,7 +56,8 @@ const KelolaBerita = () => {
       }
     }
     fetchPosts();
-  }, [])
+  }, [size])
+  // console.log(`news`, Artikels.data.content)
 
 
   return (
@@ -83,7 +86,7 @@ const KelolaBerita = () => {
                 {input}
               </div>
               <div className='ms-2 Select15'>
-                <Select setValues={setValues} />
+                <Select setSize={setSize} />
               </div>
               <div className="d-flex">
                 <div>
@@ -116,7 +119,7 @@ const KelolaBerita = () => {
 
 
             <div className="col-6 d-flex justify-content-end">
-              <Link to='/jadwalvaksinasi' >
+              <Link to='/ArtikelTerbaru' >
                <button className='Button-add-admin'>
                 <MdPostAdd className='me-3'/>
                 Buat Berita
@@ -136,9 +139,10 @@ const KelolaBerita = () => {
 
           {/* isi tabel */}
           <div className='TabelkelolaBerita row Border-Color-Box '>
-            {Artikels.map((artikel, index) => {
-              return (
-                <TabelKelolaBerita key={artikel.ArtikelsId} Number={index + 1} title={artikel.title} tanggal={artikel.tanggal} author={artikel.author} />
+            {Artikels.data &&
+            Artikels.data.content.map((data, index)=>{
+              return(
+                <TabelKelolaBerita key={data.id_news_vaccine} Number={index +1} title={data.title_news_vaccine} tanggal={data.created_at} author={data.author_news_vaccine} />
               )
             })}
           </div>

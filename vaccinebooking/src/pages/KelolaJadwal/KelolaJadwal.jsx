@@ -21,26 +21,33 @@ const KelolaJadwal = () => {
     const [input, setInput] = useState("");
     const [count, setCount] = useState(1);
     const [jadwal, setJadwal] = useState([]);
+    const [page, setPage] = useState(0);
+    const [size, setSize] = useState(15);
 
+
+    // function
     const onChangeInput = (e) => {
         const input = e.target.value;
         setInput(input)
     }
 
-    const handleSearch = () => {
-        setCount(1 + input)
-
+    const handlePage =(e)=>{
+       setPage(e.target.value)
+    }
+    const handleSize =(e)=>{
+        setSize(e.target.value);
     }
 
-    useEffect(() => {
-        handleSearch();
-    }, [])
+    // useEffect(() => {
+    //     handlePage();
+    //     handleSize();
+    // }, [size])
 
     // api
     useEffect(() => {
         const fetchPosts = async () => {
             try {
-                const response = await api.get("/jawal")
+                const response = await api.get(`/session/${page}/${size}`)
                 setJadwal(response.data);
             } catch (err) {
                 if (err.response) {
@@ -54,7 +61,8 @@ const KelolaJadwal = () => {
             }
         }
         fetchPosts();
-    }, [])
+    }, [size])
+    console.log("jadwal", jadwal.data)
 
     return (
         <>
@@ -86,14 +94,14 @@ const KelolaJadwal = () => {
                                     <p className='Fz-16'>Total</p>
                                 </div>
                                 <div className='ms-2 Select15'>
-                                    <Select onChangeInput={onChangeInput}/> 
+                                    <Select setSize={setSize}/> 
                                 </div>
                                 <div className='d-flex'>
                                     <div>
                                         <p className='ms-2 Fz-16 me-2'>entri</p>
                                     </div>
                                     <div className='border border-dark d-flex w-100 BorderRadiusInline' >
-                                        <div className='ms-3 me-3 PointerClikCss' onClick={handleSearch}>
+                                        <div className='ms-3 me-3 PointerClikCss' >
                                             <AiOutlineSearch />
                                         </div>
                                         <div className='d-flex '>
@@ -137,13 +145,18 @@ const KelolaJadwal = () => {
                         </div>
                         {/* isi table */}
                         <div className='TabelkelolaBerita row Border-Color-Box'>
-                            {jadwal.map((data, index) => {
+                            {jadwal.data &&
+                            jadwal.data.map((data, index) => {
                                 return (
-                                    <TabelVaksinasi Number={index + 1} key={data.id} nama={data.namaFaskes} stock={data.stock} jenis={data.jenis} waktu={data.waktu} />
+                                    <TabelVaksinasi Number={index + 1} key={data.id} nama={data.health_facilities_dao_mapped.health_facilities_name} stock={data.stock} jenis={data.vaccine_mapped.vaccine_name} waktu={data.start_date + " " +  data.start_time } />
                                 )
                             })}
                         </div>
+                        <div>
+                                <input type="number" value={page} onChange={handlePage}/>
+                            </div>
                     </div>
+                    
                 </div>
             </div>
         </>

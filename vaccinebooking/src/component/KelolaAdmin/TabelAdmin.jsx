@@ -3,6 +3,8 @@ import "../../assets/Style/style.css";
 import { IconButton } from "@mui/material";
 import { RiPencilFill } from "react-icons/ri";
 import { RiFileSearchFill } from "react-icons/ri";
+import PopUpAdminEdit from "./editAdmin/PopUpAdminEdit";
+import PopUpAdminView from "./viewAdmin/PopUpAdminView";
 
 const TabelAdmin = ({Number, nama, hp, alamat, email}) => {
     return (
@@ -13,12 +15,8 @@ const TabelAdmin = ({Number, nama, hp, alamat, email}) => {
             <div className="col-2 ps-2">{hp}</div>
             <div className="col-3 ps-2">{email}</div>
             <div className="col-1 d-flex justify-content-center">
-                <IconButton className="me-2">
-                    <RiPencilFill data-bs-toggle="tooltip" data-bs-placement="top" title="edit" />
-                </IconButton>
-                <IconButton className="me-2">
-                    <RiFileSearchFill data-bs-toggle="tooltip" data-bs-placement="top" title="view" />
-                </IconButton>
+                < PopUpAdminEdit />
+                < PopUpAdminView />
             </div>
         </div>
     );

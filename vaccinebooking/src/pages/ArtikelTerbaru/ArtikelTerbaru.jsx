@@ -9,42 +9,56 @@ import "./../../assets/Style/style.css";
 import { Grid } from "@mui/material";
 
 import ImagePlaceholder from "../../assets/image/ImagePlaceholder.jpg";
+import axios from "axios";
 
 const ArtikelTerbaru = () => {
   // initial state and valiables
   const [input, setInput] = useState("");
-  const [count, setCount] = useState(1);
   const [imagePreview, setImagePreview] = useState("");
   const inputRef = useRef();
+  const [title, setTitle] = useState("");
+  const [author, setAuthor] = useState("");
+  const [body, setBody] = useState("");
+  const image = "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png";
 
-  const onChangeInput = (e) => {
-    const input = e.target.value;
-    setInput(input);
-  };
+  // function 
+  // handleChange
+  const handleName =(e)=>{
+    setTitle(e.target.value);
+  }
+  const handleAuthor =(e)=>{
+    setAuthor(e.target.value);
+  }
+  const handleBody=(e)=>{
+    setBody(e.target.value);
+  }
 
-  const handleSearch = () => {
-    setCount(1 + input);
-  };
+  // testing
+  console.log(title, author, body, image)
 
-  const onInputImage = () => {
-    if (!inputRef.current) {
-      return;
-    }
-    inputRef.current.click();
-  };
 
-  const onChangeImage = (e) => {
-    if (!e.target.files || e.target.files.length === 0) {
-      setImagePreview("");
-      return;
-    }
-    const url = URL.createObjectURL(e.target.files[0]);
-    setImagePreview(url);
-  };
+  // post 
+  const handleSubmit =(e) =>{
+    e.preventDefault();
+    axios({
+      method: "POST",
+      url: "http://34.142.219.145/api/v1/news",
+      data: {
+        author_news_vaccine : author,
+        content_news_vaccine: body,
+        id_news_vaccine : 0,
+        image_news_vaccine: image,
+        title_news_vaccine : title
+      },
+    })
+    .then(res => {
+      console.log("Res", res.data.message);
+    })
+    .catch(err =>{
+      console.log("Error in request", err);
+    })
+  }
 
-  useEffect(() => {
-    handleSearch();
-  }, []);
 
   return (
     <div className="Fontcolor-Dasboard">
@@ -72,7 +86,7 @@ const ArtikelTerbaru = () => {
           </div>
 
           {/* isi Form */}
-          <div className="FormArtikelTerbaru row ">
+          <div className="FormArtikelTerbaru row " onSubmit={handleSubmit}>
             <div className="d-flex FormArtikelTerbaru justify-content-start">
               <div
                 style={{
@@ -95,6 +109,8 @@ const ArtikelTerbaru = () => {
                     width: "100%",
                     border: "none",
                   }}
+                  onChange={handleName}
+                  value={title}
                 />
                 <h6
                   style={{
@@ -110,14 +126,15 @@ const ArtikelTerbaru = () => {
                   style={{
                     border: "none",
                   }}
+                  onChange={handleAuthor}
+                  value={author}
                 />
                 <input
                   type="file"
                   style={{
                     display: "none",
                   }}
-                  ref={inputRef}
-                  onChange={onChangeImage}
+                  
                 />
                 <Grid container columnSpacing={{ xs: 2 }}>
                   <Grid item xs={7}>
@@ -137,6 +154,8 @@ const ArtikelTerbaru = () => {
                         height: "20rem",
                         resize: "none",
                       }}
+                      onChange={handleBody}
+                      value={body}
                     />
                   </Grid>
                   <Grid item xs={5}>
@@ -162,7 +181,6 @@ const ArtikelTerbaru = () => {
                               alignItems: "center",
                               cursor: "pointer",
                             }}
-                            onClick={onInputImage}
                           >
                             <div
                               style={{
@@ -197,7 +215,6 @@ const ArtikelTerbaru = () => {
                             alignItems: "center",
                             cursor: "pointer",
                           }}
-                          onClick={onInputImage}
                         >
                           <img src={imagePreview} height="100%" />
                         </div>
@@ -212,7 +229,7 @@ const ArtikelTerbaru = () => {
                           <button className="btn-kelola-jadwal1 me-3  rounded-3 mb-5">
                             Batal
                           </button>
-                          <button className="btn-kelola-jadwal ms-3  rounded-3 mb-5">
+                          <button className="btn-kelola-jadwal ms-3  rounded-3 mb-5" onSubmit={handleSubmit} type="submit">
                             Simpan
                           </button>
                         </div>
