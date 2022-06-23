@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 
 // icons
-import { AiOutlineSearch } from "react-icons/ai";
-import { IoMdNotifications } from "react-icons/io";
 import { BsFillSquareFill } from "react-icons/bs";
 
 // style
@@ -17,11 +15,15 @@ import LengthPuskesmas from '../../component/Dasboard/APIrequired/LengthPuskesma
 import LengthRSUD from '../../component/Dasboard/APIrequired/LengthRSUD'
 import { BsTypeH1 } from "react-icons/bs";
 
+// api
+import api from '../../API/data/post';
+
 const Dashboard = () => {
   // initial state and valiables
   const [input, setInput] = useState("");
   const [count, setCount] = useState(1);
-
+  const [datadashboard, setDataDasboard] = useState([]);
+  const admin = datadashboard.data;
   const onChangeInput = (e) => {
     const input = e.target.value;
     setInput(input);
@@ -34,6 +36,28 @@ const Dashboard = () => {
   useEffect(() => {
     handleSearch();
   }, []);
+
+  // api
+  // useEffect
+  useEffect(()=>{
+    // myApi()
+    const PenggunaLengthPost = async()=>{
+        try{
+            const response = await api.get("/users/roles/ADMIN")
+            setDataDasboard(response.data)
+        } catch(err){
+            if(err.response){
+                //not in the 200 response range
+                console.log(err.response.data)
+                console.log(err.response.status)
+                console.log(err.response.headers)
+            } else{
+                console.log(`Error ${err.message}`)
+            }
+        }
+    }
+    PenggunaLengthPost();
+},[])
 
   return (
     <div>
@@ -62,7 +86,9 @@ const Dashboard = () => {
                     </div>
                     <h3 className=" pt-3">Total Admin</h3>
                   </div>
-                  <h1 className="mt-4 display-3 fw-bold "><LengthAdmin/></h1>
+                  <h1 className="mt-4 display-3 fw-bold ">
+                    {/* {admin} */}
+                  </h1>
                   <h1 className="pt-3">Pengelola</h1>
                 </div>
               </div>

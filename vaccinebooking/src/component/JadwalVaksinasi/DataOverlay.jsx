@@ -2,13 +2,14 @@ import React from 'react'
 import api from './../../API/data/post'
 import { useState, useEffect } from 'react'
 
-export default function DataOverlay({ nama }) {
+export default function DataOverlay({ data }) {
+    console.log("tabel", data.nama)
     return (
         <div>
             <ul>
                 <li>
                     <h5>Nama Fasilitas Kesehatan</h5>
-                    <h6 className='data-popup'> {nama}</h6>
+                    <h6 className='data-popup'> {data.nama}</h6>
                 </li>
                 <li>
                     <h5>Alamat Lengkap</h5>

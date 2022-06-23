@@ -20,7 +20,7 @@ const LengthPenguna = () => {
         // myApi()
         const PenggunaLengthPost = async()=>{
             try{
-                const response = await api.get("/pengguna")
+                const response = await api.get("/users/roles/ADMIN")
                 setPengguna(response.data)
                 ;
             } catch(err){

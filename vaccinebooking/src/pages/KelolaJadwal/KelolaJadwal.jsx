@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Sidebar from '../../component/Sidebar/Sidebar';
 import { Link } from 'react-router-dom';
-
+import axios from 'axios';
 // style
 import './../../assets/Style/style.css';
 
@@ -15,22 +15,21 @@ import Select from '../../component/PageComponent/Select';
 
 // Api
 import api from './../../API/data/post'
+import { responsiveProperty } from '@mui/material/styles/cssUtils';
 
 const KelolaJadwal = () => {
     // initial state and valiables
     const [input, setInput] = useState("");
-    const [count, setCount] = useState(1);
     const [jadwal, setJadwal] = useState([]);
     const [page, setPage] = useState(0);
     const [size, setSize] = useState(15);
 
-
     // function
     const onChangeInput = (e) => {
-        const input = e.target.value;
-        setInput(input)
+        const inputt = e.target.value;
+        setInput(inputt)
+        console.log(inputt)
     }
-
     const handlePage =(e)=>{
        setPage(e.target.value)
     }
@@ -38,12 +37,6 @@ const KelolaJadwal = () => {
         setSize(e.target.value);
     }
 
-    // useEffect(() => {
-    //     handlePage();
-    //     handleSize();
-    // }, [size])
-
-    // api
     useEffect(() => {
         const fetchPosts = async () => {
             try {
@@ -60,9 +53,10 @@ const KelolaJadwal = () => {
                 }
             }
         }
+
         fetchPosts();
-    }, [size])
-    console.log("jadwal", jadwal.data)
+    }, [size, page])
+    // console.log("jadwal", jadwal.data)
 
     return (
         <>
@@ -113,12 +107,12 @@ const KelolaJadwal = () => {
 
                             <div className='col-6 d-flex justify-content-end'>
                                 <div >
-                                <Link to='/jadwalvaksinasi' >
-                                    <button className='Button-add-admin'>
-                                        <BsFillCalendarCheckFill className='me-3'/>
-                                        Buat Jadwal
-                                    </button>
-                                </Link>
+                                    <Link to='/jadwalvaksinasi' >
+                                        <button className='Button-add-admin'>
+                                            <BsFillCalendarCheckFill className='me-3' />
+                                            Buat Jadwal
+                                        </button>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -146,9 +140,17 @@ const KelolaJadwal = () => {
                         {/* isi table */}
                         <div className='TabelkelolaBerita row Border-Color-Box'>
                             {jadwal.data &&
-                            jadwal.data.map((data, index) => {
+                            jadwal.data?.filter((val) => {
+                                if (input == "") {
+                                    return val
+                                }
+                                else if (val.vaccine_mapped.vaccine_name.toLowerCase().includes(input.toLocaleLowerCase()) || val.health_facilities_dao_mapped.health_facilities_name.toLowerCase().includes(input.toLocaleLowerCase())) {
+                                    return val
+                                }
+
+                            }).map((data, index) => {
                                 return (
-                                    <TabelVaksinasi Number={index + 1} key={data.id} nama={data.health_facilities_dao_mapped.health_facilities_name} stock={data.stock} jenis={data.vaccine_mapped.vaccine_name} waktu={data.start_date + " " +  data.start_time } />
+                                    <TabelVaksinasi Number={index + 1} key={data.id_session} nama={data.health_facilities_dao_mapped.health_facilities_name} stock={data.stock} jenis={data.vaccine_mapped.vaccine_name} waktu={data.start_time} />
                                 )
                             })}
                         </div>
