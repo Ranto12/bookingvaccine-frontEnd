@@ -5,14 +5,14 @@ import DataPopup from "./DataPopup";
 import '../../assets/Style/style.css'
 import { BsXCircle } from "react-icons/bs";
 
-export default function PopUpPengguna({nama}) {
-  console.log(nama, "wow")
+export default function PopUpPengguna({nama, number, nohp, nik, gender, email, tgl_lahir}) {
+  // console.log(nama, "wow")
   
   return (
     <div>
       <div
         className="modal fade "
-        id="exampleModal"
+        id={"exampleModal" + number}
         tabindex="-1"
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
@@ -31,14 +31,14 @@ export default function PopUpPengguna({nama}) {
             </div>
             <div className="modal-body">
                 <ul>
-                    <DataPopup  nama={nama}  />
+                    <DataPopup  nama={nama} nohp={nohp} nik={nik} gender={gender} email={email} tgl_lahir={tgl_lahir}  />
                 </ul>
             </div>
           </div>
         </div>
       </div>
 
-      <IconButton aria-label="Cancel" data-bs-toggle="modal" data-bs-placement="top" title="view" data-bs-target = "#exampleModal"  >
+      <IconButton aria-label="Cancel" data-bs-toggle="modal" data-bs-placement="top" title="view" data-bs-target = {"#exampleModal" + number}  >
           <RiFileSearchFill />
         </IconButton>
     </div>
