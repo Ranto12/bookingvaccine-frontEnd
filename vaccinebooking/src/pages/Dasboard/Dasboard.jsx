@@ -9,11 +9,9 @@ import "./../../assets/Style/style.css";
 // component
 import Sidebar from '../../component/Sidebar/Sidebar';
 import LengthPenguna from '../../component/Dasboard/APIrequired/Length'
-import LengthAdmin from '../../component/Dasboard/APIrequired/LengtAdmin'
 import LengthKelurahan from '../../component/Dasboard/APIrequired/LengthKelurahan'
 import LengthPuskesmas from '../../component/Dasboard/APIrequired/LengthPuskesmas'
 import LengthRSUD from '../../component/Dasboard/APIrequired/LengthRSUD'
-import { BsTypeH1 } from "react-icons/bs";
 
 // api
 import api from '../../API/data/post';
@@ -23,7 +21,7 @@ const Dashboard = () => {
   const [input, setInput] = useState("");
   const [count, setCount] = useState(1);
   const [datadashboard, setDataDasboard] = useState([]);
-  const admin = datadashboard.data;
+  const admin = datadashboard.length;
   const onChangeInput = (e) => {
     const input = e.target.value;
     setInput(input);
@@ -44,7 +42,7 @@ const Dashboard = () => {
     const PenggunaLengthPost = async()=>{
         try{
             const response = await api.get("/users/roles/ADMIN")
-            setDataDasboard(response.data)
+            setDataDasboard(response.data.data)
         } catch(err){
             if(err.response){
                 //not in the 200 response range
@@ -58,6 +56,8 @@ const Dashboard = () => {
     }
     PenggunaLengthPost();
 },[])
+
+console.log("datadashboard", datadashboard.length)
 
   return (
     <div>
@@ -87,7 +87,7 @@ const Dashboard = () => {
                     <h3 className=" pt-3">Total Admin</h3>
                   </div>
                   <h1 className="mt-4 display-3 fw-bold ">
-                    {/* {admin} */}
+                    {admin}
                   </h1>
                   <h1 className="pt-3">Pengelola</h1>
                 </div>

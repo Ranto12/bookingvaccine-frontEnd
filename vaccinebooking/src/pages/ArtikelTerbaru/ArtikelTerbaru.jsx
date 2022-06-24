@@ -185,7 +185,7 @@ const ArtikelTerbaru = () => {
                           {/* <button className="btn-kelola-jadwal ms-3  rounded-3 mb-5" onSubmit={handleSubmit} type="submit">
                             Simpan
                           </button> */}
-                          <button onSubmit={handleSubmit}>simpan</button>
+                          <button onClick={handleSubmit}>simpan</button>
                         </div>
         </div>
       </div>
