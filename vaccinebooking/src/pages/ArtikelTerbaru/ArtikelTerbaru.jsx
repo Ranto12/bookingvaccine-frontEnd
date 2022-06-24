@@ -179,12 +179,13 @@ const ArtikelTerbaru = () => {
             </div>
           </div>
       <div className="text-end mt-3">
-                          <button className="btn-kelola-jadwal1 me-3  rounded-3 mb-5">
+                          {/* <button className="btn-kelola-jadwal1 me-3  rounded-3 mb-5">
                             Batal
-                          </button>
-                          <button className="btn-kelola-jadwal ms-3  rounded-3 mb-5" onSubmit={handleSubmit} type="submit">
+                          </button> */}
+                          {/* <button className="btn-kelola-jadwal ms-3  rounded-3 mb-5" onSubmit={handleSubmit} type="submit">
                             Simpan
-                          </button>
+                          </button> */}
+                          <button onSubmit={handleSubmit}>simpan</button>
                         </div>
         </div>
       </div>

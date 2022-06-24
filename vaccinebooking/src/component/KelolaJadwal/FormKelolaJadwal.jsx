@@ -11,19 +11,9 @@ export default function FormKelolaJadwal({address, maps, category, name, data, k
   // state and variables
   const [vaccine, setvaccine] = useState([]);
   const [idVaccine, setIdvaccine] = useState();
-  // const idArea = data.area_mapped.id_area;
-  // const idHealt = data.id_health_facilities;
-
-  // const [idSesion, setIdSesion] = useState();
   const [startDate, setStartDate] = useState();
   const [startTime, setStartTime] = useState("");
   const [Stock, setStock] = useState(0);
-  // const [msg, setMsg] = useState();
-  // const Time = startTime ;
-  // const dateString = Moment(startDate).format('YYYY-MM-DD');
-
-
-  console.log("nilai nya", startTime)
 
   const chaangeStartDate =(e)=>{
     setStartDate(e.target.value);
@@ -129,9 +119,9 @@ const handleSubmit =(e) =>{
 
       <div>
         <div className="mt-3">
-          <label className="fw-bold">Stock</label>
+          <label className="fw-bold ">Stock</label>
         </div>
-        <input onChange={onChangeStock} type="number" className="mt-2 p-1 rounded-2 input-kel" />
+        <input onChange={onChangeStock} type="number" className="mt-2 p-1 rounded-2 input-kel Background-White"/>
         <span className="ms-3">Buah</span>
       </div>
 
@@ -140,11 +130,11 @@ const handleSubmit =(e) =>{
           <label className="fw-bold mb-3"> Sesi </label>
         </div>
         <span className="">
-          <input type="date" className="mt-2 p-1 rounded-2 input-kel" onChange={chaangeStartDate} />
+          <input type="date" className="mt-2 p-1 rounded-2 input-kel Background-White" onChange={chaangeStartDate} />
         </span>
         <span className="mx-4">-</span>
-        <span>
-          <input type="time" className="mt-2 p-1 rounded-2 input-kel" onChange={ChangeStartTime} />
+        <span> 
+          <input type="time" className="mt-2 p-1 rounded-2 input-kel Background-White" onChange={ChangeStartTime} />
         </span>
 
         <span className="px-4">
@@ -181,7 +171,7 @@ const handleSubmit =(e) =>{
         </div>
       </div>
       <div className="text-end mt-3 mb-5">
-              <button className="btn-kelola-jadwal1 me-3  rounded-3 mb-5">Batal</button>
+              {/* <button className="btn-kelola-jadwal1 me-3  rounded-3 mb-5">Batal</button> */}
           <button onClick={handleSubmit}>Simpan</button>
       </div>
     </div>
