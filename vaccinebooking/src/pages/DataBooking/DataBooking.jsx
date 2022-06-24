@@ -14,11 +14,14 @@ import api from "../../API/data/post";
 
 // component
 import Select from "../../component/PageComponent/Select";
+
 const DataBooking = () => {
   // initial state and valiables
   const [booking, setBooking] = useState([]);
-  const [Values, setValues] = useState(15);
   const [filteredData, setFilteredData] = useState(booking);
+  const [size, setSize] = useState(15);
+  const [page, setPage] = useState(0);
+
 
   const onChangeInput = (e) => {
     const value = e.target.value.toLowerCase();
@@ -34,7 +37,7 @@ const DataBooking = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await api.get("/booking")
+        const response = await api.get(`/booking?page=${page}&size=${size}`)
         setBooking(response.data);
       } catch (err) {
         if (err.response) {
@@ -48,8 +51,8 @@ const DataBooking = () => {
       }
     };
     fetchPosts();
-  }, [])
-  console.log(`data booking ${booking}`)
+  }, [size])
+  console.log(`data booking `, booking.data.content)
 
   return (
     <div className="Fontcolor-Dasboard">
@@ -72,27 +75,7 @@ const DataBooking = () => {
                 <p className="Fz-16">Total</p>
               </div>
               <div className="ms-2">
-                <select
-                  name="jumlahArtikel "
-                  id="jumlahArtikel"
-                  style={{ fontSize: "14px", borderRadius: "2px" }}
-                >
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6">6</option>
-                  <option value="7">7</option>
-                  <option value="8">8</option>
-                  <option value="9">9</option>
-                  <option value="10">10</option>
-                  <option value="11">11</option>
-                  <option value="12">12</option>
-                  <option value="13">13</option>
-                  <option value="14">14</option>
-                  <option value="15">15</option>
-                </select>
+              <Select setSize={setSize} />
               </div>
               <div className="d-flex">
                 <div>
@@ -136,11 +119,16 @@ const DataBooking = () => {
 
           {/* isi tabel */}
           <div className="TabelkelolaBerita row Border-Color-Box">
-            {/* {booking.map((value, index) => {
+            {booking.data && 
+            booking.data.content.map((value, index) => {
               return (
-                <TabelDataBooking key={value.id} Number={index + 1} nama={value.nama} nik={value.nik} jenisVaccine={value.jenisVaccine} />
+                <TabelDataBooking key={value.id_booking} Number={index + 1} nama={value.user_mapped.first_name + " " + value.user_mapped.last_name} nik={value.user_mapped.username} jenisVaccine={value.session_mapped.vaccine_mapped.vaccine_name} />
               )
-            })} */}
+            })}
+          </div>
+          <div>
+            <p>sebelumnya</p>
+            <p>selanjutnya</p>
           </div>
         </div>
       </div>

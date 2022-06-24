@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Sidebar from '../../component/Sidebar/Sidebar';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
 // style
 import './../../assets/Style/style.css';
 
@@ -15,7 +14,6 @@ import Select from '../../component/PageComponent/Select';
 
 // Api
 import api from './../../API/data/post'
-import { responsiveProperty } from '@mui/material/styles/cssUtils';
 
 const KelolaJadwal = () => {
     // initial state and valiables

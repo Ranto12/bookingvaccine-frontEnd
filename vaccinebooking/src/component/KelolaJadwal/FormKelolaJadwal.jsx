@@ -1,7 +1,5 @@
-import { RepeatOneSharp } from "@mui/icons-material";
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-import Moment from 'moment';
 import { BsFileEarmarkImage } from "react-icons/bs";
 
 // api
@@ -144,9 +142,9 @@ const handleSubmit =(e) =>{
       </div>
 
       <div className="row mt-4">
-        <div className="col-4">
+      <div className="col-4">
           <h5> Upload Gambar </h5>
-          <div className="img-border img-input">
+          <div className="card img-input">
             <label>
               <div className="text-center img-card  ">
                 <BsFileEarmarkImage className="h-50 w-50 " />
@@ -168,11 +166,11 @@ const handleSubmit =(e) =>{
             <h6> Link Google Maps </h6>
             <textarea className="p-3 w-100 rounded-3 input-kel-area" disabled value={maps}></textarea>
           </div>
-        </div>
-      </div>
-      <div className="text-end mt-3 mb-5">
-              {/* <button className="btn-kelola-jadwal1 me-3  rounded-3 mb-5">Batal</button> */}
+          <div className="text-end mt-3 mb-5">
+          <button className="btn-kelola-jadwal1 me-3  rounded-3 mb-5">Batal</button>
           <button onClick={handleSubmit}>Simpan</button>
+      </div>
+        </div>
       </div>
     </div>
   );

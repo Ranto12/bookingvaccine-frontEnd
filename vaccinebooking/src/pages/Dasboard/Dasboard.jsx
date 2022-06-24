@@ -9,11 +9,9 @@ import "./../../assets/Style/style.css";
 // component
 import Sidebar from '../../component/Sidebar/Sidebar';
 import LengthPenguna from '../../component/Dasboard/APIrequired/Length'
-import LengthAdmin from '../../component/Dasboard/APIrequired/LengtAdmin'
 import LengthKelurahan from '../../component/Dasboard/APIrequired/LengthKelurahan'
 import LengthPuskesmas from '../../component/Dasboard/APIrequired/LengthPuskesmas'
 import LengthRSUD from '../../component/Dasboard/APIrequired/LengthRSUD'
-import { BsTypeH1 } from "react-icons/bs";
 
 // api
 import api from '../../API/data/post';
