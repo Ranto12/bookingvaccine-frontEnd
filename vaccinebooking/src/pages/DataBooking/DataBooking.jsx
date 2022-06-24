@@ -32,13 +32,13 @@ const DataBooking = () => {
     setFilteredData(result);
   };
 
-  useEffect(() => {}, []);
 
   useEffect(() => {
     const fetchPosts = async () => {
       try {
         const response = await api.get(`/booking?page=${page}&size=${size}`)
-        setBooking(response.data);
+        setBooking(response.data.data);
+        // console.log(response.data.data)
       } catch (err) {
         if (err.response) {
           //not in the 200 response range
@@ -52,7 +52,7 @@ const DataBooking = () => {
     };
     fetchPosts();
   }, [size])
-  console.log(`data booking `, booking.data.content)
+  // console.log(`data booking `, booking.content)
 
   return (
     <div className="Fontcolor-Dasboard">
@@ -119,16 +119,14 @@ const DataBooking = () => {
 
           {/* isi tabel */}
           <div className="TabelkelolaBerita row Border-Color-Box">
-            {booking.data && 
-            booking.data.content.map((value, index) => {
+            {booking &&
+            booking.content?.map((value, index) => {
               return (
                 <TabelDataBooking key={value.id_booking} Number={index + 1} nama={value.user_mapped.first_name + " " + value.user_mapped.last_name} nik={value.user_mapped.username} jenisVaccine={value.session_mapped.vaccine_mapped.vaccine_name} />
               )
             })}
           </div>
           <div>
-            <p className="">sebelumnya</p>
-            <p>selanjutnya</p>
           </div>
         </div>
       </div>
