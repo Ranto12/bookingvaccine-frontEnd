@@ -78,7 +78,6 @@ const handleSubmit =(e) =>{
       <div >
         <div>
           <label className="mt-4 fw-bold ">Nama Fasilitas Kesehatan</label>
-          {/* <button onClick={handleSubmit}>gasin</button> */}
         </div>
         <input type="text" className="w-100 bg-light input-kelola mt-2 p-1 rounded-2" style={{ border: "1px solid  #D9D9D9" }} value={name}/>
       </div>
@@ -103,7 +102,7 @@ const handleSubmit =(e) =>{
               type="radio"
               key={item.id}
               name="fav_language"
-              className="ms-3"
+              // className="ms-3"
               value={item.id_vaccine}
               onChange={ChangeidVaccine}
             />
@@ -113,8 +112,6 @@ const handleSubmit =(e) =>{
             })}
         </div>
         </div>
-
-        
       </div>
 
       <div>
@@ -154,7 +151,7 @@ const handleSubmit =(e) =>{
               <input type="file" />
             </label>
             <p className="card-text text-center pt-2">
-              Upload Foto Fasilitas Kesehatan Anda Ukuran FOto tidak Lebih dari
+              Upload Foto Fasilitas Kesehatan Anda Ukuran Foto tidak Lebih dari
               10 mb
             </p>
           </div>
@@ -171,7 +168,7 @@ const handleSubmit =(e) =>{
         </div>
       </div>
       <div className="text-end mt-3 mb-5">
-              {/* <button className="btn-kelola-jadwal1 me-3  rounded-3 mb-5">Batal</button> */}
+          <button className="btn-kelola-jadwal1 me-3  rounded-3 mb-5">Batal</button>
           <button onClick={handleSubmit}>Simpan</button>
       </div>
     </div>
