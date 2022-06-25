@@ -112,19 +112,14 @@ const KelolaAdmin = () => {
                             </div>
                         </div>
                         <div className='col-6 d-flex justify-content-end'>
-
-                            <Link className='text-decoration-none Fontcolor-Dasboard  d-flex' to='/AddAdmin' >
-                                <div className='d-flex ms-2 justify-content-center LinkText' style={{ border: "1px solid", height: "35px", width: "124px", borderRadius: "10px", paddingLeft: "8px", paddingRight: "8px", background: "#7BD9E8" }}>
-
-                                    <div className='me-1' style={{ marginTop: "2px", }}>
-                                        < IoPersonAddSharp />
-                                    </div>
-                                    <p style={{ fontSize: "14px", marginLeft: "1px", marginTop: "5px", }}>
-                                        Tambahkan
-                                    </p>
-
-                                </div>
+                           <div>
+                           <Link to='/AddAdmin' >
+                                <button className='Button-add-admin'>
+                                    <IoPersonAddSharp className='me-3' />
+                                    Tambahkan
+                                </button>
                             </Link>
+                           </div>
                         </div>
                     </div>
                     {/* tabel */}

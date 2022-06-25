@@ -4,6 +4,7 @@ import axios from "axios"
 // Api
 import api from './../../../API/data/post'
 
+//length pengguna
 export const LengthPenguna = () => {
     const [pengguna, setPengguna]= useState([]);
     const Length = pengguna.length;
@@ -36,7 +37,7 @@ export const LengthPenguna = () => {
 }
 
 
-
+//length admin
 export const LengthAdmin = () => {
     const [datadashboard, setDataDasboard] = useState([]);
     const admin = datadashboard.length;
@@ -66,6 +67,7 @@ export const LengthAdmin = () => {
   )
 }
 
+//length kecamatan
 export const LengthKecamatan = () => {
     const [datadashboard, setDataDasboard] = useState([]);
     const area = datadashboard.length;
@@ -94,9 +96,42 @@ export const LengthKecamatan = () => {
     <div>{area}</div>
   )
 }
+//length rsud
 export const LengthRSUD = () => {
     const [datadashboard, setDataDasboard] = useState([]);
     const rsud = datadashboard.length;
+
+    console.log(`rsud`, datadashboard)
+    // api
+  // useEffect
+  useEffect(()=>{
+    // myApi()
+    const PenggunaLengthPost = async()=>{
+        try{
+            const response = await api.get("/facility/category/1")
+            setDataDasboard(response.data.data)
+        } catch(err){
+            if(err.response){
+                //not in the 200 response range
+                console.log(err.response.data)
+                console.log(err.response.status)
+                console.log(err.response.headers)
+            } else{
+                console.log(`Error ${err.message}`)
+            }
+        }
+    }
+    PenggunaLengthPost();
+},[])
+  return (
+    <div>{rsud}</div>
+  )
+}
+
+//length puskesmas
+export const LengthPuskesmas = () => {
+    const [datadashboard, setDataDasboard] = useState([]);
+    const pusekesmas = datadashboard.length;
 
     console.log(`rsud`, datadashboard)
     // api
@@ -121,7 +156,7 @@ export const LengthRSUD = () => {
     PenggunaLengthPost();
 },[])
   return (
-    <div>{rsud}</div>
+    <div>{pusekesmas}</div>
   )
 }
 

@@ -9,7 +9,7 @@ import "./../../assets/Style/style.css";
 // component
 import Sidebar from '../../component/Sidebar/Sidebar';
 // length
-import {LengthAdmin, LengthPenguna, LengthKecamatan, LengthRSUD} from '../../component/Dasboard/APIrequired/Length';
+import {LengthAdmin, LengthPenguna, LengthKecamatan, LengthRSUD, LengthPuskesmas} from '../../component/Dasboard/APIrequired/Length';
 // api
 import api from '../../API/data/post';
 
@@ -135,7 +135,7 @@ console.log("datadashboard", datadashboard.length)
                         
                         <div className="ms-1 card-faskes1 ">
                             <h1 className=" fw-bold ">
-                            {/* <LengthPuskesmas/> */}
+                            <LengthPuskesmas/>
                             </h1>
                             <h4 className="pt-2">PUSKESMAS</h4>
                         </div>
