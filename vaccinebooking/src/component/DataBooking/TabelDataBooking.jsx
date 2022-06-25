@@ -13,7 +13,7 @@ const TablePengguna = ({ key, nama, nik, jenisVaccine, Number }) => {
     >
       <div className="col-1">{Number}</div>
       <div className="col-4">{nama}</div>
-      <div className="col-2  Pointer-Booking">
+      <div className="col-3  Pointer-Booking">
         <Overlaybookingvacinne
           nama={nama}
           nik={nik}
@@ -21,7 +21,7 @@ const TablePengguna = ({ key, nama, nik, jenisVaccine, Number }) => {
           Number={Number}
         />
       </div>
-      <div className="col-4">{jenisVaccine}</div>
+      <div className="col-3">{jenisVaccine}</div>
       <div className="col-1 d-flex justify-content-center">
         <div className=" d-flex p-2">
           <Button
