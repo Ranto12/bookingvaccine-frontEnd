@@ -24,12 +24,7 @@ const DataBooking = () => {
 
 
   const onChangeInput = (e) => {
-    const value = e.target.value.toLowerCase();
-    let result = [];
-    result = booking.filter((data) => {
-      return data.nama.search(value) !== -1;
-    });
-    setFilteredData(result);
+    setFilteredData(e.target.value)
   };
 
 
@@ -75,7 +70,7 @@ const DataBooking = () => {
                 <p className="Fz-16">Total</p>
               </div>
               <div className="ms-2">
-              <Select setSize={setSize} />
+                <Select setSize={setSize} />
               </div>
               <div className="d-flex">
                 <div>
@@ -111,8 +106,8 @@ const DataBooking = () => {
             <div className="row mt-2 table-data justify-content-center">
               <div className="col-1">No</div>
               <div className="col-4">Nama</div>
-              <div className="col-2">NIK</div>
-              <div className="col-4">Jenis Vaksin</div>
+              <div className="col-3">NIK</div>
+              <div className="col-3">Jenis Vaksin</div>
               <div className="col-1">Aksi</div>
             </div>
           </div>
@@ -120,11 +115,18 @@ const DataBooking = () => {
           {/* isi tabel */}
           <div className="TabelkelolaBerita row Border-Color-Box">
             {booking &&
-            booking.content?.map((value, index) => {
-              return (
-                <TabelDataBooking key={value.id_booking} Number={index + 1} nama={value.user_mapped.first_name + " " + value.user_mapped.last_name} nik={value.user_mapped.username} jenisVaccine={value.session_mapped.vaccine_mapped.vaccine_name} />
-              )
-            })}
+              booking.content?.filter((val) => {
+                if (filteredData == "") {
+                  return val
+                }
+                else if (val.user_mapped.first_name.toLowerCase().includes(filteredData.toLocaleLowerCase())) {
+                  return val
+                }
+              }).map((value, index) => {
+                return (
+                  <TabelDataBooking key={value.id_booking} Number={index + 1} nama={value.user_mapped.first_name + " " + value.user_mapped.last_name} nik={value.user_mapped.username} jenisVaccine={value.session_mapped.vaccine_mapped.vaccine_name} />
+                )
+              })}
           </div>
           <div>
           </div>

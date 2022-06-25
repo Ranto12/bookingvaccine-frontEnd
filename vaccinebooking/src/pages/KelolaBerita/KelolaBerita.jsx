@@ -24,9 +24,10 @@ const KelolaBerita = () => {
 
   //funtion
   const onChangeInput = (e) => {
-    const input = e.target.value;
-    setInput(input);
+    const inputt = e.target.value;
+    setInput(inputt);
   };
+  console.log(input, "input")
   const handleSearch = () => {
     setInput();
   };
@@ -41,7 +42,8 @@ const KelolaBerita = () => {
     const fetchPosts = async () => {
       try {
         const response = await api.get(`/news/${page}/${size}`)
-        setArtikels(response.data);
+        setArtikels(response.data.data.content);
+
       } catch (err) {
         if (err.response) {
           //not in the 200 response range
@@ -55,6 +57,7 @@ const KelolaBerita = () => {
     };
     fetchPosts();
   }, [size])
+  console.log(Artikels, "artikel")
   // console.log(`news`, Artikels.data.content)
 
 
@@ -113,10 +116,10 @@ const KelolaBerita = () => {
 
             <div className="col-6 d-flex justify-content-end">
               <Link to='/ArtikelTerbaru' >
-               <button className='Button-add-admin'>
-                <MdPostAdd className='me-3'/>
-                Buat Berita
-              </button>
+                <button className='Button-add-admin'>
+                  <MdPostAdd className='me-3' />
+                  Buat Berita
+                </button>
               </Link>
             </div>
           </div>
@@ -132,12 +135,21 @@ const KelolaBerita = () => {
 
           {/* isi tabel */}
           <div className='TabelkelolaBerita row Border-Color-Box '>
-            {Artikels.data &&
-            Artikels.data.content.map((data, index)=>{
-              return(
-                <TabelKelolaBerita key={data.id_news_vaccine} Number={index +1} title={data.title_news_vaccine} tanggal={data.created_at} author={data.author_news_vaccine} />
-              )
-            })}
+            {Artikels &&
+              Artikels?.filter((val) => {
+
+                if (input == null) {
+                  return val
+                }
+
+                else if (val?.title_news_vaccine?.toLowerCase().includes(input.toLowerCase())) {
+                  return val
+                }
+              }).map((data, index) => {
+                return (
+                  <TabelKelolaBerita key={data.id_news_vaccine} Number={index + 1} title={data.title_news_vaccine} tanggal={data.created_at} author={data.author_news_vaccine} />
+                )
+              })}
           </div>
         </div>
       </div>

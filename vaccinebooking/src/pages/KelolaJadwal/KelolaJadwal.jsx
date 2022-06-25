@@ -28,10 +28,10 @@ const KelolaJadwal = () => {
         setInput(inputt)
         console.log(inputt)
     }
-    const handlePage =(e)=>{
-       setPage(e.target.value)
+    const handlePage = (e) => {
+        setPage(e.target.value)
     }
-    const handleSize =(e)=>{
+    const handleSize = (e) => {
         setSize(e.target.value);
     }
 
@@ -86,7 +86,7 @@ const KelolaJadwal = () => {
                                     <p className='Fz-16'>Total</p>
                                 </div>
                                 <div className='ms-2 Select15'>
-                                    <Select setSize={setSize}/> 
+                                    <Select setSize={setSize} />
                                 </div>
                                 <div className='d-flex'>
                                     <div>
@@ -138,24 +138,24 @@ const KelolaJadwal = () => {
                         {/* isi table */}
                         <div className='TabelkelolaBerita row Border-Color-Box'>
                             {jadwal.data &&
-                            jadwal.data?.filter((val) => {
-                                if (input == "") {
-                                    return val
-                                }
-                                else if (val.vaccine_mapped.vaccine_name.toLowerCase().includes(input.toLocaleLowerCase()) || val.health_facilities_dao_mapped.health_facilities_name.toLowerCase().includes(input.toLocaleLowerCase())) {
-                                    return val
-                                }
-                            }).map((data, index) => {
-                                return (
-                                    <TabelVaksinasi Number={index + 1} key={data.id_session} nama={data.health_facilities_dao_mapped.health_facilities_name} stock={data.stock} jenis={data.vaccine_mapped.vaccine_name} waktu={data.start_time} />
-                                )
-                            })}
+                                jadwal.data?.filter((val) => {
+                                    if (input == "") {
+                                        return val
+                                    }
+                                    else if (val.vaccine_mapped.vaccine_name.toLowerCase().includes(input.toLocaleLowerCase()) || val.health_facilities_dao_mapped.health_facilities_name.toLowerCase().includes(input.toLocaleLowerCase())) {
+                                        return val
+                                    }
+                                }).map((data, index) => {
+                                    return (
+                                        <TabelVaksinasi Number={index + 1} key={data.id_session} nama={data.health_facilities_dao_mapped.health_facilities_name} stock={data.stock} jenis={data.vaccine_mapped.vaccine_name} waktu={data.start_time} />
+                                    )
+                                })}
                         </div>
                         <div>
-                                <input type="number" value={page} onChange={handlePage}/>
-                            </div>
+                            <input type="number" value={page} onChange={handlePage} />
+                        </div>
                     </div>
-                    
+
                 </div>
             </div>
         </>
