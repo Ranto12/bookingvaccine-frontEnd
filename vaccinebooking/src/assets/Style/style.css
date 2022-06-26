@@ -395,21 +395,18 @@
   cursor: pointer;
 }
 
-.lupa-pass {
-  margin-top: 8px;
-}
-
 .lupa-pass p {
-  width: 81px;
-  height: 15px;
-  font-family: "Poppins";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 10px;
-  line-height: 15px;
-  margin: 0px !important;
-  justify-content: end;
-  display: flex;
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 400;
+font-size: 10px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+text-decoration-line: underline;
+color: #4E7EA7;
+cursor: pointer;
 }
 
 /* tabel  */
@@ -508,4 +505,28 @@ div > ul {
 
 .Background-White{
   background-color: white;
+}
+
+/* error message */
+.ErrorMessage {
+  font-family: Poppins;
+  font-size: 96px;
+  font-weight: 600;
+  color: #4E7EA7;
+  justify-content: center;
+  align-items: center;
+}
+.titleErrorMessage{
+  font-family: Poppins;
+  font-size: 32px;
+  font-weight: 500;
+  color: #4E7EA7;
+  justify-content: center;
+  align-items: center;
+}
+.ErrMSG{
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100vh;
 }

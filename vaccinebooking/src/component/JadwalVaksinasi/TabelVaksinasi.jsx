@@ -6,20 +6,36 @@ import { IconButton } from "@mui/material";
 import OverlayJadwalVaksinasi from "./OverlayJadwalVaksinasi";
 import { useState } from "react";
 import { Identity } from "@mui/base";
+import axios from "axios";
 
 
-const TabelVaksinasi = ({ Number, nama, stock, jenis, waktu }) => {
+const TabelVaksinasi = ({ Number, nama, stock, jenis, waktu, key }) => {
+    // initial state and variable
+    const id = key;
+
     const [getData, setData] = useState({
         nama: "",
         stock: ""
     });
     const handleClick = (id, nama, stock) => {
         setData({
-
             nama: nama,
             stock: stock
         })
         console.log(getData)
+    }
+
+    const handleDelete =()=>{
+        axios({
+            method: "DELETE",
+            url: `http://34.142.219.145/api/v1/session/${id}`
+          })
+          .then(res => {
+            console.log("Res", res.data.message);
+          })
+          .catch(err =>{
+            console.log("Error in request", err);
+          })
     }
 
 
@@ -37,7 +53,7 @@ const TabelVaksinasi = ({ Number, nama, stock, jenis, waktu }) => {
                     <OverlayJadwalVaksinasi data={getData} />
                 </IconButton>
                 <IconButton className="me-2" data-bs-toggle="tooltip" data-bs-placement="top" title="remove">
-                    <MdDelete />
+                    <MdDelete onClick={handleDelete} />
                 </IconButton>
             </div>
         </div>

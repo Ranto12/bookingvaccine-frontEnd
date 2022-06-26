@@ -12,6 +12,7 @@ import AddAdmin from "./pages/KelolaAdmin/AddAdmin";
 import ArtikelTerbaru from "./pages/ArtikelTerbaru/ArtikelTerbaru";
 import Overlaybookingvacinne from "./component/Overlay/Overlaybookingvacinne";
 import Contoh from "./component/KelolaPenggunaTable/Contoh";
+import ErrorMessage from "./pages/ErrorMessage/Index.jsx";
 
 function App() {
   return (
@@ -28,8 +29,8 @@ function App() {
       <Route path="/ArtikelTerbaru" element={<ArtikelTerbaru />} />
       <Route path="/AddAdmin" element={<AddAdmin />} />
       <Route path="/popupModal" element={<Overlaybookingvacinne />} />
-
       <Route path="/contoh" element={<Contoh />} />
+      <Route path="*" element={<ErrorMessage />} />
 
       {/* <Route path='/login' element={<ViewUser/>}/> */}
     </Routes>
