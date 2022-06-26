@@ -1,5 +1,4 @@
 import { Route, Routes } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dasboard/Dasboard";
 import KelolaBerita from "./pages/KelolaBerita/KelolaBerita";
@@ -30,7 +29,7 @@ function App() {
       <Route path="/AddAdmin" element={<AddAdmin />} />
       <Route path="/popupModal" element={<Overlaybookingvacinne />} />
       <Route path="/contoh" element={<Contoh />} />
-      <Route path="*" element={<ErrorMessage />} />
+      <Route path="/*" element={<ErrorMessage />} />
 
       {/* <Route path='/login' element={<ViewUser/>}/> */}
     </Routes>
