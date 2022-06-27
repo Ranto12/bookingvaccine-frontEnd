@@ -54,8 +54,8 @@ export default function FormKelolaJadwal({address, maps, category, name, data, k
 
 const handleSubmit =(e) =>{
   axios({
-    method: "POST",
-    url: "http://34.142.219.145/api/v1/session",
+    method:"POST",
+    url: "http://35.247.142.238/api/v1/session",
     data: {
       start_date: `${startDate}`,
       start_time: `${startTime}`,
@@ -66,7 +66,7 @@ const handleSubmit =(e) =>{
     },
   })
   .then(res => {
-    console.log("Res", res.data.message);
+    console.log("Succes bro", res.data.message);
   })
   .catch(err =>{
     console.log("Error in request", err);

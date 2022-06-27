@@ -28,7 +28,8 @@ const TabelVaksinasi = ({ Number, nama, stock, jenis, waktu, key }) => {
     const handleDelete =()=>{
         axios({
             method: "DELETE",
-            url: `http://34.142.219.145/api/v1/session/${id}`
+            url: `http://35.247.142.238/api/v1/session/${id}`
+            
           })
           .then(res => {
             console.log("Res", res.data.message);
