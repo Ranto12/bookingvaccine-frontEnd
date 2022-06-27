@@ -463,10 +463,10 @@
 }
 
 ul > li > h5,
-.data-popup {
+.data-popup,.title-table-datapopup {
   color: #829ccc;
-  margin-right: 20px;
-  margin-top: 20px;
+  margin-right: 20px !important;
+  margin-top: 20px !important;
 }
 
 div > ul {
@@ -530,4 +530,25 @@ div > ul {
 .ErrMSG{
   justify-content: center !important;
   align-items: center !important;
+}
+
+
+/* popup booking */
+.title-table-datapopup{
+  margin-left: 30px !important;
+}
+
+.table-booking-table{
+  border-color: white;
+}
+
+.table-popup-booking{
+  background-color: #45c2d6;
+  border-radius: 0px;
+  height: 60px;
+  font-size: 14px;
+  align-items: center;
+  color: #ffffff;
+  font-weight: 600;
+  justify-content: center;
 }
