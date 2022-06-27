@@ -44,7 +44,7 @@ const ArtikelTerbaru = () => {
   const handleSubmit =(e) =>{
     axios({
       method: "POST",
-      url: "http://34.142.219.145/api/v1/news",
+      url: "http://35.247.142.238/api/v1/news",
       data: {
         author_news_vaccine : author,
         content_news_vaccine: body,

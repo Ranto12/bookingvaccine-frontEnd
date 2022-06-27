@@ -4,7 +4,6 @@ import { NavLink, useNavigate } from "react-router-dom";
 import "../../assets/Style/style.css";
 
 //assets
-import { icon } from "../../assets/icon";
 import {
   BsFillGridFill,
   BsBook,

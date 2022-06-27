@@ -14,8 +14,6 @@ import { AiOutlineSearch } from 'react-icons/ai';
 // Api
 import api from './../../API/data/post'
 
-// Component
-import PopUpPengguna from '../../component/KelolaPenggunaTable/PopUpPengguna';
 
 const KelolaPengguna = () => {
   const [input, setInput] = useState("");

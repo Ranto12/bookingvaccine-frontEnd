@@ -1,6 +1,12 @@
-
+/* body.active-popUp {
+    overflow-y: hidden;
+}; */
 
 .btn-popUp{
+    /* padding: 10px 20px;
+    display: block;
+    margin: 100px auto 0;
+    font-size: 10px; */
     cursor: pointer;
 };
 
