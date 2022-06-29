@@ -1,17 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
 import Sidebar from "../../component/Sidebar/Sidebar";
-// import { Link } from "react-router-dom";
-// import Button from "@mui/material/Button";
-// import FormatBoldIcon from "@mui/icons-material/FormatBold";
-// import FormatItalicIcon from "@mui/icons-material/FormatItalic";
-// import FormatUnderlinedIcon from "@mui/icons-material/FormatUnderlined";
-// import PanoramaIcon from "@mui/icons-material/Panorama";
-// import FormatListBulletedIcon from "@mui/icons-material/FormatListBulleted";
 // style
 import "./../../assets/Style/style.css";
 import { Grid, IconButton } from "@mui/material";
 
-import ImagePlaceholder from "../../assets/image/ImagePlaceholder.jpg";
+import {BsFileEarmarkImage} from 'react-icons/bs'
 import axios from "axios";
 
 const ArtikelTerbaru = () => {
@@ -22,7 +15,7 @@ const ArtikelTerbaru = () => {
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const [body, setBody] = useState("");
-  const image = "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png";
+  const [iamge, setImage] = useState("");
 
   // function 
   // handleChange
@@ -35,29 +28,69 @@ const ArtikelTerbaru = () => {
   const handleBody=(e)=>{
     setBody(e.target.value);
   }
-
+const handleImage=(e)=>{
+  setImage(e.target.value)
+}
   // testing
-  console.log(title, author, body, image)
+  console.log(`Image`,iamge, title, author, body )
 
 
   // post 
-  const handleSubmit =(e) =>{
-    axios({
-      method: "POST",
-      url: "http://35.247.142.238/api/v1/news",
-      data: {
-        author_news_vaccine : author,
-        content_news_vaccine: body,
-        id_news_vaccine : 0,
-        image_news_vaccine: image,
-        title_news_vaccine : title
-      },
-    })
+  // const handleSubmit =(e) =>{
+  //   e.preventDefault();
+  //   axios({
+  //     method: "POST",
+  //     url: "http://35.247.142.238/api/v1/news",
+  //     data: {
+  //       "author_news_vaccine" : "author",
+  //       "content_news_vaccine": "body",
+  //       // id_news_vaccine : 0,
+  //       // image_news_vaccine: image,
+  //       "title_news_vaccine" : "title",
+        
+  //       // "titleNewsVaccine" :"wkwkwkw",
+  //       // "authorNewsVaccine" : "author",
+  //       // "contentNewsVaccine"  : "body",
+  //       // id_news_vaccine : 0,
+  //       // uploadFile : image
+
+  //     },
+  //   })
+  //   .then(res => {
+  //     console.log("Res", res.data.message);
+  //   })
+  //   .catch(err =>{
+  //     console.log("Error in request", err);
+  //   })
+  // }
+
+  // const handleSubmit=(e,)=>{
+  //   e.preventDefault();
+  //   axios.post('http://35.247.142.238/api/v1/news', JSON.stringify({
+  //     "titleNewsVaccine": title,
+  //     "authorNewsVaccine": author,
+  //     "statcontentNewsVaccineus": body,
+  //  }) , { headers: {  "Content-Type": "application/json"  }
+  // })
+  // .then(res =>{
+  //     console.log("Res", res.data.message);
+  // })
+  // .catch(err =>{
+  //       console.log("Error in request", err);
+  //     })
+
+  // }
+
+  const handleSubmit=(e)=>{
+    e.preventDefault();
+    axios.post('http://35.247.142.238/api/v1/news?titleNewsVaccine='+title+'&authorNewsVaccine='+author+'&contentNewsVaccine='+body , JSON.stringify({
+      'file' : iamge
+    }))
     .then(res => {
       console.log("Res", res.data.message);
     })
     .catch(err =>{
-      console.log("Error in request", err);
+        console.log("Error in request", err);
     })
   }
 
@@ -76,12 +109,7 @@ const ArtikelTerbaru = () => {
           </div>
 
           <div className=" table-header row mt-4 background-color-Table  justify-content-center">
-            <h6
-              style={{
-                marginTop: "1rem",
-                color: "#FFFFFF",
-              }}
-            >
+            <h6 style={{ marginTop: "1rem",color: "#FFFFFF" }}>
               Silahkan Masukan Data sesuai dengan bagian yang telah di sediakan
             </h6>
           </div>
@@ -96,6 +124,7 @@ const ArtikelTerbaru = () => {
                 <input type="text" className="FormArtikel p-1 rounded-2" style={{width: "100%", border: "none"}}
                   onChange={handleName}
                   value={title}
+                  required
                 />
                 <h6 style={{ marginTop: "1rem",color: "#4E7EA7" }}
                 >
@@ -104,6 +133,7 @@ const ArtikelTerbaru = () => {
                 <input type="text" className="w-100 FormArtikel p-1 rounded-2" style={{ border: "none",}}
                   onChange={handleAuthor}
                   value={author}
+                  required
                 />
                 <input type="file"  style={{ display: "none"}}
                 />
@@ -120,6 +150,7 @@ const ArtikelTerbaru = () => {
                       style={{ border: "none",height: "20rem",resize: "none"}}
                       onChange={handleBody}
                       value={body}
+                      required
                     />
                   </Grid>
                   <Grid item xs={3}>
@@ -131,17 +162,16 @@ const ArtikelTerbaru = () => {
                         <div>
                           <div
                             style={{width: "75%", height: "20rem", border: "dashed 2px #4E7EA7", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", cursor: "pointer",}}>
-                            <div style={{height: "10rem"}}>
-                              <img src={ImagePlaceholder} height="100%" />
+                            <div style={{height: "10rem"}} className="image-upload">
+                              <div className="image-upload">
+                                <label for="file-input">
+                                  <BsFileEarmarkImage className="h-100  w-100  image-size-uploadimage" />
+                                </label>
+                                <input id="file-input" type="file" onChange={handleImage} />
+                              </div>
                             </div>
                             <div
-                              style={{
-                                textAlign: "center",
-                                fontSize: "0.9em",
-                                marginTop: "1rem",
-                                color: "#4E7EA7",
-                              }}
-                            >
+                              style={{textAlign: "center", fontSize: "10px", marginTop: "1rem", color: "#4E7EA7"}}>
                               <p>
                                 Upload Foto Fasilitas Kesehatan Anda <br />{" "}
                                 Ukuran foto tidak lebih dari 10mb{" "}
@@ -176,7 +206,7 @@ const ArtikelTerbaru = () => {
                           <button className="btn-kelola-jadwal1 me-3  rounded-3 mb-5">
                             Batal
                           </button>
-                          <button className="btn-kelola-jadwal ms-3  rounded-3 mb-5" onClick={handleSubmit} type="submit">
+                          <button className="btn-kelola-jadwal ms-3  rounded-3 mb-5 " onClick={handleSubmit} type="submit">
                             Simpan
                           </button>
                     </div>

@@ -1,7 +1,6 @@
 import { RepeatOneSharp } from "@mui/icons-material";
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-import Moment from 'moment';
 import { BsFileEarmarkImage } from "react-icons/bs";
 
 // api
@@ -14,6 +13,7 @@ export default function FormKelolaJadwal({address, maps, category, name, data, k
   const [startDate, setStartDate] = useState();
   const [startTime, setStartTime] = useState("");
   const [Stock, setStock] = useState(0);
+  const [image, setImage] = useState("");
 
   const chaangeStartDate =(e)=>{
     setStartDate(e.target.value);
@@ -27,7 +27,9 @@ export default function FormKelolaJadwal({address, maps, category, name, data, k
   const onChangeStock =(e)=>{
     setStock(e.target.value);
   }
- 
+ const onChangeImage=(e)=>{
+    setImage(e.target.value);
+ }
 
   // get api jenis vaccine
   // useEffect
@@ -72,6 +74,9 @@ const handleSubmit =(e) =>{
     console.log("Error in request", err);
   })
 }
+
+// debugger
+// console.log(`data iamge, ${image}`)
 
   return (
     <div className="mb-5 borderInput" style={{ color: " #4E7EA7" }}  >
@@ -133,9 +138,9 @@ const handleSubmit =(e) =>{
             <div className="card img-input">
               <label>
                 <div className="text-center img-card  ">
-                  <BsFileEarmarkImage className="h-50 w-50 " />
+                  <BsFileEarmarkImage className="h-50 w-50 PointerClikCss" />
                 </div>
-                <input type="file" />
+                <input type="file" onChange={onChangeImage} />
               </label>
               <p className="card-text text-center pt-2">
                 Upload Foto Fasilitas Kesehatan Anda Ukuran FOto tidak Lebih dari

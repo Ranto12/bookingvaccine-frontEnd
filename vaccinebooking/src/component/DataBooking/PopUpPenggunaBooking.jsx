@@ -13,7 +13,7 @@ export default function PopUpPenggunaBooking({nama, nik, jenisVaccine, Number}) 
       <div
         className="modal fade "
         id={"exampleModal" + Number}
-        tabindex="-1"
+        tabIndex="-1"
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
       >

@@ -101,7 +101,7 @@ export const LengthRSUD = () => {
     const [datadashboard, setDataDasboard] = useState([]);
     const rsud = datadashboard.length;
 
-    console.log(`rsud`, datadashboard)
+    // console.log(`rsud`, datadashboard)
     // api
   // useEffect
   useEffect(()=>{
@@ -133,7 +133,7 @@ export const LengthPuskesmas = () => {
     const [datadashboard, setDataDasboard] = useState([]);
     const pusekesmas = datadashboard.length;
 
-    console.log(`rsud`, datadashboard)
+    // console.log(`rsud`, datadashboard)
     // api
   // useEffect
   useEffect(()=>{
