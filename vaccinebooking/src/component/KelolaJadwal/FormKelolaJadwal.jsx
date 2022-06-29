@@ -28,7 +28,7 @@ export default function FormKelolaJadwal({address, maps, category, name, data, k
     setStock(e.target.value);
   }
  const onChangeImage=(e)=>{
-    setImage(e.target.value);
+    setImage(e.target.files[0]);
  }
 
   // get api jenis vaccine
@@ -54,29 +54,49 @@ export default function FormKelolaJadwal({address, maps, category, name, data, k
 
 // funtion
 
-const handleSubmit =(e) =>{
-  axios({
-    method:"POST",
-    url: "http://35.247.142.238/api/v1/session",
-    data: {
-      start_date: `${startDate}`,
-      start_time: `${startTime}`,
-      id_area: data.area_mapped.id_area,
-      id_vaccine: idVaccine,
-      id_health_facilities: data.id_health_facilities,
-      stock: Stock
-    },
-  })
-  .then(res => {
-    console.log("Succes bro", res.data.message);
-  })
-  .catch(err =>{
-    console.log("Error in request", err);
-  })
+// const handleSubmit =(e) =>{
+//   axios({
+//     method:"POST",
+//     url: "http://35.247.142.238/api/v1/session", 
+//     data: {
+//       start_date: `${startDate}`,
+//       start_time: `${startTime}`,
+//       id_area: data.area_mapped.id_area,
+//       id_vaccine: idVaccine,
+//       id_health_facilities: data.id_health_facilities,
+//       stock: Stock
+//     },
+//   })
+//   .then(res => {
+//     console.log("Succes bro", res.data.message);
+//   })
+//   .catch(err =>{
+//     console.log("Error in request", err);
+//   })
+// }
+const handleSubmit =(e)=>{
+  e.preventDefault();
+  const formData = new FormData();
+  formData.append("vaccine_id ", idVaccine);
+  formData.append("area_id", data.area_mapped.id_area);
+  formData.append("health_facilities_id", data.id_health_facilities);
+  formData.append("stock", Stock);
+  formData.append("start_date ", `${startDate}`);
+  formData.append("start_time  ", `${startTime}`);
+  formData.append("file  ", image);
+  try{
+    const response = axios({
+      method: "post",
+      url: "http://35.247.142.238/api/v1/session",
+      data: formData,
+      headers: { "Content-Type": "multipart/form-data" },
+    });
+  }catch(error){
+    console.log(error)
+  }
 }
-
 // debugger
-// console.log(`data iamge, ${image}`)
+console.log(`vaccine= `, idVaccine," area= ", data.area_mapped.id_area, "healt= ", data.id_health_facilities, "stock= ", Stock, "date= ", startDate, "time= ", startTime, "image= ", image  )
 
   return (
     <div className="mb-5 borderInput" style={{ color: " #4E7EA7" }}  >

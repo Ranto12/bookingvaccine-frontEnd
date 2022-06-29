@@ -54,7 +54,7 @@ const KelolaJadwal = () => {
 
         fetchPosts();
     }, [size, page])
-    // console.log("jadwal", jadwal.data)
+    console.log("jadwal", jadwal.data)
 
     return (
         <>

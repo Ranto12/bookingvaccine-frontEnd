@@ -15,7 +15,7 @@ const ArtikelTerbaru = () => {
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const [body, setBody] = useState("");
-  const [iamge, setImage] = useState("");
+  const [image, setImage] = useState("");
 
   // function 
   // handleChange
@@ -29,69 +29,28 @@ const ArtikelTerbaru = () => {
     setBody(e.target.value);
   }
 const handleImage=(e)=>{
-  setImage(e.target.value)
+  setImage(e.target.files[0])
 }
   // testing
-  console.log(`Image`,iamge, title, author, body )
+  // console.log(`Image`,image, title, author, body )
 
-
-  // post 
-  // const handleSubmit =(e) =>{
-  //   e.preventDefault();
-  //   axios({
-  //     method: "POST",
-  //     url: "http://35.247.142.238/api/v1/news",
-  //     data: {
-  //       "author_news_vaccine" : "author",
-  //       "content_news_vaccine": "body",
-  //       // id_news_vaccine : 0,
-  //       // image_news_vaccine: image,
-  //       "title_news_vaccine" : "title",
-        
-  //       // "titleNewsVaccine" :"wkwkwkw",
-  //       // "authorNewsVaccine" : "author",
-  //       // "contentNewsVaccine"  : "body",
-  //       // id_news_vaccine : 0,
-  //       // uploadFile : image
-
-  //     },
-  //   })
-  //   .then(res => {
-  //     console.log("Res", res.data.message);
-  //   })
-  //   .catch(err =>{
-  //     console.log("Error in request", err);
-  //   })
-  // }
-
-  // const handleSubmit=(e,)=>{
-  //   e.preventDefault();
-  //   axios.post('http://35.247.142.238/api/v1/news', JSON.stringify({
-  //     "titleNewsVaccine": title,
-  //     "authorNewsVaccine": author,
-  //     "statcontentNewsVaccineus": body,
-  //  }) , { headers: {  "Content-Type": "application/json"  }
-  // })
-  // .then(res =>{
-  //     console.log("Res", res.data.message);
-  // })
-  // .catch(err =>{
-  //       console.log("Error in request", err);
-  //     })
-
-  // }
-
-  const handleSubmit=(e)=>{
+  const handleSubmit =(e)=>{
     e.preventDefault();
-    axios.post('http://35.247.142.238/api/v1/news?titleNewsVaccine='+title+'&authorNewsVaccine='+author+'&contentNewsVaccine='+body , JSON.stringify({
-      'file' : iamge
-    }))
-    .then(res => {
-      console.log("Res", res.data.message);
-    })
-    .catch(err =>{
-        console.log("Error in request", err);
-    })
+    const formData = new FormData();
+    formData.append("titleNewsVaccine", title);
+    formData.append("authorNewsVaccine", author);
+    formData.append("contentNewsVaccine", body);
+    formData.append("file", image);
+    try{
+      const response = axios({
+        method: "post",
+        url: "http://35.247.142.238/api/v1/news",
+        data: formData,
+        headers: { "Content-Type": "multipart/form-data" },
+      });
+    }catch(error){
+      console.log(error)
+    }
   }
 
   return (
@@ -115,7 +74,7 @@ const handleImage=(e)=>{
           </div>
 
           {/* isi Form */}
-          <div className="FormArtikelTerbaru row " onSubmit={handleSubmit}>
+          <div className="FormArtikelTerbaru row " >
             <div className="d-flex FormArtikelTerbaru justify-content-start">
               <div style={{width: "100%", color: " #4E7EA7"}}>
                 <h6 style={{ marginTop: "2rem", color: "#4E7EA7"}}>
