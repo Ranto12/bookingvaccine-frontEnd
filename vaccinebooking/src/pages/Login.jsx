@@ -6,6 +6,7 @@ import Logo from "../assets/img/logo.png";
 import { IconButton } from "@mui/material";
 import Swal from "sweetalert2";
 
+
 const Login = () => {
   let navigate = useNavigate();
   const [username, setUsername] = useState("");
@@ -82,22 +83,26 @@ const Login = () => {
 
               <div className="input-user  ">
                 <p>Username</p>
-                <input
-                  required
-                  type="text"
-                  id="Username"
-                  aria-describedby="emailHelp"
-                  value={username}
-                  onChange={onChangeUsername}
-                />
-                {errorUsername && (
-                  <p style={{ color: "red" }}>
-                    Username Tidak Sesuai atau Salah
-                  </p>
-                )}
+                <div style={{ height: "63px", border: "0px solid" }}>
+                  <input
+                    required
+                    type="text"
+                    id="Username"
+                    aria-describedby="emailHelp"
+                    value={username}
+                    onChange={onChangeUsername}
+                  />
+                  {errorUsername && (
+                    <div className="d-flex " style={{ width: "50%" }}>
+                      <p style={{ color: "red", margin: "3px 0px 0px 0px", fontSize: "10px" }}>
+                        Username Tidak Sesuai atau Salah
+                      </p>
+                    </div>
+                  )}
+                </div>
               </div>
               <div className="input-password  ">
-                <p>Password</p>
+                <p style={{ marginTop: "7px" }}>Password</p>
                 <div className="brd ">
                   <div>
                     <input
@@ -108,7 +113,7 @@ const Login = () => {
                       onChange={onChangePassword}
                     />
                     {errorPassword && (
-                      <p style={{ color: "red" }}>
+                      <p style={{ color: "red", margin: "8px 0px 0px 0px", fontSize: "10px" }}>
                         Password Tidak Sesuai atau Salah
                       </p>
                     )}

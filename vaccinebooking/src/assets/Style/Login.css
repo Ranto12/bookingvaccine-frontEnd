@@ -1,15 +1,13 @@
-
-/* login */
 .card {
     width: 743.61px;
     height: 519px;
     align-items: center;
-  
-  }
-  
 
-  
-  .t-h2 h2 {
+}
+
+
+
+.t-h2 h2 {
     margin: 0;
     font-family: 'Poppins';
     font-style: normal;
@@ -18,45 +16,45 @@
     line-height: 21px;
     color: #8E8B8B;
     text-align: center;
-  }
-  
-  .t-h2 {
+}
+
+.t-h2 {
     margin-top: 60px;
     margin-bottom: 32px;
-  }
-  
-  
-  
-  .input-user input {
-    width: 425px;
-    height: 51px;
+}
+
+
+
+.input-user input {
+    width: 354px;
+    height: 42px;
     border-radius: 10px;
     border: 1px solid #C2C2C2
-  }
-  
-  
-  .input-user input:focus {
+}
+
+
+.input-user input:focus {
     outline: none;
-  }
-  
-  .input-password input:focus {
+}
+
+.input-password input:focus {
     outline: none;
-  }
-  
-  .input-password {
+}
+
+.input-password {
     margin-bottom: 40px;
-  }
-  
-  .input-password input {
+}
+
+.input-password input {
     width: 400px;
     height: 48px;
     border: 1px solid #C2C2C2;
     border-radius: 10px;
     border: none;
-  
-  }
-  
-  .input-user p {
+
+}
+
+.input-user p {
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
@@ -64,29 +62,28 @@
     line-height: 24px;
     color: #8E8B8B;
     margin-bottom: 9px;
-  
-  }
-  
-  .input-password p {
+
+}
+
+.input-password p {
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
     color: #8E8B8B;
-    margin-top: 40px;
     margin-bottom: 9px !important;
-  }
-  
-  
-  
-  .btn {
+}
+
+
+
+.btn {
     margin-bottom: 72px;
     padding: 0;
     color: #FFFFFF
-  }
-  
-  .btn button {
+}
+
+.btn button {
     width: 426px;
     height: 47px;
     background: #AAA9A9;
@@ -94,29 +91,29 @@
     border: none;
     padding: 0;
     color: #FFFFFF;
-  }
-  
-  .brd {
+}
+
+.brd {
     display: inline-flex;
     width: 425px;
     height: 51px;
     border: 1px solid #C2C2C2;
     border-radius: 10px;
-  }
-  
-  .brd svg {
+}
+
+.brd svg {
     width: 30x;
     height: 30px;
     margin-top: 10px;
     cursor: pointer;
-  }
-  
-  .lupa-pass {
+}
+
+.lupa-pass {
     margin-left: 350px;
     margin-top: 8px
-  }
-  
-  .lupa-pass p {
+}
+
+.lupa-pass p {
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
@@ -124,4 +121,4 @@
     line-height: 24px;
     cursor: pointer;
     margin: 0px !important
-  }
+}
