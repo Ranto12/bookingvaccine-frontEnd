@@ -136,12 +136,14 @@
   cursor: pointer;
   border: "none";
 }
+
 .InputCssKelolaPengguna {
   width: "251px";
   height: 24px;
   border: none;
   border-radius: 2px;
 }
+
 .BorderRadiusInline {
   border-radius: 2px;
   border: 1px solid #829ccc !important;
@@ -219,7 +221,8 @@
   border-radius: 10px;
   margin-top: 13.29px;
 }
-*/ .btn-kelola-jadwal {
+
+.btn-kelola-jadwal {
   background-color: #7bd9e8;
   border: 0px;
   padding: 7px 34px;
@@ -237,7 +240,7 @@
   background: none;
 }
 
-.img-input > label > input {
+.img-input>label>input {
   display: none;
 }
 
@@ -279,6 +282,7 @@
   background-color: #aaa9a9;
   width: 100vw;
 }
+
 .head {
   margin-top: 165px !important;
   margin-bottom: 165px !important;
@@ -452,6 +456,7 @@
 .Pointer-Booking {
   cursor: pointer;
 }
+
 /* PopUpPengguna */
 .pop-title {
   background-color: #7bd9e8;
@@ -462,14 +467,14 @@
   padding-bottom: 10px;
 }
 
-ul > li > h5,
+ul>li>h5,
 .data-popup {
   color: #829ccc;
   margin-right: 20px;
   margin-top: 20px;
 }
 
-div > ul {
+div>ul {
   list-style-type: none;
 }
 
@@ -485,27 +490,28 @@ div > ul {
 
 /* popup Admin */
 
-.data-popup-radio{
-  color: #829CCC  ;
+.data-popup-radio {
+  color: #829CCC;
 }
 
-.editpop,.popRadio{
+.editpop,
+.popRadio {
   width: 97%;
 }
 
-.modEdit{
+.modEdit {
   border-radius: 20px !important;
   overflow: hidden !important;
   height: 65% !important;
 }
 
-.modView{
+.modView {
   border-radius: 20px !important;
   overflow: hidden !important;
   height: 83% !important;
 }
 
 
-.Background-White{
+.Background-White {
   background-color: white;
 }
