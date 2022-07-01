@@ -5,7 +5,7 @@ import { AiFillEye } from "react-icons/ai";
 import Logo from "../assets/img/logo.png";
 import { IconButton } from "@mui/material";
 import Swal from "sweetalert2";
-
+import "../assets/Style/Login.css"
 
 const Login = () => {
   let navigate = useNavigate();
@@ -76,7 +76,7 @@ const Login = () => {
             </div>
 
             <div className="card card-Login tabel  ">
-              <div className="t-h2  ">
+              <div className="t-h2">
                 <h2>Mohon isi dengan detail di bawah </h2>
                 <h2>dengan akun admin anda</h2>
               </div>
@@ -102,7 +102,7 @@ const Login = () => {
                 </div>
               </div>
               <div className="input-password  ">
-                <p style={{ marginTop: "7px" }}>Password</p>
+                <p>Password</p>
                 <div className="brd ">
                   <div>
                     <input
@@ -125,7 +125,7 @@ const Login = () => {
                   </div>
                 </div>
                 <div className="lupa-pass d-flex justify-content-end ">
-                  <p className="">Lupa password ?</p>
+                  <p >Lupa password ?</p>
                 </div>
               </div>
               <div className="btn">

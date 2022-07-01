@@ -1,11 +1,14 @@
 .card {
-    width: 743.61px;
-    height: 519px;
+    width: 484px;
+    height: 425px;
     align-items: center;
 
 }
 
-
+.input-user input {
+    width: 350px;
+    height: 42px;
+}
 
 .t-h2 h2 {
     margin: 0;
@@ -16,14 +19,13 @@
     line-height: 21px;
     color: #8E8B8B;
     text-align: center;
+
 }
 
 .t-h2 {
-    margin-top: 60px;
-    margin-bottom: 32px;
+    margin-top: 46px !important;
+    margin-bottom: 30px;
 }
-
-
 
 .input-user input {
     width: 354px;
@@ -46,8 +48,8 @@
 }
 
 .input-password input {
-    width: 400px;
-    height: 48px;
+    width: 345px;
+    height: 40px;
     border: 1px solid #C2C2C2;
     border-radius: 10px;
     border: none;
@@ -72,6 +74,7 @@
     font-size: 16px;
     line-height: 24px;
     color: #8E8B8B;
+    margin-top: 7px !important;
     margin-bottom: 9px !important;
 }
 
@@ -95,21 +98,23 @@
 
 .brd {
     display: inline-flex;
-    width: 425px;
-    height: 51px;
+    width: 354px;
+    height: 42px;
     border: 1px solid #C2C2C2;
     border-radius: 10px;
+
 }
 
 .brd svg {
     width: 30x;
     height: 30px;
-    margin-top: 10px;
+    margin-top: 5px;
     cursor: pointer;
+
 }
 
 .lupa-pass {
-    margin-left: 350px;
+
     margin-top: 8px
 }
 
