@@ -2,8 +2,8 @@ import React from "react";
 import "../../assets/Style/style.css";
 import PopUpPengguna from "./PopUpPengguna";
 
-const TablePengguna = ({ key, nama, nohp, NIK, Number, data }) => {
-
+const TablePengguna = ({ key, nama, nohp, NIK, Number, gender, email, tgl_lahir }) => {
+  
   return (
     <div className="d-flex TabelkelolaBerita TableColor-child ">
       <div className="col-1">{Number}</div>
@@ -11,7 +11,7 @@ const TablePengguna = ({ key, nama, nohp, NIK, Number, data }) => {
       <div className="col-3">{nohp}</div>
       <div className="col-3">{NIK}</div>
       <div className="col-1 justify-content-center  ">
-        <PopUpPengguna nama={nama} />
+        <PopUpPengguna  nama={nama} number ={Number} nohp={nohp} nik={NIK} gender={gender} email={email} tgl_lahir={tgl_lahir} />
       </div>
     </div>
   );

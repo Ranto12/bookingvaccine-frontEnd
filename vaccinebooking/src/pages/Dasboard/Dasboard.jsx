@@ -8,11 +8,8 @@ import "./../../assets/Style/style.css";
 
 // component
 import Sidebar from '../../component/Sidebar/Sidebar';
-import LengthPenguna from '../../component/Dasboard/APIrequired/Length'
-import LengthKelurahan from '../../component/Dasboard/APIrequired/LengthKelurahan'
-import LengthPuskesmas from '../../component/Dasboard/APIrequired/LengthPuskesmas'
-import LengthRSUD from '../../component/Dasboard/APIrequired/LengthRSUD'
-
+// length
+import {LengthAdmin, LengthPenguna, LengthKecamatan, LengthRSUD, LengthPuskesmas} from '../../component/Dasboard/APIrequired/Length';
 // api
 import api from '../../API/data/post';
 
@@ -57,7 +54,7 @@ const Dashboard = () => {
     PenggunaLengthPost();
 },[])
 
-console.log("datadashboard", datadashboard.length)
+// console.log("datadashboard", datadashboard.length)
 
   return (
     <div>
@@ -87,7 +84,7 @@ console.log("datadashboard", datadashboard.length)
                     <h3 className=" pt-3">Total Admin</h3>
                   </div>
                   <h1 className="mt-4 display-3 fw-bold ">
-                    {admin}
+                    <LengthAdmin />
                   </h1>
                   <h1 className="pt-3">Pengelola</h1>
                 </div>
@@ -127,15 +124,19 @@ console.log("datadashboard", datadashboard.length)
                     <h3 className=" pt-3 fw-bold">Total Fasilitas Kesehatan</h3>
                   </div>
 
-                  <div calssName="">
+                  <div className="">
                     <div className="d-flex text-center mt-5 text-light ">
                         <div className="me-3 card-faskes ">
-                            <h1 className=" fw-bold "><LengthRSUD/></h1>
+                            <h1 className=" fw-bold ">
+                            <LengthRSUD/>
+                            </h1>
                             <h4 className="pt-2">RSUD</h4>
                         </div>
                         
                         <div className="ms-1 card-faskes1 ">
-                            <h1 className=" fw-bold "><LengthPuskesmas/></h1>
+                            <h1 className=" fw-bold ">
+                            <LengthPuskesmas/>
+                            </h1>
                             <h4 className="pt-2">PUSKESMAS</h4>
                         </div>
                     </div>
@@ -156,7 +157,7 @@ console.log("datadashboard", datadashboard.length)
                     <h3 className="fw-bold pt-3">Total Kecamatan</h3>
                   </div>
                   <h1 className="mt-4 display-3 fw-bold ">
-                    <LengthKelurahan />
+                    <LengthKecamatan />
                   </h1>
                   <h1  className="pt-3 pb-4">Kecamatan</h1>
                 </div>

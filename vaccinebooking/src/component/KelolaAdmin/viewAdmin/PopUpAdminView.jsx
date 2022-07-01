@@ -12,7 +12,7 @@ export default function PopUpAdminView() {
       <div
         className="modal fade "
         id="exampleModal1"
-        tabindex="-1"
+        tabIndex="-1"
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
       >
@@ -23,7 +23,7 @@ export default function PopUpAdminView() {
                 Detail Pengguna
               </h5>
               <button type="button"
-               class="btn-close rounded-circle me-3" 
+               className="btn-close rounded-circle me-3" 
                data-bs-dismiss="modal" 
                aria-label="Close"></button>
 

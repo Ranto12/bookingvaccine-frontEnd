@@ -2,8 +2,8 @@ import React from "react";
 import "../../assets/Style/style.css";
 import { Button, IconButton } from "@mui/material";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
-import SearchIcon from "@mui/icons-material/Search";
 import Overlaybookingvacinne from "../Overlay/Overlaybookingvacinne";
+import PopUpPenggunaBooking from "./PopUpPenggunaBooking";
 
 const TablePengguna = ({ key, nama, nik, jenisVaccine, Number }) => {
   return (
@@ -13,28 +13,15 @@ const TablePengguna = ({ key, nama, nik, jenisVaccine, Number }) => {
     >
       <div className="col-1">{Number}</div>
       <div className="col-4">{nama}</div>
-      <div className="col-3  Pointer-Booking">
-        <Overlaybookingvacinne
-          nama={nama}
-          nik={nik}
-          jenisVaccine={jenisVaccine}
-          Number={Number}
-        />
-      </div>
+      <div className="col-3  Pointer-Booking">{nik}</div>
       <div className="col-3">{jenisVaccine}</div>
       <div className="col-1 d-flex justify-content-center">
         <div className=" d-flex p-2">
-          <Button
-            data-bs-toggle="tooltip"
-            data-bs-placement="top"
-            sx={{
-              minHeight: 0,
-              minWidth: 0,
-              backgroundColor: "#829CCC",
-            }}
-          >
-            <SearchIcon style={{ color: "white" }} />
-          </Button>
+        <PopUpPenggunaBooking nama={nama}
+          nik={nik}
+          jenisVaccine={jenisVaccine}
+          Number={Number}/>
+          
         </div>
       </div>
     </div>

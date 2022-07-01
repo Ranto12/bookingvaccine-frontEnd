@@ -14,8 +14,6 @@ import { AiOutlineSearch } from 'react-icons/ai';
 // Api
 import api from './../../API/data/post'
 
-// Component
-import PopUpPengguna from '../../component/KelolaPenggunaTable/PopUpPengguna';
 
 const KelolaPengguna = () => {
   const [input, setInput] = useState("");
@@ -37,7 +35,8 @@ const KelolaPengguna = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await api.get("/users")
+        const response = await api.get("/users/roles/USER")
+        // const response = await api.get("/USER")
         setDataPengguna(response.data);
       } catch (err) {
         if (err.response) {
@@ -51,9 +50,9 @@ const KelolaPengguna = () => {
       }
     }
     fetchPosts();
-  }, [])
-  // // console.log(`length, ${dataPengguna.length}`)
-  // console.log(`dataPengguna`, dataPengguna)
+},[])
+// // console.log(`length, ${dataPengguna.length}`)
+console.log(`dataPengguna`, dataPengguna)
 
 
   return (
@@ -108,43 +107,43 @@ const KelolaPengguna = () => {
 
               </div>
             </div>
-
-            {/* table  */}
-            <div className='row mt-4 background-color-Table '>
-              <div className='col-1'>
-                No
-              </div>
-              <div className='col-4'>
-                Nama Pengguna
-              </div>
-              <div className='col-3'>
-                No. Hp
-              </div>
-              <div className='col-3'>
-                Nik
-              </div>
-              <div className='col-1'>
-                Action
-              </div>
+            
+          {/* table  */}
+          <div className='row mt-4 background-color-Table '>
+            <div className='col-1'>
+              No
             </div>
-            {/* isi table */}
-            <div className='TabelkelolaBerita row Border-Color-Box mb-2'>
-              {dataPengguna.data &&
+            <div className='col-4'>
+              Nama Pengguna
+            </div>
+            <div className='col-3'>
+              No. Hp
+            </div>
+            <div className='col-3'>
+              Nik
+            </div>
+            <div className='col-1'>
+              Action
+            </div>
+          </div>
+          {/* isi table */}
+          <div className='TabelkelolaBerita row Border-Color-Box mb-2'>
+            {dataPengguna.data &&
                 dataPengguna.data?.filter((val) => {
                   if (input == "") {
                     return val
                   }
-                  else if (val.first_name?.toLowerCase().includes(input.toLocaleLowerCase())) {
+                  else if (val.first_name?.toLowerCase().includes(input.toLocaleLowerCase()) || val.no_phone?.toLowerCase().includes(input.toLocaleLowerCase()) || val.username?.toLowerCase().includes(input.toLocaleLowerCase()) ) {
                     return val
                   }
-                }).map((data, index) => {
-                  return (
-                    <TablePengguna Number={index + 1} key={data.id} nama={data.first_name + " " + data.last_name} nohp={data.no_phone} NIK={data.username} data={data} />
-                  )
-                })}
-            </div>
+                }).map((data, index)=>{
+              return(
+                <TablePengguna Number={index + 1}  key={data.id} nama={data.first_name + " " + data.last_name} nohp = {data.no_phone}  NIK={data.username}  data={data} email={data.email} gender={data.gender} tgl_lahir = {data.birth_date}  />
+              )
+            })}
           </div>
-
+          {/* pagenation */}
+          </div>
         </div>
       </div>
     </>

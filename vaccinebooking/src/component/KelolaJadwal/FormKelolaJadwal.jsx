@@ -1,7 +1,5 @@
-import { RepeatOneSharp } from "@mui/icons-material";
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-import Moment from 'moment';
 import { BsFileEarmarkImage } from "react-icons/bs";
 
 // api
@@ -14,6 +12,7 @@ export default function FormKelolaJadwal({address, maps, category, name, data, k
   const [startDate, setStartDate] = useState();
   const [startTime, setStartTime] = useState("");
   const [Stock, setStock] = useState(0);
+  const [image, setImage] = useState("");
 
   const chaangeStartDate =(e)=>{
     setStartDate(e.target.value);
@@ -27,7 +26,9 @@ export default function FormKelolaJadwal({address, maps, category, name, data, k
   const onChangeStock =(e)=>{
     setStock(e.target.value);
   }
- 
+ const onChangeImage=(e)=>{
+    setImage(e.target.files[0]);
+ }
 
   // get api jenis vaccine
   // useEffect
@@ -52,44 +53,45 @@ export default function FormKelolaJadwal({address, maps, category, name, data, k
 
 // funtion
 
-const handleSubmit =(e) =>{
-  axios({
-    method: "POST",
-    url: "http://34.142.219.145/api/v1/session",
-    data: {
-      start_date: `${startDate}`,
-      start_time: `${startTime}`,
-      id_area: data.area_mapped.id_area,
-      id_vaccine: idVaccine,
-      id_health_facilities: data.id_health_facilities,
-      stock: Stock
-    },
-  })
-  .then(res => {
-    console.log("Res", res.data.message);
-  })
-  .catch(err =>{
-    console.log("Error in request", err);
-  })
+const handleSubmit =(e)=>{
+  e.preventDefault();
+  const formData = new FormData();
+  formData.append("vaccine_id ", idVaccine);
+  formData.append("area_id", data.area_mapped.id_area);
+  formData.append("health_facilities_id", data.id_health_facilities);
+  formData.append("stock", Stock);
+  formData.append("start_date ", `${startDate}`);
+  formData.append("start_time  ", `${startTime}`);
+  formData.append("file  ", image);
+  try{
+    const response = axios({
+      method: "post",
+      // url: "http://35.247.142.238/api/v1/session",
+      url: "https://bookingvaccine.herokuapp.com:443/api/v1/session",
+      data: formData,
+      headers: { "Content-Type": "multipart/form-data" },
+    });
+    console.log("response aman");
+  }catch(error){
+    console.log(error)
+  }
 }
+// debugger
+console.log(`vaccine= `, idVaccine," area= ", data.area_mapped.id_area, "healt= ", data.id_health_facilities, "stock= ", Stock, "date= ", startDate, "time= ", startTime, "image= ", image  )
 
   return (
     <div className="mb-5 borderInput" style={{ color: " #4E7EA7" }}  >
       <div >
         <div>
           <label className="mt-4 fw-bold ">Nama Fasilitas Kesehatan</label>
-          <button onSubmit={handleSubmit}>simpan</button>
         </div>
         <input type="text" className="w-100 bg-light input-kelola mt-2 p-1 rounded-2" style={{ border: "1px solid  #D9D9D9" }} value={name}/>
       </div>
-
       <div className="mt-3 ">
         <span>
           <label for="categoty" >{category}</label>
         </span>
-
       </div>
-
       <div className="mt-3">
         <div>
           <label className="fw-bold"> Jenis Vaksin</label>
@@ -99,19 +101,15 @@ const handleSubmit =(e) =>{
               const id = item.id_vaccine;
               return(
                 <label>
-            <input
-              type="radio"
-              key={item.id}
-              name="fav_language"
-              // className="ms-3"
-              value={item.id_vaccine}
-              onChange={ChangeidVaccine}
-            />
-            <span className="px-3">{item.vaccine_name} </span>
-          </label>
-              )
-            })}
-        </div>
+                <input type="radio" key={item.id} name="fav_language" className="ms-3"
+                value={item.id_vaccine}
+                onChange={ChangeidVaccine}
+                />
+                <span className="px-3">{item.vaccine_name} </span>
+                </label>
+                )
+                })}
+          </div>
         </div>
       </div>
 
@@ -134,56 +132,22 @@ const handleSubmit =(e) =>{
         <span> 
           <input type="time" className="mt-2 p-1 rounded-2 input-kel Background-White" onChange={ChangeStartTime} />
         </span>
-
-        <span className="px-4">
-          <input type="radio" value="selesai" />
-          <span className="ms-3">Selesai</span>
-        </span>
       </div>
-
-      {/* <div className="row mt-4">
-        <div className="col-4">
-          <h5> Upload Gambar </h5>
-          <div className="img-border img-input">
-            <label>
-              <div className="text-center img-card  ">
-                <BsFileEarmarkImage className="h-50 w-50 " />
-              </div>
-              <input type="file" />
-            </label>
-            <p className="card-text text-center pt-2">
-              Upload Foto Fasilitas Kesehatan Anda Ukuran Foto tidak Lebih dari
-              10 mb
-            </p>
-          </div>
-        </div>
-        <div className="col-8">
-          <div>
-            <h5> Alamat Lengkap </h5>
-            <textarea className="p-3 w-100 rounded-3 input-kel-area" disabled value={address}></textarea>
-          </div>
-          <div>
-            <h6> Link Google Maps </h6>
-            <textarea className="p-3 w-100 rounded-3 input-kel-area" disabled value={maps}></textarea>
-          </div>
-        </div>
-      </div> */}
-
       <div className="row mt-4">
         <div className="col-4">
           <h5> Upload Gambar </h5>
-          <div className="card img-input">
-            <label>
-              <div className="text-center img-card  ">
-                <BsFileEarmarkImage className="h-50 w-50 " />
-              </div>
-              <input type="file" />
-            </label>
-            <p className="card-text text-center pt-2">
-              Upload Foto Fasilitas Kesehatan Anda Ukuran FOto tidak Lebih dari
-              10 mb
-            </p>
-          </div>
+            <div className="card img-input">
+              <label>
+                <div className="text-center img-card  ">
+                  <BsFileEarmarkImage className="h-50 w-50 PointerClikCss" />
+                </div>
+                <input type="file" onChange={onChangeImage} />
+              </label>
+              <p className="card-text text-center pt-2">
+                Upload Foto Fasilitas Kesehatan Anda Ukuran FOto tidak Lebih dari
+                10 mb
+              </p>
+            </div>
         </div>
           <div className="col-8">
             <div>
@@ -196,7 +160,7 @@ const handleSubmit =(e) =>{
             </div>
             <div className="text-end mt-3 mb-5">
                 <button className="btn-kelola-jadwal1 me-3  rounded-3 mb-5">Batal</button>
-                <button className="btn-kelola-jadwal ms-3  rounded-3 mb-5" onSubmit={handleSubmit}>Simpan</button>
+                <button className="btn-kelola-jadwal ms-3  rounded-3 mb-5" onClick={handleSubmit}>Simpan</button>
             </div>
           </div>
       </div>

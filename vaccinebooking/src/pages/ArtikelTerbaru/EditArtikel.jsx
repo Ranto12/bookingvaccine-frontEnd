@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
+import {useLocation} from 'react-router-dom'
 import Sidebar from "../../component/Sidebar/Sidebar";
 // style
 import "./../../assets/Style/style.css";
@@ -7,15 +8,15 @@ import { Grid, IconButton } from "@mui/material";
 import {BsFileEarmarkImage} from 'react-icons/bs'
 import axios from "axios";
 
-const ArtikelTerbaru = () => {
-  // initial state and valiables
-  const [input, setInput] = useState("");
+const EditArtikel = () => {
+    // initial state and valiables
+  const location = useLocation();
   const [imagePreview, setImagePreview] = useState("");
-  const inputRef = useRef();
-  const [title, setTitle] = useState("");
-  const [author, setAuthor] = useState("");
-  const [body, setBody] = useState("");
+  const [title, setTitle] = useState(`${location.state.judul}`);
+  const [author, setAuthor] = useState(`${location.state.penulis}`);
+  const [body, setBody] = useState(`${location.state.content}`);
   const [image, setImage] = useState("");
+  const id = location.state.id;
 
   // function 
   // handleChange
@@ -32,7 +33,7 @@ const handleImage=(e)=>{
   setImage(e.target.files[0])
 }
   // testing
-  // console.log(`Image`,image, title, author, body )
+  console.log(`Image`, title, author, body, image, id);
 
   const handleSubmit =(e)=>{
     e.preventDefault();
@@ -41,16 +42,26 @@ const handleImage=(e)=>{
     formData.append("authorNewsVaccine", author);
     formData.append("contentNewsVaccine", body);
     formData.append("file", image);
+    // formData.append("id_news_vaccine", 0);
+
     try{
       const response = axios({
-        method: "post",
-        url: "http://35.247.142.238/api/v1/news",
-        // url: "https://bookingvaccine.herokuapp.com:443/api/v1/news",
+        method: "put",
+        url: `http://35.247.142.238/api/v1/news/${id}`,
+        // url: `https://bookingvaccine.herokuapp.com:443/api/v1/news/${id}`,
         data: formData,
-        headers: { "Content-Type": "multipart/form-data" },
+        headers: {"Content-Type": "multipart/form-data"},
       });
-    }catch(error){
-      console.log(error)
+      alert("berhasil")
+    }catch(err){
+        if (err.response) {
+            //not in the 200 response range
+            console.log(err.response.data.data);
+            console.log(err.response.status);
+            console.log(err.response.headers);
+          } else {
+            console.log(`Error ${err.message}`);
+          }
     }
   }
 
@@ -179,6 +190,6 @@ const handleImage=(e)=>{
       </div>
     </div>
   );
-};
+}
 
-export default ArtikelTerbaru;
+export default EditArtikel
