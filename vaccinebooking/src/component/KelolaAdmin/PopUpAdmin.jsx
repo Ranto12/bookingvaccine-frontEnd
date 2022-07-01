@@ -5,7 +5,7 @@ import DataPopupAdmin from "./DataPopupAdmin";
 import "../../assets/Style/style.css";
 import { BsXCircle } from "react-icons/bs";
 
-export default function PopUpAdmin({ Number ,Name ,hp ,email }) {
+export default function PopUpAdmin({ Number ,Name ,hp ,email , role}) {
   return (
     <div>
       <div
@@ -30,7 +30,7 @@ export default function PopUpAdmin({ Number ,Name ,hp ,email }) {
             </div>
             <div className="modal-body">
               <ul>
-                <DataPopupAdmin Number={Number} Name={Name} hp={hp} email={email} />
+                <DataPopupAdmin Number={Number} Name={Name} hp={hp} email={email} role={role} />
               </ul>
             </div>
           </div>

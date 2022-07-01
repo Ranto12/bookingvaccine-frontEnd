@@ -48,6 +48,7 @@ const handleImage=(e)=>{
       const response = axios({
         method: "put",
         url: `http://35.247.142.238/api/v1/news/${id}`,
+        // url: `https://bookingvaccine.herokuapp.com:443/api/v1/news/${id}`,
         data: formData,
         headers: {"Content-Type": "multipart/form-data"},
       });

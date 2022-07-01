@@ -134,7 +134,7 @@ const KelolaAdmin = () => {
                         
                         {admin.map((data, index)=>{
                             return(
-                                <TabelAdmin Number={index +1} Name={data.first_name + " " + data.last_name} hp={data.no_phone} email={data.email} />
+                                <TabelAdmin Number={index +1} Name={data.first_name + " " + data.last_name} hp={data.no_phone} email={data.email} role={data.roles} />
                             )
                         })}
                     </div>

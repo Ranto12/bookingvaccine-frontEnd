@@ -35,7 +35,7 @@ const KelolaPengguna = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await api.get("/users")
+        const response = await api.get("/users/roles/USER")
         // const response = await api.get("/USER")
         setDataPengguna(response.data);
       } catch (err) {
