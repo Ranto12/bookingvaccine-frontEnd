@@ -5,12 +5,12 @@ import DataPopupAdmin from "./DataPopupAdmin";
 import "../../assets/Style/style.css";
 import { BsXCircle } from "react-icons/bs";
 
-export default function PopUpAdmin({ data }) {
+export default function PopUpAdmin({ Number ,Name ,hp ,email }) {
   return (
     <div>
       <div
         className="modal fade "
-        id="exampleModal"
+        id={"exampleModal" + Number}
         tabIndex="-1"
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
@@ -30,22 +30,15 @@ export default function PopUpAdmin({ data }) {
             </div>
             <div className="modal-body">
               <ul>
-                <DataPopupAdmin data={data} />
+                <DataPopupAdmin Number={Number} Name={Name} hp={hp} email={email} />
               </ul>
             </div>
           </div>
         </div>
       </div>
-
-      <IconButton
-        aria-label="Cancel"
-        data-bs-toggle="modal"
-        data-bs-placement="top"
-        title="view"
-        data-bs-target="#exampleModal"
-      >
-        <RiFileSearchFill />
-      </IconButton>
+      <IconButton aria-label="Cancel" data-bs-toggle="modal" data-bs-placement="top" title="view" data-bs-target = {"#exampleModal" + Number}  >
+          <RiFileSearchFill />
+        </IconButton>
     </div>
   );
 }

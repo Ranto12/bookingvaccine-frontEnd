@@ -1,4 +1,3 @@
-import { RepeatOneSharp } from "@mui/icons-material";
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { BsFileEarmarkImage } from "react-icons/bs";
@@ -54,26 +53,6 @@ export default function FormKelolaJadwal({address, maps, category, name, data, k
 
 // funtion
 
-// const handleSubmit =(e) =>{
-//   axios({
-//     method:"POST",
-//     url: "http://35.247.142.238/api/v1/session", 
-//     data: {
-//       start_date: `${startDate}`,
-//       start_time: `${startTime}`,
-//       id_area: data.area_mapped.id_area,
-//       id_vaccine: idVaccine,
-//       id_health_facilities: data.id_health_facilities,
-//       stock: Stock
-//     },
-//   })
-//   .then(res => {
-//     console.log("Succes bro", res.data.message);
-//   })
-//   .catch(err =>{
-//     console.log("Error in request", err);
-//   })
-// }
 const handleSubmit =(e)=>{
   e.preventDefault();
   const formData = new FormData();
@@ -91,6 +70,7 @@ const handleSubmit =(e)=>{
       data: formData,
       headers: { "Content-Type": "multipart/form-data" },
     });
+    console.log("response aman");
   }catch(error){
     console.log(error)
   }

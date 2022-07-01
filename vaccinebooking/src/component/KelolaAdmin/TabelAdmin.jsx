@@ -5,30 +5,24 @@ import { RiPencilFill } from "react-icons/ri";
 import { RiFileSearchFill } from "react-icons/ri";
 import PopUpAdmin from "./PopUpAdmin";
 
-const TabelAdmin = ({ Number, nama, hp, alamat, email, admin }) => {
+const TabelAdmin = ({Number ,Name ,hp ,email}) => {
+  console.log(Number)
   return (
     <div className="d-flex TabelkelolaBerita justify-content-center TableColor-child">
       <div className="col-1 ps-3">{Number}</div>
-      <div className="col-3 ps-2">{nama}</div>
-      <div className="col-2 ps-2">{alamat}</div>
+      <div className="col-3 ps-2">{Name}</div>
+      <div className="col-2 ps-2"></div>
       <div className="col-2 ps-2">{hp}</div>
       <div className="col-3 ps-2">{email}</div>
       <div className="col-1 d-flex justify-content-center">
-        <PopUpAdmin data={admin} />
         <IconButton className="me-2">
           <RiPencilFill
             data-bs-toggle="tooltip"
             data-bs-placement="top"
             title="edit"
-          />
+            />
         </IconButton>
-        <IconButton className="me-2">
-          <RiFileSearchFill
-            data-bs-toggle="tooltip"
-            data-bs-placement="top"
-            title="view"
-          />
-        </IconButton>
+            <PopUpAdmin Number={Number} Name={Name} hp={hp} email={email} />
       </div>
     </div>
   );

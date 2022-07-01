@@ -13,6 +13,7 @@ import ArtikelTerbaru from "./pages/ArtikelTerbaru/ArtikelTerbaru";
 import Overlaybookingvacinne from "./component/Overlay/Overlaybookingvacinne";
 import Contoh from "./component/KelolaPenggunaTable/Contoh";
 import ErrorMessage from "./pages/ErrorMessage/Index.jsx";
+import EditArtikel from "./pages/ArtikelTerbaru/EditArtikel";
 
 function App() {
   return (
@@ -28,12 +29,11 @@ function App() {
       <Route path="/KelolaJadwal" element={<KelolaJadwal />} />
       <Route path="/KelolaAdmin" element={<KelolaAdmin />} />
       <Route path="/ArtikelTerbaru" element={<ArtikelTerbaru />} />
+      <Route path="/EditArtikel" element={<EditArtikel />} />
       <Route path="/AddAdmin" element={<AddAdmin />} />
       <Route path="/popupModal" element={<Overlaybookingvacinne />} />
       <Route path="/contoh" element={<Contoh />} />
       <Route path="/*" element={<ErrorMessage />} />
-
-      {/* <Route path='/login' element={<ViewUser/>}/> */}
     </Routes>
   );
 }

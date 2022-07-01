@@ -18,7 +18,6 @@ const KelolaBerita = () => {
   // initial state and valiables
   const [input, setInput] = useState("");
   const [Artikels, setArtikels] = useState([]);
-  const [Values, setValues] = useState(15);
   const [page, setPage] = useState(0);
   const [size, setSize] = useState(15);
 
@@ -47,7 +46,7 @@ const KelolaBerita = () => {
       } catch (err) {
         if (err.response) {
           //not in the 200 response range
-          console.log(err.response.data);
+          console.log(err.response.data.data);
           console.log(err.response.status);
           console.log(err.response.headers);
         } else {
@@ -57,8 +56,11 @@ const KelolaBerita = () => {
     };
     fetchPosts();
   }, [size])
-  console.log(Artikels, "artikel")
-  // console.log(`news`, Artikels.data.content)
+
+
+  
+  // console.log(Artikels, "artikel")
+  console.log(`news`, Artikels)
 
 
   return (
@@ -80,7 +82,6 @@ const KelolaBerita = () => {
             <div className="col-6 d-flex TotalPengguna ">
               <div>
                 <p className="Fz-16">Total</p>
-                {input}
               </div>
               <div className='ms-2 Select15'>
                 <Select setSize={setSize} />
@@ -142,14 +143,17 @@ const KelolaBerita = () => {
                   return val
                 }
 
-                else if (val?.title_news_vaccine?.toLowerCase().includes(input.toLowerCase())) {
+                else if (val?.title_news_vaccine?.toLowerCase().includes(input.toLowerCase()) || val?.author_news_vaccine?.toLowerCase().includes(input.toLowerCase()) || val?.created_at?.toLowerCase().includes(input.toLowerCase())) {
                   return val
                 }
               }).map((data, index) => {
                 return (
-                  <TabelKelolaBerita key={data.id_news_vaccine} Number={index + 1} title={data.title_news_vaccine} tanggal={data.created_at} author={data.author_news_vaccine} />
+                  <TabelKelolaBerita key={data.id_news_vaccine} id={data.id_news_vaccine} Number={index + 1} title={data.title_news_vaccine} tanggal={data.created_at} author={data.author_news_vaccine} content={data.content_news_vaccine}/>
                 )
               })}
+          </div>
+          <div>
+
           </div>
         </div>
       </div>

@@ -8,7 +8,7 @@ export default function DataPopupAdmin({ data }) {
       <ul>
         <li>
           <h5>Nama Admin</h5>
-          <h6 className="data-popup"> {data.nama}</h6>
+          <h6 className="data-popup"> </h6>
         </li>
         <li>
           <h5>Alamat Lengkap</h5>

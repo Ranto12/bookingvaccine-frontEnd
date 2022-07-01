@@ -11,12 +11,14 @@ import { IoPersonAddSharp } from 'react-icons/io5'
 
 import TabelAdmin from '../../component/KelolaAdmin/TabelAdmin';
 import api from '../../API/data/post'
+import Select from '../../component/PageComponent/Select';
 
 const KelolaAdmin = () => {
     // initial state and valiables
     const [input, setInput] = useState("");
     const [count, setCount] = useState(1);
     const [admin, setAdmin] = useState([]);
+    const [size, setSize] = useState(15);
 
     const onChangeInput = (e) => {
         const input = e.target.value;
@@ -25,7 +27,6 @@ const KelolaAdmin = () => {
 
     const handleSearch = () => {
         setCount(1 + input)
-
     }
 
     useEffect(() => {
@@ -37,8 +38,8 @@ const KelolaAdmin = () => {
     useEffect(() => {
         const fetchPosts = async () => {
             try {
-                const response = await api.get("/session/1")
-                setAdmin(response.data);
+                const response = await api.get("/users/roles/ADMIN")
+                setAdmin(response.data.data);
             } catch (err) {
                 if (err.response) {
                     //not in the 200 response range
@@ -52,7 +53,7 @@ const KelolaAdmin = () => {
         }
         fetchPosts();
     }, [])
-    console.log(admin.data)
+    console.log(admin)
 
     return (
         <div className='Fontcolor-Dasboard'>
@@ -79,23 +80,7 @@ const KelolaAdmin = () => {
                                 <p className='Fz-16'>Total</p>
                             </div>
                             <div className='ms-2 Select15'>
-                                <select name="jumlahArtiker " id="jumlahArtikel Select15" >
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8">8</option>
-                                    <option value="9">9</option>
-                                    <option value="10">10</option>
-                                    <option value="11">11</option>
-                                    <option value="12">12</option>
-                                    <option value="13">13</option>
-                                    <option value="14">14</option>
-                                    <option value="15">15</option>
-                                </select>
+                                <Select setSize={setSize} />
                             </div>
                             <div className='d-flex'>
                                 <div>
@@ -146,18 +131,12 @@ const KelolaAdmin = () => {
 
                     {/* isi tabel */}
                     <div className='TabelAdmin row Border-Color-Box'>
-                        {/* {admin.map((data, index) => {
-                            return (
-                                <TabelAdmin  />
-                                // key={data.id} Number={index + 1} nama={data.nama} alamat={data.alamat} hp={data.noHp} email={data.email}
-                            )
-                        })} */}
-
-                        {/* {admin.data.map((item)=> {
+                        
+                        {admin.map((data, index)=>{
                             return(
-                                {item}
+                                <TabelAdmin Number={index +1} Name={data.first_name + " " + data.last_name} hp={data.no_phone} email={data.email} />
                             )
-                        })} */}
+                        })}
                     </div>
                 </div>
             </div>
