@@ -12,7 +12,7 @@ import AddAdmin from "./pages/KelolaAdmin/AddAdmin";
 import ArtikelTerbaru from "./pages/ArtikelTerbaru/ArtikelTerbaru";
 import Overlaybookingvacinne from "./component/Overlay/Overlaybookingvacinne";
 import Contoh from "./component/KelolaPenggunaTable/Contoh";
-import ErrorMessage from "./pages/ErrorMessage/Index.jsx";
+import ErrorMessage from "./pages/ErrorMessage/Error";
 import EditArtikel from "./pages/ArtikelTerbaru/EditArtikel";
 
 function App() {

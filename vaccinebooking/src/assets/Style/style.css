@@ -219,7 +219,7 @@
   border-radius: 10px;
   margin-top: 13.29px;
 }
- .btn-kelola-jadwal {
+.btn-kelola-jadwal {
   background-color: #7bd9e8;
   border: 0px;
   padding: 7px 34px;
@@ -263,7 +263,7 @@
 }
 
 .FormArtikelTerbaru {
-  background-color: #F7F7F7;
+  background-color: #f7f7f7;
   justify-content: center;
 }
 
@@ -275,7 +275,7 @@
 }
 
 .FormArtikel {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   width: 100vw;
 }
 .head {
@@ -462,7 +462,8 @@
 }
 
 ul > li > h5,
-.data-popup,.title-table-datapopup {
+.data-popup,
+.title-table-datapopup {
   color: #829ccc;
   margin-right: 20px !important;
   margin-top: 20px !important;
@@ -484,28 +485,28 @@ div > ul {
 
 /* popup Admin */
 
-.data-popup-radio{
-  color: #829CCC  ;
+.data-popup-radio {
+  color: #829ccc;
 }
 
-.editpop,.popRadio{
+.editpop,
+.popRadio {
   width: 97%;
 }
 
-.modEdit{
+.modEdit {
   border-radius: 20px !important;
   overflow: hidden !important;
   height: 65% !important;
 }
 
-.modView{
+.modView {
   border-radius: 20px !important;
   overflow: hidden !important;
   height: 83% !important;
 }
 
-
-.Background-White{
+.Background-White {
   background-color: white;
 }
 
@@ -514,34 +515,33 @@ div > ul {
   font-family: Poppins;
   font-size: 96px;
   font-weight: 600;
-  color: #4E7EA7;
+  color: #4e7ea7;
   justify-content: center !important;
   align-items: center !important;
 }
-.titleErrorMessage{
+.titleErrorMessage {
   font-family: Poppins;
   font-size: 32px;
   font-weight: 500;
-  color: #4E7EA7;
+  color: #4e7ea7;
   justify-content: center !important;
   align-items: center !important;
 }
-.ErrMSG{
+.ErrMSG {
   justify-content: center !important;
   align-items: center !important;
 }
-
 
 /* popup booking */
-.title-table-datapopup{
+.title-table-datapopup {
   margin-left: 30px !important;
 }
 
-.table-booking-table{
+.table-booking-table {
   border-color: white;
 }
 
-.table-popup-booking{
+.table-popup-booking {
   background-color: #45c2d6;
   border-radius: 0px;
   height: 60px;
@@ -552,14 +552,27 @@ div > ul {
   justify-content: center;
 }
 
-
 /* news uploaded */
-.image-upload>input{
+.image-upload > input {
   display: none;
   height: 100px;
   width: 100px;
 }
-.image-size-uploadimage{
+.image-size-uploadimage {
   height: 100px !important;
   width: 100px !important;
+}
+
+/* error pages */
+
+.errorPages {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.titleErrorMessage {
+  max-width: 75%;
+  text-align: center;
 }

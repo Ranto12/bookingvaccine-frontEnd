@@ -7,58 +7,84 @@ import OverlayJadwalVaksinasi from "./OverlayJadwalVaksinasi";
 import { useState } from "react";
 import { Identity } from "@mui/base";
 import axios from "axios";
-
+import HapusDialog from "../HapusDialog/HapusDialog";
 
 const TabelVaksinasi = ({ Number, nama, stock, jenis, waktu, key, image }) => {
-    // initial state and variable
-    const id = key;
+  // initial state and variable
+  const id = key;
 
-    const [getData, setData] = useState({
-        nama: "",
-        stock: ""
+  const [getData, setData] = useState({
+    nama: "",
+    stock: "",
+  });
+  const handleClick = (id, nama, stock) => {
+    setData({
+      nama: nama,
+      stock: stock,
     });
-    const handleClick = (id, nama, stock) => {
-        setData({
-            nama: nama,
-            stock: stock
-        })
-        console.log(getData)
-    }
+    console.log(getData);
+  };
 
-    const handleDelete =()=>{
-        axios({
-            method: "DELETE",
-            url: `http://35.247.142.238/api/v1/session/${id}`
-            
-          })
-          .then(res => {
-            console.log("Res", res.data.message);
-          })
-          .catch(err =>{
-            console.log("Error in request", err);
-          })
-    }
+  const handleDelete = () => {
+    setOpen(false);
+    axios({
+      method: "DELETE",
+      url: `http://35.247.142.238/api/v1/session/${id}`,
+    })
+      .then((res) => {
+        console.log("Res", res.data.message);
+      })
+      .catch((err) => {
+        console.log("Error in request", err);
+      });
+  };
 
+  const [open, setOpen] = React.useState(false);
 
-    return (
-        <div className="d-flex TabelkelolaBerita justify-content-center TableColor-child">
-            <div className="col-1 ps-3">{Number}</div>
-            <div className="col-3 ps-2">{nama}</div>
-            <div className="col-2 ps-2">{stock}</div>
-            <div className="col-3 ps-3">{jenis}</div>
-            <div className="col-2 ps-1">{waktu}  WIB - selesai</div>
-            <div className="col-1 d-flex justify-content-center">
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
 
+  const handleClose = () => {
+    setOpen(false);
+  };
 
-                <IconButton aria-label="Cancel" data-bs-toggle="modal" data-bs-placement="top" title="view" data-bs-target="#exampleModal" onClick={() => { handleClick(Number, nama, stock) }}>
-                    <OverlayJadwalVaksinasi data={getData} />
-                </IconButton>
-                <IconButton className="me-2" data-bs-toggle="tooltip" data-bs-placement="top" title="remove">
-                    <MdDelete onClick={handleDelete} />
-                </IconButton>
-            </div>
-        </div>
-    );
+  return (
+    <div className="d-flex TabelkelolaBerita justify-content-center TableColor-child">
+      <div className="col-1 ps-3">{Number}</div>
+      <div className="col-3 ps-2">{nama}</div>
+      <div className="col-2 ps-2">{stock}</div>
+      <div className="col-3 ps-3">{jenis}</div>
+      <div className="col-2 ps-1">{waktu} WIB - selesai</div>
+      <div className="col-1 d-flex justify-content-center">
+        <IconButton
+          aria-label="Cancel"
+          data-bs-toggle="modal"
+          data-bs-placement="top"
+          title="view"
+          data-bs-target="#exampleModal"
+          onClick={() => {
+            handleClick(Number, nama, stock);
+          }}
+        >
+          <OverlayJadwalVaksinasi data={getData} />
+        </IconButton>
+        <IconButton
+          className="me-2"
+          data-bs-toggle="tooltip"
+          data-bs-placement="top"
+          title="remove"
+        >
+          <MdDelete onClick={handleClickOpen} />
+        </IconButton>
+      </div>
+      <HapusDialog
+        open={open}
+        handleClose={handleClose}
+        handleSubmit={handleDelete}
+      ></HapusDialog>
+    </div>
+  );
 };
 
 export default TabelVaksinasi;
