@@ -62,9 +62,9 @@ const handleSubmit =(e)=>{
   formData.append("area_id", data.area_mapped.id_area);
   formData.append("health_facilities_id", data.id_health_facilities);
   formData.append("stock", Stock);
-  formData.append("start_date ", `${startDate}`);
-  formData.append("start_time  ", `${startTime}`);
-  formData.append("file  ", image);
+  formData.append("start_date", `${startDate}`);
+  formData.append("start_time", `${startTime}`);
+  formData.append("file", image);
   try{
     const response = axios({
       method: "post",

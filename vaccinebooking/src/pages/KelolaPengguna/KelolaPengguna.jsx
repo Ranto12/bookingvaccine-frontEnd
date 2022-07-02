@@ -83,7 +83,7 @@ console.log(`dataPengguna`, dataPengguna)
             <div className='row Margin-top-Serch align-items-end d-flex'>
               <div className='col-6 d-flex TotalPengguna'>
                 <div >
-                  <p className='Fz-16'>Total</p>
+                  <p className='Fz-16'>Tampilkan</p>
                 </div>
                 <div className='ms-2 Select15'>
                   <Select onChangeInput={onChangeInput} />
