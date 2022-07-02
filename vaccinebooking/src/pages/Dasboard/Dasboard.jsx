@@ -73,8 +73,8 @@ const Dashboard = () => {
 
           {/* total admin */}
 
-          <div className="row mt-3 ">
-            <div className="col-6">
+          <div className="row row-cols-1 row-cols-lg-2 mt-3 ">
+            <div className="col">
               <div className="Card-TotalAdmin">
                 <div className="">
                   <div className="d-flex align-items-center">
@@ -93,7 +93,7 @@ const Dashboard = () => {
 
             {/* total pengguna */}
 
-            <div className="col-6">
+            <div className="col">
               <div className="Card-TotalAdmin">
                 <div className="">
                   <div className="d-flex align-items-center">
@@ -112,8 +112,8 @@ const Dashboard = () => {
           </div>
 
           {/* fasilitas kesehatan */}
-          <div className="row mt-4 mb-5">
-            <div className="col-6">
+          <div className="row row-cols-1 row-cols-lg-2 mt-4 mb-5">
+            <div className="col">
 
               <div className="Card-TotalAdmin">
                 <div className="">
@@ -125,20 +125,28 @@ const Dashboard = () => {
                   </div>
 
                   <div className="">
-                    <div className="d-flex text-center mt-5 text-light ">
-                        <div className="me-3 card-faskes ">
-                            <h1 className=" fw-bold ">
-                            <LengthRSUD/>
-                            </h1>
-                            <h4 className="pt-2">RSUD</h4>
+                    <div className=" text-center mt-5 text-light ">
+                      <div className="row row-cols-2 ">
+
+                        <div className="col">
+                          <div className=" me-1 card-faskes ">
+                              <h1 className=" fw-bold ">
+                              <LengthRSUD/>
+                              </h1>
+                              <h4 className="pt-2 ">RSUD</h4>
+                          </div>
                         </div>
                         
-                        <div className="ms-1 card-faskes1 ">
-                            <h1 className=" fw-bold ">
-                            <LengthPuskesmas/>
-                            </h1>
-                            <h4 className="pt-2">PUSKESMAS</h4>
+                        <div className="col">
+                          <div className="me-3 card-faskes1 ">
+                              <h1 className=" fw-bold ">
+                              <LengthPuskesmas/>
+                              </h1>
+                              <h4 className="pt-2  ">PUSKESMAS</h4>
+                          </div>
                         </div>
+
+                      </div>
                     </div>
                   </div>
 
@@ -147,7 +155,7 @@ const Dashboard = () => {
             </div>
 
             {/* total kelurahan */}
-            <div className="col-6 ">
+            <div className="col ">
               <div className="Card-TotalAdmin">
                 <div className="">
                   <div className="d-flex align-items-center">
