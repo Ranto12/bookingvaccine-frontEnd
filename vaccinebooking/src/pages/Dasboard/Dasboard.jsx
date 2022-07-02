@@ -129,7 +129,7 @@ const Dashboard = () => {
                       <div className="row row-cols-2 ">
 
                         <div className="col">
-                          <div className=" me-1 card-faskes ">
+                          <div className=" me-5 card-faskes ">
                               <h1 className=" fw-bold ">
                               <LengthRSUD/>
                               </h1>
@@ -138,7 +138,7 @@ const Dashboard = () => {
                         </div>
                         
                         <div className="col">
-                          <div className="me-3 card-faskes1 ">
+                          <div className="me-5 card-faskes1 ">
                               <h1 className=" fw-bold ">
                               <LengthPuskesmas/>
                               </h1>

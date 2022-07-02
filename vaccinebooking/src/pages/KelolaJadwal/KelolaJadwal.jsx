@@ -147,7 +147,22 @@ const KelolaJadwal = () => {
                                     }
                                 }).map((data, index) => {
                                     return (
-                                        <TabelVaksinasi Number={index + 1} key={data.id_session} nama={data.health_facilities_dao_mapped.health_facilities_name} stock={data.stock} jenis={data.vaccine_mapped.vaccine_name} waktu={data.start_time}  image={data.file_name}/>
+                                        <TabelVaksinasi 
+                                        Number={index + 1} 
+                                        key={data.id_session} 
+                                        idSesion={data.id_session} 
+                                        nama={data.health_facilities_dao_mapped.health_facilities_name} 
+                                        stock={data.stock} 
+                                        jenis={data.vaccine_mapped.vaccine_name} 
+                                        waktu={data.start_time}  
+                                        image={data.file_name}
+                                        tanggal={data.start_date}
+                                        id_area={data.area_mapped.id_area}
+                                        id_facility={data.health_facilities_dao_mapped.id_health_facilities}
+                                        Idvaccine={data.vaccine_mapped.id_vaccine}
+                                        namaFaskes={data.health_facilities_dao_mapped.health_facilities_name}
+                                        alamat ={data.health_facilities_dao_mapped.address_health_facilities}
+                                        />
                                     )
                                 })}
                         </div>
