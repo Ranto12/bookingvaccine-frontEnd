@@ -1,12 +1,4 @@
-/* body.active-popUp {
-    overflow-y: hidden;
-}; */
-
 .btn-popUp{
-    /* padding: 10px 20px;
-    display: block;
-    margin: 100px auto 0;
-    font-size: 10px; */
     cursor: pointer;
 };
 
@@ -22,10 +14,8 @@
 
 
 .popUp-content{
-    /* position: absolute; */
     width: 50%;
     background-color: #ffff;
-    /* border: 1px solid; */
     border-radius: 10px;
 }
 .title-PopUp{
