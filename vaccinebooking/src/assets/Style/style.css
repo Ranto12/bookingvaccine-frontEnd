@@ -33,7 +33,7 @@
 }
 
 .Card-TotalAdmin {
-  padding-bottom: 10%;
+  padding-bottom: 5%;
   border-radius: 20px;
   border: solid;
   padding-left: 36.54px;
@@ -48,11 +48,11 @@
 }
 
 .card-faskes {
-  padding: 5% 15%;
+  padding: 20%;
 }
 
 .card-faskes1 {
-  padding: 5% 7%;
+  padding: 20% ;
 }
 
 /* kelola berita */
