@@ -9,7 +9,7 @@ import { Identity } from "@mui/base";
 import axios from "axios";
 
 
-const TabelVaksinasi = ({ Number, nama, stock, jenis, waktu, key }) => {
+const TabelVaksinasi = ({ Number, nama, stock, jenis, waktu, key, image }) => {
     // initial state and variable
     const id = key;
 

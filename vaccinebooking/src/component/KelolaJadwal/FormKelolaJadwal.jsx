@@ -1,7 +1,5 @@
-import { RepeatOneSharp } from "@mui/icons-material";
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-import Moment from 'moment';
 import { BsFileEarmarkImage } from "react-icons/bs";
 
 // api
@@ -14,6 +12,7 @@ export default function FormKelolaJadwal({address, maps, category, name, data, k
   const [startDate, setStartDate] = useState();
   const [startTime, setStartTime] = useState("");
   const [Stock, setStock] = useState(0);
+  const [image, setImage] = useState("");
 
   const chaangeStartDate =(e)=>{
     setStartDate(e.target.value);
@@ -27,7 +26,9 @@ export default function FormKelolaJadwal({address, maps, category, name, data, k
   const onChangeStock =(e)=>{
     setStock(e.target.value);
   }
- 
+ const onChangeImage=(e)=>{
+    setImage(e.target.files[0]);
+ }
 
   // get api jenis vaccine
   // useEffect
@@ -52,26 +53,31 @@ export default function FormKelolaJadwal({address, maps, category, name, data, k
 
 // funtion
 
-const handleSubmit =(e) =>{
-  axios({
-    method:"POST",
-    url: "http://35.247.142.238/api/v1/session",
-    data: {
-      start_date: `${startDate}`,
-      start_time: `${startTime}`,
-      id_area: data.area_mapped.id_area,
-      id_vaccine: idVaccine,
-      id_health_facilities: data.id_health_facilities,
-      stock: Stock
-    },
-  })
-  .then(res => {
-    console.log("Succes bro", res.data.message);
-  })
-  .catch(err =>{
-    console.log("Error in request", err);
-  })
+const handleSubmit =(e)=>{
+  e.preventDefault();
+  const formData = new FormData();
+  formData.append("vaccine_id ", idVaccine);
+  formData.append("area_id", data.area_mapped.id_area);
+  formData.append("health_facilities_id", data.id_health_facilities);
+  formData.append("stock", Stock);
+  formData.append("start_date ", `${startDate}`);
+  formData.append("start_time  ", `${startTime}`);
+  formData.append("file  ", image);
+  try{
+    const response = axios({
+      method: "post",
+      // url: "http://35.247.142.238/api/v1/session",
+      url: "https://bookingvaccine.herokuapp.com:443/api/v1/session",
+      data: formData,
+      headers: { "Content-Type": "multipart/form-data" },
+    });
+    console.log("response aman");
+  }catch(error){
+    console.log(error)
+  }
 }
+// debugger
+console.log(`vaccine= `, idVaccine," area= ", data.area_mapped.id_area, "healt= ", data.id_health_facilities, "stock= ", Stock, "date= ", startDate, "time= ", startTime, "image= ", image  )
 
   return (
     <div className="mb-5 borderInput" style={{ color: " #4E7EA7" }}  >
@@ -133,9 +139,9 @@ const handleSubmit =(e) =>{
             <div className="card img-input">
               <label>
                 <div className="text-center img-card  ">
-                  <BsFileEarmarkImage className="h-50 w-50 " />
+                  <BsFileEarmarkImage className="h-50 w-50 PointerClikCss" />
                 </div>
-                <input type="file" />
+                <input type="file" onChange={onChangeImage} />
               </label>
               <p className="card-text text-center pt-2">
                 Upload Foto Fasilitas Kesehatan Anda Ukuran FOto tidak Lebih dari
