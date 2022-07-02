@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { BsFileEarmarkImage } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
 
 // api
 import api from '../../API/data/post'
@@ -15,6 +16,7 @@ function FormEditJadwal( {namaFaskes, stockVaccine, tanggalVaccine, alamatFacili
   const [Stock, setStock] = useState(stockVaccine);
   const [image, setImage] = useState("");
   const [imagePreview, setImagePreview] = useState("");
+  const navigate = useNavigate();
 
 
   const chaangeStartDate =(e)=>{
@@ -58,13 +60,15 @@ function FormEditJadwal( {namaFaskes, stockVaccine, tanggalVaccine, alamatFacili
 const handleSubmit =(e)=>{
   e.preventDefault();
   const formData = new FormData();
-  formData.append("vaccine_id ", idVaccine);
+  formData.append("vaccine_id", idVaccine);
   formData.append("area_id", idArea);
   formData.append("health_facilities_id", idFacility);
   formData.append("stock", Stock);
-  formData.append("start_date ", `${startDate}`);
-  formData.append("start_time  ", `${startTime}`);
-  formData.append("file  ", image);
+  // formData.append("start_date", startDate);
+  // formData.append("start_time", startTime);
+  formData.append("start_date", `${startDate}`);
+  formData.append("start_time", `${startTime}`);
+  formData.append("file", image);
   try{
     const response = axios({
       method: "put",
@@ -73,11 +77,11 @@ const handleSubmit =(e)=>{
       data: formData,
       headers: { "Content-Type": "multipart/form-data" },
     });
-    console.log("response aman");
-    console.log(response.message);
+    alert("mantul")
   }catch(error){
     console.log(error)
   }
+  navigate("/KelolaJadwal");
 }
 // debug
 // console.log(`vaccine= `, idVaccine," area= ", data.area_mapped.id_area, "healt= ", data.id_health_facilities, "stock= ", Stock, "date= ", startDate, "time= ", startTime, "image= ", image  )
@@ -105,12 +109,12 @@ console.log("data", idArea, idFacility, image, startDate, startTime, Stock, idVa
           <div className="mt-3">
             {vaccine.data && 
             vaccine.data.map((item)=>{
-                console.log("id", item.id_vaccine, Idvaccine )
               return(
                 <label>
                 <input type="radio" key={item.id_vaccine} name="fav_language" className="ms-3"
                 value={item.id_vaccine}
                 checked={idVaccine === item.id_vaccine}
+                // checked={idVaccine}
                 onChange={ChangeidVaccine}
                 />
                 <span className="px-3">{item.vaccine_name} </span>
@@ -192,5 +196,3 @@ console.log("data", idArea, idFacility, image, startDate, startTime, Stock, idVa
   );
 }
 export default FormEditJadwal
-
-

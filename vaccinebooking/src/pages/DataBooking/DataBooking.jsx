@@ -67,7 +67,7 @@ const DataBooking = () => {
           <div className="row d-flex Margin-top-Serch align-items-end">
             <div className="col-6 d-flex " style={{ height: "26px" }}>
               <div>
-                <p className="Fz-16">Total</p>
+                <p className="Fz-16">Tampilkan</p>
               </div>
               <div className="ms-2">
                 <Select setSize={setSize} />

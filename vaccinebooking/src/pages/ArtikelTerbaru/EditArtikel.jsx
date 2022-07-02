@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import {useLocation} from 'react-router-dom'
+import {useLocation, useNavigate} from 'react-router-dom'
 import Sidebar from "../../component/Sidebar/Sidebar";
 // style
 import "./../../assets/Style/style.css";
@@ -17,6 +17,7 @@ const EditArtikel = () => {
   const [body, setBody] = useState(`${location.state.content}`);
   const [image, setImage] = useState("");
   const id = location.state.id;
+  const navigate = useNavigate();
 
   // function 
   // handleChange
@@ -63,6 +64,7 @@ const handleImage=(e)=>{
             console.log(`Error ${err.message}`);
           }
     }
+    navigate("/KelolaBerita")
   }
 
   return (
