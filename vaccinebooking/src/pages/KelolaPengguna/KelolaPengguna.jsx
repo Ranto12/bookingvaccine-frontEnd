@@ -14,8 +14,6 @@ import { AiOutlineSearch } from 'react-icons/ai';
 // Api
 import api from './../../API/data/post'
 
-// Component
-import PopUpPengguna from '../../component/KelolaPenggunaTable/PopUpPengguna';
 
 const KelolaPengguna = () => {
   const [input, setInput] = useState("");
@@ -37,7 +35,8 @@ const KelolaPengguna = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await api.get("/users")
+        const response = await api.get("/users/roles/USER")
+        // const response = await api.get("/USER")
         setDataPengguna(response.data);
       } catch (err) {
         if (err.response) {
@@ -134,7 +133,7 @@ console.log(`dataPengguna`, dataPengguna)
                   if (input == "") {
                     return val
                   }
-                  else if (val.first_name?.toLowerCase().includes(input.toLocaleLowerCase())) {
+                  else if (val.first_name?.toLowerCase().includes(input.toLocaleLowerCase()) || val.no_phone?.toLowerCase().includes(input.toLocaleLowerCase()) || val.username?.toLowerCase().includes(input.toLocaleLowerCase()) ) {
                     return val
                   }
                 }).map((data, index)=>{
@@ -143,8 +142,8 @@ console.log(`dataPengguna`, dataPengguna)
               )
             })}
           </div>
+          {/* pagenation */}
           </div>
-
         </div>
       </div>
     </>

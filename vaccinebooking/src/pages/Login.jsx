@@ -53,7 +53,7 @@ const Login = () => {
 
     if (RegexUsername.test(username) && RegexPassword.test(password)) {
       try {
-        await axios.post("http://34.142.219.145:80/api/v1/auth/login", {
+        await axios.post("http://35.247.142.238/api/v1/auth/login", {
           username: username,
           password: password,
         });

@@ -28,7 +28,7 @@ function OverlayJadwalVaksinasi({ data }) {
             <div
                 className="modal fade "
                 id="exampleModal"
-                tabindex="-1"
+                tabIndex="-1"
                 aria-labelledby="exampleModalLabel"
                 aria-hidden="true"
             >
@@ -39,7 +39,7 @@ function OverlayJadwalVaksinasi({ data }) {
                                 Detail Pengguna
                             </h5>
                             <button type="button"
-                                class="btn-close rounded-circle me-3"
+                                className="btn-close rounded-circle me-3"
                                 data-bs-dismiss="modal"
                                 aria-label="Close"></button>
 

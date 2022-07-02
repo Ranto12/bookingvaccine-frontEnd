@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
+import React from "react";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dasboard/Dasboard";
 import KelolaBerita from "./pages/KelolaBerita/KelolaBerita";
@@ -13,12 +13,14 @@ import ArtikelTerbaru from "./pages/ArtikelTerbaru/ArtikelTerbaru";
 import Overlaybookingvacinne from "./component/Overlay/Overlaybookingvacinne";
 import Contoh from "./component/KelolaPenggunaTable/Contoh";
 import ErrorMessage from "./pages/ErrorMessage/Index.jsx";
+import EditArtikel from "./pages/ArtikelTerbaru/EditArtikel";
 
 function App() {
   return (
     <Routes>
+      <Route path="/" element={<Dashboard />} />
       <Route path="/Dashboard" element={<Dashboard />} />
-      <Route path="/" element={<Login />} />
+      {/* <Route path="/" element={<Login />} /> */}
       <Route path="/KelolaBerita" element={<KelolaBerita />} />
       <Route path="/DataBooking" element={<DataBooking />} />
       <Route path="/KelolaPengguna" element={<KelolaPengguna />} />
@@ -27,12 +29,11 @@ function App() {
       <Route path="/KelolaJadwal" element={<KelolaJadwal />} />
       <Route path="/KelolaAdmin" element={<KelolaAdmin />} />
       <Route path="/ArtikelTerbaru" element={<ArtikelTerbaru />} />
+      <Route path="/EditArtikel" element={<EditArtikel />} />
       <Route path="/AddAdmin" element={<AddAdmin />} />
       <Route path="/popupModal" element={<Overlaybookingvacinne />} />
       <Route path="/contoh" element={<Contoh />} />
-      <Route path="*" element={<ErrorMessage />} />
-
-      {/* <Route path='/login' element={<ViewUser/>}/> */}
+      <Route path="/*" element={<ErrorMessage />} />
     </Routes>
   );
 }
