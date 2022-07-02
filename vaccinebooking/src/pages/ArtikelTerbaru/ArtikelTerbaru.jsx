@@ -60,12 +60,10 @@ const handleImage=(e)=>{
         <div className="col-3">
           <Sidebar />
         </div>
-        <div className="col-9 mt-5">
-          <div className="row">
-            <div className="col-6">
-              <h1 className="header">Tambahkan</h1>
-              <h1 className="title">Berita terbaru</h1>
-            </div>
+        <div className="col-9 mt-5 text-secondary" style={{ color: " #4E7EA7" }}>
+          <div className="title-das ">
+            <h4>Tambahkan</h4>
+            <h1>Berita Terbaru</h1>
           </div>
 
           <div className=" table-header row mt-4 background-color-Table  justify-content-center">
@@ -98,7 +96,7 @@ const handleImage=(e)=>{
                 <input type="file"  style={{ display: "none"}}
                 />
                 <Grid container columnSpacing={{ xs: 2 }}>
-                  <Grid item xs={9}>
+                  <Grid item xs={8}>
                     <Grid container>
                       <Grid container item xs>
                         <h6 style={{ marginTop: "1rem", color: "#4E7EA7" }}>
@@ -113,7 +111,7 @@ const handleImage=(e)=>{
                       required
                     />
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={4}>
                     <div>
                       <h6 style={{marginTop: "1rem",color: "#4E7EA7"}}>
                         Upload Gambar Cover
@@ -121,11 +119,11 @@ const handleImage=(e)=>{
                       {imagePreview === "" ? (
                         <div>
                           <div
-                            style={{width: "75%", height: "20rem", border: "dashed 2px #4E7EA7", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", cursor: "pointer",}}>
-                            <div style={{height: "10rem"}} className="image-upload">
+                            style={{width: "100%", height: "20rem", border: "dashed 2px #4E7EA7", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", cursor: "pointer",}}>
+                            <div style={{height: "50%", paddingTop:"30px", borderRadius:"10px" , backgroundColor:"#D9D9D9"}} className="card">
                               <div className="image-upload">
                                 <label for="file-input">
-                                  <BsFileEarmarkImage className="h-100  w-100  image-size-uploadimage" />
+                                  <BsFileEarmarkImage className=" image-size-uploadimage1" />
                                 </label>
                                 <input id="file-input" type="file" onChange={handleImage} />
                               </div>

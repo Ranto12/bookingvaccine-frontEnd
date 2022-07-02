@@ -23,7 +23,6 @@
 
 .searchbar input:focus {
     outline: none;
-
 }
 
 .searchbar input {
@@ -34,7 +33,6 @@
 
 .svg {
     margin-left: 6px;
-
 }
 
 
@@ -43,8 +41,6 @@
     font-size: 36px;
     font-style: normal;
     color: #AAA9A9;
-
-
 }
 
 .header {
@@ -68,7 +64,6 @@
 
 .button:hover {
     background-color: #C2C2C2;
-    ;
 }
 
 .bsbook {

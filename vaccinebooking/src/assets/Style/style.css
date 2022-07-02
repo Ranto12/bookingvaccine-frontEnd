@@ -48,11 +48,11 @@
 }
 
 .card-faskes {
-  padding: 20%;
+  padding: 9%;
 }
 
 .card-faskes1 {
-  padding: 20% ;
+  padding: 9% ;
 }
 
 /* kelola berita */
@@ -207,6 +207,7 @@
   padding-right: 36px !important;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+  /* padding-bottom: 1% !important; */
 }
 
 /* login */
@@ -219,7 +220,7 @@
   border-radius: 10px;
   margin-top: 13.29px;
 }
- .btn-kelola-jadwal {
+.btn-kelola-jadwal {
   background-color: #7bd9e8;
   border: 0px;
   padding: 7px 34px;
@@ -234,6 +235,7 @@
   border-style: dashed;
   padding: 10%;
   background: none;
+
 }
 
 .img-input > label > input {
@@ -556,10 +558,15 @@ div > ul {
 /* news uploaded */
 .image-upload>input{
   display: none;
-  height: 100px;
-  width: 100px;
+  height: 60%;
+  width: 20%;
+  margin-bottom: 10px;
 }
 .image-size-uploadimage{
-  height: 100px !important;
-  width: 100px !important;
+  height: 40px !important;
+  width: 180px !important;
+}
+.image-size-uploadimage1{
+  height: 56px !important;
+  width: 180px !important;
 }

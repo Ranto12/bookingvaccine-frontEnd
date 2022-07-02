@@ -5,13 +5,14 @@ import { BsFileEarmarkImage } from "react-icons/bs";
 // api
 import api from '../../API/data/post'
 
-export default function FormKelolaJadwal({address, name, data}) {
+              
+function FormEditJadwal( {namaFaskes, stockVaccine, tanggalVaccine, alamatFacility, WaktuVaccine, idFacility, Idvaccine, idSesion, data, idArea}) {
   // state and variables
   const [vaccine, setvaccine] = useState([]);
-  const [idVaccine, setIdvaccine] = useState();
-  const [startDate, setStartDate] = useState();
-  const [startTime, setStartTime] = useState("");
-  const [Stock, setStock] = useState(0);
+  const [idVaccine, setIdvaccine] = useState(Idvaccine);
+  const [startDate, setStartDate] = useState(tanggalVaccine);
+  const [startTime, setStartTime] = useState(WaktuVaccine);
+  const [Stock, setStock] = useState(stockVaccine);
   const [image, setImage] = useState("");
   const [imagePreview, setImagePreview] = useState("");
 
@@ -52,34 +53,37 @@ export default function FormKelolaJadwal({address, name, data}) {
     }
     fetchPosts();
 },[])
-
 // funtion
 
 const handleSubmit =(e)=>{
   e.preventDefault();
   const formData = new FormData();
   formData.append("vaccine_id ", idVaccine);
-  formData.append("area_id", data.area_mapped.id_area);
-  formData.append("health_facilities_id", data.id_health_facilities);
+  formData.append("area_id", idArea);
+  formData.append("health_facilities_id", idFacility);
   formData.append("stock", Stock);
   formData.append("start_date ", `${startDate}`);
   formData.append("start_time  ", `${startTime}`);
   formData.append("file  ", image);
   try{
     const response = axios({
-      method: "post",
-      url: "http://35.247.142.238/api/v1/session",
-      // url: "https://bookingvaccine.herokuapp.com:443/api/v1/session",
+      method: "put",
+      url: `http://35.247.142.238/api/v1/session/${idSesion}`,
+      // url: `https://bookingvaccine.herokuapp.com:443/api/v1/session/${idSesion}`,
       data: formData,
       headers: { "Content-Type": "multipart/form-data" },
     });
     console.log("response aman");
+    console.log(response.message);
   }catch(error){
     console.log(error)
   }
 }
 // debug
 // console.log(`vaccine= `, idVaccine," area= ", data.area_mapped.id_area, "healt= ", data.id_health_facilities, "stock= ", Stock, "date= ", startDate, "time= ", startTime, "image= ", image  )
+// console.log('vacicine', IdVaccine)
+// console.log(`data`, namaFaskes, stockVaccine, tanggalVaccine, alamatFacility, WaktuVaccine, idFacility, Idvaccine, idSesion)
+console.log("data", idArea, idFacility, image, startDate, startTime, Stock, idVaccine, idSesion)
 
   return (
     <div className="mb-5 borderInput" style={{ color: " #4E7EA7" }}  >
@@ -87,13 +91,13 @@ const handleSubmit =(e)=>{
         <div>
           <label className="mt-4 fw-bold ">Nama Fasilitas Kesehatan</label>
         </div>
-        <label className="mt-2 fw-normal ">{name}</label>
+        <label className="mt-2 fw-normal ">{namaFaskes}</label>
       </div>
       <div >
         <div>
           <label className="mt-4 fw-bold ">Alamat Lengkap</label>
         </div>
-        <label className="mt-2 fw-normal ">{address}</label>
+        <label className="mt-2 fw-normal ">{alamatFacility}</label>
       </div>
       <div className="mt-3">
         <div>
@@ -101,11 +105,12 @@ const handleSubmit =(e)=>{
           <div className="mt-3">
             {vaccine.data && 
             vaccine.data.map((item)=>{
-              const id = item.id_vaccine;
+                console.log("id", item.id_vaccine, Idvaccine )
               return(
                 <label>
-                <input type="radio" key={item.id} name="fav_language" className="ms-3"
+                <input type="radio" key={item.id_vaccine} name="fav_language" className="ms-3"
                 value={item.id_vaccine}
+                checked={idVaccine === item.id_vaccine}
                 onChange={ChangeidVaccine}
                 />
                 <span className="px-3">{item.vaccine_name} </span>
@@ -120,7 +125,7 @@ const handleSubmit =(e)=>{
         <div className="mt-3">
           <label className="fw-bold ">Stock</label>
         </div>
-        <input onChange={onChangeStock} type="number" className="mt-2 p-1 rounded-2 input-kel Background-White"/>
+        <input onChange={onChangeStock} type="number" className="mt-2 p-1 rounded-2 input-kel Background-White" value={Stock}/>
         <span className="ms-3">Buah</span>
       </div>
 
@@ -129,11 +134,11 @@ const handleSubmit =(e)=>{
           <label className="fw-bold mb-3"> Sesi </label>
         </div>
         <span className="">
-          <input type="date" className="mt-2 p-1 rounded-2 input-kel Background-White" onChange={chaangeStartDate} />
+          <input type="date" className="mt-2 p-1 rounded-2 input-kel Background-White" onChange={chaangeStartDate} value={startDate}/>
         </span>
         <span className="mx-4">-</span>
         <span> 
-          <input type="time" className="mt-2 p-1 rounded-2 input-kel Background-White" onChange={ChangeStartTime} />
+          <input type="time" className="mt-2 p-1 rounded-2 input-kel Background-White" onChange={ChangeStartTime} value={startTime}/>
         </span>
       </div>
       <div className="row mt-4">
@@ -186,3 +191,6 @@ const handleSubmit =(e)=>{
     </div>
   );
 }
+export default FormEditJadwal
+
+

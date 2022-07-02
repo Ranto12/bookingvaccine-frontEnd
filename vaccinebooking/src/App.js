@@ -14,6 +14,7 @@ import Overlaybookingvacinne from "./component/Overlay/Overlaybookingvacinne";
 import Contoh from "./component/KelolaPenggunaTable/Contoh";
 import ErrorMessage from "./pages/ErrorMessage/Index.jsx";
 import EditArtikel from "./pages/ArtikelTerbaru/EditArtikel";
+import EditJadwalVaksinasi from "./pages/KelolaJadwal/EditJadwal";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
       <Route path="/DataBooking" element={<DataBooking />} />
       <Route path="/KelolaPengguna" element={<KelolaPengguna />} />
       <Route path="/jadwalvaksinasi" element={<JadwalVaksinasi />} />
+      <Route path="/EditJadwalVaksinasi" element={<EditJadwalVaksinasi />} />
       <Route path="/login" element={<Login />} />
       <Route path="/KelolaJadwal" element={<KelolaJadwal />} />
       <Route path="/KelolaAdmin" element={<KelolaAdmin />} />
