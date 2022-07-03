@@ -4,9 +4,14 @@ import { IconButton } from "@mui/material";
 import { RiPencilFill } from "react-icons/ri";
 import { RiFileSearchFill } from "react-icons/ri";
 import PopUpAdmin from "./PopUpAdmin";
+import { useNavigate } from "react-router-dom";
 
 const TabelAdmin = ({Number ,Name ,hp ,email, role}) => {
   // console.log(Number)
+  let navigate = useNavigate();
+  const navigateEditadmin=()=>{
+    navigate('/EditAdmin')
+  }
   return (
     <div className="d-flex TabelkelolaBerita justify-content-center TableColor-child">
       <div className="col-1 ps-3">{Number}</div>
@@ -16,12 +21,8 @@ const TabelAdmin = ({Number ,Name ,hp ,email, role}) => {
       <div className="col-3 ps-2">{email}</div>
       <div className="col-1 d-flex justify-content-center">
         <IconButton className="me-2">
-          <RiPencilFill
-            data-bs-toggle="tooltip"
-            data-bs-placement="top"
-            title="edit"
-            />
-        </IconButton>
+          <RiPencilFill onClick={navigateEditadmin} />
+        </IconButton >
             <PopUpAdmin Number={Number} Name={Name} hp={hp} email={email} role={role}/>
       </div>
     </div>

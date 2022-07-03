@@ -15,6 +15,7 @@ import Contoh from "./component/KelolaPenggunaTable/Contoh";
 import ErrorMessage from "./pages/ErrorMessage/Index.jsx";
 import EditArtikel from "./pages/ArtikelTerbaru/EditArtikel";
 import EditJadwalVaksinasi from "./pages/KelolaJadwal/EditJadwal";
+import EditAdmin from "./pages/KelolaAdmin/EditAdmin";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
       <Route path="/ArtikelTerbaru" element={<ArtikelTerbaru />} />
       <Route path="/EditArtikel" element={<EditArtikel />} />
       <Route path="/AddAdmin" element={<AddAdmin />} />
+      <Route path="/EditAdmin" element={<EditAdmin />} />
       <Route path="/popupModal" element={<Overlaybookingvacinne />} />
       <Route path="/contoh" element={<Contoh />} />
       <Route path="/*" element={<ErrorMessage />} />
