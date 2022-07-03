@@ -4,7 +4,7 @@ import "../../assets/Style/style.css";
 import { useNavigate } from "react-router";
 import Swal from "sweetalert2";
 
-export default function FormKelolaDataAdmin() {
+export default function FormEditDataAdmin() {
    // initial state and variable
    const [namaAdmin, setNamaAdmin] = useState("");
    const [tanggalLahir, setTanggalLahir] = useState("");

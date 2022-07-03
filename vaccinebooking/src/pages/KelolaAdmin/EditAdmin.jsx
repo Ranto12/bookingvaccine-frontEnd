@@ -2,8 +2,7 @@ import Sidebar from "../../component/Sidebar/Sidebar";
 import { Form } from "react-bootstrap";
 import FormKelolaDataAdmin from "../../component/KelolaAdmin/FormKelolaDataAdmin";
 
-export default function AddAdmin() {
- 
+export default function EditAdmin() {
   return (
     <div>
       <div>
@@ -13,7 +12,7 @@ export default function AddAdmin() {
           </div>
           <div className="col-9 mt-5 text-secondary">
             <div>
-              <h4>Tambahkan</h4>
+              <h4>Edit</h4>
               <h1>Admin</h1>
             </div>
 
