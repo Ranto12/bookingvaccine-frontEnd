@@ -3,7 +3,8 @@ import React, { useState, useEffect } from "react";
 import { BsFileEarmarkImage } from "react-icons/bs";
 
 // api
-import api from '../../API/data/post'
+import api from '../../API/data/post';
+import {URL} from '../../API/URL';
 
 export default function FormKelolaJadwal({address, name, data}) {
   // state and variables
@@ -68,7 +69,7 @@ const handleSubmit =(e)=>{
   try{
     const response = axios({
       method: "post",
-      url: "http://35.247.142.238/api/v1/session",
+      url: `${URL}/session`,
       // url: "https://bookingvaccine.herokuapp.com:443/api/v1/session",
       data: formData,
       headers: { "Content-Type": "multipart/form-data" },

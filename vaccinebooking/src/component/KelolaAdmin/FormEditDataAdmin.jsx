@@ -4,17 +4,19 @@ import "../../assets/Style/style.css";
 import { useNavigate } from "react-router";
 import Swal from "sweetalert2";
 
-export default function FormEditDataAdmin() {
+export default function FormEditDataAdmin({id_user, Name, hp, mail, address, birth_date, gender, pw, usernames }) {
    // initial state and variable
-   const [namaAdmin, setNamaAdmin] = useState("");
-   const [tanggalLahir, setTanggalLahir] = useState("");
-   const [jenisKelamin, setJenisKelamin] = useState("Laki-Laki");
-   const [email, setEmail] = useState("");
-   const [password, setpassword] = useState("");
-   const [username, setUsername] = useState("");
-   const [noTlp, setNoTlp]= useState("");
-   const [alamat, setAlamat] = useState("");
+   const [namaAdmin, setNamaAdmin] = useState(Name);
+   const [tanggalLahir, setTanggalLahir] = useState(birth_date);
+   const [jenisKelamin, setJenisKelamin] = useState(gender);
+   const [email, setEmail] = useState(mail);
+   const [password, setpassword] = useState(pw);
+   const [username, setUsername] = useState(usernames);
+   const [noTlp, setNoTlp]= useState(hp);
+   const [alamat, setAlamat] = useState(address);
    const navigate = useNavigate();
+
+
    // funtion
    const handleNamaAdmin=(e)=>{
      setNamaAdmin(e.target.value);
@@ -43,7 +45,7 @@ export default function FormEditDataAdmin() {
 
   const handleSubmit=(e)=>{
     e.preventDefault();
-    axios.post('http://35.247.142.238:80/api/v1/users',{
+    axios.put(`http://35.247.142.238:80/api/v1/users/${id_user}`,{
         address: alamat,
         birth_date: `${tanggalLahir}`,
         email: email,
@@ -57,6 +59,7 @@ export default function FormEditDataAdmin() {
     .then((response) => {
       // console.log(response);
      Swal.fire('Berhasil', 'Data Admin Berhasil Ditambahkan', 'success');
+      navigate('/KelolaAdmin');
     })
     .catch((error) => {
       Swal.fire({
@@ -86,8 +89,8 @@ export default function FormEditDataAdmin() {
             <label >Jenis Kelamin</label>
             {/* <input type="text" className="input-Nama-admin" value={jenisKelamin} onChange={handlejenisKelamin}/> */}
             <select name="jenisKelamin" id="jenisKelamin" className="input-Nama-admin" onChange={handlejenisKelamin}>
-              <option value="Laki-Laki">Laki-Laki</option>
-              <option value="Perempuan">Perempuan</option>
+              <option value="Laki-Laki" selected={jenisKelamin === "Laki-Laki"} >Laki-Laki</option>
+              <option value="Perempuan" selected={jenisKelamin === "Perempuan"} >Perempuan</option>
             </select>
           </div>
         </div>

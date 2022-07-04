@@ -139,10 +139,12 @@ const KelolaJadwal = () => {
                         <div className='TabelkelolaBerita row Border-Color-Box'>
                             {jadwal.data &&
                                 jadwal.data?.filter((val) => {
-                                    if (input == "") {
+                                    if (input === "") {
                                         return val
                                     }
-                                    else if (val.vaccine_mapped.vaccine_name.toLowerCase().includes(input.toLocaleLowerCase()) || val.health_facilities_dao_mapped.health_facilities_name.toLowerCase().includes(input.toLocaleLowerCase()) || val.health_facilities_dao_mapped.health_facilities_name.toLowerCase().includes(input.toLocaleLowerCase()) ) {  
+                                    else if (val.vaccine_mapped.vaccine_name?.toLowerCase().includes(input.toLocaleLowerCase()) || 
+                                            val.health_facilities_dao_mapped.health_facilities_name?.toLowerCase().includes(input.toLocaleLowerCase()) || 
+                                            val.start_time?.toLowerCase().includes(input.toLocaleLowerCase()) ) {  
                                         return val
                                     }
                                 }).map((data, index) => {
@@ -166,9 +168,9 @@ const KelolaJadwal = () => {
                                     )
                                 })}
                         </div>
-                        <div>
+                        {/* <div>
                             <input type="number" value={page} onChange={handlePage} />
-                        </div>
+                        </div> */}
                     </div>
 
                 </div>

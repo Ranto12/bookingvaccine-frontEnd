@@ -132,9 +132,26 @@ const KelolaAdmin = () => {
                     {/* isi tabel */}
                     <div className='TabelAdmin row Border-Color-Box'>
                         
-                        {admin.map((data, index)=>{
+                        { admin && 
+                        admin.filter((val)=>{
+                            if(input === ""){
+                                return val
+                            } else if(val.first_name?.toLowerCase().includes(input.toLocaleLowerCase()) || 
+                                        val.address?.toLowerCase().includes(input.toLocaleLowerCase()) ||
+                                        val.email?.toLowerCase().includes(input.toLocaleLowerCase()) ||
+                                        val.no_phone?.toLowerCase().includes(input.toLocaleLowerCase()) 
+                                        ){
+                                return val
+                            }
+                        }).map((data, index)=>{
                             return(
-                                <TabelAdmin Number={index +1} Name={data.first_name + " " + data.last_name} hp={data.no_phone} email={data.email} role={data.roles} />
+                                <TabelAdmin 
+                                key={data.id_user} id={data.id_user}
+                                Number={index +1} Name={data.first_name} 
+                                hp={data.no_phone} email={data.email} role={data.roles} 
+                                alamat={data.address}  tanggalLahir={data.birth_date}
+                                gender={data.gender} pw={data.password} username={data.username}
+                                />
                             )
                         })}
                     </div>
