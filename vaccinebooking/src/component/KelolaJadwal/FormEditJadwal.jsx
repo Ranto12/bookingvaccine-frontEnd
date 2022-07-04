@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { BsFileEarmarkImage } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
-// import { useEffect } from "react";
+import {URL} from "../../API/URL";
 
 // api
 import api from '../../API/data/post'
@@ -71,7 +71,7 @@ const handleSubmit =(e)=>{
   try{
     const response = axios({
       method: "put",
-      url: `http://35.247.142.238/api/v1/session/${idSesion}`,
+      url: `${URL}/session/${idSesion}`,
       // url: `https://bookingvaccine.herokuapp.com:443/api/v1/session/${idSesion}`,
       data: formData,
       headers: { "Content-Type": "multipart/form-data" },
@@ -87,6 +87,7 @@ const handleSubmit =(e)=>{
 // console.log('vacicine', IdVaccine)
 // console.log(`data`, namaFaskes, stockVaccine, tanggalVaccine, alamatFacility, WaktuVaccine, idFacility, Idvaccine, idSesion)
 console.log("data", idArea, idFacility, image, startDate, startTime, Stock, idVaccinee, idSesion)
+console.log(URL)
 
   return (
     <div className="mb-5 borderInput" style={{ color: " #4E7EA7" }}  >

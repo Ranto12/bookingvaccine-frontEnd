@@ -63,7 +63,7 @@ const KelolaBerita = () => {
   // console.log(Artikels, "artikel")
   console.log(`news`, Artikels)
 
-Aos.init();
+
   return (
     <div className="Fontcolor-Dasboard">
       <div className="row me-5">

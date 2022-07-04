@@ -7,6 +7,9 @@ import { Grid, IconButton } from "@mui/material";
 import {BsFileEarmarkImage} from 'react-icons/bs'
 import axios from "axios";
 
+// api 
+import {URL} from "../../API/URL";
+
 const ArtikelTerbaru = () => {
   // initial state and valiables
   const [input, setInput] = useState("");
@@ -44,7 +47,7 @@ const handleImage=(e)=>{
     try{
       const response = axios({
         method: "post",
-        url: "http://35.247.142.238/api/v1/news",
+        url: `${URL}/news`,
         // url: "https://bookingvaccine.herokuapp.com:443/api/v1/news",
         data: formData,
         headers: { "Content-Type": "multipart/form-data" },

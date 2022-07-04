@@ -7,6 +7,7 @@ import { Grid, IconButton } from "@mui/material";
 
 import {BsFileEarmarkImage} from 'react-icons/bs'
 import axios from "axios";
+import {URL} from "../../API/URL";
 
 const EditArtikel = () => {
     // initial state and valiables
@@ -43,20 +44,17 @@ const handleImage=(e)=>{
     formData.append("authorNewsVaccine", author);
     formData.append("contentNewsVaccine", body);
     formData.append("file", image);
-    // formData.append("id_news_vaccine", 0);
 
     try{
       const response = axios({
         method: "put",
-        url: `http://35.247.142.238/api/v1/news/${id}`,
-        // url: `https://bookingvaccine.herokuapp.com:443/api/v1/news/${id}`,
+        url: `${URL}/news/${id}`,
         data: formData,
         headers: {"Content-Type": "multipart/form-data"},
       });
       alert("berhasil")
     }catch(err){
         if (err.response) {
-            //not in the 200 response range
             console.log(err.response.data.data);
             console.log(err.response.status);
             console.log(err.response.headers);

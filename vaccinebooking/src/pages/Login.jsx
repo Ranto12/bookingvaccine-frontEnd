@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { AiFillEye } from "react-icons/ai";
-import Logo from "../assets/img/logo.png";
 import { IconButton } from "@mui/material";
+import Logo from "../assets/img/logo.png";
 import Swal from "sweetalert2";
+
+// api
+import {URL} from "../API/URL";
 
 const Login = () => {
   let navigate = useNavigate();
@@ -53,7 +56,7 @@ const Login = () => {
 
     if (RegexUsername.test(username) && RegexPassword.test(password)) {
       try {
-        await axios.post("http://35.247.142.238/api/v1/auth/login", {
+        await axios.post(`${URL}/auth/login`, {
           username: username,
           password: password,
         });
