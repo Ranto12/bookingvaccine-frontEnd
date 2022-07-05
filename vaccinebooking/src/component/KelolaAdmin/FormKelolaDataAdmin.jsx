@@ -3,6 +3,9 @@ import axios from 'axios';
 import "../../assets/Style/style.css";
 import { useNavigate } from "react-router";
 import Swal from "sweetalert2";
+import {AiFillEye} from 'react-icons/ai';
+import { IconButton } from "@mui/material"; 
+
 
 export default function FormKelolaDataAdmin() {
    // initial state and variable
@@ -15,6 +18,7 @@ export default function FormKelolaDataAdmin() {
    const [noTlp, setNoTlp]= useState("");
    const [alamat, setAlamat] = useState("");
    const navigate = useNavigate();
+   const [showPassword, setShowPassword] = useState(false);
    // funtion
    const handleNamaAdmin=(e)=>{
      setNamaAdmin(e.target.value);
@@ -101,6 +105,11 @@ export default function FormKelolaDataAdmin() {
             <input required type="password" className="input-Nama-admin" value={password} onChange={handlepassword}/>
           </div>
         </div>
+            <div style={{ marginLeft: "-1vw", marginTop: "-1vh" }}>
+                    <IconButton onClick={() => setShowPassword(!showPassword)}>
+                      <AiFillEye />
+                    </IconButton>
+                  </div>
         <div className="row title-das">
           <div className="col-6 input-nama-admin-font ">
             <label >Alamat Lengkap</label>

@@ -21,6 +21,7 @@ const DataBooking = () => {
   const [filteredData, setFilteredData] = useState(booking);
   const [size, setSize] = useState(15);
   const [page, setPage] = useState(0);
+  const [dataNull, setDataNull] = useState("null");
 
 
   const onChangeInput = (e) => {
@@ -32,7 +33,7 @@ const DataBooking = () => {
     const fetchPosts = async () => {
       try {
         const response = await api.get(`/booking?page=${page}&size=${size}`)
-        setBooking(response.data.data);
+        setBooking(response.data.data.content);
         // console.log(response.data.data)
       } catch (err) {
         if (err.response) {
@@ -47,7 +48,7 @@ const DataBooking = () => {
     };
     fetchPosts();
   }, [size])
-  // console.log(`data booking `, booking.content)
+  console.log(`data booking `, booking)
 
   return (
     <div className="Fontcolor-Dasboard">
@@ -114,8 +115,7 @@ const DataBooking = () => {
 
           {/* isi tabel */}
           <div className="TabelkelolaBerita row Border-Color-Box">
-            {booking &&
-              booking.content?.filter((val) => {
+            {booking?.filter((val) => {
                 if (filteredData == "") {
                   return val
                 }
@@ -123,9 +123,31 @@ const DataBooking = () => {
                   return val
                 }
               }).map((value, index) => {
-                return (
-                  <TabelDataBooking key={value.id_booking} Number={index + 1} nama={value.user_mapped.first_name + " " + value.user_mapped.last_name} nik={value.user_mapped.username} jenisVaccine={value.session_mapped.vaccine_mapped.vaccine_name} />
-                )
+                console.log("jancok", value.user_mapped)
+                if(value.family_mapped !== null){
+                  return(
+                    <TabelDataBooking 
+                    key={value.id_booking} Number={index + 1} 
+                        namaUser={value.user_mapped.first_name + " " + value.user_mapped.last_name}
+                        nikuser={value.user_mapped.username} 
+                        jenisVaccine={value.session_mapped.vaccine_mapped.vaccine_name} 
+                        family={value.family_mapped}
+                        value ={value}
+                        nikFamily={value.family_mapped.nik}
+                        nameFamily={value.family_mapped.full_name} 
+                    />
+                  )
+                }else{
+                  return (
+                    <TabelDataBooking 
+                        key={value.id_booking} Number={index + 1} 
+                        namaUser={value.user_mapped.first_name + " " + value.user_mapped.last_name}
+                        nikuser={value.user_mapped.username} 
+                        jenisVaccine={value.session_mapped.vaccine_mapped.vaccine_name} 
+                        family={value.family_mapped}
+                    />
+                  )
+                }
               })}
           </div>
           <div>

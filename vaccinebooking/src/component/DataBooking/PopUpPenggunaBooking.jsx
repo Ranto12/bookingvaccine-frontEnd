@@ -5,8 +5,8 @@ import '../../assets/Style/style.css'
 import SearchIcon from "@mui/icons-material/Search";
 
 
-export default function PopUpPenggunaBooking({nama, nik, jenisVaccine, Number}) {
-  // console.log(nama, "wow")
+export default function PopUpPenggunaBooking({namaUser, nikuser, jenisVaccine, Number,family, nameFamily, nikFamily }) {
+  // console.log(Number, "wow")
   
   return (
     <div>
@@ -32,10 +32,8 @@ export default function PopUpPenggunaBooking({nama, nik, jenisVaccine, Number}) 
             <div className="modal-body">
                 <ul>
                     <DataPopup  
-                  nama={nama}
-                  nik={nik}
-                  jenisVaccine={jenisVaccine}
-                  Number={Number}
+                  namaUser={namaUser} nikuser={nikuser} jenisVaccine={jenisVaccine}
+                  nameFamily={nameFamily} nikFamily={nikFamily}
                     />
                 </ul>
             </div>

@@ -1,6 +1,8 @@
 import { Route, Routes } from "react-router-dom";
 import React from "react";
 import Login from "./pages/Login";
+// const Login = React.lazy(()=> import('./pages/Login'));
+// const RegisterPage = React.lazy(() => import('./Component/pages/RegisterPage'));
 import Dashboard from "./pages/Dasboard/Dasboard";
 import KelolaBerita from "./pages/KelolaBerita/KelolaBerita";
 import DataBooking from "./pages/DataBooking/DataBooking";
