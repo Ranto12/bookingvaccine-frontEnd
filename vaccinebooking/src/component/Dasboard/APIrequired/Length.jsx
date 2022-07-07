@@ -8,14 +8,15 @@ import api from './../../../API/data/post'
 export const LengthPenguna = () => {
     const [pengguna, setPengguna]= useState([]);
     const Length = pengguna.length;
+    const token = localStorage.getItem('token');
+    console.log(token);
 
     useEffect(()=>{
         // myApi()
         const PenggunaLengthPost = async()=>{
             try{
                 const response = await api.get("/users/roles/USER")
-                setPengguna(response.data.data)
-                ;
+                setPengguna(response.data.data);
             } catch(err){
                 if(err.response){
                     //not in the 200 response range

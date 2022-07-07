@@ -12,49 +12,18 @@ import Sidebar from '../../component/Sidebar/Sidebar';
 import {LengthAdmin, LengthPenguna, LengthKecamatan, LengthRSUD, LengthPuskesmas} from '../../component/Dasboard/APIrequired/Length';
 // api
 import api from '../../API/data/post';
+import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
-  // initial state and valiables
-  const [input, setInput] = useState("");
-  const [count, setCount] = useState(1);
-  const [datadashboard, setDataDasboard] = useState([]);
-  const admin = datadashboard.length;
-  const onChangeInput = (e) => {
-    const input = e.target.value;
-    setInput(input);
-  };
+const navigate = useNavigate();
+const [token, setToken] = useState();
 
-  const handleSearch = () => {
-    setCount(1 + input);
-  };
 
-  useEffect(() => {
-    handleSearch();
-  }, []);
-
-  // api
-  // useEffect
-  useEffect(()=>{
-    // myApi()
-    const PenggunaLengthPost = async()=>{
-        try{
-            const response = await api.get("/users/roles/ADMIN")
-            setDataDasboard(response.data.data)
-        } catch(err){
-            if(err.response){
-                //not in the 200 response range
-                console.log(err.response.data)
-                console.log(err.response.status)
-                console.log(err.response.headers)
-            } else{
-                console.log(`Error ${err.message}`)
-            }
-        }
-    }
-    PenggunaLengthPost();
-},[])
-
-// console.log("datadashboard", datadashboard.length)
+const refreshToken = async () => { 
+  const token = await api.getToken();
+  setToken(token);
+}
+console.log("Token", token);
 
   return (
     <div>

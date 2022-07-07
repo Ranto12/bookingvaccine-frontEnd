@@ -6,14 +6,19 @@ import { IconButton } from "@mui/material";
 import Logo from "../assets/img/logo.png";
 import Swal from "sweetalert2";
 
+
 // api
 import {URL} from "../API/URL";
+import { useEffect } from "react";
+import api from '../API/data/post';
 
 const Login = () => {
   let navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [msg, setMsg] = useState("");
+
+  const [token, setToken] = useState();
 
   // showPassword
   const [showPassword, setShowPassword] = useState(false);
@@ -24,8 +29,7 @@ const Login = () => {
 
   // regex
   const RegexUsername = /^[a-zA-Z0-9]+([._]?[a-zA-Z0-9]+)*$/;
-  const RegexPassword =
-    /(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"/;
+  const RegexPassword =/^[a-zA-Z0-9]+([._]?[a-zA-Z0-9]+)*$/;
 
   // funtion
   // -onchange
@@ -59,8 +63,16 @@ const Login = () => {
         await axios.post(`${URL}/auth/login`, {
           username: username,
           password: password,
-        });
-        navigate.push("/dasboard");
+        }).then(
+          res => {
+            if (res.data !== null) {
+              console.log(res.data);
+              window.localStorage.setItem("token", res.data.data.token);
+              setToken(res.data.data.token);
+            }
+          }
+        )
+        navigate("/Dashboard");
       } catch (error) {
         if (error.response) {
           setMsg(error.response.data.msg);
@@ -68,6 +80,12 @@ const Login = () => {
       }
     }
   };
+
+  // const user = window.localStorage.getItem("token");
+  // console.log(user, "user")
+
+// console.log('Token', token)
+
   return (
     <>
       <div className="container">
