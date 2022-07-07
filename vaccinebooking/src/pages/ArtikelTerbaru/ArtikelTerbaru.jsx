@@ -9,6 +9,7 @@ import axios from "axios";
 
 // api 
 import {URL} from "../../API/URL";
+import { useNavigate } from "react-router-dom";
 
 const ArtikelTerbaru = () => {
   // initial state and valiables
@@ -19,7 +20,7 @@ const ArtikelTerbaru = () => {
   const [author, setAuthor] = useState("");
   const [body, setBody] = useState("");
   const [image, setImage] = useState("");
-
+  const navigate = useNavigate
   // function 
   // handleChange
   const handleName =(e)=>{
@@ -50,8 +51,12 @@ const handleImage=(e)=>{
         url: `${URL}/news`,
         // url: "https://bookingvaccine.herokuapp.com:443/api/v1/news",
         data: formData,
-        headers: { "Content-Type": "multipart/form-data" },
+        headers: { 
+          'Content-Type': 'application/json',
+         Authorization: `Bearer ${localStorage.getItem('token')}`,
+     }
       });
+      navigate("/KelolaBerita")
     }catch(error){
       console.log(error)
     }
