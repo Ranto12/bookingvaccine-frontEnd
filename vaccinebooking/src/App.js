@@ -20,7 +20,6 @@ import EditJadwalVaksinasi from "./pages/KelolaJadwal/EditJadwal";
 import EditAdmin from "./pages/KelolaAdmin/EditAdmin";
 import {PrivateRoute, PrivateRouteLogRes} from './component/PrivateRoute/PrivateRoute';
 import CekinAPI from "./component/Dasboard/CekinAPI";
-import Error from "./pages/ErrorMessage/Error";
 
 function App() {
   return (
@@ -46,7 +45,7 @@ function App() {
       <Route path="/EditAdmin" element={<EditAdmin />} />
       <Route path="/popupModal" element={<Overlaybookingvacinne />} />
       <Route path="/contoh" element={<Contoh />} />
-      <Route path="/*" element={<Error />} />
+      <Route path="/*" element={<ErrorMessage />} />
       </Route>
     </Routes>
   );
