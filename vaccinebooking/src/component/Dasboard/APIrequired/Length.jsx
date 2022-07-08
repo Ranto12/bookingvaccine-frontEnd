@@ -33,7 +33,7 @@ export const LengthPenguna = () => {
             }
         }
         PenggunaLengthPost();
-    },[])
+    },[Length])
   return (
     <div>
         {Length}
