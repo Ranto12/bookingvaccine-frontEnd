@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { AiFillEye } from "react-icons/ai";
 import { IconButton } from "@mui/material";
 import Logo from "../assets/img/logo.png";
 import Swal from "sweetalert2";
+import validator from 'validator';
 
 
 // api
@@ -15,6 +16,7 @@ const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [msg, setMsg] = useState("");
+  
 
   const [token, setToken] = useState();
 
@@ -67,17 +69,32 @@ const Login = () => {
               console.log(res.data);
               window.localStorage.setItem("token", res.data.data.token);
               setToken(res.data.data.token);
+              Swal.fire('Berhasil!', 'Anda Telah Berhasil Login!', 'success');
+              navigate("/Dashboard");
+            } else if (res.data === null) {
+              Swal.fire({
+                title: 'Gagal!',
+                text: 'Login Gagal!',
+                icon: 'error',
+                confirmButtonText: 'ya, saya mencoba kembali',
+              });
             }
           }
         )
-        navigate("/Dashboard");
       } catch (error) {
-        if (error.response) {
-          setMsg(error.response.data.msg);
+        console.log("error", error);
+        if(error.response.status === 401){
+          Swal.fire({
+            title: 'Gagal!',
+            text: 'Login Gagal!',
+            icon: 'error',
+            confirmButtonText: 'ya, saya mencoba kembali',
+          });
         }
       }
     }
   };
+  // console.log(msg ,"msg");
 
   return (
     <>
