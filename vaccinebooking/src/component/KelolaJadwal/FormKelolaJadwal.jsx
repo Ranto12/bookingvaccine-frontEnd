@@ -3,9 +3,10 @@ import React, { useState, useEffect } from "react";
 import { BsFileEarmarkImage } from "react-icons/bs";
 
 // api
-import api from '../../API/data/post'
+import api from '../../API/data/post';
+import {URL} from '../../API/URL';
 
-export default function FormKelolaJadwal({address, maps, category, name, data, key}) {
+export default function FormKelolaJadwal({address, name, data}) {
   // state and variables
   const [vaccine, setvaccine] = useState([]);
   const [idVaccine, setIdvaccine] = useState();
@@ -13,6 +14,8 @@ export default function FormKelolaJadwal({address, maps, category, name, data, k
   const [startTime, setStartTime] = useState("");
   const [Stock, setStock] = useState(0);
   const [image, setImage] = useState("");
+  const [imagePreview, setImagePreview] = useState("");
+
 
   const chaangeStartDate =(e)=>{
     setStartDate(e.target.value);
@@ -35,7 +38,11 @@ export default function FormKelolaJadwal({address, maps, category, name, data, k
   useEffect(()=>{
     const fetchPosts = async()=>{
         try{
-            const response = await api.get("/vaccine")
+            const response = await api.get("/vaccine", {
+              headers:{
+                  'Authorization': `Bearer ${localStorage.getItem('token')}`
+              }
+          })
             setvaccine(response.data);
         } catch(err){
             if(err.response){
@@ -60,24 +67,26 @@ const handleSubmit =(e)=>{
   formData.append("area_id", data.area_mapped.id_area);
   formData.append("health_facilities_id", data.id_health_facilities);
   formData.append("stock", Stock);
-  formData.append("start_date ", `${startDate}`);
-  formData.append("start_time  ", `${startTime}`);
-  formData.append("file  ", image);
+  formData.append("start_date", `${startDate}`);
+  formData.append("start_time", `${startTime}`);
+  formData.append("file", image);
   try{
     const response = axios({
       method: "post",
-      // url: "http://35.247.142.238/api/v1/session",
-      url: "https://bookingvaccine.herokuapp.com:443/api/v1/session",
+      url: `${URL}/session`,
+      // url: "https://bookingvaccine.herokuapp.com:443/api/v1/session",
       data: formData,
-      headers: { "Content-Type": "multipart/form-data" },
+      headers: { "Content-Type": "multipart/form-data",
+                  "Authorization": `Bearer ${localStorage.getItem('token')}`
+                },
     });
     console.log("response aman");
   }catch(error){
     console.log(error)
   }
 }
-// debugger
-console.log(`vaccine= `, idVaccine," area= ", data.area_mapped.id_area, "healt= ", data.id_health_facilities, "stock= ", Stock, "date= ", startDate, "time= ", startTime, "image= ", image  )
+// debug
+// console.log(`vaccine= `, idVaccine," area= ", data.area_mapped.id_area, "healt= ", data.id_health_facilities, "stock= ", Stock, "date= ", startDate, "time= ", startTime, "image= ", image  )
 
   return (
     <div className="mb-5 borderInput" style={{ color: " #4E7EA7" }}  >
@@ -85,12 +94,13 @@ console.log(`vaccine= `, idVaccine," area= ", data.area_mapped.id_area, "healt= 
         <div>
           <label className="mt-4 fw-bold ">Nama Fasilitas Kesehatan</label>
         </div>
-        <input type="text" className="w-100 bg-light input-kelola mt-2 p-1 rounded-2" style={{ border: "1px solid  #D9D9D9" }} value={name}/>
+        <label className="mt-2 fw-normal ">{name}</label>
       </div>
-      <div className="mt-3 ">
-        <span>
-          <label for="categoty" >{category}</label>
-        </span>
+      <div >
+        <div>
+          <label className="mt-4 fw-bold ">Alamat Lengkap</label>
+        </div>
+        <label className="mt-2 fw-normal ">{address}</label>
       </div>
       <div className="mt-3">
         <div>
@@ -134,33 +144,49 @@ console.log(`vaccine= `, idVaccine," area= ", data.area_mapped.id_area, "healt= 
         </span>
       </div>
       <div className="row mt-4">
-        <div className="col-4">
+        <div className="col-8">
           <h5> Upload Gambar </h5>
-            <div className="card img-input">
-              <label>
-                <div className="text-center img-card  ">
-                  <BsFileEarmarkImage className="h-50 w-50 PointerClikCss" />
-                </div>
-                <input type="file" onChange={onChangeImage} />
-              </label>
-              <p className="card-text text-center pt-2">
-                Upload Foto Fasilitas Kesehatan Anda Ukuran FOto tidak Lebih dari
-                10 mb
-              </p>
-            </div>
+            {imagePreview === "" ? (
+                        <div>
+                          <div
+                            style={{width: "100%", height: "15rem", border: "dashed 2px #4E7EA7", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", cursor: "pointer" , marginBottom:"2%"}} >
+                            <div style={{height: "50% ", paddingBottom:"1px", paddingTop:"25px", borderRadius:"10px", backgroundColor:"#D9D9D9"}} className="image-upload card">
+                              <div className="image-upload">
+                                <label for="file-input">
+                                  <BsFileEarmarkImage className=" image-size-uploadimage" />
+                                </label>
+                                <input id="file-input" type="file" onChange={onChangeImage} />
+                              </div>
+                            </div>
+                            <div
+                              style={{textAlign: "center", fontSize: "10px", marginTop: "1rem", color: "#4E7EA7"}}>
+                              <p>
+                                Upload Foto Fasilitas Kesehatan Anda <br />{" "}
+                                Ukuran foto tidak lebih dari 10mb{" "}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      ) : (
+                        <div
+                          style={{
+                            width: "100%",
+                            height: "20rem",
+                            display: "flex",
+                            flexDirection: "column",
+                            justifyContent: "center",
+                            alignItems: "center",
+                            cursor: "pointer",
+                          }}
+                        >
+                          <img src={imagePreview} height="100%" />
+                        </div>
+                      )}
         </div>
-          <div className="col-8">
+          <div className="col-4 text-center align-self-end">
             <div>
-              <h5> Alamat Lengkap </h5>
-              <textarea className="p-3 w-100 rounded-3 input-kel-area" disabled>{address}</textarea>
-            </div>
-            <div>
-              <h6> Link Google Maps </h6>
-              <textarea className="p-3 w-100 rounded-3 input-kel-area" disabled>{maps}</textarea>
-            </div>
-            <div className="text-end mt-3 mb-5">
-                <button className="btn-kelola-jadwal1 me-3  rounded-3 mb-5">Batal</button>
-                <button className="btn-kelola-jadwal ms-3  rounded-3 mb-5" onClick={handleSubmit}>Simpan</button>
+                <button className="btn-kelola-jadwal1 me-3  rounded-3 mb-5  ">Batal</button>
+                <button className="btn-kelola-jadwal ms-3  rounded-3 mb-5  " onClick={handleSubmit}>Simpan</button>
             </div>
           </div>
       </div>

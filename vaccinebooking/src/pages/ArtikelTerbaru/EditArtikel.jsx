@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import {useLocation} from 'react-router-dom'
+import {useLocation, useNavigate} from 'react-router-dom'
 import Sidebar from "../../component/Sidebar/Sidebar";
 // style
 import "./../../assets/Style/style.css";
@@ -7,6 +7,7 @@ import { Grid, IconButton } from "@mui/material";
 
 import {BsFileEarmarkImage} from 'react-icons/bs'
 import axios from "axios";
+import {URL} from "../../API/URL";
 
 const EditArtikel = () => {
     // initial state and valiables
@@ -17,6 +18,7 @@ const EditArtikel = () => {
   const [body, setBody] = useState(`${location.state.content}`);
   const [image, setImage] = useState("");
   const id = location.state.id;
+  const navigate = useNavigate();
 
   // function 
   // handleChange
@@ -42,20 +44,18 @@ const handleImage=(e)=>{
     formData.append("authorNewsVaccine", author);
     formData.append("contentNewsVaccine", body);
     formData.append("file", image);
-    // formData.append("id_news_vaccine", 0);
 
     try{
       const response = axios({
         method: "put",
-        url: `http://35.247.142.238/api/v1/news/${id}`,
-        // url: `https://bookingvaccine.herokuapp.com:443/api/v1/news/${id}`,
+        url: `${URL}/news/${id}`,
         data: formData,
-        headers: {"Content-Type": "multipart/form-data"},
+        headers: {"Content-Type": "multipart/form-data",
+        Authorization: `Bearer ${localStorage.getItem('token')}`},
       });
       alert("berhasil")
     }catch(err){
         if (err.response) {
-            //not in the 200 response range
             console.log(err.response.data.data);
             console.log(err.response.status);
             console.log(err.response.headers);
@@ -63,6 +63,7 @@ const handleImage=(e)=>{
             console.log(`Error ${err.message}`);
           }
     }
+    navigate("/KelolaBerita")
   }
 
   return (
@@ -71,12 +72,10 @@ const handleImage=(e)=>{
         <div className="col-3">
           <Sidebar />
         </div>
-        <div className="col-9 mt-5">
-          <div className="row">
-            <div className="col-6">
-              <h1 className="header">Tambahkan</h1>
-              <h1 className="title">Berita terbaru</h1>
-            </div>
+        <div className="col-9 mt-5 text-secondary" style={{ color: " #4E7EA7" }}>
+          <div className="title-das ">
+            <h4>Edit</h4>
+            <h1>Berita Terbaru</h1>
           </div>
 
           <div className=" table-header row mt-4 background-color-Table  justify-content-center">
@@ -109,7 +108,7 @@ const handleImage=(e)=>{
                 <input type="file"  style={{ display: "none"}}
                 />
                 <Grid container columnSpacing={{ xs: 2 }}>
-                  <Grid item xs={9}>
+                  <Grid item xs={8}>
                     <Grid container>
                       <Grid container item xs>
                         <h6 style={{ marginTop: "1rem", color: "#4E7EA7" }}>
@@ -124,7 +123,7 @@ const handleImage=(e)=>{
                       required
                     />
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={4}>
                     <div>
                       <h6 style={{marginTop: "1rem",color: "#4E7EA7"}}>
                         Upload Gambar Cover
@@ -132,11 +131,11 @@ const handleImage=(e)=>{
                       {imagePreview === "" ? (
                         <div>
                           <div
-                            style={{width: "75%", height: "20rem", border: "dashed 2px #4E7EA7", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", cursor: "pointer",}}>
-                            <div style={{height: "10rem"}} className="image-upload">
+                            style={{width: "100%", height: "20rem", border: "dashed 2px #4E7EA7", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", cursor: "pointer",}}>
+                            <div style={{height: "50%", paddingTop:"30px", borderRadius:"10px" , backgroundColor:"#D9D9D9"}} className="card">
                               <div className="image-upload">
                                 <label for="file-input">
-                                  <BsFileEarmarkImage className="h-100  w-100  image-size-uploadimage" />
+                                  <BsFileEarmarkImage className=" image-size-uploadimage1" />
                                 </label>
                                 <input id="file-input" type="file" onChange={handleImage} />
                               </div>

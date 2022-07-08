@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { AiFillEye } from "react-icons/ai";
-import Logo from "../assets/img/logo.png";
 import { IconButton } from "@mui/material";
+import Logo from "../assets/img/logo.png";
 import Swal from "sweetalert2";
-import "../assets/Style/Login.css"
 
+// api
+import {URL} from "../API/URL";
 const Login = () => {
+  // initial state and variable
   let navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -21,10 +23,10 @@ const Login = () => {
   const [errorPassword, setErrorPassword] = useState(false);
 
   // regex
-  const RegexUsername = /^[a-zA-Z0-9]+([._]?[a-zA-Z0-9]+)*$/;
-  const RegexPassword =
-    /(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"/;
-
+  const RegexUsername = /^[a-zA-Z0-9]+([._]?[a-zA-Z0-9]+)*$/; 
+  const RegexPassword =/^[a-zA-Z0-9]+([._]?[a-zA-Z0-9]+)*$/;
+  // ^[a-zA-Z0-9]+([._]?[a-zA-Z0-9]+)*$
+  // "^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
   // funtion
   // -onchange
   const onChangeUsername = (e) => {
@@ -54,18 +56,41 @@ const Login = () => {
 
     if (RegexUsername.test(username) && RegexPassword.test(password)) {
       try {
-        await axios.post("http://35.247.142.238/api/v1/auth/login", {
+        await axios.post(`${URL}/auth/login`, {
           username: username,
           password: password,
-        });
-        navigate.push("/dasboard");
+        }).then(
+          res => {
+            if (res.data !== null) {
+              console.log(res.data);
+              window.localStorage.setItem("token", res.data.data.token);
+              Swal.fire('Berhasil!', 'Anda Telah Berhasil Login!', 'success');
+              navigate("/Dashboard");
+            } else if (res.data === null) {
+              Swal.fire({
+                title: 'Gagal!',
+                text: 'Login Gagal!',
+                icon: 'error',
+                confirmButtonText: 'ya, saya mencoba kembali',
+              });
+            }
+          }
+        )
       } catch (error) {
-        if (error.response) {
-          setMsg(error.response.data.msg);
+        console.log("error", error);
+        if(error.response.status === 401){
+          Swal.fire({
+            title: 'Gagal!',
+            text: 'Login Gagal!',
+            icon: 'error',
+            confirmButtonText: 'ya, saya mencoba kembali',
+          });
         }
       }
     }
   };
+  // console.log(msg ,"msg");
+
   return (
     <>
       <div className="container">
@@ -76,13 +101,13 @@ const Login = () => {
             </div>
 
             <div className="card card-Login tabel  ">
-              <div className="t-h2">
+              <div className="t-h2  ">
                 <h2>Mohon isi dengan detail di bawah </h2>
                 <h2>dengan akun admin anda</h2>
               </div>
 
               <div className="input-user  ">
-                <p>Username</p>
+              <p>Username</p>
                 <div style={{ height: "63px", border: "0px solid" }}>
                   <input
                     required

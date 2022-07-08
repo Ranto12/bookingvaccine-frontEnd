@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function DataPopupAdmin({ Name ,hp ,email , role }) {
+export default function DataPopupAdmin({ Name ,hp ,email , role , alamat}) {
   return (
     <div>
       <ul>
@@ -10,7 +10,7 @@ export default function DataPopupAdmin({ Name ,hp ,email , role }) {
         </li>
         <li>
           <h5>Alamat Lengkap</h5>
-          <h6 className="data-popup"> </h6>
+          <h6 className="data-popup">{alamat}</h6>
         </li>
         <li>
           <h5>Kategori</h5>
