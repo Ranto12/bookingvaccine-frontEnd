@@ -35,8 +35,11 @@ const KelolaPengguna = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await api.get("/users/roles/USER")
-        // const response = await api.get("/USER")
+        const response = await api.get("/users/roles/USER", {
+          headers:{
+              'Authorization': `Bearer ${localStorage.getItem('token')}`
+          }}
+        )
         setDataPengguna(response.data);
       } catch (err) {
         if (err.response) {
@@ -52,7 +55,7 @@ const KelolaPengguna = () => {
     fetchPosts();
 },[])
 // // console.log(`length, ${dataPengguna.length}`)
-console.log(`dataPengguna`, dataPengguna)
+// console.log(`dataPengguna`, dataPengguna)
 
 
   return (
@@ -83,7 +86,7 @@ console.log(`dataPengguna`, dataPengguna)
             <div className='row Margin-top-Serch align-items-end d-flex'>
               <div className='col-6 d-flex TotalPengguna'>
                 <div >
-                  <p className='Fz-16'>Total</p>
+                  <p className='Fz-16'>Tampilkan</p>
                 </div>
                 <div className='ms-2 Select15'>
                   <Select onChangeInput={onChangeInput} />

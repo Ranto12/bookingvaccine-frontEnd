@@ -81,7 +81,7 @@ const KelolaBerita = () => {
           <div className="row d-flex Margin-top-Serch align-items-end">
             <div className="col-6 d-flex TotalPengguna ">
               <div>
-                <p className="Fz-16">Total</p>
+                <p className="Fz-16">Tampilkan</p>
               </div>
               <div className='ms-2 Select15'>
                 <Select setSize={setSize} />

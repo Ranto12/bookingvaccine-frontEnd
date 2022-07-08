@@ -33,7 +33,7 @@
 }
 
 .Card-TotalAdmin {
-  padding-bottom: 10%;
+  padding-bottom: 5%;
   border-radius: 20px;
   border: solid;
   padding-left: 36.54px;
@@ -48,11 +48,11 @@
 }
 
 .card-faskes {
-  padding: 5% 15%;
+  padding: 9%;
 }
 
 .card-faskes1 {
-  padding: 5% 7%;
+  padding: 9% ;
 }
 
 /* kelola berita */
@@ -207,6 +207,7 @@
   padding-right: 36px !important;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+  /* padding-bottom: 1% !important; */
 }
 
 /* login */
@@ -219,7 +220,7 @@
   border-radius: 10px;
   margin-top: 13.29px;
 }
- .btn-kelola-jadwal {
+.btn-kelola-jadwal {
   background-color: #7bd9e8;
   border: 0px;
   padding: 7px 34px;
@@ -234,6 +235,7 @@
   border-style: dashed;
   padding: 10%;
   background: none;
+
 }
 
 .img-input > label > input {
@@ -399,7 +401,7 @@
 }
 
 .lupa-pass p {
-  width: 81px;
+  width: auto;
   height: 15px;
   font-family: "Poppins";
   font-style: normal;
@@ -409,6 +411,7 @@
   margin: 0px !important;
   justify-content: end;
   display: flex;
+  cursor: pointer;
 }
 
 /* tabel  */
@@ -510,25 +513,16 @@ div > ul {
 }
 
 /* error message */
-.ErrorMessage {
-  font-family: Poppins;
-  font-size: 96px;
-  font-weight: 600;
-  color: #4E7EA7;
-  justify-content: center !important;
-  align-items: center !important;
+.errorPages {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
-.titleErrorMessage{
-  font-family: Poppins;
-  font-size: 32px;
-  font-weight: 500;
-  color: #4E7EA7;
-  justify-content: center !important;
-  align-items: center !important;
-}
-.ErrMSG{
-  justify-content: center !important;
-  align-items: center !important;
+
+.titleErrorMessage {
+  max-width: 75%;
+  text-align: center;
 }
 
 
@@ -556,10 +550,47 @@ div > ul {
 /* news uploaded */
 .image-upload>input{
   display: none;
-  height: 100px;
-  width: 100px;
+  height: 60%;
+  width: 20%;
+  margin-bottom: 10px;
 }
 .image-size-uploadimage{
-  height: 100px !important;
-  width: 100px !important;
+  height: 40px !important;
+  width: 180px !important;
+}
+.image-size-uploadimage1{
+  height: 56px !important;
+  width: 180px !important;
+}
+
+/* Kelola admin edit and add  */
+.input-Nama-admin{
+  width: 100%;
+  margin-bottom: 3%;
+  margin-top: 2%;
+  border: 1px solid #D9D9D9;
+  max-height:100%;
+  min-height:40px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  border-style: none;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+.input-nama-admin-font{
+  font-family: 'Poppins';
+  font-weight: 600;
+  font-size: 14px;
+  font-style: normal;
+}
+.input-alamat-admin{
+  height: 80%;
+  resize: none;
+  border: 1px solid #D9D9D9;
+  margin-top: 2%;
+  padding: 10px;
+}
+
+.Font-white{
+  color: white;
 }

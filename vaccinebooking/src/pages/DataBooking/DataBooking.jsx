@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Sidebar from "../../component/Sidebar/Sidebar";
-import { Link } from "react-router-dom";
 
 // style
 import "./../../assets/Style/style.css";
@@ -31,12 +30,14 @@ const DataBooking = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await api.get(`/booking?page=${page}&size=${size}`)
-        setBooking(response.data.data);
-        // console.log(response.data.data)
+        const response = await api.get(`/booking?page=${page}&size=${size}`, {
+          headers:{
+              'Authorization': `Bearer ${localStorage.getItem('token')}`
+          }}
+        )
+        setBooking(response.data.data.content);
       } catch (err) {
         if (err.response) {
-          //not in the 200 response range
           console.log(err.response.data);
           console.log(err.response.status);
           console.log(err.response.headers);
@@ -47,7 +48,6 @@ const DataBooking = () => {
     };
     fetchPosts();
   }, [size])
-  // console.log(`data booking `, booking.content)
 
   return (
     <div className="Fontcolor-Dasboard">
@@ -67,7 +67,7 @@ const DataBooking = () => {
           <div className="row d-flex Margin-top-Serch align-items-end">
             <div className="col-6 d-flex " style={{ height: "26px" }}>
               <div>
-                <p className="Fz-16">Total</p>
+                <p className="Fz-16">Tampilkan</p>
               </div>
               <div className="ms-2">
                 <Select setSize={setSize} />
@@ -114,8 +114,7 @@ const DataBooking = () => {
 
           {/* isi tabel */}
           <div className="TabelkelolaBerita row Border-Color-Box">
-            {booking &&
-              booking.content?.filter((val) => {
+            {booking?.filter((val) => {
                 if (filteredData == "") {
                   return val
                 }
@@ -123,9 +122,31 @@ const DataBooking = () => {
                   return val
                 }
               }).map((value, index) => {
-                return (
-                  <TabelDataBooking key={value.id_booking} Number={index + 1} nama={value.user_mapped.first_name + " " + value.user_mapped.last_name} nik={value.user_mapped.username} jenisVaccine={value.session_mapped.vaccine_mapped.vaccine_name} />
-                )
+                console.log("jancok", value.user_mapped)
+                if(value.family_mapped !== null){
+                  return(
+                    <TabelDataBooking 
+                    key={value.id_booking} Number={index + 1} 
+                        namaUser={value.user_mapped.first_name + " " + value.user_mapped.last_name}
+                        nikuser={value.user_mapped.username} 
+                        jenisVaccine={value.session_mapped.vaccine_mapped.vaccine_name} 
+                        family={value.family_mapped}
+                        value ={value}
+                        nikFamily={value.family_mapped.nik}
+                        nameFamily={value.family_mapped.full_name} 
+                    />
+                  )
+                }else{
+                  return (
+                    <TabelDataBooking 
+                        key={value.id_booking} Number={index + 1} 
+                        namaUser={value.user_mapped.first_name + " " + value.user_mapped.last_name}
+                        nikuser={value.user_mapped.username} 
+                        jenisVaccine={value.session_mapped.vaccine_mapped.vaccine_name} 
+                        family={value.family_mapped}
+                    />
+                  )
+                }
               })}
           </div>
           <div>
