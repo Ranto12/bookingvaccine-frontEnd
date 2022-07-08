@@ -4,7 +4,6 @@ import { NavLink, useNavigate } from "react-router-dom";
 import "../../assets/Style/style.css";
 
 //assets
-import { icon } from "../../assets/icon";
 import {
   BsFillGridFill,
   BsBook,
@@ -15,7 +14,10 @@ import {
   BsDoorClosed,
 } from "react-icons/bs";
 
-
+const handleLogout = () => {
+  localStorage.removeItem("token");
+  window.location.reload();
+}
 
 const Sidebar = () => {
   return (
@@ -30,84 +32,108 @@ const Sidebar = () => {
                 className="text-decoration-none   d-flex menu-sidebar  me-4 py-2"
                 to="/Dashboard"
               >
-                <div className="text-light ps-4 icon-dasboard ">
-                  <BsFillGridFill />
+                <div className="row  row-cols-sm-1 row-cols-md-2 ">
+                  <div className="col-3 text-light ps-4 icon-dasboard ">
+                    <BsFillGridFill />
+                  </div>
+
+                  <div className="col-9 ps-4 text-start text-light h6 fw-bold pt-3 pt-2">Dashboard</div>
                 </div>
-                <div className=" ps-4 text-light h6 fw-bold pt-3 pt-2">Dashboard</div>
               </Link>
             </div>
 
             <div className="  text-center pb-4 ps-4 hover-bg-secondary ">
               <Link
-                className="text-decoration-none d-flex menu-sidebar  me-4 py-2"
+                className="text-decoration-none   d-flex menu-sidebar  me-4 py-2"
                 to="/DataBooking"
               >
-                <div className="text-light icon-dasboard ps-4 icon-dasboard ">
-                  <BsBook />
+                <div className="row  row-cols-sm-1 row-cols-md-2 ">
+                  <div className="col-3 text-light ps-4 icon-dasboard ">
+                    <BsBook />
+                  </div>
+
+                  <div className="col-9 ps-4 text-start  text-light h6 fw-bold pt-3 pt-2">Data booking</div>
                 </div>
-                <div className=" ps-4 text-light   h6 fw-bold  pt-3">Data booking</div>
               </Link>
             </div>
 
             <div className="  text-center pb-4 ps-4 hover-bg-secondary ">
               <Link
-                className="text-decoration-none d-flex menu-sidebar  me-4 py-2"
+                className="text-decoration-none   d-flex menu-sidebar  me-4 py-2"
                 to="/kelolaJadwal"
               >
-                <div className="text-light icon-dasboard ps-4 ">
-                  <BsPersonFill />
+                <div className="row  row-cols-sm-1 row-cols-md-2 ">
+                  <div className="col-3 text-light ps-4 icon-dasboard ">
+                    <BsPersonFill />
+                  </div>
+
+                  <div className="col-9 ps-4 text-start text-light h6 fw-bold pt-3 pt-2">Kelola jadwal</div>
                 </div>
-                <div className=" ps-4 text-light   h6 fw-bold  pt-3">Kelola jadwal</div>
               </Link>
             </div>
 
             <div className="  text-center pb-4 ps-4 hover-bg-secondary ">
               <Link
-                className="text-decoration-none d-flex menu-sidebar  me-4 py-2"
+                className="text-decoration-none   d-flex menu-sidebar  me-4 py-2"
                 to="/KelolaBerita"
               >
-                <div className="text-light icon-dasboard ps-4 ">
-                  <BsFillFileEarmarkTextFill />
+                <div className="row  row-cols-sm-1 row-cols-md-2 ">
+                  <div className="col-3 text-light ps-4 icon-dasboard ">
+                    <BsFillFileEarmarkTextFill />
+                  </div>
+
+                  <div className="col-9 ps-4 text-start text-light h6 fw-bold pt-3 pt-2">Kelola Berita</div>
                 </div>
-                <div className=" ps-4 text-light   h6 fw-bold  pt-3">Kelola Berita</div>
               </Link>
             </div>
 
             <div className="  text-center pb-4 ps-4 hover-bg-secondary ">
               <Link
-                className="text-decoration-none d-flex menu-sidebar  me-4 py-2"
+                className="text-decoration-none   d-flex menu-sidebar  me-4 py-2"
                 to="/KelolaPengguna"
               >
-                <div className="text-light icon-dasboard ps-4 ">
-                  <BsPersonBadgeFill />
+                <div className="row  row-cols-sm-1 row-cols-md-2 ">
+                  <div className="col-3 text-light ps-4 icon-dasboard ">
+                    <BsPersonBadgeFill />
+                  </div>
+
+                  <div className="col-9 ps-4 text-start text-light h6 fw-bold pt-3 pt-2">Kelola Pengguna</div>
                 </div>
-                <div className=" ps-4 text-light   h6 fw-bold  pt-3">Kelola Pengguna</div>
               </Link>
             </div>
 
             <div className="  text-center pb-4 ps-4 hover-bg-secondary ">
               <Link
-                className="text-decoration-none d-flex menu-sidebar  me-4 py-2"
+                className="text-decoration-none   d-flex menu-sidebar  me-4 py-2"
                 to="/KelolaAdmin"
               >
-                <div className="text-light icon-dasboard ps-4 ">
-                  <BsShieldFillCheck />
+                <div className="row  row-cols-sm-1 row-cols-md-2 ">
+                  <div className="col-3 text-light ps-4 icon-dasboard ">
+                    <BsShieldFillCheck />
+                  </div>
+
+                  <div className="col-9 ps-4 text-start text-light h6 fw-bold pt-3 pt-2">Kelola Admin</div>
                 </div>
-                <div className=" ps-4 text-light   h6 fw-bold  pt-3">Kelola Admin</div>
               </Link>
             </div>
 
-            <div className="  text-center pb-4 ps-4 hover-bg-secondary pt-5 ">
+            <div className="  text-center pb-4 ps-4 hover-bg-secondary ">
               <Link
-                className="text-decoration-none d-flex menu-sidebar  me-4 py-2"
+                className="text-decoration-none   d-flex menu-sidebar  me-4 py-2"
                 to="/"
               >
-                <div className="text-light icon-dasboard ps-4 ">
-                  <BsDoorClosed />
+                <div className="row  row-cols-sm-1 row-cols-md-2 " onClick={handleLogout}>
+                  <div className="col-3 text-light ps-4 icon-dasboard ">
+                    <BsDoorClosed />
+                  </div>
+
+                  <div className="col-9 ps-4 text-start text-light h6 fw-bold pt-3 pt-2">Keluar</div>
                 </div>
-                <div className=" ps-4 text-light   h6 fw-bold  pt-3">Keluar</div>
               </Link>
             </div>
+           
+
+
           </div>
         </div>
       </div>

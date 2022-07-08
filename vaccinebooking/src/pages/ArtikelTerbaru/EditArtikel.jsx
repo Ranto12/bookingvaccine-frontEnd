@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
+import {useLocation, useNavigate} from 'react-router-dom'
 import Sidebar from "../../component/Sidebar/Sidebar";
 // style
 import "./../../assets/Style/style.css";
@@ -6,21 +7,19 @@ import { Grid, IconButton } from "@mui/material";
 
 import {BsFileEarmarkImage} from 'react-icons/bs'
 import axios from "axios";
-
-// api 
 import {URL} from "../../API/URL";
-import { useNavigate } from "react-router-dom";
 
-const ArtikelTerbaru = () => {
-  // initial state and valiables
-  const [input, setInput] = useState("");
+const EditArtikel = () => {
+    // initial state and valiables
+  const location = useLocation();
   const [imagePreview, setImagePreview] = useState("");
-  const inputRef = useRef();
-  const [title, setTitle] = useState("");
-  const [author, setAuthor] = useState("");
-  const [body, setBody] = useState("");
+  const [title, setTitle] = useState(`${location.state.judul}`);
+  const [author, setAuthor] = useState(`${location.state.penulis}`);
+  const [body, setBody] = useState(`${location.state.content}`);
   const [image, setImage] = useState("");
-  const navigate = useNavigate
+  const id = location.state.id;
+  const navigate = useNavigate();
+
   // function 
   // handleChange
   const handleName =(e)=>{
@@ -36,7 +35,7 @@ const handleImage=(e)=>{
   setImage(e.target.files[0])
 }
   // testing
-  // console.log(`Image`,image, title, author, body )
+  console.log(`Image`, title, author, body, image, id);
 
   const handleSubmit =(e)=>{
     e.preventDefault();
@@ -45,20 +44,26 @@ const handleImage=(e)=>{
     formData.append("authorNewsVaccine", author);
     formData.append("contentNewsVaccine", body);
     formData.append("file", image);
+
     try{
       const response = axios({
-        method: "post",
-        url: `${URL}/news`,
+        method: "put",
+        url: `${URL}/news/${id}`,
         data: formData,
-        headers: { 
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${localStorage.getItem('token')}`,
-     }
+        headers: {"Content-Type": "multipart/form-data",
+        Authorization: `Bearer ${localStorage.getItem('token')}`},
       });
-      navigate("/KelolaBerita")
-    }catch(error){
-      console.log(error)
+      alert("berhasil")
+    }catch(err){
+        if (err.response) {
+            console.log(err.response.data.data);
+            console.log(err.response.status);
+            console.log(err.response.headers);
+          } else {
+            console.log(`Error ${err.message}`);
+          }
     }
+    navigate("/KelolaBerita")
   }
 
   return (
@@ -69,7 +74,7 @@ const handleImage=(e)=>{
         </div>
         <div className="col-9 mt-5 text-secondary" style={{ color: " #4E7EA7" }}>
           <div className="title-das ">
-            <h4>Tambahkan</h4>
+            <h4>Edit</h4>
             <h1>Berita Terbaru</h1>
           </div>
 
@@ -184,6 +189,6 @@ const handleImage=(e)=>{
       </div>
     </div>
   );
-};
+}
 
-export default ArtikelTerbaru;
+export default EditArtikel

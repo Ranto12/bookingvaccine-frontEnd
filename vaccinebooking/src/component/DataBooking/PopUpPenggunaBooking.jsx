@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 import { IconButton } from "@mui/material";
-import { RiFileSearchFill } from "react-icons/ri";
-import DataPopup from "./DataPopup";
+import DataPopup from "./DataPopupBooking";
 import '../../assets/Style/style.css'
-import { BsXCircle } from "react-icons/bs";
+import SearchIcon from "@mui/icons-material/Search";
 
-export default function PopUpPengguna({nama, number, nohp, nik, gender, email, tgl_lahir}) {
-  // console.log(nama, "wow")
+
+export default function PopUpPenggunaBooking({namaUser, nikuser, jenisVaccine, Number,family, nameFamily, nikFamily }) {
+  // console.log(Number, "wow")
   
   return (
     <div>
       <div
         className="modal fade "
-        id={"exampleModal" + number}
+        id={"exampleModal" + Number}
         tabIndex="-1"
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
@@ -24,22 +24,29 @@ export default function PopUpPengguna({nama, number, nohp, nik, gender, email, t
                 Detail Pengguna
               </h5>
               <button type="button"
-               className="btn-close rounded-circle me-3" 
+               class="btn-close rounded-circle me-3" 
                data-bs-dismiss="modal" 
                aria-label="Close"></button>
 
             </div>
             <div className="modal-body">
                 <ul>
-                    <DataPopup  nama={nama} nohp={nohp} nik={nik} gender={gender} email={email} tgl_lahir={tgl_lahir}  />
+                    <DataPopup  
+                  namaUser={namaUser} nikuser={nikuser} jenisVaccine={jenisVaccine}
+                  nameFamily={nameFamily} nikFamily={nikFamily}
+                    />
                 </ul>
             </div>
           </div>
         </div>
       </div>
 
-      <IconButton aria-label="Cancel" data-bs-toggle="modal" data-bs-placement="top" title="view" data-bs-target = {"#exampleModal" + number}  >
-          <RiFileSearchFill />
+      <IconButton aria-label="Cancel" data-bs-toggle="modal" data-bs-placement="top" title="view" data-bs-target = {"#exampleModal" + Number} sx={{
+              minHeight: 0,
+              minWidth: 0,
+              backgroundColor: "#829CCC",
+            }}  >
+            <SearchIcon style={{ color: "white" }} />
         </IconButton>
     </div>
   );

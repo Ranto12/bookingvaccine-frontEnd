@@ -11,12 +11,14 @@ import { IoPersonAddSharp } from 'react-icons/io5'
 
 import TabelAdmin from '../../component/KelolaAdmin/TabelAdmin';
 import api from '../../API/data/post'
+import Select from '../../component/PageComponent/Select';
 
 const KelolaAdmin = () => {
     // initial state and valiables
     const [input, setInput] = useState("");
     const [count, setCount] = useState(1);
     const [admin, setAdmin] = useState([]);
+    const [size, setSize] = useState(15);
 
     const onChangeInput = (e) => {
         const input = e.target.value;
@@ -25,7 +27,6 @@ const KelolaAdmin = () => {
 
     const handleSearch = () => {
         setCount(1 + input)
-
     }
 
     useEffect(() => {
@@ -37,8 +38,11 @@ const KelolaAdmin = () => {
     useEffect(() => {
         const fetchPosts = async () => {
             try {
-                const response = await api.get("/session/1")
-                setAdmin(response.data);
+                const response = await api.get("/users/roles/ADMIN", {
+                    headers:{
+                        'Authorization': `Bearer ${localStorage.getItem('token')}`
+                    }})
+                setAdmin(response.data.data);
             } catch (err) {
                 if (err.response) {
                     //not in the 200 response range
@@ -52,7 +56,6 @@ const KelolaAdmin = () => {
         }
         fetchPosts();
     }, [])
-    console.log(admin.data)
 
     return (
         <div className='Fontcolor-Dasboard'>
@@ -79,23 +82,7 @@ const KelolaAdmin = () => {
                                 <p className='Fz-16'>Total</p>
                             </div>
                             <div className='ms-2 Select15'>
-                                <select name="jumlahArtiker " id="jumlahArtikel Select15" >
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8">8</option>
-                                    <option value="9">9</option>
-                                    <option value="10">10</option>
-                                    <option value="11">11</option>
-                                    <option value="12">12</option>
-                                    <option value="13">13</option>
-                                    <option value="14">14</option>
-                                    <option value="15">15</option>
-                                </select>
+                                <Select setSize={setSize} />
                             </div>
                             <div className='d-flex'>
                                 <div>
@@ -112,19 +99,14 @@ const KelolaAdmin = () => {
                             </div>
                         </div>
                         <div className='col-6 d-flex justify-content-end'>
-
-                            <Link className='text-decoration-none Fontcolor-Dasboard  d-flex' to='/AddAdmin' >
-                                <div className='d-flex ms-2 justify-content-center LinkText' style={{ border: "1px solid", height: "35px", width: "124px", borderRadius: "10px", paddingLeft: "8px", paddingRight: "8px", background: "#7BD9E8" }}>
-
-                                    <div className='me-1' style={{ marginTop: "2px", }}>
-                                        < IoPersonAddSharp />
-                                    </div>
-                                    <p style={{ fontSize: "14px", marginLeft: "1px", marginTop: "5px", }}>
-                                        Tambahkan
-                                    </p>
-
-                                </div>
+                           <div>
+                           <Link to='/AddAdmin' >
+                                <button className='Button-add-admin'>
+                                    <IoPersonAddSharp className='me-3' />
+                                    Tambahkan
+                                </button>
                             </Link>
+                           </div>
                         </div>
                     </div>
                     {/* tabel */}
@@ -151,18 +133,29 @@ const KelolaAdmin = () => {
 
                     {/* isi tabel */}
                     <div className='TabelAdmin row Border-Color-Box'>
-                        {/* {admin.map((data, index) => {
-                            return (
-                                <TabelAdmin  />
-                                // key={data.id} Number={index + 1} nama={data.nama} alamat={data.alamat} hp={data.noHp} email={data.email}
-                            )
-                        })} */}
-
-                        {/* {admin.data.map((item)=> {
+                        
+                        { admin && 
+                        admin.filter((val)=>{
+                            if(input === ""){
+                                return val
+                            } else if(val.first_name?.toLowerCase().includes(input.toLocaleLowerCase()) || 
+                                        val.address?.toLowerCase().includes(input.toLocaleLowerCase()) ||
+                                        val.email?.toLowerCase().includes(input.toLocaleLowerCase()) ||
+                                        val.no_phone?.toLowerCase().includes(input.toLocaleLowerCase()) 
+                                        ){
+                                return val
+                            }
+                        }).map((data, index)=>{
                             return(
-                                {item}
+                                <TabelAdmin 
+                                key={data.id_user} id={data.id_user}
+                                Number={index +1} Name={data.first_name} 
+                                hp={data.no_phone} email={data.email} role={data.roles} 
+                                alamat={data.address}  tanggalLahir={data.birth_date}
+                                gender={data.gender} pw={data.password} username={data.username}
+                                />
                             )
-                        })} */}
+                        })}
                     </div>
                 </div>
             </div>

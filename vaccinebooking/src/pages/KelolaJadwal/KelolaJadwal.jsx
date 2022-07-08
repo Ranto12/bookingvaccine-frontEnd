@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Sidebar from '../../component/Sidebar/Sidebar';
 import { Link } from 'react-router-dom';
-
 // style
 import './../../assets/Style/style.css';
 
@@ -19,35 +18,31 @@ import api from './../../API/data/post'
 const KelolaJadwal = () => {
     // initial state and valiables
     const [input, setInput] = useState("");
-    const [count, setCount] = useState(1);
     const [jadwal, setJadwal] = useState([]);
     const [page, setPage] = useState(0);
     const [size, setSize] = useState(15);
 
-
     // function
     const onChangeInput = (e) => {
-        const input = e.target.value;
-        setInput(input)
+        const inputt = e.target.value;
+        setInput(inputt)
+        console.log(inputt)
     }
-
-    const handlePage =(e)=>{
-       setPage(e.target.value)
+    const handlePage = (e) => {
+        setPage(e.target.value)
     }
-    const handleSize =(e)=>{
+    const handleSize = (e) => {
         setSize(e.target.value);
     }
 
-    // useEffect(() => {
-    //     handlePage();
-    //     handleSize();
-    // }, [size])
-
-    // api
     useEffect(() => {
         const fetchPosts = async () => {
             try {
-                const response = await api.get(`/session/${page}/${size}`)
+                const response = await api.get(`/session/${page}/${size}`, {
+                    headers:{
+                        'Authorization': `Bearer ${localStorage.getItem('token')}`
+                    }}
+                )
                 setJadwal(response.data);
             } catch (err) {
                 if (err.response) {
@@ -60,9 +55,10 @@ const KelolaJadwal = () => {
                 }
             }
         }
+
         fetchPosts();
-    }, [size])
-    console.log("jadwal", jadwal.data)
+    }, [size, page])
+    // console.log("jadwal", jadwal.data)
 
     return (
         <>
@@ -91,10 +87,10 @@ const KelolaJadwal = () => {
                         <div className='row Margin-top-Serch align-items-end d-flex'>
                             <div className='col-6 d-flex TotalPengguna'>
                                 <div >
-                                    <p className='Fz-16'>Total</p>
+                                    <p className='Fz-16'>Tampilkan</p>
                                 </div>
                                 <div className='ms-2 Select15'>
-                                    <Select setSize={setSize}/> 
+                                    <Select setSize={setSize} />
                                 </div>
                                 <div className='d-flex'>
                                     <div>
@@ -113,12 +109,12 @@ const KelolaJadwal = () => {
 
                             <div className='col-6 d-flex justify-content-end'>
                                 <div >
-                                <Link to='/jadwalvaksinasi' >
-                                    <button className='Button-add-admin'>
-                                        <BsFillCalendarCheckFill className='me-3'/>
-                                        Buat Jadwal
-                                    </button>
-                                </Link>
+                                    <Link to='/jadwalvaksinasi' >
+                                        <button className='Button-add-admin'>
+                                            <BsFillCalendarCheckFill className='me-3' />
+                                            Buat Jadwal
+                                        </button>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -146,17 +142,41 @@ const KelolaJadwal = () => {
                         {/* isi table */}
                         <div className='TabelkelolaBerita row Border-Color-Box'>
                             {jadwal.data &&
-                            jadwal.data.map((data, index) => {
-                                return (
-                                    <TabelVaksinasi Number={index + 1} key={data.id} nama={data.health_facilities_dao_mapped.health_facilities_name} stock={data.stock} jenis={data.vaccine_mapped.vaccine_name} waktu={data.start_date + " " +  data.start_time } />
-                                )
-                            })}
+                                jadwal.data?.filter((val) => {
+                                    if (input === "") {
+                                        return val
+                                    }
+                                    else if (val.vaccine_mapped.vaccine_name?.toLowerCase().includes(input.toLocaleLowerCase()) || 
+                                            val.health_facilities_dao_mapped.health_facilities_name?.toLowerCase().includes(input.toLocaleLowerCase()) || 
+                                            val.start_time?.toLowerCase().includes(input.toLocaleLowerCase()) ) {  
+                                        return val
+                                    }
+                                }).map((data, index) => {
+                                    return (
+                                        <TabelVaksinasi 
+                                        Number={index + 1} 
+                                        key={data.id_session} 
+                                        idSesion={data.id_session} 
+                                        nama={data.health_facilities_dao_mapped.health_facilities_name} 
+                                        stock={data.stock} 
+                                        jenis={data.vaccine_mapped.vaccine_name} 
+                                        waktu={data.start_time}  
+                                        image={data.file_name}
+                                        tanggal={data.start_date}
+                                        id_area={data.area_mapped.id_area}
+                                        id_facility={data.health_facilities_dao_mapped.id_health_facilities}
+                                        Idvaccine={data.vaccine_mapped.id_vaccine}
+                                        namaFaskes={data.health_facilities_dao_mapped.health_facilities_name}
+                                        alamat ={data.health_facilities_dao_mapped.address_health_facilities}
+                                        />
+                                    )
+                                })}
                         </div>
-                        <div>
-                                <input type="number" value={page} onChange={handlePage}/>
-                            </div>
+                        {/* <div>
+                            <input type="number" value={page} onChange={handlePage} />
+                        </div> */}
                     </div>
-                    
+
                 </div>
             </div>
         </>

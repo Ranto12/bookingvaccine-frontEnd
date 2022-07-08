@@ -11,53 +11,56 @@ import { MdPostAdd } from "react-icons/md";
 import TabelKelolaBerita from "../../component/KelolaBerita/TabelKelolaBerita";
 
 // api
-import api from './../../API/data/post'
+import api from "./../../API/data/post";
 import Select from "../../component/PageComponent/Select";
 
 const KelolaBerita = () => {
   // initial state and valiables
   const [input, setInput] = useState("");
   const [Artikels, setArtikels] = useState([]);
-  const [Values, setValues] = useState(15);
   const [page, setPage] = useState(0);
   const [size, setSize] = useState(15);
 
-
   //funtion
   const onChangeInput = (e) => {
-    const input = e.target.value;
-    setInput(input)
-  }
+    const inputt = e.target.value;
+    setInput(inputt);
+  };
+  console.log(input, "input")
   const handleSearch = () => {
-    setInput()
-  }
-
+    setInput();
+  };
 
   //  useEffect
   useEffect(() => {
     handleSearch();
-  }, [])
+  }, []);
 
   //  API
   useEffect(() => {
     const fetchPosts = async () => {
       try {
         const response = await api.get(`/news/${page}/${size}`)
-        setArtikels(response.data);
+        setArtikels(response.data.data.content);
+
       } catch (err) {
         if (err.response) {
           //not in the 200 response range
-          console.log(err.response.data)
-          console.log(err.response.status)
-          console.log(err.response.headers)
+          console.log(err.response.data.data);
+          console.log(err.response.status);
+          console.log(err.response.headers);
         } else {
           console.log(`Error ${err.message}`);
         }
       }
-    }
+    };
     fetchPosts();
   }, [size])
-  // console.log(`news`, Artikels.data.content)
+
+
+  
+  // console.log(Artikels, "artikel")
+  console.log(`news`, Artikels)
 
 
   return (
@@ -66,24 +69,19 @@ const KelolaBerita = () => {
         <div className="col-3">
           <Sidebar />
         </div>
-        <div className='col-9 mt-5'>
-          <div className='row'>
-            <div className='col-6'>
-              <h1 className='fz-Head'>
-                Kelola Data
-              </h1>
-              <h1 className='fz-Title'>
-                Artikel/Berita Terbaru
-              </h1>
+        <div className="col-9 mt-5">
+          <div className="row">
+            <div className="col-6">
+              <h1 className="fz-Head">Kelola Data</h1>
+              <h1 className="fz-Title">Artikel/Berita Terbaru</h1>
             </div>
           </div>
 
           {/* filtering */}
-          <div className='row d-flex Margin-top-Serch align-items-end'>
-            <div className='col-6 d-flex TotalPengguna ' >
+          <div className="row d-flex Margin-top-Serch align-items-end">
+            <div className="col-6 d-flex TotalPengguna ">
               <div>
-                <p className='Fz-16'>Total</p>
-                {input}
+                <p className="Fz-16">Tampilkan</p>
               </div>
               <div className='ms-2 Select15'>
                 <Select setSize={setSize} />
@@ -117,13 +115,12 @@ const KelolaBerita = () => {
               </div>
             </div>
 
-
             <div className="col-6 d-flex justify-content-end">
               <Link to='/ArtikelTerbaru' >
-               <button className='Button-add-admin'>
-                <MdPostAdd className='me-3'/>
-                Buat Berita
-              </button>
+                <button className='Button-add-admin'>
+                  <MdPostAdd className='me-3' />
+                  Buat Berita
+                </button>
               </Link>
             </div>
           </div>
@@ -139,12 +136,24 @@ const KelolaBerita = () => {
 
           {/* isi tabel */}
           <div className='TabelkelolaBerita row Border-Color-Box '>
-            {Artikels.data &&
-            Artikels.data.content.map((data, index)=>{
-              return(
-                <TabelKelolaBerita key={data.id_news_vaccine} Number={index +1} title={data.title_news_vaccine} tanggal={data.created_at} author={data.author_news_vaccine} />
-              )
-            })}
+            {Artikels &&
+              Artikels?.filter((val) => {
+
+                if (input == null) {
+                  return val
+                }
+
+                else if (val?.title_news_vaccine?.toLowerCase().includes(input.toLowerCase()) || val?.author_news_vaccine?.toLowerCase().includes(input.toLowerCase()) || val?.created_at?.toLowerCase().includes(input.toLowerCase())) {
+                  return val
+                }
+              }).map((data, index) => {
+                return (
+                  <TabelKelolaBerita key={data.id_news_vaccine} id={data.id_news_vaccine} Number={index + 1} title={data.title_news_vaccine} tanggal={data.created_at} author={data.author_news_vaccine} content={data.content_news_vaccine}/>
+                )
+              })}
+          </div>
+          <div>
+
           </div>
         </div>
       </div>
