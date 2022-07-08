@@ -38,7 +38,11 @@ const KelolaJadwal = () => {
     useEffect(() => {
         const fetchPosts = async () => {
             try {
-                const response = await api.get(`/session/${page}/${size}`)
+                const response = await api.get(`/session/${page}/${size}`, {
+                    headers:{
+                        'Authorization': `Bearer ${localStorage.getItem('token')}`
+                    }}
+                )
                 setJadwal(response.data);
             } catch (err) {
                 if (err.response) {
@@ -54,7 +58,7 @@ const KelolaJadwal = () => {
 
         fetchPosts();
     }, [size, page])
-    console.log("jadwal", jadwal.data)
+    // console.log("jadwal", jadwal.data)
 
     return (
         <>

@@ -14,7 +14,10 @@ import {
   BsDoorClosed,
 } from "react-icons/bs";
 
-
+const handleLogout = () => {
+  localStorage.removeItem("token");
+  window.location.reload();
+}
 
 const Sidebar = () => {
   return (
@@ -119,7 +122,7 @@ const Sidebar = () => {
                 className="text-decoration-none   d-flex menu-sidebar  me-4 py-2"
                 to="/"
               >
-                <div className="row  row-cols-sm-1 row-cols-md-2 ">
+                <div className="row  row-cols-sm-1 row-cols-md-2 " onClick={handleLogout}>
                   <div className="col-3 text-light ps-4 icon-dasboard ">
                     <BsDoorClosed />
                   </div>

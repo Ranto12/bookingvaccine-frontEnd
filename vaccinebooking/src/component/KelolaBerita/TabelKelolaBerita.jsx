@@ -1,4 +1,3 @@
-import React from "react";
 import { IconButton } from "@mui/material";
 import { RiPencilFill } from "react-icons/ri";
 import { MdDelete } from "react-icons/md";
@@ -16,7 +15,11 @@ const TabelKelolaBerita = ({ Number,id,  title, tanggal, author, key, content}) 
   const handleDetele=(e)=>{
     e.preventDefault();
     try {
-      api.delete(`/news/${id}`)
+      api.delete(`/news/${id}`, {
+        headers:{
+            'Authorization': `Bearer ${localStorage.getItem('token')}`
+        }
+    })
     } catch(err){
       if (err.response){
         console.log(err.response.data)

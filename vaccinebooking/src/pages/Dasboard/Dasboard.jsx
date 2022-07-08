@@ -1,30 +1,12 @@
-import React, { useEffect, useState } from "react";
-
-// icons
-import { BsFillSquareFill } from "react-icons/bs";
-
 // style
+import { BsFillSquareFill } from "react-icons/bs";
 import "./../../assets/Style/style.css";
-
 // component
 import Sidebar from '../../component/Sidebar/Sidebar';
 // length
 import {LengthAdmin, LengthPenguna, LengthKecamatan, LengthRSUD, LengthPuskesmas} from '../../component/Dasboard/APIrequired/Length';
-// api
-import api from '../../API/data/post';
-import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
-const navigate = useNavigate();
-const [token, setToken] = useState();
-
-
-const refreshToken = async () => { 
-  const token = await api.getToken();
-  setToken(token);
-}
-console.log("Token", token);
-
   return (
     <div>
       <div className="row Fontcolor-Dasboard me-5">

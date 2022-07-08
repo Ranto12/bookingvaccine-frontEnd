@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Sidebar from "../../component/Sidebar/Sidebar";
-import { Link } from "react-router-dom";
 
 // style
 import "./../../assets/Style/style.css";
@@ -21,7 +20,6 @@ const DataBooking = () => {
   const [filteredData, setFilteredData] = useState(booking);
   const [size, setSize] = useState(15);
   const [page, setPage] = useState(0);
-  const [dataNull, setDataNull] = useState("null");
 
 
   const onChangeInput = (e) => {
@@ -32,12 +30,14 @@ const DataBooking = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await api.get(`/booking?page=${page}&size=${size}`)
+        const response = await api.get(`/booking?page=${page}&size=${size}`, {
+          headers:{
+              'Authorization': `Bearer ${localStorage.getItem('token')}`
+          }}
+        )
         setBooking(response.data.data.content);
-        // console.log(response.data.data)
       } catch (err) {
         if (err.response) {
-          //not in the 200 response range
           console.log(err.response.data);
           console.log(err.response.status);
           console.log(err.response.headers);
@@ -48,7 +48,6 @@ const DataBooking = () => {
     };
     fetchPosts();
   }, [size])
-  console.log(`data booking `, booking)
 
   return (
     <div className="Fontcolor-Dasboard">

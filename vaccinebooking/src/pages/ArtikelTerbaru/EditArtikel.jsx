@@ -50,7 +50,8 @@ const handleImage=(e)=>{
         method: "put",
         url: `${URL}/news/${id}`,
         data: formData,
-        headers: {"Content-Type": "multipart/form-data"},
+        headers: {"Content-Type": "multipart/form-data",
+        Authorization: `Bearer ${localStorage.getItem('token')}`},
       });
       alert("berhasil")
     }catch(err){

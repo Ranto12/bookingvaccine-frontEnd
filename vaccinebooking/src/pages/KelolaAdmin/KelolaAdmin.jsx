@@ -38,7 +38,10 @@ const KelolaAdmin = () => {
     useEffect(() => {
         const fetchPosts = async () => {
             try {
-                const response = await api.get("/users/roles/ADMIN")
+                const response = await api.get("/users/roles/ADMIN", {
+                    headers:{
+                        'Authorization': `Bearer ${localStorage.getItem('token')}`
+                    }})
                 setAdmin(response.data.data);
             } catch (err) {
                 if (err.response) {
@@ -53,7 +56,6 @@ const KelolaAdmin = () => {
         }
         fetchPosts();
     }, [])
-    console.log(admin)
 
     return (
         <div className='Fontcolor-Dasboard'>

@@ -49,11 +49,10 @@ const handleImage=(e)=>{
       const response = axios({
         method: "post",
         url: `${URL}/news`,
-        // url: "https://bookingvaccine.herokuapp.com:443/api/v1/news",
         data: formData,
         headers: { 
           'Content-Type': 'application/json',
-         Authorization: `Bearer ${localStorage.getItem('token')}`,
+          Authorization: `Bearer ${localStorage.getItem('token')}`,
      }
       });
       navigate("/KelolaBerita")

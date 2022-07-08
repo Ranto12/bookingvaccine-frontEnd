@@ -41,7 +41,11 @@ function FormEditJadwal( {namaFaskes, stockVaccine, tanggalVaccine, alamatFacili
   useEffect(()=>{
     const fetchPosts = async()=>{
         try{
-            const response = await api.get("/vaccine")
+            const response = await api.get("/vaccine", {
+              headers:{
+                  'Authorization': `Bearer ${localStorage.getItem('token')}`
+              }
+          })
             setvaccine(response.data.data);
         } catch(err){
             if(err.response){
