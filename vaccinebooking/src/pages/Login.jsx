@@ -5,20 +5,15 @@ import { AiFillEye } from "react-icons/ai";
 import { IconButton } from "@mui/material";
 import Logo from "../assets/img/logo.png";
 import Swal from "sweetalert2";
-import validator from 'validator';
-
 
 // api
 import {URL} from "../API/URL";
-
 const Login = () => {
+  // initial state and variable
   let navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [msg, setMsg] = useState("");
-  
-
-  const [token, setToken] = useState();
 
   // showPassword
   const [showPassword, setShowPassword] = useState(false);
@@ -28,9 +23,10 @@ const Login = () => {
   const [errorPassword, setErrorPassword] = useState(false);
 
   // regex
-  const RegexUsername = /^[a-zA-Z0-9]+([._]?[a-zA-Z0-9]+)*$/;
+  const RegexUsername = /^[a-zA-Z0-9]+([._]?[a-zA-Z0-9]+)*$/; 
   const RegexPassword =/^[a-zA-Z0-9]+([._]?[a-zA-Z0-9]+)*$/;
-
+  // ^[a-zA-Z0-9]+([._]?[a-zA-Z0-9]+)*$
+  // "^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
   // funtion
   // -onchange
   const onChangeUsername = (e) => {
@@ -68,7 +64,6 @@ const Login = () => {
             if (res.data !== null) {
               console.log(res.data);
               window.localStorage.setItem("token", res.data.data.token);
-              setToken(res.data.data.token);
               Swal.fire('Berhasil!', 'Anda Telah Berhasil Login!', 'success');
               navigate("/Dashboard");
             } else if (res.data === null) {
@@ -112,20 +107,24 @@ const Login = () => {
               </div>
 
               <div className="input-user  ">
-                <p>Username</p>
-                <input
-                  required
-                  type="text"
-                  id="Username"
-                  aria-describedby="emailHelp"
-                  value={username}
-                  onChange={onChangeUsername}
-                />
-                {errorUsername && (
-                  <p style={{ color: "red" }}>
-                    Username Tidak Sesuai atau Salah
-                  </p>
-                )}
+              <p>Username</p>
+                <div style={{ height: "63px", border: "0px solid" }}>
+                  <input
+                    required
+                    type="text"
+                    id="Username"
+                    aria-describedby="emailHelp"
+                    value={username}
+                    onChange={onChangeUsername}
+                  />
+                  {errorUsername && (
+                    <div className="d-flex " style={{ width: "50%" }}>
+                      <p style={{ color: "red", margin: "3px 0px 0px 0px", fontSize: "10px" }}>
+                        Username Tidak Sesuai atau Salah
+                      </p>
+                    </div>
+                  )}
+                </div>
               </div>
               <div className="input-password  ">
                 <p>Password</p>
@@ -139,7 +138,7 @@ const Login = () => {
                       onChange={onChangePassword}
                     />
                     {errorPassword && (
-                      <p style={{ color: "red" }}>
+                      <p style={{ color: "red", margin: "8px 0px 0px 0px", fontSize: "10px" }}>
                         Password Tidak Sesuai atau Salah
                       </p>
                     )}
@@ -151,7 +150,7 @@ const Login = () => {
                   </div>
                 </div>
                 <div className="lupa-pass d-flex justify-content-end ">
-                  <p className="">Lupa password ?</p>
+                  <p >Lupa password ?</p>
                 </div>
               </div>
               <div className="btn">
