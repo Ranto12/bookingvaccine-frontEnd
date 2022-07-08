@@ -9,8 +9,6 @@ import Swal from "sweetalert2";
 
 // api
 import {URL} from "../API/URL";
-import { useEffect } from "react";
-import api from '../API/data/post';
 
 const Login = () => {
   let navigate = useNavigate();
@@ -80,11 +78,6 @@ const Login = () => {
       }
     }
   };
-
-  // const user = window.localStorage.getItem("token");
-  // console.log(user, "user")
-
-// console.log('Token', token)
 
   return (
     <>

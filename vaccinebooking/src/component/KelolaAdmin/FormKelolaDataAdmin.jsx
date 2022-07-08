@@ -47,7 +47,11 @@ export default function FormKelolaDataAdmin() {
 
   const handleSubmit=(e)=>{
     e.preventDefault();
-    axios.post('http://35.247.142.238:80/api/v1/users',{
+    axios.post('http://35.247.142.238:80/api/v1/users', {
+      headers:{
+          'Authorization': `Bearer ${localStorage.getItem('token')}`
+      }
+  },{
         address: alamat,
         birth_date: `${tanggalLahir}`,
         email: email,

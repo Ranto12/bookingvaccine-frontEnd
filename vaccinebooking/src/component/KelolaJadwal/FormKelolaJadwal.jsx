@@ -38,7 +38,11 @@ export default function FormKelolaJadwal({address, name, data}) {
   useEffect(()=>{
     const fetchPosts = async()=>{
         try{
-            const response = await api.get("/vaccine")
+            const response = await api.get("/vaccine", {
+              headers:{
+                  'Authorization': `Bearer ${localStorage.getItem('token')}`
+              }
+          })
             setvaccine(response.data);
         } catch(err){
             if(err.response){
@@ -72,7 +76,9 @@ const handleSubmit =(e)=>{
       url: `${URL}/session`,
       // url: "https://bookingvaccine.herokuapp.com:443/api/v1/session",
       data: formData,
-      headers: { "Content-Type": "multipart/form-data" },
+      headers: { "Content-Type": "multipart/form-data",
+                  "Authorization": `Bearer ${localStorage.getItem('token')}`
+                },
     });
     console.log("response aman");
   }catch(error){

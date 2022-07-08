@@ -13,7 +13,6 @@ import TabelKelolaBerita from "../../component/KelolaBerita/TabelKelolaBerita";
 // api
 import api from "./../../API/data/post";
 import Select from "../../component/PageComponent/Select";
-import Aos from "aos";
 
 const KelolaBerita = () => {
   // initial state and valiables

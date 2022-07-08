@@ -20,11 +20,13 @@ const JadwalVaksinasi = () => {
   useEffect(()=>{
     const fetchPosts = async()=>{
         try{
-            const response = await api.get("/facility/user/7")
+            const response = await api.get("/facility/user/7", {
+              headers:{
+                  'Authorization': `Bearer ${localStorage.getItem('token')}`
+              }})
             setVacility(response.data);
         } catch(err){
             if(err.response){
-                //not in the 200 response range
                 console.log(err.response.data)
                 console.log(err.response.status)
                 console.log(err.response.headers)

@@ -45,7 +45,11 @@ export default function FormEditDataAdmin({id_user, Name, hp, mail, address, bir
 
   const handleSubmit=(e)=>{
     e.preventDefault();
-    axios.put(`http://35.247.142.238:80/api/v1/users/${id_user}`,{
+    axios.put(`http://35.247.142.238:80/api/v1/users/${id_user}`, {
+      headers:{
+          'Authorization': `Bearer ${localStorage.getItem('token')}`
+      }
+  },{
         address: alamat,
         birth_date: `${tanggalLahir}`,
         email: email,
