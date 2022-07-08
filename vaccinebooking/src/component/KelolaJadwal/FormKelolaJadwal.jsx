@@ -74,7 +74,6 @@ const handleSubmit =(e)=>{
     const response = axios({
       method: "post",
       url: `${URL}/session`,
-      // url: "https://bookingvaccine.herokuapp.com:443/api/v1/session",
       data: formData,
       headers: { "Content-Type": "multipart/form-data",
                   "Authorization": `Bearer ${localStorage.getItem('token')}`

@@ -6,6 +6,7 @@ import {URL} from "../../API/URL";
 
 // api
 import api from '../../API/data/post'
+import Swal from "sweetalert2";
 
               
 function FormEditJadwal( {namaFaskes, stockVaccine, tanggalVaccine, alamatFacility, WaktuVaccine, idFacility, Idvaccine, idSesion, data, idArea}) {
@@ -15,7 +16,7 @@ function FormEditJadwal( {namaFaskes, stockVaccine, tanggalVaccine, alamatFacili
   const [startDate, setStartDate] = useState(tanggalVaccine);
   const [startTime, setStartTime] = useState(WaktuVaccine);
   const [Stock, setStock] = useState(stockVaccine);
-  const [image, setImage] = useState();
+  const [image, setImage] = useState(null);
   const [imagePreview, setImagePreview] = useState("");
   const navigate = useNavigate();
 
@@ -46,7 +47,7 @@ function FormEditJadwal( {namaFaskes, stockVaccine, tanggalVaccine, alamatFacili
                   'Authorization': `Bearer ${localStorage.getItem('token')}`
               }
           })
-            setvaccine(response.data.data);
+          setvaccine(response.data.data);
         } catch(err){
             if(err.response){
                 //not in the 200 response range
@@ -59,7 +60,8 @@ function FormEditJadwal( {namaFaskes, stockVaccine, tanggalVaccine, alamatFacili
         }
     }
     fetchPosts();
-},[])
+    console.log("render pertama")
+},[idVaccinee])
 // funtion
 
 const handleSubmit =(e)=>{
@@ -76,22 +78,27 @@ const handleSubmit =(e)=>{
     const response = axios({
       method: "put",
       url: `${URL}/session/${idSesion}`,
-      // url: `https://bookingvaccine.herokuapp.com:443/api/v1/session/${idSesion}`,
       data: formData,
-      headers: { "Content-Type": "multipart/form-data" },
-    });
-    alert("mantul")
+      headers: { "Content-Type": "multipart/form-data", "Authorization": `Bearer ${localStorage.getItem('token')}` },
+    })
+    .then((response) => {
+      Swal.fire('Berhasil', 'Jadwal Berhasil Anda Edit', 'success');
+      navigate('/kelolaJadwal');
+      console.log(response);
+    })
   }catch(error){
-    console.log(error)
+    console.log("error nya ini mas e", error);
+   if(error.response.status === 500){
+    Swal.fire('Gagal', 'Jadwal Gagal Anda Edit', 'error');
+   }
   }
-  navigate("/KelolaJadwal");
 }
 // debug
 // console.log(`vaccine= `, idVaccine," area= ", data.area_mapped.id_area, "healt= ", data.id_health_facilities, "stock= ", Stock, "date= ", startDate, "time= ", startTime, "image= ", image  )
 // console.log('vacicine', IdVaccine)
 // console.log(`data`, namaFaskes, stockVaccine, tanggalVaccine, alamatFacility, WaktuVaccine, idFacility, Idvaccine, idSesion)
 console.log("data", idArea, idFacility, image, startDate, startTime, Stock, idVaccinee, idSesion)
-console.log(URL)
+// console.log(URL)
 
   return (
     <div className="mb-5 borderInput" style={{ color: " #4E7EA7" }}  >
@@ -117,9 +124,6 @@ console.log(URL)
                 <input type="radio" key={item.id_vaccine} name="fav_language" className="ms-3"
                 value={item.id_vaccine}
                 checked={idVaccinee === item.id_vaccine}
-                // checked={idVaccinee === item.id_vaccine}
-                // checked={idVaccinee === item.id_vaccine ? true : false}
-                // checked={idVaccinee === item.id_vaccine} onClick={()=>{ChangeidVaccine(item.id_vaccine)}}
                 onChange={ChangeidVaccine}
                 />
                 <span className="px-3">{item.vaccine_name} </span>
@@ -162,7 +166,7 @@ console.log(URL)
                         <label for="file-input">
                           <BsFileEarmarkImage className=" image-size-uploadimage" />
                         </label>
-                        <input id="file-input" type="file" onChange={onChangeImage} />
+                        <input  id="file-input" type="file" onChange={onChangeImage} />
                       </div>
                     </div>
                     <div

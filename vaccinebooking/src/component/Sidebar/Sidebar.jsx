@@ -102,7 +102,9 @@ const Sidebar = () => {
               </Link>
             </div>
 
-            <div className="  text-center pb-4 ps-4 hover-bg-secondary ">
+            {
+              localStorage.getItem("role") === "SUPER ADMIN" ? (
+                <div className="  text-center pb-4 ps-4 hover-bg-secondary ">
               <Link
                 className="text-decoration-none   d-flex menu-sidebar  me-4 py-2"
                 to="/KelolaAdmin"
@@ -116,6 +118,8 @@ const Sidebar = () => {
                 </div>
               </Link>
             </div>
+              ):(null)
+            }
 
             <div className="  text-center pb-4 ps-4 hover-bg-secondary ">
               <Link

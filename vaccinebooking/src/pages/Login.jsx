@@ -65,6 +65,7 @@ const Login = () => {
               console.log(res.data);
               window.localStorage.setItem("token", res.data.data.token);
               Swal.fire('Berhasil!', 'Anda Telah Berhasil Login!', 'success');
+              window.location.reload();
               navigate("/Dashboard");
             } else if (res.data === null) {
               Swal.fire({

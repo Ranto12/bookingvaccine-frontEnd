@@ -33,11 +33,9 @@ const TabelKelolaBerita = ({ Number,id,  title, tanggal, author, key, content}) 
         headers:{
             'Authorization': `Bearer ${localStorage.getItem('token')}`
         }
-        
     }).then(res => {
         console.log(res);
-        
-        // window.location.reload();
+        window.location.reload();
     })
     } 
     catch(err){
