@@ -401,7 +401,7 @@
 }
 
 .lupa-pass p {
-  width: 81px;
+  width: auto;
   height: 15px;
   font-family: "Poppins";
   font-style: normal;
@@ -411,6 +411,7 @@
   margin: 0px !important;
   justify-content: end;
   display: flex;
+  cursor: pointer;
 }
 
 /* tabel  */
@@ -512,25 +513,16 @@ div > ul {
 }
 
 /* error message */
-.ErrorMessage {
-  font-family: Poppins;
-  font-size: 96px;
-  font-weight: 600;
-  color: #4E7EA7;
-  justify-content: center !important;
-  align-items: center !important;
+.errorPages {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
-.titleErrorMessage{
-  font-family: Poppins;
-  font-size: 32px;
-  font-weight: 500;
-  color: #4E7EA7;
-  justify-content: center !important;
-  align-items: center !important;
-}
-.ErrMSG{
-  justify-content: center !important;
-  align-items: center !important;
+
+.titleErrorMessage {
+  max-width: 75%;
+  text-align: center;
 }
 
 
