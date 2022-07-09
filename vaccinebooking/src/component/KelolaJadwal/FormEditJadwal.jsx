@@ -120,7 +120,7 @@ console.log("data", idArea, idFacility, image, startDate, startTime, Stock, idVa
           <div className="mt-3" >
             {vaccine.map((item)=>{ 
               return(
-                <label>
+                <label htmlFor={item.vaccine_name}> 
                 <input type="radio" key={item.id_vaccine} name="fav_language" className="ms-3"
                 value={item.id_vaccine}
                 checked={idVaccinee === item.id_vaccine}
@@ -138,7 +138,13 @@ console.log("data", idArea, idFacility, image, startDate, startTime, Stock, idVa
         <div className="mt-3">
           <label className="fw-bold ">Stock</label>
         </div>
-        <input onChange={onChangeStock} type="number" className="mt-2 p-1 rounded-2 input-kel Background-White" value={Stock}/>
+        <input onInput={(e)=>{
+          if (e.target.value.length > 4) {
+            e.target.value = e.target.value.slice(0, 4);
+          }
+        }} 
+        onChange={onChangeStock}
+        type="number"  className="mt-2 p-1 rounded-2 input-kel Background-White" onKeyPress={(e) =>["e", "E", "+", "-", ","].includes(e.key) && e.preventDefault()} required min="4" max="5" value={Stock} />
         <span className="ms-3">Buah</span>
       </div>
 

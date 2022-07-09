@@ -17,6 +17,7 @@ export default function FormKelolaJadwal({address, name, data}) {
   const [imagePreview, setImagePreview] = useState("");
 
 
+
   const chaangeStartDate =(e)=>{
     setStartDate(e.target.value);
   }
@@ -27,6 +28,7 @@ export default function FormKelolaJadwal({address, name, data}) {
     setStartTime(e.target.value)
   }
   const onChangeStock =(e)=>{
+    if(e.target.value.length==3) return false;
     setStock(e.target.value);
   }
  const onChangeImage=(e)=>{
@@ -86,7 +88,7 @@ const handleSubmit =(e)=>{
 }
 // debug
 // console.log(`vaccine= `, idVaccine," area= ", data.area_mapped.id_area, "healt= ", data.id_health_facilities, "stock= ", Stock, "date= ", startDate, "time= ", startTime, "image= ", image  )
-
+// console.log(Stock)
   return (
     <div className="mb-5 borderInput" style={{ color: " #4E7EA7" }}  >
       <div >
@@ -126,7 +128,13 @@ const handleSubmit =(e)=>{
         <div className="mt-3">
           <label className="fw-bold ">Stock</label>
         </div>
-        <input onChange={onChangeStock} type="number" className="mt-2 p-1 rounded-2 input-kel Background-White"/>
+        <input onInput={(e)=>{
+          if (e.target.value.length > 4) {
+            e.target.value = e.target.value.slice(0, 4);
+          }
+        }} 
+        onChange={onChangeStock}
+        type="number"  className="mt-2 p-1 rounded-2 input-kel Background-White" onKeyPress={(e) =>["e", "E", "+", "-", ","].includes(e.key) && e.preventDefault()} required min="4" max="5" />
         <span className="ms-3">Buah</span>
       </div>
 
@@ -160,8 +168,14 @@ const handleSubmit =(e)=>{
                             <div
                               style={{textAlign: "center", fontSize: "10px", marginTop: "1rem", color: "#4E7EA7"}}>
                               <p>
-                                Upload Foto Fasilitas Kesehatan Anda <br />{" "}
-                                Ukuran foto tidak lebih dari 10mb{" "}
+                                {image && image.name ? (
+                                  <span className="d-flex justify-content-center ">{image.name}</span>
+                                ):(
+                                  <span>
+                                    Upload Foto Fasilitas Kesehatan Anda <br />{" "}
+                                    Ukuran foto tidak lebih dari 10mb{" "}
+                                  </span>
+                                )}
                               </p>
                             </div>
                           </div>

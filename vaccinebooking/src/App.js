@@ -18,55 +18,62 @@ import ErrorMessage from "./pages/ErrorMessage/Error";
 import EditArtikel from "./pages/ArtikelTerbaru/EditArtikel";
 import EditJadwalVaksinasi from "./pages/KelolaJadwal/EditJadwal";
 import EditAdmin from "./pages/KelolaAdmin/EditAdmin";
-import {PrivateRoute, PrivateRouteLogRes, PrivateSuperAdmin} from './component/PrivateRoute/PrivateRoute';
+import {PrivateRoute, PrivateRouteLogRes} from './component/PrivateRoute/PrivateRoute';
 import CekinAPI from "./component/Dasboard/CekinAPI";
 
 function App() {
+  const roles = localStorage.getItem("role");
+  console.log("roles", roles);
   return (
     <Routes>
       <Route element={<PrivateRouteLogRes/>}>
-      <Route path="/login" element={<Login />} />
-      </Route>
-      <Route element={<PrivateRoute/>}>
-        <Route path="/Dashboard" element={<Dashboard />} />
-        <Route path="/" element={<Dashboard />} />
-        <Route path="/cekapi" element={<CekinAPI />} />
-        <Route path="/KelolaBerita" element={<KelolaBerita />} />
-        <Route path="/DataBooking" element={<DataBooking />} />
-        <Route path="/KelolaPengguna" element={<KelolaPengguna />} />
-        <Route path="/jadwalvaksinasi" element={<JadwalVaksinasi />} />
-        <Route path="/EditJadwalVaksinasi" element={<EditJadwalVaksinasi />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/KelolaJadwal" element={<KelolaJadwal />} />
-        <Route path="/KelolaAdmin" element={<KelolaAdmin />} />
-        <Route path="/ArtikelTerbaru" element={<ArtikelTerbaru />} />
-        <Route path="/EditArtikel" element={<EditArtikel />} />
-        <Route path="/AddAdmin" element={<AddAdmin />} />
-        <Route path="/EditAdmin" element={<EditAdmin />} />
-        <Route path="/popupModal" element={<Overlaybookingvacinne />} />
-        <Route path="/contoh" element={<Contoh />} />
-        <Route path="/*" element={<ErrorMessage />} />            
       </Route>
-      {/* <Route element={PrivateSuperAdmin}>
-      <Route path="/Dashboard" element={<Dashboard />} />
-        <Route path="/" element={<Dashboard />} />
-        <Route path="/cekapi" element={<CekinAPI />} />
-        <Route path="/KelolaBerita" element={<KelolaBerita />} />
-        <Route path="/DataBooking" element={<DataBooking />} />
-        <Route path="/KelolaPengguna" element={<KelolaPengguna />} />
-        <Route path="/jadwalvaksinasi" element={<JadwalVaksinasi />} />
-        <Route path="/EditJadwalVaksinasi" element={<EditJadwalVaksinasi />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/KelolaJadwal" element={<KelolaJadwal />} />
-        <Route path="/KelolaAdmin" element={<KelolaAdmin />} />
-        <Route path="/ArtikelTerbaru" element={<ArtikelTerbaru />} />
-        <Route path="/EditArtikel" element={<EditArtikel />} />
-        <Route path="/AddAdmin" element={<AddAdmin />} />
-        <Route path="/EditAdmin" element={<EditAdmin />} />
-        <Route path="/popupModal" element={<Overlaybookingvacinne />} />
-        <Route path="/contoh" element={<Contoh />} />
-        <Route path="/*" element={<ErrorMessage />} />   
-      </Route> */}
+      <Route  element={<PrivateRoute/>}>
+        {roles !== "ADMIN" ? (
+          <Route>
+            <Route path="/Dashboard" element={<Dashboard />} />
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/cekapi" element={<CekinAPI />} />
+            <Route path="/KelolaBerita" element={<KelolaBerita />} />
+            <Route path="/DataBooking" element={<DataBooking />} />
+            <Route path="/KelolaPengguna" element={<KelolaPengguna />} />
+            <Route path="/jadwalvaksinasi" element={<JadwalVaksinasi />} />
+            <Route path="/EditJadwalVaksinasi" element={<EditJadwalVaksinasi />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/KelolaJadwal" element={<KelolaJadwal />} />
+            <Route path="/KelolaAdmin" element={<KelolaAdmin />} />
+            <Route path="/ArtikelTerbaru" element={<ArtikelTerbaru />} />
+            <Route path="/EditArtikel" element={<EditArtikel />} />
+            <Route path="/AddAdmin" element={<AddAdmin />} />
+            <Route path="/EditAdmin" element={<EditAdmin />} />
+            <Route path="/popupModal" element={<Overlaybookingvacinne />} />
+            <Route path="/contoh" element={<Contoh />} />
+            <Route path="/*" element={<ErrorMessage />} />   
+          </Route>
+        ) : (
+          <Route>
+            <Route path="/AddAdmin" element={<AddAdmin />} />
+
+            <Route path="/Dashboard" element={<Dashboard />} />
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/cekapi" element={<CekinAPI />} />
+            <Route path="/KelolaBerita" element={<KelolaBerita />} />
+            <Route path="/DataBooking" element={<DataBooking />} />
+            <Route path="/KelolaPengguna" element={<KelolaPengguna />} />
+            <Route path="/jadwalvaksinasi" element={<JadwalVaksinasi />} />
+            <Route path="/EditJadwalVaksinasi" element={<EditJadwalVaksinasi />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/KelolaJadwal" element={<KelolaJadwal />} />
+            <Route path="/ArtikelTerbaru" element={<ArtikelTerbaru />} />
+            <Route path="/EditArtikel" element={<EditArtikel />} />
+            <Route path="/popupModal" element={<Overlaybookingvacinne />} />
+            <Route path="/contoh" element={<Contoh />} />
+            <Route path="/*" element={<ErrorMessage />} />   
+          </Route>
+        )
+      }         
+      </Route>
     </Routes>
   );
 }

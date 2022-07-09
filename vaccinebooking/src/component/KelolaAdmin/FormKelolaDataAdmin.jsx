@@ -126,7 +126,7 @@ export default function FormKelolaDataAdmin() {
             </div>
             <div>
               <label >No. Telp</label>
-              <input required type="text" className="input-Nama-admin" value={noTlp} onChange={handlenoTlp}/>
+              <input required type="tel" name="phone" className="input-Nama-admin" value={noTlp} onChange={handlenoTlp}/>
             </div>
           </div>
         </div>
