@@ -81,6 +81,7 @@ const handleSubmit =(e)=>{
           headers: { "Content-Type": "multipart/form-data", 
                     "Authorization": `Bearer ${localStorage.getItem('token')}` 
                   },
+
         })
         .then((response) => {
           Swal.fire('Berhasil', 'Jadwal Berhasil Anda Edit', 'success');

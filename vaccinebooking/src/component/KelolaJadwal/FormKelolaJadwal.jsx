@@ -106,6 +106,11 @@ const handleSubmit =(e)=>{
     console.log("gagal anda goblok");
   }
 }
+
+// debug
+// console.log(`vaccine= `, idVaccine," area= ", data.area_mapped.id_area, "healt= ", data.id_health_facilities, "stock= ", Stock, "date= ", startDate, "time= ", startTime, "image= ", image  )
+// console.log(Stock)
+
   return (
     <div className="mb-5 borderInput" style={{ color: " #4E7EA7" }}  >
       <div >
