@@ -55,8 +55,8 @@ const TabelVaksinasi = ({ Number, key, idSesion,  nama, stock, jenis, waktu, ima
                     {/* <OverlayJadwalVaksinasi data={getData} /> */}
                     < RiPencilFill onClick={handleNavigate} />
                 </IconButton>
-                <IconButton className="me-2" data-bs-toggle="tooltip" data-bs-placement="top" title="remove">
-                    <MdDelete />
+                <IconButton className="me-2" data-bs-toggle="tooltip" data-bs-placement="top" title="view">
+                    <MdDelete Number = {Number}/>
                 </IconButton>
             </div>
         </div>

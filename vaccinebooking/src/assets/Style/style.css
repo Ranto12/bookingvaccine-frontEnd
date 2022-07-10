@@ -379,6 +379,7 @@
   padding: 0;
   background: #7bd9e8;
   color: #ffffff;
+  cursor: pointer;
 }
 
 .brd {
@@ -576,6 +577,7 @@ div > ul {
   border-style: none;
   padding-right: 10px;
   padding-left: 10px;
+  outline: none;
 }
 .input-nama-admin-font{
   font-family: 'Poppins';
@@ -589,8 +591,30 @@ div > ul {
   border: 1px solid #D9D9D9;
   margin-top: 2%;
   padding: 10px;
+  outline: none;
 }
 
 .Font-white{
   color: white;
+}
+.input-password-admin{
+  width: 100%;
+  margin-bottom: 3%;
+  margin-top: 2%;
+  border: 1px solid #D9D9D9;
+  max-height:100%;
+  min-height:40px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  border-style: none;
+  padding-right: 10px;
+  padding-left: 10px;
+  display: flex;
+  outline: none;
+}
+.width-90{
+  width: 100%;
+  border: none;
+  border-color: none;
+  outline: none;
 }

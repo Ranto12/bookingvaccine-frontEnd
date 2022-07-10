@@ -3,6 +3,8 @@ import { URL } from "../../API/URL";
 import axios from 'axios';
 import "../../assets/Style/style.css";
 import { useNavigate } from "react-router";
+import {AiFillEye} from 'react-icons/ai';
+import { IconButton } from "@mui/material"; 
 import Swal from "sweetalert2";
 
 export default function FormEditDataAdmin({id_user, Name, hp, mail, address, birth_date, gender, pw, usernames }) {
@@ -15,6 +17,7 @@ export default function FormEditDataAdmin({id_user, Name, hp, mail, address, bir
    const [username, setUsername] = useState(usernames);
    const [noTlp, setNoTlp]= useState(hp);
    const [alamat, setAlamat] = useState(address);
+   const [showPassword, setShowPassword] = useState(false);
    const navigate = useNavigate();
 
 
@@ -42,6 +45,10 @@ export default function FormEditDataAdmin({id_user, Name, hp, mail, address, bir
    }
    const handlealamat=(e)=>{
      setAlamat(e.target.value); 
+   }
+
+   const handleBack = () => {
+    navigate("/KelolaAdmin")
    }
 
   const handleSubmit=(e)=>{
@@ -104,7 +111,14 @@ export default function FormEditDataAdmin({id_user, Name, hp, mail, address, bir
           </div>
           <div className="col-6 input-nama-admin-font">
             <label >Password</label>
-            <input required type="password" className="input-Nama-admin" value={password} onChange={handlepassword}/>
+            <div className='input-password-admin'> 
+              <input required type={showPassword ? "text" : "password"} id="password" className='width-90' value={password} onChange={handlepassword}/>
+              <IconButton onClick={() => setShowPassword(!showPassword)}>
+                <AiFillEye />
+              </IconButton>
+            </div>
+            <div>
+            </div>
           </div>
         </div>
         <div className="row title-das">
@@ -119,14 +133,13 @@ export default function FormEditDataAdmin({id_user, Name, hp, mail, address, bir
             </div>
             <div>
               <label >No. Telp</label>
-              <input required type="text" className="input-Nama-admin" value={noTlp} onChange={handlenoTlp}/>
+              <input required type="tel" name="phone" className="input-Nama-admin" value={noTlp} onChange={handlenoTlp}/>
             </div>
           </div>
         </div>
       </div>
-      
       <div className="text-end mt-3 mb-5">
-        <button className="btn-kelola-jadwal1 me-3  rounded-3 mb-5">
+        <button className="btn-kelola-jadwal1 me-3  rounded-3 mb-5" onClick={handleBack}>
           batal
         </button>
         <button className="btn-kelola-jadwal ms-3  rounded-3 mb-5" onClick={handleSubmit}>

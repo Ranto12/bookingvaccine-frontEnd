@@ -79,12 +79,13 @@ const handleSubmit =(e)=>{
           url: `${URL}/session/${idSesion}`,
           data: formData,
           headers: { "Content-Type": "multipart/form-data", 
-                    "Authorization": `Bearer ${localStorage.getItem('token')}` },
+                    "Authorization": `Bearer ${localStorage.getItem('token')}` 
+                  },
+
         })
         .then((response) => {
           Swal.fire('Berhasil', 'Jadwal Berhasil Anda Edit', 'success');
           navigate('/kelolaJadwal');
-          console.log(response);
         })
       }catch(error){
         console.log("error nya ini mas e", error);
