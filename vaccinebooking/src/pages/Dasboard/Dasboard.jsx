@@ -6,13 +6,16 @@ import "./../../assets/Style/style.css";
 import Sidebar from '../../component/Sidebar/Sidebar';
 // length
 import {LengthAdmin, LengthPenguna, LengthKecamatan, LengthRSUD, LengthPuskesmas} from '../../component/Dasboard/APIrequired/Length';
+import { useEffect } from 'react';
+import { Navigate } from 'react-router-dom';
 
 
 const Dashboard = () => {
-  const token = localStorage.getItem('token');
-  const decode = jwt_decode(token);
-  localStorage.setItem("id_users", decode.id_user);
-  localStorage.setItem("role", decode.roles);
+  // const token = localStorage.getItem('token');
+  // const decode = jwt_decode(token);
+  // localStorage.setItem("id_users", decode.id_user);
+  // localStorage.setItem("role", decode.roles);
+
   // console.log(localStorage.getItem("role"));
   // const hasil = localStorage.getItem("id_users");
   // console.log("hasil", decode);

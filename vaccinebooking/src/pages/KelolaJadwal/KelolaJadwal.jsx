@@ -19,7 +19,7 @@ const KelolaJadwal = () => {
     // initial state and valiables
     const [input, setInput] = useState("");
     const [jadwal, setJadwal] = useState([]);
-    const [page, setPage] = useState(0);
+    const [page, setPage] = useState(1);
     const [size, setSize] = useState(15);
 
     // function

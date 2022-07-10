@@ -96,7 +96,7 @@ const KelolaPengguna = () => {
                     <p className='ms-2 Fz-16 me-2'>entri</p>
                   </div>
                   <div className='border border-dark d-flex w-100 BorderRadiusInline' >
-                    <div className='ms-3 me-3 PointerClikCss' onClick={handleSearch}>
+                    <div className='ms-3 me-3 PointerClikCss' >
                       <AiOutlineSearch />
                     </div>
                     <div className='d-flex '>

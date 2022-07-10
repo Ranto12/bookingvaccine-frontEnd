@@ -124,7 +124,7 @@ const Sidebar = () => {
             <div className="  text-center pb-4 ps-4 hover-bg-secondary ">
               <Link
                 className="text-decoration-none   d-flex menu-sidebar  me-4 py-2"
-                to="/"
+                to=""
               >
                 <div className="row  row-cols-sm-1 row-cols-md-2 " onClick={handleLogout}>
                   <div className="col-3 text-light ps-4 icon-dasboard ">

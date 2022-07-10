@@ -1,13 +1,15 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { BsFileEarmarkImage } from "react-icons/bs";
-
+import {useNavigate} from 'react-router-dom'
+import Swal from "sweetalert2";
 // api
 import api from '../../API/data/post';
 import {URL} from '../../API/URL';
 
 export default function FormKelolaJadwal({address, name, data}) {
   // state and variables
+  const navigate = useNavigate();
   const [vaccine, setvaccine] = useState([]);
   const [idVaccine, setIdvaccine] = useState();
   const [startDate, setStartDate] = useState();
@@ -31,6 +33,10 @@ export default function FormKelolaJadwal({address, name, data}) {
   }
  const onChangeImage=(e)=>{
     setImage(e.target.files[0]);
+ }
+
+ const handleBack = () => {
+  navigate('/KelolaJadwal');
  }
 
   // useEffect
@@ -75,15 +81,31 @@ const handleSubmit =(e)=>{
       headers: { "Content-Type": "multipart/form-data",
                   "Authorization": `Bearer ${localStorage.getItem('token')}`
                 },
-    });
-    console.log("response aman");
+    })
+    .then((response)=>{
+      if(response.data.status=="success"){
+        Swal.fire({
+          title: "Success",
+          text: "Data berhasil ditambahkan",
+          icon: "success",
+          confirmButtonText: "Ok",
+          onClose: () => {
+            handleBack();
+          }
+        })
+      }else if(response.data.status=="error"){
+        Swal.fire({
+          title: "Error",
+          text: "Data gagal ditambahkan",
+          icon: "error",
+          confirmButtonText: "Ok",
+        })
+      } 
+    })
   }catch(error){
-    console.log(error)
+    console.log("gagal anda goblok");
   }
 }
-// debug
-// console.log(`vaccine= `, idVaccine," area= ", data.area_mapped.id_area, "healt= ", data.id_health_facilities, "stock= ", Stock, "date= ", startDate, "time= ", startTime, "image= ", image  )
-// console.log(Stock)
   return (
     <div className="mb-5 borderInput" style={{ color: " #4E7EA7" }}  >
       <div >
@@ -189,12 +211,12 @@ const handleSubmit =(e)=>{
                         >
                           <img src={imagePreview} height="100%" />
                         </div>
-                      )}
+                )}
         </div>
           <div className="col-4 text-center align-self-end">
             <div>
-                <button className="btn-kelola-jadwal1 me-3  rounded-3 mb-5  ">Batal</button>
-                <button className="btn-kelola-jadwal ms-3  rounded-3 mb-5  " onClick={handleSubmit}>Simpan</button>
+                <button className="btn-kelola-jadwal1 me-3 rounded-3 mb-5 Pointer-Booking" onClick={handleBack}>Batal</button>
+                <button className="btn-kelola-jadwal ms-3 rounded-3 mb-5 Pointer-Booking" onClick={handleSubmit}>Simpan</button>
             </div>
           </div>
       </div>
