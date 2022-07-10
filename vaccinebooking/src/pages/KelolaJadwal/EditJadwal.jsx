@@ -4,7 +4,6 @@ import { Form } from "react-bootstrap";
 
 // component
 import Sidebar from "../../component/Sidebar/Sidebar";
-import FormKelolaJadwal from "../../component/KelolaJadwal/FormKelolaJadwal";
 
 // style
 import '../../assets/Style/style.css';
@@ -36,11 +35,13 @@ const EditJadwalVaksinasi = () => {
   useEffect(()=>{
     const fetchPosts = async()=>{
         try{
-            const response = await api.get("/facility/user/7")
+            const response = await api.get(`/facility/user/${localStorage.getItem("id_users")}`, {
+              headers:{
+                  'Authorization': `Bearer ${localStorage.getItem('token')}`
+              }})
             setVacility(response.data);
         } catch(err){
             if(err.response){
-                //not in the 200 response range
                 console.log(err.response.data)
                 console.log(err.response.status)
                 console.log(err.response.headers)
@@ -52,8 +53,6 @@ const EditJadwalVaksinasi = () => {
     fetchPosts();
 },[])
 
-// console.log(vacility)
-// console.log(`ini adalah location`, location.state.namaFaskes)
 
 
 

@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import { useState } from 'react';
 import axios from 'axios';
-import "../../assets/Style/style.css";
 import { useNavigate } from "react-router";
 import Swal from "sweetalert2";
 import {AiFillEye} from 'react-icons/ai';
 import { IconButton } from "@mui/material"; 
+import {URL} from '../../API/URL';
+import "../../assets/Style/style.css";
 
 
 export default function FormKelolaDataAdmin() {
@@ -47,7 +48,11 @@ export default function FormKelolaDataAdmin() {
 
   const handleSubmit=(e)=>{
     e.preventDefault();
-    axios.post('http://35.247.142.238:80/api/v1/users',{
+    axios.post(`${URL}/users`, {
+      headers:{
+          'Authorization': `Bearer ${localStorage.getItem('token')}`
+      }
+  },{
         address: alamat,
         birth_date: `${tanggalLahir}`,
         email: email,
@@ -122,7 +127,7 @@ export default function FormKelolaDataAdmin() {
             </div>
             <div>
               <label >No. Telp</label>
-              <input required type="text" className="input-Nama-admin" value={noTlp} onChange={handlenoTlp}/>
+              <input required type="tel" name="phone" className="input-Nama-admin" value={noTlp} onChange={handlenoTlp}/>
             </div>
           </div>
         </div>

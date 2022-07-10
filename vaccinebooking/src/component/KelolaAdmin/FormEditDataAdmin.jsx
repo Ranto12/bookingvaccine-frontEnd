@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { URL } from "../../API/URL";
 import axios from 'axios';
 import "../../assets/Style/style.css";
 import { useNavigate } from "react-router";
@@ -45,7 +46,11 @@ export default function FormEditDataAdmin({id_user, Name, hp, mail, address, bir
 
   const handleSubmit=(e)=>{
     e.preventDefault();
-    axios.put(`http://35.247.142.238:80/api/v1/users/${id_user}`,{
+    axios.put(`${URL}/users/${id_user}`, {
+      headers:{
+          'Authorization': `Bearer ${localStorage.getItem('token')}`
+      }
+  },{
         address: alamat,
         birth_date: `${tanggalLahir}`,
         email: email,
@@ -57,7 +62,6 @@ export default function FormEditDataAdmin({id_user, Name, hp, mail, address, bir
         username: username
     })
     .then((response) => {
-      // console.log(response);
      Swal.fire('Berhasil', 'Data Admin Berhasil Ditambahkan', 'success');
       navigate('/KelolaAdmin');
     })
@@ -87,7 +91,6 @@ export default function FormEditDataAdmin({id_user, Name, hp, mail, address, bir
           </div>
           <div className="col-6 input-nama-admin-font">
             <label >Jenis Kelamin</label>
-            {/* <input type="text" className="input-Nama-admin" value={jenisKelamin} onChange={handlejenisKelamin}/> */}
             <select name="jenisKelamin" id="jenisKelamin" className="input-Nama-admin" onChange={handlejenisKelamin}>
               <option value="Laki-Laki" selected={jenisKelamin === "Laki-Laki"} >Laki-Laki</option>
               <option value="Perempuan" selected={jenisKelamin === "Perempuan"} >Perempuan</option>

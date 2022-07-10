@@ -1,18 +1,34 @@
-import React from 'react'
+import { useEffect , useState} from "react";
+import ReactPagenation from 'react-paginate'
+const Pagenation = ({data, size, page, setPage}) => {
+  const [offside, setOffside] = useState(page);
+  // const [perPage] = useState(10);
+  const [pageCount, setPageCount] = useState(0);
+console.log(pageCount)
+console.log(data.length)
+console.log(size)
+  useEffect(()=>{
+     setPageCount(Math.ceil(data.length / size));
+  }, [offside, size])
 
-const Pagenation = (setPage) => {
-    const handlePagenation =(e)=>{
-        setPage(e.target.value)
-    }
+  const handlePageClik =(e)=>{
+    const selectedPage = e.selected;
+    setPage(selectedPage + 1)
+  };
   return (
-    <div className='d-flex '>
-    <p className='p-2 PointerClikCss'> > </p>
-    <p className='p-2 PointerClikCss'> 1 </p>
-    <p className='p-2 PointerClikCss'> 2 </p>
-    <p className='p-2 PointerClikCss'> 3 </p>
-    <p className='p-2 PointerClikCss'> 4 </p>
-    <p className='p-2 PointerClikCss'> > </p>
-  </div>
+    <ReactPagenation 
+      previousLabel={"previous"}
+      nextLabel={"next"}
+      breakLabel={"..."}
+      breakClassName={"break-me"}
+      pageCount={pageCount}
+      marginPagesDisplayed={2}
+      pageRangeDisplayed={5}
+      onPageChange={handlePageClik}
+      containerClassName={"pagination"}
+      subContainerClassName={"pages pagination"}
+      activeClassName={"active"}
+    />
   )
 }
 

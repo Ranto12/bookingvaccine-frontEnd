@@ -1,13 +1,26 @@
-import React from "react";
 import { IconButton } from "@mui/material";
 import { RiPencilFill } from "react-icons/ri";
 import { MdDelete } from "react-icons/md";
 import {useNavigate} from 'react-router-dom';
 import api from '../../API/data/post';
 import moment from 'moment';
+import { useState } from "react";
+import HapusDialogBerita from "../HapusDialog/HapusDialogBerita";
 
 const TabelKelolaBerita = ({ Number,id,  title, tanggal, author, key, content}) => {
+  //state and variable
   let navigate = useNavigate();
+  const [open, setOpen] = useState(false);
+
+  //function
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   const handleNavigate=(e)=>{
     e.preventDefault();
     navigate("/EditArtikel", {state:{id : id, judul: title, penulis: author, content: content}});
@@ -16,8 +29,16 @@ const TabelKelolaBerita = ({ Number,id,  title, tanggal, author, key, content}) 
   const handleDetele=(e)=>{
     e.preventDefault();
     try {
-      api.delete(`/news/${id}`)
-    } catch(err){
+      api.delete(`/news/${id}`, {
+        headers:{
+            'Authorization': `Bearer ${localStorage.getItem('token')}`
+        }
+    }).then(res => {
+        console.log(res);
+        window.location.reload();
+    })
+    } 
+    catch(err){
       if (err.response){
         console.log(err.response.data)
         console.log(err.response.status)
@@ -40,9 +61,10 @@ const TabelKelolaBerita = ({ Number,id,  title, tanggal, author, key, content}) 
           <RiPencilFill onClick={handleNavigate}  />
         </IconButton>
         <IconButton aria-label="Cancel" data-bs-toggle="tooltip" data-bs-placement="top" title="remove">
-          <MdDelete onClick={handleDetele} />
+          <MdDelete onClick={handleClickOpen} />
         </IconButton>
       </div>
+      <HapusDialogBerita open={open} handleClose={handleClose} handleSubmit={handleDetele}></HapusDialogBerita>
     </div>
   );
 };

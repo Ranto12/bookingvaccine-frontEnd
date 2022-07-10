@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { AiFillEye } from "react-icons/ai";
 import { IconButton } from "@mui/material";
 import Logo from "../assets/img/logo.png";
@@ -8,8 +8,8 @@ import Swal from "sweetalert2";
 
 // api
 import {URL} from "../API/URL";
-
 const Login = () => {
+  // initial state and variable
   let navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -23,10 +23,10 @@ const Login = () => {
   const [errorPassword, setErrorPassword] = useState(false);
 
   // regex
-  const RegexUsername = /^[a-zA-Z0-9]+([._]?[a-zA-Z0-9]+)*$/;
-  const RegexPassword =
-    /(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"/;
-
+  const RegexUsername = /^[a-zA-Z0-9]+([._]?[a-zA-Z0-9]+)*$/; 
+  const RegexPassword =/^[a-zA-Z0-9]+([._]?[a-zA-Z0-9]+)*$/;
+  // ^[a-zA-Z0-9]+([._]?[a-zA-Z0-9]+)*$
+  // "^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
   // funtion
   // -onchange
   const onChangeUsername = (e) => {
@@ -59,15 +59,39 @@ const Login = () => {
         await axios.post(`${URL}/auth/login`, {
           username: username,
           password: password,
-        });
-        navigate.push("/dasboard");
+        }).then(
+          res => {
+            if (res.data !== null) {
+              console.log(res.data);
+              window.localStorage.setItem("token", res.data.data.token);
+              Swal.fire('Berhasil!', 'Anda Telah Berhasil Login!', 'success');
+              window.location.reload();
+              navigate("/Dashboard");
+            } else if (res.data === null) {
+              Swal.fire({
+                title: 'Gagal!',
+                text: 'Login Gagal!',
+                icon: 'error',
+                confirmButtonText: 'ya, saya mencoba kembali',
+              });
+            }
+          }
+        )
       } catch (error) {
-        if (error.response) {
-          setMsg(error.response.data.msg);
+        console.log("error", error);
+        if(error.response.status === 401){
+          Swal.fire({
+            title: 'Gagal!',
+            text: 'Login Gagal!',
+            icon: 'error',
+            confirmButtonText: 'ya, saya mencoba kembali',
+          });
         }
       }
     }
   };
+  // console.log(msg ,"msg");
+
   return (
     <>
       <div className="container">
@@ -84,20 +108,24 @@ const Login = () => {
               </div>
 
               <div className="input-user  ">
-                <p>Username</p>
-                <input
-                  required
-                  type="text"
-                  id="Username"
-                  aria-describedby="emailHelp"
-                  value={username}
-                  onChange={onChangeUsername}
-                />
-                {errorUsername && (
-                  <p style={{ color: "red" }}>
-                    Username Tidak Sesuai atau Salah
-                  </p>
-                )}
+              <p>Username</p>
+                <div style={{ height: "63px", border: "0px solid" }}>
+                  <input
+                    required
+                    type="text"
+                    id="Username"
+                    aria-describedby="emailHelp"
+                    value={username}
+                    onChange={onChangeUsername}
+                  />
+                  {errorUsername && (
+                    <div className="d-flex " style={{ width: "50%" }}>
+                      <p style={{ color: "red", margin: "3px 0px 0px 0px", fontSize: "10px" }}>
+                        Username Tidak Sesuai atau Salah
+                      </p>
+                    </div>
+                  )}
+                </div>
               </div>
               <div className="input-password  ">
                 <p>Password</p>
@@ -111,7 +139,7 @@ const Login = () => {
                       onChange={onChangePassword}
                     />
                     {errorPassword && (
-                      <p style={{ color: "red" }}>
+                      <p style={{ color: "red", margin: "8px 0px 0px 0px", fontSize: "10px" }}>
                         Password Tidak Sesuai atau Salah
                       </p>
                     )}
@@ -123,7 +151,7 @@ const Login = () => {
                   </div>
                 </div>
                 <div className="lupa-pass d-flex justify-content-end ">
-                  <p className="">Lupa password ?</p>
+                  <p >Lupa password ?</p>
                 </div>
               </div>
               <div className="btn">
