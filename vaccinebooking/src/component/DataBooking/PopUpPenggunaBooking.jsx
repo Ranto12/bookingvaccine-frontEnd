@@ -42,11 +42,12 @@ export default function PopUpPenggunaBooking({namaUser, nikuser, jenisVaccine, N
       </div>
 
       <IconButton aria-label="Cancel" data-bs-toggle="modal" data-bs-placement="top" title="view" data-bs-target = {"#exampleModal" + Number} sx={{
-              minHeight: 0,
-              minWidth: 0,
+              maxHeight: "30px",
+              maxWidth: "30px",
               backgroundColor: "#829CCC",
-            }}  >
-            <SearchIcon style={{ color: "white" }} />
+              padding: "4px",
+            }}>
+            <SearchIcon style={{ color: "white"}} />
         </IconButton>
     </div>
   );

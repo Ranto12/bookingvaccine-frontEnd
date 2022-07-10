@@ -12,7 +12,6 @@ import KelolaAdmin from "./pages/KelolaAdmin/KelolaAdmin";
 import JadwalVaksinasi from "./pages/KelolaJadwal/jadwalVaksinasi";
 import AddAdmin from "./pages/KelolaAdmin/AddAdmin";
 import ArtikelTerbaru from "./pages/ArtikelTerbaru/ArtikelTerbaru";
-import Overlaybookingvacinne from "./component/Overlay/Overlaybookingvacinne";
 import Contoh from "./component/KelolaPenggunaTable/Contoh";
 import ErrorMessage from "./pages/ErrorMessage/Error";
 import EditArtikel from "./pages/ArtikelTerbaru/EditArtikel";
@@ -47,14 +46,12 @@ function App() {
             <Route path="/EditArtikel" element={<EditArtikel />} />
             <Route path="/AddAdmin" element={<AddAdmin />} />
             <Route path="/EditAdmin" element={<EditAdmin />} />
-            <Route path="/popupModal" element={<Overlaybookingvacinne />} />
             <Route path="/contoh" element={<Contoh />} />
             <Route path="/*" element={<ErrorMessage />} />   
           </Route>
         ) : (
           <Route>
             <Route path="/AddAdmin" element={<AddAdmin />} />
-
             <Route path="/Dashboard" element={<Dashboard />} />
             <Route path="/" element={<Dashboard />} />
             <Route path="/cekapi" element={<CekinAPI />} />
@@ -67,7 +64,6 @@ function App() {
             <Route path="/KelolaJadwal" element={<KelolaJadwal />} />
             <Route path="/ArtikelTerbaru" element={<ArtikelTerbaru />} />
             <Route path="/EditArtikel" element={<EditArtikel />} />
-            <Route path="/popupModal" element={<Overlaybookingvacinne />} />
             <Route path="/contoh" element={<Contoh />} />
             <Route path="/*" element={<ErrorMessage />} />   
           </Route>

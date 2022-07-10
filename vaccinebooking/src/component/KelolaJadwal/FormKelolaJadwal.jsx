@@ -16,8 +16,6 @@ export default function FormKelolaJadwal({address, name, data}) {
   const [image, setImage] = useState("");
   const [imagePreview, setImagePreview] = useState("");
 
-
-
   const chaangeStartDate =(e)=>{
     setStartDate(e.target.value);
   }
@@ -35,7 +33,6 @@ export default function FormKelolaJadwal({address, name, data}) {
     setImage(e.target.files[0]);
  }
 
-  // get api jenis vaccine
   // useEffect
   useEffect(()=>{
     const fetchPosts = async()=>{
@@ -59,8 +56,6 @@ export default function FormKelolaJadwal({address, name, data}) {
     }
     fetchPosts();
 },[])
-
-// funtion
 
 const handleSubmit =(e)=>{
   e.preventDefault();

@@ -7,7 +7,6 @@ import {URL} from "../../API/URL";
 // api
 import api from '../../API/data/post'
 import Swal from "sweetalert2";
-
               
 function FormEditJadwal( {namaFaskes, stockVaccine, tanggalVaccine, alamatFacility, WaktuVaccine, idFacility, Idvaccine, idSesion, data, idArea}) {
   // state and variables
@@ -19,7 +18,6 @@ function FormEditJadwal( {namaFaskes, stockVaccine, tanggalVaccine, alamatFacili
   const [image, setImage] = useState(null);
   const [imagePreview, setImagePreview] = useState("");
   const navigate = useNavigate();
-
 
   const chaangeStartDate =(e)=>{
     setStartDate(e.target.value);
@@ -66,32 +64,60 @@ function FormEditJadwal( {namaFaskes, stockVaccine, tanggalVaccine, alamatFacili
 
 const handleSubmit =(e)=>{
   e.preventDefault();
-  const formData = new FormData();
-  formData.append("vaccine_id", idVaccinee);
-  formData.append("area_id", idArea);
-  formData.append("health_facilities_id", idFacility);
-  formData.append("stock", Stock);
-  formData.append("start_date", `${startDate}`);
-  formData.append("start_time", `${startTime}`);
-  formData.append("file", image);
-  try{
-    const response = axios({
-      method: "put",
-      url: `${URL}/session/${idSesion}`,
-      data: formData,
-      headers: { "Content-Type": "multipart/form-data", "Authorization": `Bearer ${localStorage.getItem('token')}` },
-    })
-    .then((response) => {
-      Swal.fire('Berhasil', 'Jadwal Berhasil Anda Edit', 'success');
-      navigate('/kelolaJadwal');
-      console.log(response);
-    })
-  }catch(error){
-    console.log("error nya ini mas e", error);
-   if(error.response.status === 500){
-    Swal.fire('Gagal', 'Jadwal Gagal Anda Edit', 'error');
-   }
-  }
+    if(image !== null){
+      const formData = new FormData();
+      formData.append("vaccine_id", idVaccinee);
+      formData.append("area_id", idArea);
+      formData.append("health_facilities_id", idFacility);
+      formData.append("stock", Stock);
+      formData.append("start_date", `${startDate}`);
+      formData.append("start_time", `${startTime}`);
+      formData.append("file", image);
+      try{
+        const response = axios({
+          method: "put",
+          url: `${URL}/session/${idSesion}`,
+          data: formData,
+          headers: { "Content-Type": "multipart/form-data", 
+                    "Authorization": `Bearer ${localStorage.getItem('token')}` },
+        })
+        .then((response) => {
+          Swal.fire('Berhasil', 'Jadwal Berhasil Anda Edit', 'success');
+          navigate('/kelolaJadwal');
+          console.log(response);
+        })
+      }catch(error){
+        console.log("error nya ini mas e", error);
+      if(error.response.status === 500){
+        Swal.fire('Gagal', 'Jadwal Gagal Anda Edit', 'error');
+      }}
+    }else{
+      e.preventDefault();
+      axios.put(`${URL}/session/${idSesion}`,{
+        vaccine_id: idVaccinee,
+        area_id: idArea,
+        health_facilities_id: idFacility,
+        stock: Stock,
+        start_date: `${startDate}`,
+        start_time: `${startTime}`
+      },{
+        headers:{
+          "Content-Type": "multipart/form-data", 
+          "Authorization": `Bearer ${localStorage.getItem('token')}`
+        }
+      })
+      .then((response) => {
+        Swal.fire('Berhasil', 'Jadwal Berhasil Anda Edit', 'success');
+        navigate('/kelolaJadwal');
+        console.log(response);
+      })
+      .catch((error) => {
+        // console.log("error nya ini mas e", error);
+        if(error.response.status === 500){
+          Swal.fire('Gagal', 'Jadwal Gagal Anda Edit', 'error');
+        }
+      })
+    }
 }
 // debug
 // console.log(`vaccine= `, idVaccine," area= ", data.area_mapped.id_area, "healt= ", data.id_health_facilities, "stock= ", Stock, "date= ", startDate, "time= ", startTime, "image= ", image  )
