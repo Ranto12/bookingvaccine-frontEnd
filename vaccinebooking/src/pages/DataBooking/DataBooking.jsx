@@ -13,12 +13,13 @@ import api from "../../API/data/post";
 
 // component
 import Select from "../../component/PageComponent/Select";
+import Pagenation from "../../component/Pagenation/Pagenation";
 
 const DataBooking = () => {
   // initial state and valiables
   const [booking, setBooking] = useState([]);
   const [filteredData, setFilteredData] = useState(booking);
-  const [size, setSize] = useState(15);
+  const [size, setSize] = useState(150);
   const [page, setPage] = useState(0);
 
 
@@ -26,7 +27,7 @@ const DataBooking = () => {
     setFilteredData(e.target.value)
   };
 
-
+console.log(`booking`, booking)
   useEffect(() => {
     const fetchPosts = async () => {
       try {
@@ -102,8 +103,8 @@ const DataBooking = () => {
           </div>
 
           {/* tabel */}
-          <div className="row mt-4 table-header background-color-Table  justify-content-center">
-            <div className="row mt-2 table-data justify-content-center">
+          <div className="row mt-4 table-header background-color-Table ">
+            <div className="row mt-2 table-data ">
               <div className="col-1">No</div>
               <div className="col-4">Nama</div>
               <div className="col-3">NIK</div>
@@ -113,7 +114,7 @@ const DataBooking = () => {
           </div>
 
           {/* isi tabel */}
-          <div className="TabelkelolaBerita row Border-Color-Box">
+          <div className="TabelkelolaBerita row Border-Color-Box ">
             {booking?.filter((val) => {
                 if (filteredData == "") {
                   return val
@@ -122,13 +123,13 @@ const DataBooking = () => {
                   return val
                 }
               }).map((value, index) => {
-                console.log("jancok", value.user_mapped)
+                // console.log("data", value.user_mapped)
                 if(value.family_mapped !== null){
                   return(
                     <TabelDataBooking 
                     key={value.id_booking} Number={index + 1} 
-                        namaUser={value.user_mapped.first_name + " " + value.user_mapped.last_name}
-                        nikuser={value.user_mapped.username} 
+                        namaUser={value.family_mapped.user_mapped.first_name + " " + value.family_mapped.user_mapped.last_name}
+                        nikuser={value.family_mapped.user_mapped.username} 
                         jenisVaccine={value.session_mapped.vaccine_mapped.vaccine_name} 
                         family={value.family_mapped}
                         value ={value}
@@ -149,6 +150,7 @@ const DataBooking = () => {
                 }
               })}
           </div>
+          <Pagenation data={booking} size={size} page={page} setPage={setPage}/>
           <div>
           </div>
         </div>

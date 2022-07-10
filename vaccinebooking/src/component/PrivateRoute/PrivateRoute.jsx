@@ -9,6 +9,6 @@ const isAuthenticated = localStorage.getItem('token');
 
 const  PrivateRouteLogRes=()=> {
 const isAuthenticated = localStorage.getItem('token');
-  return isAuthenticated ? <Navigate to="/login"/> : <Outlet />;
+  return isAuthenticated ? <Navigate to="/Dashboard"/> : <Outlet />;
 }
 export {PrivateRoute, PrivateRouteLogRes };

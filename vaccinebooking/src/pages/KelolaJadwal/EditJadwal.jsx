@@ -35,7 +35,7 @@ const EditJadwalVaksinasi = () => {
   useEffect(()=>{
     const fetchPosts = async()=>{
         try{
-            const response = await api.get("/facility/user/7", {
+            const response = await api.get(`/facility/user/${localStorage.getItem("id_users")}`, {
               headers:{
                   'Authorization': `Bearer ${localStorage.getItem('token')}`
               }})

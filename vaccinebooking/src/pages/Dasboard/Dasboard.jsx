@@ -1,3 +1,4 @@
+import jwt_decode from 'jwt-decode';
 // style
 import { BsFillSquareFill } from "react-icons/bs";
 import "./../../assets/Style/style.css";
@@ -6,7 +7,15 @@ import Sidebar from '../../component/Sidebar/Sidebar';
 // length
 import {LengthAdmin, LengthPenguna, LengthKecamatan, LengthRSUD, LengthPuskesmas} from '../../component/Dasboard/APIrequired/Length';
 
+
 const Dashboard = () => {
+  const token = localStorage.getItem('token');
+  const decode = jwt_decode(token);
+  localStorage.setItem("id_users", decode.id_user);
+  localStorage.setItem("role", decode.roles);
+  // console.log(localStorage.getItem("role"));
+  // const hasil = localStorage.getItem("id_users");
+  // console.log("hasil", decode);
   return (
     <div>
       <div className="row Fontcolor-Dasboard me-5">
@@ -14,7 +23,6 @@ const Dashboard = () => {
         <div className="col-3">
           <Sidebar />
         </div>
-
         {/* content */}
         <div className="col-9 mt-5">
           <div className="title-das ">
@@ -23,7 +31,6 @@ const Dashboard = () => {
           </div>
 
           {/* total admin */}
-
           <div className="row row-cols-1 row-cols-lg-2 mt-3 ">
             <div className="col">
               <div className="Card-TotalAdmin">
