@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import jwt_decode from 'jwt-decode';
-import { Link, useNavigate, useSearchParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { AiFillEye } from "react-icons/ai";
 import { IconButton } from "@mui/material";
 import Logo from "../assets/img/logo.png";
@@ -14,7 +14,6 @@ const Login = () => {
   let navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [msg, setMsg] = useState("");
 
   // showPassword
   const [showPassword, setShowPassword] = useState(false);
@@ -133,6 +132,7 @@ const Login = () => {
                     id="Username"
                     aria-describedby="emailHelp"
                     value={username}
+                    className="padding-input"
                     onChange={onChangeUsername}
                   />
                   {errorUsername && (
@@ -153,6 +153,7 @@ const Login = () => {
                       type={showPassword ? "text" : "password"}
                       id="password"
                       value={password}
+                      className="padding-input"
                       onChange={onChangePassword}
                     />
                     {errorPassword && (
@@ -167,9 +168,9 @@ const Login = () => {
                     </IconButton>
                   </div>
                 </div>
-                <div className="lupa-pass d-flex justify-content-end ">
+                {/* <div className="lupa-pass d-flex justify-content-end ">
                   <p >Lupa password ?</p>
-                </div>
+                </div> */}
               </div>
               <div className="btn " >
                 <button className="Pointer-Booking" onClick={Auth}>Masuk</button>

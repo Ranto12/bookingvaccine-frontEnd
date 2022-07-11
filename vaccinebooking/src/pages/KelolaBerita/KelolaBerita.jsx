@@ -45,7 +45,6 @@ const KelolaBerita = () => {
 
       } catch (err) {
         if (err.response) {
-          //not in the 200 response range
           console.log(err.response.data.data);
           console.log(err.response.status);
           console.log(err.response.headers);
@@ -55,13 +54,7 @@ const KelolaBerita = () => {
       }
     };
     fetchPosts();
-  }, [size])
-
-
-  
-  // console.log(Artikels, "artikel")
-  console.log(`news`, Artikels)
-
+  }, [page, size]);
 
   return (
     <div className="Fontcolor-Dasboard">
@@ -145,6 +138,8 @@ const KelolaBerita = () => {
 
                 else if (val?.title_news_vaccine?.toLowerCase().includes(input.toLowerCase()) || val?.author_news_vaccine?.toLowerCase().includes(input.toLowerCase()) || val?.created_at?.toLowerCase().includes(input.toLowerCase())) {
                   return val
+                } else{
+                  return null;
                 }
               }).map((data, index) => {
                 return (

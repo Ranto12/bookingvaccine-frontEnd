@@ -21,6 +21,8 @@ const DataBooking = () => {
   const [filteredData, setFilteredData] = useState(booking);
   const [size, setSize] = useState(150);
   const [page, setPage] = useState(0);
+  const [lengthPage, setLengthPage] = useState(0);
+ 
 
 
   const onChangeInput = (e) => {
@@ -37,6 +39,7 @@ console.log(`booking`, booking)
           }}
         )
         setBooking(response.data.data.content);
+        setLengthPage(response.data.data.totalPages);
       } catch (err) {
         if (err.response) {
           console.log(err.response.data);
@@ -48,7 +51,7 @@ console.log(`booking`, booking)
       }
     };
     fetchPosts();
-  }, [size])
+  }, [page, size, lengthPage]);
 
   return (
     <div className="Fontcolor-Dasboard">
@@ -121,6 +124,8 @@ console.log(`booking`, booking)
                 }
                 else if (val.user_mapped.first_name.toLowerCase().includes(filteredData.toLocaleLowerCase())) {
                   return val
+                } else {
+                  return null;
                 }
               }).map((value, index) => {
                 // console.log("data", value.user_mapped)
@@ -150,7 +155,7 @@ console.log(`booking`, booking)
                 }
               })}
           </div>
-          <Pagenation data={booking} size={size} page={page} setPage={setPage}/>
+          <Pagenation data={booking} size={size} page={page} setPage={setPage} lengthPage={lengthPage}/>
           <div>
           </div>
         </div>

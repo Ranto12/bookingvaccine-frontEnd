@@ -18,7 +18,7 @@ import EditArtikel from "./pages/ArtikelTerbaru/EditArtikel";
 import EditJadwalVaksinasi from "./pages/KelolaJadwal/EditJadwal";
 import EditAdmin from "./pages/KelolaAdmin/EditAdmin";
 import {PrivateRoute, PrivateRouteLogRes} from './component/PrivateRoute/PrivateRoute';
-import CekinAPI from "./component/Dasboard/CekinAPI";
+
 
 function App() {
   const roles = localStorage.getItem("role");
@@ -33,7 +33,6 @@ function App() {
           <Route>
             <Route path="/Dashboard" element={<Dashboard />} />
             <Route path="/" element={<Dashboard />} />
-            <Route path="/cekapi" element={<CekinAPI />} />
             <Route path="/KelolaBerita" element={<KelolaBerita />} />
             <Route path="/DataBooking" element={<DataBooking />} />
             <Route path="/KelolaPengguna" element={<KelolaPengguna />} />
@@ -54,7 +53,6 @@ function App() {
             <Route path="/AddAdmin" element={<AddAdmin />} />
             <Route path="/Dashboard" element={<Dashboard />} />
             <Route path="/" element={<Dashboard />} />
-            <Route path="/cekapi" element={<CekinAPI />} />
             <Route path="/KelolaBerita" element={<KelolaBerita />} />
             <Route path="/DataBooking" element={<DataBooking />} />
             <Route path="/KelolaPengguna" element={<KelolaPengguna />} />

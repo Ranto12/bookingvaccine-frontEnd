@@ -51,7 +51,7 @@ const TabelKelolaBerita = ({ Number,id,  title, tanggal, author, key, content}) 
   
   
   return (
-    <div className="d-flex TabelkelolaBerita justify-content-center TableColor-child">
+    <div className="d-flex TabelkelolaBerita justify-content-center TableColor-child title-das">
       <div className="col-1">{Number}</div>
       <div className="col-4">{title}</div>
       <div className="col-2">{author}</div>

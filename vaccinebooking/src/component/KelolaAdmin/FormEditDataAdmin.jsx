@@ -86,17 +86,11 @@ export default function FormEditDataAdmin({id_user, Name, hp, mail, address, bir
     <div>
       <div className="mb-5 ">
       <div className="row title-das">
-          <div className="col-12 input-nama-admin-font  mt-4 mb-0 ">
+          <div className="col-6 input-nama-admin-font  mt-4 mb-0 ">
             <label >Nama Admin</label>
             <input required type="text" className="input-Nama-admin" value={namaAdmin} onChange={handleNamaAdmin} />
           </div>
-        </div>
-        <div className="row title-das">
-          <div className="col-6 input-nama-admin-font">
-            <label >Tanggal Lahir</label>
-            <input required type="date" className="input-Nama-admin" value={tanggalLahir} onChange={handleTanggalLahir} />
-          </div>
-          <div className="col-6 input-nama-admin-font">
+          <div className="col-6 input-nama-admin-font  mt-4 mb-0">
             <label >Jenis Kelamin</label>
             <select name="jenisKelamin" id="jenisKelamin" className="input-Nama-admin" onChange={handlejenisKelamin}>
               <option value="Laki-Laki" selected={jenisKelamin === "Laki-Laki"} >Laki-Laki</option>
@@ -105,12 +99,29 @@ export default function FormEditDataAdmin({id_user, Name, hp, mail, address, bir
           </div>
         </div>
         <div className="row title-das">
+          <div className="col-6 input-nama-admin-font">
+            <label >Tanggal Lahir</label>
+            <input required type="date" className="input-Nama-admin" value={tanggalLahir} onChange={handleTanggalLahir} />
+          </div>
+          <div className="col-6 input-nama-admin-font">
+            <label >Password</label>
+            <div className='input-password-admin'> 
+              <input required type={showPassword ? "text" : "password"} id="password" className='width-90' value={password} onChange={handlepassword}/>
+              <IconButton onClick={() => setShowPassword(!showPassword)}>
+                <AiFillEye />
+              </IconButton>
+            </div>
+            <div>
+            </div>
+          </div>          
+        </div>
+        <div className="row title-das">
           <div className="col-6 input-nama-admin-font ">
             <label >Email</label>
             <input required type="text" className="input-Nama-admin" value={email} onChange={handleemail}/>
           </div>
           <div className="col-6 input-nama-admin-font">
-            <label >Password</label>
+            <label > Konfirmasi Password</label>
             <div className='input-password-admin'> 
               <input required type={showPassword ? "text" : "password"} id="password" className='width-90' value={password} onChange={handlepassword}/>
               <IconButton onClick={() => setShowPassword(!showPassword)}>
@@ -128,7 +139,7 @@ export default function FormEditDataAdmin({id_user, Name, hp, mail, address, bir
           </div>
           <div className="col-6 input-nama-admin-font">
             <div>
-              <label >UserName</label>
+              <label >Username</label>
               <input required type="text" className="input-Nama-admin" value={username} onChange={handleusername}/>
             </div>
             <div>

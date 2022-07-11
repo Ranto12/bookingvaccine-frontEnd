@@ -16,14 +16,14 @@ function FormEditJadwal( {namaFaskes, stockVaccine, tanggalVaccine, alamatFacili
   const [startTime, setStartTime] = useState(WaktuVaccine);
   const [Stock, setStock] = useState(stockVaccine);
   const [image, setImage] = useState(null);
-  const [imagePreview, setImagePreview] = useState("");
+  const [imagePreview] = useState("");
   const navigate = useNavigate();
 
   const chaangeStartDate =(e)=>{
     setStartDate(e.target.value);
   }
   const ChangeidVaccine =(e)=>{
-    setIdvaccine(e.target.value);
+    setIdvaccine( +e.target.value);
   }
   const ChangeStartTime =(e)=>{
     setStartTime(e.target.value)
@@ -35,6 +35,7 @@ function FormEditJadwal( {namaFaskes, stockVaccine, tanggalVaccine, alamatFacili
     setImage(e.target.files[0]);
  }
 
+ 
   // get api jenis vaccine
   // useEffect
   useEffect(()=>{
@@ -56,7 +57,7 @@ function FormEditJadwal( {namaFaskes, stockVaccine, tanggalVaccine, alamatFacili
                 console.log(`Error ${err.message}`);
             }
         }
-    }
+    } 
     fetchPosts();
     console.log("render pertama")
 },[idVaccinee])
@@ -74,7 +75,7 @@ const handleSubmit =(e)=>{
       formData.append("start_time", `${startTime}`);
       formData.append("file", image);
       try{
-        const response = axios({
+        axios({
           method: "put",
           url: `${URL}/session/${idSesion}`,
           data: formData,
@@ -100,7 +101,8 @@ const handleSubmit =(e)=>{
         health_facilities_id: idFacility,
         stock: Stock,
         start_date: `${startDate}`,
-        start_time: `${startTime}`
+        start_time: `${startTime}`,
+        file : null
       },{
         headers:{
           "Content-Type": "multipart/form-data", 
@@ -171,7 +173,7 @@ console.log("data", idArea, idFacility, image, startDate, startTime, Stock, idVa
           }
         }} 
         onChange={onChangeStock}
-        type="number"  className="mt-2 p-1 rounded-2 input-kel Background-White" onKeyPress={(e) =>["e", "E", "+", "-", ","].includes(e.key) && e.preventDefault()} required min="4" max="5" value={Stock} />
+        type="number"  className="mt-2 p-1 rounded-2 input-kel Background-White padding-input" onKeyPress={(e) =>["e", "E", "+", "-", ","].includes(e.key) && e.preventDefault()} required min="4" max="5" value={Stock} />
         <span className="ms-3">Buah</span>
       </div>
 
@@ -180,11 +182,11 @@ console.log("data", idArea, idFacility, image, startDate, startTime, Stock, idVa
           <label className="fw-bold mb-3"> Sesi </label>
         </div>
         <span className="">
-          <input type="date" className="mt-2 p-1 rounded-2 input-kel Background-White" onChange={chaangeStartDate} value={startDate}/>
+          <input type="date" className="mt-2 p-1 rounded-2 input-kel Background-White padding-input" onChange={chaangeStartDate} value={startDate}/>
         </span>
         <span className="mx-4">-</span>
         <span> 
-          <input type="time" className="mt-2 p-1 rounded-2 input-kel Background-White" onChange={ChangeStartTime} value={startTime}/>
+          <input type="time" className="mt-2 p-1 rounded-2 input-kel Background-White padding-input" onChange={ChangeStartTime} value={startTime}/>
         </span>
       </div>
       <div className="row mt-4">
@@ -214,7 +216,7 @@ console.log("data", idArea, idFacility, image, startDate, startTime, Stock, idVa
               ) : (
               <div
                 style={{width: "100%", height: "20rem", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", cursor: "pointer" }}>
-                  <img src={imagePreview} height="100%" />
+                  <img src={imagePreview} height="100%" alt="" />
               </div>
             )}
         </div>

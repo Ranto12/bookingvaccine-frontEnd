@@ -1,9 +1,7 @@
-import React, { useState } from "react";
 import { IconButton } from "@mui/material";
 import { RiFileSearchFill } from "react-icons/ri";
 import DataPopup from "./DataPopup";
 import '../../assets/Style/style.css'
-import { BsXCircle } from "react-icons/bs";
 
 export default function PopUpPengguna({nama, number, nohp, nik, gender, email, tgl_lahir}) {
   // console.log(nama, "wow")
@@ -39,7 +37,7 @@ export default function PopUpPengguna({nama, number, nohp, nik, gender, email, t
       </div>
 
       <IconButton aria-label="Cancel" data-bs-toggle="modal" data-bs-placement="top" title="view" data-bs-target = {"#exampleModal" + number}  >
-          <RiFileSearchFill />
+          <RiFileSearchFill color="#829CCC"/>
         </IconButton>
     </div>
   );

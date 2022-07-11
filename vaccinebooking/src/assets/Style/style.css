@@ -95,11 +95,11 @@
   justify-content: center;
 }
 
-.TabelkelolaBerita {
+/* .TabelkelolaBerita {
   background-color: #d9d9d9;
   justify-content: center;
   align-items: center;
-}
+} */
 
 .TabelDataBooking {
   background-color: #ffffff;
@@ -467,7 +467,7 @@
 
 ul > li > h5,
 .data-popup,.title-table-datapopup {
-  color: #829ccc;
+  color: #4E7EA7;
   margin-right: 20px !important;
   margin-top: 20px !important;
 }
@@ -617,4 +617,32 @@ div > ul {
   border: none;
   border-color: none;
   outline: none;
+}
+
+.padding-input{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.logoSidebar{
+  max-width: 43,11px;
+  max-height: 52,41px;
+}
+.fullHight{
+  height: 100%;
+}
+.VakYu{
+  justify-content: end;
+  font-size: 24px;
+}
+.VaksinYuk{
+  justify-content: start;
+  font-size: 12px;
+}
+.Logo{
+  max-width: 200%;
+  max-height: 200%;
+}
+.medium{
+  font-size: medium;
+  font-family: Poppins;
 }
