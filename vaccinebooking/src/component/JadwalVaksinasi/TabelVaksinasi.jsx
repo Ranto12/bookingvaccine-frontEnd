@@ -42,7 +42,7 @@ const TabelVaksinasi = ({ Number, key, idSesion,  nama, stock, jenis, waktu, ima
     // console.log(`id facility`, id_facility)
     
     return (
-        <div className="d-flex TabelkelolaBerita justify-content-center TableColor-child">
+        <div className="d-flex TabelkelolaBerita justify-content-center TableColor-child title-das" >
             <div className="col-1 ps-3">{Number}</div>
             <div className="col-3 ps-2">{nama}</div>
             <div className="col-2 ps-2">{stock}</div>

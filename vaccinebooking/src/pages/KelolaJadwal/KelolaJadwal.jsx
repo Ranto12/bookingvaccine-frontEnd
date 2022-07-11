@@ -28,12 +28,6 @@ const KelolaJadwal = () => {
         setInput(inputt)
         console.log(inputt)
     }
-    const handlePage = (e) => {
-        setPage(e.target.value)
-    }
-    const handleSize = (e) => {
-        setSize(e.target.value);
-    }
 
     useEffect(() => {
         const fetchPosts = async () => {
@@ -149,6 +143,8 @@ const KelolaJadwal = () => {
                                             val.health_facilities_dao_mapped.health_facilities_name?.toLowerCase().includes(input.toLocaleLowerCase()) || 
                                             val.start_time?.toLowerCase().includes(input.toLocaleLowerCase()) ) {  
                                         return val
+                                    } else{
+                                       return null;
                                     }
                                 }).map((data, index) => {
                                     return (

@@ -1,19 +1,15 @@
-import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { NavLink, useNavigate } from "react-router-dom";
 import "../../assets/Style/style.css";
+import logo from '../../assets/img/logo.svg';
+import dashboard from '../../assets/img/dashboard.png';
+import kelolapengguna from '../../assets/img/kelolapengguna.png';
+import kelolajadwal from '../../assets/img/kelolajadwal.png';
+import kelolaberita from '../../assets/img/kelolaberita.png';
+import databooking from '../../assets/img/databooking.png';
+import keluar from '../../assets/img/keluar.png';
+import kelolaadmin from '../../assets/img/kelolaadmin.png';
 
 //assets
-import {
-  BsFillGridFill,
-  BsBook,
-  BsPersonFill,
-  BsPersonBadgeFill,
-  BsFillFileEarmarkTextFill,
-  BsShieldFillCheck,
-  BsDoorClosed,
-} from "react-icons/bs";
-
 const handleLogout = () => {
   localStorage.removeItem("token");
   window.location.reload();
@@ -22,10 +18,15 @@ const handleLogout = () => {
 const Sidebar = () => {
   return (
     <section>
-      <div className="row">
+      <div className="row fullHight">
         <div className=" ">
           <div className="text-center mt-5 sidebar mx-3  rounded-3 ">
-            <h1 className="pb-5 pt-5 text-light ">Logo</h1>
+            <div className="row align-items-center justify-content-end">
+              <div className=" align-items-center p-5" >
+                <img src={logo} alt="logo" className="Logo"/>
+              </div>
+
+            </div>
 
             <div className="  text-center pb-4 ps-4 hover-bg-secondary ">
               <Link
@@ -34,10 +35,10 @@ const Sidebar = () => {
               >
                 <div className="row  row-cols-sm-1 row-cols-md-2 ">
                   <div className="col-3 text-light ps-4 icon-dasboard ">
-                    <BsFillGridFill />
+                    <img src={dashboard} alt="" />
                   </div>
 
-                  <div className="col-9 ps-4 text-start text-light h6 fw-bold pt-3 pt-2">Dashboard</div>
+                  <div className="col-9 ps-4 text-start text-light h6 fw-500 pt-3 pt-2">Dashboard</div>
                 </div>
               </Link>
             </div>
@@ -49,10 +50,10 @@ const Sidebar = () => {
               >
                 <div className="row  row-cols-sm-1 row-cols-md-2 ">
                   <div className="col-3 text-light ps-4 icon-dasboard ">
-                    <BsBook />
+                    <img src={databooking} alt="" />
                   </div>
 
-                  <div className="col-9 ps-4 text-start  text-light h6 fw-bold pt-3 pt-2">Data booking</div>
+                  <div className="col-9 ps-4 text-start  text-light h6 fw-500 pt-3 pt-2">Data booking</div>
                 </div>
               </Link>
             </div>
@@ -64,10 +65,10 @@ const Sidebar = () => {
               >
                 <div className="row  row-cols-sm-1 row-cols-md-2 ">
                   <div className="col-3 text-light ps-4 icon-dasboard ">
-                    <BsPersonFill />
+                    <img src={kelolajadwal} alt="" />
                   </div>
 
-                  <div className="col-9 ps-4 text-start text-light h6 fw-bold pt-3 pt-2">Kelola jadwal</div>
+                  <div className="col-9 ps-4 text-start text-light h6 fw-500 pt-3 pt-2 ">Kelola jadwal</div>
                 </div>
               </Link>
             </div>
@@ -79,10 +80,10 @@ const Sidebar = () => {
               >
                 <div className="row  row-cols-sm-1 row-cols-md-2 ">
                   <div className="col-3 text-light ps-4 icon-dasboard ">
-                    <BsFillFileEarmarkTextFill />
+                    <img src={kelolaberita} alt="" />
                   </div>
 
-                  <div className="col-9 ps-4 text-start text-light h6 fw-bold pt-3 pt-2">Kelola Berita</div>
+                  <div className="col-9 ps-4 text-start text-light h6 fw-500 pt-3 pt-2">Kelola Berita</div>
                 </div>
               </Link>
             </div>
@@ -94,10 +95,10 @@ const Sidebar = () => {
               >
                 <div className="row  row-cols-sm-1 row-cols-md-2 ">
                   <div className="col-3 text-light ps-4 icon-dasboard ">
-                    <BsPersonBadgeFill />
+                    <img src={kelolapengguna} alt="" />
                   </div>
 
-                  <div className="col-9 ps-4 text-start text-light h6 fw-bold pt-3 pt-2">Kelola Pengguna</div>
+                  <div className="col-9 ps-4 text-start text-light h6 fw-500 pt-3 pt-2">Kelola Pengguna</div>
                 </div>
               </Link>
             </div>
@@ -111,10 +112,10 @@ const Sidebar = () => {
               >
                 <div className="row  row-cols-sm-1 row-cols-md-2 ">
                   <div className="col-3 text-light ps-4 icon-dasboard ">
-                    <BsShieldFillCheck />
+                    <img src={kelolaadmin} alt="" />
                   </div>
 
-                  <div className="col-9 ps-4 text-start text-light h6 fw-bold pt-3 pt-2">Kelola Admin</div>
+                  <div className="col-9 ps-4 text-start text-light h6 fw-500 pt-3 pt-2">Kelola Admin</div>
                 </div>
               </Link>
             </div>
@@ -128,10 +129,10 @@ const Sidebar = () => {
               >
                 <div className="row  row-cols-sm-1 row-cols-md-2 " onClick={handleLogout}>
                   <div className="col-3 text-light ps-4 icon-dasboard ">
-                    <BsDoorClosed />
+                   <img src={keluar} alt="" />
                   </div>
 
-                  <div className="col-9 ps-4 text-start text-light h6 fw-bold pt-3 pt-2">Keluar</div>
+                  <div className="col-9 ps-4 text-start text-light h6 fw-500 pt-3 pt-2">Keluar</div>
                 </div>
               </Link>
             </div>

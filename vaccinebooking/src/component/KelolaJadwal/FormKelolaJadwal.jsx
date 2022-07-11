@@ -16,7 +16,7 @@ export default function FormKelolaJadwal({address, name, data}) {
   const [startTime, setStartTime] = useState("");
   const [Stock, setStock] = useState(0);
   const [image, setImage] = useState("");
-  const [imagePreview, setImagePreview] = useState("");
+  const [imagePreview] = useState("");
 
   const chaangeStartDate =(e)=>{
     setStartDate(e.target.value);
@@ -28,7 +28,7 @@ export default function FormKelolaJadwal({address, name, data}) {
     setStartTime(e.target.value)
   }
   const onChangeStock =(e)=>{
-    if(e.target.value.length==3) return false;
+    if(e.target.value.length === 3) return false;
     setStock(e.target.value);
   }
  const onChangeImage=(e)=>{
@@ -74,7 +74,7 @@ const handleSubmit =(e)=>{
   formData.append("start_time", `${startTime}`);
   formData.append("file", image);
   try{
-    const response = axios({
+    axios({
       method: "post",
       url: `${URL}/session`,
       data: formData,
@@ -83,7 +83,7 @@ const handleSubmit =(e)=>{
                 },
     })
     .then((response)=>{
-      if(response.data.status=="success"){
+      if(response.data.status === "success"){
         Swal.fire({
           title: "Success",
           text: "Data berhasil ditambahkan",
@@ -93,7 +93,7 @@ const handleSubmit =(e)=>{
             handleBack();
           }
         })
-      }else if(response.data.status=="error"){
+      }else if(response.data.status === "error"){
         Swal.fire({
           title: "Error",
           text: "Data gagal ditambahkan",
@@ -126,7 +126,6 @@ const handleSubmit =(e)=>{
           <div className="mt-3">
             {vaccine.data && 
             vaccine.data.map((item)=>{
-              const id = item.id_vaccine;
               return(
                 <label>
                 <input type="radio" key={item.id} name="fav_language" className="ms-3"
@@ -151,7 +150,7 @@ const handleSubmit =(e)=>{
           }
         }} 
         onChange={onChangeStock}
-        type="number"  className="mt-2 p-1 rounded-2 input-kel Background-White" onKeyPress={(e) =>["e", "E", "+", "-", ","].includes(e.key) && e.preventDefault()} required min="4" max="5" />
+        type="number"  className="mt-2 p-1 rounded-2 input-kel Background-White padding-input" onKeyPress={(e) =>["e", "E", "+", "-", ","].includes(e.key) && e.preventDefault()} required min="4" max="5" />
         <span className="ms-3">Buah</span>
       </div>
 
@@ -160,11 +159,11 @@ const handleSubmit =(e)=>{
           <label className="fw-bold mb-3"> Sesi </label>
         </div>
         <span className="">
-          <input type="date" className="mt-2 p-1 rounded-2 input-kel Background-White" onChange={chaangeStartDate} />
+          <input type="date" className="mt-2 p-1 rounded-2 input-kel Background-White padding-input" onChange={chaangeStartDate} />
         </span>
         <span className="mx-4">-</span>
         <span> 
-          <input type="time" className="mt-2 p-1 rounded-2 input-kel Background-White" onChange={ChangeStartTime} />
+          <input type="time" className="mt-2 p-1 rounded-2 input-kel Background-White padding-input" onChange={ChangeStartTime} />
         </span>
       </div>
       <div className="row mt-4">
@@ -209,7 +208,7 @@ const handleSubmit =(e)=>{
                             cursor: "pointer",
                           }}
                         >
-                          <img src={imagePreview} height="100%" />
+                          <img src={imagePreview} height="100%" alt="" />
                         </div>
                 )}
         </div>

@@ -1,5 +1,4 @@
-import React, { useEffect, useState, useCallback } from 'react'
-import axios from "axios"
+import React, { useEffect, useState } from 'react'
 
 // Api
 import api from './../../../API/data/post'
