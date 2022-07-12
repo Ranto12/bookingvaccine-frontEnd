@@ -7,11 +7,10 @@ import moment from 'moment';
 import { useState } from "react";
 import HapusDialogBerita from "../HapusDialog/HapusDialogBerita";
 
-const TabelKelolaBerita = ({ Number,id,  title, tanggal, author, key, content}) => {
+const TabelKelolaBerita = ({ Number,id,  title, tanggal, author, content}) => {
   //state and variable
   let navigate = useNavigate();
   const [open, setOpen] = useState(false);
-
   //function
   const handleClickOpen = () => {
     setOpen(true);
@@ -34,7 +33,7 @@ const TabelKelolaBerita = ({ Number,id,  title, tanggal, author, key, content}) 
             'Authorization': `Bearer ${localStorage.getItem('token')}`
         }
     }).then(res => {
-        console.log(res);
+        // console.log(res);
         window.location.reload();
     })
     } 
@@ -57,14 +56,14 @@ const TabelKelolaBerita = ({ Number,id,  title, tanggal, author, key, content}) 
       <div className="col-2">{author}</div>
       <div className="col-4">{moment(tanggal).format('DD/MM/YYYY')}</div>
       <div className="col-1 d-flex justify-content-center PointerClikCss ">
-        <IconButton aria-label="Check" data-bs-toggle="tooltip" data-bs-placement="top" title="edit" className="PointerClikCss">
-          <RiPencilFill onClick={handleNavigate}  />
+        <IconButton onClick={handleNavigate} aria-label="Check" data-bs-toggle="tooltip" data-bs-placement="top" title="edit" className="PointerClikCss">
+          <RiPencilFill   />
         </IconButton>
-        <IconButton aria-label="Cancel" data-bs-toggle="tooltip" data-bs-placement="top" title="remove">
-          <MdDelete onClick={handleClickOpen} />
+        <IconButton onClick={handleClickOpen} aria-label="Cancel" data-bs-toggle="tooltip" data-bs-placement="top" title="remove">
+          <MdDelete  />
         </IconButton>
       </div>
-      <HapusDialogBerita open={open} handleClose={handleClose} handleSubmit={handleDetele}></HapusDialogBerita>
+      <HapusDialogBerita key={id} open={open} handleClose={handleClose} handleSubmit={handleDetele}></HapusDialogBerita>
     </div>
   );
 };

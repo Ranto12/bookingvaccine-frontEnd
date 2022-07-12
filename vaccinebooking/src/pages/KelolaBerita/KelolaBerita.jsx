@@ -22,13 +22,11 @@ const KelolaBerita = () => {
   const [page, setPage] = useState(0);
   const [size, setSize] = useState(15);
   const [lengthPage, setLengthPage] = useState(0);
-  console.log(lengthPage)
   //funtion
   const onChangeInput = (e) => {
     const inputt = e.target.value;
     setInput(inputt);
   };
-  console.log(input, "input")
   const handleSearch = () => {
     setInput();
   };
@@ -121,16 +119,18 @@ const KelolaBerita = () => {
           </div>
 
           {/* tabel */}
-          <div className="row mt-4 background-color-Table  justify-content-center ">
+          {Artikels.length > 0 ? (
+            <div className="row mt-4 background-color-Table  justify-content-center ">
             <div className="col-1">No</div>
             <div className="col-4">judul Berita</div>
             <div className="col-2">Author</div>
             <div className="col-4">Tanggal Posting</div>
             <div className="col-1">Action</div>
           </div>
+          ):(null)}
 
           {/* isi tabel */}
-          <div className='TabelkelolaBerita row Border-Color-Box '>
+          <div className={Artikels.length !== 0 ? 'TabelkelolaBerita row Border-Color-Box ' : ""}>
             {Artikels &&
               Artikels?.filter((val) => {
 

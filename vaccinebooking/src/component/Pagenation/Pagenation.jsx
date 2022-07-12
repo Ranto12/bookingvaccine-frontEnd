@@ -1,8 +1,6 @@
 import ReactPagenation from 'react-paginate'
 const Pagenation = ({setPage, lengthPage}) => {
 
-
-
   const handlePageClik =(e)=>{
     const selectedPage = e.selected;
     setPage(selectedPage)
@@ -13,7 +11,7 @@ const Pagenation = ({setPage, lengthPage}) => {
       nextLabel={">"}
       breakLabel={"..."}
       breakClassName={"break-me"}
-      pageCount={lengthPage }
+      pageCount={lengthPage}
       marginPagesDisplayed={2}
       pageRangeDisplayed={3}
       onPageChange={handlePageClik}

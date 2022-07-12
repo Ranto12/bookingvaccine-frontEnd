@@ -22,7 +22,6 @@ import {PrivateRoute, PrivateRouteLogRes} from './component/PrivateRoute/Private
 
 function App() {
   const roles = localStorage.getItem("role");
-  console.log("roles", roles);
   return (
     <Routes>
       <Route element={<PrivateRouteLogRes/>}>
