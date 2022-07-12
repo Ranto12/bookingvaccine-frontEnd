@@ -1,9 +1,9 @@
-import React from "react";
 import Sidebar from "../../component/Sidebar/Sidebar";
 import { Form } from "react-bootstrap";
 import FormKelolaDataAdmin from "../../component/KelolaAdmin/FormKelolaDataAdmin";
 
 export default function AddAdmin() {
+ 
   return (
     <div>
       <div>
@@ -17,7 +17,7 @@ export default function AddAdmin() {
               <h1>Admin</h1>
             </div>
 
-            <div className="bg-card-kelola bg-secondary">
+            <div className="bg-card-kelola Font-white">
               <h5>
                 Silahkan Masukkan Data Sesuai dengan bagian yang telah di
                 Sediakan
@@ -26,15 +26,6 @@ export default function AddAdmin() {
 
             <Form className="bg-form-jadwal">
               <FormKelolaDataAdmin />
-
-              <div className="text-end mt-3 mb-5">
-                <button className="btn-kelola-jadwal1 me-3  rounded-3 mb-5">
-                  batal
-                </button>
-                <button className="btn-kelola-jadwal ms-3  rounded-3 mb-5">
-                  Simpan
-                </button>
-              </div>
             </Form>
           </div>
         </div>

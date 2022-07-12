@@ -16,7 +16,6 @@ import Select from '../../component/PageComponent/Select';
 const KelolaAdmin = () => {
     // initial state and valiables
     const [input, setInput] = useState("");
-    const [count, setCount] = useState(1);
     const [admin, setAdmin] = useState([]);
     const [size, setSize] = useState(15);
 
@@ -25,20 +24,15 @@ const KelolaAdmin = () => {
         setInput(input)
     }
 
-    const handleSearch = () => {
-        setCount(1 + input)
-    }
-
-    useEffect(() => {
-        handleSearch();
-    }, [])
-
     // API
 
     useEffect(() => {
         const fetchPosts = async () => {
             try {
-                const response = await api.get("/users/roles/ADMIN")
+                const response = await api.get("/users/roles/ADMIN", {
+                    headers:{
+                        'Authorization': `Bearer ${localStorage.getItem('token')}`
+                    }})
                 setAdmin(response.data.data);
             } catch (err) {
                 if (err.response) {
@@ -53,7 +47,6 @@ const KelolaAdmin = () => {
         }
         fetchPosts();
     }, [])
-    console.log(admin)
 
     return (
         <div className='Fontcolor-Dasboard'>
@@ -87,7 +80,7 @@ const KelolaAdmin = () => {
                                     <p className='ms-2 Fz-16 me-2'>entri</p>
                                 </div>
                                 <div className='border border-dark d-flex w-100 BorderRadiusInline' >
-                                    <div className='ms-3 me-3' style={{ cursor: "pointer", border: "none" }} onClick={handleSearch}>
+                                    <div className='ms-3 me-3' style={{ cursor: "pointer", border: "none" }}>
                                         <AiOutlineSearch />
                                     </div>
                                     <div className='d-flex'>
@@ -132,9 +125,28 @@ const KelolaAdmin = () => {
                     {/* isi tabel */}
                     <div className='TabelAdmin row Border-Color-Box'>
                         
-                        {admin.map((data, index)=>{
+                        { admin && 
+                        admin.filter((val)=>{
+                            if(input === ""){
+                                return val
+                            } else if(val.first_name?.toLowerCase().includes(input.toLocaleLowerCase()) || 
+                                        val.address?.toLowerCase().includes(input.toLocaleLowerCase()) ||
+                                        val.email?.toLowerCase().includes(input.toLocaleLowerCase()) ||
+                                        val.no_phone?.toLowerCase().includes(input.toLocaleLowerCase()) 
+                                        ){
+                                return val
+                            } else {
+                                return null;
+                            }
+                        }).map((data, index)=>{
                             return(
-                                <TabelAdmin Number={index +1} Name={data.first_name + " " + data.last_name} hp={data.no_phone} email={data.email} role={data.roles} />
+                                <TabelAdmin 
+                                key={data.id_user} id={data.id_user}
+                                Number={index +1} Name={data.first_name} 
+                                hp={data.no_phone} email={data.email} role={data.roles} 
+                                alamat={data.address}  tanggalLahir={data.birth_date}
+                                gender={data.gender} pw={data.password} username={data.username}
+                                />
                             )
                         })}
                     </div>

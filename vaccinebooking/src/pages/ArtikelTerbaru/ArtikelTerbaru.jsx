@@ -1,22 +1,24 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import Sidebar from "../../component/Sidebar/Sidebar";
 // style
-import "./../../assets/Style/style.css";
-import { Grid, IconButton } from "@mui/material";
+// import "./../../assets/Style/style.css";
+import { Grid } from "@mui/material";
 
 import {BsFileEarmarkImage} from 'react-icons/bs'
 import axios from "axios";
 
+// api 
+import {URL} from "../../API/URL";
+import { useNavigate } from "react-router-dom";
+
 const ArtikelTerbaru = () => {
   // initial state and valiables
-  const [input, setInput] = useState("");
-  const [imagePreview, setImagePreview] = useState("");
-  const inputRef = useRef();
+  const [imagePreview] = useState("");
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const [body, setBody] = useState("");
   const [image, setImage] = useState("");
-
+  const navigate = useNavigate
   // function 
   // handleChange
   const handleName =(e)=>{
@@ -44,11 +46,14 @@ const handleImage=(e)=>{
     try{
       const response = axios({
         method: "post",
-        url: "http://35.247.142.238/api/v1/news",
-        // url: "https://bookingvaccine.herokuapp.com:443/api/v1/news",
+        url: `${URL}/news`,
         data: formData,
-        headers: { "Content-Type": "multipart/form-data" },
+        headers: { 
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${localStorage.getItem('token')}`,
+     }
       });
+      navigate("/KelolaBerita")
     }catch(error){
       console.log(error)
     }
@@ -60,12 +65,10 @@ const handleImage=(e)=>{
         <div className="col-3">
           <Sidebar />
         </div>
-        <div className="col-9 mt-5">
-          <div className="row">
-            <div className="col-6">
-              <h1 className="header">Tambahkan</h1>
-              <h1 className="title">Berita terbaru</h1>
-            </div>
+        <div className="col-9 mt-5 text-secondary" style={{ color: " #4E7EA7" }}>
+          <div className="title-das ">
+            <h4>Tambahkan</h4>
+            <h1>Berita Terbaru</h1>
           </div>
 
           <div className=" table-header row mt-4 background-color-Table  justify-content-center">
@@ -81,7 +84,7 @@ const handleImage=(e)=>{
                 <h6 style={{ marginTop: "2rem", color: "#4E7EA7"}}>
                   Judul Berita
                 </h6>
-                <input type="text" className="FormArtikel p-1 rounded-2" style={{width: "100%", border: "none"}}
+                <input type="text" className="FormArtikel p-1 p-3 rounded-2 padding-input" style={{width: "100%", border: "none"}}
                   onChange={handleName}
                   value={title}
                   required
@@ -90,7 +93,7 @@ const handleImage=(e)=>{
                 >
                   Author
                 </h6>
-                <input type="text" className="w-100 FormArtikel p-1 rounded-2" style={{ border: "none",}}
+                <input type="text" className="w-100 FormArtikel p-1 p-3 rounded-2 padding-input" style={{ border: "none",}}
                   onChange={handleAuthor}
                   value={author}
                   required
@@ -98,7 +101,7 @@ const handleImage=(e)=>{
                 <input type="file"  style={{ display: "none"}}
                 />
                 <Grid container columnSpacing={{ xs: 2 }}>
-                  <Grid item xs={9}>
+                  <Grid item xs={8}>
                     <Grid container>
                       <Grid container item xs>
                         <h6 style={{ marginTop: "1rem", color: "#4E7EA7" }}>
@@ -106,14 +109,14 @@ const handleImage=(e)=>{
                         </h6>
                       </Grid>
                     </Grid>
-                    <textarea type="text" className="w-100 FormArtikel p-1 rounded-2"
+                    <textarea type="text" className="w-100 FormArtikel p-1 p-3 rounded-2 padding-input"
                       style={{ border: "none",height: "20rem",resize: "none"}}
                       onChange={handleBody}
                       value={body}
                       required
                     />
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={4}>
                     <div>
                       <h6 style={{marginTop: "1rem",color: "#4E7EA7"}}>
                         Upload Gambar Cover
@@ -121,11 +124,11 @@ const handleImage=(e)=>{
                       {imagePreview === "" ? (
                         <div>
                           <div
-                            style={{width: "75%", height: "20rem", border: "dashed 2px #4E7EA7", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", cursor: "pointer",}}>
-                            <div style={{height: "10rem"}} className="image-upload">
+                            style={{width: "100%", height: "20rem", border: "dashed 2px #4E7EA7", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", cursor: "pointer",}}>
+                            <div style={{height: "50%", paddingTop:"30px", borderRadius:"10px" , backgroundColor:"#D9D9D9"}} className="card">
                               <div className="image-upload">
                                 <label for="file-input">
-                                  <BsFileEarmarkImage className="h-100  w-100  image-size-uploadimage" />
+                                  <BsFileEarmarkImage className=" image-size-uploadimage1" />
                                 </label>
                                 <input id="file-input" type="file" onChange={handleImage} />
                               </div>
@@ -151,7 +154,7 @@ const handleImage=(e)=>{
                             cursor: "pointer",
                           }}
                         >
-                          <img src={imagePreview} height="100%" />
+                          <img src={imagePreview} height="100%" alt=""/>
                         </div>
                       )}
                       <div
@@ -163,7 +166,7 @@ const handleImage=(e)=>{
                       </div>
                         </div>
                       <div className="text-end mt-3">
-                          <button className="btn-kelola-jadwal1 me-3  rounded-3 mb-5">
+                          <button className="btn-kelola-jadwal1 me-3  rounded-3 mb-5" onClick={(e)=>navigate('/KelolaBerita')}>
                             Batal
                           </button>
                           <button className="btn-kelola-jadwal ms-3  rounded-3 mb-5 " onClick={handleSubmit} type="submit">

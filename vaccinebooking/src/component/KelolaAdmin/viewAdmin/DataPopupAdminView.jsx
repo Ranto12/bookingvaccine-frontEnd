@@ -1,7 +1,3 @@
-import React from 'react'
-import api from '../../../API/data/post'
-import  { useState, useEffect } from 'react'
-
 export default function DataPopupAdminEdit() {
   return (
     <div>

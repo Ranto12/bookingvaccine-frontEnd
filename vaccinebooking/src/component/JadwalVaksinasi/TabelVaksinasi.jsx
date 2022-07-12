@@ -1,56 +1,64 @@
 import React from "react";
 import "../../assets/Style/style.css";
-import { RiPencilFill } from "react-icons/ri";
-import { MdDelete } from "react-icons/md";
+import { RiFileSearchFill, RiPencilFill } from "react-icons/ri";
 import { IconButton } from "@mui/material";
-import OverlayJadwalVaksinasi from "./OverlayJadwalVaksinasi";
+// import OverlayJadwalVaksinasi from "./OverlayJadwalVaksinasi";
 import { useState } from "react";
-import { Identity } from "@mui/base";
-import axios from "axios";
-import HapusDialog from "../HapusDialog/HapusDialog";
+// import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import PopUpJadwal from "./PopUpJadwal";
 
-const TabelVaksinasi = ({ Number, nama, stock, jenis, waktu, key, image }) => {
+const TabelVaksinasi = ({
+  Number,
+  key,
+  idSesion,
+  nama,
+  stock,
+  jenis,
+  waktu,
+  image,
+  tanggal,
+  id_area,
+  id_facility,
+  Idvaccine,
+  namaFaskes,
+  alamat,
+}) => {
   // initial state and variable
-  const id = key;
-
+  let navigate = useNavigate();
+  const handleNavigate = (e) => {
+    e.preventDefault();
+    navigate("/EditJadwalVaksinasi", {
+      state: {
+        stockVaccine: stock,
+        namaFaskes: namaFaskes,
+        tanggalVaccine: tanggal,
+        alamatFacility: alamat,
+        WaktuVaccine: waktu,
+        idFacility: id_facility,
+        Idvaccine: Idvaccine,
+        idSesion: idSesion,
+        key: key,
+        idArea: id_area,
+      },
+    });
+  };
   const [getData, setData] = useState({
     nama: "",
     stock: "",
   });
-  const handleClick = (id, nama, stock) => {
+
+  const handleClick = (nama, stock) => {
     setData({
       nama: nama,
       stock: stock,
     });
     console.log(getData);
   };
-
-  const handleDelete = () => {
-    setOpen(false);
-    axios({
-      method: "DELETE",
-      url: `http://35.247.142.238/api/v1/session/${id}`,
-    })
-      .then((res) => {
-        console.log("Res", res.data.message);
-      })
-      .catch((err) => {
-        console.log("Error in request", err);
-      });
-  };
-
-  const [open, setOpen] = React.useState(false);
-
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
+  // console.log(`id facility`, id_facility)
 
   return (
-    <div className="d-flex TabelkelolaBerita justify-content-center TableColor-child">
+    <div className="d-flex TabelkelolaBerita justify-content-center TableColor-child title-das">
       <div className="col-1 ps-3">{Number}</div>
       <div className="col-3 ps-2">{nama}</div>
       <div className="col-2 ps-2">{stock}</div>
@@ -67,22 +75,27 @@ const TabelVaksinasi = ({ Number, nama, stock, jenis, waktu, key, image }) => {
             handleClick(Number, nama, stock);
           }}
         >
-          <OverlayJadwalVaksinasi data={getData} />
+          {/* <OverlayJadwalVaksinasi data={getData} /> */}
+          <RiPencilFill onClick={handleNavigate} />
         </IconButton>
-        <IconButton
+        {/* <IconButton
           className="me-2"
-          data-bs-toggle="tooltip"
+          data-bs-toggle="modal"
           data-bs-placement="top"
-          title="remove"
+          title="view"
+          data-bs-target={"#exampleModal" + Number}
         >
-          <MdDelete onClick={handleClickOpen} />
-        </IconButton>
+          <RiFileSearchFill />
+        </IconButton> */}
+        <PopUpJadwal
+          number={Number}
+          namaAdmin={nama}
+          alamatLengkap={alamat}
+          jenisVaksin={jenis}
+          stock={stock}
+          sesi={waktu}
+        ></PopUpJadwal>
       </div>
-      <HapusDialog
-        open={open}
-        handleClose={handleClose}
-        handleSubmit={handleDelete}
-      ></HapusDialog>
     </div>
   );
 };

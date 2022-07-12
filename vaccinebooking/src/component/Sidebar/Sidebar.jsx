@@ -1,112 +1,144 @@
-import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { NavLink, useNavigate } from "react-router-dom";
 import "../../assets/Style/style.css";
+import logo from '../../assets/img/logo.svg';
+import dashboard from '../../assets/img/dashboard.png';
+import kelolapengguna from '../../assets/img/kelolapengguna.png';
+import kelolajadwal from '../../assets/img/kelolajadwal.png';
+import kelolaberita from '../../assets/img/kelolaberita.png';
+import databooking from '../../assets/img/databooking.png';
+import keluar from '../../assets/img/keluar.png';
+import kelolaadmin from '../../assets/img/kelolaadmin.png';
 
 //assets
-import {
-  BsFillGridFill,
-  BsBook,
-  BsPersonFill,
-  BsPersonBadgeFill,
-  BsFillFileEarmarkTextFill,
-  BsShieldFillCheck,
-  BsDoorClosed,
-} from "react-icons/bs";
-
-
+const handleLogout = () => {
+  localStorage.removeItem("token");
+  window.location.reload();
+}
 
 const Sidebar = () => {
   return (
     <section>
-      <div className="row">
+      <div className="row fullHight">
         <div className=" ">
           <div className="text-center mt-5 sidebar mx-3  rounded-3 ">
-            <h1 className="pb-5 pt-5 text-light ">Logo</h1>
+            <div className="row align-items-center justify-content-end">
+              <div className=" align-items-center p-5" >
+                <img src={logo} alt="logo" className="Logo"/>
+              </div>
+
+            </div>
 
             <div className="  text-center pb-4 ps-4 hover-bg-secondary ">
               <Link
                 className="text-decoration-none   d-flex menu-sidebar  me-4 py-2"
                 to="/Dashboard"
               >
-                <div className="text-light ps-4 icon-dasboard ">
-                  <BsFillGridFill />
+                <div className="row  row-cols-sm-1 row-cols-md-2 ">
+                  <div className="col-3 text-light ps-4 icon-dasboard ">
+                    <img src={dashboard} alt="" />
+                  </div>
+
+                  <div className="col-9 ps-4 text-start text-light h6 fw-500 pt-3 pt-2">Dashboard</div>
                 </div>
-                <div className=" ps-4 text-light h6 fw-bold pt-3 pt-2">Dashboard</div>
               </Link>
             </div>
 
             <div className="  text-center pb-4 ps-4 hover-bg-secondary ">
               <Link
-                className="text-decoration-none d-flex menu-sidebar  me-4 py-2"
+                className="text-decoration-none   d-flex menu-sidebar  me-4 py-2"
                 to="/DataBooking"
               >
-                <div className="text-light icon-dasboard ps-4 icon-dasboard ">
-                  <BsBook />
+                <div className="row  row-cols-sm-1 row-cols-md-2 ">
+                  <div className="col-3 text-light ps-4 icon-dasboard ">
+                    <img src={databooking} alt="" />
+                  </div>
+
+                  <div className="col-9 ps-4 text-start  text-light h6 fw-500 pt-3 pt-2">Data booking</div>
                 </div>
-                <div className=" ps-4 text-light   h6 fw-bold  pt-3">Data booking</div>
               </Link>
             </div>
 
             <div className="  text-center pb-4 ps-4 hover-bg-secondary ">
               <Link
-                className="text-decoration-none d-flex menu-sidebar  me-4 py-2"
+                className="text-decoration-none   d-flex menu-sidebar  me-4 py-2"
                 to="/kelolaJadwal"
               >
-                <div className="text-light icon-dasboard ps-4 ">
-                  <BsPersonFill />
+                <div className="row  row-cols-sm-1 row-cols-md-2 ">
+                  <div className="col-3 text-light ps-4 icon-dasboard ">
+                    <img src={kelolajadwal} alt="" />
+                  </div>
+
+                  <div className="col-9 ps-4 text-start text-light h6 fw-500 pt-3 pt-2 ">Kelola jadwal</div>
                 </div>
-                <div className=" ps-4 text-light   h6 fw-bold  pt-3">Kelola jadwal</div>
               </Link>
             </div>
 
             <div className="  text-center pb-4 ps-4 hover-bg-secondary ">
               <Link
-                className="text-decoration-none d-flex menu-sidebar  me-4 py-2"
+                className="text-decoration-none   d-flex menu-sidebar  me-4 py-2"
                 to="/KelolaBerita"
               >
-                <div className="text-light icon-dasboard ps-4 ">
-                  <BsFillFileEarmarkTextFill />
+                <div className="row  row-cols-sm-1 row-cols-md-2 ">
+                  <div className="col-3 text-light ps-4 icon-dasboard ">
+                    <img src={kelolaberita} alt="" />
+                  </div>
+
+                  <div className="col-9 ps-4 text-start text-light h6 fw-500 pt-3 pt-2">Kelola Berita</div>
                 </div>
-                <div className=" ps-4 text-light   h6 fw-bold  pt-3">Kelola Berita</div>
               </Link>
             </div>
 
             <div className="  text-center pb-4 ps-4 hover-bg-secondary ">
               <Link
-                className="text-decoration-none d-flex menu-sidebar  me-4 py-2"
+                className="text-decoration-none   d-flex menu-sidebar  me-4 py-2"
                 to="/KelolaPengguna"
               >
-                <div className="text-light icon-dasboard ps-4 ">
-                  <BsPersonBadgeFill />
+                <div className="row  row-cols-sm-1 row-cols-md-2 ">
+                  <div className="col-3 text-light ps-4 icon-dasboard ">
+                    <img src={kelolapengguna} alt="" />
+                  </div>
+
+                  <div className="col-9 ps-4 text-start text-light h6 fw-500 pt-3 pt-2">Kelola Pengguna</div>
                 </div>
-                <div className=" ps-4 text-light   h6 fw-bold  pt-3">Kelola Pengguna</div>
               </Link>
             </div>
+
+            {
+              localStorage.getItem("role") === "SUPER ADMIN" ? (
+                <div className="  text-center pb-4 ps-4 hover-bg-secondary ">
+              <Link
+                className="text-decoration-none   d-flex menu-sidebar  me-4 py-2"
+                to="/KelolaAdmin"
+              >
+                <div className="row  row-cols-sm-1 row-cols-md-2 ">
+                  <div className="col-3 text-light ps-4 icon-dasboard ">
+                    <img src={kelolaadmin} alt="" />
+                  </div>
+
+                  <div className="col-9 ps-4 text-start text-light h6 fw-500 pt-3 pt-2">Kelola Admin</div>
+                </div>
+              </Link>
+            </div>
+              ):(null)
+            }
 
             <div className="  text-center pb-4 ps-4 hover-bg-secondary ">
               <Link
-                className="text-decoration-none d-flex menu-sidebar  me-4 py-2"
-                to="/KelolaAdmin"
+                className="text-decoration-none   d-flex menu-sidebar  me-4 py-2"
+                to=""
               >
-                <div className="text-light icon-dasboard ps-4 ">
-                  <BsShieldFillCheck />
-                </div>
-                <div className=" ps-4 text-light   h6 fw-bold  pt-3">Kelola Admin</div>
-              </Link>
-            </div>
+                <div className="row  row-cols-sm-1 row-cols-md-2 " onClick={handleLogout}>
+                  <div className="col-3 text-light ps-4 icon-dasboard ">
+                   <img src={keluar} alt="" />
+                  </div>
 
-            <div className="  text-center pb-4 ps-4 hover-bg-secondary pt-5 ">
-              <Link
-                className="text-decoration-none d-flex menu-sidebar  me-4 py-2"
-                to="/"
-              >
-                <div className="text-light icon-dasboard ps-4 ">
-                  <BsDoorClosed />
+                  <div className="col-9 ps-4 text-start text-light h6 fw-500 pt-3 pt-2">Keluar</div>
                 </div>
-                <div className=" ps-4 text-light   h6 fw-bold  pt-3">Keluar</div>
               </Link>
             </div>
+           
+
+
           </div>
         </div>
       </div>

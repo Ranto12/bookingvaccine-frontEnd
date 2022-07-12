@@ -1,10 +1,10 @@
-import React from "react";
 import { IconButton } from "@mui/material";
 import { RiPencilFill } from "react-icons/ri";
 import { MdDelete } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 import api from "../../API/data/post";
 import moment from "moment";
+import { useState } from "react";
 import HapusDialogBerita from "../HapusDialog/HapusDialogBerita";
 
 const TabelKelolaBerita = ({
@@ -16,7 +16,19 @@ const TabelKelolaBerita = ({
   key,
   content,
 }) => {
+  //state and variable
   let navigate = useNavigate();
+  const [open, setOpen] = useState(false);
+
+  //function
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   const handleNavigate = (e) => {
     e.preventDefault();
     navigate("/EditArtikel", {
@@ -24,11 +36,19 @@ const TabelKelolaBerita = ({
     });
   };
 
-  const handleDelete = (e) => {
+  const handleDetele = (e) => {
     e.preventDefault();
-    setOpen(false);
     try {
-      api.delete(`/news/${id}`);
+      api
+        .delete(`/news/${id}`, {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        })
+        .then((res) => {
+          console.log(res);
+          window.location.reload();
+        });
     } catch (err) {
       if (err.response) {
         console.log(err.response.data);
@@ -40,18 +60,8 @@ const TabelKelolaBerita = ({
     }
   };
 
-  const [open, setOpen] = React.useState(false);
-
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
-
   return (
-    <div className="d-flex TabelkelolaBerita justify-content-center TableColor-child">
+    <div className="d-flex TabelkelolaBerita justify-content-center TableColor-child title-das">
       <div className="col-1">{Number}</div>
       <div className="col-4">{title}</div>
       <div className="col-2">{author}</div>
@@ -78,7 +88,7 @@ const TabelKelolaBerita = ({
       <HapusDialogBerita
         open={open}
         handleClose={handleClose}
-        handleSubmit={handleDelete}
+        handleSubmit={handleDetele}
       ></HapusDialogBerita>
     </div>
   );

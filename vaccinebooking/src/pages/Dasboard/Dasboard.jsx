@@ -1,61 +1,13 @@
-import React, { useEffect, useState } from "react";
-
-// icons
-import { BsFillSquareFill } from "react-icons/bs";
-
 // style
+import { BsFillSquareFill } from "react-icons/bs";
 import "./../../assets/Style/style.css";
-
 // component
 import Sidebar from '../../component/Sidebar/Sidebar';
 // length
 import {LengthAdmin, LengthPenguna, LengthKecamatan, LengthRSUD, LengthPuskesmas} from '../../component/Dasboard/APIrequired/Length';
-// api
-import api from '../../API/data/post';
+
 
 const Dashboard = () => {
-  // initial state and valiables
-  const [input, setInput] = useState("");
-  const [count, setCount] = useState(1);
-  const [datadashboard, setDataDasboard] = useState([]);
-  const admin = datadashboard.length;
-  const onChangeInput = (e) => {
-    const input = e.target.value;
-    setInput(input);
-  };
-
-  const handleSearch = () => {
-    setCount(1 + input);
-  };
-
-  useEffect(() => {
-    handleSearch();
-  }, []);
-
-  // api
-  // useEffect
-  useEffect(()=>{
-    // myApi()
-    const PenggunaLengthPost = async()=>{
-        try{
-            const response = await api.get("/users/roles/ADMIN")
-            setDataDasboard(response.data.data)
-        } catch(err){
-            if(err.response){
-                //not in the 200 response range
-                console.log(err.response.data)
-                console.log(err.response.status)
-                console.log(err.response.headers)
-            } else{
-                console.log(`Error ${err.message}`)
-            }
-        }
-    }
-    PenggunaLengthPost();
-},[])
-
-// console.log("datadashboard", datadashboard.length)
-
   return (
     <div>
       <div className="row Fontcolor-Dasboard me-5">
@@ -63,7 +15,6 @@ const Dashboard = () => {
         <div className="col-3">
           <Sidebar />
         </div>
-
         {/* content */}
         <div className="col-9 mt-5">
           <div className="title-das ">
@@ -72,9 +23,8 @@ const Dashboard = () => {
           </div>
 
           {/* total admin */}
-
-          <div className="row mt-3 ">
-            <div className="col-6">
+          <div className="row row-cols-1 row-cols-lg-2 mt-3 ">
+            <div className="col">
               <div className="Card-TotalAdmin">
                 <div className="">
                   <div className="d-flex align-items-center">
@@ -93,7 +43,7 @@ const Dashboard = () => {
 
             {/* total pengguna */}
 
-            <div className="col-6">
+            <div className="col">
               <div className="Card-TotalAdmin">
                 <div className="">
                   <div className="d-flex align-items-center">
@@ -112,8 +62,8 @@ const Dashboard = () => {
           </div>
 
           {/* fasilitas kesehatan */}
-          <div className="row mt-4 mb-5">
-            <div className="col-6">
+          <div className="row row-cols-1 row-cols-lg-2 mt-4 mb-5">
+            <div className="col">
 
               <div className="Card-TotalAdmin">
                 <div className="">
@@ -125,20 +75,28 @@ const Dashboard = () => {
                   </div>
 
                   <div className="">
-                    <div className="d-flex text-center mt-5 text-light ">
-                        <div className="me-3 card-faskes ">
-                            <h1 className=" fw-bold ">
-                            <LengthRSUD/>
-                            </h1>
-                            <h4 className="pt-2">RSUD</h4>
+                    <div className=" text-center mt-5 text-light ">
+                      <div className="row row-cols-2 ">
+
+                        <div className="col">
+                          <div className=" me-5 card-faskes ">
+                              <h1 className=" fw-bold ">
+                              <LengthRSUD/>
+                              </h1>
+                              <h4 className="pt-2 ">RSUD</h4>
+                          </div>
                         </div>
                         
-                        <div className="ms-1 card-faskes1 ">
-                            <h1 className=" fw-bold ">
-                            <LengthPuskesmas/>
-                            </h1>
-                            <h4 className="pt-2">PUSKESMAS</h4>
+                        <div className="col">
+                          <div className="me-5 card-faskes1 ">
+                              <h1 className=" fw-bold ">
+                              <LengthPuskesmas/>
+                              </h1>
+                              <h4 className="pt-2  ">PUSKESMAS</h4>
+                          </div>
                         </div>
+
+                      </div>
                     </div>
                   </div>
 
@@ -147,7 +105,7 @@ const Dashboard = () => {
             </div>
 
             {/* total kelurahan */}
-            <div className="col-6 ">
+            <div className="col ">
               <div className="Card-TotalAdmin">
                 <div className="">
                   <div className="d-flex align-items-center">

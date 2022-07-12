@@ -1,12 +1,8 @@
-import React from 'react'
-import api from './../../API/data/post'
-import  { useState, useEffect } from 'react'
-
 export default function DataPopup({nama,nohp, nik,gender, email, tgl_lahir}) {
   // console.log(nama, "ini namanya")
   return (
-    <div>
-    <ul>
+    <div className="title-das">
+    <ul className="title-das">
       <li>
         <h5>Nama</h5>
         <h6 className='data-popup'> {nama}</h6>

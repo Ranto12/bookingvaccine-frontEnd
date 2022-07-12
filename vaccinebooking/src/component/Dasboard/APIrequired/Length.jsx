@@ -1,21 +1,25 @@
-import React, { useEffect, useState, useCallback } from 'react'
-import axios from "axios"
+import React, { useEffect, useState } from 'react'
 
 // Api
 import api from './../../../API/data/post'
+const token = localStorage.getItem('token');
 
 //length pengguna
 export const LengthPenguna = () => {
     const [pengguna, setPengguna]= useState([]);
     const Length = pengguna.length;
+    // console.log(token);
 
     useEffect(()=>{
         // myApi()
         const PenggunaLengthPost = async()=>{
             try{
-                const response = await api.get("/users/roles/USER")
-                setPengguna(response.data.data)
-                ;
+                const response = await api.get("/users/roles/USER", {
+                    headers:{
+                        'Authorization': `Bearer ${token}`
+                    }
+                })
+                setPengguna(response.data.data);
             } catch(err){
                 if(err.response){
                     //not in the 200 response range
@@ -47,7 +51,11 @@ export const LengthAdmin = () => {
     // myApi()
     const PenggunaLengthPost = async()=>{
         try{
-            const response = await api.get("/users/roles/ADMIN")
+            const response = await api.get("/users/roles/ADMIN", {
+                headers:{
+                    'Authorization': `Bearer ${token}`
+                }
+            })
             setDataDasboard(response.data.data)
         } catch(err){
             if(err.response){
@@ -77,7 +85,11 @@ export const LengthKecamatan = () => {
     // myApi()
     const PenggunaLengthPost = async()=>{
         try{
-            const response = await api.get("/area")
+            const response = await api.get("/area", {
+                headers:{
+                    'Authorization': `Bearer ${token}`
+                }
+            })
             setDataDasboard(response.data.data)
         } catch(err){
             if(err.response){
@@ -108,7 +120,11 @@ export const LengthRSUD = () => {
     // myApi()
     const PenggunaLengthPost = async()=>{
         try{
-            const response = await api.get("/facility/category/1")
+            const response = await api.get("/facility/category/1", {
+                headers:{
+                    'Authorization': `Bearer ${token}`
+                }
+            })
             setDataDasboard(response.data.data)
         } catch(err){
             if(err.response){
@@ -140,7 +156,11 @@ export const LengthPuskesmas = () => {
     // myApi()
     const PenggunaLengthPost = async()=>{
         try{
-            const response = await api.get("/facility/category/2")
+            const response = await api.get("/facility/category/2", {
+                headers:{
+                    'Authorization': `Bearer ${token}`
+                }
+            })
             setDataDasboard(response.data.data)
         } catch(err){
             if(err.response){
@@ -159,5 +179,3 @@ export const LengthPuskesmas = () => {
     <div>{pusekesmas}</div>
   )
 }
-
-

@@ -33,7 +33,7 @@
 }
 
 .Card-TotalAdmin {
-  padding-bottom: 10%;
+  padding-bottom: 5%;
   border-radius: 20px;
   border: solid;
   padding-left: 36.54px;
@@ -48,11 +48,11 @@
 }
 
 .card-faskes {
-  padding: 5% 15%;
+  padding: 9%;
 }
 
 .card-faskes1 {
-  padding: 5% 7%;
+  padding: 9%;
 }
 
 /* kelola berita */
@@ -95,11 +95,11 @@
   justify-content: center;
 }
 
-.TabelkelolaBerita {
+/* .TabelkelolaBerita {
   background-color: #d9d9d9;
   justify-content: center;
   align-items: center;
-}
+} */
 
 .TabelDataBooking {
   background-color: #ffffff;
@@ -207,6 +207,7 @@
   padding-right: 36px !important;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+  /* padding-bottom: 1% !important; */
 }
 
 /* login */
@@ -377,6 +378,7 @@
   padding: 0;
   background: #7bd9e8;
   color: #ffffff;
+  cursor: pointer;
 }
 
 .brd {
@@ -399,7 +401,7 @@
 }
 
 .lupa-pass p {
-  width: 81px;
+  width: auto;
   height: 15px;
   font-family: "Poppins";
   font-style: normal;
@@ -409,6 +411,7 @@
   margin: 0px !important;
   justify-content: end;
   display: flex;
+  cursor: pointer;
 }
 
 /* tabel  */
@@ -464,7 +467,7 @@
 ul > li > h5,
 .data-popup,
 .title-table-datapopup {
-  color: #829ccc;
+  color: #4e7ea7;
   margin-right: 20px !important;
   margin-top: 20px !important;
 }
@@ -511,25 +514,16 @@ div > ul {
 }
 
 /* error message */
-.ErrorMessage {
-  font-family: Poppins;
-  font-size: 96px;
-  font-weight: 600;
-  color: #4e7ea7;
-  justify-content: center !important;
-  align-items: center !important;
+.errorPages {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
+
 .titleErrorMessage {
-  font-family: Poppins;
-  font-size: 32px;
-  font-weight: 500;
-  color: #4e7ea7;
-  justify-content: center !important;
-  align-items: center !important;
-}
-.ErrMSG {
-  justify-content: center !important;
-  align-items: center !important;
+  max-width: 75%;
+  text-align: center;
 }
 
 /* popup booking */
@@ -555,24 +549,98 @@ div > ul {
 /* news uploaded */
 .image-upload > input {
   display: none;
-  height: 100px;
-  width: 100px;
+  height: 60%;
+  width: 20%;
+  margin-bottom: 10px;
 }
 .image-size-uploadimage {
-  height: 100px !important;
-  width: 100px !important;
+  height: 40px !important;
+  width: 180px !important;
+}
+.image-size-uploadimage1 {
+  height: 56px !important;
+  width: 180px !important;
 }
 
-/* error pages */
-
-.errorPages {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+/* Kelola admin edit and add  */
+.input-Nama-admin {
+  width: 100%;
+  margin-bottom: 3%;
+  margin-top: 2%;
+  border: 1px solid #d9d9d9;
+  max-height: 100%;
+  min-height: 40px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  border-style: none;
+  padding-right: 10px;
+  padding-left: 10px;
+  outline: none;
+}
+.input-nama-admin-font {
+  font-family: "Poppins";
+  font-weight: 600;
+  font-size: 14px;
+  font-style: normal;
+}
+.input-alamat-admin {
+  height: 80%;
+  resize: none;
+  border: 1px solid #d9d9d9;
+  margin-top: 2%;
+  padding: 10px;
+  outline: none;
 }
 
-.titleErrorMessage {
-  max-width: 75%;
-  text-align: center;
+.Font-white {
+  color: white;
+}
+.input-password-admin {
+  width: 100%;
+  margin-bottom: 3%;
+  margin-top: 2%;
+  border: 1px solid #d9d9d9;
+  max-height: 100%;
+  min-height: 40px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  border-style: none;
+  padding-right: 10px;
+  padding-left: 10px;
+  display: flex;
+  outline: none;
+}
+.width-90 {
+  width: 100%;
+  border: none;
+  border-color: none;
+  outline: none;
+}
+
+.padding-input {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.logoSidebar {
+  max-width: 43, 11px;
+  max-height: 52, 41px;
+}
+.fullHight {
+  height: 100%;
+}
+.VakYu {
+  justify-content: end;
+  font-size: 24px;
+}
+.VaksinYuk {
+  justify-content: start;
+  font-size: 12px;
+}
+.Logo {
+  max-width: 200%;
+  max-height: 200%;
+}
+.medium {
+  font-size: medium;
+  font-family: Poppins;
 }
