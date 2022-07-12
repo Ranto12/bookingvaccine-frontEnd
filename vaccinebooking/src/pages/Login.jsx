@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { Link, useNavigate, useSearchParams } from "react-router-dom";
+import jwt_decode from 'jwt-decode';
+import { useNavigate } from "react-router-dom";
 import { AiFillEye } from "react-icons/ai";
 import { IconButton } from "@mui/material";
 import Logo from "../assets/img/logo.png";
@@ -13,7 +14,6 @@ const Login = () => {
   let navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [msg, setMsg] = useState("");
 
   // showPassword
   const [showPassword, setShowPassword] = useState(false);
@@ -64,8 +64,25 @@ const Login = () => {
             if (res.data !== null) {
               console.log(res.data);
               window.localStorage.setItem("token", res.data.data.token);
-              Swal.fire('Berhasil!', 'Anda Telah Berhasil Login!', 'success');
-              navigate("/Dashboard");
+              const token = window.localStorage.getItem("token");
+              const decode = jwt_decode(token);
+              window.localStorage.setItem("id_users", decode.id_user);
+              window.localStorage.setItem("role", decode.roles);
+              console.log(window.localStorage.getItem("role"));
+              console.log("hasil", decode);
+              if (window.localStorage.getItem("role") === "ADMIN" || window.localStorage.getItem("role") === "SUPER ADMIN") {
+                Swal.fire('Berhasil!', 'Anda Telah Berhasil Login!', 'success');
+                window.location.reload();
+                navigate("/Dashboard");
+              } else {
+                Swal.fire({
+                  title: "Oops...",
+                  text: "You are not authorized to access this page!",
+                  icon: "error",
+                  confirmButtonText: "OK",
+                });
+                localStorage.removeItem("token");
+              }
             } else if (res.data === null) {
               Swal.fire({
                 title: 'Gagal!',
@@ -115,6 +132,7 @@ const Login = () => {
                     id="Username"
                     aria-describedby="emailHelp"
                     value={username}
+                    className="padding-input"
                     onChange={onChangeUsername}
                   />
                   {errorUsername && (
@@ -135,6 +153,7 @@ const Login = () => {
                       type={showPassword ? "text" : "password"}
                       id="password"
                       value={password}
+                      className="padding-input"
                       onChange={onChangePassword}
                     />
                     {errorPassword && (
@@ -149,12 +168,12 @@ const Login = () => {
                     </IconButton>
                   </div>
                 </div>
-                <div className="lupa-pass d-flex justify-content-end ">
+                {/* <div className="lupa-pass d-flex justify-content-end ">
                   <p >Lupa password ?</p>
-                </div>
+                </div> */}
               </div>
-              <div className="btn">
-                <button onClick={Auth}>Masuk</button>
+              <div className="btn " >
+                <button className="Pointer-Booking" onClick={Auth}>Masuk</button>
               </div>
             </div>
           </div>

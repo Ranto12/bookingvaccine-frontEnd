@@ -16,7 +16,6 @@ import Select from '../../component/PageComponent/Select';
 const KelolaAdmin = () => {
     // initial state and valiables
     const [input, setInput] = useState("");
-    const [count, setCount] = useState(1);
     const [admin, setAdmin] = useState([]);
     const [size, setSize] = useState(15);
 
@@ -24,14 +23,6 @@ const KelolaAdmin = () => {
         const input = e.target.value;
         setInput(input)
     }
-
-    const handleSearch = () => {
-        setCount(1 + input)
-    }
-
-    useEffect(() => {
-        handleSearch();
-    }, [])
 
     // API
 
@@ -89,7 +80,7 @@ const KelolaAdmin = () => {
                                     <p className='ms-2 Fz-16 me-2'>entri</p>
                                 </div>
                                 <div className='border border-dark d-flex w-100 BorderRadiusInline' >
-                                    <div className='ms-3 me-3' style={{ cursor: "pointer", border: "none" }} onClick={handleSearch}>
+                                    <div className='ms-3 me-3' style={{ cursor: "pointer", border: "none" }}>
                                         <AiOutlineSearch />
                                     </div>
                                     <div className='d-flex'>
@@ -144,6 +135,8 @@ const KelolaAdmin = () => {
                                         val.no_phone?.toLowerCase().includes(input.toLocaleLowerCase()) 
                                         ){
                                 return val
+                            } else {
+                                return null;
                             }
                         }).map((data, index)=>{
                             return(

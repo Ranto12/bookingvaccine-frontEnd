@@ -6,6 +6,7 @@ import Sidebar from '../../component/Sidebar/Sidebar';
 // length
 import {LengthAdmin, LengthPenguna, LengthKecamatan, LengthRSUD, LengthPuskesmas} from '../../component/Dasboard/APIrequired/Length';
 
+
 const Dashboard = () => {
   return (
     <div>
@@ -14,7 +15,6 @@ const Dashboard = () => {
         <div className="col-3">
           <Sidebar />
         </div>
-
         {/* content */}
         <div className="col-9 mt-5">
           <div className="title-das ">
@@ -23,7 +23,6 @@ const Dashboard = () => {
           </div>
 
           {/* total admin */}
-
           <div className="row row-cols-1 row-cols-lg-2 mt-3 ">
             <div className="col">
               <div className="Card-TotalAdmin">

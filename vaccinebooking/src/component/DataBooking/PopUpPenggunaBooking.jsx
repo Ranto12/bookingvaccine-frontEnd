@@ -1,8 +1,8 @@
-import React, { useState } from "react";
 import { IconButton } from "@mui/material";
 import DataPopup from "./DataPopupBooking";
 import '../../assets/Style/style.css'
-import SearchIcon from "@mui/icons-material/Search";
+import { RiFileSearchFill } from "react-icons/ri";
+
 
 
 export default function PopUpPenggunaBooking({namaUser, nikuser, jenisVaccine, Number,family, nameFamily, nikFamily }) {
@@ -41,12 +41,8 @@ export default function PopUpPenggunaBooking({namaUser, nikuser, jenisVaccine, N
         </div>
       </div>
 
-      <IconButton aria-label="Cancel" data-bs-toggle="modal" data-bs-placement="top" title="view" data-bs-target = {"#exampleModal" + Number} sx={{
-              minHeight: 0,
-              minWidth: 0,
-              backgroundColor: "#829CCC",
-            }}  >
-            <SearchIcon style={{ color: "white" }} />
+      <IconButton aria-label="Cancel" data-bs-toggle="modal" data-bs-placement="top" title="view" data-bs-target = {"#exampleModal" + Number} className="padding-none" >
+          <RiFileSearchFill color="#829CCC" />
         </IconButton>
     </div>
   );

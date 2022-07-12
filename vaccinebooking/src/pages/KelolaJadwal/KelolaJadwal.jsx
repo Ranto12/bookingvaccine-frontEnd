@@ -19,7 +19,7 @@ const KelolaJadwal = () => {
     // initial state and valiables
     const [input, setInput] = useState("");
     const [jadwal, setJadwal] = useState([]);
-    const [page, setPage] = useState(0);
+    const [page, setPage] = useState(1);
     const [size, setSize] = useState(15);
 
     // function
@@ -28,21 +28,14 @@ const KelolaJadwal = () => {
         setInput(inputt)
         console.log(inputt)
     }
-    const handlePage = (e) => {
-        setPage(e.target.value)
-    }
-    const handleSize = (e) => {
-        setSize(e.target.value);
-    }
 
     useEffect(() => {
         const fetchPosts = async () => {
             try {
                 const response = await api.get(`/session/${page}/${size}`, {
-                    headers: {
+                    headers:{
                         'Authorization': `Bearer ${localStorage.getItem('token')}`
-                    }
-                }
+                    }}
                 )
                 setJadwal(response.data);
             } catch (err) {
@@ -56,7 +49,6 @@ const KelolaJadwal = () => {
                 }
             }
         }
-
         fetchPosts();
     }, [size, page])
     // console.log("jadwal", jadwal.data)
@@ -147,33 +139,33 @@ const KelolaJadwal = () => {
                                     if (input === "") {
                                         return val
                                     }
-                                    else if (val.vaccine_mapped.vaccine_name?.toLowerCase().includes(input.toLocaleLowerCase()) ||
-                                        val.health_facilities_dao_mapped.health_facilities_name?.toLowerCase().includes(input.toLocaleLowerCase()) ||
-                                        val.start_time?.toLowerCase().includes(input.toLocaleLowerCase())) {
+                                    else if (val.vaccine_mapped.vaccine_name?.toLowerCase().includes(input.toLocaleLowerCase()) || 
+                                            val.health_facilities_dao_mapped.health_facilities_name?.toLowerCase().includes(input.toLocaleLowerCase()) || 
+                                            val.start_time?.toLowerCase().includes(input.toLocaleLowerCase()) ) {  
                                         return val
-
+                                    } else{
+                                       return null;
                                     }
-                                
                                 }).map((data, index) => {
-                                        return (
-                                            <TabelVaksinasi
-                                                Number={index + 1}
-                                                key={data.id_session}
-                                                idSesion={data.id_session}
-                                                nama={data.health_facilities_dao_mapped.health_facilities_name}
-                                                stock={data.stock}
-                                                jenis={data.vaccine_mapped.vaccine_name}
-                                                waktu={data.start_time}
-                                                image={data.file_name}
-                                                tanggal={data.start_date}
-                                                id_area={data.area_mapped.id_area}
-                                                id_facility={data.health_facilities_dao_mapped.id_health_facilities}
-                                                Idvaccine={data.vaccine_mapped.id_vaccine}
-                                                namaFaskes={data.health_facilities_dao_mapped.health_facilities_name}
-                                                alamat={data.health_facilities_dao_mapped.address_health_facilities}
-                                            />
-                                        )
-                                    })}
+                                    return (
+                                        <TabelVaksinasi 
+                                        Number={index + 1} 
+                                        key={data.id_session} 
+                                        idSesion={data.id_session} 
+                                        nama={data.health_facilities_dao_mapped.health_facilities_name} 
+                                        stock={data.stock} 
+                                        jenis={data.vaccine_mapped.vaccine_name} 
+                                        waktu={data.start_time}  
+                                        image={data.file_name}
+                                        tanggal={data.start_date}
+                                        id_area={data.area_mapped.id_area}
+                                        id_facility={data.health_facilities_dao_mapped.id_health_facilities}
+                                        Idvaccine={data.vaccine_mapped.id_vaccine}
+                                        namaFaskes={data.health_facilities_dao_mapped.health_facilities_name}
+                                        alamat ={data.health_facilities_dao_mapped.address_health_facilities}
+                                        />
+                                    )
+                                })}
                         </div>
                         {/* <div>
                             <input type="number" value={page} onChange={handlePage} />

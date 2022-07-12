@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import Sidebar from "../../component/Sidebar/Sidebar";
 // style
-import "./../../assets/Style/style.css";
-import { Grid, IconButton } from "@mui/material";
+// import "./../../assets/Style/style.css";
+import { Grid } from "@mui/material";
 
 import {BsFileEarmarkImage} from 'react-icons/bs'
 import axios from "axios";
@@ -13,9 +13,7 @@ import { useNavigate } from "react-router-dom";
 
 const ArtikelTerbaru = () => {
   // initial state and valiables
-  const [input, setInput] = useState("");
-  const [imagePreview, setImagePreview] = useState("");
-  const inputRef = useRef();
+  const [imagePreview] = useState("");
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const [body, setBody] = useState("");
@@ -86,7 +84,7 @@ const handleImage=(e)=>{
                 <h6 style={{ marginTop: "2rem", color: "#4E7EA7"}}>
                   Judul Berita
                 </h6>
-                <input type="text" className="FormArtikel p-1 rounded-2" style={{width: "100%", border: "none"}}
+                <input type="text" className="FormArtikel p-1 p-3 rounded-2 padding-input" style={{width: "100%", border: "none"}}
                   onChange={handleName}
                   value={title}
                   required
@@ -95,7 +93,7 @@ const handleImage=(e)=>{
                 >
                   Author
                 </h6>
-                <input type="text" className="w-100 FormArtikel p-1 rounded-2" style={{ border: "none",}}
+                <input type="text" className="w-100 FormArtikel p-1 p-3 rounded-2 padding-input" style={{ border: "none",}}
                   onChange={handleAuthor}
                   value={author}
                   required
@@ -111,7 +109,7 @@ const handleImage=(e)=>{
                         </h6>
                       </Grid>
                     </Grid>
-                    <textarea type="text" className="w-100 FormArtikel p-1 rounded-2"
+                    <textarea type="text" className="w-100 FormArtikel p-1 p-3 rounded-2 padding-input"
                       style={{ border: "none",height: "20rem",resize: "none"}}
                       onChange={handleBody}
                       value={body}
@@ -156,7 +154,7 @@ const handleImage=(e)=>{
                             cursor: "pointer",
                           }}
                         >
-                          <img src={imagePreview} height="100%" />
+                          <img src={imagePreview} height="100%" alt=""/>
                         </div>
                       )}
                       <div
@@ -168,7 +166,7 @@ const handleImage=(e)=>{
                       </div>
                         </div>
                       <div className="text-end mt-3">
-                          <button className="btn-kelola-jadwal1 me-3  rounded-3 mb-5">
+                          <button className="btn-kelola-jadwal1 me-3  rounded-3 mb-5" onClick={(e)=>navigate('/KelolaBerita')}>
                             Batal
                           </button>
                           <button className="btn-kelola-jadwal ms-3  rounded-3 mb-5 " onClick={handleSubmit} type="submit">

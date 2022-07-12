@@ -5,7 +5,7 @@ import PopUpPengguna from "./PopUpPengguna";
 const TablePengguna = ({ key, nama, nohp, NIK, Number, gender, email, tgl_lahir }) => {
   
   return (
-    <div className="d-flex TabelkelolaBerita TableColor-child ">
+    <div className="d-flex TabelkelolaBerita TableColor-child title-das">
       <div className="col-1">{Number}</div>
       <div className="col-4">{nama}</div>
       <div className="col-3">{nohp}</div>

@@ -17,7 +17,6 @@ import api from './../../API/data/post'
 
 const KelolaPengguna = () => {
   const [input, setInput] = useState("");
-  const [count, setCount] = useState(0);
   const [dataPengguna, setDataPengguna] = useState([]);
 
 
@@ -26,10 +25,6 @@ const KelolaPengguna = () => {
     const inputs = e.target.value;
     setInput(inputs)
 
-  }
-  console.log(input, "input")
-  const handleSearch = () => {
-    setCount(1 + input)
   }
 
   useEffect(() => {
@@ -96,7 +91,7 @@ const KelolaPengguna = () => {
                     <p className='ms-2 Fz-16 me-2'>entri</p>
                   </div>
                   <div className='border border-dark d-flex w-100 BorderRadiusInline' >
-                    <div className='ms-3 me-3 PointerClikCss' onClick={handleSearch}>
+                    <div className='ms-3 me-3 PointerClikCss' >
                       <AiOutlineSearch />
                     </div>
                     <div className='d-flex '>
@@ -133,11 +128,13 @@ const KelolaPengguna = () => {
           <div className='TabelkelolaBerita row Border-Color-Box mb-2'>
             {dataPengguna.data &&
                 dataPengguna.data?.filter((val) => {
-                  if (input == "") {
+                  if (input === "") {
                     return val
                   }
                   else if (val.first_name?.toLowerCase().includes(input.toLocaleLowerCase()) || val.no_phone?.toLowerCase().includes(input.toLocaleLowerCase()) || val.username?.toLowerCase().includes(input.toLocaleLowerCase()) ) {
                     return val
+                  } else {
+                    return null;
                   }
                 }).map((data, index)=>{
               return(
