@@ -18,7 +18,7 @@ import Pagenation from "../../component/Pagenation/Pagenation";
 const DataBooking = () => {
   // initial state and valiables
   const [booking, setBooking] = useState([]);
-  const [filteredData, setFilteredData] = useState(booking);
+  const [input, setInput] = useState();
   const [size, setSize] = useState(15);
   const [page, setPage] = useState(0);
   const [lengthPage, setLengthPage] = useState(0);
@@ -26,7 +26,7 @@ const DataBooking = () => {
 
 
   const onChangeInput = (e) => {
-    setFilteredData(e.target.value)
+    setInput(e.target.value)
   };
 
   useEffect(() => {
@@ -117,11 +117,12 @@ const DataBooking = () => {
 
           {/* isi tabel */}
           <div className="TabelkelolaBerita row Border-Color-Box ">
-            {booking?.filter((val) => {
-                if (filteredData === "") {
+            {booking &&
+            booking?.filter((val) => {
+                if (input == null) {
                   return val
                 }
-                else if (val.user_mapped.first_name.toLowerCase().includes(filteredData.toLocaleLowerCase())) {
+                else if (val.user_mapped.first_name?.toLowerCase().includes(input.toLocaleLowerCase())) {
                   return val
                 } else {
                   return null;

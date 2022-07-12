@@ -22,6 +22,7 @@ const KelolaBerita = () => {
   const [page, setPage] = useState(0);
   const [size, setSize] = useState(15);
   const [lengthPage, setLengthPage] = useState(0);
+  console.log(lengthPage)
   //funtion
   const onChangeInput = (e) => {
     const inputt = e.target.value;
