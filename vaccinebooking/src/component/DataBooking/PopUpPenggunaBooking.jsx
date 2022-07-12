@@ -6,8 +6,6 @@ import { RiFileSearchFill } from "react-icons/ri";
 
 
 export default function PopUpPenggunaBooking({namaUser, nikuser, jenisVaccine, Number,family, nameFamily, nikFamily }) {
-  // console.log(Number, "wow")
-  
   return (
     <div>
       <div
@@ -24,10 +22,9 @@ export default function PopUpPenggunaBooking({namaUser, nikuser, jenisVaccine, N
                 Detail Pengguna
               </h5>
               <button type="button"
-               class="btn-close rounded-circle me-3" 
+               className="btn-close rounded-circle me-3" 
                data-bs-dismiss="modal" 
                aria-label="Close"></button>
-
             </div>
             <div className="modal-body">
                 <ul>

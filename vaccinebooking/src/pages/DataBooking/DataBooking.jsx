@@ -132,7 +132,7 @@ const DataBooking = () => {
                 if(value.family_mapped !== null){
                   return(
                     <TabelDataBooking 
-                    key={value.id_booking} Number={index + 1} 
+                        key={value.id_booking} Number={index + 1} id={value.id_booking}
                         namaUser={value.family_mapped.user_mapped.first_name + " " + value.family_mapped.user_mapped.last_name}
                         nikuser={value.family_mapped.user_mapped.username} 
                         jenisVaccine={value.session_mapped.vaccine_mapped.vaccine_name} 
@@ -145,7 +145,7 @@ const DataBooking = () => {
                 }else{
                   return (
                     <TabelDataBooking 
-                        key={value.id_booking} Number={index + 1} 
+                        key={value.id_booking} Number={index + 1} id={value.id_booking}
                         namaUser={value.user_mapped.first_name + " " + value.user_mapped.last_name}
                         nikuser={value.user_mapped.username} 
                         jenisVaccine={value.session_mapped.vaccine_mapped.vaccine_name} 

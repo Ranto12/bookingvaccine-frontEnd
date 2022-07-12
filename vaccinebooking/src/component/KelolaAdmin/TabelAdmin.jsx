@@ -4,8 +4,7 @@ import { RiPencilFill } from "react-icons/ri";
 import PopUpAdmin from "./PopUpAdmin";
 import { useNavigate } from "react-router-dom";
 
-const TabelAdmin = ({Number ,Name ,hp ,email, role, alamat, tanggalLahir, key, id, gender, pw, username }) => {
-  // console.log(Number)
+const TabelAdmin = ({Number ,Name ,hp ,email, role, alamat, tanggalLahir,  id, gender, pw, username }) => {
   let navigate = useNavigate();
   const navigateEditadmin=()=>{
     navigate('/EditAdmin',
@@ -25,10 +24,10 @@ const TabelAdmin = ({Number ,Name ,hp ,email, role, alamat, tanggalLahir, key, i
       <div className="col-2 ps-2">{hp}</div>
       <div className="col-3 ps-2">{email}</div>
       <div className="col-1 d-flex justify-content-center">
-        <IconButton className="me-2">
-          <RiPencilFill onClick={navigateEditadmin} />
+        <IconButton className="me-2" onClick={navigateEditadmin}>
+          <RiPencilFill  />
         </IconButton >
-            <PopUpAdmin Number={Number} Name={Name} hp={hp} email={email} role={role} alamat={alamat} />
+            <PopUpAdmin key={id} Number={Number} Name={Name} hp={hp} email={email} role={role} alamat={alamat} />
       </div>
     </div>
   );

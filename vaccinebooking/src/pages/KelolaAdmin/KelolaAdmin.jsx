@@ -24,8 +24,8 @@ const KelolaAdmin = () => {
         setInput(input)
     }
 
-    // API
-
+    // API 
+console.log("input", admin)
     useEffect(() => {
         const fetchPosts = async () => {
             try {

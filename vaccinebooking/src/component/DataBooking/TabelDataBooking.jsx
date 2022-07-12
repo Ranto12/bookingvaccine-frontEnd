@@ -1,7 +1,7 @@
 import "../../assets/Style/style.css";
 import PopUpPenggunaBooking from "./PopUpPenggunaBooking";
 
-const TablePengguna = ({ key, namaUser, nikuser, jenisVaccine, Number, family, nameFamily, nikFamily, value, User }) => {
+const TablePengguna = ({ id, namaUser, nikuser, jenisVaccine, Number, nameFamily, nikFamily }) => {
   
   return (
     <div
@@ -12,7 +12,7 @@ const TablePengguna = ({ key, namaUser, nikuser, jenisVaccine, Number, family, n
             <div className="col-3  Pointer-Booking">{nikFamily ? nikFamily : nikuser}</div>
             <div className="col-3">{jenisVaccine}</div>
             <div className="col-1 d-flex justify-content-center pb-1 pt-1 ">
-            <PopUpPenggunaBooking namaUser={namaUser} nikuser={nikuser} 
+            <PopUpPenggunaBooking key={id} namaUser={namaUser} nikuser={nikuser} 
             jenisVaccine={jenisVaccine} Number={Number}  nikFamily={nikFamily} nameFamily={nameFamily}/>
             </div>
     </div>
