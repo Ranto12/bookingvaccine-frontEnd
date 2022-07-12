@@ -19,17 +19,16 @@ const DataBooking = () => {
   // initial state and valiables
   const [booking, setBooking] = useState([]);
   const [filteredData, setFilteredData] = useState(booking);
-  const [size, setSize] = useState(150);
+  const [size, setSize] = useState(15);
   const [page, setPage] = useState(0);
   const [lengthPage, setLengthPage] = useState(0);
- 
+
 
 
   const onChangeInput = (e) => {
     setFilteredData(e.target.value)
   };
 
-console.log(`booking`, booking)
   useEffect(() => {
     const fetchPosts = async () => {
       try {
@@ -119,7 +118,7 @@ console.log(`booking`, booking)
           {/* isi tabel */}
           <div className="TabelkelolaBerita row Border-Color-Box ">
             {booking?.filter((val) => {
-                if (filteredData == "") {
+                if (filteredData === "") {
                   return val
                 }
                 else if (val.user_mapped.first_name.toLowerCase().includes(filteredData.toLocaleLowerCase())) {
@@ -155,7 +154,12 @@ console.log(`booking`, booking)
                 }
               })}
           </div>
+              {booking?.length > 0 ? (
           <Pagenation data={booking} size={size} page={page} setPage={setPage} lengthPage={lengthPage}/>
+              ):(
+                null
+              )
+            }
           <div>
           </div>
         </div>

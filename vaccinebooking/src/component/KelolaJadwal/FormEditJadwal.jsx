@@ -206,8 +206,14 @@ console.log("data", idArea, idFacility, image, startDate, startTime, Stock, idVa
                     <div
                       tyle={{textAlign: "center", fontSize: "10px", marginTop: "1rem", color: "#4E7EA7"}}>
                         <p>
-                          Upload Foto Fasilitas Kesehatan Anda <br />{" "}
-                          Ukuran foto tidak lebih dari 10mb{" "}
+                          {image && image.name ? (
+                            <span className="d-flex justify-content-center ">{image.name}</span>
+                          ):(
+                            <span>
+                              Upload Foto Fasilitas Kesehatan Anda <br />{" "}
+                              Ukuran foto tidak lebih dari 10mb{" "}
+                            </span>
+                          )}
                         </p>
                     </div>
                 </div>
@@ -221,7 +227,7 @@ console.log("data", idArea, idFacility, image, startDate, startTime, Stock, idVa
         </div>
           <div className="col-4 text-center align-self-end">
             <div>
-              <button className="btn-kelola-jadwal1 me-3  rounded-3 mb-5  ">Batal</button>
+              <button className="btn-kelola-jadwal1 me-3  rounded-3 mb-5  " onClick={(e)=> navigate('/kelolaJadwal')}>Batal</button>
               <button className="btn-kelola-jadwal ms-3  rounded-3 mb-5  " onClick={handleSubmit}>Simpan</button>
             </div>
           </div>

@@ -13,6 +13,7 @@ import TabelKelolaBerita from "../../component/KelolaBerita/TabelKelolaBerita";
 // api
 import api from "./../../API/data/post";
 import Select from "../../component/PageComponent/Select";
+import Pagenation from "../../component/Pagenation/Pagenation";
 
 const KelolaBerita = () => {
   // initial state and valiables
@@ -20,7 +21,7 @@ const KelolaBerita = () => {
   const [Artikels, setArtikels] = useState([]);
   const [page, setPage] = useState(0);
   const [size, setSize] = useState(15);
-
+  const [lengthPage, setLengthPage] = useState(0);
   //funtion
   const onChangeInput = (e) => {
     const inputt = e.target.value;
@@ -42,7 +43,7 @@ const KelolaBerita = () => {
       try {
         const response = await api.get(`/news/${page}/${size}`)
         setArtikels(response.data.data.content);
-
+        setLengthPage(response.data.data.totalPages);
       } catch (err) {
         if (err.response) {
           console.log(err.response.data.data);
@@ -147,8 +148,13 @@ const KelolaBerita = () => {
                 )
               })}
           </div>
+          {Artikels?.length > 0 ? (
+          <Pagenation data={Artikels} size={size} page={page} setPage={setPage} lengthPage={lengthPage}/>
+            ) : (
+              null
+            )
+          }
           <div>
-
           </div>
         </div>
       </div>

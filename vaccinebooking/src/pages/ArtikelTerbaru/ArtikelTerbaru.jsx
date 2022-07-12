@@ -44,7 +44,7 @@ const handleImage=(e)=>{
     formData.append("contentNewsVaccine", body);
     formData.append("file", image);
     try{
-      const response = axios({
+      axios({
         method: "post",
         url: `${URL}/news`,
         data: formData,
@@ -136,8 +136,14 @@ const handleImage=(e)=>{
                             <div
                               style={{textAlign: "center", fontSize: "10px", marginTop: "1rem", color: "#4E7EA7"}}>
                               <p>
-                                Upload Foto Fasilitas Kesehatan Anda <br />{" "}
-                                Ukuran foto tidak lebih dari 10mb{" "}
+                                {image && image.name ? (
+                                  <span className="d-flex justify-content-center ">{image.name}</span>
+                                ):(
+                                  <span>
+                                    Upload Foto Fasilitas Kesehatan Anda <br />{" "}
+                                    Ukuran foto tidak lebih dari 10mb{" "}
+                                  </span>
+                                )}
                               </p>
                             </div>
                           </div>
@@ -166,10 +172,10 @@ const handleImage=(e)=>{
                       </div>
                         </div>
                       <div className="text-end mt-3">
-                          <button className="btn-kelola-jadwal1 me-3  rounded-3 mb-5" onClick={(e)=>navigate('/KelolaBerita')}>
+                          <button className="btn-kelola-jadwal1 me-3  rounded-3 mb-5 PointerClikCss " onClick={(e)=>navigate('/KelolaBerita')}>
                             Batal
                           </button>
-                          <button className="btn-kelola-jadwal ms-3  rounded-3 mb-5 " onClick={handleSubmit} type="submit">
+                          <button className="btn-kelola-jadwal ms-3  rounded-3 mb-5 PointerClikCss " onClick={handleSubmit} type="submit">
                             Simpan
                           </button>
                     </div>

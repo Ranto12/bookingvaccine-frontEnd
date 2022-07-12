@@ -14,13 +14,17 @@ import Select from '../../component/PageComponent/Select';
 
 // Api
 import api from './../../API/data/post'
+import Pagenation from '../../component/Pagenation/Pagenation';
 
 const KelolaJadwal = () => {
     // initial state and valiables
     const [input, setInput] = useState("");
     const [jadwal, setJadwal] = useState([]);
-    const [page, setPage] = useState(1);
+    const [page, setPage] = useState(0);
     const [size, setSize] = useState(15);
+    const [lengthPage, setLengthPage] = useState(0);
+    console.log(lengthPage)
+
 
     // function
     const onChangeInput = (e) => {
@@ -37,7 +41,8 @@ const KelolaJadwal = () => {
                         'Authorization': `Bearer ${localStorage.getItem('token')}`
                     }}
                 )
-                setJadwal(response.data);
+                setJadwal(response.data.data);
+                setLengthPage(response.data.data.totalPages);
             } catch (err) {
                 if (err.response) {
                     //not in the 200 response range
@@ -134,8 +139,8 @@ const KelolaJadwal = () => {
                         </div>
                         {/* isi table */}
                         <div className='TabelkelolaBerita row Border-Color-Box'>
-                            {jadwal.data &&
-                                jadwal.data?.filter((val) => {
+                            {jadwal &&
+                                jadwal?.filter((val) => {
                                     if (input === "") {
                                         return val
                                     }
@@ -167,11 +172,12 @@ const KelolaJadwal = () => {
                                     )
                                 })}
                         </div>
-                        {/* <div>
-                            <input type="number" value={page} onChange={handlePage} />
-                        </div> */}
+                        {jadwal.length > 0 ? (
+                            <Pagenation data={jadwal} size={size} page={page} setPage={setPage} lengthPage={lengthPage}/>
+                        ):(
+                            null
+                        )}
                     </div>
-
                 </div>
             </div>
         </>
