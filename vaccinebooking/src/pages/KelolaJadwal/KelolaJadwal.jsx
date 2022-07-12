@@ -23,14 +23,12 @@ const KelolaJadwal = () => {
     const [page, setPage] = useState(0);
     const [size, setSize] = useState(15);
     const [lengthPage, setLengthPage] = useState(0);
-    console.log(lengthPage)
 
 
     // function
     const onChangeInput = (e) => {
         const inputt = e.target.value;
         setInput(inputt)
-        console.log(inputt)
     }
 
     useEffect(() => {
@@ -56,7 +54,6 @@ const KelolaJadwal = () => {
         }
         fetchPosts();
     }, [size, page])
-    // console.log("jadwal", jadwal.data)
 
     return (
         <>
@@ -117,28 +114,30 @@ const KelolaJadwal = () => {
                             </div>
                         </div>
                         {/* table */}
+                        {jadwal.length !== 0 ? (
                         <div className='row mt-4 background-color-Table '>
-                            <div className='col-1'>
-                                No
-                            </div>
-                            <div className='col-3'>
-                                Nama Faskes
-                            </div>
-                            <div className='col-2'>
-                                Stock
-                            </div>
-                            <div className='col-3'>
-                                Jenis Vaksin
-                            </div>
-                            <div className='col-2'>
-                                Waktu
-                            </div>
-                            <div className='col-1'>
-                                Action
-                            </div>
+                         <div className='col-1'>
+                            No
+                         </div>
+                         <div className='col-3'>
+                             Nama Faskes
+                         </div>
+                         <div className='col-2'>
+                             Stock
                         </div>
+                         <div className='col-3'>
+                            Jenis Vaksin
+                         </div>
+                         <div className='col-2'>
+                             Waktu
+                         </div>
+                         <div className='col-1'>
+                             Action
+                         </div>
+                        </div>
+                        ):(null)}
                         {/* isi table */}
-                        <div className='TabelkelolaBerita row Border-Color-Box'>
+                        <div className={jadwal.length !==0 ? 'TabelkelolaBerita row Border-Color-Box' : ""}>
                             {jadwal &&
                                 jadwal?.filter((val) => {
                                     if (input === "") {

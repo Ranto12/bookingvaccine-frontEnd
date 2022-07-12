@@ -17,7 +17,7 @@ const KelolaAdmin = () => {
     // initial state and valiables
     const [input, setInput] = useState("");
     const [admin, setAdmin] = useState([]);
-    const [size, setSize] = useState(15);
+    const [ setSize] = useState(15);
 
     const onChangeInput = (e) => {
         const input = e.target.value;
@@ -25,7 +25,6 @@ const KelolaAdmin = () => {
     }
 
     // API 
-console.log("input", admin)
     useEffect(() => {
         const fetchPosts = async () => {
             try {
@@ -101,7 +100,8 @@ console.log("input", admin)
                         </div>
                     </div>
                     {/* tabel */}
-                    <div className='row mt-4 background-color-Table  justify-content-center'>
+                    {admin.length !==0 ? (
+                        <div className='row mt-4 background-color-Table  justify-content-center'>
                         <div className='col-1'>
                             No
                         </div>
@@ -121,10 +121,12 @@ console.log("input", admin)
                             Action
                         </div>
                     </div>
+                    ):(
+                        null
+                    )}
 
                     {/* isi tabel */}
-                    <div className='TabelAdmin row Border-Color-Box'>
-                        
+                    <div className={admin.length !==0 ? 'TabelAdmin row Border-Color-Box' : ""}>
                         { admin && 
                         admin.filter((val)=>{
                             if(input === ""){

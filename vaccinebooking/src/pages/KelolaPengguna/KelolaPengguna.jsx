@@ -14,11 +14,10 @@ import { AiOutlineSearch } from 'react-icons/ai';
 // Api
 import api from './../../API/data/post'
 
-
 const KelolaPengguna = () => {
+  // initial state and variabale
   const [input, setInput] = useState("");
   const [dataPengguna, setDataPengguna] = useState([]);
-
 
   // funtion
   const onChangeInput = (e) => {
@@ -49,9 +48,6 @@ const KelolaPengguna = () => {
     }
     fetchPosts();
 },[])
-// // console.log(`length, ${dataPengguna.length}`)
-// console.log(`dataPengguna`, dataPengguna)
-
 
   return (
     <>
@@ -60,7 +56,6 @@ const KelolaPengguna = () => {
           <div className='col-3'>
             <Sidebar />
           </div>
-
 
           {/* content */}
 
@@ -100,14 +95,13 @@ const KelolaPengguna = () => {
                   </div>
                 </div>
               </div>
-
               <div className='col-6 d-flex justify-content-end'>
-
               </div>
             </div>
             
           {/* table  */}
-          <div className='row mt-4 background-color-Table '>
+          {dataPengguna.length !== 0 ?(
+            <div className='row mt-4 background-color-Table '>
             <div className='col-1'>
               No
             </div>
@@ -124,8 +118,9 @@ const KelolaPengguna = () => {
               Action
             </div>
           </div>
+          ):(null)}
           {/* isi table */}
-          <div className='TabelkelolaBerita row Border-Color-Box mb-2'>
+          <div className={dataPengguna.length !== 0 ? "TabelkelolaBerita row Border-Color-Box mb-2" : ""}>
             {dataPengguna.data &&
                 dataPengguna.data?.filter((val) => {
                   if (input === "") {
@@ -138,7 +133,7 @@ const KelolaPengguna = () => {
                   }
                 }).map((data, index)=>{
               return(
-                <TablePengguna Number={index + 1}  key={data.id} nama={data.first_name + " " + data.last_name} nohp = {data.no_phone}  NIK={data.username}  data={data} email={data.email} gender={data.gender} tgl_lahir = {data.birth_date}  />
+                <TablePengguna Number={index + 1}  key={data.id_user}  id={data.id_user}nama={data.first_name + " " + data.last_name} nohp = {data.no_phone}  NIK={data.username}  data={data} email={data.email} gender={data.gender} tgl_lahir = {data.birth_date}  />
               )
             })}
           </div>

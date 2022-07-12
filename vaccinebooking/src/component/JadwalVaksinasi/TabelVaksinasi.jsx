@@ -9,7 +9,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 
-const TabelVaksinasi = ({ Number, key, idSesion,  nama, stock, jenis, waktu, image, tanggal, id_area, id_facility, Idvaccine , namaFaskes, alamat}) => {
+const TabelVaksinasi = ({ Number, idSesion,  nama, stock, jenis, waktu, image, tanggal, id_area, id_facility, Idvaccine , namaFaskes, alamat}) => {
     // initial state and variable
     let navigate = useNavigate();
     const handleNavigate=(e)=>{ 
@@ -24,7 +24,7 @@ const TabelVaksinasi = ({ Number, key, idSesion,  nama, stock, jenis, waktu, ima
             idFacility: id_facility, 
             Idvaccine: Idvaccine,
             idSesion: idSesion,
-            key : key,
+            key : idSesion,
             idArea :id_area
         }});
     }
@@ -49,14 +49,11 @@ const TabelVaksinasi = ({ Number, key, idSesion,  nama, stock, jenis, waktu, ima
             <div className="col-3 ps-3">{jenis}</div>
             <div className="col-2 ps-1">{waktu}  WIB - selesai</div>
             <div className="col-1 d-flex justify-content-center">
-
-
-                <IconButton aria-label="Cancel" data-bs-toggle="modal" data-bs-placement="top" title="view" data-bs-target="#exampleModal" onClick={() => { handleClick(Number, nama, stock) }}>
-                    {/* <OverlayJadwalVaksinasi data={getData} /> */}
-                    < RiPencilFill onClick={handleNavigate} />
+                <IconButton onClick={handleNavigate}>
+                    < RiPencilFill  />
                 </IconButton>
-                <IconButton className="me-2" data-bs-toggle="tooltip" data-bs-placement="top" title="view">
-                    <MdDelete Number = {Number}/>
+                <IconButton >
+                    <MdDelete/>
                 </IconButton>
             </div>
         </div>
@@ -64,5 +61,3 @@ const TabelVaksinasi = ({ Number, key, idSesion,  nama, stock, jenis, waktu, ima
 };
 
 export default TabelVaksinasi;
-
-// ok

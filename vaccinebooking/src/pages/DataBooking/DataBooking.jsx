@@ -105,7 +105,8 @@ const DataBooking = () => {
           </div>
 
           {/* tabel */}
-          <div className="row mt-4 table-header background-color-Table ">
+          { booking.length > 0 ? (
+            <div className="row mt-4 table-header background-color-Table ">
             <div className="row mt-2 table-data ">
               <div className="col-1">No</div>
               <div className="col-4">Nama</div>
@@ -114,9 +115,14 @@ const DataBooking = () => {
               <div className="col-1">Aksi</div>
             </div>
           </div>
+          ):(
+            null
+          )
+            
+          }
 
           {/* isi tabel */}
-          <div className="TabelkelolaBerita row Border-Color-Box ">
+          <div className={booking.length !== 0 ? "TabelkelolaBerita row Border-Color-Box " : ""}>
             {booking &&
             booking?.filter((val) => {
                 if (input == null) {
@@ -128,7 +134,6 @@ const DataBooking = () => {
                   return null;
                 }
               }).map((value, index) => {
-                // console.log("data", value.user_mapped)
                 if(value.family_mapped !== null){
                   return(
                     <TabelDataBooking 
