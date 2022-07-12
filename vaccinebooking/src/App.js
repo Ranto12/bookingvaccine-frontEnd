@@ -18,16 +18,16 @@ import ErrorMessage from "./pages/ErrorMessage/Error";
 import EditArtikel from "./pages/ArtikelTerbaru/EditArtikel";
 import EditJadwalVaksinasi from "./pages/KelolaJadwal/EditJadwal";
 import EditAdmin from "./pages/KelolaAdmin/EditAdmin";
-import {PrivateRoute, PrivateRouteLogRes} from './component/PrivateRoute/PrivateRoute';
+import { PrivateRoute, PrivateRouteLogRes } from './component/PrivateRoute/PrivateRoute';
 import CekinAPI from "./component/Dasboard/CekinAPI";
 
 function App() {
   return (
     <Routes>
-      <Route element={<PrivateRouteLogRes/>}>
+      {/* <Route element={<PrivateRouteLogRes/>}> */}
       <Route path="/login" element={<Login />} />
-      </Route>
-      <Route element={<PrivateRoute/>}>
+      {/* </Route> */}
+      {/* <Route element={<PrivateRoute/>}> */}
       <Route path="/Dashboard" element={<Dashboard />} />
       <Route path="/" element={<Dashboard />} />
       <Route path="/cekapi" element={<CekinAPI />} />
@@ -46,7 +46,7 @@ function App() {
       <Route path="/popupModal" element={<Overlaybookingvacinne />} />
       <Route path="/contoh" element={<Contoh />} />
       <Route path="/*" element={<ErrorMessage />} />
-      </Route>
+      {/* </Route> */}
     </Routes>
   );
 }
