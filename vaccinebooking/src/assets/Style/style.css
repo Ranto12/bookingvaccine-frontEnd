@@ -95,11 +95,11 @@
   justify-content: center;
 }
 
-.TabelkelolaBerita {
+/* .TabelkelolaBerita {
   background-color: #d9d9d9;
   justify-content: center;
   align-items: center;
-}
+} */
 
 .TabelDataBooking {
   background-color: #ffffff;
@@ -379,6 +379,7 @@
   padding: 0;
   background: #7bd9e8;
   color: #ffffff;
+  cursor: pointer;
 }
 
 .brd {
@@ -401,7 +402,7 @@
 }
 
 .lupa-pass p {
-  width: 81px;
+  width: auto;
   height: 15px;
   font-family: "Poppins";
   font-style: normal;
@@ -411,6 +412,7 @@
   margin: 0px !important;
   justify-content: end;
   display: flex;
+  cursor: pointer;
 }
 
 /* tabel  */
@@ -465,7 +467,7 @@
 
 ul > li > h5,
 .data-popup,.title-table-datapopup {
-  color: #829ccc;
+  color: #4E7EA7;
   margin-right: 20px !important;
   margin-top: 20px !important;
 }
@@ -512,25 +514,16 @@ div > ul {
 }
 
 /* error message */
-.ErrorMessage {
-  font-family: Poppins;
-  font-size: 96px;
-  font-weight: 600;
-  color: #4E7EA7;
-  justify-content: center !important;
-  align-items: center !important;
+.errorPages {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
-.titleErrorMessage{
-  font-family: Poppins;
-  font-size: 32px;
-  font-weight: 500;
-  color: #4E7EA7;
-  justify-content: center !important;
-  align-items: center !important;
-}
-.ErrMSG{
-  justify-content: center !important;
-  align-items: center !important;
+
+.titleErrorMessage {
+  max-width: 75%;
+  text-align: center;
 }
 
 
@@ -584,6 +577,7 @@ div > ul {
   border-style: none;
   padding-right: 10px;
   padding-left: 10px;
+  outline: none;
 }
 .input-nama-admin-font{
   font-family: 'Poppins';
@@ -597,8 +591,95 @@ div > ul {
   border: 1px solid #D9D9D9;
   margin-top: 2%;
   padding: 10px;
+  outline: none;
 }
 
 .Font-white{
   color: white;
+}
+.input-password-admin{
+  width: 100%;
+  margin-bottom: 3%;
+  margin-top: 2%;
+  border: 1px solid #D9D9D9;
+  max-height:100%;
+  min-height:40px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  border-style: none;
+  padding-right: 10px;
+  padding-left: 10px;
+  display: flex;
+  outline: none;
+}
+.width-90{
+  width: 100%;
+  border: none;
+  border-color: none;
+  outline: none;
+}
+
+.padding-input{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.logoSidebar{
+  max-width: 43,11px;
+  max-height: 52,41px;
+}
+.fullHight{
+  height: 100%;
+}
+.VakYu{
+  justify-content: end;
+  font-size: 24px;
+}
+.VaksinYuk{
+  justify-content: start;
+  font-size: 12px;
+}
+.Logo{
+  max-width: 200%;
+  max-height: 200%;
+}
+.medium{
+  font-size: medium;
+  font-family: Poppins;
+}
+
+/* pagenation */
+.pagination {
+  margin: 15px auto;
+  display: flex;
+  list-style: none;
+  outline: none;
+  text-decoration: none;
+}
+.pagination > .active > a{
+  /* background-color: #47ccde ;
+  border-color: #47ccde ; */
+  color: #8E8B8B;
+  text-decoration: none;
+
+}
+.pagination > li > a{
+  /* border: 1px solid #47ccde ; */
+  padding: 5px 10px;
+  outline: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus{
+  /* background-color: #47ccde ;
+  border-color: #47ccde; */
+  text-decoration: none;
+  outline: none ;
+}
+.pagination > li > a, .pagination > li > span{
+  text-decoration: none;
+  color: #47ccde
+}
+.pagination > li:first-child > a, .pagination > li:first-child > span, .pagination > li:last-child > a, .pagination > li:last-child > span{
+  text-decoration: none;
+  border-radius: unset
 }

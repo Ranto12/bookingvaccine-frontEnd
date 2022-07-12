@@ -13,7 +13,7 @@ import TabelKelolaBerita from "../../component/KelolaBerita/TabelKelolaBerita";
 // api
 import api from "./../../API/data/post";
 import Select from "../../component/PageComponent/Select";
-import Aos from "aos";
+import Pagenation from "../../component/Pagenation/Pagenation";
 
 const KelolaBerita = () => {
   // initial state and valiables
@@ -21,7 +21,8 @@ const KelolaBerita = () => {
   const [Artikels, setArtikels] = useState([]);
   const [page, setPage] = useState(0);
   const [size, setSize] = useState(15);
-
+  const [lengthPage, setLengthPage] = useState(0);
+  console.log(lengthPage)
   //funtion
   const onChangeInput = (e) => {
     const inputt = e.target.value;
@@ -43,10 +44,9 @@ const KelolaBerita = () => {
       try {
         const response = await api.get(`/news/${page}/${size}`)
         setArtikels(response.data.data.content);
-
+        setLengthPage(response.data.data.totalPages);
       } catch (err) {
         if (err.response) {
-          //not in the 200 response range
           console.log(err.response.data.data);
           console.log(err.response.status);
           console.log(err.response.headers);
@@ -56,13 +56,7 @@ const KelolaBerita = () => {
       }
     };
     fetchPosts();
-  }, [size])
-
-
-  
-  // console.log(Artikels, "artikel")
-  console.log(`news`, Artikels)
-
+  }, [page, size]);
 
   return (
     <div className="Fontcolor-Dasboard">
@@ -146,6 +140,8 @@ const KelolaBerita = () => {
 
                 else if (val?.title_news_vaccine?.toLowerCase().includes(input.toLowerCase()) || val?.author_news_vaccine?.toLowerCase().includes(input.toLowerCase()) || val?.created_at?.toLowerCase().includes(input.toLowerCase())) {
                   return val
+                } else{
+                  return null;
                 }
               }).map((data, index) => {
                 return (
@@ -153,8 +149,13 @@ const KelolaBerita = () => {
                 )
               })}
           </div>
+          {Artikels?.length > 0 ? (
+          <Pagenation data={Artikels} size={size} page={page} setPage={setPage} lengthPage={lengthPage}/>
+            ) : (
+              null
+            )
+          }
           <div>
-
           </div>
         </div>
       </div>

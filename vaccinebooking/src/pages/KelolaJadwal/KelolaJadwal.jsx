@@ -14,6 +14,7 @@ import Select from '../../component/PageComponent/Select';
 
 // Api
 import api from './../../API/data/post'
+import Pagenation from '../../component/Pagenation/Pagenation';
 
 const KelolaJadwal = () => {
     // initial state and valiables
@@ -21,6 +22,9 @@ const KelolaJadwal = () => {
     const [jadwal, setJadwal] = useState([]);
     const [page, setPage] = useState(0);
     const [size, setSize] = useState(15);
+    const [lengthPage, setLengthPage] = useState(0);
+    console.log(lengthPage)
+
 
     // function
     const onChangeInput = (e) => {
@@ -28,18 +32,17 @@ const KelolaJadwal = () => {
         setInput(inputt)
         console.log(inputt)
     }
-    const handlePage = (e) => {
-        setPage(e.target.value)
-    }
-    const handleSize = (e) => {
-        setSize(e.target.value);
-    }
 
     useEffect(() => {
         const fetchPosts = async () => {
             try {
-                const response = await api.get(`/session/${page}/${size}`)
-                setJadwal(response.data);
+                const response = await api.get(`/session/${page}/${size}`, {
+                    headers:{
+                        'Authorization': `Bearer ${localStorage.getItem('token')}`
+                    }}
+                )
+                setJadwal(response.data.data);
+                setLengthPage(response.data.data.totalPages);
             } catch (err) {
                 if (err.response) {
                     //not in the 200 response range
@@ -51,10 +54,9 @@ const KelolaJadwal = () => {
                 }
             }
         }
-
         fetchPosts();
     }, [size, page])
-    console.log("jadwal", jadwal.data)
+    // console.log("jadwal", jadwal.data)
 
     return (
         <>
@@ -137,8 +139,8 @@ const KelolaJadwal = () => {
                         </div>
                         {/* isi table */}
                         <div className='TabelkelolaBerita row Border-Color-Box'>
-                            {jadwal.data &&
-                                jadwal.data?.filter((val) => {
+                            {jadwal &&
+                                jadwal?.filter((val) => {
                                     if (input === "") {
                                         return val
                                     }
@@ -146,6 +148,8 @@ const KelolaJadwal = () => {
                                             val.health_facilities_dao_mapped.health_facilities_name?.toLowerCase().includes(input.toLocaleLowerCase()) || 
                                             val.start_time?.toLowerCase().includes(input.toLocaleLowerCase()) ) {  
                                         return val
+                                    } else{
+                                       return null;
                                     }
                                 }).map((data, index) => {
                                     return (
@@ -168,11 +172,12 @@ const KelolaJadwal = () => {
                                     )
                                 })}
                         </div>
-                        {/* <div>
-                            <input type="number" value={page} onChange={handlePage} />
-                        </div> */}
+                        {jadwal.length > 0 ? (
+                            <Pagenation data={jadwal} size={size} page={page} setPage={setPage} lengthPage={lengthPage}/>
+                        ):(
+                            null
+                        )}
                     </div>
-
                 </div>
             </div>
         </>

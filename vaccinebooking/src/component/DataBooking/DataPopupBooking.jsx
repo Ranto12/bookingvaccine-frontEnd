@@ -1,10 +1,9 @@
 import React from "react";
-import api from "../../API/data/post";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 export default function DataPopupBooking({ namaUser, nikuser, jenisVaccine , nameFamily , nikFamily }) {
   // console.log(nama, "ini namanya")
-  const [numer, setNumer] = useState("1");
+  const [numer] = useState("1");
   return (
     <div>
       <ul>

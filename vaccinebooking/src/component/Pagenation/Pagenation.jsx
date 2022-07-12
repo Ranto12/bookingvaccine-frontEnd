@@ -1,18 +1,26 @@
-import React from 'react'
+import ReactPagenation from 'react-paginate'
+const Pagenation = ({setPage, lengthPage}) => {
 
-const Pagenation = (setPage) => {
-    const handlePagenation =(e)=>{
-        setPage(e.target.value)
-    }
+
+
+  const handlePageClik =(e)=>{
+    const selectedPage = e.selected;
+    setPage(selectedPage)
+  };
   return (
-    <div className='d-flex '>
-    <p className='p-2 PointerClikCss'> > </p>
-    <p className='p-2 PointerClikCss'> 1 </p>
-    <p className='p-2 PointerClikCss'> 2 </p>
-    <p className='p-2 PointerClikCss'> 3 </p>
-    <p className='p-2 PointerClikCss'> 4 </p>
-    <p className='p-2 PointerClikCss'> > </p>
-  </div>
+    <ReactPagenation 
+      previousLabel={"<"}
+      nextLabel={">"}
+      breakLabel={"..."}
+      breakClassName={"break-me"}
+      pageCount={lengthPage }
+      marginPagesDisplayed={2}
+      pageRangeDisplayed={3}
+      onPageChange={handlePageClik}
+      containerClassName={"pagination"}
+      subContainerClassName={"pages pagination"}
+      activeClassName={"active"}
+    />
   )
 }
 

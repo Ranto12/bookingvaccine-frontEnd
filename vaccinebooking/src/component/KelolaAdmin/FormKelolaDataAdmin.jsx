@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import { useState } from 'react';
 import axios from 'axios';
-import "../../assets/Style/style.css";
 import { useNavigate } from "react-router";
 import Swal from "sweetalert2";
 import {AiFillEye} from 'react-icons/ai';
 import { IconButton } from "@mui/material"; 
+import {URL} from '../../API/URL';
+import "../../assets/Style/style.css";
 
 
 export default function FormKelolaDataAdmin() {
@@ -17,8 +18,8 @@ export default function FormKelolaDataAdmin() {
    const [username, setUsername] = useState("");
    const [noTlp, setNoTlp]= useState("");
    const [alamat, setAlamat] = useState("");
-   const navigate = useNavigate();
    const [showPassword, setShowPassword] = useState(false);
+   const navigate = useNavigate();
    // funtion
    const handleNamaAdmin=(e)=>{
      setNamaAdmin(e.target.value);
@@ -45,9 +46,17 @@ export default function FormKelolaDataAdmin() {
      setAlamat(e.target.value); 
    }
 
+   const handleBack = () => {
+    navigate("/KelolaAdmin")
+   }
+
   const handleSubmit=(e)=>{
     e.preventDefault();
-    axios.post('http://35.247.142.238:80/api/v1/users',{
+    axios.post(`${URL}/users`, {
+      headers:{
+          'Authorization': `Bearer ${localStorage.getItem('token')}`
+      }
+  },{
         address: alamat,
         birth_date: `${tanggalLahir}`,
         email: email,
@@ -102,14 +111,16 @@ export default function FormKelolaDataAdmin() {
           </div>
           <div className="col-6 input-nama-admin-font">
             <label >Password</label>
-            <input required type="password" className="input-Nama-admin" value={password} onChange={handlepassword}/>
+            <div className='input-password-admin'> 
+              <input required type={showPassword ? "text" : "password"} id="password" className='width-90' value={password} onChange={handlepassword}/>
+              <IconButton onClick={() => setShowPassword(!showPassword)}>
+                <AiFillEye />
+              </IconButton>
+            </div>
+            <div>
+            </div>
           </div>
         </div>
-            <div style={{ marginLeft: "-1vw", marginTop: "-1vh" }}>
-                    <IconButton onClick={() => setShowPassword(!showPassword)}>
-                      <AiFillEye />
-                    </IconButton>
-                  </div>
         <div className="row title-das">
           <div className="col-6 input-nama-admin-font ">
             <label >Alamat Lengkap</label>
@@ -122,14 +133,14 @@ export default function FormKelolaDataAdmin() {
             </div>
             <div>
               <label >No. Telp</label>
-              <input required type="text" className="input-Nama-admin" value={noTlp} onChange={handlenoTlp}/>
+              <input required type="tel" name="phone" className="input-Nama-admin" value={noTlp} onChange={handlenoTlp}/>
             </div>
           </div>
         </div>
       </div>
       
       <div className="text-end mt-3 mb-5">
-        <button className="btn-kelola-jadwal1 me-3  rounded-3 mb-5">
+        <button className="btn-kelola-jadwal1 me-3  rounded-3 mb-5" onClick={handleBack}>
           batal
         </button>
         <button className="btn-kelola-jadwal ms-3  rounded-3 mb-5" onClick={handleSubmit}>

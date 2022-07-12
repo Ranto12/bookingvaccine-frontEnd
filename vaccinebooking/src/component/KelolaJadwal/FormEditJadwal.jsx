@@ -6,7 +6,7 @@ import {URL} from "../../API/URL";
 
 // api
 import api from '../../API/data/post'
-
+import Swal from "sweetalert2";
               
 function FormEditJadwal( {namaFaskes, stockVaccine, tanggalVaccine, alamatFacility, WaktuVaccine, idFacility, Idvaccine, idSesion, data, idArea}) {
   // state and variables
@@ -15,16 +15,15 @@ function FormEditJadwal( {namaFaskes, stockVaccine, tanggalVaccine, alamatFacili
   const [startDate, setStartDate] = useState(tanggalVaccine);
   const [startTime, setStartTime] = useState(WaktuVaccine);
   const [Stock, setStock] = useState(stockVaccine);
-  const [image, setImage] = useState();
-  const [imagePreview, setImagePreview] = useState("");
+  const [image, setImage] = useState(null);
+  const [imagePreview] = useState("");
   const navigate = useNavigate();
-
 
   const chaangeStartDate =(e)=>{
     setStartDate(e.target.value);
   }
   const ChangeidVaccine =(e)=>{
-    setIdvaccine(e.target.value);
+    setIdvaccine( +e.target.value);
   }
   const ChangeStartTime =(e)=>{
     setStartTime(e.target.value)
@@ -36,13 +35,18 @@ function FormEditJadwal( {namaFaskes, stockVaccine, tanggalVaccine, alamatFacili
     setImage(e.target.files[0]);
  }
 
+ 
   // get api jenis vaccine
   // useEffect
   useEffect(()=>{
     const fetchPosts = async()=>{
         try{
-            const response = await api.get("/vaccine")
-            setvaccine(response.data.data);
+            const response = await api.get("/vaccine", {
+              headers:{
+                  'Authorization': `Bearer ${localStorage.getItem('token')}`
+              }
+          })
+          setvaccine(response.data.data);
         } catch(err){
             if(err.response){
                 //not in the 200 response range
@@ -53,41 +57,76 @@ function FormEditJadwal( {namaFaskes, stockVaccine, tanggalVaccine, alamatFacili
                 console.log(`Error ${err.message}`);
             }
         }
-    }
+    } 
     fetchPosts();
-},[])
+    console.log("render pertama")
+},[idVaccinee])
 // funtion
 
 const handleSubmit =(e)=>{
   e.preventDefault();
-  const formData = new FormData();
-  formData.append("vaccine_id", idVaccinee);
-  formData.append("area_id", idArea);
-  formData.append("health_facilities_id", idFacility);
-  formData.append("stock", Stock);
-  formData.append("start_date", `${startDate}`);
-  formData.append("start_time", `${startTime}`);
-  formData.append("file", image);
-  try{
-    const response = axios({
-      method: "put",
-      url: `${URL}/session/${idSesion}`,
-      // url: `https://bookingvaccine.herokuapp.com:443/api/v1/session/${idSesion}`,
-      data: formData,
-      headers: { "Content-Type": "multipart/form-data" },
-    });
-    alert("mantul")
-  }catch(error){
-    console.log(error)
-  }
-  navigate("/KelolaJadwal");
+    if(image !== null){
+      const formData = new FormData();
+      formData.append("vaccine_id", idVaccinee);
+      formData.append("area_id", idArea);
+      formData.append("health_facilities_id", idFacility);
+      formData.append("stock", Stock);
+      formData.append("start_date", `${startDate}`);
+      formData.append("start_time", `${startTime}`);
+      formData.append("file", image);
+      try{
+        axios({
+          method: "put",
+          url: `${URL}/session/${idSesion}`,
+          data: formData,
+          headers: { "Content-Type": "multipart/form-data", 
+                    "Authorization": `Bearer ${localStorage.getItem('token')}` 
+                  },
+        })
+        .then((response) => {
+          Swal.fire('Berhasil', 'Jadwal Berhasil Anda Edit', 'success');
+          navigate('/kelolaJadwal');
+        })
+      }catch(error){
+        console.log("error nya ini mas e", error);
+      if(error.response.status === 500){
+        Swal.fire('Gagal', 'Jadwal Gagal Anda Edit', 'error');
+      }}
+    }else{
+      e.preventDefault();
+      axios.put(`${URL}/session/${idSesion}`,{
+        vaccine_id: idVaccinee,
+        area_id: idArea,
+        health_facilities_id: idFacility,
+        stock: Stock,
+        start_date: `${startDate}`,
+        start_time: `${startTime}`,
+        file : null
+      },{
+        headers:{
+          "Content-Type": "multipart/form-data", 
+          "Authorization": `Bearer ${localStorage.getItem('token')}`
+        }
+      })
+      .then((response) => {
+        Swal.fire('Berhasil', 'Jadwal Berhasil Anda Edit', 'success');
+        navigate('/kelolaJadwal');
+        console.log(response);
+      })
+      .catch((error) => {
+        // console.log("error nya ini mas e", error);
+        if(error.response.status === 500){
+          Swal.fire('Gagal', 'Jadwal Gagal Anda Edit', 'error');
+        }
+      })
+    }
 }
 // debug
 // console.log(`vaccine= `, idVaccine," area= ", data.area_mapped.id_area, "healt= ", data.id_health_facilities, "stock= ", Stock, "date= ", startDate, "time= ", startTime, "image= ", image  )
 // console.log('vacicine', IdVaccine)
 // console.log(`data`, namaFaskes, stockVaccine, tanggalVaccine, alamatFacility, WaktuVaccine, idFacility, Idvaccine, idSesion)
 console.log("data", idArea, idFacility, image, startDate, startTime, Stock, idVaccinee, idSesion)
-console.log(URL)
+// console.log(URL)
 
   return (
     <div className="mb-5 borderInput" style={{ color: " #4E7EA7" }}  >
@@ -109,13 +148,10 @@ console.log(URL)
           <div className="mt-3" >
             {vaccine.map((item)=>{ 
               return(
-                <label>
+                <label htmlFor={item.vaccine_name}> 
                 <input type="radio" key={item.id_vaccine} name="fav_language" className="ms-3"
                 value={item.id_vaccine}
                 checked={idVaccinee === item.id_vaccine}
-                // checked={idVaccinee === item.id_vaccine}
-                // checked={idVaccinee === item.id_vaccine ? true : false}
-                // checked={idVaccinee === item.id_vaccine} onClick={()=>{ChangeidVaccine(item.id_vaccine)}}
                 onChange={ChangeidVaccine}
                 />
                 <span className="px-3">{item.vaccine_name} </span>
@@ -130,7 +166,13 @@ console.log(URL)
         <div className="mt-3">
           <label className="fw-bold ">Stock</label>
         </div>
-        <input onChange={onChangeStock} type="number" className="mt-2 p-1 rounded-2 input-kel Background-White" value={Stock}/>
+        <input onInput={(e)=>{
+          if (e.target.value.length > 4) {
+            e.target.value = e.target.value.slice(0, 4);
+          }
+        }} 
+        onChange={onChangeStock}
+        type="number"  className="mt-2 p-1 rounded-2 input-kel Background-White padding-input" onKeyPress={(e) =>["e", "E", "+", "-", ","].includes(e.key) && e.preventDefault()} required min="4" max="5" value={Stock} />
         <span className="ms-3">Buah</span>
       </div>
 
@@ -139,11 +181,11 @@ console.log(URL)
           <label className="fw-bold mb-3"> Sesi </label>
         </div>
         <span className="">
-          <input type="date" className="mt-2 p-1 rounded-2 input-kel Background-White" onChange={chaangeStartDate} value={startDate}/>
+          <input type="date" className="mt-2 p-1 rounded-2 input-kel Background-White padding-input" onChange={chaangeStartDate} value={startDate}/>
         </span>
         <span className="mx-4">-</span>
         <span> 
-          <input type="time" className="mt-2 p-1 rounded-2 input-kel Background-White" onChange={ChangeStartTime} value={startTime}/>
+          <input type="time" className="mt-2 p-1 rounded-2 input-kel Background-White padding-input" onChange={ChangeStartTime} value={startTime}/>
         </span>
       </div>
       <div className="row mt-4">
@@ -158,14 +200,20 @@ console.log(URL)
                         <label for="file-input">
                           <BsFileEarmarkImage className=" image-size-uploadimage" />
                         </label>
-                        <input id="file-input" type="file" onChange={onChangeImage} />
+                        <input  id="file-input" type="file" onChange={onChangeImage} />
                       </div>
                     </div>
                     <div
                       tyle={{textAlign: "center", fontSize: "10px", marginTop: "1rem", color: "#4E7EA7"}}>
                         <p>
-                          Upload Foto Fasilitas Kesehatan Anda <br />{" "}
-                          Ukuran foto tidak lebih dari 10mb{" "}
+                          {image && image.name ? (
+                            <span className="d-flex justify-content-center ">{image.name}</span>
+                          ):(
+                            <span>
+                              Upload Foto Fasilitas Kesehatan Anda <br />{" "}
+                              Ukuran foto tidak lebih dari 10mb{" "}
+                            </span>
+                          )}
                         </p>
                     </div>
                 </div>
@@ -173,13 +221,13 @@ console.log(URL)
               ) : (
               <div
                 style={{width: "100%", height: "20rem", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", cursor: "pointer" }}>
-                  <img src={imagePreview} height="100%" />
+                  <img src={imagePreview} height="100%" alt="" />
               </div>
             )}
         </div>
           <div className="col-4 text-center align-self-end">
             <div>
-              <button className="btn-kelola-jadwal1 me-3  rounded-3 mb-5  ">Batal</button>
+              <button className="btn-kelola-jadwal1 me-3  rounded-3 mb-5  " onClick={(e)=> navigate('/kelolaJadwal')}>Batal</button>
               <button className="btn-kelola-jadwal ms-3  rounded-3 mb-5  " onClick={handleSubmit}>Simpan</button>
             </div>
           </div>
