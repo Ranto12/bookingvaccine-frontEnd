@@ -55,7 +55,7 @@ const DataBooking = () => {
   return (
     <div className="Fontcolor-Dasboard">
       <div className="row me-5">
-        <div className="col-3">
+        <div className="col-3 ">
           <Sidebar />
         </div>
         <div className="col-9 mt-5">
