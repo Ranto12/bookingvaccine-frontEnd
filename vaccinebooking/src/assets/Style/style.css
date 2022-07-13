@@ -52,7 +52,7 @@
 }
 
 .card-faskes1 {
-  padding: 9% ;
+  padding: 9%;
 }
 
 /* kelola berita */
@@ -136,12 +136,14 @@
   cursor: pointer;
   border: "none";
 }
+
 .InputCssKelolaPengguna {
   width: "251px";
   height: 24px;
   border: none;
   border-radius: 2px;
 }
+
 .BorderRadiusInline {
   border-radius: 2px;
   border: 1px solid #829ccc !important;
@@ -220,6 +222,7 @@
   border-radius: 10px;
   margin-top: 13.29px;
 }
+
 .btn-kelola-jadwal {
   background-color: #7bd9e8;
   border: 0px;
@@ -238,7 +241,7 @@
 
 }
 
-.img-input > label > input {
+.img-input>label>input {
   display: none;
 }
 
@@ -280,6 +283,7 @@
   background-color: #FFFFFF;
   width: 100vw;
 }
+
 .head {
   margin-top: 165px !important;
   margin-bottom: 165px !important;
@@ -335,7 +339,7 @@
 }
 
 .input-password {
-  margin-bottom: 18px;
+  margin-bottom: 25px;
   color: #4e7ea7;
 }
 
@@ -455,6 +459,7 @@
 .Pointer-Booking {
   cursor: pointer;
 }
+
 /* PopUpPengguna */
 .pop-title {
   background-color: #7bd9e8;
@@ -465,14 +470,15 @@
   padding-bottom: 10px;
 }
 
-ul > li > h5,
-.data-popup,.title-table-datapopup {
+ul>li>h5,
+.data-popup,
+.title-table-datapopup {
   color: #4E7EA7;
   margin-right: 20px !important;
   margin-top: 20px !important;
 }
 
-div > ul {
+div>ul {
   list-style-type: none;
 }
 
@@ -488,28 +494,29 @@ div > ul {
 
 /* popup Admin */
 
-.data-popup-radio{
-  color: #829CCC  ;
+.data-popup-radio {
+  color: #829CCC;
 }
 
-.editpop,.popRadio{
+.editpop,
+.popRadio {
   width: 97%;
 }
 
-.modEdit{
+.modEdit {
   border-radius: 20px !important;
   overflow: hidden !important;
   height: 65% !important;
 }
 
-.modView{
+.modView {
   border-radius: 20px !important;
   overflow: hidden !important;
   height: 83% !important;
 }
 
 
-.Background-White{
+.Background-White {
   background-color: white;
 }
 
@@ -528,15 +535,15 @@ div > ul {
 
 
 /* popup booking */
-.title-table-datapopup{
+.title-table-datapopup {
   margin-left: 30px !important;
 }
 
-.table-booking-table{
+.table-booking-table {
   border-color: white;
 }
 
-.table-popup-booking{
+.table-popup-booking {
   background-color: #45c2d6;
   border-radius: 0px;
   height: 60px;
@@ -549,29 +556,31 @@ div > ul {
 
 
 /* news uploaded */
-.image-upload>input{
+.image-upload>input {
   display: none;
   height: 60%;
   width: 20%;
   margin-bottom: 10px;
 }
-.image-size-uploadimage{
+
+.image-size-uploadimage {
   height: 40px !important;
   width: 180px !important;
 }
-.image-size-uploadimage1{
+
+.image-size-uploadimage1 {
   height: 56px !important;
   width: 180px !important;
 }
 
 /* Kelola admin edit and add  */
-.input-Nama-admin{
+.input-Nama-admin {
   width: 100%;
   margin-bottom: 3%;
   margin-top: 2%;
   border: 1px solid #D9D9D9;
-  max-height:100%;
-  min-height:40px;
+  max-height: 100%;
+  min-height: 40px;
   background-color: #ffffff;
   border-radius: 5px;
   border-style: none;
@@ -579,13 +588,15 @@ div > ul {
   padding-left: 10px;
   outline: none;
 }
-.input-nama-admin-font{
+
+.input-nama-admin-font {
   font-family: 'Poppins';
   font-weight: 600;
   font-size: 14px;
   font-style: normal;
 }
-.input-alamat-admin{
+
+.input-alamat-admin {
   height: 80%;
   resize: none;
   border: 1px solid #D9D9D9;
@@ -594,16 +605,17 @@ div > ul {
   outline: none;
 }
 
-.Font-white{
+.Font-white {
   color: white;
 }
-.input-password-admin{
+
+.input-password-admin {
   width: 100%;
   margin-bottom: 3%;
   margin-top: 2%;
   border: 1px solid #D9D9D9;
-  max-height:100%;
-  min-height:40px;
+  max-height: 100%;
+  min-height: 40px;
   background-color: #ffffff;
   border-radius: 5px;
   border-style: none;
@@ -612,37 +624,44 @@ div > ul {
   display: flex;
   outline: none;
 }
-.width-90{
+
+.width-90 {
   width: 100%;
   border: none;
   border-color: none;
   outline: none;
 }
 
-.padding-input{
+.padding-input {
   padding-left: 10px;
   padding-right: 10px;
 }
-.logoSidebar{
-  max-width: 43,11px;
-  max-height: 52,41px;
+
+.logoSidebar {
+  max-width: 43, 11px;
+  max-height: 52, 41px;
 }
-.fullHight{
+
+.fullHight {
   height: 100%;
 }
-.VakYu{
+
+.VakYu {
   justify-content: end;
   font-size: 24px;
 }
-.VaksinYuk{
+
+.VaksinYuk {
   justify-content: start;
   font-size: 12px;
 }
-.Logo{
+
+.Logo {
   max-width: 200%;
   max-height: 200%;
 }
-.medium{
+
+.medium {
   font-size: medium;
   font-family: Poppins;
 }
