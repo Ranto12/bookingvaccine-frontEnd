@@ -73,31 +73,27 @@ const Dashboard = () => {
                     <h3 className=" pt-3 fw-bold">Total Fasilitas Kesehatan</h3>
                   </div>
 
-                  <div className="">
-                    <div className=" text-center mt-5 text-light ">
-                      <div className="row row-cols-2 ">
+                    <div className=" text-center mt-5 mb-3 text-light ">
+                      <div className="d-flex text-center   ">
+                      
+                          <div className="card-faskes me-3 ">
+                          <h5>
+                          <LengthRSUD />
 
-                        <div className="col">
-                          <div className=" me-5 card-faskes ">
-                              <h1 className=" fw-bold ">
-                              <LengthRSUD/>
-                              </h1>
-                              <h4 className="pt-2 ">RSUD</h4>
+                          RSUD
+                          </h5>
                           </div>
-                        </div>
-                        
-                        <div className="col">
-                          <div className="me-5 card-faskes1 ">
-                              <h1 className=" fw-bold ">
-                              <LengthPuskesmas/>
-                              </h1>
-                              <h4 className="pt-2  ">PUSKESMAS</h4>
+                      
+                          <div className="card-faskes1 ms-3 ">
+                          <h5>
+                          <LengthPuskesmas />
+                          PUSKESMAS
+                          </h5>
                           </div>
-                        </div>
 
                       </div>
                     </div>
-                  </div>
+                 
 
                 </div>
               </div>
