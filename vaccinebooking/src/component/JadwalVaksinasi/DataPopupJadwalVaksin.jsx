@@ -7,18 +7,14 @@ import api from '../../API/data/post';
 
 export default function DataPopupBooking({ namaFaskes, stock, jenis, alamat, waktu }) {
   // console.log(nama, "ini namanya")
-  const [numer] = useState("1");
-  const [selected, setSelected] = useState(jenis);
+  const [selected] = useState(jenis);
   const [vaccine, setvaccine] = useState([]) 
 
   useEffect(() => {
     console.log(jenis)
   },[jenis])
 
-  const handleChange = event => {
-    console.log(event.target.value);
-    setSelected(event.target.value);
-  };
+
 
   useEffect(()=>{
     const fetchPosts = async()=>{
