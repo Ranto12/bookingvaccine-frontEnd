@@ -8,6 +8,8 @@ import { useState } from "react";
 // import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
+import PopUpJadwalVaksin from "./PopUpJadwalVaksin"
+
 
 const TabelVaksinasi = ({ Number, idSesion,  nama, stock, jenis, waktu, image, tanggal, id_area, id_facility, Idvaccine , namaFaskes, alamat}) => {
     // initial state and variable
@@ -52,9 +54,19 @@ const TabelVaksinasi = ({ Number, idSesion,  nama, stock, jenis, waktu, image, t
                 <IconButton onClick={handleNavigate}>
                     < RiPencilFill  />
                 </IconButton>
-                <IconButton >
-                    <MdDelete/>
-                </IconButton>
+
+                <PopUpJadwalVaksin 
+                namaFaskes={namaFaskes} 
+                stock = {stock} 
+                jenis = {jenis}
+                alamat = {alamat} 
+                waktu = {waktu} 
+                Number = {Number}
+                Idvaccine={Idvaccine} />
+                
+                {/* <IconButton className="me-2" data-bs-toggle="tooltip" data-bs-placement="top" title="view">
+                    <MdDelete Number = {Number}/>
+                </IconButton> */}
             </div>
         </div>
     );
