@@ -46,7 +46,7 @@ export default function DataPopupBooking({ namaFaskes, stock, jenis, alamat, wak
 
   return (
     <div>
-      <ul>
+      <ul className="p-0">
         <li>
           <h5>Nama Admin</h5>
           <h6 className="data-popup"> {namaFaskes}</h6>
@@ -56,7 +56,7 @@ export default function DataPopupBooking({ namaFaskes, stock, jenis, alamat, wak
           <h6 className="data-popup">{alamat}</h6>
         </li>
       </ul>  
-      <ul>
+      <ul className="p-0">
       <div className="data-popup">
           <h5>Jenis Vaksin</h5>
           <div className="d-flex">
@@ -84,7 +84,7 @@ export default function DataPopupBooking({ namaFaskes, stock, jenis, alamat, wak
         </div>
         </div>
       </ul>
-        <ul>
+        <ul className="p-0">
         <li>
           <h5>Stock</h5>
           <h6 className="data-popup"> {stock}</h6>
