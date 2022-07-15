@@ -1,4 +1,11 @@
-export default function DataPopup({nama,nohp, nik,gender, email, tgl_lahir}) {
+export default function DataPopup({
+  nama,
+  nohp, 
+  nik,
+  gender, 
+  email, 
+  tgl_lahir
+}) {
   // console.log(nama, "ini namanya")
   return (
     <div className="title-das">

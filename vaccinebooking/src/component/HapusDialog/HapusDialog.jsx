@@ -15,7 +15,11 @@ const theme = createTheme({
   },
 });
 
-export default function HapusDialog({ open, handleClose, handleSubmit }) {
+export default function HapusDialog({ 
+  open, 
+  handleClose, 
+  handleSubmit 
+}) {
   return (
     <div>
       <Dialog

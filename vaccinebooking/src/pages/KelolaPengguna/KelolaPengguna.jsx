@@ -126,14 +126,28 @@ const KelolaPengguna = () => {
                   if (input === "") {
                     return val
                   }
-                  else if (val.first_name?.toLowerCase().includes(input.toLocaleLowerCase()) || val.no_phone?.toLowerCase().includes(input.toLocaleLowerCase()) || val.username?.toLowerCase().includes(input.toLocaleLowerCase()) ) {
+                  else if (val.first_name?.toLowerCase().includes(input.toLocaleLowerCase()) || 
+                  val.no_phone?.toLowerCase().includes(input.toLocaleLowerCase()) || 
+                  val.username?.toLowerCase().includes(input.toLocaleLowerCase()) 
+                  ) {
                     return val
                   } else {
                     return null;
                   }
                 }).map((data, index)=>{
               return(
-                <TablePengguna Number={index + 1}  key={data.id_user}  id={data.id_user}nama={data.first_name + " " + data.last_name} nohp = {data.no_phone}  NIK={data.username}  data={data} email={data.email} gender={data.gender} tgl_lahir = {data.birth_date}  />
+                <TablePengguna 
+                Number={index + 1}  
+                key={data.id_user}  
+                id={data.id_user}
+                nama={data.first_name + " " + data.last_name} 
+                nohp={data.no_phone}  
+                NIK={data.username}  
+                data={data} 
+                email={data.email} 
+                gender={data.gender} 
+                tgl_lahir={data.birth_date}
+                />
               )
             })}
           </div>

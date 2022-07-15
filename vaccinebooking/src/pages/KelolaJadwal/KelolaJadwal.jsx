@@ -157,7 +157,6 @@ const KelolaJadwal = () => {
 
                                 }).map((data, index) => {
                                     return (
-
                                         < TabelVaksinasi
                                             Number={index + 1
                                             }
@@ -179,7 +178,12 @@ const KelolaJadwal = () => {
                                 })}
                         </div>
                         {jadwal.length > 0 ? (
-                            <Pagenation data={jadwal} size={size} page={page} setPage={setPage} lengthPage={lengthPage}/>
+                            <Pagenation 
+                            data={jadwal} 
+                            size={size} 
+                            page={page} 
+                            setPage={setPage} 
+                            lengthPage={lengthPage}/>
                         ):(
                             null
                         )}

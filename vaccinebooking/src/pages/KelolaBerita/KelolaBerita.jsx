@@ -146,19 +146,33 @@ const KelolaBerita = () => {
                 if (input == null) {
                   return val
                 }
-                else if (val?.title_news_vaccine?.toLowerCase().includes(input.toLowerCase()) || val?.author_news_vaccine?.toLowerCase().includes(input.toLowerCase()) || val?.created_at?.toLowerCase().includes(input.toLowerCase())) {
+                else if (val?.title_news_vaccine?.toLowerCase().includes(input.toLowerCase()) || 
+                val?.author_news_vaccine?.toLowerCase().includes(input.toLowerCase()) || 
+                val?.created_at?.toLowerCase().includes(input.toLowerCase())) {
                   return val
                 } else{
                   return null
                 }
               }).map((data, index) => {
                 return (
-                  <TabelKelolaBerita key={data.id_news_vaccine} id={data.id_news_vaccine} Number={index + 1} title={data.title_news_vaccine} tanggal={data.created_at} author={data.author_news_vaccine} content={data.content_news_vaccine}/>
+                  <TabelKelolaBerita 
+                  key={data.id_news_vaccine} 
+                  id={data.id_news_vaccine} 
+                  Number={index + 1} 
+                  title={data.title_news_vaccine} 
+                  tanggal={data.created_at} 
+                  author={data.author_news_vaccine} 
+                  content={data.content_news_vaccine}/>
                 )
               })}
           </div>
           {Artikels?.length > 0 ? (
-          <Pagenation data={Artikels} size={size} page={page} setPage={setPage} lengthPage={lengthPage}/>
+          <Pagenation 
+              data={Artikels} 
+              size={size} 
+              page={page} 
+              setPage={setPage} 
+              lengthPage={lengthPage}/>
             ) : (
               null
             )

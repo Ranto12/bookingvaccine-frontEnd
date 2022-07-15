@@ -14,7 +14,10 @@ const theme = createTheme({
   },
 });
 
-export default function HapusDialogBerita({ open, handleClose, handleSubmit }) {
+export default function HapusDialogBerita({ 
+  open, 
+  handleClose, 
+  handleSubmit }) {
   return (
     <div>
       <Dialog

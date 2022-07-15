@@ -68,8 +68,8 @@ const Login = () => {
               const decode = jwt_decode(token);
               window.localStorage.setItem("id_users", decode.id_user);
               window.localStorage.setItem("role", decode.roles);
-              console.log(window.localStorage.getItem("role"));
-              console.log("hasil", decode);
+              // console.log(window.localStorage.getItem("role"));
+              // console.log("hasil", decode);
               if (window.localStorage.getItem("role") === "ADMIN" || window.localStorage.getItem("role") === "SUPER ADMIN") {
                 Swal.fire('Berhasil!', 'Anda Telah Berhasil Login!', 'success');
                 window.location.reload();

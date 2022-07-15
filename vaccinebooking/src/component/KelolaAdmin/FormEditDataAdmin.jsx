@@ -7,7 +7,17 @@ import {AiFillEye} from 'react-icons/ai';
 import { IconButton } from "@mui/material"; 
 import Swal from "sweetalert2";
 
-export default function FormEditDataAdmin({id_user, Name, hp, mail, address, birth_date, gender, pw, usernames }) {
+export default function FormEditDataAdmin({
+  id_user, 
+  Name, 
+  hp, 
+  mail, 
+  address, 
+  birth_date, 
+  gender, 
+  pw, 
+  usernames 
+}) {
    // initial state and variable
    const [namaAdmin, setNamaAdmin] = useState(Name);
    const [tanggalLahir, setTanggalLahir] = useState(birth_date);

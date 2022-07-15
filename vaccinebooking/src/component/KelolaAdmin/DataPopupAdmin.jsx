@@ -1,6 +1,12 @@
 import React from "react";
 
-export default function DataPopupAdmin({ Name ,hp ,email , role , alamat}) {
+export default function DataPopupAdmin({ 
+  Name,
+  hp,
+  email, 
+  role, 
+  alamat
+}) {
   return (
     <div>
       <ul>

@@ -3,7 +3,14 @@ import { RiFileSearchFill } from "react-icons/ri";
 import DataPopupAdmin from "./DataPopupAdmin";
 import "../../assets/Style/style.css";
 
-export default function PopUpAdmin({ Number ,Name ,hp ,email , role, alamat}) {
+export default function PopUpAdmin({ 
+  Number,
+  Name,
+  hp,
+  email, 
+  role,
+  alamat
+}) {
   return (
     <div>
       <div
@@ -28,7 +35,14 @@ export default function PopUpAdmin({ Number ,Name ,hp ,email , role, alamat}) {
             </div>
             <div className="modal-body">
               <ul>
-                <DataPopupAdmin Number={Number} Name={Name} hp={hp} email={email} role={role} alamat={alamat} />
+                <DataPopupAdmin 
+                Number={Number} 
+                Name={Name} 
+                hp={hp} 
+                email={email} 
+                role={role} 
+                alamat={alamat} 
+                />
               </ul>
             </div>
           </div>

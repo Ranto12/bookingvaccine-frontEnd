@@ -5,7 +5,14 @@ import { RiFileSearchFill } from "react-icons/ri";
 
 
 
-export default function PopUpPenggunaBooking({namaUser, nikuser, jenisVaccine, Number,family, nameFamily, nikFamily }) {
+export default function PopUpPenggunaBooking({
+  namaUser, 
+  nikuser, 
+  jenisVaccine, 
+  Number,
+  nameFamily, 
+  nikFamily 
+  }) {
   return (
     <div>
       <div

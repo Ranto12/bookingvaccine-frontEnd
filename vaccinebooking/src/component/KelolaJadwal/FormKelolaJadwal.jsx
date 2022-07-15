@@ -7,7 +7,11 @@ import Swal from "sweetalert2";
 import api from '../../API/data/post';
 import {URL} from '../../API/URL';
 
-export default function FormKelolaJadwal({address, name, data}) {
+export default function FormKelolaJadwal({
+  address, 
+  name, 
+  data
+}) {
   // state and variables
   const navigate = useNavigate();
   const [vaccine, setvaccine] = useState([]);
