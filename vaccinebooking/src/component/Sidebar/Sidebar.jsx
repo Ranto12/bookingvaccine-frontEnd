@@ -23,7 +23,7 @@ const Sidebar = () => {
           <div className="text-center mt-5 sidebar mx-3  rounded-3 ">
             <div className="row align-items-center justify-content-end">
               <div className=" align-items-center p-5" >
-                <img src={logo} alt="logo" className="Logo"/>
+                <img src={logo} alt="logo" className="Logo-img"/>
               </div>
 
             </div>

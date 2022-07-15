@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Sidebar from "../../component/Sidebar/Sidebar";
 import { Link } from "react-router-dom";
+import icons from "../../assets/img/sketch.png"
 
 // style
 import "./../../assets/Style/style.css";
@@ -14,6 +15,8 @@ import TabelKelolaBerita from "../../component/KelolaBerita/TabelKelolaBerita";
 import api from "./../../API/data/post";
 import Select from "../../component/PageComponent/Select";
 import Pagenation from "../../component/Pagenation/Pagenation";
+import Search from "../../component/Basing/Search";
+import Spiner from "../../assets/Spinners/Spinners";
 
 const KelolaBerita = () => {
   // initial state and valiables
@@ -22,6 +25,7 @@ const KelolaBerita = () => {
   const [page, setPage] = useState(0);
   const [size, setSize] = useState(15);
   const [lengthPage, setLengthPage] = useState(0);
+  const [loading, setLoading] = useState(false);
   //funtion
   const onChangeInput = (e) => {
     const inputt = e.target.value;
@@ -30,11 +34,6 @@ const KelolaBerita = () => {
   const handleSearch = () => {
     setInput();
   };
-
-  //  useEffect
-  useEffect(() => {
-    handleSearch();
-  }, []);
 
   //  API
   useEffect(() => {
@@ -54,6 +53,7 @@ const KelolaBerita = () => {
       }
     };
     fetchPosts();
+    <Spiner/>
   }, [page, size]);
 
   return (
@@ -119,7 +119,7 @@ const KelolaBerita = () => {
           </div>
 
           {/* tabel */}
-          {Artikels.length > 0 ? (
+          {Artikels && Artikels.length > 0 ? (
             <div className="row mt-4 background-color-Table  justify-content-center ">
             <div className="col-1">No</div>
             <div className="col-4">judul Berita</div>
@@ -127,8 +127,17 @@ const KelolaBerita = () => {
             <div className="col-4">Tanggal Posting</div>
             <div className="col-1">Action</div>
           </div>
-          ):(null)}
-
+          ):(
+            null
+            )}
+            
+            {/* { Artikels.length === 0 ? (
+              <Search icons={icons} message={"Belum ada berita yang dibuat"} message2={"Jadilah yang pertama membuat berita!"}/>
+            ):(
+              null
+            )
+          }  */}
+          
           {/* isi tabel */}
           <div className={Artikels.length !== 0 ? 'TabelkelolaBerita row Border-Color-Box ' : ""}>
             {Artikels &&
@@ -137,11 +146,10 @@ const KelolaBerita = () => {
                 if (input == null) {
                   return val
                 }
-
                 else if (val?.title_news_vaccine?.toLowerCase().includes(input.toLowerCase()) || val?.author_news_vaccine?.toLowerCase().includes(input.toLowerCase()) || val?.created_at?.toLowerCase().includes(input.toLowerCase())) {
                   return val
                 } else{
-                  return null;
+                  return null
                 }
               }).map((data, index) => {
                 return (
