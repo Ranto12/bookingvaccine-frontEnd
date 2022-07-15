@@ -143,11 +143,18 @@ const KelolaAdmin = () => {
                         }).map((data, index)=>{
                             return(
                                 <TabelAdmin 
-                                key={data.id_user} id={data.id_user}
-                                Number={index +1} Name={data.first_name} 
-                                hp={data.no_phone} email={data.email} role={data.roles} 
-                                alamat={data.address}  tanggalLahir={data.birth_date}
-                                gender={data.gender} pw={data.password} username={data.username}
+                                key={data.id_user} 
+                                id={data.id_user}
+                                Number={index +1} 
+                                Name={data.first_name} 
+                                hp={data.no_phone} 
+                                email={data.email} 
+                                role={data.roles} 
+                                alamat={data.address}  
+                                tanggalLahir={data.birth_date}
+                                gender={data.gender} 
+                                pw={data.password} 
+                                username={data.username}
                                 />
                             )
                         })}

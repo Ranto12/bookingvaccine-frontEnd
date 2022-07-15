@@ -29,8 +29,13 @@ export default function PopUpJadwalVaksin({namaFaskes, stock, jenis , Number, al
             <div className="modal-body">
                 <ul>
                     <DataPopupJadwalVaksin  
-                  namaFaskes = {namaFaskes} stock = {stock} jenis = {jenis}
-                  alamat = {alamat} waktu = {waktu} Idvaccine={Idvaccine}/>
+                  namaFaskes={namaFaskes} 
+                  stock={stock} 
+                  jenis={jenis}
+                  alamat={alamat} 
+                  waktu={waktu} 
+                  Idvaccine={Idvaccine}
+                  />
                 </ul>
             </div>
           </div>

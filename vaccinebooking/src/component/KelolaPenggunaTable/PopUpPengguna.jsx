@@ -3,7 +3,15 @@ import { RiFileSearchFill } from "react-icons/ri";
 import DataPopup from "./DataPopup";
 import '../../assets/Style/style.css'
 
-export default function PopUpPengguna({nama, number, nohp, nik, gender, email, tgl_lahir}) {
+export default function PopUpPengguna({
+  nama, 
+  number, 
+  nohp, 
+  nik, 
+  gender, 
+  email, 
+  tgl_lahir
+}) {
   // console.log(nama, "wow")
   
   return (
@@ -29,7 +37,14 @@ export default function PopUpPengguna({nama, number, nohp, nik, gender, email, t
             </div>
             <div className="modal-body">
                 <ul>
-                    <DataPopup  nama={nama} nohp={nohp} nik={nik} gender={gender} email={email} tgl_lahir={tgl_lahir}  />
+                    <DataPopup  
+                    nama={nama} 
+                    nohp={nohp} 
+                    nik={nik} 
+                    gender={gender} 
+                    email={email} 
+                    tgl_lahir={tgl_lahir}  
+                    />
                 </ul>
             </div>
           </div>

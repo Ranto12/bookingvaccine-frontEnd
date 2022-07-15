@@ -7,7 +7,14 @@ import moment from 'moment';
 import { useState } from "react";
 import HapusDialogBerita from "../HapusDialog/HapusDialogBerita";
 
-const TabelKelolaBerita = ({ Number,id,  title, tanggal, author, content}) => {
+const TabelKelolaBerita = ({ 
+  Number,
+  id,  
+  title, 
+  tanggal, 
+  author, 
+  content
+}) => {
   //state and variable
   let navigate = useNavigate();
   const [open, setOpen] = useState(false);
@@ -22,7 +29,13 @@ const TabelKelolaBerita = ({ Number,id,  title, tanggal, author, content}) => {
 
   const handleNavigate=(e)=>{
     e.preventDefault();
-    navigate("/EditArtikel", {state:{id : id, judul: title, penulis: author, content: content}});
+    navigate("/EditArtikel", 
+    {state:{
+      id : id, 
+      judul: title, 
+      penulis: author, 
+      content: content
+    }});
   }
 
   const handleDetele=(e)=>{

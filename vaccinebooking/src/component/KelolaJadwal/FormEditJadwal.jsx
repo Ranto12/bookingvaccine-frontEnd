@@ -8,7 +8,18 @@ import {URL} from "../../API/URL";
 import api from '../../API/data/post'
 import Swal from "sweetalert2";
               
-function FormEditJadwal( {namaFaskes, stockVaccine, tanggalVaccine, alamatFacility, WaktuVaccine, idFacility, Idvaccine, idSesion, data, idArea}) {
+function FormEditJadwal( {
+  namaFaskes, 
+  stockVaccine, 
+  tanggalVaccine, 
+  alamatFacility, 
+  WaktuVaccine, 
+  idFacility, 
+  Idvaccine, 
+  idSesion, 
+  data, 
+  idArea
+}) {
   // state and variables
   const [vaccine, setvaccine] = useState([]);
   const [idVaccinee, setIdvaccine] = useState(Idvaccine);

@@ -161,7 +161,12 @@ const DataBooking = () => {
               })}
           </div>
               {booking?.length > 0 ? (
-          <Pagenation data={booking} size={size} page={page} setPage={setPage} lengthPage={lengthPage}/>
+          <Pagenation 
+              data={booking} 
+              size={size} 
+              page={page} 
+              setPage={setPage} 
+              lengthPage={lengthPage}/>
               ):(
                 null
               )

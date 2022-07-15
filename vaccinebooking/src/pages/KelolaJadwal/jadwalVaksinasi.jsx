@@ -64,7 +64,13 @@ console.log(vacility)
            vacility.data.map((data, index)=>{
             // console.log(`data di map`, data.area_mapped.id_area)
             return(
-              <FormKelolaJadwal key={data.id_health_facilities} data={data} address={data.address_health_facilities} maps={data.link_location} category={data.category_mapped.category_facilities_name} name={data.health_facilities_name}/>
+              <FormKelolaJadwal 
+              key={data.id_health_facilities} 
+              data={data} 
+              address={data.address_health_facilities} 
+              maps={data.link_location} 
+              category={data.category_mapped.category_facilities_name} 
+              name={data.health_facilities_name}/>
             )
            })}
           </Form>

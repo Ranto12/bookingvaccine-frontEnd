@@ -11,7 +11,20 @@ import { useNavigate } from "react-router-dom";
 import PopUpJadwalVaksin from "./PopUpJadwalVaksin"
 
 
-const TabelVaksinasi = ({ Number, idSesion,  nama, stock, jenis, waktu, image, tanggal, id_area, id_facility, Idvaccine , namaFaskes, alamat}) => {
+const TabelVaksinasi = ({ 
+    Number, 
+    idSesion,  
+    nama, 
+    stock, 
+    jenis, 
+    waktu, 
+    image, 
+    tanggal, 
+    id_area, 
+    id_facility, 
+    Idvaccine, 
+    namaFaskes, 
+    alamat}) => {
     // initial state and variable
     let navigate = useNavigate();
     const handleNavigate=(e)=>{ 

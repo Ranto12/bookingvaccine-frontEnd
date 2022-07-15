@@ -36,7 +36,16 @@ export default function EditAdmin() {
             </div>
 
             <Form className="bg-form-jadwal">
-              <FormEditDataAdmin id_user={id_user} Name={Name} hp={hp} mail={email} role={role} address={alamat} birth_date={tanggalLahir} gender={gender} pw={pw} usernames={username} />
+              <FormEditDataAdmin 
+              id_user={id_user}
+              Name={Name} 
+              hp={hp} 
+              mail={email} 
+              role={role} 
+              address={alamat} 
+              birth_date={tanggalLahir} 
+              gender={gender} pw={pw} 
+              usernames={username} />
             </Form>
           </div>
         </div>
