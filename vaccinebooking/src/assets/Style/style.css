@@ -33,7 +33,6 @@
 }
 
 .Card-TotalAdmin {
-  padding-bottom: 5%;
   border-radius: 20px;
   border: solid;
   padding-left: 36.54px;
@@ -48,24 +47,18 @@
 }
 
 .card-faskes {
-  width: 40%;
-  max-width: 40%;
-  max-height: 40%;
-  height: 108px;
+  width: 100%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  margin-bottom: 8px;
   
 }
 .card-faskes1 {
-  width: 40%;
-  max-width: 40%;
-  max-height: 100%;
-  height: 108px;
-}
-.font-card-dashboard{
-  font-size: 13.28px;
-  justify-content: center;
-  display: flex;
-  margin: 0;
-  align-items: center;
+  width: 100%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  margin-bottom: 8px;
+  
 }
 
 /* kelola berita */

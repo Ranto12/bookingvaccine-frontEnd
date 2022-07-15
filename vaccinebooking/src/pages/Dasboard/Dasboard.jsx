@@ -23,7 +23,7 @@ const Dashboard = () => {
           </div>
 
           {/* total admin */}
-          <div className="row row-cols-1 row-cols-lg-2 mt-3 ">
+          <div className="row row-cols-1 row-cols-xl-2 mt-3 ">
             <div className="col">
               <div className="Card-TotalAdmin">
                 <div className="">
@@ -62,20 +62,20 @@ const Dashboard = () => {
           </div>
 
           {/* fasilitas kesehatan */}
-          <div className="row row-cols-1 row-cols-lg-2 mt-4 mb-5">
+          <div className="row row-cols-1 row-cols-xl-2 mt-4 mb-5">
             <div className="col">
 
               <div className="Card-TotalAdmin">
                 <div className="">
-                  <div className="d-flex align-items-center">
+                  <div className="d-flex align-items-center ">
                     <div className="me-4 display-6 ">
                       <BsFillSquareFill />
                     </div>
-                    <h3 className=" pt-3 fw-bold">Total Fasilitas Kesehatan</h3>
+                    <h4 className=" pt-3 fw-bold">Total Fasilitas Kesehatan</h4>
                   </div>
 
-                    <div className=" text-center mt-5 mb-3 text-light ">
-                      <div className="d-flex text-center  d-print-block  ">
+                    <div className=" text-center mt-5  text-light ">
+                      <div className="d-flex justify-content-around pb-xl-4 mb-xl-2   ">
                       
                           <div className="card-faskes me-3 font-card-dashboard ">
                             <h3>
@@ -83,11 +83,12 @@ const Dashboard = () => {
                             <div>RSUD</div>
                             </h3>
                           </div>
-                          <div className="card-faskes1 ms-3 font-card-dashboard">
-                          <h3>
+                      
+                          <div className="card-faskes1 me-4 ">
+                          <h5>
                           <LengthPuskesmas />
                           PUSKESMAS
-                          </h3>
+                          </h5>
                           </div>
                       </div>
                     </div>
@@ -99,7 +100,7 @@ const Dashboard = () => {
             <div className="col ">
               <div className="Card-TotalAdmin">
                 <div className="">
-                  <div className="d-flex align-items-center">
+                  <div className="d-flex align-items-center ">
                     <div className="me-4 display-6 ">
                       <BsFillSquareFill />
                     </div>
@@ -108,7 +109,7 @@ const Dashboard = () => {
                   <h1 className="mt-4 display-3 fw-bold ">
                     <LengthKecamatan />
                   </h1>
-                  <h1  className="pt-3 pb-4">Kecamatan</h1>
+                  <h1  className="pt-3">Kecamatan</h1>
                 </div>
               </div>
             
