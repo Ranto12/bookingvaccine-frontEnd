@@ -11,6 +11,8 @@ import { BsFillCalendarCheckFill } from 'react-icons/bs'
 // component
 import TabelVaksinasi from '../../component/JadwalVaksinasi/TabelVaksinasi';
 import Select from '../../component/PageComponent/Select';
+import Search from '../../component/Basing/Search';
+
 
 // Api
 import api from './../../API/data/post'
@@ -35,9 +37,10 @@ const KelolaJadwal = () => {
         const fetchPosts = async () => {
             try {
                 const response = await api.get(`/session/${page}/${size}`, {
-                    headers:{
+                    headers: {
                         'Authorization': `Bearer ${localStorage.getItem('token')}`
-                    }}
+                    }
+                }
                 )
                 setJadwal(response.data.data);
                 setLengthPage(response.data.data.totalPages);
@@ -143,30 +146,34 @@ const KelolaJadwal = () => {
                                     if (input === "") {
                                         return val
                                     }
-                                    else if (val.vaccine_mapped.vaccine_name?.toLowerCase().includes(input.toLocaleLowerCase()) || 
-                                            val.health_facilities_dao_mapped.health_facilities_name?.toLowerCase().includes(input.toLocaleLowerCase()) || 
-                                            val.start_time?.toLowerCase().includes(input.toLocaleLowerCase()) ) {  
+                                    else if (val.vaccine_mapped.vaccine_name?.toLowerCase().includes(input.toLocaleLowerCase()) ||
+                                        val.health_facilities_dao_mapped.health_facilities_name?.toLowerCase().includes(input.toLocaleLowerCase()) ||
+                                        val.start_time?.toLowerCase().includes(input.toLocaleLowerCase())) {
                                         return val
-                                    } else{
-                                       return null;
                                     }
+                                    else {
+                                        return null;
+                                    }
+
                                 }).map((data, index) => {
                                     return (
-                                        <TabelVaksinasi 
-                                        Number={index + 1} 
-                                        key={data.id_session} 
-                                        idSesion={data.id_session} 
-                                        nama={data.health_facilities_dao_mapped.health_facilities_name} 
-                                        stock={data.stock} 
-                                        jenis={data.vaccine_mapped.vaccine_name} 
-                                        waktu={data.start_time}  
-                                        image={data.file_name}
-                                        tanggal={data.start_date}
-                                        id_area={data.area_mapped.id_area}
-                                        id_facility={data.health_facilities_dao_mapped.id_health_facilities}
-                                        Idvaccine={data.vaccine_mapped.id_vaccine}
-                                        namaFaskes={data.health_facilities_dao_mapped.health_facilities_name}
-                                        alamat ={data.health_facilities_dao_mapped.address_health_facilities}
+
+                                        < TabelVaksinasi
+                                            Number={index + 1
+                                            }
+                                            key={data.id_session}
+                                            idSesion={data.id_session}
+                                            nama={data.health_facilities_dao_mapped.health_facilities_name}
+                                            stock={data.stock}
+                                            jenis={data.vaccine_mapped.vaccine_name}
+                                            waktu={data.start_time}
+                                            image={data.file_name}
+                                            tanggal={data.start_date}
+                                            id_area={data.area_mapped.id_area}
+                                            id_facility={data.health_facilities_dao_mapped.id_health_facilities}
+                                            Idvaccine={data.vaccine_mapped.id_vaccine}
+                                            namaFaskes={data.health_facilities_dao_mapped.health_facilities_name}
+                                            alamat={data.health_facilities_dao_mapped.address_health_facilities}
                                         />
                                     )
                                 })}

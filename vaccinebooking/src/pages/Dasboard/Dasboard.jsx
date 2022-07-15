@@ -6,6 +6,7 @@ import Sidebar from '../../component/Sidebar/Sidebar';
 // length
 import {LengthAdmin, LengthPenguna, LengthKecamatan, LengthRSUD, LengthPuskesmas} from '../../component/Dasboard/APIrequired/Length';
 
+
 const Dashboard = () => {
   return (
     <div>
@@ -74,27 +75,22 @@ const Dashboard = () => {
                   </div>
 
                     <div className=" text-center mt-5 mb-3 text-light ">
-                      <div className="d-flex text-center   ">
+                      <div className="d-flex text-center  d-print-block  ">
                       
-                          <div className="card-faskes me-3 ">
-                          <h5>
-                          <LengthRSUD />
-
-                          RSUD
-                          </h5>
+                          <div className="card-faskes me-3 font-card-dashboard ">
+                            <h3>
+                            <div className=""><LengthRSUD /> </div>
+                            <div>RSUD</div>
+                            </h3>
                           </div>
-                      
-                          <div className="card-faskes1 ms-3 ">
-                          <h5>
+                          <div className="card-faskes1 ms-3 font-card-dashboard">
+                          <h3>
                           <LengthPuskesmas />
                           PUSKESMAS
-                          </h5>
+                          </h3>
                           </div>
-
                       </div>
                     </div>
-                 
-
                 </div>
               </div>
             </div>

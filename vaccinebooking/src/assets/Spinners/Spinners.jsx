@@ -5,11 +5,11 @@ import { ThreeCircles } from 'react-loader-spinner';
 function Spiner() {
   return (
     <>
-      <div className="w-screen h-screen flex items-center justify-center">
+      <div className="d-flex justify-content-start align-items-center errorPages">
         <ThreeCircles
-          color="red"
-          outerCircleColor="green"
-          innerCircleColor="orange"
+          color="#00BFFF"
+          outerCircleColor="#00BFFF"
+          innerCircleColor="#00BFFF"
         />
       </div>
     </>
