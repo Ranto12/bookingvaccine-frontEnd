@@ -82,37 +82,40 @@ function FormEditJadwal( {
   //     })
   //   }
   // }
- const onChangeImage=(e)=>{
-    let images = e.target.files[0];
-    let Format = "image/png" || "image/jpg" || "image/jpeg"|| "image/PNG" || "image/JPG" || "image/JPEG" || "image/jpeg";
-    let Size = 7644273;
-    let render = new FileReader();
-    console.log("image", images.type === Format);
-    // console.log("Format", Format);
-    setNameImage(images.name);
-    console.log(images);
-    render.onload = (e)=>{
-      setImageValidation(images);
-    };
-    render.readAsDataURL(e.target.files[0]);
+//  const onChangeImage=(e)=>{
+//     let images = e.target.files[0];
+//     let Format = "image/png" || "image/jpg" || "image/jpeg"|| "image/PNG" || "image/JPG" || "image/JPEG" || "image/jpeg";
+//     let Size = 7644273;
+//     let render = new FileReader();
+//     console.log("image", images.type === Format);
+//     // console.log("Format", Format);
+//     setNameImage(images.name);
+//     console.log(images);
+//     render.onload = (e)=>{
+//       setImageValidation(images);
+//     };
+//     render.readAsDataURL(e.target.files[0]);
     
-    if(images.type === Format && images.size < Size){
-      setImage(images);
-    } else if(images.type !== Format){
-      Swal.fire({
-        icon: "error",
-        title: "Oops...",
-        text: "File yang diupload harus berupa gambar",
-      })
-    }else if(images.size > Size ){
-      Swal.fire({
-        icon: "error",
-        title: "Oops...",
-        text: "File yang diupload harus berukuran kurang dari 1 MB",
-      })
-    } 
-}
+//     if(images.type === Format && images.size < Size){
+//       setImage(images);
+//     } else if(images.type !== Format){
+//       Swal.fire({
+//         icon: "error",
+//         title: "Oops...",
+//         text: "File yang diupload harus berupa gambar",
+//       })
+//     }else if(images.size > Size ){
+//       Swal.fire({
+//         icon: "error",
+//         title: "Oops...",
+//         text: "File yang diupload harus berukuran kurang dari 1 MB",
+//       })
+//     } 
+// }
 
+const onChangeImage=(e)=>{
+  setImage(e.target.files[0]);
+}
 
  
   // get api jenis vaccine
@@ -127,14 +130,7 @@ function FormEditJadwal( {
           })
           setvaccine(response.data.data);
         } catch(err){
-            if(err.response){
-                //not in the 200 response range
-                console.log(err.response.data)
-                console.log(err.response.status)
-                console.log(err.response.headers)
-            }else{
-                console.log(`Error ${err.message}`);
-            }
+           console.log(err);
         }
     } 
     fetchPosts();
@@ -161,7 +157,6 @@ const handleSubmit =(e)=>{
           headers: { "Content-Type": "multipart/form-data", 
                     "Authorization": `Bearer ${localStorage.getItem('token')}` 
                   },
-
         })
         .then((response) => {
           Swal.fire('Berhasil', 'Jadwal Berhasil Anda Edit', 'success');
@@ -174,7 +169,7 @@ const handleSubmit =(e)=>{
       }}
     }else{
       e.preventDefault();
-      axios.put(`${URL}/session/${idSesion}`,{
+      axios.put(`${URL}/session/noImage/${idSesion}`,{
         vaccine_id: idVaccinee,
         area_id: idArea,
         health_facilities_id: idFacility,
@@ -201,12 +196,7 @@ const handleSubmit =(e)=>{
       })
     }
 }
-// debug
-// console.log(`vaccine= `, idVaccine," area= ", data.area_mapped.id_area, "healt= ", data.id_health_facilities, "stock= ", Stock, "date= ", startDate, "time= ", startTime, "image= ", image  )
-// console.log('vacicine', IdVaccine)
-// console.log(`data`, namaFaskes, stockVaccine, tanggalVaccine, alamatFacility, WaktuVaccine, idFacility, Idvaccine, idSesion)
-// console.log("data", idArea, idFacility, image, startDate, startTime, Stock, idVaccinee, idSesion)
-console.log(image)
+console.log(Stock)
 
   return (
     <div className="mb-5 borderInput" style={{ color: " #4E7EA7" }}  >

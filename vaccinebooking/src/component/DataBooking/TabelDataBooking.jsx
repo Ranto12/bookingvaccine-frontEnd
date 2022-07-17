@@ -14,13 +14,12 @@ const TablePengguna = ({
   return (
     <div
       className="d-flex TabelkelolaBerita TableColor-child title-das">
-            
-            <div className="col-1  ">{Number}</div>
-            <div className="col-4">{nameFamily ? nameFamily : namaUser}</div>
-            <div className="col-3  Pointer-Booking">{nikFamily ? nikFamily : nikuser}</div>
-            <div className="col-3">{jenisVaccine}</div>
-            <div className="col-1 d-flex justify-content-center pb-1 pt-1 ">
-            <PopUpPenggunaBooking 
+        <div className="col-1  ">{Number}</div>
+        <div className="col-4">{nameFamily ? nameFamily : namaUser}</div>
+        <div className="col-3  Pointer-Booking">{nikFamily ? nikFamily : nikuser}</div>
+        <div className="col-3">{jenisVaccine}</div>
+        <div className="col-1 d-flex justify-content-center ">
+        <PopUpPenggunaBooking 
             key={id} 
             namaUser={namaUser} 
             nikuser={nikuser} 
@@ -28,8 +27,8 @@ const TablePengguna = ({
             Number={Number}  
             nikFamily={nikFamily} 
             nameFamily={nameFamily}
-            />
-            </div>
+          />
+        </div>
     </div>
   );
 };

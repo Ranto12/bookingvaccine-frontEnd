@@ -17,6 +17,7 @@ import Search from '../../component/Basing/Search';
 // Api
 import api from './../../API/data/post'
 import Pagenation from '../../component/Pagenation/Pagenation';
+import Spiner from '../../assets/Spinners/Spinners';
 
 const KelolaJadwal = () => {
     // initial state and valiables
@@ -25,7 +26,7 @@ const KelolaJadwal = () => {
     const [page, setPage] = useState(0);
     const [size, setSize] = useState(15);
     const [lengthPage, setLengthPage] = useState(0);
-
+    const [loading, setLoading] = useState(true);
 
     // function
     const onChangeInput = (e) => {
@@ -36,28 +37,24 @@ const KelolaJadwal = () => {
     useEffect(() => {
         const fetchPosts = async () => {
             try {
-                const response = await api.get(`/session/${page}/${size}`, {
-                    headers: {
-                        'Authorization': `Bearer ${localStorage.getItem('token')}`
+                const response = await api.get(`session/paging?page=${page}&size=${size}`, {
+                    headers: {'Authorization': `Bearer ${localStorage.getItem('token')}`
                     }
                 }
                 )
-                setJadwal(response.data.data);
+                setJadwal(response.data.data.content);
                 setLengthPage(response.data.data.totalPages);
             } catch (err) {
-                if (err.response) {
-                    //not in the 200 response range
-                    console.log(err.response.data)
-                    console.log(err.response.status)
-                    console.log(err.response.headers)
-                } else {
-                    console.log(`Error ${err.message}`);
-                }
+                console.log(err);
+            } finally {
+                setLoading(false)
             }
         }
         fetchPosts();
     }, [size, page])
-
+    if (loading) {
+        return <Spiner />
+    }
     return (
         <>
             <div className='Fontcolor-Dasboard'>

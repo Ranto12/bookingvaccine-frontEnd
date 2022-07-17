@@ -14,6 +14,7 @@ import api from "../../API/data/post";
 // component
 import Select from "../../component/PageComponent/Select";
 import Pagenation from "../../component/Pagenation/Pagenation";
+import Spiner from "../../assets/Spinners/Spinners";
 
 const DataBooking = () => {
   // initial state and valiables
@@ -22,9 +23,9 @@ const DataBooking = () => {
   const [size, setSize] = useState(15);
   const [page, setPage] = useState(0);
   const [lengthPage, setLengthPage] = useState(0);
+  const [loading, setLoading] = useState(true);
   
-
-
+  //funtion
   const onChangeInput = (e) => {
     setInput(e.target.value)
   };
@@ -33,25 +34,22 @@ const DataBooking = () => {
     const fetchPosts = async () => {
       try {
         const response = await api.get(`/booking?page=${page}&size=${size}`, {
-          headers:{
-              'Authorization': `Bearer ${localStorage.getItem('token')}`
+          headers:{'Authorization': `Bearer ${localStorage.getItem('token')}`
           }}
         )
         setBooking(response.data.data.content);
         setLengthPage(response.data.data.totalPages);
       } catch (err) {
-        if (err.response) {
-          console.log(err.response.data);
-          console.log(err.response.status);
-          console.log(err.response.headers);
-        } else {
-          console.log(`Error ${err.message}`);
-        }
+        console.log(err);
+      }finally{
+        setLoading(false)
       }
     };
     fetchPosts();
   }, [page, size, lengthPage]);
-
+  if(loading){
+    return <Spiner/>
+  }
   return (
     <div className="Fontcolor-Dasboard">
       <div className="row me-5">

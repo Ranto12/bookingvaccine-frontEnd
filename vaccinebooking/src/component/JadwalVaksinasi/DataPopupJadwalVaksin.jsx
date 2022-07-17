@@ -4,7 +4,6 @@ import { FormControlLabel, Radio, RadioGroup } from "@mui/material";
 import { useEffect } from "react";
 import api from '../../API/data/post';
 
-
 export default function DataPopupBooking({ namaFaskes, stock, jenis, alamat, waktu }) {
   // console.log(nama, "ini namanya")
   const [selected] = useState(jenis);
@@ -14,31 +13,19 @@ export default function DataPopupBooking({ namaFaskes, stock, jenis, alamat, wak
     console.log(jenis)
   },[jenis])
 
-
-
   useEffect(()=>{
     const fetchPosts = async()=>{
         try{
             const response = await api.get("/vaccine", {
-              headers:{
-                  'Authorization': `Bearer ${localStorage.getItem('token')}`
-              }
+              headers:{'Authorization': `Bearer ${localStorage.getItem('token')}`}
           })
             setvaccine(response.data.data);
         } catch(err){
-            if(err.response){
-                //not in the 200 response range
-                console.log(err.response.data)
-                console.log(err.response.status)
-                console.log(err.response.headers)
-            }else{
-                console.log(`Error ${err.message}`);
-            }
+            console.log(err);
         }
     }
     fetchPosts();
 },[])
-
 
   return (
     <div>
@@ -72,7 +59,6 @@ export default function DataPopupBooking({ namaFaskes, stock, jenis, alamat, wak
                 label={item.vaccine_name}
                 disabled={item.vaccine_name !== selected}
                 />
-                
           </RadioGroup>
               </div>
             )

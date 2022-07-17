@@ -15,7 +15,6 @@ export default function FormEditDataAdmin({
   address, 
   birth_date, 
   gender, 
-  pw, 
   usernames 
 }) {
    // initial state and variable
@@ -32,7 +31,6 @@ export default function FormEditDataAdmin({
    const [showPassword, setShowPassword] = useState(false);
    const [errorMassage, setErrorMassage] = useState("");
    const navigate = useNavigate();
-
 
    // funtion
    const handleNamaAdmin=(e)=>{
@@ -80,21 +78,19 @@ export default function FormEditDataAdmin({
 
   const handleSubmit=(e)=>{
     e.preventDefault();
-    axios.put(`${URL}/users/${id_user}`, {
-      headers:{
-          'Authorization': `Bearer ${localStorage.getItem('token')}`
-      }
-  },{
-        address: alamat,
-        birth_date: `${tanggalLahir}`,
-        email: email,
-        first_name: namaAdmin,
-        gender: jenisKelamin,
-        no_phone: noTlp,
-        password: password,
-        roles: "ADMIN",
-        username: username
-    })
+    axios.put(`${URL}/users/${id_user}`,{
+      address: alamat,
+      birth_date: `${tanggalLahir}`,
+      email: email,
+      first_name: namaAdmin,
+      gender: jenisKelamin,
+      no_phone: noTlp,
+      password: password,
+      roles: "ADMIN",
+      username: username
+  }, {
+    headers:{'Authorization': `Bearer ${localStorage.getItem('token')}`}
+  })
     .then((response) => {
      Swal.fire('Berhasil', 'Data Admin Berhasil Ditambahkan', 'success');
       navigate('/KelolaAdmin');
@@ -108,7 +104,6 @@ export default function FormEditDataAdmin({
       })
     });
   }
-  // console.log(namaAdmin, jenisKelamin, alamat, email, noTlp, password, username, tanggalLahir ,roles)
   return (
 
     <div>
