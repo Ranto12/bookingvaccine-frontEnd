@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import Spiner from '../../../assets/Spinners/Spinners';
 // Api
 import api from './../../../API/data/post'
 const token = localStorage.getItem('token');
@@ -6,6 +7,7 @@ const token = localStorage.getItem('token');
 //length pengguna
 export const LengthPenguna = () => {
     const [pengguna, setPengguna]= useState([]);
+    const [loading, setLoading] = useState(true);
     const Length = pengguna.length;
     // console.log(token);
 
@@ -19,9 +21,15 @@ export const LengthPenguna = () => {
                 setPengguna(response.data.data);
             } catch(err){
                 console.log(err);
-            }}
+            }finally{
+              setLoading(false);
+            }
+          }
         PenggunaLengthPost();
     },[])
+    if (loading) {
+      return <Spiner />
+    }
   return (
     <div>
         {Length}

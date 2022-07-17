@@ -19,6 +19,7 @@ import EditAdmin from "./pages/KelolaAdmin/EditAdmin";
 import {PrivateRoute, PrivateRouteLogRes} from './component/PrivateRoute/PrivateRoute';
 import Search from "./component/Basing/Search";
 import Spiner from "./assets/Spinners/Spinners";
+import Loading from "./component/Loading/Loading";
 
 function App() {
   const roles = localStorage.getItem("role");
@@ -44,6 +45,7 @@ function App() {
             <Route path="/EditArtikel" element={<EditArtikel />} />
             <Route path="/AddAdmin" element={<AddAdmin />} />
             <Route path="/EditAdmin" element={<EditAdmin />} />
+            <Route path="/loading" element={<Loading />} />   
             <Route path="/*" element={<ErrorMessage />} />   
           </Route>
         ) : (

@@ -1,22 +1,13 @@
-import React, { useState, useEffect } from "react";
-import Sidebar from "../../component/Sidebar/Sidebar";
-
-// style
-import "./../../assets/Style/style.css";
-import icons from "../../assets/img/sorry.png"
-
-// icon
-import { AiOutlineSearch } from "react-icons/ai";
-import TabelDataBooking from "../../component/DataBooking/TabelDataBooking";
-
-// API
 import api from "../../API/data/post";
-
-// component
+import { useState, useEffect } from "react";
+import icons from "../../assets/img/sorry.png"
+import { AiOutlineSearch } from "react-icons/ai";
+import Search from "../../component/Basing/Search";
+import Spiner from "../../assets/Spinners/Spinners";
+import Sidebar from "../../component/Sidebar/Sidebar";
 import Select from "../../component/PageComponent/Select";
 import Pagenation from "../../component/Pagenation/Pagenation";
-import Spiner from "../../assets/Spinners/Spinners";
-import Search from "../../component/Basing/Search";
+import TabelDataBooking from "../../component/DataBooking/TabelDataBooking";
 
 const DataBooking = () => {
   // initial state and valiables
@@ -26,7 +17,6 @@ const DataBooking = () => {
   const [page, setPage] = useState(0);
   const [lengthPage, setLengthPage] = useState(0);
   const [loading, setLoading] = useState(true);
-  
   //funtion
   const onChangeInput = (e) => {
     setInput(e.target.value)
@@ -80,17 +70,16 @@ const DataBooking = () => {
                   <p className="ms-2 Fz-16 me-2">entri</p>
                 </div>
                 <div className="border border-dark d-flex w-100 BorderRadiusInline">
-                  <div
-                    className="ms-3 me-3"
-                    style={{ cursor: "pointer", border: "none" }}
-                  >
+                  <div className="ms-3 me-3 PointerClikCss">
                     <AiOutlineSearch />
                   </div>
                   <div className="d-flex">
                     <input
                       type="text"
                       style={{
+                        maxWidth: "251px",
                         width: "251px",
+                        minWidth: "150px",
                         height: "24px",
                         border: "none",
                         borderRadius: "2px",

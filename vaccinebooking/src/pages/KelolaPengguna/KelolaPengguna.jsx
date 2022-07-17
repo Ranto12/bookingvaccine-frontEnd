@@ -82,7 +82,7 @@ if(loading){
                   <p className='Fz-16'>Tampilkan</p>
                 </div>
                 <div className='ms-2 Select15'>
-                  <Select onChangeInput={onChangeInput} />
+                  <Select setSize={setSize} />
                 </div>
                 <div className='d-flex'>
                   <div>
@@ -126,7 +126,8 @@ if(loading){
           { dataPengguna.length === 0 ? (
             <Search icons={icons} message={"Belum ada pengguna"} message2={""}/>
           ):(null)
-          }        
+          }      
+
           {/* isi table */}
           <div className={dataPengguna.length !== 0 ? "TabelkelolaBerita row Border-Color-Box mb-2" : ""}>
             {dataPengguna?.filter((val) => {

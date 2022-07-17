@@ -46,7 +46,7 @@ const KelolaAdmin = () => {
             }
         }
         fetchPosts();
-    }, [])
+    }, [page, size, lengthPage])
     if (loading) {
         return <Spiner />
     }

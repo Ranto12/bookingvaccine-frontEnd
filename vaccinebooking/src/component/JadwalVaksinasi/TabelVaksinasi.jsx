@@ -1,15 +1,7 @@
-import React from "react";
-import "../../assets/Style/style.css";
-import { RiPencilFill } from "react-icons/ri";
-import { MdDelete } from "react-icons/md";
 import { IconButton } from "@mui/material";
-// import OverlayJadwalVaksinasi from "./OverlayJadwalVaksinasi";
-import { useState } from "react";
-// import axios from "axios";
+import { RiPencilFill } from "react-icons/ri";
 import { useNavigate } from "react-router-dom";
-
 import PopUpJadwalVaksin from "./PopUpJadwalVaksin"
-
 
 const TabelVaksinasi = ({ 
     Number, 
@@ -18,7 +10,6 @@ const TabelVaksinasi = ({
     stock, 
     jenis, 
     waktu, 
-    image, 
     tanggal, 
     id_area, 
     id_facility, 
@@ -43,18 +34,6 @@ const TabelVaksinasi = ({
             idArea :id_area
         }});
     }
-    const [getData, setData] = useState({
-        nama: "",
-        stock: ""
-    });
-    const handleClick = ( nama, stock) => {
-        setData({
-            nama: nama,
-            stock: stock
-        })
-        console.log(getData)
-    }
-    // console.log(`id facility`, id_facility)
     
     return (
         <div className="d-flex TabelkelolaBerita justify-content-center TableColor-child title-das" >
@@ -76,10 +55,6 @@ const TabelVaksinasi = ({
                 waktu = {waktu} 
                 Number = {Number}
                 Idvaccine={Idvaccine} />
-                
-                {/* <IconButton className="me-2" data-bs-toggle="tooltip" data-bs-placement="top" title="view">
-                    <MdDelete Number = {Number}/>
-                </IconButton> */}
             </div>
         </div>
     );

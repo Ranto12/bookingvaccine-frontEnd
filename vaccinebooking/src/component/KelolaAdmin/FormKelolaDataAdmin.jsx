@@ -143,7 +143,7 @@ export default function FormKelolaDataAdmin() {
               <label >No. Telp</label>
               <input required type="number" name="phone" className="input-Nama-admin"  onChange={handlenoTlp}/>
             </div>
-            <div className="m-2 danger fs-6 font-monospace errorMessage ">
+            <div className="m-2 danger fs-6 font-monospace errorMessage">
             {errorMassage}
             </div>
           </div>
