@@ -30,6 +30,7 @@ export default function FormEditDataAdmin({
    const [alamat, setAlamat] = useState(address);
    const [showPassword, setShowPassword] = useState(false);
    const [errorMassage, setErrorMassage] = useState("");
+   const [erorMassageNumber, setErrorMassageNumber] = useState("");
    const navigate = useNavigate();
 
    // funtion
@@ -55,7 +56,17 @@ export default function FormEditDataAdmin({
      setUsername(e.target.value);
    }
    const handlenoTlp=(e)=>{
-     setNoTlp(e.target.value);
+    let noTlp = e.target.value;
+    if( noTlp.length < 12 ){
+      setNoTlp(null);
+      setErrorMassageNumber("Nomor Telepon Harus 12 Digit");
+    } else if( noTlp.length > 12 ){
+      setErrorMassageNumber("Nomor Telepon tidak boleh lebih 12 Digit");
+      setNoTlp(null);
+    }else{
+      setNoTlp(e.target.value);
+      setErrorMassageNumber("");
+    }
    }
    const handlealamat=(e)=>{
      setAlamat(e.target.value); 
@@ -222,11 +233,14 @@ export default function FormEditDataAdmin({
               <label >No. Telp</label>
               <input 
                 required 
-                type="tel" 
+                type="number" 
                 name="phone" 
                 className="input-Nama-admin" 
                 value={noTlp} 
                 onChange={handlenoTlp}/>
+            </div>
+            <div className="m-2 danger fs-6 font-monospace errorMessage">
+              {erorMassageNumber}
             </div>
           </div>
         </div>

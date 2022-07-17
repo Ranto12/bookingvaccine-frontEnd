@@ -3,6 +3,7 @@ import Sidebar from '../../component/Sidebar/Sidebar';
 import { Link } from 'react-router-dom';
 // style
 import './../../assets/Style/style.css';
+import icons from "../../assets/img/sketch.png"
 
 // icon
 import { AiOutlineSearch } from 'react-icons/ai';
@@ -136,6 +137,14 @@ const KelolaJadwal = () => {
                          </div>
                         </div>
                         ):(null)}
+                        {/* validasi data kosong */}
+                        { jadwal.length === 0 ? (
+                            <Search icons={icons} message={"Belum ada jadwal yang dibuat"} message2={"Jadilah yang pertama membuat jadwal vaksinasi!"}/>
+                            ):(
+                            null
+                            )
+                        } 
+
                         {/* isi table */}
                         <div className={jadwal.length !==0 ? 'TabelkelolaBerita row Border-Color-Box' : ""}>
                             {jadwal &&

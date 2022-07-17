@@ -27,8 +27,8 @@ function FormEditJadwal( {
   const [startTime, setStartTime] = useState(WaktuVaccine);
   const [Stock, setStock] = useState(stockVaccine);
   const [image, setImage] = useState(null);
-  const [nameImage, setNameImage] = useState('');
-  const [imageValidation, setImageValidation] = useState(null);
+  // const [nameImage, setNameImage] = useState('');
+  // const [imageValidation, setImageValidation] = useState(null);
   const [imagePreview] = useState("");
   const navigate = useNavigate();
   console.log("image", image);

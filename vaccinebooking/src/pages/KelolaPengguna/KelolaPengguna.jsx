@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 
 // import component
 import Select from '../../component/PageComponent/Select';
 import TablePengguna from '../../component/KelolaPenggunaTable/TablePengguna';
+import Sidebar from '../../component/Sidebar/Sidebar';
 
 //style 
 import '../../assets/Style/style.css'
-import Sidebar from '../../component/Sidebar/Sidebar';
+import icons from "../../assets/img/sorry.png"
 
 // icon
 import { AiOutlineSearch } from 'react-icons/ai';
@@ -15,6 +16,7 @@ import { AiOutlineSearch } from 'react-icons/ai';
 import api from './../../API/data/post'
 import Pagenation from '../../component/Pagenation/Pagenation';
 import Spiner from '../../assets/Spinners/Spinners';
+import Search from '../../component/Basing/Search';
 
 const KelolaPengguna = () => {
   // initial state and variabale
@@ -80,7 +82,7 @@ if(loading){
                   <p className='Fz-16'>Tampilkan</p>
                 </div>
                 <div className='ms-2 Select15'>
-                  <Select onChangeInput={onChangeInput} />
+                  <Select setSize={setSize} />
                 </div>
                 <div className='d-flex'>
                   <div>
@@ -120,6 +122,12 @@ if(loading){
             </div>
           </div>
           ):(null)}
+          {/* validasi data kosong */}
+          { dataPengguna.length === 0 ? (
+            <Search icons={icons} message={"Belum ada pengguna"} message2={""}/>
+          ):(null)
+          }      
+
           {/* isi table */}
           <div className={dataPengguna.length !== 0 ? "TabelkelolaBerita row Border-Color-Box mb-2" : ""}>
             {dataPengguna?.filter((val) => {

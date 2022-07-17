@@ -35,5 +35,3 @@ const TablePengguna = ({
 };
 
 export default TablePengguna;
-
-// ok
