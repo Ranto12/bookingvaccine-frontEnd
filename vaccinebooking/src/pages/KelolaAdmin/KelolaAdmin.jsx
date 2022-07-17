@@ -12,12 +12,15 @@ import { IoPersonAddSharp } from 'react-icons/io5'
 import TabelAdmin from '../../component/KelolaAdmin/TabelAdmin';
 import api from '../../API/data/post'
 import Select from '../../component/PageComponent/Select';
+import Pagenation from '../../component/Pagenation/Pagenation';
 
 const KelolaAdmin = () => {
     // initial state and valiables
     const [input, setInput] = useState("");
     const [admin, setAdmin] = useState([]);
-    const [ setSize] = useState(15);
+    const [size, setSize] = useState(15);
+    const [page, setPage] = useState(0);
+    const [lengthPage, setLengthPage] = useState(0);
 
     const onChangeInput = (e) => {
         const input = e.target.value;
@@ -28,11 +31,13 @@ const KelolaAdmin = () => {
     useEffect(() => {
         const fetchPosts = async () => {
             try {
-                const response = await api.get("/users/roles/ADMIN", {
+                const response = await api.get(`users/pagination/ADMIN?page=${page}&size=${size}`, {
                     headers:{
                         'Authorization': `Bearer ${localStorage.getItem('token')}`
                     }})
-                setAdmin(response.data.data);
+                setAdmin(response.data.data.content);
+                setLengthPage(response.data.data.totalPages);
+        
             } catch (err) {
                 if (err.response) {
                     //not in the 200 response range
@@ -159,6 +164,14 @@ const KelolaAdmin = () => {
                             )
                         })}
                     </div>
+                    {admin?.length > 0 ? (
+                        <Pagenation 
+                            setPage={setPage} 
+                            lengthPage={lengthPage}/>
+                            ) : (
+                            null
+                            )
+                    }
                 </div>
             </div>
         </div>

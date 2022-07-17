@@ -25,7 +25,7 @@ const KelolaBerita = () => {
   const [page, setPage] = useState(0);
   const [size, setSize] = useState(15);
   const [lengthPage, setLengthPage] = useState(0);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   //funtion
   const onChangeInput = (e) => {
     const inputt = e.target.value;
@@ -50,11 +50,15 @@ const KelolaBerita = () => {
         } else {
           console.log(`Error ${err.message}`);
         }
+      }finally{
+        setLoading(false)
       }
     };
     fetchPosts();
-    <Spiner/>
   }, [page, size]);
+  if(loading){
+    return <Spiner/>
+  }
 
   return (
     <div className="Fontcolor-Dasboard">
@@ -69,7 +73,6 @@ const KelolaBerita = () => {
               <h1 className="fz-Title">Artikel/Berita Terbaru</h1>
             </div>
           </div>
-
           {/* filtering */}
           <div className="row d-flex Margin-top-Serch align-items-end">
             <div className="col-6 d-flex TotalPengguna ">
@@ -131,12 +134,12 @@ const KelolaBerita = () => {
             null
             )}
             
-            {/* { Artikels.length === 0 ? (
+            { Artikels.length === 0 ? (
               <Search icons={icons} message={"Belum ada berita yang dibuat"} message2={"Jadilah yang pertama membuat berita!"}/>
             ):(
               null
             )
-          }  */}
+          } 
           
           {/* isi tabel */}
           <div className={Artikels.length !== 0 ? 'TabelkelolaBerita row Border-Color-Box ' : ""}>

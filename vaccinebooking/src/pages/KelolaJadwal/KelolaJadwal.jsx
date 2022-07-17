@@ -99,7 +99,7 @@ const KelolaJadwal = () => {
                                             <AiOutlineSearch />
                                         </div>
                                         <div className='d-flex '>
-                                            <input type="text" style={{ width: "251px", height: "24px", border: "none", borderRadius: "2px" }} placeholder="Cari" onChange={onChangeInput} />
+                                            <input type="text" style={{ maxWidth: "251px", width:"251px", minWidth:"150px", height: "24px", border: "none", borderRadius: "2px" }} placeholder="Cari" onChange={onChangeInput} />
                                         </div>
                                     </div>
                                 </div>
