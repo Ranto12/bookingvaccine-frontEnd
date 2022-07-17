@@ -13,6 +13,7 @@ import TabelAdmin from '../../component/KelolaAdmin/TabelAdmin';
 import api from '../../API/data/post'
 import Select from '../../component/PageComponent/Select';
 import Pagenation from '../../component/Pagenation/Pagenation';
+import Spiner from '../../assets/Spinners/Spinners';
 
 const KelolaAdmin = () => {
     // initial state and valiables
@@ -21,6 +22,7 @@ const KelolaAdmin = () => {
     const [size, setSize] = useState(15);
     const [page, setPage] = useState(0);
     const [lengthPage, setLengthPage] = useState(0);
+    const [loading, setLoading] = useState(true);
 
     const onChangeInput = (e) => {
         const input = e.target.value;
@@ -32,26 +34,22 @@ const KelolaAdmin = () => {
         const fetchPosts = async () => {
             try {
                 const response = await api.get(`users/pagination/ADMIN?page=${page}&size=${size}`, {
-                    headers:{
-                        'Authorization': `Bearer ${localStorage.getItem('token')}`
+                    headers:{'Authorization': `Bearer ${localStorage.getItem('token')}`
                     }})
                 setAdmin(response.data.data.content);
                 setLengthPage(response.data.data.totalPages);
         
             } catch (err) {
-                if (err.response) {
-                    //not in the 200 response range
-                    console.log(err.response.data)
-                    console.log(err.response.status)
-                    console.log(err.response.headers)
-                } else {
-                    console.log(`Error ${err.message}`);
-                }
+                console.log(err);
+            }finally{
+                setLoading(false)
             }
         }
         fetchPosts();
     }, [])
-
+    if (loading) {
+        return <Spiner />
+    }
     return (
         <div className='Fontcolor-Dasboard'>
             <div className='row me-5'>

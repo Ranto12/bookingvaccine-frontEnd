@@ -3,8 +3,6 @@ import DataPopup from "./DataPopupBooking";
 import '../../assets/Style/style.css'
 import { RiFileSearchFill } from "react-icons/ri";
 
-
-
 export default function PopUpPenggunaBooking({
   namaUser, 
   nikuser, 
@@ -36,8 +34,11 @@ export default function PopUpPenggunaBooking({
             <div className="modal-body">
                 <ul>
                     <DataPopup  
-                  namaUser={namaUser} nikuser={nikuser} jenisVaccine={jenisVaccine}
-                  nameFamily={nameFamily} nikFamily={nikFamily}
+                      namaUser={namaUser} 
+                      nikuser={nikuser} 
+                      jenisVaccine={jenisVaccine}
+                      nameFamily={nameFamily} 
+                      nikFamily={nikFamily}
                     />
                 </ul>
             </div>

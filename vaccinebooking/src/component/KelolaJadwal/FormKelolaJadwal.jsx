@@ -32,7 +32,6 @@ export default function FormKelolaJadwal({
     setStartTime(e.target.value)
   }
   const onChangeStock =(e)=>{
-    if(e.target.value.length === 3) return false;
     setStock(e.target.value);
   }
  const onChangeImage=(e)=>{
@@ -48,20 +47,11 @@ export default function FormKelolaJadwal({
     const fetchPosts = async()=>{
         try{
             const response = await api.get("/vaccine", {
-              headers:{
-                  'Authorization': `Bearer ${localStorage.getItem('token')}`
-              }
+              headers:{'Authorization': `Bearer ${localStorage.getItem('token')}`}
           })
             setvaccine(response.data);
         } catch(err){
-            if(err.response){
-                //not in the 200 response range
-                console.log(err.response.data)
-                console.log(err.response.status)
-                console.log(err.response.headers)
-            }else{
-                console.log(`Error ${err.message}`);
-            }
+            console.log(err);
         }
     }
     fetchPosts();
@@ -87,7 +77,7 @@ const handleSubmit =(e)=>{
                 },
     })
     .then((response)=>{
-      if(response.data.status === "success"){
+      if(response.message === "success"){
         Swal.fire({
           title: "Success",
           text: "Data berhasil ditambahkan",
@@ -107,13 +97,13 @@ const handleSubmit =(e)=>{
       } 
     })
   }catch(error){
-    console.log("gagal anda goblok");
+    console.log(error);
   }
 }
 
 // debug
 // console.log(`vaccine= `, idVaccine," area= ", data.area_mapped.id_area, "healt= ", data.id_health_facilities, "stock= ", Stock, "date= ", startDate, "time= ", startTime, "image= ", image  )
-// console.log(Stock)
+console.log(Stock)
 
   return (
     <div className="mb-5 borderInput" style={{ color: " #4E7EA7" }}  >
@@ -153,13 +143,13 @@ const handleSubmit =(e)=>{
         <div className="mt-3">
           <label className="fw-bold ">Stock</label>
         </div>
-        <input onInput={(e)=>{
+        <input onChange={onChangeStock}
+         onInput={(e)=>{
           if (e.target.value.length > 4) {
             e.target.value = e.target.value.slice(0, 4);
           }
-        }} 
-        onChange={onChangeStock}
-        type="number"  className="mt-2 p-1 rounded-2 input-kel Background-White padding-input" onKeyPress={(e) =>["e", "E", "+", "-", ","].includes(e.key) && e.preventDefault()} required min="4" max="5" />
+        }}
+        type="number"  className="mt-2 p-1 rounded-2 input-kel Background-White padding-input" onKeyPress={(e) =>["e", "E", "+", "-", ","].includes(e.key) && e.preventDefault()}  />
         <span className="ms-3">Buah</span>
       </div>
 

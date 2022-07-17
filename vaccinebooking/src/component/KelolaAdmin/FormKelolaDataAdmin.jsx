@@ -52,24 +52,25 @@ export default function FormKelolaDataAdmin() {
 
   const handleSubmit=(e)=>{
     e.preventDefault();
-    axios.post(`${URL}/users`, {
+    axios.post(`${URL}/auth/register`,{
+      address: alamat,
+      birth_date: `${tanggalLahir}`,
+      email: email,
+      first_name: namaAdmin,
+      gender: jenisKelamin,
+      no_phone: noTlp,
+      password: password,
+      roles: "ADMIN",
+      username: username
+  }, {
       headers:{
           'Authorization': `Bearer ${localStorage.getItem('token')}`
       }
-  },{
-        address: alamat,
-        birth_date: `${tanggalLahir}`,
-        email: email,
-        first_name: namaAdmin,
-        gender: jenisKelamin,
-        no_phone: noTlp,
-        password: password,
-        roles: "ADMIN",
-        username: username
-    })
+  })
     .then((response) => {
       // console.log(response);
      Swal.fire('Berhasil', 'Data Admin Berhasil Ditambahkan', 'success');
+     navigate("/KelolaAdmin");
     })
     .catch((error) => {
       Swal.fire({

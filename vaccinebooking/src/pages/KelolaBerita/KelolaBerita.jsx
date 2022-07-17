@@ -43,13 +43,7 @@ const KelolaBerita = () => {
         setArtikels(response.data.data.content);
         setLengthPage(response.data.data.totalPages);
       } catch (err) {
-        if (err.response) {
-          console.log(err.response.data.data);
-          console.log(err.response.status);
-          console.log(err.response.headers);
-        } else {
-          console.log(`Error ${err.message}`);
-        }
+        console.log(err);
       }finally{
         setLoading(false)
       }

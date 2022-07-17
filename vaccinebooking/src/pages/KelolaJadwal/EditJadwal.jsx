@@ -36,18 +36,11 @@ const EditJadwalVaksinasi = () => {
     const fetchPosts = async()=>{
         try{
             const response = await api.get(`/facility/user/${localStorage.getItem("id_users")}`, {
-              headers:{
-                  'Authorization': `Bearer ${localStorage.getItem('token')}`
+              headers:{'Authorization': `Bearer ${localStorage.getItem('token')}`
               }})
             setVacility(response.data);
         } catch(err){
-            if(err.response){
-                console.log(err.response.data)
-                console.log(err.response.status)
-                console.log(err.response.headers)
-            }else{
-                console.log(`Error ${err.message}`);
-            }
+            console.log(err);
         }
     }
     fetchPosts();
