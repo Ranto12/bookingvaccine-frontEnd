@@ -1,12 +1,10 @@
-import { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from "react-router";
 import Swal from "sweetalert2";
+import { useState } from 'react';
+import { useNavigate } from "react-router";
 import {AiFillEye} from 'react-icons/ai';
 import { IconButton } from "@mui/material"; 
 import {URL} from '../../API/URL';
-import "../../assets/Style/style.css";
-
 
 export default function FormKelolaDataAdmin() {
    // initial state and variable
@@ -19,6 +17,7 @@ export default function FormKelolaDataAdmin() {
    const [noTlp, setNoTlp]= useState("");
    const [alamat, setAlamat] = useState("");
    const [showPassword, setShowPassword] = useState(false);
+   const [errorMassage, setErrorMassage] = useState("");
    const navigate = useNavigate();
    // funtion
    const handleNamaAdmin=(e)=>{
@@ -40,7 +39,17 @@ export default function FormKelolaDataAdmin() {
      setUsername(e.target.value);
    }
    const handlenoTlp=(e)=>{
-     setNoTlp(e.target.value);
+    let noTlp = e.target.value;
+    if( noTlp.length < 12 ){
+      setNoTlp(null);
+      setErrorMassage("Nomor Telepon Harus 12 Digit");
+    } else if( noTlp.length > 12 ){
+      setErrorMassage("Nomor Telepon tidak boleh lebih 12 Digit");
+      setNoTlp(null);
+    }else{
+      setNoTlp(e.target.value);
+      setErrorMassage("");
+    }
    }
    const handlealamat=(e)=>{
      setAlamat(e.target.value); 
@@ -63,12 +72,10 @@ export default function FormKelolaDataAdmin() {
       roles: "ADMIN",
       username: username
   }, {
-      headers:{
-          'Authorization': `Bearer ${localStorage.getItem('token')}`
+      headers:{'Authorization': `Bearer ${localStorage.getItem('token')}`
       }
   })
     .then((response) => {
-      // console.log(response);
      Swal.fire('Berhasil', 'Data Admin Berhasil Ditambahkan', 'success');
      navigate("/KelolaAdmin");
     })
@@ -134,7 +141,10 @@ export default function FormKelolaDataAdmin() {
             </div>
             <div>
               <label >No. Telp</label>
-              <input required type="tel" name="phone" className="input-Nama-admin" value={noTlp} onChange={handlenoTlp}/>
+              <input required type="number" name="phone" className="input-Nama-admin"  onChange={handlenoTlp}/>
+            </div>
+            <div className="m-2 danger fs-6 font-monospace errorMessage ">
+            {errorMassage}
             </div>
           </div>
         </div>

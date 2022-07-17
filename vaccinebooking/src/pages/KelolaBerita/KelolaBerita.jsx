@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Sidebar from "../../component/Sidebar/Sidebar";
 import { Link } from "react-router-dom";
-import icons from "../../assets/img/sketch.png"
 
 // style
 import "./../../assets/Style/style.css";
+import icons from "../../assets/img/sketch.png"
 
 // icon
 import { AiOutlineSearch } from "react-icons/ai";
@@ -124,9 +124,7 @@ const KelolaBerita = () => {
             <div className="col-4">Tanggal Posting</div>
             <div className="col-1">Action</div>
           </div>
-          ):(
-            null
-            )}
+          ):( null )}
             
             { Artikels.length === 0 ? (
               <Search icons={icons} message={"Belum ada berita yang dibuat"} message2={"Jadilah yang pertama membuat berita!"}/>

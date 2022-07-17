@@ -3,6 +3,7 @@ import Sidebar from "../../component/Sidebar/Sidebar";
 
 // style
 import "./../../assets/Style/style.css";
+import icons from "../../assets/img/sorry.png"
 
 // icon
 import { AiOutlineSearch } from "react-icons/ai";
@@ -15,6 +16,7 @@ import api from "../../API/data/post";
 import Select from "../../component/PageComponent/Select";
 import Pagenation from "../../component/Pagenation/Pagenation";
 import Spiner from "../../assets/Spinners/Spinners";
+import Search from "../../component/Basing/Search";
 
 const DataBooking = () => {
   // initial state and valiables
@@ -113,11 +115,13 @@ const DataBooking = () => {
               <div className="col-1">Aksi</div>
             </div>
           </div>
-          ):(
-            null
-          )
-            
-          }
+          ):( null )}
+
+          {/* validasi data kosong */}
+          { booking.length === 0 ? (
+            <Search icons={icons} message={"Belum Booking Vaccine"} message2={"Dari Pengguna"}/>
+            ):(null)
+          }           
 
           {/* isi tabel */}
           <div className={booking.length !== 0 ? "TabelkelolaBerita row Border-Color-Box " : ""}>
