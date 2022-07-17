@@ -13,28 +13,32 @@ import { AiOutlineSearch } from 'react-icons/ai';
 
 // Api
 import api from './../../API/data/post'
+import Pagenation from '../../component/Pagenation/Pagenation';
 
 const KelolaPengguna = () => {
   // initial state and variabale
   const [input, setInput] = useState("");
   const [dataPengguna, setDataPengguna] = useState([]);
-
+  const [page, setPage] = useState(0);
+  const [size, setSize] = useState(15);
+  const [lengthPage, setLengthPage] = useState(0);
+  console.log("page", page)
   // funtion
   const onChangeInput = (e) => {
     const inputs = e.target.value;
     setInput(inputs)
-
   }
 
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await api.get("/users/roles/USER", {
+        const response = await api.get(`users/pagination/USER?page=${page}&size=${size}`, {
           headers:{
               'Authorization': `Bearer ${localStorage.getItem('token')}`
           }}
         )
-        setDataPengguna(response.data);
+        setDataPengguna(response.data.data.content);
+        setLengthPage(response.data.data.totalPages);
       } catch (err) {
         if (err.response) {
           //not in the 200 response range
@@ -47,7 +51,7 @@ const KelolaPengguna = () => {
       }
     }
     fetchPosts();
-},[])
+},[page, size])
 
   return (
     <>
@@ -121,8 +125,7 @@ const KelolaPengguna = () => {
           ):(null)}
           {/* isi table */}
           <div className={dataPengguna.length !== 0 ? "TabelkelolaBerita row Border-Color-Box mb-2" : ""}>
-            {dataPengguna.data &&
-                dataPengguna.data?.filter((val) => {
+            {dataPengguna?.filter((val) => {
                   if (input === "") {
                     return val
                   }
@@ -151,7 +154,14 @@ const KelolaPengguna = () => {
               )
             })}
           </div>
-          {/* pagenation */}
+          {dataPengguna?.length > 0 ? (
+          <Pagenation 
+              setPage={setPage} 
+              lengthPage={lengthPage}/>
+            ) : (
+              null
+            )
+          }
           </div>
         </div>
       </div>

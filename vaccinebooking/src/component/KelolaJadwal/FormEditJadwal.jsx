@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
+// import ImageUploader from "react-images-upload";
 import { BsFileEarmarkImage } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 import {URL} from "../../API/URL";
@@ -17,7 +18,6 @@ function FormEditJadwal( {
   idFacility, 
   Idvaccine, 
   idSesion, 
-  data, 
   idArea
 }) {
   // state and variables
@@ -27,9 +27,11 @@ function FormEditJadwal( {
   const [startTime, setStartTime] = useState(WaktuVaccine);
   const [Stock, setStock] = useState(stockVaccine);
   const [image, setImage] = useState(null);
+  const [nameImage, setNameImage] = useState('');
+  const [imageValidation, setImageValidation] = useState(null);
   const [imagePreview] = useState("");
   const navigate = useNavigate();
-
+  console.log("image", image);
   const chaangeStartDate =(e)=>{
     setStartDate(e.target.value);
   }
@@ -42,9 +44,75 @@ function FormEditJadwal( {
   const onChangeStock =(e)=>{
     setStock(e.target.value);
   }
+
+  // const onChangeImage=(e)=>{
+  //   let file = e.target.files[0];
+  //       if(image !== ".png" || ".jpg" || "jpeg", ".PNG" || ".JPG" || "JPEG"){
+  //     Swal.fire({
+  //       icon: "error",
+  //       title: "Oops...",
+  //       text: "File yang diupload harus berupa gambar",
+  //     })
+  //   } else{
+  //     setImage(file);
+  //   }
+
+  //   }
+
+  // const onChangeImage=(e)=>{
+  //   const file = e.target.file[0];
+  //   if(file === ".png" || 
+  //       file === ".jpg" || 
+  //       file === "jpeg" || 
+  //       file === '.gif'){
+  //     if(file.size <= 525000){
+  //       setImage(file);
+  //     } else{
+  //       Swal.fire({
+  //         icon: 'error',
+  //         title: 'Oops...',
+  //         text: 'File gambar terlalu besar!',
+  //       })
+  //     }
+  //   } else{
+  //     Swal.fire({
+  //       icon: 'error',
+  //       title: 'Oops...',
+  //       text: 'File gambar tidak sesuai!',
+  //     })
+  //   }
+  // }
  const onChangeImage=(e)=>{
-    setImage(e.target.files[0]);
- }
+    let images = e.target.files[0];
+    let Format = "image/png" || "image/jpg" || "image/jpeg"|| "image/PNG" || "image/JPG" || "image/JPEG" || "image/jpeg";
+    let Size = 7644273;
+    let render = new FileReader();
+    console.log("image", images.type === Format);
+    // console.log("Format", Format);
+    setNameImage(images.name);
+    console.log(images);
+    render.onload = (e)=>{
+      setImageValidation(images);
+    };
+    render.readAsDataURL(e.target.files[0]);
+    
+    if(images.type === Format && images.size < Size){
+      setImage(images);
+    } else if(images.type !== Format){
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "File yang diupload harus berupa gambar",
+      })
+    }else if(images.size > Size ){
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "File yang diupload harus berukuran kurang dari 1 MB",
+      })
+    } 
+}
+
 
  
   // get api jenis vaccine
@@ -137,8 +205,8 @@ const handleSubmit =(e)=>{
 // console.log(`vaccine= `, idVaccine," area= ", data.area_mapped.id_area, "healt= ", data.id_health_facilities, "stock= ", Stock, "date= ", startDate, "time= ", startTime, "image= ", image  )
 // console.log('vacicine', IdVaccine)
 // console.log(`data`, namaFaskes, stockVaccine, tanggalVaccine, alamatFacility, WaktuVaccine, idFacility, Idvaccine, idSesion)
-console.log("data", idArea, idFacility, image, startDate, startTime, Stock, idVaccinee, idSesion)
-// console.log(URL)
+// console.log("data", idArea, idFacility, image, startDate, startTime, Stock, idVaccinee, idSesion)
+console.log(image)
 
   return (
     <div className="mb-5 borderInput" style={{ color: " #4E7EA7" }}  >
@@ -160,7 +228,7 @@ console.log("data", idArea, idFacility, image, startDate, startTime, Stock, idVa
           <div className="mt-3" >
             {vaccine.map((item)=>{ 
               return(
-                <label htmlFor={item.vaccine_name}> 
+                <label htmlFor={item.vaccine_name} key={item.id_vaccine}> 
                 <input type="radio" key={item.id_vaccine} name="fav_language" className="ms-3"
                 value={item.id_vaccine}
                 checked={idVaccinee === item.id_vaccine}
@@ -209,24 +277,24 @@ console.log("data", idArea, idFacility, image, startDate, startTime, Stock, idVa
                   style={{width: "100%", height: "15rem", border: "dashed 2px #4E7EA7", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", cursor: "pointer" , marginBottom:"2%"}} >
                     <div style={{height: "50% ", paddingBottom:"1px", paddingTop:"25px", borderRadius:"10px", backgroundColor:"#D9D9D9"}} className="image-upload card">
                       <div className="image-upload">
-                        <label for="file-input">
+                        <label htmlFor="file-input">
                           <BsFileEarmarkImage className=" image-size-uploadimage" />
                         </label>
-                        <input  id="file-input" type="file" onChange={onChangeImage} />
+                        <input  id="file-input" type="file" accept="image/*" onChange={onChangeImage} />
                       </div>
                     </div>
                     <div
-                      tyle={{textAlign: "center", fontSize: "10px", marginTop: "1rem", color: "#4E7EA7"}}>
-                        <p>
-                          {image && image.name ? (
-                            <span className="d-flex justify-content-center ">{image.name}</span>
-                          ):(
-                            <span>
-                              Upload Foto Fasilitas Kesehatan Anda <br />{" "}
-                              Ukuran foto tidak lebih dari 10mb{" "}
-                            </span>
-                          )}
-                        </p>
+                              style={{textAlign: "center", fontSize: "10px", marginTop: "1rem", color: "#4E7EA7"}}>
+                              <p>
+                                {image && image.name ? (
+                                  <span className="d-flex justify-content-center ">{image.name}</span>
+                                ):(
+                                  <span>
+                                    Upload Foto Fasilitas Kesehatan Anda <br />{" "}
+                                    Ukuran foto tidak lebih dari 10mb{" "}
+                                  </span>
+                                )}
+                              </p>
                     </div>
                 </div>
               </div>
