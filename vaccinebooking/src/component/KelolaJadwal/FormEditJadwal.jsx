@@ -163,10 +163,12 @@ const handleSubmit =(e)=>{
           navigate('/kelolaJadwal');
         })
       }catch(error){
-        console.log("error nya ini mas e", error);
-      if(error.response.status === 500){
-        Swal.fire('Gagal', 'Jadwal Gagal Anda Edit', 'error');
-      }}
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Something went wrong!",
+        })  
+      }
     }else{
       e.preventDefault();
       axios.put(`${URL}/session/noImage/${idSesion}`,{
@@ -189,10 +191,9 @@ const handleSubmit =(e)=>{
         console.log(response);
       })
       .catch((error) => {
-        // console.log("error nya ini mas e", error);
-        if(error.response.status === 500){
-          Swal.fire('Gagal', 'Jadwal Gagal Anda Edit', 'error');
-        }
+       Swal.fire({
+        icon: "error"
+       })
       })
     }
 }

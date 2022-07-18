@@ -17,7 +17,7 @@ const EditArtikel = () => {
   const [title, setTitle] = useState(`${location.state.judul}`);
   const [author, setAuthor] = useState(`${location.state.penulis}`);
   const [body, setBody] = useState(`${location.state.content}`);
-  const [image, setImage] = useState("");
+  const [image, setImage] = useState(null);
   const id = location.state.id;
   const navigate = useNavigate();
 
@@ -39,46 +39,79 @@ const handleImage=(e)=>{
   console.log(`Image`, title, author, body, image, id);
 
   const handleSubmit =(e)=>{
-    e.preventDefault();
-    const formData = new FormData();
+    if(image !== null){
+      e.preventDefault();
+      const formData = new FormData();
     formData.append("titleNewsVaccine", title);
     formData.append("authorNewsVaccine", author);
     formData.append("contentNewsVaccine", body);
     formData.append("file", image);
 
     try{
-      const response = axios({
+      axios({
         method: "put",
-        url: `${URL}/news/${id}`,
+        url: `${URL}/news/news-photo/${id}`,
         data: formData,
         headers: {"Content-Type": "multipart/form-data",
-        Authorization: `Bearer ${localStorage.getItem('token')}`},
+        "Authorization": `Bearer ${localStorage.getItem('token')}`},
       })
       .then((response)=>{
-        if(response.data.status === "success"){
-          Swal.fire({
-            title: "Success",
-            text: "Data Berhasil Diubah",
-            icon: "success",
-            confirmButtonText: "Ok",
-            confirmButtonColor: "#00bcd4",
-            onClose: () => {
-              navigate('/KelolaBerita');
+        console.log(response);
+        Swal.fire({
+          title: "Success",
+          text: "Data Berhasil Diubah",
+          icon: "success",
+          confirmButtonText: "Ok",
+          confirmButtonColor: "#00bcd4"
+        });
+        navigate('/KelolaBerita');
+      })
+    }catch(err){
+      Swal.fire({
+        title: "Error",
+        text: "Data Gagal Diubah",
+        icon: "error",
+        confirmButtonText: "Ok",
+        confirmButtonColor: "#00bcd4"
+      });
+    }
+    }else{
+      e.preventDefault();
+        try{
+          axios({
+            method: "put",
+            url: `${URL}/news/${id}`,
+            data: {
+              titleNewsVaccine: title,
+              authorNewsVaccine : author,
+              contentNewsVaccine : body
+            },
+            headers:{
+              "Content-Type": "multipart/form-data", 
+              "Authorization": `Bearer ${localStorage.getItem('token')}`
             }
-          });
-        } else if(response.data.promise) {
+          })
+          .then((response)=>{
+            console.log(response);
+            Swal.fire({
+              title: "Success",
+              text: "Data Berhasil Diubah",
+              icon: "success",
+              confirmButtonText: "Ok",
+              confirmButtonColor: "#00bcd4"
+            });
+        navigate('/KelolaBerita');
+
+          })
+        } catch(err){
           Swal.fire({
             title: "Error",
             text: "Data Gagal Diubah",
             icon: "error",
             confirmButtonText: "Ok",
-            confirmButtonColor: "#00bcd4",
+            confirmButtonColor: "#00bcd4"
           });
         }
-      })
-      console.log(response, "response");
-    }catch(err){
-      console.log(err);
     }
   }
 
