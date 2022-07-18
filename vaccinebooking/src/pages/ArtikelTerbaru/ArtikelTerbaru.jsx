@@ -10,6 +10,7 @@ import axios from "axios";
 // api 
 import {URL} from "../../API/URL";
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const ArtikelTerbaru = () => {
   // initial state and valiables
@@ -52,10 +53,16 @@ const handleImage=(e)=>{
           'Content-Type': 'application/json',
           Authorization: `Bearer ${localStorage.getItem('token')}`,
      }
-      });
+      }).then((response)=>{
+        Swal.fire({
+          title: "Success",
+        })
+      })
       navigate("/KelolaBerita")
     }catch(error){
-      console.log(error)
+      Swal.fire({
+        title: "Failed"
+      })
     }
   }
 

@@ -150,7 +150,7 @@ export default function FormKelolaDataAdmin() {
         </div>
       </div>
       
-      <div className="text-end mt-3 mb-5">
+      <div className="position-absolute bottom-0 end-0">
         <button className="btn-kelola-jadwal1 me-3  rounded-3 mb-5" onClick={handleBack}>
           batal
         </button>

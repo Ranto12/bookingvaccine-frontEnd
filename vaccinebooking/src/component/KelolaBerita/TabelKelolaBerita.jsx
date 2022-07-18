@@ -6,6 +6,7 @@ import api from '../../API/data/post';
 import moment from 'moment';
 import { useState } from "react";
 import HapusDialogBerita from "../HapusDialog/HapusDialogBerita";
+import Swal from "sweetalert2";
 
 const TabelKelolaBerita = ({ 
   Number,
@@ -46,18 +47,13 @@ const TabelKelolaBerita = ({
             'Authorization': `Bearer ${localStorage.getItem('token')}`
         }
     }).then(res => {
-        // console.log(res);
         window.location.reload();
     })
     } 
     catch(err){
-      if (err.response){
-        console.log(err.response.data)
-        console.log(err.response.status)
-        console.log(err.response.headers)
-      } else{
-        console.log(`Error ${err.message}`);
-      }
+      Swal.fire({
+        icon: 'error',
+      })
     }
   }
   

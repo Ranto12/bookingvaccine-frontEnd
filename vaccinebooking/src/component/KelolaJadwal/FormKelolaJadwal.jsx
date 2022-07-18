@@ -77,27 +77,24 @@ const handleSubmit =(e)=>{
                 },
     })
     .then((response)=>{
-      if(response.message === "success"){
-        Swal.fire({
-          title: "Success",
-          text: "Data berhasil ditambahkan",
-          icon: "success",
-          confirmButtonText: "Ok",
-          onClose: () => {
-            handleBack();
-          }
-        })
-      }else if(response.data.status === "error"){
-        Swal.fire({
-          title: "Error",
-          text: "Data gagal ditambahkan",
-          icon: "error",
-          confirmButtonText: "Ok",
-        })
-      } 
+      Swal.fire({
+        title: "Success",
+        text: "Data berhasil ditambahkan",
+        icon: "success",
+        confirmButtonText: "Ok",
+        onClose: () => {
+          handleBack();
+        }
+      })
     })
   }catch(error){
-    console.log(error);
+    Swal.fire({
+      title: "Error",
+      text: "Data gagal ditambahkan",
+      icon: "error",
+      confirmButtonText: "Ok",
+      confirmButtonColor: "#00bcd4"
+    });
   }
 }
 
