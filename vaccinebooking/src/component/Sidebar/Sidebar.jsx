@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../../assets/Style/style.css";
 import logo from '../../assets/img/logo.svg';
 import dashboard from '../../assets/img/dashboard.png';
@@ -10,12 +10,15 @@ import keluar from '../../assets/img/keluar.png';
 import kelolaadmin from '../../assets/img/kelolaadmin.png';
 
 //assets
-const handleLogout = () => {
-  localStorage.removeItem("token");
-  window.location.reload();
-}
+
 
 const Sidebar = () => {
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    window.location.reload();
+    navigate("/login");
+  }
   return (
     <section className="">
       <div className="row fullHight ">

@@ -1,6 +1,7 @@
-import Sidebar from "../../component/Sidebar/Sidebar";
 import { Form } from "react-bootstrap";
+//component
 import FormKelolaDataAdmin from "../../component/KelolaAdmin/FormKelolaDataAdmin";
+import Sidebar from "../../component/Sidebar/Sidebar";
 
 export default function AddAdmin() {
  
@@ -23,7 +24,6 @@ export default function AddAdmin() {
                 Sediakan
               </h5>
             </div>
-
             <Form className="bg-form-jadwal">
               <FormKelolaDataAdmin />
             </Form>

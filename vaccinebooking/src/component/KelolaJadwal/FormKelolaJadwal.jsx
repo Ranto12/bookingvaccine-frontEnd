@@ -18,7 +18,7 @@ export default function FormKelolaJadwal({
   const [idVaccine, setIdvaccine] = useState();
   const [startDate, setStartDate] = useState();
   const [startTime, setStartTime] = useState("");
-  const [Stock, setStock] = useState(0);
+  const [Stock, setStock] = useState();
   const [image, setImage] = useState("");
   const [imagePreview] = useState("");
 
@@ -57,7 +57,7 @@ export default function FormKelolaJadwal({
     fetchPosts();
 },[])
 
-const handleSubmit =(e)=>{
+const handleSubmit = async (e)=>{
   e.preventDefault();
   const formData = new FormData();
   formData.append("vaccine_id ", idVaccine);
@@ -68,33 +68,31 @@ const handleSubmit =(e)=>{
   formData.append("start_time", `${startTime}`);
   formData.append("file", image);
   try{
-    axios({
+   const response = axios({
       method: "post",
       url: `${URL}/session`,
       data: formData,
       headers: { "Content-Type": "multipart/form-data",
                   "Authorization": `Bearer ${localStorage.getItem('token')}`
-                },
-    })
-    .then((response)=>{
+        },
+      }
+    ).then((response)=>{
       Swal.fire({
-        title: "Success",
-        text: "Data berhasil ditambahkan",
         icon: "success",
-        confirmButtonText: "Ok",
-        onClose: () => {
-          handleBack();
-        }
+            title: "Berhasil",
+            text: "Data berhasil di tambahkan"
+      })
+      navigate('/KelolaJadwal');
+    }).catch((error)=>{
+      Swal.fire({
+        icon: "error",
+        title: "gagal",
+        text: "harus memasukan data yang benar"
       })
     })
-  }catch(error){
-    Swal.fire({
-      title: "Error",
-      text: "Data gagal ditambahkan",
-      icon: "error",
-      confirmButtonText: "Ok",
-      confirmButtonColor: "#00bcd4"
-    });
+  }
+  catch(error){
+    console.log(error, error);
   }
 }
 
@@ -123,8 +121,8 @@ console.log(Stock)
             {vaccine.data && 
             vaccine.data.map((item)=>{
               return(
-                <label>
-                <input type="radio" key={item.id} name="fav_language" className="ms-3"
+                <label key={item.id}>
+                <input required type="radio" key={item.id} name="fav_language" className="ms-3"
                 value={item.id_vaccine}
                 onChange={ChangeidVaccine}
                 />
@@ -140,7 +138,7 @@ console.log(Stock)
         <div className="mt-3">
           <label className="fw-bold ">Stock</label>
         </div>
-        <input onChange={onChangeStock}
+        <input required onChange={onChangeStock}
          onInput={(e)=>{
           if (e.target.value.length > 4) {
             e.target.value = e.target.value.slice(0, 4);
@@ -155,11 +153,11 @@ console.log(Stock)
           <label className="fw-bold mb-3"> Sesi </label>
         </div>
         <span className="">
-          <input type="date" className="mt-2 p-1 rounded-2 input-kel Background-White padding-input" onChange={chaangeStartDate} />
+          <input required type="date" className="mt-2 p-1 rounded-2 input-kel Background-White padding-input" onChange={chaangeStartDate} />
         </span>
         <span className="mx-4">-</span>
         <span> 
-          <input type="time" className="mt-2 p-1 rounded-2 input-kel Background-White padding-input" onChange={ChangeStartTime} />
+          <input required type="time" className="mt-2 p-1 rounded-2 input-kel Background-White padding-input" onChange={ChangeStartTime} />
         </span>
       </div>
       <div className="row mt-4">
@@ -171,10 +169,10 @@ console.log(Stock)
                             style={{width: "100%", height: "15rem", border: "dashed 2px #4E7EA7", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", cursor: "pointer" , marginBottom:"2%"}} >
                             <div style={{height: "50% ", paddingBottom:"1px", paddingTop:"25px", borderRadius:"10px", backgroundColor:"#D9D9D9"}} className="image-upload card">
                               <div className="image-upload">
-                                <label for="file-input">
+                                <label htmlFor="file-input">
                                   <BsFileEarmarkImage className=" image-size-uploadimage" />
                                 </label>
-                                <input id="file-input" type="file" onChange={onChangeImage} />
+                                <input required id="file-input" type="file" onChange={onChangeImage} />
                               </div>
                             </div>
                             <div

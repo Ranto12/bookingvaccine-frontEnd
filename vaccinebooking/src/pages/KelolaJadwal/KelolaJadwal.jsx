@@ -1,24 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import Sidebar from '../../component/Sidebar/Sidebar';
 import { Link } from 'react-router-dom';
 // style
 import './../../assets/Style/style.css';
 import icons from "../../assets/img/sketch.png"
-
-// icon
 import { AiOutlineSearch } from 'react-icons/ai';
 import { BsFillCalendarCheckFill } from 'react-icons/bs'
-
 // component
 import TabelVaksinasi from '../../component/JadwalVaksinasi/TabelVaksinasi';
-import Select from '../../component/PageComponent/Select';
-import Search from '../../component/Basing/Search';
-
-
-// Api
-import api from './../../API/data/post'
 import Pagenation from '../../component/Pagenation/Pagenation';
+import Select from '../../component/PageComponent/Select';
+import Sidebar from '../../component/Sidebar/Sidebar';
 import Spiner from '../../assets/Spinners/Spinners';
+import Search from '../../component/Basing/Search';
+import api from './../../API/data/post'
 
 const KelolaJadwal = () => {
     // initial state and valiables
@@ -39,10 +33,8 @@ const KelolaJadwal = () => {
         const fetchPosts = async () => {
             try {
                 const response = await api.get(`session/paging?page=${page}&size=${size}`, {
-                    headers: {'Authorization': `Bearer ${localStorage.getItem('token')}`
-                    }
-                }
-                )
+                    headers: {'Authorization': `Bearer ${localStorage.getItem('token')}`}
+                })
                 setJadwal(response.data.data.content);
                 setLengthPage(response.data.data.totalPages);
             } catch (err) {
@@ -53,9 +45,11 @@ const KelolaJadwal = () => {
         }
         fetchPosts();
     }, [size, page])
+
     if (loading) {
         return <Spiner />
     }
+
     return (
         <>
             <div className='Fontcolor-Dasboard'>
@@ -88,6 +82,7 @@ const KelolaJadwal = () => {
                                 <div className='ms-2 Select15'>
                                     <Select setSize={setSize} />
                                 </div>
+
                                 <div className='d-flex'>
                                     <div>
                                         <p className='ms-2 Fz-16 me-2'>entri</p>
@@ -97,7 +92,7 @@ const KelolaJadwal = () => {
                                             <AiOutlineSearch />
                                         </div>
                                         <div className='d-flex '>
-                                            <input type="text" style={{ maxWidth: "251px", width:"251px", minWidth:"150px", height: "24px", border: "none", borderRadius: "2px" }} placeholder="Cari" onChange={onChangeInput} />
+                                            <input type="text" className='input-kelola-pengguna' placeholder="Cari" onChange={onChangeInput} />
                                         </div>
                                     </div>
                                 </div>
@@ -117,29 +112,20 @@ const KelolaJadwal = () => {
                         {/* table */}
                         {jadwal.length !== 0 ? (
                         <div className='row mt-4 background-color-Table '>
-                         <div className='col-1'>
-                            No
-                         </div>
-                         <div className='col-3'>
-                             Nama Faskes
-                         </div>
-                         <div className='col-2'>
-                             Stock
-                        </div>
-                         <div className='col-3'>
-                            Jenis Vaksin
-                         </div>
-                         <div className='col-2'>
-                             Waktu
-                         </div>
-                         <div className='col-1'>
-                             Action
-                         </div>
+                            <div className='col-1'>No</div>
+                            <div className='col-3'>Nama Faskes</div>
+                            <div className='col-2'>Stock</div>
+                            <div className='col-3'>Jenis Vaksin</div>
+                            <div className='col-2'>Waktu</div>
+                            <div className='col-1'>Action</div>
                         </div>
                         ):(null)}
                         {/* validasi data kosong */}
                         { jadwal.length === 0 ? (
-                            <Search icons={icons} message={"Belum ada jadwal yang dibuat"} message2={"Jadilah yang pertama membuat jadwal vaksinasi!"}/>
+                            <Search 
+                                icons={icons} 
+                                message={"Belum ada jadwal yang dibuat"} 
+                                message2={"Jadilah yang pertama membuat jadwal vaksinasi!"}/>
                             ):(
                             null
                             )

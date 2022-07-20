@@ -116,10 +116,17 @@ const DataBooking = () => {
           <div className={booking.length !== 0 ? "TabelkelolaBerita row Border-Color-Box " : ""}>
             {booking &&
             booking?.filter((val) => {
+              console.log("val", val)
                 if (input == null) {
                   return val
                 }
-                else if (val.user_mapped.first_name?.toLowerCase().includes(input.toLocaleLowerCase())) {
+                else if (val?.user_mapped?.first_name?.toLowerCase().includes(input.toLocaleLowerCase()) ||
+                        val?.user_mapped?.last_name?.toLowerCase().includes(input.toLocaleLowerCase()) ||
+                        val?.user_mapped?.username?.toLowerCase().includes(input.toLocaleLowerCase()) ||
+                        val?.session_mapped?.vaccine_mapped?.vaccine_name?.toLowerCase().includes(input.toLocaleLowerCase()) ||
+                        val?.family_mapped?.full_name?.toLowerCase().includes(input.toLocaleLowerCase()) ||
+                        val?.family_mapped?.nik?.toLowerCase().includes(input.toLocaleLowerCase())
+                ) {
                   return val
                 } else {
                   return null;
