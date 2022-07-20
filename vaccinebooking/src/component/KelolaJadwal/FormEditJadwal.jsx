@@ -150,7 +150,7 @@ const handleSubmit =(e)=>{
       formData.append("start_time", `${startTime}`);
       formData.append("file", image);
       try{
-        axios({
+       const response = axios({
           method: "put",
           url: `${URL}/session/${idSesion}`,
           data: formData,
@@ -158,9 +158,15 @@ const handleSubmit =(e)=>{
                     "Authorization": `Bearer ${localStorage.getItem('token')}` 
                   },
         })
-        .then((response) => {
-          Swal.fire('Berhasil', 'Jadwal Berhasil Anda Edit', 'success');
-          navigate('/kelolaJadwal');
+        response.then(res=>{
+          Swal.fire({
+            icon: "success",
+            title: "Berhasil",
+            text: "Data berhasil diubah",
+          }).then(()=>{
+            navigate("/kelolaJadwal");
+          }
+          )
         })
       }catch(error){
         Swal.fire({
@@ -220,7 +226,7 @@ console.log(Stock)
             {vaccine.map((item)=>{ 
               return(
                 <label htmlFor={item.vaccine_name} key={item.id_vaccine}> 
-                <input type="radio" key={item.id_vaccine} name="fav_language" className="ms-3"
+                <input required type="radio" key={item.id_vaccine} name="fav_language" className="ms-3"
                 value={item.id_vaccine}
                 checked={idVaccinee === item.id_vaccine}
                 onChange={ChangeidVaccine}
@@ -237,13 +243,13 @@ console.log(Stock)
         <div className="mt-3">
           <label className="fw-bold ">Stock</label>
         </div>
-        <input onInput={(e)=>{
+        <input  required onInput={(e)=>{
           if (e.target.value.length > 4) {
-            e.target.value = e.target.value.slice(0, 4);
+            e.target.value = e.target.value.slice(2, 4);
           }
         }} 
         onChange={onChangeStock}
-        type="number"  className="mt-2 p-1 rounded-2 input-kel Background-White padding-input" onKeyPress={(e) =>["e", "E", "+", "-", ","].includes(e.key) && e.preventDefault()} required min="4" max="5" value={Stock} />
+        type="number"  className="mt-2 p-1 rounded-2 input-kel Background-White padding-input" onKeyPress={(e) =>["e", "E", "+", "-", ","].includes(e.key) && e.preventDefault()} min="4" max="5" value={Stock} />
         <span className="ms-3">Buah</span>
       </div>
 
@@ -252,11 +258,11 @@ console.log(Stock)
           <label className="fw-bold mb-3"> Sesi </label>
         </div>
         <span className="">
-          <input type="date" className="mt-2 p-1 rounded-2 input-kel Background-White padding-input" onChange={chaangeStartDate} value={startDate}/>
+          <input required type="date" className="mt-2 p-1 rounded-2 input-kel Background-White padding-input" onChange={chaangeStartDate} value={startDate}/>
         </span>
         <span className="mx-4">-</span>
         <span> 
-          <input type="time" className="mt-2 p-1 rounded-2 input-kel Background-White padding-input" onChange={ChangeStartTime} value={startTime}/>
+          <input required type="time" className="mt-2 p-1 rounded-2 input-kel Background-White padding-input" onChange={ChangeStartTime} value={startTime}/>
         </span>
       </div>
       <div className="row mt-4">
@@ -271,7 +277,7 @@ console.log(Stock)
                         <label htmlFor="file-input">
                           <BsFileEarmarkImage className=" image-size-uploadimage" />
                         </label>
-                        <input  id="file-input" type="file" accept="image/*" onChange={onChangeImage} />
+                        <input required id="file-input" type="file" accept="image/*" onChange={onChangeImage} />
                       </div>
                     </div>
                     <div

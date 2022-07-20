@@ -171,6 +171,14 @@
   background-color: #f7f7f7;
 }
 
+.input-kelola-pengguna {
+  width: 251px;
+  height: 24px;
+  border: none;
+  border-radius: 2px;
+  outline: none;
+}
+
 /* keloal Jadwal Vaksin */
 .margin-rigth {
   margin-right: 33px !important;

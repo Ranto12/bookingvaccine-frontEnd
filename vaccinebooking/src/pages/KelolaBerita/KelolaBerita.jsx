@@ -1,22 +1,18 @@
 import React, { useState, useEffect } from "react";
-import Sidebar from "../../component/Sidebar/Sidebar";
 import { Link } from "react-router-dom";
-
 // style
-import "./../../assets/Style/style.css";
-import icons from "../../assets/img/sketch.png"
-
-// icon
 import { AiOutlineSearch } from "react-icons/ai";
+import icons from "../../assets/img/sketch.png"
 import { MdPostAdd } from "react-icons/md";
+import "./../../assets/Style/style.css";
+// component
 import TabelKelolaBerita from "../../component/KelolaBerita/TabelKelolaBerita";
-
-// api
-import api from "./../../API/data/post";
-import Select from "../../component/PageComponent/Select";
 import Pagenation from "../../component/Pagenation/Pagenation";
-import Search from "../../component/Basing/Search";
+import Select from "../../component/PageComponent/Select";
+import Sidebar from "../../component/Sidebar/Sidebar";
 import Spiner from "../../assets/Spinners/Spinners";
+import Search from "../../component/Basing/Search";
+import api from "./../../API/data/post";
 
 const KelolaBerita = () => {
   // initial state and valiables
@@ -76,6 +72,7 @@ const KelolaBerita = () => {
               <div className='ms-2 Select15'>
                 <Select setSize={setSize} />
               </div>
+
               <div className="d-flex">
                 <div>
                   <p className="ms-2 Fz-16 me-2">entri</p>
@@ -83,7 +80,6 @@ const KelolaBerita = () => {
                 <div className="border border-dark d-flex w-100 BorderRadiusInline">
                   <div
                     className="ms-3 me-3"
-                    style={{ cursor: "pointer", border: "none" }}
                     onClick={handleSearch}
                   >
                     <AiOutlineSearch />
@@ -91,12 +87,7 @@ const KelolaBerita = () => {
                   <div className="d-flex">
                     <input
                       type="text"
-                      style={{
-                        width: "251px",
-                        height: "24px",
-                        border: "none",
-                        borderRadius: "2px",
-                      }}
+                      className="input-kelola-pengguna"
                       placeholder="Cari"
                       onChange={onChangeInput}
                     />
@@ -127,7 +118,10 @@ const KelolaBerita = () => {
           ):( null )}
             
             { Artikels.length === 0 ? (
-              <Search icons={icons} message={"Belum ada berita yang dibuat"} message2={"Jadilah yang pertama membuat berita!"}/>
+              <Search 
+              icons={icons} 
+              message={"Belum ada berita yang dibuat"} 
+              message2={"Jadilah yang pertama membuat berita!"}/>
             ):(
               null
             )
@@ -142,22 +136,22 @@ const KelolaBerita = () => {
                   return val
                 }
                 else if (val?.title_news_vaccine?.toLowerCase().includes(input.toLowerCase()) || 
-                val?.author_news_vaccine?.toLowerCase().includes(input.toLowerCase()) || 
-                val?.created_at?.toLowerCase().includes(input.toLowerCase())) {
-                  return val
+                        val?.author_news_vaccine?.toLowerCase().includes(input.toLowerCase()) || 
+                        val?.created_at?.toLowerCase().includes(input.toLowerCase())) {
+                            return val
                 } else{
                   return null
                 }
               }).map((data, index) => {
                 return (
                   <TabelKelolaBerita 
-                  key={data.id_news_vaccine} 
-                  id={data.id_news_vaccine} 
-                  Number={index + 1} 
-                  title={data.title_news_vaccine} 
-                  tanggal={data.created_at} 
-                  author={data.author_news_vaccine} 
-                  content={data.content_news_vaccine}/>
+                    key={data.id_news_vaccine} 
+                    id={data.id_news_vaccine} 
+                    Number={index + 1} 
+                    title={data.title_news_vaccine} 
+                    tanggal={data.created_at} 
+                    author={data.author_news_vaccine} 
+                    content={data.content_news_vaccine}/>
                 )
               })}
           </div>
@@ -172,8 +166,6 @@ const KelolaBerita = () => {
               null
             )
           }
-          <div>
-          </div>
         </div>
       </div>
     </div>
