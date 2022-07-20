@@ -122,16 +122,19 @@ if(loading){
           <div className={dataPengguna.length !== 0 ? "TabelkelolaBerita row Border-Color-Box mb-2" : ""}>
             {dataPengguna?.filter((val) => {
                   if (input === "") {
-                    return val
+                    return  val
                   }
                   else if (val.first_name?.toLowerCase().includes(input.toLocaleLowerCase()) || 
+                          val.last_name?.toLowerCase().includes(input.toLocaleLowerCase()) || 
                           val.no_phone?.toLowerCase().includes(input.toLocaleLowerCase()) || 
                           val.username?.toLowerCase().includes(input.toLocaleLowerCase()) 
                   ) {
                     return val
-                  } else {
+                  }
+                  else {
                     return null;
                   }
+                    
                 }).map((data, index)=>{
               return(
                 <TablePengguna 

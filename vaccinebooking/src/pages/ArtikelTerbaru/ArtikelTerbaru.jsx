@@ -68,6 +68,7 @@ const handleImage=(e)=>{
             text: "berita berhasil tambah",
           }).then(()=>{
           navigate("/KelolaBerita");
+          window.location.reload();
           })
         })
       }catch(error){
