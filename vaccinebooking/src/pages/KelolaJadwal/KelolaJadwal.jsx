@@ -137,6 +137,7 @@ const KelolaJadwal = () => {
                         </div>
                         {/* isi table */}
                         <div className='TabelkelolaBerita row Border-Color-Box'>
+
                             {jadwal.data &&
                                 jadwal.data?.filter((val) => {
                                     if (input === "") {
