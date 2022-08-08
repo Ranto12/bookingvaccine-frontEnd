@@ -1,16 +1,9 @@
-import { useEffect , useState} from "react";
 import ReactPagenation from 'react-paginate'
-const Pagenation = ({data, size, page, setPage, lengthPage}) => {
-  const [offside, setOffside] = useState(page);
-  // const [perPage] = useState(10);
-  const [pageCount, setPageCount] = useState(0);
-  useEffect(()=>{
-     setPageCount(Math.ceil(data.length / size));
-  }, [offside, size])
+const Pagenation = ({setPage, lengthPage}) => {
 
   const handlePageClik =(e)=>{
     const selectedPage = e.selected;
-    setPage(selectedPage + 1)
+    setPage(selectedPage)
   };
   return (
     <ReactPagenation 
@@ -20,7 +13,7 @@ const Pagenation = ({data, size, page, setPage, lengthPage}) => {
       breakClassName={"break-me"}
       pageCount={lengthPage}
       marginPagesDisplayed={2}
-      pageRangeDisplayed={5}
+      pageRangeDisplayed={3}
       onPageChange={handlePageClik}
       containerClassName={"pagination"}
       subContainerClassName={"pages pagination"}

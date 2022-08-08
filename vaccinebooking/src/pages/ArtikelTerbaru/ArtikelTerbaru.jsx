@@ -10,6 +10,7 @@ import axios from "axios";
 // api 
 import {URL} from "../../API/URL";
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const ArtikelTerbaru = () => {
   // initial state and valiables
@@ -18,7 +19,7 @@ const ArtikelTerbaru = () => {
   const [author, setAuthor] = useState("");
   const [body, setBody] = useState("");
   const [image, setImage] = useState("");
-  const navigate = useNavigate
+  const navigate = useNavigate();
   // function 
   // handleChange
   const handleName =(e)=>{
@@ -34,28 +35,48 @@ const handleImage=(e)=>{
   setImage(e.target.files[0])
 }
   // testing
-  // console.log(`Image`,image, title, author, body )
+  console.log(`Image`,image, title, author, body )
 
   const handleSubmit =(e)=>{
-    e.preventDefault();
-    const formData = new FormData();
-    formData.append("titleNewsVaccine", title);
-    formData.append("authorNewsVaccine", author);
-    formData.append("contentNewsVaccine", body);
-    formData.append("file", image);
-    try{
-      const response = axios({
-        method: "post",
-        url: `${URL}/news`,
-        data: formData,
-        headers: { 
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${localStorage.getItem('token')}`,
-     }
-      });
-      navigate("/KelolaBerita")
-    }catch(error){
-      console.log(error)
+    if(title === "" || author === "" || body === "" || image === ""){
+      Swal.fire({
+        icon: "error",
+        title: "error",
+        text: "data harus terisi semua",
+      })
+    }else{
+      e.preventDefault();
+      const formData = new FormData();
+      formData.append("titleNewsVaccine", title);
+      formData.append("authorNewsVaccine", author);
+      formData.append("contentNewsVaccine", body);
+      formData.append("file", image);
+      try{
+        const response =  axios({
+          method: "post",
+          url: `${URL}/news`,
+          data: formData,
+          headers: {"Content-Type": "multipart/form-data",
+            "Authorization": `Bearer ${localStorage.getItem('token')}`,
+          },
+        })
+        response.then((response)=>{
+          // console.log(response);
+          Swal.fire({
+            icon: "success",
+            title: "Berhasil",
+            text: "berita berhasil tambah",
+          }).then(()=>{
+          navigate("/KelolaBerita");
+          window.location.reload();
+          })
+        })
+      }catch(error){
+        Swal.fire({
+          title: "salah"
+        })
+      }
+      navigate("/KelolaBerita");
     }
   }
 
@@ -84,22 +105,20 @@ const handleImage=(e)=>{
                 <h6 style={{ marginTop: "2rem", color: "#4E7EA7"}}>
                   Judul Berita
                 </h6>
-                <input type="text" className="FormArtikel p-1 p-3 rounded-2 padding-input" style={{width: "100%", border: "none"}}
+                <input required  type="text" className="FormArtikel p-1 p-3 rounded-2 padding-input" style={{width: "100%", border: "none"}}
                   onChange={handleName}
                   value={title}
-                  required
                 />
                 <h6 style={{ marginTop: "1rem",color: "#4E7EA7" }}
                 >
                   Author
                 </h6>
-                <input type="text" className="w-100 FormArtikel p-1 p-3 rounded-2 padding-input" style={{ border: "none",}}
+                <input required type="text" className="w-100 FormArtikel p-1 p-3 rounded-2 padding-input" style={{ border: "none",}}
                   onChange={handleAuthor}
                   value={author}
-                  required
                 />
-                <input type="file"  style={{ display: "none"}}
-                />
+                {/* <input required type="file"  style={{ display: "none"}} onChange={handleImage}
+                /> */}
                 <Grid container columnSpacing={{ xs: 2 }}>
                   <Grid item xs={8}>
                     <Grid container>
@@ -130,14 +149,20 @@ const handleImage=(e)=>{
                                 <label for="file-input">
                                   <BsFileEarmarkImage className=" image-size-uploadimage1" />
                                 </label>
-                                <input id="file-input" type="file" onChange={handleImage} />
+                                <input required id="file-input" type="file" onChange={handleImage} />
                               </div>
                             </div>
                             <div
                               style={{textAlign: "center", fontSize: "10px", marginTop: "1rem", color: "#4E7EA7"}}>
                               <p>
-                                Upload Foto Fasilitas Kesehatan Anda <br />{" "}
-                                Ukuran foto tidak lebih dari 10mb{" "}
+                                {image && image.name ? (
+                                  <span className="d-flex justify-content-center ">{image.name}</span>
+                                ):(
+                                  <span>
+                                    Upload Foto Fasilitas Kesehatan Anda <br />{" "}
+                                    Ukuran foto tidak lebih dari 10mb{" "}
+                                  </span>
+                                )}
                               </p>
                             </div>
                           </div>
@@ -166,10 +191,10 @@ const handleImage=(e)=>{
                       </div>
                         </div>
                       <div className="text-end mt-3">
-                          <button className="btn-kelola-jadwal1 me-3  rounded-3 mb-5" onClick={(e)=>navigate('/KelolaBerita')}>
+                          <button className="btn-kelola-jadwal1 me-3  rounded-3 mb-5 PointerClikCss " onClick={(e)=>navigate('/KelolaBerita')}>
                             Batal
                           </button>
-                          <button className="btn-kelola-jadwal ms-3  rounded-3 mb-5 " onClick={handleSubmit} type="submit">
+                          <button className="btn-kelola-jadwal ms-3  rounded-3 mb-5 PointerClikCss " onClick={handleSubmit} type="submit">
                             Simpan
                           </button>
                     </div>

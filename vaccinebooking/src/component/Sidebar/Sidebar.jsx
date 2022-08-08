@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../../assets/Style/style.css";
 import logo from '../../assets/img/logo.svg';
 import dashboard from '../../assets/img/dashboard.png';
@@ -10,20 +10,23 @@ import keluar from '../../assets/img/keluar.png';
 import kelolaadmin from '../../assets/img/kelolaadmin.png';
 
 //assets
-const handleLogout = () => {
-  localStorage.removeItem("token");
-  window.location.reload();
-}
+
 
 const Sidebar = () => {
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    window.location.reload();
+    navigate("/login");
+  }
   return (
-    <section>
-      <div className="row fullHight">
+    <section className="">
+      <div className="row fullHight ">
         <div className=" ">
           <div className="text-center mt-5 sidebar mx-3  rounded-3 ">
             <div className="row align-items-center justify-content-end">
               <div className=" align-items-center p-5" >
-                <img src={logo} alt="logo" className="Logo"/>
+                <img src={logo} alt="logo" className="Logo-img"/>
               </div>
 
             </div>
@@ -53,7 +56,7 @@ const Sidebar = () => {
                     <img src={databooking} alt="" />
                   </div>
 
-                  <div className="col-9 ps-4 text-start  text-light h6 fw-500 pt-3 pt-2">Data booking</div>
+                  <div className="col-9 ps-4 text-start text-light h6 fw-500 pt-3 pt-2">Data booking</div>
                 </div>
               </Link>
             </div>
@@ -122,10 +125,10 @@ const Sidebar = () => {
               ):(null)
             }
 
-            <div className="  text-center pb-4 ps-4 hover-bg-secondary ">
+            <div className="  text-center pb-4 ps-4 hover-bg-secondary align-items-end ">
               <Link
                 className="text-decoration-none   d-flex menu-sidebar  me-4 py-2"
-                to=""
+                to="/login"
               >
                 <div className="row  row-cols-sm-1 row-cols-md-2 " onClick={handleLogout}>
                   <div className="col-3 text-light ps-4 icon-dasboard ">
@@ -136,9 +139,6 @@ const Sidebar = () => {
                 </div>
               </Link>
             </div>
-           
-
-
           </div>
         </div>
       </div>

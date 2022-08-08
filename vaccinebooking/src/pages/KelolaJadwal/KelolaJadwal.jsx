@@ -1,60 +1,54 @@
 import React, { useState, useEffect } from 'react';
-import Sidebar from '../../component/Sidebar/Sidebar';
 import { Link } from 'react-router-dom';
 // style
 import './../../assets/Style/style.css';
-
-// icon
+import icons from "../../assets/img/sketch.png"
 import { AiOutlineSearch } from 'react-icons/ai';
 import { BsFillCalendarCheckFill } from 'react-icons/bs'
-
 // component
 import TabelVaksinasi from '../../component/JadwalVaksinasi/TabelVaksinasi';
+import Pagenation from '../../component/Pagenation/Pagenation';
 import Select from '../../component/PageComponent/Select';
+import Sidebar from '../../component/Sidebar/Sidebar';
+import Spiner from '../../assets/Spinners/Spinners';
 import Search from '../../component/Basing/Search';
-
-
-// Api
 import api from './../../API/data/post'
 
 const KelolaJadwal = () => {
     // initial state and valiables
     const [input, setInput] = useState("");
     const [jadwal, setJadwal] = useState([]);
-    const [page, setPage] = useState(1);
+    const [page, setPage] = useState(0);
     const [size, setSize] = useState(15);
+    const [lengthPage, setLengthPage] = useState(0);
+    const [loading, setLoading] = useState(true);
 
     // function
     const onChangeInput = (e) => {
         const inputt = e.target.value;
         setInput(inputt)
-        console.log(inputt)
     }
 
     useEffect(() => {
         const fetchPosts = async () => {
             try {
-                const response = await api.get(`/session/${page}/${size}`, {
-                    headers: {
-                        'Authorization': `Bearer ${localStorage.getItem('token')}`
-                    }
-                }
-                )
-                setJadwal(response.data);
+                const response = await api.get(`session/paging?page=${page}&size=${size}`, {
+                    headers: {'Authorization': `Bearer ${localStorage.getItem('token')}`}
+                })
+                setJadwal(response.data.data.content);
+                setLengthPage(response.data.data.totalPages);
             } catch (err) {
-                if (err.response) {
-                    //not in the 200 response range
-                    console.log(err.response.data)
-                    console.log(err.response.status)
-                    console.log(err.response.headers)
-                } else {
-                    console.log(`Error ${err.message}`);
-                }
+                console.log(err);
+            } finally {
+                setLoading(false)
             }
         }
         fetchPosts();
     }, [size, page])
-    // console.log("jadwal", jadwal.data.length)
+
+    if (loading) {
+        return <Spiner />
+    }
 
     return (
         <>
@@ -88,6 +82,7 @@ const KelolaJadwal = () => {
                                 <div className='ms-2 Select15'>
                                     <Select setSize={setSize} />
                                 </div>
+
                                 <div className='d-flex'>
                                     <div>
                                         <p className='ms-2 Fz-16 me-2'>entri</p>
@@ -97,7 +92,7 @@ const KelolaJadwal = () => {
                                             <AiOutlineSearch />
                                         </div>
                                         <div className='d-flex '>
-                                            <input type="text" style={{ width: "251px", height: "24px", border: "none", borderRadius: "2px" }} placeholder="Cari" onChange={onChangeInput} />
+                                            <input type="text" className='input-kelola-pengguna' placeholder="Cari" onChange={onChangeInput} />
                                         </div>
                                     </div>
                                 </div>
@@ -115,31 +110,31 @@ const KelolaJadwal = () => {
                             </div>
                         </div>
                         {/* table */}
+                        {jadwal.length !== 0 ? (
                         <div className='row mt-4 background-color-Table '>
-                            <div className='col-1'>
-                                No
-                            </div>
-                            <div className='col-3'>
-                                Nama Faskes
-                            </div>
-                            <div className='col-2'>
-                                Stock
-                            </div>
-                            <div className='col-3'>
-                                Jenis Vaksin
-                            </div>
-                            <div className='col-2'>
-                                Waktu
-                            </div>
-                            <div className='col-1'>
-                                Action
-                            </div>
+                            <div className='col-1'>No</div>
+                            <div className='col-3'>Nama Faskes</div>
+                            <div className='col-2'>Stock</div>
+                            <div className='col-3'>Jenis Vaksin</div>
+                            <div className='col-2'>Waktu</div>
+                            <div className='col-1'>Action</div>
                         </div>
-                        {/* isi table */}
-                        <div className='TabelkelolaBerita row Border-Color-Box'>
+                        ):(null)}
+                        {/* validasi data kosong */}
+                        { jadwal.length === 0 ? (
+                            <Search 
+                                icons={icons} 
+                                message={"Belum ada jadwal yang dibuat"} 
+                                message2={"Jadilah yang pertama membuat jadwal vaksinasi!"}/>
+                            ):(
+                            null
+                            )
+                        } 
 
-                            {jadwal.data &&
-                                jadwal.data?.filter((val) => {
+                        {/* isi table */}
+                        <div className={jadwal.length !==0 ? 'TabelkelolaBerita row Border-Color-Box' : ""}>
+                            {jadwal &&
+                                jadwal?.filter((val) => {
                                     if (input === "") {
                                         return val
                                     }
@@ -154,7 +149,6 @@ const KelolaJadwal = () => {
 
                                 }).map((data, index) => {
                                     return (
-
                                         < TabelVaksinasi
                                             Number={index + 1
                                             }
@@ -175,11 +169,17 @@ const KelolaJadwal = () => {
                                     )
                                 })}
                         </div>
-                        {/* <div>
-                            <input type="number" value={page} onChange={handlePage} />
-                        </div> */}
+                        {jadwal.length > 0 ? (
+                            <Pagenation 
+                            data={jadwal} 
+                            size={size} 
+                            page={page} 
+                            setPage={setPage} 
+                            lengthPage={lengthPage}/>
+                        ):(
+                            null
+                        )}
                     </div>
-
                 </div>
             </div>
         </>

@@ -7,14 +7,18 @@ import Swal from "sweetalert2";
 import api from '../../API/data/post';
 import {URL} from '../../API/URL';
 
-export default function FormKelolaJadwal({address, name, data}) {
+export default function FormKelolaJadwal({
+  address, 
+  name, 
+  data
+}) {
   // state and variables
   const navigate = useNavigate();
   const [vaccine, setvaccine] = useState([]);
   const [idVaccine, setIdvaccine] = useState();
   const [startDate, setStartDate] = useState();
   const [startTime, setStartTime] = useState("");
-  const [Stock, setStock] = useState(0);
+  const [Stock, setStock] = useState();
   const [image, setImage] = useState("");
   const [imagePreview] = useState("");
 
@@ -28,7 +32,6 @@ export default function FormKelolaJadwal({address, name, data}) {
     setStartTime(e.target.value)
   }
   const onChangeStock =(e)=>{
-    if(e.target.value.length === 3) return false;
     setStock(e.target.value);
   }
  const onChangeImage=(e)=>{
@@ -44,26 +47,17 @@ export default function FormKelolaJadwal({address, name, data}) {
     const fetchPosts = async()=>{
         try{
             const response = await api.get("/vaccine", {
-              headers:{
-                  'Authorization': `Bearer ${localStorage.getItem('token')}`
-              }
+              headers:{'Authorization': `Bearer ${localStorage.getItem('token')}`}
           })
             setvaccine(response.data);
         } catch(err){
-            if(err.response){
-                //not in the 200 response range
-                console.log(err.response.data)
-                console.log(err.response.status)
-                console.log(err.response.headers)
-            }else{
-                console.log(`Error ${err.message}`);
-            }
+            console.log(err);
         }
     }
     fetchPosts();
 },[])
 
-const handleSubmit =(e)=>{
+const handleSubmit = async (e)=>{
   e.preventDefault();
   const formData = new FormData();
   formData.append("vaccine_id ", idVaccine);
@@ -74,42 +68,37 @@ const handleSubmit =(e)=>{
   formData.append("start_time", `${startTime}`);
   formData.append("file", image);
   try{
-    axios({
+   const response = axios({
       method: "post",
       url: `${URL}/session`,
       data: formData,
       headers: { "Content-Type": "multipart/form-data",
                   "Authorization": `Bearer ${localStorage.getItem('token')}`
-                },
+        },
+      }
+    ).then((response)=>{
+      Swal.fire({
+        icon: "success",
+            title: "Berhasil",
+            text: "Data berhasil di tambahkan"
+      })
+      navigate('/KelolaJadwal');
+    }).catch((error)=>{
+      Swal.fire({
+        icon: "error",
+        title: "gagal",
+        text: "harus memasukan data yang benar"
+      })
     })
-    .then((response)=>{
-      if(response.data.status === "success"){
-        Swal.fire({
-          title: "Success",
-          text: "Data berhasil ditambahkan",
-          icon: "success",
-          confirmButtonText: "Ok",
-          onClose: () => {
-            handleBack();
-          }
-        })
-      }else if(response.data.status === "error"){
-        Swal.fire({
-          title: "Error",
-          text: "Data gagal ditambahkan",
-          icon: "error",
-          confirmButtonText: "Ok",
-        })
-      } 
-    })
-  }catch(error){
-    console.log("gagal anda goblok");
+  }
+  catch(error){
+    console.log(error, error);
   }
 }
 
 // debug
 // console.log(`vaccine= `, idVaccine," area= ", data.area_mapped.id_area, "healt= ", data.id_health_facilities, "stock= ", Stock, "date= ", startDate, "time= ", startTime, "image= ", image  )
-// console.log(Stock)
+console.log(Stock)
 
   return (
     <div className="mb-5 borderInput" style={{ color: " #4E7EA7" }}  >
@@ -132,8 +121,8 @@ const handleSubmit =(e)=>{
             {vaccine.data && 
             vaccine.data.map((item)=>{
               return(
-                <label>
-                <input type="radio" key={item.id} name="fav_language" className="ms-3"
+                <label key={item.id}>
+                <input required type="radio" key={item.id} name="fav_language" className="ms-3"
                 value={item.id_vaccine}
                 onChange={ChangeidVaccine}
                 />
@@ -149,13 +138,13 @@ const handleSubmit =(e)=>{
         <div className="mt-3">
           <label className="fw-bold ">Stock</label>
         </div>
-        <input onInput={(e)=>{
+        <input required onChange={onChangeStock}
+         onInput={(e)=>{
           if (e.target.value.length > 4) {
             e.target.value = e.target.value.slice(0, 4);
           }
-        }} 
-        onChange={onChangeStock}
-        type="number"  className="mt-2 p-1 rounded-2 input-kel Background-White padding-input" onKeyPress={(e) =>["e", "E", "+", "-", ","].includes(e.key) && e.preventDefault()} required min="4" max="5" />
+        }}
+        type="number"  className="mt-2 p-1 rounded-2 input-kel Background-White padding-input" onKeyPress={(e) =>["e", "E", "+", "-", ","].includes(e.key) && e.preventDefault()}  />
         <span className="ms-3">Buah</span>
       </div>
 
@@ -164,11 +153,11 @@ const handleSubmit =(e)=>{
           <label className="fw-bold mb-3"> Sesi </label>
         </div>
         <span className="">
-          <input type="date" className="mt-2 p-1 rounded-2 input-kel Background-White padding-input" onChange={chaangeStartDate} />
+          <input required type="date" className="mt-2 p-1 rounded-2 input-kel Background-White padding-input" onChange={chaangeStartDate} />
         </span>
         <span className="mx-4">-</span>
         <span> 
-          <input type="time" className="mt-2 p-1 rounded-2 input-kel Background-White padding-input" onChange={ChangeStartTime} />
+          <input required type="time" className="mt-2 p-1 rounded-2 input-kel Background-White padding-input" onChange={ChangeStartTime} />
         </span>
       </div>
       <div className="row mt-4">
@@ -180,10 +169,10 @@ const handleSubmit =(e)=>{
                             style={{width: "100%", height: "15rem", border: "dashed 2px #4E7EA7", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", cursor: "pointer" , marginBottom:"2%"}} >
                             <div style={{height: "50% ", paddingBottom:"1px", paddingTop:"25px", borderRadius:"10px", backgroundColor:"#D9D9D9"}} className="image-upload card">
                               <div className="image-upload">
-                                <label for="file-input">
+                                <label htmlFor="file-input">
                                   <BsFileEarmarkImage className=" image-size-uploadimage" />
                                 </label>
-                                <input id="file-input" type="file" onChange={onChangeImage} />
+                                <input required id="file-input" type="file" onChange={onChangeImage} />
                               </div>
                             </div>
                             <div

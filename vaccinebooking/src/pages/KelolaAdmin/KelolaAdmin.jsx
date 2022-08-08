@@ -12,42 +12,44 @@ import { IoPersonAddSharp } from 'react-icons/io5'
 import TabelAdmin from '../../component/KelolaAdmin/TabelAdmin';
 import api from '../../API/data/post'
 import Select from '../../component/PageComponent/Select';
+import Pagenation from '../../component/Pagenation/Pagenation';
+import Spiner from '../../assets/Spinners/Spinners';
 
 const KelolaAdmin = () => {
     // initial state and valiables
     const [input, setInput] = useState("");
     const [admin, setAdmin] = useState([]);
     const [size, setSize] = useState(15);
+    const [page, setPage] = useState(0);
+    const [lengthPage, setLengthPage] = useState(0);
+    const [loading, setLoading] = useState(true);
 
     const onChangeInput = (e) => {
         const input = e.target.value;
         setInput(input)
     }
 
-    // API
-
+    // API 
     useEffect(() => {
         const fetchPosts = async () => {
             try {
-                const response = await api.get("/users/roles/ADMIN", {
-                    headers:{
-                        'Authorization': `Bearer ${localStorage.getItem('token')}`
+                const response = await api.get(`users/pagination/ADMIN?page=${page}&size=${size}`, {
+                    headers:{'Authorization': `Bearer ${localStorage.getItem('token')}`
                     }})
-                setAdmin(response.data.data);
+                setAdmin(response.data.data.content);
+                setLengthPage(response.data.data.totalPages);
+        
             } catch (err) {
-                if (err.response) {
-                    //not in the 200 response range
-                    console.log(err.response.data)
-                    console.log(err.response.status)
-                    console.log(err.response.headers)
-                } else {
-                    console.log(`Error ${err.message}`);
-                }
+                console.log(err);
+            }finally{
+                setLoading(false)
             }
         }
         fetchPosts();
-    }, [])
-
+    }, [page, size, lengthPage])
+    if (loading) {
+        return <Spiner />
+    }
     return (
         <div className='Fontcolor-Dasboard'>
             <div className='row me-5'>
@@ -101,7 +103,8 @@ const KelolaAdmin = () => {
                         </div>
                     </div>
                     {/* tabel */}
-                    <div className='row mt-4 background-color-Table  justify-content-center'>
+                    {admin.length !==0 ? (
+                        <div className='row mt-4 background-color-Table  justify-content-center'>
                         <div className='col-1'>
                             No
                         </div>
@@ -121,10 +124,12 @@ const KelolaAdmin = () => {
                             Action
                         </div>
                     </div>
+                    ):(
+                        null
+                    )}
 
                     {/* isi tabel */}
-                    <div className='TabelAdmin row Border-Color-Box'>
-                        
+                    <div className={admin.length !==0 ? 'TabelAdmin row Border-Color-Box' : ""}>
                         { admin && 
                         admin.filter((val)=>{
                             if(input === ""){
@@ -141,15 +146,30 @@ const KelolaAdmin = () => {
                         }).map((data, index)=>{
                             return(
                                 <TabelAdmin 
-                                key={data.id_user} id={data.id_user}
-                                Number={index +1} Name={data.first_name} 
-                                hp={data.no_phone} email={data.email} role={data.roles} 
-                                alamat={data.address}  tanggalLahir={data.birth_date}
-                                gender={data.gender} pw={data.password} username={data.username}
+                                key={data.id_user} 
+                                id={data.id_user}
+                                Number={index +1} 
+                                Name={data.first_name} 
+                                hp={data.no_phone} 
+                                email={data.email} 
+                                role={data.roles} 
+                                alamat={data.address}  
+                                tanggalLahir={data.birth_date}
+                                gender={data.gender} 
+                                pw={data.password} 
+                                username={data.username}
                                 />
                             )
                         })}
                     </div>
+                    {admin?.length > 0 ? (
+                        <Pagenation 
+                            setPage={setPage} 
+                            lengthPage={lengthPage}/>
+                            ) : (
+                            null
+                            )
+                    }
                 </div>
             </div>
         </div>

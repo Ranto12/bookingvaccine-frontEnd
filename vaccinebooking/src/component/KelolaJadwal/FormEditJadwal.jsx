@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
+// import ImageUploader from "react-images-upload";
 import { BsFileEarmarkImage } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 import {URL} from "../../API/URL";
@@ -8,7 +9,17 @@ import {URL} from "../../API/URL";
 import api from '../../API/data/post'
 import Swal from "sweetalert2";
               
-function FormEditJadwal( {namaFaskes, stockVaccine, tanggalVaccine, alamatFacility, WaktuVaccine, idFacility, Idvaccine, idSesion, data, idArea}) {
+function FormEditJadwal( {
+  namaFaskes, 
+  stockVaccine, 
+  tanggalVaccine, 
+  alamatFacility, 
+  WaktuVaccine, 
+  idFacility, 
+  Idvaccine, 
+  idSesion, 
+  idArea
+}) {
   // state and variables
   const [vaccine, setvaccine] = useState([]);
   const [idVaccinee, setIdvaccine] = useState(Idvaccine);
@@ -16,9 +27,11 @@ function FormEditJadwal( {namaFaskes, stockVaccine, tanggalVaccine, alamatFacili
   const [startTime, setStartTime] = useState(WaktuVaccine);
   const [Stock, setStock] = useState(stockVaccine);
   const [image, setImage] = useState(null);
+  // const [nameImage, setNameImage] = useState('');
+  // const [imageValidation, setImageValidation] = useState(null);
   const [imagePreview] = useState("");
   const navigate = useNavigate();
-
+  console.log("image", image);
   const chaangeStartDate =(e)=>{
     setStartDate(e.target.value);
   }
@@ -31,9 +44,78 @@ function FormEditJadwal( {namaFaskes, stockVaccine, tanggalVaccine, alamatFacili
   const onChangeStock =(e)=>{
     setStock(e.target.value);
   }
- const onChangeImage=(e)=>{
-    setImage(e.target.files[0]);
- }
+
+  // const onChangeImage=(e)=>{
+  //   let file = e.target.files[0];
+  //       if(image !== ".png" || ".jpg" || "jpeg", ".PNG" || ".JPG" || "JPEG"){
+  //     Swal.fire({
+  //       icon: "error",
+  //       title: "Oops...",
+  //       text: "File yang diupload harus berupa gambar",
+  //     })
+  //   } else{
+  //     setImage(file);
+  //   }
+
+  //   }
+
+  // const onChangeImage=(e)=>{
+  //   const file = e.target.file[0];
+  //   if(file === ".png" || 
+  //       file === ".jpg" || 
+  //       file === "jpeg" || 
+  //       file === '.gif'){
+  //     if(file.size <= 525000){
+  //       setImage(file);
+  //     } else{
+  //       Swal.fire({
+  //         icon: 'error',
+  //         title: 'Oops...',
+  //         text: 'File gambar terlalu besar!',
+  //       })
+  //     }
+  //   } else{
+  //     Swal.fire({
+  //       icon: 'error',
+  //       title: 'Oops...',
+  //       text: 'File gambar tidak sesuai!',
+  //     })
+  //   }
+  // }
+//  const onChangeImage=(e)=>{
+//     let images = e.target.files[0];
+//     let Format = "image/png" || "image/jpg" || "image/jpeg"|| "image/PNG" || "image/JPG" || "image/JPEG" || "image/jpeg";
+//     let Size = 7644273;
+//     let render = new FileReader();
+//     console.log("image", images.type === Format);
+//     // console.log("Format", Format);
+//     setNameImage(images.name);
+//     console.log(images);
+//     render.onload = (e)=>{
+//       setImageValidation(images);
+//     };
+//     render.readAsDataURL(e.target.files[0]);
+    
+//     if(images.type === Format && images.size < Size){
+//       setImage(images);
+//     } else if(images.type !== Format){
+//       Swal.fire({
+//         icon: "error",
+//         title: "Oops...",
+//         text: "File yang diupload harus berupa gambar",
+//       })
+//     }else if(images.size > Size ){
+//       Swal.fire({
+//         icon: "error",
+//         title: "Oops...",
+//         text: "File yang diupload harus berukuran kurang dari 1 MB",
+//       })
+//     } 
+// }
+
+const onChangeImage=(e)=>{
+  setImage(e.target.files[0]);
+}
 
  
   // get api jenis vaccine
@@ -48,14 +130,7 @@ function FormEditJadwal( {namaFaskes, stockVaccine, tanggalVaccine, alamatFacili
           })
           setvaccine(response.data.data);
         } catch(err){
-            if(err.response){
-                //not in the 200 response range
-                console.log(err.response.data)
-                console.log(err.response.status)
-                console.log(err.response.headers)
-            }else{
-                console.log(`Error ${err.message}`);
-            }
+           console.log(err);
         }
     } 
     fetchPosts();
@@ -75,27 +150,34 @@ const handleSubmit =(e)=>{
       formData.append("start_time", `${startTime}`);
       formData.append("file", image);
       try{
-        axios({
+       const response = axios({
           method: "put",
           url: `${URL}/session/${idSesion}`,
           data: formData,
           headers: { "Content-Type": "multipart/form-data", 
                     "Authorization": `Bearer ${localStorage.getItem('token')}` 
                   },
-
         })
-        .then((response) => {
-          Swal.fire('Berhasil', 'Jadwal Berhasil Anda Edit', 'success');
-          navigate('/kelolaJadwal');
+        response.then(res=>{
+          Swal.fire({
+            icon: "success",
+            title: "Berhasil",
+            text: "Data berhasil diubah",
+          }).then(()=>{
+            navigate("/kelolaJadwal");
+          }
+          )
         })
       }catch(error){
-        console.log("error nya ini mas e", error);
-      if(error.response.status === 500){
-        Swal.fire('Gagal', 'Jadwal Gagal Anda Edit', 'error');
-      }}
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Something went wrong!",
+        })  
+      }
     }else{
       e.preventDefault();
-      axios.put(`${URL}/session/${idSesion}`,{
+      axios.put(`${URL}/session/noImage/${idSesion}`,{
         vaccine_id: idVaccinee,
         area_id: idArea,
         health_facilities_id: idFacility,
@@ -115,19 +197,13 @@ const handleSubmit =(e)=>{
         console.log(response);
       })
       .catch((error) => {
-        // console.log("error nya ini mas e", error);
-        if(error.response.status === 500){
-          Swal.fire('Gagal', 'Jadwal Gagal Anda Edit', 'error');
-        }
+       Swal.fire({
+        icon: "error"
+       })
       })
     }
 }
-// debug
-// console.log(`vaccine= `, idVaccine," area= ", data.area_mapped.id_area, "healt= ", data.id_health_facilities, "stock= ", Stock, "date= ", startDate, "time= ", startTime, "image= ", image  )
-// console.log('vacicine', IdVaccine)
-// console.log(`data`, namaFaskes, stockVaccine, tanggalVaccine, alamatFacility, WaktuVaccine, idFacility, Idvaccine, idSesion)
-console.log("data", idArea, idFacility, image, startDate, startTime, Stock, idVaccinee, idSesion)
-// console.log(URL)
+console.log(Stock)
 
   return (
     <div className="mb-5 borderInput" style={{ color: " #4E7EA7" }}  >
@@ -149,8 +225,8 @@ console.log("data", idArea, idFacility, image, startDate, startTime, Stock, idVa
           <div className="mt-3" >
             {vaccine.map((item)=>{ 
               return(
-                <label htmlFor={item.vaccine_name}> 
-                <input type="radio" key={item.id_vaccine} name="fav_language" className="ms-3"
+                <label htmlFor={item.vaccine_name} key={item.id_vaccine}> 
+                <input required type="radio" key={item.id_vaccine} name="fav_language" className="ms-3"
                 value={item.id_vaccine}
                 checked={idVaccinee === item.id_vaccine}
                 onChange={ChangeidVaccine}
@@ -167,13 +243,13 @@ console.log("data", idArea, idFacility, image, startDate, startTime, Stock, idVa
         <div className="mt-3">
           <label className="fw-bold ">Stock</label>
         </div>
-        <input onInput={(e)=>{
+        <input  required onInput={(e)=>{
           if (e.target.value.length > 4) {
-            e.target.value = e.target.value.slice(0, 4);
+            e.target.value = e.target.value.slice(2, 4);
           }
         }} 
         onChange={onChangeStock}
-        type="number"  className="mt-2 p-1 rounded-2 input-kel Background-White padding-input" onKeyPress={(e) =>["e", "E", "+", "-", ","].includes(e.key) && e.preventDefault()} required min="4" max="5" value={Stock} />
+        type="number"  className="mt-2 p-1 rounded-2 input-kel Background-White padding-input" onKeyPress={(e) =>["e", "E", "+", "-", ","].includes(e.key) && e.preventDefault()} min="4" max="5" value={Stock} />
         <span className="ms-3">Buah</span>
       </div>
 
@@ -182,11 +258,11 @@ console.log("data", idArea, idFacility, image, startDate, startTime, Stock, idVa
           <label className="fw-bold mb-3"> Sesi </label>
         </div>
         <span className="">
-          <input type="date" className="mt-2 p-1 rounded-2 input-kel Background-White padding-input" onChange={chaangeStartDate} value={startDate}/>
+          <input required type="date" className="mt-2 p-1 rounded-2 input-kel Background-White padding-input" onChange={chaangeStartDate} value={startDate}/>
         </span>
         <span className="mx-4">-</span>
         <span> 
-          <input type="time" className="mt-2 p-1 rounded-2 input-kel Background-White padding-input" onChange={ChangeStartTime} value={startTime}/>
+          <input required type="time" className="mt-2 p-1 rounded-2 input-kel Background-White padding-input" onChange={ChangeStartTime} value={startTime}/>
         </span>
       </div>
       <div className="row mt-4">
@@ -198,18 +274,24 @@ console.log("data", idArea, idFacility, image, startDate, startTime, Stock, idVa
                   style={{width: "100%", height: "15rem", border: "dashed 2px #4E7EA7", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", cursor: "pointer" , marginBottom:"2%"}} >
                     <div style={{height: "50% ", paddingBottom:"1px", paddingTop:"25px", borderRadius:"10px", backgroundColor:"#D9D9D9"}} className="image-upload card">
                       <div className="image-upload">
-                        <label for="file-input">
+                        <label htmlFor="file-input">
                           <BsFileEarmarkImage className=" image-size-uploadimage" />
                         </label>
-                        <input  id="file-input" type="file" onChange={onChangeImage} />
+                        <input required id="file-input" type="file" accept="image/*" onChange={onChangeImage} />
                       </div>
                     </div>
                     <div
-                      tyle={{textAlign: "center", fontSize: "10px", marginTop: "1rem", color: "#4E7EA7"}}>
-                        <p>
-                          Upload Foto Fasilitas Kesehatan Anda <br />{" "}
-                          Ukuran foto tidak lebih dari 10mb{" "}
-                        </p>
+                              style={{textAlign: "center", fontSize: "10px", marginTop: "1rem", color: "#4E7EA7"}}>
+                              <p>
+                                {image && image.name ? (
+                                  <span className="d-flex justify-content-center ">{image.name}</span>
+                                ):(
+                                  <span>
+                                    Upload Foto Fasilitas Kesehatan Anda <br />{" "}
+                                    Ukuran foto tidak lebih dari 10mb{" "}
+                                  </span>
+                                )}
+                              </p>
                     </div>
                 </div>
               </div>
@@ -222,7 +304,7 @@ console.log("data", idArea, idFacility, image, startDate, startTime, Stock, idVa
         </div>
           <div className="col-4 text-center align-self-end">
             <div>
-              <button className="btn-kelola-jadwal1 me-3  rounded-3 mb-5  ">Batal</button>
+              <button className="btn-kelola-jadwal1 me-3  rounded-3 mb-5  " onClick={(e)=> navigate('/kelolaJadwal')}>Batal</button>
               <button className="btn-kelola-jadwal ms-3  rounded-3 mb-5  " onClick={handleSubmit}>Simpan</button>
             </div>
           </div>

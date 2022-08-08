@@ -6,19 +6,15 @@ import { AiFillEye } from "react-icons/ai";
 import { IconButton } from "@mui/material";
 import Logo from "../assets/img/logo.png";
 import Swal from "sweetalert2";
-
-// api
 import {URL} from "../API/URL";
+
+
 const Login = () => {
   // initial state and variable
   let navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-
-  // showPassword
   const [showPassword, setShowPassword] = useState(false);
-
-  // errorState
   const [errorUsername, setErrorUsername] = useState(false);
   const [errorPassword, setErrorPassword] = useState(false);
 
@@ -40,7 +36,6 @@ const Login = () => {
 
   const Auth = async (e) => {
     e.preventDefault();
-
     if (!RegexUsername.test(username)) {
       console.log("Username error");
       setErrorUsername(true);
@@ -53,7 +48,6 @@ const Login = () => {
     } else {
       setErrorPassword(false);
     }
-
     if (RegexUsername.test(username) && RegexPassword.test(password)) {
       try {
         await axios.post(`${URL}/auth/login`, {
@@ -62,18 +56,16 @@ const Login = () => {
         }).then(
           res => {
             if (res.data !== null) {
-              console.log(res.data);
-              window.localStorage.setItem("token", res.data.data.token);
-              const token = window.localStorage.getItem("token");
-              const decode = jwt_decode(token);
-              window.localStorage.setItem("id_users", decode.id_user);
-              window.localStorage.setItem("role", decode.roles);
-              console.log(window.localStorage.getItem("role"));
-              console.log("hasil", decode);
+                  console.log(res.data);
+                  window.localStorage.setItem("token", res.data.data.token);
+                  const token = window.localStorage.getItem("token");
+                  const decode = jwt_decode(token);
+                  window.localStorage.setItem("id_users", decode.id_user);
+                  window.localStorage.setItem("role", decode.roles);
               if (window.localStorage.getItem("role") === "ADMIN" || window.localStorage.getItem("role") === "SUPER ADMIN") {
-                Swal.fire('Berhasil!', 'Anda Telah Berhasil Login!', 'success');
-                window.location.reload();
-                navigate("/Dashboard");
+                  Swal.fire('Berhasil!', 'Anda Telah Berhasil Login!', 'success');
+                  window.location.reload();
+                  navigate("/Dashboard");
               } else {
                 Swal.fire({
                   title: "Oops...",
@@ -81,7 +73,7 @@ const Login = () => {
                   icon: "error",
                   confirmButtonText: "OK",
                 });
-                localStorage.removeItem("token");
+                  localStorage.removeItem("token");
               }
             } else if (res.data === null) {
               Swal.fire({
@@ -94,19 +86,15 @@ const Login = () => {
           }
         )
       } catch (error) {
-        console.log("error", error);
-        if(error.response.status === 401){
-          Swal.fire({
-            title: 'Gagal!',
-            text: 'Login Gagal!',
-            icon: 'error',
-            confirmButtonText: 'ya, saya mencoba kembali',
-          });
-        }
+        Swal.fire({
+          title: 'Gagal!',
+          text: 'Login Gagal!',
+          icon: 'error',
+          confirmButtonText: 'ya, saya mencoba kembali',
+        });
       }
     }
   };
-  // console.log(msg ,"msg");
 
   return (
     <>
@@ -144,6 +132,7 @@ const Login = () => {
                   )}
                 </div>
               </div>
+              
               <div className="input-password  ">
                 <p>Password</p>
                 <div className="brd ">
@@ -168,10 +157,8 @@ const Login = () => {
                     </IconButton>
                   </div>
                 </div>
-                {/* <div className="lupa-pass d-flex justify-content-end ">
-                  <p >Lupa password ?</p>
-                </div> */}
               </div>
+
               <div className="btn " >
                 <button className="Pointer-Booking" onClick={Auth}>Masuk</button>
               </div>

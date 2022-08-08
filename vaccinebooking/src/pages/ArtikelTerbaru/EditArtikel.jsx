@@ -17,7 +17,7 @@ const EditArtikel = () => {
   const [title, setTitle] = useState(`${location.state.judul}`);
   const [author, setAuthor] = useState(`${location.state.penulis}`);
   const [body, setBody] = useState(`${location.state.content}`);
-  const [image, setImage] = useState("");
+  const [image, setImage] = useState(null);
   const id = location.state.id;
   const navigate = useNavigate();
 
@@ -39,52 +39,79 @@ const handleImage=(e)=>{
   console.log(`Image`, title, author, body, image, id);
 
   const handleSubmit =(e)=>{
-    e.preventDefault();
-    const formData = new FormData();
+    if(image !== null){
+      e.preventDefault();
+      const formData = new FormData();
     formData.append("titleNewsVaccine", title);
     formData.append("authorNewsVaccine", author);
     formData.append("contentNewsVaccine", body);
     formData.append("file", image);
 
     try{
-      const response = axios({
+      axios({
         method: "put",
-        url: `${URL}/news/${id}`,
+        url: `${URL}/news/news-photo/${id}`,
         data: formData,
         headers: {"Content-Type": "multipart/form-data",
-        Authorization: `Bearer ${localStorage.getItem('token')}`},
+        "Authorization": `Bearer ${localStorage.getItem('token')}`},
       })
       .then((response)=>{
-        if(response.data.status === "success"){
-          Swal.fire({
-            title: "Success",
-            text: "Data Berhasil Diubah",
-            icon: "success",
-            confirmButtonText: "Ok",
-            confirmButtonColor: "#00bcd4",
-            onClose: () => {
-              navigate('/KelolaBerita');
+        console.log(response);
+        Swal.fire({
+          title: "Success",
+          text: "Data Berhasil Diubah",
+          icon: "success",
+          confirmButtonText: "Ok",
+          confirmButtonColor: "#00bcd4"
+        });
+        navigate('/KelolaBerita');
+      })
+    }catch(err){
+      Swal.fire({
+        title: "Error",
+        text: "Data Gagal Diubah",
+        icon: "error",
+        confirmButtonText: "Ok",
+        confirmButtonColor: "#00bcd4"
+      });
+    }
+    }else{
+      e.preventDefault();
+        try{
+          axios({
+            method: "put",
+            url: `${URL}/news/${id}`,
+            data: {
+              titleNewsVaccine: title,
+              authorNewsVaccine : author,
+              contentNewsVaccine : body
+            },
+            headers:{
+              "Content-Type": "multipart/form-data", 
+              "Authorization": `Bearer ${localStorage.getItem('token')}`
             }
-          });
-        } else if(response.data.promise) {
+          })
+          .then((response)=>{
+            console.log(response);
+            Swal.fire({
+              title: "Success",
+              text: "Data Berhasil Diubah",
+              icon: "success",
+              confirmButtonText: "Ok",
+              confirmButtonColor: "#00bcd4"
+            });
+        navigate('/KelolaBerita');
+
+          })
+        } catch(err){
           Swal.fire({
             title: "Error",
             text: "Data Gagal Diubah",
             icon: "error",
             confirmButtonText: "Ok",
-            confirmButtonColor: "#00bcd4",
+            confirmButtonColor: "#00bcd4"
           });
         }
-      })
-      console.log(response, "response");
-    }catch(err){
-        if (err.response) {
-            console.log(err.response.data.data);
-            console.log(err.response.status);
-            console.log(err.response.headers);
-          } else {
-            console.log(`Error ${err.message}`);
-          }
     }
   }
 
@@ -165,8 +192,14 @@ const handleImage=(e)=>{
                             <div
                               style={{textAlign: "center", fontSize: "10px", marginTop: "1rem", color: "#4E7EA7"}}>
                               <p>
-                                Upload Foto Fasilitas Kesehatan Anda <br />{" "}
-                                Ukuran foto tidak lebih dari 10mb{" "}
+                                {image && image.name ? (
+                                  <span className="d-flex justify-content-center ">{image.name}</span>
+                                ):(
+                                  <span>
+                                    Upload Foto Fasilitas Kesehatan Anda <br />{" "}
+                                    Ukuran foto tidak lebih dari 10mb{" "}
+                                  </span>
+                                )}
                               </p>
                             </div>
                           </div>
@@ -195,10 +228,10 @@ const handleImage=(e)=>{
                       </div>
                         </div>
                       <div className="text-end mt-3">
-                          <button className="btn-kelola-jadwal1 me-3  rounded-3 mb-5" onClick={(e)=>navigate('/KelolaBerita')}>
+                          <button className="btn-kelola-jadwal1 me-3  rounded-3 mb-5 PointerClikCss " onClick={(e)=>navigate('/KelolaBerita')}>
                             Batal
                           </button>
-                          <button className="btn-kelola-jadwal ms-3  rounded-3 mb-5 " onClick={handleSubmit} type="submit">
+                          <button className="btn-kelola-jadwal ms-3  rounded-3 mb-5 PointerClikCss " onClick={handleSubmit} type="submit">
                             Simpan
                           </button>
                     </div>
